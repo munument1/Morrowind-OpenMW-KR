@@ -89,3 +89,7 @@ venv/
 ## operating system files
 .DS_Store
 Thumbs.db
+
+# Local release payloads used during Korean translation audits
+local-input/
+local-output/

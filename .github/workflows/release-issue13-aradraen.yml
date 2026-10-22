@@ -1,0 +1,69 @@
+name: Publish KR8 Aradraen CELL fix (Windows)
+on:
+  push:
+    branches:
+      - master
+      - fix/issue13-aradraen-cell
+    paths:
+      - packaging/korean/tooling/release_issue13_aradraen.py
+      - .github/workflows/release-issue13-aradraen.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      SOURCE_TAG: openmw-0.51.0-kr7
+      SOURCE_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip
+      SOURCE_SHA256: 4d6e049148e01e639b080b3cb42c295ac4f7f206021597d4e11721c8044cd4c8
+      OUTPUT_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip
+      OUTPUT_TAG: openmw-0.51.0-kr8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download exact published Windows KR7
+        run: |
+          set -euo pipefail
+          mkdir -p input output
+          gh release download "$SOURCE_TAG" --pattern "$SOURCE_ASSET" --dir input
+          echo "$SOURCE_SHA256  input/$SOURCE_ASSET" | sha256sum --check
+      - name: Validate single-line translation change, byte parity, ZIP CRC and checksum
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/release_issue13_aradraen.py
+          python3 packaging/korean/tooling/release_issue13_aradraen.py \
+            --variant windows --source "input/$SOURCE_ASSET" \
+            --output "output/$OUTPUT_ASSET" --expected-source-sha256 "$SOURCE_SHA256" \
+            | tee output/issue13-verification.json
+          ( cd output && sha256sum --check "$OUTPUT_ASSET.sha256" )
+      - name: Store verified candidate ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: Morrowind-Korean-OpenMW-0.51.0-KR8-Windows-candidate
+          path: output/
+          retention-days: 14
+      - name: Publish Windows KR8 only from master
+        if: github.ref == 'refs/heads/master'
+        run: |
+          set -euo pipefail
+          if gh release view "$OUTPUT_TAG" >/dev/null 2>&1; then
+            echo "Release already exists; refusing to overwrite it"
+            exit 1
+          fi
+          cat > release-notes.md <<'EOF'
+          ## OpenMW 0.51.0 Korean Support KR8 — Issue #13
+
+          - Added the missing translation for the Bethesda official Area Effect Arrows interior CELL:
+            'Vivec, Aradraen: Fletcher' → '비벡, 아라드라엔: 화살 제작자'.
+          - Changed **only** Morrowind_Korean_ReTranslation.cel, retaining every other KR7 ZIP entry byte-identically.
+          - Base KR7 archive checksum, original CEL checksum, UTF-8 BOM, exact key count, ZIP integrity and changed-entry parity were verified before release.
+          - No game executables, scripts, ESP records or other sidecars were changed.
+
+          This is a static data fix. The reported Android screenshot and Windows in-game reproduction have not yet been independently verified. Keep issue #13 open pending both platforms' field confirmation.
+          EOF
+          gh release create "$OUTPUT_TAG" "output/$OUTPUT_ASSET" "output/$OUTPUT_ASSET.sha256" \
+            --title 'OpenMW 0.51.0 Korean Support KR8 — Aradraen CELL fix' \
+            --notes-file release-notes.md --target "$GITHUB_SHA" --latest

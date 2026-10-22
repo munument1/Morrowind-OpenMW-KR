@@ -1,6 +1,11 @@
 name: Publish Korean OpenMW to Nexus Mods
 
 on:
+  # One-time trigger for the verified KR8 Nexus synchronization.
+  # Changing this workflow on master starts its usual version/checksum/idempotency gates.
+  push:
+    branches: [master]
+    paths: ['.github/workflows/nexus-publish.yml']
   release:
     types: [published, released]
   workflow_run:

@@ -59,7 +59,7 @@ jobs:
           assert len(report['record_changes']) == 4
           with zipfile.ZipFile('dist/Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip') as z:
               assert z.testzip() is None
-              esp_paths = [name for name in z.namelist() if name.endswith('/Morrowind_Korean_ReTranslation.esp')]
+              esp_paths = [name for name in z.namelist() if name.replace(chr(92), '/').endswith('/Morrowind_Korean_ReTranslation.esp')]
               assert len(esp_paths) == 1, esp_paths
               assert b'dbattackScript' in z.read(esp_paths[0])
               assert 'KR6-CHANGES.txt' in z.namelist() or 'KR6' in z.read('README-KOREAN.txt').decode('utf8')

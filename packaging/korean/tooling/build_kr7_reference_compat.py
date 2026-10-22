@@ -61,7 +61,10 @@ def main():
     with zipfile.ZipFile(a.source_zip) as z:
         assert z.testzip() is None
         original = {info.filename: z.read(info.filename) for info in z.infolist()}
-        old_esp = original[ESP]
+        esp_paths = [name for name in original if name.endswith("/Morrowind_Korean_ReTranslation.esp")]
+        assert len(esp_paths) == 1, f"ESP paths: {esp_paths}; ZIP entries: {list(original)[:30]}"
+        esp_path = esp_paths[0]
+        old_esp = original[esp_path]
         old = list(records(old_esp))
         new = []
         changed = []
@@ -108,7 +111,9 @@ def main():
             assert [(k,v) for k,v in fields(before[1]) if k != keep] == [(k,v) for k,v in fields(after[1]) if k != keep]
         new_esp = b"".join(pack_record(r) for r in new)
         assert len(list(records(new_esp))) == len(old)
-        cel = original["payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.cel"]
+        cel_paths = [name for name in original if name.endswith("/Morrowind_Korean_ReTranslation.cel")]
+        assert len(cel_paths) == 1, f"CEL paths: {cel_paths}"
+        cel = original[cel_paths[0]]
         for _, destination in REGIONS.values():
             assert (destination + "\t").encode("utf8") in cel
         report = {
@@ -131,14 +136,14 @@ KR6의 데이드릭 문자·신전 음성 자막과 기존 저널·폰트·실�
 KR6 설치 방식 그대로 압축 해제 후 Install-Korean.bat 실행. 원본 Morrowind 필요.
 """
         modified = {
-            ESP: new_esp,
+            esp_path: new_esp,
             "KR7-CHANGES.txt": notes.encode("utf8"),
             "KR7-reference-audit.json": (json.dumps(report,ensure_ascii=False,indent=2)+"\n").encode("utf8"),
             "README-KOREAN.txt": ("OpenMW 0.51.0 Korean Support KR7\nKR7-CHANGES.txt 참조.\n\n"+original["README-KOREAN.txt"].decode("utf-8-sig")).encode("utf8"),
         }
         all_files = dict(original)
         all_files.update(modified)
-        del all_files["SHA256SUMS.txt"]
+        all_files.pop("SHA256SUMS.txt", None)
         all_files["SHA256SUMS.txt"] = "".join(sha(data)+"  "+name+"\n" for name,data in sorted(all_files.items())).encode("ascii")
         with zipfile.ZipFile(a.output_zip,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=6) as out:
             for info in z.infolist():

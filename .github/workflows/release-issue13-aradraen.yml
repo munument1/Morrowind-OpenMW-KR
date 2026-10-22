@@ -30,6 +30,7 @@ jobs:
           mkdir -p input output
           gh release download "$SOURCE_TAG" --pattern "$SOURCE_ASSET" --dir input
           echo "$SOURCE_SHA256  input/$SOURCE_ASSET" | sha256sum --check
+          unzip -Z1 "input/$SOURCE_ASSET" | grep -i -E "cel$|retranslation" | head -n 35
       - name: Validate single-line translation change, byte parity, ZIP CRC and checksum
         run: |
           set -euo pipefail

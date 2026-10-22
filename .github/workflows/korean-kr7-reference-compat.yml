@@ -1,0 +1,98 @@
+name: Publish Korean KR7 compatibility fix
+
+on:
+  push:
+    branches:
+      - release/kr7-reference-compat
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kr7-reference-compat-release
+  cancel-in-progress: false
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout audited builder
+        uses: actions/checkout@v4
+
+      - name: Guard against duplicate release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh release view openmw-0.51.0-kr7 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "KR7 already exists; refusing to overwrite it" >&2
+            exit 1
+          fi
+
+      - name: Download official KR6 release asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p work dist
+          gh release download openmw-0.51.0-kr6 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern "Morrowind-Korean-OpenMW-0.51.0-KR6-Full.zip" \
+            --dir work
+          test -s work/Morrowind-Korean-OpenMW-0.51.0-KR6-Full.zip
+          echo "ce500bbea1d9527edc2304cd2dc214df6da4f9e90233604416a7b6fc61469e31  work/Morrowind-Korean-OpenMW-0.51.0-KR6-Full.zip" | sha256sum --check
+
+      - name: Apply four record-scoped compatibility corrections
+        run: |
+          set -euo pipefail
+          python3 packaging/korean/tooling/build_kr7_reference_compat.py \
+            --source-zip work/Morrowind-Korean-OpenMW-0.51.0-KR6-Full.zip \
+            --output-zip dist/Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip \
+            --report dist/KR7-reference-audit.json
+          python3 - <<'PY'
+          import json, zipfile
+          from pathlib import Path
+          report = json.loads(Path('dist/KR7-reference-audit.json').read_text('utf-8'))
+          assert report['status'] == 'PASS (static)'
+          assert report['record_count'] == 48146
+          assert len(report['record_changes']) == 4
+          with zipfile.ZipFile('dist/Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip') as z:
+              assert z.testzip() is None
+              assert b'dbattackScript' in z.read('payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp')
+              assert 'KR6-CHANGES.txt' in z.namelist() or 'KR6' in z.read('README-KOREAN.txt').decode('utf8')
+              assert 'KR7-CHANGES.txt' in z.namelist()
+          print('KR7 static and inherited-file checks PASS')
+          PY
+          (cd dist && sha256sum Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip > Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip.sha256)
+
+      - name: Write release notes
+        run: |
+          cat >dist/KR7-RELEASE-NOTES.md <<'NOTES'
+          ## OpenMW 0.51.0 Korean Support — KR7
+
+          KR6 전체 배포본을 기반으로 한 퀘스트/스크립트 참조 오류 수정본입니다.
+          KR6의 데이드릭 문자·음성 자막 복원, 저널 개선, 실행 파일, 글꼴, 기존 번역을 그대로 포함합니다.
+
+          - Bloodmoon — Race Against the Clock: 카르니우스가 사무실에 남는 원인이었던 PositionCell 지역명 불일치 두 곳 수정.
+          - Tribunal — Dark Brotherhood: dbattackScript와 dbattackScriptOLD의 GetPCCell 내부 셀 이름 복구.
+          - 변경 범위는 한국어 ESP의 REGN 2건과 SCPT 2건에 한정합니다. 한국어 지명 표시용 .cel은 유지됩니다.
+          - 48,146개 ESP 레코드 중 4개만 변경했고, ZIP 및 SHA-256 정적 검증을 통과했습니다.
+
+          주의: 실게임 재현 테스트는 아직 완료하지 않았습니다. 발견된 문자열 참조 오류를 해결하기 위한 데이터 수정본입니다.
+
+          설치: 공식 OpenMW 0.51.0 Windows 설치본에 ZIP을 압축 해제한 뒤 Install-Korean.bat 실행. 원본 Morrowind 게임 데이터 필요.
+          NOTES
+
+      - name: Publish KR7 GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release create openmw-0.51.0-kr7 \
+            dist/Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip \
+            dist/Morrowind-Korean-OpenMW-0.51.0-KR7-Full.zip.sha256 \
+            --repo "$GITHUB_REPOSITORY" \
+            --target master \
+            --title "OpenMW 0.51.0 Korean Support KR7" \
+            --notes-file dist/KR7-RELEASE-NOTES.md

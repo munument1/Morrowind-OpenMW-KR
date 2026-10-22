@@ -12,7 +12,7 @@ LINE = f'{KEY}\t{VALUE}\n'.encode('utf-8')
 ORIGINAL_CEL_SHA256 = '62f9676b6bcb78ae8ad7219d9ddad5664bd284a254dce537e1867cce799876e0'
 MEMBERS = {
     'android': 'Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.cel',
-    'windows': 'payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.cel',
+    'windows': 'payload\\mods\\Morrowind_Korean_ReTranslation\\Morrowind_Korean_ReTranslation.cel',
 }
 
 def sha256(payload: bytes) -> str:

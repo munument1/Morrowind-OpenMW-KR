@@ -7,6 +7,9 @@ on:
     workflows: ['Korean Windows upstream port']
     types: [completed]
     branches: [master]
+  push:
+    branches: [sync/nexus-kr7]
+    paths: [.github/workflows/nexus-publish.yml]
   workflow_dispatch:
     inputs:
       tag:
@@ -41,7 +44,7 @@ jobs:
         id: release
         uses: actions/github-script@v7
         env:
-          REQUESTED_TAG: ${{ inputs.tag }}
+          REQUESTED_TAG: ${{ github.event_name == 'push' && 'openmw-0.51.0-kr7' || inputs.tag }}
         with:
           script: |
             const repo = context.repo;

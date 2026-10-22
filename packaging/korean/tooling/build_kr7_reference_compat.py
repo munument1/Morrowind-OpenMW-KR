@@ -61,7 +61,7 @@ def main():
     with zipfile.ZipFile(a.source_zip) as z:
         assert z.testzip() is None
         original = {info.filename: z.read(info.filename) for info in z.infolist()}
-        esp_paths = [name for name in original if name.endswith("/Morrowind_Korean_ReTranslation.esp")]
+        esp_paths = [name for name in original if name.replace(chr(92), "/").endswith("/Morrowind_Korean_ReTranslation.esp")]
         assert len(esp_paths) == 1, f"ESP paths: {esp_paths}; ZIP entries: {list(original)[:30]}"
         esp_path = esp_paths[0]
         old_esp = original[esp_path]
@@ -111,7 +111,7 @@ def main():
             assert [(k,v) for k,v in fields(before[1]) if k != keep] == [(k,v) for k,v in fields(after[1]) if k != keep]
         new_esp = b"".join(pack_record(r) for r in new)
         assert len(list(records(new_esp))) == len(old)
-        cel_paths = [name for name in original if name.endswith("/Morrowind_Korean_ReTranslation.cel")]
+        cel_paths = [name for name in original if name.replace(chr(92), "/").endswith("/Morrowind_Korean_ReTranslation.cel")]
         assert len(cel_paths) == 1, f"CEL paths: {cel_paths}"
         cel = original[cel_paths[0]]
         for _, destination in REGIONS.values():

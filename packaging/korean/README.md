@@ -2,7 +2,7 @@
 
 이 디렉터리는 OpenMW 0.51.0 Korean Support KR8의 Windows 설치기 구성 파일을 관리합니다.
 
-최신 배포 ZIP은 [Windows KR8 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr8)에서 받습니다. KR8은 KR7의 `.cel` 실내 위치명 보정판이며, PR #14의 미배포 하이퍼링크 수정은 포함되지 않습니다.
+최신 배포 ZIP은 [Windows KR8 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr8)에서 받습니다. KR8은 KR7의 `.cel` 실내 위치명 보정판입니다.
 
 ## 설치 흐름
 

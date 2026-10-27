@@ -60,7 +60,8 @@ jobs:
             korean/patches/0003-mixed-utf8-esm-reader.patch \
             korean/patches/0004-legacy-korean-journal-recovery.patch \
             korean/patches/0006-journal-topic-keywords.patch \
-            korean/patches/0007-korean-journal-index.patch; do
+            korean/patches/0007-korean-journal-index.patch \
+            korean/patches/0008-korean-implicit-topic-boundaries.patch; do
             echo "Reverse-checking $patch"
             git apply --reverse --check "$patch"
           done
@@ -72,6 +73,7 @@ jobs:
           grep -F 'parseHyperText(text, mTranslationDataStorage, true)' apps/openmw/mwdialogue/dialoguemanagerimp.cpp
           grep -F 'bool overlaps = false' apps/openmw/mwdialogue/keywordsearch.hpp
           grep -F 'static_cast<unsigned char>(*i) < 0xe0' apps/openmw/mwdialogue/keywordsearch.cpp
+          grep -F 'hasKoreanDisplayBoundary(current->mKeyword' apps/openmw/mwdialogue/keywordsearch.cpp
           grep -F 'std::ios::binary' components/translation/translation.cpp
           grep -F 'utf8BomMode ? std::string_view(line)' components/translation/translation.cpp
           grep -F 'bool isValidUtf8WithHangul(std::string_view input)' components/esm3/esmreader.cpp
@@ -98,6 +100,7 @@ jobs:
             components/debug/debuglog.cpp \
             -o /tmp/verify-journal-links
           python3 packaging/korean/tooling/test_journal_links.py /tmp/verify-journal-links
+          python3 packaging/korean/tooling/audit_topic_collisions.py --self-test
 
       - name: Verify Korean journal index groups
         run: |

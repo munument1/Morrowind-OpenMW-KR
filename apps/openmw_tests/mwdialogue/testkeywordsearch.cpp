@@ -370,3 +370,155 @@ TEST_F(KeywordSearchTest, parse_hypertext_mark_file_overrides_keyword)
     EXPECT_EQ(matches[1].getDisplayName(), "assassinated");
     EXPECT_EQ(matches[1].mTopicId, "убит");
 }
+
+
+TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("은", "silver");
+    search.seed("일", "work");
+    search.seed("마법사 길드", "mages guild");
+
+    const std::string text = "싫은 것일 수도 있다. 노예들은 모른다. 일요일과 은근한 표정. "
+                             "은을 찾고 할 일이 있다. 마법사 길드에서 만났다.";
+    const auto matches = search.parseHyperText(text, storage);
+
+    ASSERT_EQ(matches.size(), 3);
+    EXPECT_EQ(matches[0].getDisplayName(), "은");
+    EXPECT_EQ(matches[0].mTopicId, "silver");
+    EXPECT_EQ(matches[1].getDisplayName(), "일");
+    EXPECT_EQ(matches[1].mTopicId, "work");
+    EXPECT_EQ(matches[2].getDisplayName(), "마법사 길드");
+    EXPECT_EQ(matches[2].mTopicId, "mages guild");
+}
+
+TEST_F(KeywordSearchTest, korean_explicit_links_and_topic_discovery_remain_available)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("은", "silver");
+    search.seed("일", "work");
+
+    const std::string text = "싫은 것일 수도 있지만 @은#과 @일#을 찾는다.";
+    const auto display = search.parseHyperText(text, storage);
+    ASSERT_EQ(display.size(), 2);
+    EXPECT_TRUE(display[0].mExplicit);
+    EXPECT_TRUE(display[1].mExplicit);
+    EXPECT_EQ(display[0].mTopicId, "은");
+    EXPECT_EQ(display[1].mTopicId, "일");
+
+    // Topic discovery deliberately retains permissive overlapping recognition.
+    const auto discovery = search.parseHyperText(text, storage, true);
+    ASSERT_GE(discovery.size(), 4);
+    EXPECT_EQ(discovery[0].mTopicId, "silver");
+    EXPECT_EQ(discovery[1].mTopicId, "work");
+    EXPECT_TRUE(discovery[2].mExplicit);
+    EXPECT_TRUE(discovery[3].mExplicit);
+}
+
+TEST_F(KeywordSearchTest, korean_longest_topic_and_postposition)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("광산", "mine");
+    search.seed("칼데라 에보니 광산", "caldera mine");
+
+    const std::string text = "칼데라 에보니 광산을 방문했다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 1);
+    EXPECT_EQ(matches[0].getDisplayName(), "칼데라 에보니 광산");
+    EXPECT_EQ(matches[0].mTopicId, "caldera mine");
+}
+
+
+TEST_F(KeywordSearchTest, korean_hyphenated_names_are_not_partial_topic_links)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("에이", "ei");
+    search.seed("엘프", "elf");
+    search.seed("하지-에이", "haji ei");
+
+    const std::string text = "하지-에이의 행방과 하이-엘프에 대해 물었다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 1);
+    EXPECT_EQ(matches[0].getDisplayName(), "하지-에이");
+    EXPECT_EQ(matches[0].mTopicId, "haji ei");
+}
+
+TEST_F(KeywordSearchTest, korean_single_syllable_topics_reject_ambiguous_verbs)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("빛", "light");
+
+    const std::string text = "빛나는 밤에 빛을 보았다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 1);
+    EXPECT_EQ(matches[0].getDisplayName(), "빛");
+    EXPECT_EQ(matches[0].mTopicId, "light");
+}
+
+TEST_F(KeywordSearchTest, korean_long_topics_support_common_stacked_particles)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("마법사 길드", "mages guild");
+    search.seed("광산", "mine");
+
+    const std::string text = "마법사 길드에서만 들었다. 광산으로부터 나왔다. 마법사 길드입니다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 3);
+    EXPECT_EQ(matches[0].getDisplayName(), "마법사 길드");
+    EXPECT_EQ(matches[1].getDisplayName(), "광산");
+    EXPECT_EQ(matches[2].getDisplayName(), "마법사 길드");
+}
+
+
+TEST_F(KeywordSearchTest, korean_kr8_real_dialogue_word_collisions)
+{
+    // Real KR8 INFO text contains accidental topic syllables in these words.
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("법", "law");
+    search.seed("용", "dragon");
+    search.seed("술", "alcohol");
+    search.seed("말", "speech");
+    search.seed("마법", "magic");
+
+    const std::string falseLinks =
+        "제국법이 막지 않는 한 통용되지 않는 통치술과 거짓말이라고 했다. 대마법사가 왔다.";
+    EXPECT_TRUE(search.parseHyperText(falseLinks, storage).empty());
+
+    const std::string realLinks = "법을 따르고 용을 보았다. 술을 마셨다. 말로 해결하며 마법을 썼다.";
+    const auto actual = search.parseHyperText(realLinks, storage);
+    ASSERT_EQ(actual.size(), 5);
+    EXPECT_EQ(actual[0].getDisplayName(), "법");
+    EXPECT_EQ(actual[1].getDisplayName(), "용");
+    EXPECT_EQ(actual[2].getDisplayName(), "술");
+    EXPECT_EQ(actual[3].getDisplayName(), "말");
+    EXPECT_EQ(actual[4].getDisplayName(), "마법");
+}
+
+
+TEST_F(KeywordSearchTest, korean_predicative_endings_and_plural_particles_keep_long_topics)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("말", "speech");
+    search.seed("보상", "reward");
+    search.seed("블레이드", "blades");
+    search.seed("블레이드 교관", "blades trainers");
+
+    // These are attested inflection patterns in the KR8 NPC dialogue corpus.
+    const std::string text = "유감스러운 말이군. 여기 보상이오. 블레이드 교관들에 관해 물었다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 3);
+    EXPECT_EQ(matches[0].getDisplayName(), "말");
+    EXPECT_EQ(matches[0].mTopicId, "speech");
+    EXPECT_EQ(matches[1].getDisplayName(), "보상");
+    EXPECT_EQ(matches[1].mTopicId, "reward");
+    EXPECT_EQ(matches[2].getDisplayName(), "블레이드 교관");
+    EXPECT_EQ(matches[2].mTopicId, "blades trainers");
+}

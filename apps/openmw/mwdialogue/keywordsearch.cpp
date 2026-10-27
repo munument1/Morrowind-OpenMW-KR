@@ -94,11 +94,24 @@ namespace
         constexpr std::string_view extendedSuffixes[] = {
             "에서만", "에서부터", "으로부터", "에게만", "에만", "에도",
             "이라고", "이라서", "이다", "입니다", "이었다", "이었던",
-            "이었지만", "이지만", "였고", "였다", "였습니다"
+            "이었지만", "이지만", "였고", "였다", "였습니다",
+            "이군", "이군요", "이오", "이요", "이네", "이네요", "이지",
+            "이지요", "이죠", "이야", "이랍니다", "이라네", "이라오",
+            "인가", "입니까", "입죠", "일세", "이더군", "이더군요",
+            "이었소", "이었네", "이었지", "이었어", "이었습니다"
         };
-        return isKoreanParticle(suffix)
-            || std::find(std::begin(extendedSuffixes), std::end(extendedSuffixes), suffix)
-                != std::end(extendedSuffixes);
+        const auto isEnding = [&](std::string_view ending) {
+            return isKoreanParticle(ending)
+                || std::find(std::begin(extendedSuffixes), std::end(extendedSuffixes), ending)
+                    != std::end(extendedSuffixes);
+        };
+        if (isEnding(suffix))
+            return true;
+
+        // Plural nouns take case particles too: "블레이드 교관들에", "길드원들에게".
+        // Keep the longest noun topic rather than falling back to a short prefix.
+        return suffix.starts_with("들") && suffix.size() > std::string_view("들").size()
+            && isEnding(suffix.substr(std::string_view("들").size()));
     }
 }
 

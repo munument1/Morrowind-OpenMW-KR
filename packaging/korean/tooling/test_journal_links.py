@@ -33,4 +33,17 @@ with tempfile.TemporaryDirectory(prefix='openmw-journal-test-') as tmp:
         only_ore=inspect(runner,mod,entries,[ore],True)
         assert mine not in only_ore['mine']['targets']
         assert only_ore['explicit']['targets']==[]
-print('PASS: canonical names, legacy saved text, reviewed aliases, overlap resolution, unknown-topic gating, UTF-8 BOM, LF and CRLF')
+        # The actual runtime parser must keep legitimate one-syllable topics without
+        # coloring syllables embedded in unrelated Korean words.
+        one_syllable = [
+            ('noise', '싫은 것일 수도 있다. 노예들은 모른다. 일요일과 은근한 표정.'),
+            ('valid', '은을 찾고 할 일이 있다.'),
+            ('explicit', '@은#과 @일#을 찾는다.'),
+        ]
+        highlighted = inspect(runner, mod, one_syllable, ['은', '일'], True)
+        assert highlighted['noise']['targets'] == []
+        assert highlighted['valid']['targets'] == ['은', '일']
+        assert highlighted['explicit']['targets'] == ['은', '일']
+        discovered = inspect(runner, mod, one_syllable, ['은', '일'], False)
+        assert discovered['noise']['targets'] == []
+print('PASS: Korean topic boundaries, single-syllable topics, explicit links, canonical names, legacy saved text, reviewed aliases, overlap resolution, unknown-topic gating, UTF-8 BOM, LF and CRLF')

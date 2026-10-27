@@ -29,8 +29,28 @@ jobs:
             --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip' \
             --dir "$RUNNER_TEMP/kr8"
           unzip -tq "$RUNNER_TEMP/kr8/Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip"
-          unzip -q "$RUNNER_TEMP/kr8/Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip" \
-            -d "$RUNNER_TEMP/kr8/unpacked"
+          # KR8 carries Windows-style backslashes in ZIP member names.
+          # Extract only the necessary translation files and normalize the paths.
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import os
+          source = Path(os.environ['RUNNER_TEMP']) / 'kr8' / 'Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip'
+          dest = Path(os.environ['RUNNER_TEMP']) / 'kr8' / 'unpacked'
+          dest.mkdir(parents=True, exist_ok=True)
+          extensions = {'.esp', '.mrk', '.jrn', '.top'}
+          copied = []
+          with ZipFile(source) as z:
+              for info in z.infolist():
+                  name = info.filename.replace('\\', '/')
+                  if Path(name).name.startswith('Morrowind_Korean_ReTranslation.') and Path(name).suffix.lower() in extensions:
+                      target = dest / Path(name).name
+                      target.write_bytes(z.read(info))
+                      copied.append((str(target), target.stat().st_size))
+          print('KR8_EXTRACTED_FILES=', copied)
+          if not any(x[0].endswith('.esp') for x in copied):
+              raise SystemExit('KR8 did not contain the expected ESP')
+          PY
 
       - name: Audit all translated dialogue and journal text
         run: |

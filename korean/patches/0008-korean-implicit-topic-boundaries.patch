@@ -1,0 +1,92 @@
+diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/keywordsearch.cpp
+--- a/apps/openmw/mwdialogue/keywordsearch.cpp
++++ b/apps/openmw/mwdialogue/keywordsearch.cpp
+@@ -1,6 +1,7 @@
+ #include "keywordsearch.hpp"
+ 
+ #include <algorithm>
++#include <iterator>
+ #include <stdexcept>
+ 
+ #include <components/misc/strings/algorithm.hpp>
+@@ -16,6 +17,59 @@
+             return {};
+         return phrase.substr(0, lastNonAsteriskPos + 1);
+     }
++
++    // Korean Hangul syllables occupy three bytes in UTF-8.
++    bool isHangulSyllable(std::string_view text)
++    {
++        if (text.size() < 3)
++            return false;
++        const auto a = static_cast<unsigned char>(text[0]);
++        const auto b = static_cast<unsigned char>(text[1]);
++        const auto c = static_cast<unsigned char>(text[2]);
++        if ((a & 0xf0) != 0xe0 || (b & 0xc0) != 0x80 || (c & 0xc0) != 0x80)
++            return false;
++        const char32_t codepoint = ((a & 0x0f) << 12) | ((b & 0x3f) << 6) | (c & 0x3f);
++        return codepoint >= 0xac00 && codepoint <= 0xd7a3;
++    }
++
++    // Permit Korean inflections without turning arbitrary word prefixes into hyperlinks.
++    // Ambiguous inflections can still be linked explicitly with @...#.
++    bool isKoreanParticle(std::string_view ending)
++    {
++        constexpr std::string_view endings[] = {
++            "은", "는", "이", "가", "을", "를", "의", "에", "에서", "에게", "께", "께서",
++            "한테", "한테서", "로", "으로", "와", "과", "랑", "이랑", "하고", "도", "만",
++            "까지", "부터", "조차", "마저", "처럼", "같이", "보다", "밖에", "라도",
++            "이라도", "나", "이나", "든", "이든", "든지", "이든지", "라고", "이라고",
++            "이라", "이라면", "에서부터", "에게서", "에는", "에서는", "에게는",
++            "에게도", "으로는", "로는", "들의", "들은", "들을", "들이", "들과", "들"
++        };
++        return std::find(std::begin(endings), std::end(endings), ending) != std::end(endings);
++    }
++
++    bool hasKoreanDisplayBoundary(std::string_view keyword, std::string_view before, std::string_view after)
++    {
++        if (!isHangulSyllable(keyword))
++            return true;
++
++        // "싫은" must not match the independent topic "은".
++        if (before.size() >= 3 && isHangulSyllable(before.substr(before.size() - 3)))
++            return false;
++
++        // Only a trailing Hangul syllable needs Korean suffix handling.
++        if (!isHangulSyllable(keyword.substr(keyword.size() - 3)))
++            return true;
++
++        std::size_t suffixBytes = 0;
++        while (suffixBytes + 3 <= after.size() && isHangulSyllable(after.substr(suffixBytes, 3)))
++            suffixBytes += 3;
++
++        if (suffixBytes == 0)
++            return true;
++
++        // "일을" is a noun with a particle; "일요일" is not the topic "일".
++        return isKoreanParticle(after.substr(0, suffixBytes));
++    }
+ }
+ 
+ namespace MWDialogue
+@@ -59,7 +113,10 @@
+                 {
+                     std::string_view remainingText(it + 1, end);
+                     std::string_view remainingKeyword = std::string_view(current->mKeyword).substr(it + 1 - i);
++                    if (Misc::StringUtils::ciStartsWith(remainingText, remainingKeyword)
++                        && (overlaps
++                            || hasKoreanDisplayBoundary(current->mKeyword, std::string_view(beg, i),
++                                std::string_view(i + current->mKeyword.size(), end))))
+-                    if (Misc::StringUtils::ciStartsWith(remainingText, remainingKeyword))
+                         matches.emplace_back(i, i + current->mKeyword.size(), current->mTopicId);
+                 }
+             }
+@@ -159,7 +216,7 @@
+             if (posBegin != std::string::npos && posEnd != std::string::npos)
+             {
+                 if (posBegin != iterationPos)
++                    highlightKeywords(text.begin() + iterationPos, text.begin() + posBegin, matches, overlaps);
+-                    highlightKeywords(text.begin() + iterationPos, text.begin() + posBegin, matches);
+ 
+                 Match token;
+                 token.mExplicit = true;

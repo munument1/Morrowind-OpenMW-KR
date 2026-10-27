@@ -370,3 +370,63 @@ TEST_F(KeywordSearchTest, parse_hypertext_mark_file_overrides_keyword)
     EXPECT_EQ(matches[1].getDisplayName(), "assassinated");
     EXPECT_EQ(matches[1].mTopicId, "убит");
 }
+
+
+TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("은", "silver");
+    search.seed("일", "work");
+    search.seed("마법사 길드", "mages guild");
+
+    const std::string text = "싫은 것일 수도 있다. 노예들은 모른다. 일요일과 은근한 표정. "
+                             "은을 찾고 할 일이 있다. 마법사 길드에서 만났다.";
+    const auto matches = search.parseHyperText(text, storage);
+
+    ASSERT_EQ(matches.size(), 3);
+    EXPECT_EQ(matches[0].getDisplayName(), "은");
+    EXPECT_EQ(matches[0].mTopicId, "silver");
+    EXPECT_EQ(matches[1].getDisplayName(), "일");
+    EXPECT_EQ(matches[1].mTopicId, "work");
+    EXPECT_EQ(matches[2].getDisplayName(), "마법사 길드");
+    EXPECT_EQ(matches[2].mTopicId, "mages guild");
+}
+
+TEST_F(KeywordSearchTest, korean_explicit_links_and_topic_discovery_remain_available)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("은", "silver");
+    search.seed("일", "work");
+
+    const std::string text = "싫은 것일 수도 있지만 @은#과 @일#을 찾는다.";
+    const auto display = search.parseHyperText(text, storage);
+    ASSERT_EQ(display.size(), 2);
+    EXPECT_TRUE(display[0].mExplicit);
+    EXPECT_TRUE(display[1].mExplicit);
+    EXPECT_EQ(display[0].mTopicId, "은");
+    EXPECT_EQ(display[1].mTopicId, "일");
+
+    // Topic discovery deliberately retains permissive overlapping recognition.
+    const auto discovery = search.parseHyperText(text, storage, true);
+    ASSERT_GE(discovery.size(), 4);
+    EXPECT_EQ(discovery[0].mTopicId, "silver");
+    EXPECT_EQ(discovery[1].mTopicId, "work");
+    EXPECT_TRUE(discovery[2].mExplicit);
+    EXPECT_TRUE(discovery[3].mExplicit);
+}
+
+TEST_F(KeywordSearchTest, korean_longest_topic_and_postposition)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("광산", "mine");
+    search.seed("칼데라 에보니 광산", "caldera mine");
+
+    const std::string text = "칼데라 에보니 광산을 방문했다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 1);
+    EXPECT_EQ(matches[0].getDisplayName(), "칼데라 에보니 광산");
+    EXPECT_EQ(matches[0].mTopicId, "caldera mine");
+}

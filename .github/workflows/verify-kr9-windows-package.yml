@@ -33,7 +33,11 @@ jobs:
           import hashlib
           from pathlib import Path
           from zipfile import ZipFile
-          from packaging.korean.tooling.package_kr9_windows import build
+          from importlib.util import spec_from_file_location, module_from_spec
+          spec=spec_from_file_location('kr9_windows_package', 'packaging/korean/tooling/package_kr9_windows.py')
+          module=module_from_spec(spec)
+          spec.loader.exec_module(module)
+          build=module.build
           source=Path('input/Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip')
           sha=hashlib.sha256(source.read_bytes()).hexdigest()
           with ZipFile(source) as z:

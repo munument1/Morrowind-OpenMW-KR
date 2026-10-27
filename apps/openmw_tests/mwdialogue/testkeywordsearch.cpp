@@ -500,3 +500,25 @@ TEST_F(KeywordSearchTest, korean_kr8_real_dialogue_word_collisions)
     EXPECT_EQ(actual[3].getDisplayName(), "말");
     EXPECT_EQ(actual[4].getDisplayName(), "마법");
 }
+
+
+TEST_F(KeywordSearchTest, korean_predicative_endings_and_plural_particles_keep_long_topics)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("말", "speech");
+    search.seed("보상", "reward");
+    search.seed("블레이드", "blades");
+    search.seed("블레이드 교관", "blades trainers");
+
+    // These are attested inflection patterns in the KR8 NPC dialogue corpus.
+    const std::string text = "유감스러운 말이군. 여기 보상이오. 블레이드 교관들에 관해 물었다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 3);
+    EXPECT_EQ(matches[0].getDisplayName(), "말");
+    EXPECT_EQ(matches[0].mTopicId, "speech");
+    EXPECT_EQ(matches[1].getDisplayName(), "보상");
+    EXPECT_EQ(matches[1].mTopicId, "reward");
+    EXPECT_EQ(matches[2].getDisplayName(), "블레이드 교관");
+    EXPECT_EQ(matches[2].mTopicId, "blades trainers");
+}

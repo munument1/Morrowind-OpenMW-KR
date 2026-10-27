@@ -1,6 +1,8 @@
-# KR3 Windows installer payload
+# KR8 Windows installer payload
 
-이 디렉터리는 OpenMW 0.51.0 Korean Support KR3의 Windows 설치기 구성 파일을 관리합니다.
+이 디렉터리는 OpenMW 0.51.0 Korean Support KR8의 Windows 설치기 구성 파일을 관리합니다.
+
+최신 배포 ZIP은 [Windows KR8 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr8)에서 받습니다. KR8은 KR7의 `.cel` 실내 위치명 보정판이며, PR #14의 미배포 하이퍼링크 수정은 포함되지 않습니다.
 
 ## 설치 흐름
 
@@ -12,10 +14,10 @@
 2. 기존 `openmw.exe`를 백업하고 한국어 패치가 적용된 `payload/openmw.exe`를 설치합니다.
 3. 한국어 폰트 파일을 `resources/vfs/fonts`에 백업 후 설치합니다.
 4. 기존 한국어 모드 폴더를 백업하고 `payload/mods/Morrowind_Korean_ReTranslation`을 설치합니다.
-5. ESP/CEL/MRK/TOP, `l10n`, 영상 SRT 10개를 검증합니다.
+5. ESP/CEL/MRK/TOP/JRN, `l10n`, 영상 SRT 10개를 검증합니다.
 6. `install-korean-config.ps1`로 사용자 `openmw.cfg`를 백업하고 갱신합니다.
 
-KR3 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
+KR8 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
 
 ## openmw.cfg 관리
 
@@ -69,6 +71,7 @@ payload/mods/Morrowind_Korean_ReTranslation/
   Morrowind_Korean_ReTranslation.cel
   Morrowind_Korean_ReTranslation.mrk
   Morrowind_Korean_ReTranslation.top
+  Morrowind_Korean_ReTranslation.jrn
   l10n/...
   video/*.srt
 ```

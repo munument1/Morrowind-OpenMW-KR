@@ -2,13 +2,20 @@ name: Update Windows README after verified KR9 publication
 on:
   release:
     types: [published]
+  # Releases created with GITHUB_TOKEN do not emit new release workflows.
+  # workflow_run is emitted after the verified Windows KR9 build workflow.
+  workflow_run:
+    workflows: [Build and publish verified Windows KR9]
+    types: [completed]
 
 permissions:
   contents: write
 
 jobs:
   update-docs:
-    if: github.event.release.tag_name == 'openmw-0.51.0-kr9'
+    if: >-
+      (github.event_name == 'release' && github.event.release.tag_name == 'openmw-0.51.0-kr9') ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4

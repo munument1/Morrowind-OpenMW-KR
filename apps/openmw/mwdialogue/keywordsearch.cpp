@@ -52,9 +52,17 @@ namespace
         if (!isHangulSyllable(keyword))
             return true;
 
-        // "싫은" must not match the independent topic "은".
+        // "싫은" must not match "은", nor may a compound name like
+        // "하지-에이" link its second half to the independent topic "에이".
         if (before.size() >= 3 && isHangulSyllable(before.substr(before.size() - 3)))
             return false;
+        constexpr std::string_view joiners[] = { "-", "·", "‐", "‑", "–", "—" };
+        for (std::string_view joiner : joiners)
+        {
+            if (before.size() >= joiner.size() + 3 && before.ends_with(joiner)
+                && isHangulSyllable(before.substr(before.size() - joiner.size() - 3, 3)))
+                return false;
+        }
 
         // Only a trailing Hangul syllable needs Korean suffix handling.
         if (!isHangulSyllable(keyword.substr(keyword.size() - 3)))
@@ -65,10 +73,32 @@ namespace
             suffixBytes += 3;
 
         if (suffixBytes == 0)
+        {
+            // Keep prefixes from being linked inside hyphenated Korean compounds.
+            for (std::string_view joiner : joiners)
+            {
+                if (after.starts_with(joiner) && after.size() >= joiner.size() + 3
+                    && isHangulSyllable(after.substr(joiner.size(), 3)))
+                    return false;
+            }
             return true;
+        }
 
-        // "일을" is a noun with a particle; "일요일" is not the topic "일".
-        return isKoreanParticle(after.substr(0, suffixBytes));
+        const std::string_view suffix = after.substr(0, suffixBytes);
+        // "빛나" is a verb, not the independent topic "빛" + a particle.
+        // For one-syllable topics, bare "나" is especially ambiguous.
+        if (keyword.size() == 3 && suffix == "나")
+            return false;
+
+        // Common attached particles and noun-predicate endings.
+        constexpr std::string_view extendedSuffixes[] = {
+            "에서만", "에서부터", "으로부터", "에게만", "에만", "에도",
+            "이라고", "이라서", "이다", "입니다", "이었다", "이었던",
+            "이었지만", "이지만", "였고", "였다", "였습니다"
+        };
+        return isKoreanParticle(suffix)
+            || std::find(std::begin(extendedSuffixes), std::end(extendedSuffixes), suffix)
+                != std::end(extendedSuffixes);
     }
 }
 

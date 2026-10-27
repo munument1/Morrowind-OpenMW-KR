@@ -430,3 +430,47 @@ TEST_F(KeywordSearchTest, korean_longest_topic_and_postposition)
     EXPECT_EQ(matches[0].getDisplayName(), "칼데라 에보니 광산");
     EXPECT_EQ(matches[0].mTopicId, "caldera mine");
 }
+
+
+TEST_F(KeywordSearchTest, korean_hyphenated_names_are_not_partial_topic_links)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("에이", "ei");
+    search.seed("엘프", "elf");
+    search.seed("하지-에이", "haji ei");
+
+    const std::string text = "하지-에이의 행방과 하이-엘프에 대해 물었다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 1);
+    EXPECT_EQ(matches[0].getDisplayName(), "하지-에이");
+    EXPECT_EQ(matches[0].mTopicId, "haji ei");
+}
+
+TEST_F(KeywordSearchTest, korean_single_syllable_topics_reject_ambiguous_verbs)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("빛", "light");
+
+    const std::string text = "빛나는 밤에 빛을 보았다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 1);
+    EXPECT_EQ(matches[0].getDisplayName(), "빛");
+    EXPECT_EQ(matches[0].mTopicId, "light");
+}
+
+TEST_F(KeywordSearchTest, korean_long_topics_support_common_stacked_particles)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("마법사 길드", "mages guild");
+    search.seed("광산", "mine");
+
+    const std::string text = "마법사 길드에서만 들었다. 광산으로부터 나왔다. 마법사 길드입니다.";
+    const auto matches = search.parseHyperText(text, storage);
+    ASSERT_EQ(matches.size(), 3);
+    EXPECT_EQ(matches[0].getDisplayName(), "마법사 길드");
+    EXPECT_EQ(matches[1].getDisplayName(), "광산");
+    EXPECT_EQ(matches[2].getDisplayName(), "마법사 길드");
+}

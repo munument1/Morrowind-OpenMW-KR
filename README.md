@@ -6,16 +6,16 @@ OpenMW 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 플�
 
 ## 현재 배포판
 
-**OpenMW 0.51.0 Korean Support KR8**
+**OpenMW 0.51.0 Korean Support KR9**
 
-- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr8
-- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip`
+- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr9
+- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR9-Full.zip`
 - 공식 OpenMW 0.51.0 Windows 설치본 위에 적용하는 compact 패키지
 - 전역 `encoding=utf8` 설정 불필요
 
-KR8은 KR7에서 공식 추가 콘텐츠 *Area Effect Arrows*의 실내 CELL 이름(`Vivec, Aradraen: Fletcher` → `비벡, 아라드라엔: 화살 제작자`)을 수정한 데이터 업데이트입니다. KR7 대비 `.cel` 외 파일은 변경되지 않았습니다.
+KR9는 KR8 번역 데이터를 그대로 유지하면서 NPC 대화와 저널의 한국어 단어 내부 오인식 하이퍼링크를 수정한 엔진 업데이트입니다.
 
-## KR8 구성
+## KR9 구성
 
 - 한국어 런타임 패치가 적용된 `openmw.exe`
 - 한국어 번역 데이터 `ESP / CEL / MRK / TOP / JRN / l10n`
@@ -29,7 +29,7 @@ KR8은 KR7에서 공식 추가 콘텐츠 *Area Effect Arrows*의 실내 CELL 이
 
 1. 공식 **OpenMW 0.51.0 Windows x64**를 설치합니다.
 2. OpenMW를 한 번 실행해 사용자 설정 파일이 생성되게 합니다.
-3. KR8 ZIP을 압축 해제합니다.
+3. KR9 ZIP을 압축 해제합니다.
 4. `Install-Korean.bat`을 실행합니다.
 5. OpenMW 설치 폴더를 자동으로 찾지 못하면 `openmw.exe`가 있는 폴더를 직접 지정합니다.
 
@@ -46,6 +46,7 @@ KR8은 KR7에서 공식 추가 콘텐츠 *Area Effect Arrows*의 실내 CELL 이
 5. `0005-video-subtitles.patch` — BIK 영상과 같은 이름의 외부 UTF-8 SRT 자막 지원
 6. `0006-journal-topic-keywords.patch` — 저널의 정식 주제명과 `.jrn` 별칭 검색 지원
 7. `0007-korean-journal-index.patch` — 한국어 저널 초성 색인 지원
+8. `0008-korean-implicit-topic-boundaries.patch` — 한국어 대화·저널 링크의 잘못된 단어 내부 일치 방지
 
 ## 영상 자막
 
@@ -81,7 +82,7 @@ video/mw_intro.srt
 - Windows CI: `.github/workflows/windows.yml`
 - 한국어 패치/패키지 검증: `.github/workflows/korean-*.yml`
 
-KR8 compact 배포판은 공식 OpenMW 0.51.0에 이미 포함된 DLL과 도구를 중복 배포하지 않고, 한국어 지원에 필요한 파일만 설치합니다.
+KR9 compact 배포판은 공식 OpenMW 0.51.0에 이미 포함된 DLL과 도구를 중복 배포하지 않고, 한국어 지원에 필요한 파일만 설치합니다.
 
 ## 라이선스
 

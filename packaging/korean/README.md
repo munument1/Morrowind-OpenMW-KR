@@ -1,8 +1,8 @@
-# KR8 Windows installer payload
+# KR9 Windows installer payload
 
-이 디렉터리는 OpenMW 0.51.0 Korean Support KR8의 Windows 설치기 구성 파일을 관리합니다.
+이 디렉터리는 OpenMW 0.51.0 Korean Support KR9의 Windows 설치기 구성 파일을 관리합니다.
 
-최신 배포 ZIP은 [Windows KR8 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr8)에서 받습니다. KR8은 KR7의 `.cel` 실내 위치명 보정판입니다.
+최신 배포 ZIP은 [Windows KR9 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr9)에서 받습니다. KR9는 KR8의 번역 데이터를 유지하면서 한국어 대화·저널 하이퍼링크를 수정한 엔진 업데이트입니다.
 
 ## 설치 흐름
 
@@ -17,7 +17,7 @@
 5. ESP/CEL/MRK/TOP/JRN, `l10n`, 영상 SRT 10개를 검증합니다.
 6. `install-korean-config.ps1`로 사용자 `openmw.cfg`를 백업하고 갱신합니다.
 
-KR8 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
+KR9 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
 
 ## openmw.cfg 관리
 

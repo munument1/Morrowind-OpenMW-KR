@@ -55,4 +55,14 @@ with tempfile.TemporaryDirectory(prefix='openmw-journal-test-') as tmp:
         assert compound_results['hyphen']['targets'] == []
         assert compound_results['verb']['targets'] == ['빛']
         assert compound_results['particles']['targets'] == ['마법사 길드', '광산']
+        # KR8 attested inflected nouns must retain their full topic links.
+        inflected = [
+            ('copulas', '유감스러운 말이군. 여기 보상이오.'),
+            ('plural', '블레이드 교관들에 관해 물었다.'),
+        ]
+        inflected_results = inspect(runner, mod, inflected,
+                                   ['말', '보상', '블레이드', '블레이드 교관'], True)
+        assert inflected_results['copulas']['targets'] == ['말', '보상']
+        assert inflected_results['plural']['targets'] == ['블레이드 교관']
+
 print('PASS: Korean topic boundaries, single-syllable topics, explicit links, canonical names, legacy saved text, reviewed aliases, overlap resolution, unknown-topic gating, UTF-8 BOM, LF and CRLF')

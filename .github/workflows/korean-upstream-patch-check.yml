@@ -39,7 +39,8 @@ jobs:
             "$GITHUB_WORKSPACE/korean/patches/0001-cjk-topic-discovery.patch" \
             "$GITHUB_WORKSPACE/korean/patches/0002-utf8-bom-sidecars.patch" \
             "$GITHUB_WORKSPACE/korean/patches/0003-mixed-utf8-esm-reader.patch" \
-            "$GITHUB_WORKSPACE/korean/patches/0004-legacy-korean-journal-recovery.patch"; do
+            "$GITHUB_WORKSPACE/korean/patches/0004-legacy-korean-journal-recovery.patch" \
+            "$GITHUB_WORKSPACE/korean/patches/0008-korean-implicit-topic-boundaries.patch"; do
             echo "Checking $(basename "$patch")"
             git -C "$target" apply --check "$patch"
             git -C "$target" apply "$patch"
@@ -52,6 +53,7 @@ jobs:
           grep -F 'parseHyperText(text, mTranslationDataStorage, true)' "$target/apps/openmw/mwdialogue/dialoguemanagerimp.cpp"
           grep -F 'bool overlaps = false' "$target/apps/openmw/mwdialogue/keywordsearch.hpp"
           grep -F 'static_cast<unsigned char>(*i) < 0xe0' "$target/apps/openmw/mwdialogue/keywordsearch.cpp"
+          grep -F 'hasKoreanDisplayBoundary(current->mKeyword' "$target/apps/openmw/mwdialogue/keywordsearch.cpp"
           grep -F 'std::ios::binary' "$target/components/translation/translation.cpp"
           grep -F 'utf8BomMode ? std::string_view(line)' "$target/components/translation/translation.cpp"
           grep -F 'bool isValidUtf8WithHangul(std::string_view input)' "$target/components/esm3/esmreader.cpp"

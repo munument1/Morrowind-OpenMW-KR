@@ -84,9 +84,39 @@ jobs:
           print('TOP_COLLISIONS_END')
           PY
 
+      - name: Compare actual baseline and proposed OpenMW hyperlinks
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin master
+          git show origin/master:apps/openmw/mwdialogue/keywordsearch.cpp \
+            > "$RUNNER_TEMP/keywordsearch-baseline.cpp"
+          build_parser() {
+            local parser="$1"
+            local destination="$2"
+            g++ -std=c++20 -O2 -I. -Iapps/openmw/mwdialogue \
+              packaging/korean/tooling/verify-journal-links.cpp \
+              "$parser" \
+              components/translation/translation.cpp \
+              components/files/collections.cpp \
+              components/files/multidircollection.cpp \
+              components/files/conversion.cpp \
+              components/toutf8/toutf8.cpp \
+              components/debug/debuglog.cpp \
+              -o "$destination"
+          }
+          build_parser "$RUNNER_TEMP/keywordsearch-baseline.cpp" "$RUNNER_TEMP/keywordsearch-baseline"
+          build_parser apps/openmw/mwdialogue/keywordsearch.cpp "$RUNNER_TEMP/keywordsearch-proposed"
+          python3 packaging/korean/tooling/compare_korean_topic_runtime.py \
+            --baseline "$RUNNER_TEMP/keywordsearch-baseline" \
+            --proposed "$RUNNER_TEMP/keywordsearch-proposed" \
+            --mod "$RUNNER_TEMP/kr8/unpacked" \
+            --output "$GITHUB_WORKSPACE/kr8-korean-runtime-comparison.json"
+
       - name: Upload full corpus collision report
         uses: actions/upload-artifact@v4
         with:
           name: kr8-korean-topic-collision-audit
-          path: kr8-korean-topic-audit.json
+          path: |
+            kr8-korean-topic-audit.json
+            kr8-korean-runtime-comparison.json
           if-no-files-found: error

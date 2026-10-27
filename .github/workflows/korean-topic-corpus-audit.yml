@@ -1,0 +1,72 @@
+name: Korean KR8 topic corpus audit
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'packaging/korean/tooling/audit_topic_collisions.py'
+      - '.github/workflows/korean-topic-corpus-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-kr8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Korean parser audit
+        uses: actions/checkout@v4
+
+      - name: Download original KR8 release data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/kr8"
+          gh release download openmw-0.51.0-kr8 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip' \
+            --dir "$RUNNER_TEMP/kr8"
+          unzip -tq "$RUNNER_TEMP/kr8/Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip"
+          unzip -q "$RUNNER_TEMP/kr8/Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip" \
+            -d "$RUNNER_TEMP/kr8/unpacked"
+
+      - name: Audit all translated dialogue and journal text
+        run: |
+          set -euo pipefail
+          esp="$(find "$RUNNER_TEMP/kr8/unpacked" -type f -name 'Morrowind_Korean_ReTranslation.esp' -print -quit)"
+          test -n "$esp" || { echo "::error::KR8 translation ESP is missing from release ZIP"; exit 1; }
+          echo "Auditing: $esp"
+          python3 packaging/korean/tooling/audit_topic_collisions.py \
+            --esp "$esp" --output "$GITHUB_WORKSPACE/kr8-korean-topic-audit.json"
+          python3 - <<'PY'
+          import json
+          import collections
+          from pathlib import Path
+          r=json.loads(Path('kr8-korean-topic-audit.json').read_text(encoding='utf-8'))
+          print('CORPUS_TOTALS='+json.dumps({
+              'topics_loaded':r['topics_loaded'],
+              'infos_scanned':r['infos_scanned'],
+              'infos_by_section':r['infos_by_section'],
+              'candidate_occurrences':r['candidate_occurrences'],
+              'candidate_occurrences_by_section':r['candidate_occurrences_by_section'],
+              'counts_by_category':r['counts_by_category'],
+          },ensure_ascii=False))
+          print('TOP_COLLISIONS_BEGIN')
+          for item in r['candidates'][:60]:
+              example=item['samples'][0] if item['samples'] else {}
+              print(json.dumps({
+                  'section':item['section'], 'keyword':item['keyword'],
+                  'category':item['category'], 'occurrences':item['occurrences'],
+                  'example_info':example.get('info',''),
+                  'snippet':example.get('snippet','')},ensure_ascii=False))
+          print('TOP_COLLISIONS_END')
+          PY
+
+      - name: Upload full corpus collision report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kr8-korean-topic-collision-audit
+          path: kr8-korean-topic-audit.json
+          if-no-files-found: error

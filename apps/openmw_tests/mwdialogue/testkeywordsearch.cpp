@@ -474,3 +474,29 @@ TEST_F(KeywordSearchTest, korean_long_topics_support_common_stacked_particles)
     EXPECT_EQ(matches[1].getDisplayName(), "광산");
     EXPECT_EQ(matches[2].getDisplayName(), "마법사 길드");
 }
+
+
+TEST_F(KeywordSearchTest, korean_kr8_real_dialogue_word_collisions)
+{
+    // Real KR8 INFO text contains accidental topic syllables in these words.
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("법", "law");
+    search.seed("용", "dragon");
+    search.seed("술", "alcohol");
+    search.seed("말", "speech");
+    search.seed("마법", "magic");
+
+    const std::string falseLinks =
+        "제국법이 막지 않는 한 통용되지 않는 통치술과 거짓말이라고 했다. 대마법사가 왔다.";
+    EXPECT_TRUE(search.parseHyperText(falseLinks, storage).empty());
+
+    const std::string realLinks = "법을 따르고 용을 보았다. 술을 마셨다. 말로 해결하며 마법을 썼다.";
+    const auto actual = search.parseHyperText(realLinks, storage);
+    ASSERT_EQ(actual.size(), 5);
+    EXPECT_EQ(actual[0].getDisplayName(), "법");
+    EXPECT_EQ(actual[1].getDisplayName(), "용");
+    EXPECT_EQ(actual[2].getDisplayName(), "술");
+    EXPECT_EQ(actual[3].getDisplayName(), "말");
+    EXPECT_EQ(actual[4].getDisplayName(), "마법");
+}

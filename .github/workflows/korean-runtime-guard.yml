@@ -100,6 +100,7 @@ jobs:
             components/debug/debuglog.cpp \
             -o /tmp/verify-journal-links
           python3 packaging/korean/tooling/test_journal_links.py /tmp/verify-journal-links
+          python3 packaging/korean/tooling/audit_topic_collisions.py --self-test
 
       - name: Verify Korean journal index groups
         run: |

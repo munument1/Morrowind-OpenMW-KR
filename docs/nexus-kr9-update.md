@@ -1,4 +1,22 @@
-# Nexus Mods #60496 — KR9 갱신 문안
+# Nexus Mods #60496 — KR9 API 자동 업로드
+
+## 자동 업로드 준비 완료
+
+- Nexus 대상: https://www.nexusmods.com/morrowind/mods/60496 (현재 공개 파일은 KR5로 확인됨; KR9 게시 여부는 공개 페이지에서 재확인)
+- [GitHub Actions: Publish verified Windows KR9 on existing Nexus mod](https://github.com/munument1/Morrowind-OpenMW-KR/actions/workflows/publish-windows-kr9-nexus.yml)
+- `Nexus-Mods/upload-action`의 **공식 Nexus Mods v3 Upload API**를 사용합니다. 실제 GitHub Windows KR9 ZIP을 다운로드하여 SHA-256과 ZIP 무결성을 확인한 다음, 기존 넥서스 파일의 새 버전으로 올립니다.
+- 이 워크플로는 현재 **구성만 완료**된 상태이며, Nexus Mods에 업로드되었다고 주장하면 안 됩니다.
+
+### 계정 소유자가 한 번만 설정
+
+1. GitHub 저장소 `munument1/Morrowind-OpenMW-KR`의 **Settings → Secrets and variables → Actions → New repository secret**에 이름 `NEXUSMODS_API_KEY`로 넥서스 계정의 API 키를 보관합니다. **API 키를 README, PR, 채팅에 붙이지 않습니다.**
+2. 넥서스 모드 `60496`의 **Files → 기존 메인 파일 → API Info**에서 **file ID**를 확인합니다. `60496`은 모드 페이지 ID이지 파일 ID가 아닙니다.
+3. 위 Actions 워크플로의 **Run workflow (master)**를 선택하고 `nexus_file_id`에 정확한 기존 파일 ID를 입력합니다. 성공하면 파일 버전은 `0.51.0-KR9`가 됩니다.
+4. 공개 넥서스 Files 탭에서 KR9 ZIP·새 버전이 보이는지 확인합니다. 전체 모드 소개 글은 별도로 수정이 필요할 수 있으며 아래 문안을 활용할 수 있습니다.
+
+---
+
+
 
 Nexus Mods 등록 페이지: https://www.nexusmods.com/morrowind/mods/60496
 
@@ -41,11 +59,8 @@ Android KR9는 기존 앱과 저장 공간을 공유하지 않습니다. 원본 
 - **KR8**: Official Area Effect Arrows / Aradraen interior CELL translation correction.
 - **Older versions**: See GitHub Releases for details.
 
-## Nexus 실제 게시 작업
+## Nexus 게시 확인
 
-1. Nexus Mods 계정으로 자신의 모드 페이지 `60496`를 관리자로 엽니다.
-2. Files에 공식 Windows KR9 ZIP을 새 파일로 등록하고 버전을 `0.51.0-KR9`로 지정합니다.
-3. Description/Changelog를 위 문안으로 갱신합니다.
-4. 실제 게시 후, 페이지의 공개 파일명과 파일 버전·링크를 다시 확인합니다.
+GitHub Actions가 성공하면 넥서스 Files 탭의 메인 파일이 KR9인지 확인하세요. 이 자동화는 **파일 업로드와 모드 버전 갱신**을 수행하며, 전체 소개 글 전체를 덮어쓴다고 보장하지 않습니다.
 
-Nexus Mods에 직접 로그인해 수정·파일 업로드를 수행하는 연결은 현재 없습니다. GitHub에서 README나 모드 파일을 수정하는 것만으로 Nexus Mods 등록 파일은 자동으로 바뀌지 않습니다.
+공개 사이트의 소개·스크린샷을 편집하는 별도 계정 권한/기능이 필요한 경우, 파일 갱신과 구분해 처리합니다.

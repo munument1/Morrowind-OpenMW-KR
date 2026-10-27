@@ -15,8 +15,6 @@ OpenMW 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 플�
 
 KR8은 KR7에서 공식 추가 콘텐츠 *Area Effect Arrows*의 실내 CELL 이름(`Vivec, Aradraen: Fletcher` → `비벡, 아라드라엔: 화살 제작자`)을 수정한 데이터 업데이트입니다. KR7 대비 `.cel` 외 파일은 변경되지 않았습니다.
 
-> **참고:** 대화·저널의 한국어 단어 내부 오인식 하이퍼링크 수정은 [PR #14](https://github.com/munument1/Morrowind-OpenMW-KR/pull/14)에서 검토 중이며, 현재 배포된 KR8 ZIP에는 포함되지 않았습니다.
-
 ## KR8 구성
 
 - 한국어 런타임 패치가 적용된 `openmw.exe`

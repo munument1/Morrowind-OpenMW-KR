@@ -32,6 +32,10 @@ on:
         description: Apply the Korean runtime patchset and Korean font/config assets before building
         default: false
         type: boolean
+      store_runtime_executable:
+        description: Upload built openmw.exe for an independently verified Korean release bundle
+        default: false
+        type: boolean
 
 jobs:
   Windows:
@@ -176,7 +180,7 @@ jobs:
       run: cmake --build ${{ github.workspace }}/build
 
     - name: Store Korean runtime executable
-      if: ${{ inputs.korean_overlay }}
+      if: ${{ inputs.korean_overlay || inputs.store_runtime_executable }}
       uses: actions/upload-artifact@v6
       with:
         name: korean-runtime-executable-${{ github.sha }}

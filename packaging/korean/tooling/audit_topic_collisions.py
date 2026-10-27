@@ -51,9 +51,12 @@ def load_esp(path):
             kind = data.get(b'DATA', b'\xff')[0]
             if kind == 0 and b'NAME' in data:
                 topics.add(decode(data[b'NAME']))
-        elif tag == b'INFO' and kind in (0, 4) and b'NAME' in data:
+        elif tag == b'INFO' and kind in (0, 2, 3, 4) and b'NAME' in data:
+            # Voice (1) belongs to spoken sound subtitles; the same clickable
+            # Topic/Journal hyperlink display is not used for voice playback.
+            section = {0: 'topic_dialogue', 2: 'greeting', 3: 'persuasion', 4: 'journal'}[kind]
             entries.append({'info': decode(data.get(b'INAM', b'')),
-                            'section': 'dialogue' if kind == 0 else 'journal',
+                            'section': section,
                             'text': decode(data[b'NAME'])})
     return topics, entries
 
@@ -76,52 +79,64 @@ def classify(text, start, end):
     return None
 
 def collect(topics, entries, keywords, journal_aliases=None, max_samples=4):
-    aliases = defaultdict(set)
+    dialogue_phrases, journal_phrases = defaultdict(set), defaultdict(set)
     for topic in topics:
+        # The NPC dialogue panel seeds only .mrk (or the canonical name as
+        # fallback). The journal additionally seeds the canonical name.
+        display = keywords.get(topic, topic)
+        if HANGUL.search(display):
+            dialogue_phrases[display].add(topic)
+            journal_phrases[display].add(topic)
         if HANGUL.search(topic):
-            aliases[topic].add(topic)
-        keyword = keywords.get(topic, topic)
-        if HANGUL.search(keyword):
-            aliases[keyword].add(topic)
+            journal_phrases[topic].add(topic)
     for phrase, topic in (journal_aliases or {}).items():
         if topic in topics and HANGUL.search(phrase):
-            aliases[phrase].add(topic)
+            journal_phrases[phrase].add(topic)
 
-    stats, examples = Counter(), defaultdict(list)
+    stats, by_section, examples = Counter(), Counter(), defaultdict(list)
     for entry in entries:
         text = entry['text']
+        section = entry['section']
+        phrases = journal_phrases if section == 'journal' else dialogue_phrases
         explicit = [(m.start(), m.end()) for m in EXPLICIT.finditer(text)]
-        for phrase, targets in aliases.items():
+        for phrase, targets in phrases.items():
             pos = text.find(phrase)
             while pos >= 0:
                 end = pos + len(phrase)
                 if not any(pos < stop and end > start for start, stop in explicit):
                     category = classify(text, pos, end)
                     if category:
-                        stats[(phrase, category)] += 1
-                        if len(examples[(phrase, category)]) < max_samples:
-                            examples[(phrase, category)].append({
-                                'info': entry['info'], 'section': entry['section'],
-                                'snippet': text[max(0,pos-30):min(len(text),end+30)],
+                        stats[(section, phrase, category)] += 1
+                        by_section[section] += 1
+                        if len(examples[(section, phrase, category)]) < max_samples:
+                            examples[(section, phrase, category)].append({
+                                'info': entry['info'], 'section': section,
+                                'snippet': text[max(0, pos - 30):min(len(text), end + 30)],
                                 'targets': sorted(targets)})
                 pos = text.find(phrase, pos + 1)
+    kinds = Counter(entry['section'] for entry in entries)
     return {
         'topics_loaded': len(topics), 'infos_scanned': len(entries),
+        'infos_by_section': dict(kinds),
         'candidate_occurrences': sum(stats.values()),
-        'counts_by_category': dict(Counter({category:sum(n for (_, kind),n in stats.items()
-                                                           if kind == category)
-                                            for _, category in stats})),
+        'candidate_occurrences_by_section': dict(by_section),
+        'counts_by_category': dict(Counter({
+            category: sum(n for (_, _, kind), n in stats.items() if kind == category)
+            for _, _, category in stats})),
         'candidates': [
-            {'keyword': phrase, 'category': category,
-             'occurrences': count, 'samples': examples[(phrase, category)]}
-            for (phrase, category), count in stats.most_common()],
-        'notes': 'Candidate collisions, not confirmed hyperlinks. Check actual known topics, synonyms and context.'
+            {'section': section, 'keyword': phrase, 'category': category,
+             'occurrences': count, 'samples': examples[(section, phrase, category)]}
+            for (section, phrase, category), count in stats.most_common()],
+        'notes': ('Review candidates, not confirmed links: actual visible topics '
+                  'depend on NPC response context or topics recorded in the journal. '
+                  'Books and Voice subtitles do not use this automatic link display.')
     }
 
 def selftest():
     topics = {'은', '일', '에이', '마법사 길드', '빛'}
-    entries = [{'info': 'fixture', 'section': 'journal',
-                'text': '싫은 것일 수도 있고 하지-에이의 행방을 물었다. 빛나는 밤. 마법사 길드에서만 물었다. @은#.'}]
+    sample = '싫은 것일 수도 있고 하지-에이의 행방을 물었다. 빛나는 밤. 마법사 길드에서만 물었다. @은#.'
+    entries = [{'info': str(i), 'section': section, 'text': sample}
+               for i, section in enumerate(('greeting', 'topic_dialogue', 'persuasion', 'journal'))]
     result = collect(topics, entries, {})
     found = {(c['keyword'], c['category']) for c in result['candidates']}
     for expected in [
@@ -131,8 +146,35 @@ def selftest():
         ('마법사 길드', 'suffix_or_continuation_review')
     ]:
         assert expected in found, expected
-    assert result['infos_scanned'] == 1
-    print('PASS: Korean topic collision scanner')
+    assert result['infos_scanned'] == 4
+    assert set(result['infos_by_section']) == {'greeting', 'topic_dialogue', 'persuasion', 'journal'}
+
+    # MRK replacements must be respected in NPC responses. The original
+    # topic form remains searchable only in journal entries.
+    overridden = collect({'마법사 길드'}, entries, {'마법사 길드': '길드'})
+    assert all(c['section'] == 'journal' for c in overridden['candidates']
+               if c['keyword'] == '마법사 길드')
+
+    # Exercise binary DIAL type dispatch: greeting and persuasion were previously
+    # omitted, and Voice must remain outside hyperlink audits.
+    import tempfile
+    def field(tag, value):
+        return struct.pack('<4sI', tag, len(value)) + value
+    def record(tag, body):
+        return struct.pack('<4sIII', tag, len(body), 0, 0) + body
+    binary = b''
+    for dial_type in range(5):
+        binary += record(b'DIAL', field(b'NAME', b'topic\\0') + field(b'DATA', bytes([dial_type])))
+        binary += record(b'INFO', field(b'INAM', str(dial_type).encode())
+                         + field(b'NAME', '싫은 것일'.encode('utf-8') + b'\\0'))
+    with tempfile.TemporaryDirectory() as tmp:
+        esp = Path(tmp) / 'fixture.esp'
+        esp.write_bytes(binary)
+        _, parsed = load_esp(esp)
+    assert {entry['section'] for entry in parsed} == {
+        'topic_dialogue', 'greeting', 'persuasion', 'journal'}
+    assert 'voice' not in (entry['section'] for entry in parsed)
+    print('PASS: Korean collision scanner covers greeting, topic, persuasion and journal')
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

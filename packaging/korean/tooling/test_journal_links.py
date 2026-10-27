@@ -46,4 +46,13 @@ with tempfile.TemporaryDirectory(prefix='openmw-journal-test-') as tmp:
         assert highlighted['explicit']['targets'] == ['은', '일']
         discovered = inspect(runner, mod, one_syllable, ['은', '일'], False)
         assert discovered['noise']['targets'] == []
+        compounds = [
+            ('hyphen', '하지-에이의 행방과 하이-엘프를 물었다.'),
+            ('verb', '빛나는 밤에 빛을 보았다.'),
+            ('particles', '마법사 길드에서만 광산으로부터 돌아왔다.'),
+        ]
+        compound_results = inspect(runner, mod, compounds, ['에이', '엘프', '빛', '마법사 길드', '광산'], True)
+        assert compound_results['hyphen']['targets'] == []
+        assert compound_results['verb']['targets'] == ['빛']
+        assert compound_results['particles']['targets'] == ['마법사 길드', '광산']
 print('PASS: Korean topic boundaries, single-syllable topics, explicit links, canonical names, legacy saved text, reviewed aliases, overlap resolution, unknown-topic gating, UTF-8 BOM, LF and CRLF')

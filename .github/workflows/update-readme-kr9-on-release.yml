@@ -1,0 +1,74 @@
+name: Update Windows README after verified KR9 publication
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  update-docs:
+    if: github.event.release.tag_name == 'openmw-0.51.0-kr9'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          persist-credentials: true
+
+      - name: Update Windows documentation only after KR9 actually exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release view openmw-0.51.0-kr9 --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' \
+            | grep -Fxq 'Morrowind-Korean-OpenMW-0.51.0-KR9-Full.zip'
+          python3 - <<'PY'
+          from pathlib import Path
+          a=Path('README.md')
+          s=a.read_text(encoding='utf-8')
+          for old,new in [
+              ('OpenMW 0.51.0 Korean Support KR8', 'OpenMW 0.51.0 Korean Support KR9'),
+              ('openmw-0.51.0-kr8', 'openmw-0.51.0-kr9'),
+              ('Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip', 'Morrowind-Korean-OpenMW-0.51.0-KR9-Full.zip'),
+              ('## KR8 구성', '## KR9 구성'),
+              ('KR8 ZIP', 'KR9 ZIP'),
+              ('KR8 compact 배포판', 'KR9 compact 배포판'),
+              ('KR8은 KR7에서 공식 추가 콘텐츠 *Area Effect Arrows*의 실내 CELL 이름(`Vivec, Aradraen: Fletcher` → `비벡, 아라드렌: 화살 제작자`)을 수정한 데이터 업데이트입니다. KR7 대비 `.cel` 외 파일은 변경되지 않았습니다.',
+               'KR9는 KR8 번역 데이터를 유지하면서 NPC 대화와 저널의 한국어 단어 내부 오인식 하이퍼링크를 수정한 엔진 업데이트입니다.'),
+          ]:
+              s=s.replace(old,new)
+          # The KR8 note has an alternate existing spelling for Aradraen.
+          for line in s.splitlines():
+              if line.startswith('KR8은 KR7에서 공식 추가 콘텐츠'):
+                  s=s.replace(line,'KR9는 KR8 번역 데이터를 그대로 유지하면서 NPC 대화와 저널의 한국어 단어 내부 오인식 하이퍼링크를 수정한 엔진 업데이트입니다.')
+          if '0008-korean-implicit-topic-boundaries.patch' not in s:
+              anchor='7. `0007-korean-journal-index.patch` — 한국어 저널 초성 색인 지원'
+              if anchor not in s:
+                  raise SystemExit('Unexpected README patch inventory; stop')
+              s=s.replace(anchor,anchor+'\n8. `0008-korean-implicit-topic-boundaries.patch` — 한국어 대화·저널 링크의 잘못된 단어 내부 일치 방지')
+          assert '**OpenMW 0.51.0 Korean Support KR9**' in s
+          a.write_text(s,encoding='utf-8')
+
+          b=Path('packaging/korean/README.md')
+          t=b.read_text(encoding='utf-8')
+          t=t.replace('KR8','KR9')
+          t=t.replace('openmw-0.51.0-kr8','openmw-0.51.0-kr9')
+          t=t.replace('KR9은 KR7의 `.cel` 실내 위치명 보정판입니다.',
+                      'KR9는 KR8의 번역 데이터를 유지하면서 한국어 대화·저널 하이퍼링크를 수정한 엔진 업데이트입니다.')
+          if 'KR9의 `.cel` 실내 위치명 보정판입니다.' in t:
+              raise SystemExit('Obsolete KR8 wording remained')
+          b.write_text(t,encoding='utf-8')
+          PY
+          git diff --check
+          git diff --stat
+          if git diff --quiet; then
+            echo 'README already reflects published KR9'
+            exit 0
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add README.md packaging/korean/README.md
+          git commit -m 'docs: point Windows README to the published KR9 release'
+          git push origin HEAD:master

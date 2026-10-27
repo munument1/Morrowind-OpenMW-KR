@@ -1,6 +1,10 @@
 name: Publish Korean OpenMW to Nexus Mods
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/nexus-publish.yml'
   release:
     types: [published, released]
   workflow_run:
@@ -52,6 +56,12 @@ jobs:
               release = (await github.rest.repos.getReleaseByTag({ ...repo, tag: process.env.REQUESTED_TAG })).data;
             } else {
               release = (await github.rest.repos.getLatestRelease(repo)).data;
+            }
+            // This one-time push invocation publishes the already verified KR9 release.
+            // Keep all other automatic behavior unchanged.
+            if (context.eventName === 'push' && release.tag_name !== 'openmw-0.51.0-kr9') {
+              core.setFailed('Expected published Windows KR9 for the one-time Nexus sync trigger.');
+              return;
             }
             if (release.draft || release.prerelease) {
               core.setFailed('Only published stable releases can be uploaded.');

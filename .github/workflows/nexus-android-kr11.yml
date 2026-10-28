@@ -1,4 +1,4 @@
-name: Publish verified Android KR11 APK and data to Nexus
+name: Publish verified Android KR12 APK and data to Nexus
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: nexus-android-kr11-publish
+  group: nexus-android-kr12-publish
   cancel-in-progress: false
 jobs:
   publish:
@@ -30,10 +30,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Nexus-Android-KR11-public-evidence
+          name: Nexus-Android-KR12-public-evidence
           path: |
-            nexus-android-kr11/*.sha256
-            nexus-android-kr11/*verification.json
-            nexus-android-kr11/*result.json
-            nexus-android-kr11/README-ANDROID-KR11.txt
+            nexus-android-kr12/*.sha256
+            nexus-android-kr12/*verification.json
+            nexus-android-kr12/*result.json
+            nexus-android-kr12/README-ANDROID-KR12.txt
           if-no-files-found: warn

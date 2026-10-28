@@ -52,6 +52,12 @@ namespace
         if (!isHangulSyllable(keyword))
             return true;
 
+        // The Korean work topic shares its spelling with the generic noun
+        // meaning "thing/event". Spelling boundaries cannot disambiguate it.
+        // Keep explicit @일# links and the unambiguous keyword "일거리".
+        if (keyword == "일")
+            return false;
+
         // "싫은" must not match "은", nor may a compound name like
         // "하지-에이" link its second half to the independent topic "에이".
         if (before.size() >= 3 && isHangulSyllable(before.substr(before.size() - 3)))
@@ -157,9 +163,8 @@ namespace MWDialogue
                     std::string_view remainingText(it + 1, end);
                     std::string_view remainingKeyword = std::string_view(current->mKeyword).substr(it + 1 - i);
                     if (Misc::StringUtils::ciStartsWith(remainingText, remainingKeyword)
-                        && (overlaps
-                            || hasKoreanDisplayBoundary(current->mKeyword, std::string_view(beg, i),
-                                std::string_view(i + current->mKeyword.size(), end))))
+                        && hasKoreanDisplayBoundary(current->mKeyword, std::string_view(beg, i),
+                            std::string_view(i + current->mKeyword.size(), end)))
                         matches.emplace_back(i, i + current->mKeyword.size(), current->mTopicId);
                 }
             }
@@ -273,7 +278,16 @@ namespace MWDialogue
                 token.mTopicId.append(id.size() - token.mTopicId.size(), '*');
                 token.mTopicId = Misc::StringUtils::lowerCase(storage.topicStandardForm(token.mTopicId));
 
-                matches.push_back(std::move(token));
+                // Old translation data marked verbs such as "작동" as the work
+                // topic, and even marked the last syllable of "만일"/"소행일".
+                // Strip their visible markup but do not make them clickable.
+                if (token.mTopicId == "일"
+                    && ((id != "일" && id != "일거리")
+                        || (posBegin >= 3 && isHangulSyllable(std::string_view(text).substr(posBegin - 3, 3)))))
+                    token.mTopicId.clear();
+
+                if (!token.mTopicId.empty() || !overlaps)
+                    matches.push_back(std::move(token));
 
                 iterationPos = posEnd + 1;
             }

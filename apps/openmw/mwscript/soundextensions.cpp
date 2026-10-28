@@ -11,6 +11,7 @@
 #include "../mwbase/environment.hpp"
 #include "../mwbase/soundmanager.hpp"
 #include "../mwbase/world.hpp"
+#include "../mwbase/windowmanager.hpp"
 
 #include "../mwworld/class.hpp"
 #include "../mwworld/inventorystore.hpp"
@@ -30,19 +31,20 @@ namespace MWScript
             {
                 MWWorld::Ptr ptr = R()(runtime);
 
-                MWScript::InterpreterContext& context
-                    = static_cast<MWScript::InterpreterContext&>(runtime.getContext());
-
                 VFS::Path::Normalized file{ runtime.getStringLiteral(runtime[0].mInteger) };
                 runtime.pop();
 
                 std::string_view text = runtime.getStringLiteral(runtime[0].mInteger);
                 runtime.pop();
 
-                MWBase::Environment::get().getSoundManager()->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
+                auto soundManager = MWBase::Environment::get().getSoundManager();
+                const auto previousSpeechId = soundManager->getSaySoundId(ptr);
+                soundManager->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
+                const auto speechId = soundManager->getSaySoundId(ptr);
 
                 if (Settings::gui().mSubtitles)
-                    context.messageBox(text);
+                    MWBase::Environment::get().getWindowManager()->voiceSubtitle(
+                        text, ptr, speechId != previousSpeechId ? speechId : 0);
             }
         };
 

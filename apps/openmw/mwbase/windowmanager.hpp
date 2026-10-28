@@ -53,6 +53,7 @@ namespace MWMechanics
 
 namespace MWWorld
 {
+    class ConstPtr;
     class CellStore;
     class Ptr;
 }
@@ -252,6 +253,10 @@ namespace MWBase
         virtual void messageBox(std::string_view message,
             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible)
             = 0;
+        virtual void voiceSubtitle(std::string_view message, const MWWorld::ConstPtr&, std::uint64_t)
+        {
+            messageBox(message);
+        }
         /// Puts message into a queue to show on the next update. Thread safe alternative for messageBox.
         virtual void scheduleMessageBox(std::string message,
             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible)

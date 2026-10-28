@@ -375,7 +375,7 @@ namespace MWSound
         if (!sound)
             return;
 
-        mSaySoundsQueue.emplace(ptr.mRef, SaySound{ ptr.mCell, std::move(sound) });
+        mSaySoundsQueue.emplace(ptr.mRef, SaySound{ ptr.mCell, std::move(sound), mNextSaySoundId++ });
     }
 
     float SoundManager::getSaySoundLoudness(const MWWorld::ConstPtr& ptr) const
@@ -404,7 +404,7 @@ namespace MWSound
         if (!sound)
             return;
 
-        mActiveSaySounds.emplace(nullptr, SaySound{ nullptr, std::move(sound) });
+        mActiveSaySounds.emplace(nullptr, SaySound{ nullptr, std::move(sound), mNextSaySoundId++ });
     }
 
     bool SoundManager::sayDone(const MWWorld::ConstPtr& ptr) const
@@ -437,6 +437,30 @@ namespace MWSound
             return false;
         }
 
+        return false;
+    }
+
+    std::uint64_t SoundManager::getSaySoundId(const MWWorld::ConstPtr& ptr) const
+    {
+        const auto queued = mSaySoundsQueue.find(ptr.mRef);
+        if (queued != mSaySoundsQueue.end() && mOutput->isStreamPlaying(queued->second.mStream.get()))
+            return queued->second.mId;
+        const auto active = mActiveSaySounds.find(ptr.mRef);
+        if (active != mActiveSaySounds.end() && mOutput->isStreamPlaying(active->second.mStream.get()))
+            return active->second.mId;
+        return 0;
+    }
+
+    bool SoundManager::isSaySoundPlaying(std::uint64_t id) const
+    {
+        if (id == 0)
+            return false;
+        for (const auto& [actor, sound] : mSaySoundsQueue)
+            if (sound.mId == id)
+                return mOutput->isStreamPlaying(sound.mStream.get());
+        for (const auto& [actor, sound] : mActiveSaySounds)
+            if (sound.mId == id)
+                return mOutput->isStreamPlaying(sound.mStream.get());
         return false;
     }
 

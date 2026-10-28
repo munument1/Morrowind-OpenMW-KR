@@ -1,5 +1,6 @@
 // Regression runner using the actual OpenMW keyword parser and Translation::Storage.
 #include <apps/openmw/mwdialogue/keywordsearch.hpp>
+#include <apps/openmw/mwdialogue/koreantopictags.hpp>
 #include <components/translation/translation.hpp>
 #include <components/misc/strings/algorithm.hpp>
 #include <cstdint>
@@ -29,7 +30,7 @@ void write(std::ostream& out,const std::string& s)
 }
 int main(int argc,char** argv)
 {
-    if(argc!=5) return 2;
+    if(argc!=5 && argc!=6) return 2;
     std::ifstream in(argv[1],std::ios::binary);
     std::ofstream out(argv[2],std::ios::binary);
     MWDialogue::KeywordSearch parser;
@@ -60,18 +61,21 @@ int main(int argc,char** argv)
     n=count(in);out.write(reinterpret_cast<const char*>(&n),4);
     while(n--)
     {
-        const auto text=read(in);
-        auto matches=parser.parseHyperText(text,storage);
+        const auto source=read(in);
+        const bool discovery=argc==6 && std::string_view(argv[5])=="discovery";
+        const auto text=patched && !discovery ? MWDialogue::repairLegacyKoreanTopicTags(source) : source;
+        auto matches=parser.parseHyperText(text,storage,discovery);
         std::string displayed;
         auto pos=text.begin();
         uint32_t links=0;
         std::vector<std::string> targets;
         for(const auto& m:matches)
         {
-            displayed.append(pos,m.mBeg);displayed.append(m.getDisplayName());pos=m.mEnd;
+            if(!discovery) {displayed.append(pos,m.mBeg);displayed.append(m.getDisplayName());pos=m.mEnd;}
             if(known.count(m.mTopicId)) { ++links;targets.push_back(m.mTopicId); }
         }
-        displayed.append(pos,text.end());
+        if(discovery) displayed=text;
+        else displayed.append(pos,text.end());
         out.write(reinterpret_cast<const char*>(&links),4);write(out,displayed);
         for(const auto& target:targets) write(out,target);
     }

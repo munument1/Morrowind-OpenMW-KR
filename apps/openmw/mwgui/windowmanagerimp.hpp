@@ -268,6 +268,7 @@ namespace MWGui
 
         void messageBox(std::string_view message,
             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible) override;
+        void voiceSubtitle(std::string_view message, const MWWorld::ConstPtr& speaker, std::uint64_t speechId) override;
         void scheduleMessageBox(std::string message,
             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible) override;
         void staticMessageBox(std::string_view message) override;

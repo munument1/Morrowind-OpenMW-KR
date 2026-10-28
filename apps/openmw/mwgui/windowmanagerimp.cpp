@@ -834,6 +834,17 @@ namespace MWGui
         }
     }
 
+    void WindowManager::voiceSubtitle(
+        std::string_view message, const MWWorld::ConstPtr& speaker, std::uint64_t speechId)
+    {
+        if (message.empty())
+            return;
+        if (getMode() == GM_Dialogue || speechId == 0)
+            messageBox(message);
+        else
+            mMessageBoxManager->createMessageBox(message, false, speaker, speechId);
+    }
+
     void WindowManager::scheduleMessageBox(std::string message, enum MWGui::ShowInDialogueMode showInDialogueMode)
     {
         mScheduledMessageBoxes.lock()->emplace_back(std::move(message), showInDialogueMode);

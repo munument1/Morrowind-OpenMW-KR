@@ -37,7 +37,7 @@ with tempfile.TemporaryDirectory(prefix='openmw-journal-test-') as tmp:
         # coloring syllables embedded in unrelated Korean words.
         one_syllable = [
             ('noise', '싫은 것일 수도 있다. 노예들은 모른다. 일요일과 은근한 표정.'),
-            ('valid', '은을 찾고 할 일이 있다.'),
+            ('valid', '은을 찾고 할 @일#이 있다.'),
             ('explicit', '@은#과 @일#을 찾는다.'),
         ]
         highlighted = inspect(runner, mod, one_syllable, ['은', '일'], True)

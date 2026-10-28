@@ -21,7 +21,7 @@ def corpus(mod):
 def table(path):
     return dict(line.split('\t',1) for line in path.read_text('utf-8-sig').splitlines() if '\t' in line)
 
-def inspect(runner,mod,entries,topics,patched):
+def inspect(runner,mod,entries,topics,patched,discovery=False):
     forms=table(mod/'Morrowind_Korean_ReTranslation.top')
     keywords=table(mod/'Morrowind_Korean_ReTranslation.mrk')
     with tempfile.TemporaryDirectory(prefix='kr5-engine-') as tmp:
@@ -34,7 +34,9 @@ def inspect(runner,mod,entries,topics,patched):
                 for a,b in pairs:write_string(f,a);write_string(f,b)
             f.write(struct.pack('<I',len(entries)))
             for _,s in entries:write_string(f,s)
-        subprocess.run([str(runner),str(src),str(dst),str(mod),'patched' if patched else 'legacy'],check=True)
+        command=[str(runner),str(src),str(dst),str(mod),'patched' if patched else 'legacy']
+        if discovery:command.append('discovery')
+        subprocess.run(command,check=True)
         data=dst.read_bytes();p=0
         def count():
             nonlocal p

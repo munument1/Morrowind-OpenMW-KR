@@ -49,6 +49,9 @@ def main():
     assert proof['signer_certificate_sha256']==CERT
     assert proof['Daedric_slot']=='DemonicLetters'
     assert proof['APK_sha256']==hashlib.sha256((OUT/APK).read_bytes()).hexdigest()
+    assert proof['Korean_data_sha256']==hashlib.sha256((OUT/DATA).read_bytes()).hexdigest()
+    assert proof['Roman_and_Hangul_both_normal_font_slots']=='PASS_FROM_REQUIRED_DATA_ZIP'
+    assert proof['voice_subtitle_patch']=='9ccc477acf8488bf3b93e5b64b897ddb8a7f52af'
     readme='''OpenMW Android Korean KR12 (0.51.0-12)
 
 1. Install the signed ARM64 APK. Package: com.ast.openmw.korean, versionCode 5114.
@@ -61,6 +64,7 @@ back up saves and transfer them manually. Do not delete an old app before backup
 
 KR12 ports Windows KR10 honorific and legacy topic/journal recovery fixes,
 repairs false topic discovery and reviewed translation hyperlinks,
+keeps NPC/Say subtitles visible until their exact voice stream finishes,
 keeps Roman numeral font coverage, and preserves genuine Daedric lettering
 with the original DemonicLetters font in slot 2.
 
@@ -105,7 +109,7 @@ Rebirth ESP, game master files and signing keys are not included.
         time.sleep(2)
     assert state=='available',state
     body={'upload_id':upload_id,'name':NAME,'version':VERSION,'file_category':'optional',
-      'description':'ARM64 permanent signed KR12 APK plus Korean Data KR12. Install both. New package com.ast.openmw.korean; back up and manually transfer old saves. Native topic/journal fixes, Roman numerals and original Daedric font. Full Android device gameplay not tested. '+release['html_url'],
+      'description':'ARM64 permanent signed KR12 APK plus Korean Data KR12. Install both. New package com.ast.openmw.korean; back up and manually transfer old saves. Native topic/journal fixes, voice-synchronized NPC subtitles, Roman numerals and original Daedric font. Full Android device gameplay not tested. '+release['html_url'],
       'primary_mod_manager_download':False,'allow_mod_manager_download':False,'update_mod_version':False}
     if existing:
         body['archive_existing_file']=False

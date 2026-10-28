@@ -17,7 +17,8 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def build(source: Path, executable: Path, output: Path, expected_source_sha256: str) -> dict:
+def build(source: Path, executable: Path, output: Path, expected_source_sha256: str,
+          release_tag: str = 'openmw-0.51.0-kr9') -> dict:
     if output.exists() or output.resolve() in (source.resolve(), executable.resolve()):
         raise ValueError('KR9 output must be a new file distinct from inputs')
     source_bytes = source.read_bytes()
@@ -61,7 +62,7 @@ def build(source: Path, executable: Path, output: Path, expected_source_sha256: 
     return {
         'base_release': 'openmw-0.51.0-kr8',
         'base_sha256': expected_source_sha256.lower(),
-        'new_release': 'openmw-0.51.0-kr9',
+        'new_release': release_tag,
         'runtime_entry': target,
         'old_runtime_sha256': sha256(old_binary),
         'new_runtime_sha256': sha256(binary),
@@ -79,8 +80,9 @@ def main():
     p.add_argument('--executable', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--expected-source-sha256', required=True)
+    p.add_argument('--release-tag', default='openmw-0.51.0-kr9')
     a = p.parse_args()
-    report = build(a.source, a.executable, a.output, a.expected_source_sha256)
+    report = build(a.source, a.executable, a.output, a.expected_source_sha256, a.release_tag)
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 

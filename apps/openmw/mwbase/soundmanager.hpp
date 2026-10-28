@@ -2,6 +2,7 @@
 #define GAME_MWBASE_SOUNDMANAGER_H
 
 #include <memory>
+#include <cstdint>
 #include <set>
 #include <string>
 #include <string_view>
@@ -135,6 +136,9 @@ namespace MWBase
         /// \param filename name of a sound file in the VFS
 
         virtual bool sayActive(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const = 0;
+        /// Identity of the queued/playing utterance; zero means no speech.
+        virtual std::uint64_t getSaySoundId(const MWWorld::ConstPtr& = MWWorld::ConstPtr()) const { return 0; }
+        virtual bool isSaySoundPlaying(std::uint64_t) const { return false; }
         ///< Is actor not speaking?
 
         virtual bool sayDone(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const = 0;

@@ -653,10 +653,12 @@ namespace MWDialogue
         if (info != nullptr)
         {
             MWBase::WindowManager* winMgr = MWBase::Environment::get().getWindowManager();
-            if (Settings::gui().mSubtitles)
-                winMgr->messageBox(info->mResponse);
+            const auto previousSpeechId = sndMgr->getSaySoundId(actor);
             if (!info->mSound.empty())
                 sndMgr->say(actor, Misc::ResourceHelpers::correctSoundPath(VFS::Path::Normalized(info->mSound)));
+            const auto speechId = sndMgr->getSaySoundId(actor);
+            if (Settings::gui().mSubtitles)
+                winMgr->voiceSubtitle(info->mResponse, actor, speechId != previousSpeechId ? speechId : 0);
             if (!info->mResultScript.empty())
                 executeScript(info->mResultScript, actor);
             MWBase::Environment::get().getLuaManager()->onDialogueResponse(actor, *info, *dial);

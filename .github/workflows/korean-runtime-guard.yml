@@ -51,6 +51,8 @@ jobs:
         run: |
           set -euo pipefail
           git config core.autocrlf false
+          git apply --reverse --check korean/patches/0012-voice-synchronized-subtitles.patch
+          git apply --reverse korean/patches/0012-voice-synchronized-subtitles.patch
           git apply --reverse --check korean/patches/0011-korean-topic-discovery-and-work-links.patch
           git apply --reverse korean/patches/0011-korean-topic-discovery-and-work-links.patch
           # 0009 modifies a line introduced by 0008; temporarily undo it before
@@ -74,6 +76,7 @@ jobs:
           done
           git apply korean/patches/0009-korean-honorific-particle.patch
           git apply korean/patches/0011-korean-topic-discovery-and-work-links.patch
+          git apply korean/patches/0012-voice-synchronized-subtitles.patch
           test -s korean/patches/0005-video-subtitles.patch
 
       - name: Verify Korean runtime invariants
@@ -94,6 +97,9 @@ jobs:
           grep -F 'mPlayer->getCurrentTime()' apps/openmw/mwgui/videowidget.cpp
           grep -F 'translationStorage.journalKeywords(topic.getName())' apps/openmw/mwgui/journalviewmodel.cpp
           grep -F 'loadData(mJournalKeywords, esmNameNoExtension, "jrn", dataFileCollections);' components/translation/translation.cpp
+          grep -F 'voiceSubtitle(info->mResponse' apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+          grep -F 'isSaySoundPlaying((*it)->mSpeechId)' apps/openmw/mwgui/messagebox.cpp
+          grep -F 'getSaySoundId(ptr)' apps/openmw/mwscript/soundextensions.cpp
 
       - name: Verify journal links with the real parser and sidecar loader
         run: |
@@ -122,3 +128,5 @@ jobs:
           /tmp/test-legacy-korean-topic
           g++ -std=c++20 -O2 -I. packaging/korean/tooling/test-korean-topic-markup.cpp -o /tmp/test-korean-topic-markup
           /tmp/test-korean-topic-markup
+          g++ -std=c++20 -O2 -I. packaging/korean/tooling/test-voice-subtitle-lifetime.cpp -o /tmp/test-voice-subtitle-lifetime
+          /tmp/test-voice-subtitle-lifetime

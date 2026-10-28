@@ -1,4 +1,7 @@
 #include "messagebox.hpp"
+#include "messagelifetime.hpp"
+
+#include <algorithm>
 
 #include <MyGUI_Button.h>
 #include <MyGUI_EditBox.h>
@@ -12,6 +15,7 @@
 
 #include "../mwbase/environment.hpp"
 #include "../mwbase/inputmanager.hpp"
+#include "../mwbase/soundmanager.hpp"
 #include "../mwbase/windowmanager.hpp"
 
 namespace MWGui
@@ -67,7 +71,12 @@ namespace MWGui
         for (auto it = mMessageBoxes.begin(); it != mMessageBoxes.end();)
         {
             (*it)->mCurrentTime += frameDuration;
-            if ((*it)->mCurrentTime >= (*it)->mMaxTime && it->get() != mStaticMessageBox)
+            const auto speechId = (*it)->mSpeechId != 0
+                    && MWBase::Environment::get().getSoundManager()->isSaySoundPlaying((*it)->mSpeechId)
+                ? (*it)->mSpeechId
+                : 0;
+            if (messageBoxExpired((*it)->mCurrentTime, (*it)->mMaxTime, (*it)->mSpeechId, speechId)
+                && it->get() != mStaticMessageBox)
             {
                 it = mMessageBoxes.erase(it);
             }
@@ -94,12 +103,20 @@ namespace MWGui
         }
     }
 
-    void MessageBoxManager::createMessageBox(std::string_view message, bool stat)
+    void MessageBoxManager::createMessageBox(
+        std::string_view message, bool stat, std::optional<MWWorld::ConstPtr> speaker, std::uint64_t speechId)
     {
         auto box = std::make_unique<MessageBox>(*this, message);
         box->mCurrentTime = 0;
         auto realMessage = MyGUI::LanguageManager::getInstance().replaceTags({ message.data(), message.size() });
         box->mMaxTime = realMessage.length() * mMessageBoxSpeed;
+        box->mVoiceSpeaker = speaker;
+        box->mSpeechId = speechId;
+
+        if (speaker && speechId != 0)
+            std::erase_if(mMessageBoxes, [&](const auto& previous) {
+                return previous->mVoiceSpeaker && *previous->mVoiceSpeaker == *speaker;
+            });
 
         if (stat)
             mStaticMessageBox = box.get();
@@ -108,9 +125,14 @@ namespace MWGui
 
         mMessageBoxes.push_back(std::move(box));
 
-        if (mMessageBoxes.size() > 3)
+        // Ordinary notifications must not evict a still-playing subtitle.
+        // Retain the existing three-message bound independently for each kind.
+        const auto sameKind = [&](const auto& candidate) {
+            return candidate.get() != mStaticMessageBox && (candidate->mSpeechId != 0) == (speechId != 0);
+        };
+        if (std::count_if(mMessageBoxes.begin(), mMessageBoxes.end(), sameKind) > 3)
         {
-            mMessageBoxes.erase(mMessageBoxes.begin());
+            mMessageBoxes.erase(std::find_if(mMessageBoxes.begin(), mMessageBoxes.end(), sameKind));
         }
 
         int height = 0;

@@ -2,6 +2,10 @@
 #define MWGUI_MESSAGE_BOX_H
 
 #include <memory>
+#include <optional>
+#include <cstdint>
+
+#include "../mwworld/ptr.hpp"
 
 #include "windowbase.hpp"
 
@@ -23,7 +27,8 @@ namespace MWGui
         MessageBoxManager(float timePerChar);
         ~MessageBoxManager();
         void onFrame(float frameDuration);
-        void createMessageBox(std::string_view message, bool stat = false);
+        void createMessageBox(std::string_view message, bool stat = false,
+            std::optional<MWWorld::ConstPtr> speaker = std::nullopt, std::uint64_t speechId = 0);
         void removeStaticMessageBox();
         bool createInteractiveMessageBox(std::string_view message, const std::vector<std::string>& buttons,
             bool immediate = false, int defaultFocus = -1);
@@ -80,6 +85,8 @@ namespace MWGui
 
         float mCurrentTime;
         float mMaxTime;
+        std::optional<MWWorld::ConstPtr> mVoiceSpeaker;
+        std::uint64_t mSpeechId = 0;
 
     protected:
         MessageBoxManager& mMessageBoxManager;

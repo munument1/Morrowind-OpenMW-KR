@@ -1,0 +1,340 @@
+diff --git a/apps/openmw/mwbase/soundmanager.hpp b/apps/openmw/mwbase/soundmanager.hpp
+index 9b6b579c2f..86711520d9 100644
+--- a/apps/openmw/mwbase/soundmanager.hpp
++++ b/apps/openmw/mwbase/soundmanager.hpp
+@@ -2,6 +2,7 @@
+ #define GAME_MWBASE_SOUNDMANAGER_H
+ 
+ #include <memory>
++#include <cstdint>
+ #include <set>
+ #include <string>
+ #include <string_view>
+@@ -135,6 +136,9 @@ namespace MWBase
+         /// \param filename name of a sound file in the VFS
+ 
+         virtual bool sayActive(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const = 0;
++        /// Identity of the queued/playing utterance; zero means no speech.
++        virtual std::uint64_t getSaySoundId(const MWWorld::ConstPtr& = MWWorld::ConstPtr()) const { return 0; }
++        virtual bool isSaySoundPlaying(std::uint64_t) const { return false; }
+         ///< Is actor not speaking?
+ 
+         virtual bool sayDone(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const = 0;
+diff --git a/apps/openmw/mwbase/windowmanager.hpp b/apps/openmw/mwbase/windowmanager.hpp
+index 273294bd12..4ba4c64e88 100644
+--- a/apps/openmw/mwbase/windowmanager.hpp
++++ b/apps/openmw/mwbase/windowmanager.hpp
+@@ -53,6 +53,7 @@ namespace MWMechanics
+ 
+ namespace MWWorld
+ {
++    class ConstPtr;
+     class CellStore;
+     class Ptr;
+ }
+@@ -252,6 +253,10 @@ namespace MWBase
+         virtual void messageBox(std::string_view message,
+             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible)
+             = 0;
++        virtual void voiceSubtitle(std::string_view message, const MWWorld::ConstPtr&, std::uint64_t)
++        {
++            messageBox(message);
++        }
+         /// Puts message into a queue to show on the next update. Thread safe alternative for messageBox.
+         virtual void scheduleMessageBox(std::string message,
+             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible)
+diff --git a/apps/openmw/mwdialogue/dialoguemanagerimp.cpp b/apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+index ea127dbb1c..0fce9cd5fd 100644
+--- a/apps/openmw/mwdialogue/dialoguemanagerimp.cpp
++++ b/apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+@@ -653,10 +653,12 @@ namespace MWDialogue
+         if (info != nullptr)
+         {
+             MWBase::WindowManager* winMgr = MWBase::Environment::get().getWindowManager();
+-            if (Settings::gui().mSubtitles)
+-                winMgr->messageBox(info->mResponse);
++            const auto previousSpeechId = sndMgr->getSaySoundId(actor);
+             if (!info->mSound.empty())
+                 sndMgr->say(actor, Misc::ResourceHelpers::correctSoundPath(VFS::Path::Normalized(info->mSound)));
++            const auto speechId = sndMgr->getSaySoundId(actor);
++            if (Settings::gui().mSubtitles)
++                winMgr->voiceSubtitle(info->mResponse, actor, speechId != previousSpeechId ? speechId : 0);
+             if (!info->mResultScript.empty())
+                 executeScript(info->mResultScript, actor);
+             MWBase::Environment::get().getLuaManager()->onDialogueResponse(actor, *info, *dial);
+diff --git a/apps/openmw/mwgui/messagebox.cpp b/apps/openmw/mwgui/messagebox.cpp
+index 986f77b6ee..579a5c4145 100644
+--- a/apps/openmw/mwgui/messagebox.cpp
++++ b/apps/openmw/mwgui/messagebox.cpp
+@@ -1,4 +1,7 @@
+ #include "messagebox.hpp"
++#include "messagelifetime.hpp"
++
++#include <algorithm>
+ 
+ #include <MyGUI_Button.h>
+ #include <MyGUI_EditBox.h>
+@@ -12,6 +15,7 @@
+ 
+ #include "../mwbase/environment.hpp"
+ #include "../mwbase/inputmanager.hpp"
++#include "../mwbase/soundmanager.hpp"
+ #include "../mwbase/windowmanager.hpp"
+ 
+ namespace MWGui
+@@ -67,7 +71,12 @@ namespace MWGui
+         for (auto it = mMessageBoxes.begin(); it != mMessageBoxes.end();)
+         {
+             (*it)->mCurrentTime += frameDuration;
+-            if ((*it)->mCurrentTime >= (*it)->mMaxTime && it->get() != mStaticMessageBox)
++            const auto speechId = (*it)->mSpeechId != 0
++                    && MWBase::Environment::get().getSoundManager()->isSaySoundPlaying((*it)->mSpeechId)
++                ? (*it)->mSpeechId
++                : 0;
++            if (messageBoxExpired((*it)->mCurrentTime, (*it)->mMaxTime, (*it)->mSpeechId, speechId)
++                && it->get() != mStaticMessageBox)
+             {
+                 it = mMessageBoxes.erase(it);
+             }
+@@ -94,12 +103,20 @@ namespace MWGui
+         }
+     }
+ 
+-    void MessageBoxManager::createMessageBox(std::string_view message, bool stat)
++    void MessageBoxManager::createMessageBox(
++        std::string_view message, bool stat, std::optional<MWWorld::ConstPtr> speaker, std::uint64_t speechId)
+     {
+         auto box = std::make_unique<MessageBox>(*this, message);
+         box->mCurrentTime = 0;
+         auto realMessage = MyGUI::LanguageManager::getInstance().replaceTags({ message.data(), message.size() });
+         box->mMaxTime = realMessage.length() * mMessageBoxSpeed;
++        box->mVoiceSpeaker = speaker;
++        box->mSpeechId = speechId;
++
++        if (speaker && speechId != 0)
++            std::erase_if(mMessageBoxes, [&](const auto& previous) {
++                return previous->mVoiceSpeaker && *previous->mVoiceSpeaker == *speaker;
++            });
+ 
+         if (stat)
+             mStaticMessageBox = box.get();
+@@ -108,9 +125,14 @@ namespace MWGui
+ 
+         mMessageBoxes.push_back(std::move(box));
+ 
+-        if (mMessageBoxes.size() > 3)
++        // Ordinary notifications must not evict a still-playing subtitle.
++        // Retain the existing three-message bound independently for each kind.
++        const auto sameKind = [&](const auto& candidate) {
++            return candidate.get() != mStaticMessageBox && (candidate->mSpeechId != 0) == (speechId != 0);
++        };
++        if (std::count_if(mMessageBoxes.begin(), mMessageBoxes.end(), sameKind) > 3)
+         {
+-            mMessageBoxes.erase(mMessageBoxes.begin());
++            mMessageBoxes.erase(std::find_if(mMessageBoxes.begin(), mMessageBoxes.end(), sameKind));
+         }
+ 
+         int height = 0;
+diff --git a/apps/openmw/mwgui/messagebox.hpp b/apps/openmw/mwgui/messagebox.hpp
+index c591125d50..4dc76f47ef 100644
+--- a/apps/openmw/mwgui/messagebox.hpp
++++ b/apps/openmw/mwgui/messagebox.hpp
+@@ -2,6 +2,10 @@
+ #define MWGUI_MESSAGE_BOX_H
+ 
+ #include <memory>
++#include <optional>
++#include <cstdint>
++
++#include "../mwworld/ptr.hpp"
+ 
+ #include "windowbase.hpp"
+ 
+@@ -23,7 +27,8 @@ namespace MWGui
+         MessageBoxManager(float timePerChar);
+         ~MessageBoxManager();
+         void onFrame(float frameDuration);
+-        void createMessageBox(std::string_view message, bool stat = false);
++        void createMessageBox(std::string_view message, bool stat = false,
++            std::optional<MWWorld::ConstPtr> speaker = std::nullopt, std::uint64_t speechId = 0);
+         void removeStaticMessageBox();
+         bool createInteractiveMessageBox(std::string_view message, const std::vector<std::string>& buttons,
+             bool immediate = false, int defaultFocus = -1);
+@@ -80,6 +85,8 @@ namespace MWGui
+ 
+         float mCurrentTime;
+         float mMaxTime;
++        std::optional<MWWorld::ConstPtr> mVoiceSpeaker;
++        std::uint64_t mSpeechId = 0;
+ 
+     protected:
+         MessageBoxManager& mMessageBoxManager;
+diff --git a/apps/openmw/mwgui/messagelifetime.hpp b/apps/openmw/mwgui/messagelifetime.hpp
+new file mode 100644
+index 0000000000..91e4656b7b
+--- /dev/null
++++ b/apps/openmw/mwgui/messagelifetime.hpp
+@@ -0,0 +1,11 @@
++#ifndef OPENMW_MWGUI_MESSAGELIFETIME_H
++#define OPENMW_MWGUI_MESSAGELIFETIME_H
++#include <cstdint>
++namespace MWGui
++{
++    inline bool messageBoxExpired(float elapsed, float timeout, std::uint64_t speechId, std::uint64_t activeSpeechId)
++    {
++        return speechId != 0 ? speechId != activeSpeechId : elapsed >= timeout;
++    }
++}
++#endif
+diff --git a/apps/openmw/mwgui/windowmanagerimp.cpp b/apps/openmw/mwgui/windowmanagerimp.cpp
+index 9b641d5b3c..68a8aaf1cd 100644
+--- a/apps/openmw/mwgui/windowmanagerimp.cpp
++++ b/apps/openmw/mwgui/windowmanagerimp.cpp
+@@ -834,6 +834,17 @@ namespace MWGui
+         }
+     }
+ 
++    void WindowManager::voiceSubtitle(
++        std::string_view message, const MWWorld::ConstPtr& speaker, std::uint64_t speechId)
++    {
++        if (message.empty())
++            return;
++        if (getMode() == GM_Dialogue || speechId == 0)
++            messageBox(message);
++        else
++            mMessageBoxManager->createMessageBox(message, false, speaker, speechId);
++    }
++
+     void WindowManager::scheduleMessageBox(std::string message, enum MWGui::ShowInDialogueMode showInDialogueMode)
+     {
+         mScheduledMessageBoxes.lock()->emplace_back(std::move(message), showInDialogueMode);
+diff --git a/apps/openmw/mwgui/windowmanagerimp.hpp b/apps/openmw/mwgui/windowmanagerimp.hpp
+index 08c54830d7..fe9efbdd69 100644
+--- a/apps/openmw/mwgui/windowmanagerimp.hpp
++++ b/apps/openmw/mwgui/windowmanagerimp.hpp
+@@ -268,6 +268,7 @@ namespace MWGui
+ 
+         void messageBox(std::string_view message,
+             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible) override;
++        void voiceSubtitle(std::string_view message, const MWWorld::ConstPtr& speaker, std::uint64_t speechId) override;
+         void scheduleMessageBox(std::string message,
+             enum MWGui::ShowInDialogueMode showInDialogueMode = MWGui::ShowInDialogueMode_IfPossible) override;
+         void staticMessageBox(std::string_view message) override;
+diff --git a/apps/openmw/mwscript/soundextensions.cpp b/apps/openmw/mwscript/soundextensions.cpp
+index 0f9d85cc38..e31a1b09c3 100644
+--- a/apps/openmw/mwscript/soundextensions.cpp
++++ b/apps/openmw/mwscript/soundextensions.cpp
+@@ -11,6 +11,7 @@
+ #include "../mwbase/environment.hpp"
+ #include "../mwbase/soundmanager.hpp"
+ #include "../mwbase/world.hpp"
++#include "../mwbase/windowmanager.hpp"
+ 
+ #include "../mwworld/class.hpp"
+ #include "../mwworld/inventorystore.hpp"
+@@ -30,19 +31,20 @@ namespace MWScript
+             {
+                 MWWorld::Ptr ptr = R()(runtime);
+ 
+-                MWScript::InterpreterContext& context
+-                    = static_cast<MWScript::InterpreterContext&>(runtime.getContext());
+-
+                 VFS::Path::Normalized file{ runtime.getStringLiteral(runtime[0].mInteger) };
+                 runtime.pop();
+ 
+                 std::string_view text = runtime.getStringLiteral(runtime[0].mInteger);
+                 runtime.pop();
+ 
+-                MWBase::Environment::get().getSoundManager()->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
++                auto* soundManager = MWBase::Environment::get().getSoundManager();
++                const auto previousSpeechId = soundManager->getSaySoundId(ptr);
++                soundManager->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
++                const auto speechId = soundManager->getSaySoundId(ptr);
+ 
+                 if (Settings::gui().mSubtitles)
+-                    context.messageBox(text);
++                    MWBase::Environment::get().getWindowManager()->voiceSubtitle(
++                        text, ptr, speechId != previousSpeechId ? speechId : 0);
+             }
+         };
+ 
+diff --git a/apps/openmw/mwsound/soundmanagerimp.cpp b/apps/openmw/mwsound/soundmanagerimp.cpp
+index e2ffefef9c..4e743e9380 100644
+--- a/apps/openmw/mwsound/soundmanagerimp.cpp
++++ b/apps/openmw/mwsound/soundmanagerimp.cpp
+@@ -375,7 +375,7 @@ namespace MWSound
+         if (!sound)
+             return;
+ 
+-        mSaySoundsQueue.emplace(ptr.mRef, SaySound{ ptr.mCell, std::move(sound) });
++        mSaySoundsQueue.emplace(ptr.mRef, SaySound{ ptr.mCell, std::move(sound), mNextSaySoundId++ });
+     }
+ 
+     float SoundManager::getSaySoundLoudness(const MWWorld::ConstPtr& ptr) const
+@@ -404,7 +404,7 @@ namespace MWSound
+         if (!sound)
+             return;
+ 
+-        mActiveSaySounds.emplace(nullptr, SaySound{ nullptr, std::move(sound) });
++        mActiveSaySounds.emplace(nullptr, SaySound{ nullptr, std::move(sound), mNextSaySoundId++ });
+     }
+ 
+     bool SoundManager::sayDone(const MWWorld::ConstPtr& ptr) const
+@@ -440,6 +440,30 @@ namespace MWSound
+         return false;
+     }
+ 
++    std::uint64_t SoundManager::getSaySoundId(const MWWorld::ConstPtr& ptr) const
++    {
++        const auto queued = mSaySoundsQueue.find(ptr.mRef);
++        if (queued != mSaySoundsQueue.end() && mOutput->isStreamPlaying(queued->second.mStream.get()))
++            return queued->second.mId;
++        const auto active = mActiveSaySounds.find(ptr.mRef);
++        if (active != mActiveSaySounds.end() && mOutput->isStreamPlaying(active->second.mStream.get()))
++            return active->second.mId;
++        return 0;
++    }
++
++    bool SoundManager::isSaySoundPlaying(std::uint64_t id) const
++    {
++        if (id == 0)
++            return false;
++        for (const auto& [actor, sound] : mSaySoundsQueue)
++            if (sound.mId == id)
++                return mOutput->isStreamPlaying(sound.mStream.get());
++        for (const auto& [actor, sound] : mActiveSaySounds)
++            if (sound.mId == id)
++                return mOutput->isStreamPlaying(sound.mStream.get());
++        return false;
++    }
++
+     void SoundManager::stopSay(const MWWorld::ConstPtr& ptr)
+     {
+         SaySoundMap::iterator snditer = mSaySoundsQueue.find(ptr.mRef);
+diff --git a/apps/openmw/mwsound/soundmanagerimp.hpp b/apps/openmw/mwsound/soundmanagerimp.hpp
+index 8802a6236a..af6650bc35 100644
+--- a/apps/openmw/mwsound/soundmanagerimp.hpp
++++ b/apps/openmw/mwsound/soundmanagerimp.hpp
+@@ -82,11 +82,13 @@ namespace MWSound
+         {
+             const MWWorld::CellStore* mCell;
+             StreamPtr mStream;
++            std::uint64_t mId;
+         };
+ 
+         typedef std::map<const MWWorld::LiveCellRefBase*, SaySound> SaySoundMap;
+         SaySoundMap mSaySoundsQueue;
+         SaySoundMap mActiveSaySounds;
++        std::uint64_t mNextSaySoundId = 1;
+ 
+         typedef std::vector<StreamPtr> TrackList;
+         TrackList mActiveTracks;
+@@ -201,6 +203,8 @@ namespace MWSound
+         /// \param filename name of a sound file in the VFS
+ 
+         bool sayActive(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const override;
++        std::uint64_t getSaySoundId(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const override;
++        bool isSaySoundPlaying(std::uint64_t id) const override;
+         ///< Is actor not speaking?
+ 
+         bool sayDone(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const override;

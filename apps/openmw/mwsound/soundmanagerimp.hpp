@@ -82,11 +82,13 @@ namespace MWSound
         {
             const MWWorld::CellStore* mCell;
             StreamPtr mStream;
+            std::uint64_t mId;
         };
 
         typedef std::map<const MWWorld::LiveCellRefBase*, SaySound> SaySoundMap;
         SaySoundMap mSaySoundsQueue;
         SaySoundMap mActiveSaySounds;
+        std::uint64_t mNextSaySoundId = 1;
 
         typedef std::vector<StreamPtr> TrackList;
         TrackList mActiveTracks;
@@ -201,6 +203,8 @@ namespace MWSound
         /// \param filename name of a sound file in the VFS
 
         bool sayActive(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const override;
+        std::uint64_t getSaySoundId(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const override;
+        bool isSaySoundPlaying(std::uint64_t id) const override;
         ///< Is actor not speaking?
 
         bool sayDone(const MWWorld::ConstPtr& reference = MWWorld::ConstPtr()) const override;

@@ -6,16 +6,18 @@ OpenMW 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 플�
 
 ## 현재 배포판
 
-**OpenMW 0.51.0 Korean Support KR10**
+**OpenMW 0.51.0 Korean Support KR11**
 
-- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr10
-- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR10-Full.zip`
+- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr11
+- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR11-Full.zip`
 - 공식 OpenMW 0.51.0 Windows 설치본 위에 적용하는 compact 패키지
 - 전역 `encoding=utf8` 설정 불필요
 
-KR10은 KR8 번역 데이터, KR9의 잘못된 자동 링크 방지, KR9.1의 공식 0.51.0 실행 호환성을 유지하면서 구형 세이브의 저널 토픽 ID와 NPC의 알려진 토픽 ID를 복구합니다. Windows 빌드·테스트 및 사용자 게임 확인을 마쳤습니다. 이미 세이브에서 삭제된 토픽 기록을 재생성하지는 않습니다. 설치 전 중요 세이브를 백업하세요.
+KR11은 폰트 설정에서 빠진 U+2160–U+217F 로마 숫자 범위를 추가해 `Ⅰ`, `Ⅺ`, `Ⅻ` 등이 밑줄로 표시되는 문제를 수정합니다. KR10의 실행 파일·번역 데이터·토픽 복구 기능은 그대로 유지합니다. KR10 사용자에게 엔진 재빌드나 전역 인코딩 변경은 필요하지 않습니다. 패키지 검증 결과에는 변경 파일과 보존 파일이 기록됩니다.
 
-## KR10 구성
+KR10부터 구형 세이브의 저널 토픽 ID와 NPC의 알려진 토픽 ID를 현재 데이터와 대조해 복구합니다. 이미 세이브에서 삭제된 토픽 기록은 재생성하지 않습니다. Rebirth 모드의 대화/스크립트 한글화는 본편 KR11 업데이트와 별도이며 이 배포물에 포함되지 않습니다.
+
+## KR11 구성
 
 - 한국어 런타임 패치가 적용된 `openmw.exe`
 - 한국어 번역 데이터 `ESP / CEL / MRK / TOP / JRN / l10n`
@@ -29,7 +31,7 @@ KR10은 KR8 번역 데이터, KR9의 잘못된 자동 링크 방지, KR9.1의 �
 
 1. 공식 **OpenMW 0.51.0 Windows x64**를 설치합니다.
 2. OpenMW를 한 번 실행해 사용자 설정 파일이 생성되게 합니다.
-3. KR10 ZIP을 압축 해제합니다.
+3. KR11 ZIP을 압축 해제합니다.
 4. `Install-Korean.bat`을 실행합니다.
 5. OpenMW 설치 폴더를 자동으로 찾지 못하면 `openmw.exe`가 있는 폴더를 직접 지정합니다.
 

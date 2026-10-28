@@ -1,0 +1,47 @@
+name: Korean font resource regression
+
+on:
+  pull_request:
+    paths:
+      - files/data/fonts/*.omwfont
+      - packaging/korean/tooling/*kr11*
+      - .github/workflows/korean-font-resources.yml
+  push:
+    paths:
+      - files/data/fonts/*.omwfont
+      - packaging/korean/tooling/*kr11*
+      - .github/workflows/korean-font-resources.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  font-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check configured Roman and Hangul glyph coverage
+        run: python3 -B packaging/korean/tooling/test_kr11_font_coverage.py
+      - name: Download the immutable KR10 Windows baseline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release download openmw-0.51.0-kr10
+          --repo munument1/Morrowind-OpenMW-KR
+          --pattern Morrowind-Korean-OpenMW-0.51.0-KR10-Full.zip
+          --dir baseline
+      - name: Build resource-only package and verify every retained payload
+        run: >-
+          python3 -B packaging/korean/tooling/package_kr11_fonts.py
+          --base baseline/Morrowind-Korean-OpenMW-0.51.0-KR10-Full.zip
+          --base-sha256 4e14faad597e98d151c780071ad377370cf7fced56af290e0a1c02bafb983041
+          --output artifacts/Morrowind-Korean-OpenMW-0.51.0-KR11-Full.zip
+          --platform windows
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kr11-windows-font-package
+          path: artifacts/*

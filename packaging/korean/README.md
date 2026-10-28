@@ -2,7 +2,7 @@
 
 이 디렉터리는 OpenMW 0.51.0 Korean Support의 Windows 설치기 구성 파일을 관리합니다.
 
-현재 배포판은 [Windows KR10](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr10)입니다. 기존 KR8 번역 데이터와 KR9/KR9.1 수정사항에 구형 저널·NPC 토픽 ID 호환 처리를 추가했습니다. Windows 빌드·테스트와 사용자 게임 확인을 마쳤습니다. 이미 삭제된 토픽 기록은 재생성하지 않습니다.
+현재 배포판은 [Windows KR11](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr11)입니다. KR10 실행 파일과 번역 데이터를 유지하며, 폰트 설정 두 파일에 U+2160–U+217F 로마 숫자 범위를 추가합니다. 이미 삭제된 토픽 기록은 재생성하지 않습니다.
 
 ## 설치 흐름
 
@@ -17,7 +17,7 @@
 5. ESP/CEL/MRK/TOP/JRN, `l10n`, 영상 SRT 10개를 검증합니다.
 6. `install-korean-config.ps1`로 사용자 `openmw.cfg`를 백업하고 갱신합니다.
 
-KR10 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
+KR11 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
 
 ## openmw.cfg 관리
 

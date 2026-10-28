@@ -246,7 +246,7 @@ index 0f9d85cc38..e31a1b09c3 100644
                  runtime.pop();
  
 -                MWBase::Environment::get().getSoundManager()->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
-+                auto* soundManager = MWBase::Environment::get().getSoundManager();
++                auto soundManager = MWBase::Environment::get().getSoundManager();
 +                const auto previousSpeechId = soundManager->getSaySoundId(ptr);
 +                soundManager->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
 +                const auto speechId = soundManager->getSaySoundId(ptr);

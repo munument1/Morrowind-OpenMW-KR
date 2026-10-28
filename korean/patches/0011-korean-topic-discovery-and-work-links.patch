@@ -1,0 +1,172 @@
+diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/keywordsearch.cpp
+index 55b934068d..fc5fa549e1 100644
+--- a/apps/openmw/mwdialogue/keywordsearch.cpp
++++ b/apps/openmw/mwdialogue/keywordsearch.cpp
+@@ -52,6 +52,12 @@ namespace
+         if (!isHangulSyllable(keyword))
+             return true;
+ 
++        // The Korean work topic shares its spelling with the generic noun
++        // meaning "thing/event". Spelling boundaries cannot disambiguate it.
++        // Keep explicit @일# links and the unambiguous keyword "일거리".
++        if (keyword == "일")
++            return false;
++
+         // "싫은" must not match "은", nor may a compound name like
+         // "하지-에이" link its second half to the independent topic "에이".
+         if (before.size() >= 3 && isHangulSyllable(before.substr(before.size() - 3)))
+@@ -157,9 +163,8 @@ namespace MWDialogue
+                     std::string_view remainingText(it + 1, end);
+                     std::string_view remainingKeyword = std::string_view(current->mKeyword).substr(it + 1 - i);
+                     if (Misc::StringUtils::ciStartsWith(remainingText, remainingKeyword)
+-                        && (overlaps
+-                            || hasKoreanDisplayBoundary(current->mKeyword, std::string_view(beg, i),
+-                                std::string_view(i + current->mKeyword.size(), end))))
++                        && hasKoreanDisplayBoundary(current->mKeyword, std::string_view(beg, i),
++                            std::string_view(i + current->mKeyword.size(), end)))
+                         matches.emplace_back(i, i + current->mKeyword.size(), current->mTopicId);
+                 }
+             }
+@@ -273,7 +278,16 @@ namespace MWDialogue
+                 token.mTopicId.append(id.size() - token.mTopicId.size(), '*');
+                 token.mTopicId = Misc::StringUtils::lowerCase(storage.topicStandardForm(token.mTopicId));
+ 
+-                matches.push_back(std::move(token));
++                // Old translation data marked verbs such as "작동" as the work
++                // topic, and even marked the last syllable of "만일"/"소행일".
++                // Strip their visible markup but do not make them clickable.
++                if (token.mTopicId == "일"
++                    && ((id != "일" && id != "일거리")
++                        || (posBegin >= 3 && isHangulSyllable(std::string_view(text).substr(posBegin - 3, 3)))))
++                    token.mTopicId.clear();
++
++                if (!token.mTopicId.empty() || !overlaps)
++                    matches.push_back(std::move(token));
+ 
+                 iterationPos = posEnd + 1;
+             }
+diff --git a/apps/openmw/mwdialogue/koreantopictags.hpp b/apps/openmw/mwdialogue/koreantopictags.hpp
+new file mode 100644
+index 0000000000..3e9219f120
+--- /dev/null
++++ b/apps/openmw/mwdialogue/koreantopictags.hpp
+@@ -0,0 +1,61 @@
++#ifndef OPENMW_MWDIALOGUE_KOREANTOPICTAGS_H
++#define OPENMW_MWDIALOGUE_KOREANTOPICTAGS_H
++
++#include <string>
++#include <string_view>
++
++namespace MWDialogue
++{
++    inline std::string visibleKoreanTopicText(std::string_view text)
++    {
++        std::string result;
++        std::size_t pos = 0;
++        while (pos < text.size())
++        {
++            const auto begin = text.find('@', pos);
++            const auto end = begin == std::string_view::npos ? std::string_view::npos : text.find('#', begin);
++            if (end == std::string_view::npos)
++            {
++                result.append(text.substr(pos));
++                break;
++            }
++            result.append(text.substr(pos, begin - pos));
++            auto phrase = text.substr(begin + 1, end - begin - 1);
++            const auto last = phrase.find_last_not_of('\x7f');
++            if (last != std::string_view::npos)
++                result.append(phrase.substr(0, last + 1));
++            pos = end + 1;
++        }
++        return result;
++    }
++
++    // Use corrected content markup only when every visible byte still matches
++    // the historical entry. Never replace wording, expanded player names, dates
++    // or quest state from a saved game with current translation templates.
++    inline std::string reconcileKoreanTopicMarkup(std::string_view saved, std::string_view current)
++    {
++        if (visibleKoreanTopicText(saved) == visibleKoreanTopicText(current))
++            return std::string(current);
++        return std::string(saved);
++    }
++
++    // Repair markup in the journal view, without rewriting historical save
++    // strings, timestamps, actors or quest stages. Visible wording is retained.
++    inline std::string repairLegacyKoreanTopicTags(std::string_view text)
++    {
++        std::string result(text);
++        const auto replace = [&](std::string_view from, std::string_view to) {
++            std::size_t pos = 0;
++            while ((pos = result.find(from, pos)) != std::string::npos)
++            {
++                result.replace(pos, from.size(), to);
++                pos += to.size();
++            }
++        };
++        replace("@하지#-@에이#", "@하지-에이#");
++        replace("하지-@에이#", "@하지-에이#");
++        replace("훌륭한 @일#이었네", "훌륭한 일이었네");
++        return result;
++    }
++}
++#endif
+diff --git a/apps/openmw/mwgui/journalviewmodel.cpp b/apps/openmw/mwgui/journalviewmodel.cpp
+index a5c454d93f..ddb209beaf 100644
+--- a/apps/openmw/mwgui/journalviewmodel.cpp
++++ b/apps/openmw/mwgui/journalviewmodel.cpp
+@@ -14,7 +14,9 @@
+ #include "../mwbase/world.hpp"
+ 
+ #include "../mwdialogue/keywordsearch.hpp"
++#include "../mwdialogue/koreantopictags.hpp"
+ #include "../mwworld/datetimemanager.hpp"
++#include "../mwworld/esmstore.hpp"
+ 
+ namespace MWGui
+ {
+@@ -27,6 +29,7 @@ namespace MWGui
+         mutable MWDialogue::KeywordSearch mKeywordSearch;
+ 
+         mutable std::unordered_map<std::string, const MWDialogue::Topic*> mTopics;
++        mutable std::unordered_map<ESM::RefId, const ESM::DialInfo*> mSourceInfos;
+ 
+         JournalViewModelImpl() { mKeywordSearchLoaded = false; }
+ 
+@@ -38,6 +41,7 @@ namespace MWGui
+         {
+             mKeywordSearch.clear();
+             mTopics.clear();
++            mSourceInfos.clear();
+             mKeywordSearchLoaded = false;
+         }
+ 
+@@ -49,6 +53,14 @@ namespace MWGui
+                 MWBase::WindowManager& windowManager = *MWBase::Environment::get().getWindowManager();
+                 const Translation::Storage& translationStorage = windowManager.getTranslationDataStorage();
+ 
++                for (const auto& dialogue : MWBase::Environment::get().getESMStore()->get<ESM::Dialogue>())
++                    for (const auto& info : dialogue.mInfo)
++                    {
++                        const auto [it, inserted] = mSourceInfos.emplace(info.mId, &info);
++                        if (!inserted && it->second && it->second->mResponse != info.mResponse)
++                            it->second = nullptr; // Ambiguous INFO identity must not repair historical markup.
++                    }
++
+                 for (const auto& [_, topic] : journal->getTopics())
+                 {
+                     const std::string topicId = Misc::StringUtils::lowerCase(topic.getName());
+@@ -109,7 +121,11 @@ namespace MWGui
+                     MWBase::WindowManager& windowManager = *MWBase::Environment::get().getWindowManager();
+                     const Translation::Storage& translationStorage = windowManager.getTranslationDataStorage();
+ 
+-                    const std::string& text = mEntry->getText();
++                    const auto source = mModel->mSourceInfos.find(mEntry->mInfoId);
++                    const std::string reconciled = source != mModel->mSourceInfos.end() && source->second
++                        ? reconcileKoreanTopicMarkup(mEntry->getText(), source->second->mResponse)
++                        : mEntry->getText();
++                    const std::string text = repairLegacyKoreanTopicTags(reconciled);
+                     mText.reserve(text.size());
+ 
+                     auto matches = mModel->mKeywordSearch.parseHyperText(text, translationStorage);

@@ -14,7 +14,9 @@
 #include "../mwbase/world.hpp"
 
 #include "../mwdialogue/keywordsearch.hpp"
+#include "../mwdialogue/koreantopictags.hpp"
 #include "../mwworld/datetimemanager.hpp"
+#include "../mwworld/esmstore.hpp"
 
 namespace MWGui
 {
@@ -27,6 +29,7 @@ namespace MWGui
         mutable MWDialogue::KeywordSearch mKeywordSearch;
 
         mutable std::unordered_map<std::string, const MWDialogue::Topic*> mTopics;
+        mutable std::unordered_map<ESM::RefId, const ESM::DialInfo*> mSourceInfos;
 
         JournalViewModelImpl() { mKeywordSearchLoaded = false; }
 
@@ -38,6 +41,7 @@ namespace MWGui
         {
             mKeywordSearch.clear();
             mTopics.clear();
+            mSourceInfos.clear();
             mKeywordSearchLoaded = false;
         }
 
@@ -48,6 +52,14 @@ namespace MWGui
                 MWBase::Journal* journal = MWBase::Environment::get().getJournal();
                 MWBase::WindowManager& windowManager = *MWBase::Environment::get().getWindowManager();
                 const Translation::Storage& translationStorage = windowManager.getTranslationDataStorage();
+
+                for (const auto& dialogue : MWBase::Environment::get().getESMStore()->get<ESM::Dialogue>())
+                    for (const auto& info : dialogue.mInfo)
+                    {
+                        const auto [it, inserted] = mSourceInfos.emplace(info.mId, &info);
+                        if (!inserted && it->second && it->second->mResponse != info.mResponse)
+                            it->second = nullptr; // Ambiguous INFO identity must not repair historical markup.
+                    }
 
                 for (const auto& [_, topic] : journal->getTopics())
                 {
@@ -109,7 +121,11 @@ namespace MWGui
                     MWBase::WindowManager& windowManager = *MWBase::Environment::get().getWindowManager();
                     const Translation::Storage& translationStorage = windowManager.getTranslationDataStorage();
 
-                    const std::string& text = mEntry->getText();
+                    const auto source = mModel->mSourceInfos.find(mEntry->mInfoId);
+                    const std::string reconciled = source != mModel->mSourceInfos.end() && source->second
+                        ? reconcileKoreanTopicMarkup(mEntry->getText(), source->second->mResponse)
+                        : mEntry->getText();
+                    const std::string text = repairLegacyKoreanTopicTags(reconciled);
                     mText.reserve(text.size());
 
                     auto matches = mModel->mKeywordSearch.parseHyperText(text, translationStorage);

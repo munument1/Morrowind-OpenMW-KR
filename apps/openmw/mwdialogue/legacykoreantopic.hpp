@@ -5,7 +5,7 @@
 
 namespace MWDialogue
 {
-    // Only components verified against legacy topic IDs and current INFO records.
+    // Only components verified against saved legacy IDs and loaded Korean topic names.
     // Return no result for unsupported or malformed input; callers must additionally
     // verify the decoded topic against the loaded content before using it.
     inline std::string decodeLegacyKoreanTopic(std::string_view text)
@@ -41,6 +41,7 @@ namespace MWDialogue
             switch (stream.consume())
             {
                 case 0xa1: vowel = 0; break; case 0xa2: vowel = 1; break;
+                case 0xa3: vowel = 2; break;
                 case 0xa6: vowel = 4; break; case 0xaa: vowel = 5; break;
                 case 0xb2: vowel = 6; break; case 0xb5: vowel = 7; break;
                 case 0xb7: vowel = 8; break; case 0xba: vowel = 9; break;

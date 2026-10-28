@@ -1,5 +1,9 @@
 # KR5 journal and potion correction
 
+> **Maintenance note (KR9):** The KR5 correction and Daedric data-repair instructions below document historical release preparation, not the active Windows release pipeline. Old KR8 Issue #13 and KR9 one-shot release workflows have been retired; their exact implementations remain in Git history and the release tags.
+>
+> `build_kr5_data.py` is **not** dead code: `verify_kr5_links.py` and `verify_daedric_scrolls.py` import its record-parsing helpers. Keep it until these shared helpers are refactored. Live topic and journal regression tests also depend on these utility modules.
+
 The English-only EET database is source material, not a Korean completion tracker.
 Compare its ALCH/FNAM IDs against the loaded translation and all three original masters.
 The missing records are `p_restore_health_b`, `p_restore_health_c`, and `p_restore_health_s`.

@@ -107,11 +107,18 @@ jobs:
         run: |
           set -euo pipefail
           expected="$(awk 'NR==1{print $1}' "input/$SOURCE_ASSET.sha256")"
+          # Keep the already published KR9.1 build reproducible. When preparing
+          # the next release tag, remove obsolete release notes from the base ZIP.
+          cleanup_args=()
+          if [[ "$RELEASE_TAG" != 'openmw-0.51.0-kr9.1' ]]; then
+            cleanup_args=(--prune-legacy-docs)
+          fi
           python3 packaging/korean/tooling/package_kr9_windows.py \
             --source "input/$SOURCE_ASSET" \
             --executable runtime/openmw.exe \
             --output "output/$OUTPUT_ASSET" \
             --release-tag "$RELEASE_TAG" \
+            "${cleanup_args[@]}" \
             --expected-source-sha256 "$expected" \
             | tee output/kr9-verification.json
           (cd output && sha256sum --check "$OUTPUT_ASSET.sha256")

@@ -1,8 +1,8 @@
-# KR9 Windows installer payload
+# OpenMW 한국어판 Windows 설치 패키지
 
-이 디렉터리는 OpenMW 0.51.0 Korean Support KR9의 Windows 설치기 구성 파일을 관리합니다.
+이 디렉터리는 OpenMW 0.51.0 Korean Support의 Windows 설치기 구성 파일을 관리합니다.
 
-최신 배포 ZIP은 [Windows KR9 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr9)에서 받습니다. KR9는 KR8의 번역 데이터를 유지하면서 한국어 대화·저널 하이퍼링크를 수정한 엔진 업데이트입니다.
+현재 정상 작동이 확인된 릴리스는 [Windows KR9.1](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr9.1)입니다. KR9.1은 KR8의 번역 데이터를 유지하면서 한국어 대화·저널 하이퍼링크를 수정한 엔진 업데이트입니다.
 
 ## 설치 흐름
 
@@ -77,3 +77,24 @@ payload/mods/Morrowind_Korean_ReTranslation/
 ```
 
 필수 번역 데이터나 자막이 누락된 패키지는 배포하지 않아야 합니다.
+
+## 다음 릴리스의 문서 정리
+
+KR9.1 ZIP은 이전 버전 ZIP을 상속하면서 KR4~KR7 변경 이력, KR5 시험판 안내,
+오래된 검증 JSON, 실제 실행 파일과 맞지 않는 내부 `SHA256SUMS.txt`,
+KR7 기준 `README-KOREAN.txt`까지 포함했습니다. 이 문제는 설치기 동작과는 무관하지만
+사용자에게 오래된 정보를 최신 안내처럼 보여주므로 정리합니다.
+
+- **이미 공개한 KR8/KR9/KR9.1 ZIP은 변경하지 않습니다.**
+- 다음 릴리스에서는 `package_kr9_windows.py --prune-legacy-docs`로
+  확인된 구형 루트 문서 12개만 제거하고, `README-KOREAN.txt`를 현재 릴리스
+  태그와 설치 방법으로 새로 작성합니다.
+- 새 ZIP의 SHA-256은 외부 `.zip.sha256` 파일에 새로 계산하여 기록합니다.
+  내부의 오래된 `SHA256SUMS.txt`는 재사용하지 않습니다.
+- `release-kr9-windows.yml`은 기존 KR9.1 재빌드에서는 이 정리를 하지 않으며,
+  향후 새 버전 태그로 변경했을 때 정리 옵션을 자동 적용합니다.
+- 실행 파일 이외의 ESP/CEL/MRK/TOP/JRN, 자막, 폰트/라이선스,
+  `Install-Korean.bat`, PowerShell 설치기, `korean-fallbacks.cfg`는
+  원본 ZIP과 **바이트 단위로 동일**해야 합니다.
+- `verify-kr9-windows-package.yml`에서 실제 릴리스 ZIP을 대상으로
+  삭제 대상, README 내용, 실행 파일/기타 데이터 변경 범위를 검증합니다.

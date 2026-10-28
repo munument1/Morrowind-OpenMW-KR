@@ -40,7 +40,9 @@ jobs:
             "$GITHUB_WORKSPACE/korean/patches/0002-utf8-bom-sidecars.patch" \
             "$GITHUB_WORKSPACE/korean/patches/0003-mixed-utf8-esm-reader.patch" \
             "$GITHUB_WORKSPACE/korean/patches/0004-legacy-korean-journal-recovery.patch" \
-            "$GITHUB_WORKSPACE/korean/patches/0008-korean-implicit-topic-boundaries.patch"; do
+            "$GITHUB_WORKSPACE/korean/patches/0008-korean-implicit-topic-boundaries.patch" \
+            "$GITHUB_WORKSPACE/korean/patches/0009-korean-honorific-particle.patch" \
+            "$GITHUB_WORKSPACE/korean/patches/0010-legacy-korean-topic-recovery.patch"; do
             echo "Checking $(basename "$patch")"
             git -C "$target" apply --check "$patch"
             git -C "$target" apply "$patch"

@@ -1,4 +1,5 @@
 #include "dialoguemanagerimp.hpp"
+#include "legacykoreantopic.hpp"
 
 #include <algorithm>
 #include <list>
@@ -691,9 +692,29 @@ namespace MWDialogue
             ESM::DialogueState state;
             state.load(reader);
 
+            std::size_t recoveredTopics = 0;
             for (const auto& knownTopic : state.mKnownTopics)
+            {
                 if (store.get<ESM::Dialogue>().search(knownTopic))
+                {
                     mKnownTopics.insert(knownTopic);
+                    continue;
+                }
+                if (!knownTopic.is<ESM::StringRefId>())
+                    continue;
+                const std::string decoded = decodeLegacyKoreanTopic(knownTopic.getRefIdString());
+                if (decoded.empty())
+                    continue;
+                const ESM::RefId candidate = ESM::RefId::stringRefId(decoded);
+                const ESM::Dialogue* dialogue = store.get<ESM::Dialogue>().search(candidate);
+                if (dialogue && dialogue->mType == ESM::Dialogue::Topic)
+                {
+                    mKnownTopics.insert(candidate);
+                    ++recoveredTopics;
+                }
+            }
+            if (recoveredTopics)
+                Log(Debug::Info) << "Recovered " << recoveredTopics << " legacy Korean known topic IDs";
 
             mChangedFactionReaction = state.mChangedFactionReaction;
         }

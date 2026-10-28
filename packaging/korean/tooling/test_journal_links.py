@@ -55,6 +55,8 @@ with tempfile.TemporaryDirectory(prefix='openmw-journal-test-') as tmp:
         assert compound_results['hyphen']['targets'] == []
         assert compound_results['verb']['targets'] == ['빛']
         assert compound_results['particles']['targets'] == ['마법사 길드', '광산']
+        honorific = inspect(runner, mod, [('honorific', '트리뷰널께서는 말했다.')], ['트리뷰널'], True)
+        assert honorific['honorific']['targets'] == ['트리뷰널']
         # KR8 attested inflected nouns must retain their full topic links.
         inflected = [
             ('copulas', '유감스러운 말이군. 여기 보상이오.'),

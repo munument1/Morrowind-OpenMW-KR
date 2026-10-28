@@ -1,0 +1,59 @@
+name: Journal compatibility test candidate
+
+on:
+  push:
+    branches: [fix/journal-regression]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pinned upstream patch chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --branch openmw-0.51.0 https://github.com/OpenMW/openmw.git upstream
+          test "$(git -C upstream rev-parse HEAD)" = f4bec41444214a7903bebd178389ca22ca13f646
+          for patch in korean/patches/*.patch; do
+            git -C upstream apply --check "$GITHUB_WORKSPACE/$patch"
+            git -C upstream apply "$GITHUB_WORKSPACE/$patch"
+          done
+          git -C upstream diff --check
+          for source in journalimp.cpp dialoguemanagerimp.cpp; do
+            # The fork also contains unrelated upstream development changes.
+            grep -F 'decodeLegacyKoreanTopic' "upstream/apps/openmw/mwdialogue/$source"
+          done
+      - name: Verify decoder, index and real keyword parser
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test in legacy-korean-topic legacy-korean-name journal-index; do
+            g++ -std=c++20 -O2 -I. "packaging/korean/tooling/test-$test.cpp" -o /tmp/test-runtime
+            /tmp/test-runtime
+          done
+          g++ -std=c++20 -O2 -I. packaging/korean/tooling/verify-journal-links.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp components/translation/translation.cpp \
+            components/files/collections.cpp components/files/multidircollection.cpp \
+            components/files/conversion.cpp components/toutf8/toutf8.cpp components/debug/debuglog.cpp \
+            -o /tmp/verify-journal-links
+          python3 packaging/korean/tooling/test_journal_links.py /tmp/verify-journal-links
+
+  windows:
+    needs: verify
+    uses: ./.github/workflows/windows.yml
+    with:
+      image: '2022'
+      msvc: '2022'
+      build-type: Release
+      package: false
+      release: false
+      source_repository: OpenMW/openmw
+      source_ref: f4bec41444214a7903bebd178389ca22ca13f646
+      korean_overlay: true
+      store_runtime_executable: true

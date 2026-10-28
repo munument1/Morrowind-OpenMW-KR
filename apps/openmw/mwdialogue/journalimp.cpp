@@ -1,4 +1,5 @@
 #include "journalimp.hpp"
+#include "legacykoreantopic.hpp"
 
 #include <iterator>
 
@@ -219,6 +220,23 @@ namespace MWDialogue
         {
             ESM::JournalEntry record;
             record.load(reader);
+
+            // Old Korean fonts encoded topic IDs as glyph components. Restore only
+            // missing topic records whose decoded ID and INFO both exist in the
+            // currently loaded content; never rewrite the original save on disk.
+            if (record.mType == ESM::JournalEntry::Type_Topic && !isThere(record.mTopic, record.mInfo)
+                && record.mTopic.is<ESM::StringRefId>() && !record.mInfo.empty())
+            {
+                const std::string decoded = decodeLegacyKoreanTopic(record.mTopic.getRefIdString());
+                if (!decoded.empty())
+                {
+                    const ESM::RefId candidate = ESM::RefId::stringRefId(decoded);
+                    const ESM::Dialogue* dialogue
+                        = MWBase::Environment::get().getESMStore()->get<ESM::Dialogue>().search(candidate);
+                    if (dialogue && dialogue->mType == ESM::Dialogue::Topic && isThere(candidate, record.mInfo))
+                        record.mTopic = candidate;
+                }
+            }
 
             if (isThere(record.mTopic, record.mInfo))
                 switch (record.mType)

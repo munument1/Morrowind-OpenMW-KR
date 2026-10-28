@@ -19,9 +19,16 @@ def patch(source,out,reviewed=None):
     esp=source/(STEM+'.esp');raw=esp.read_bytes()
     pairs=read_forms(source/(STEM+'.top'));forms={}
     for k,v in pairs:forms.setdefault(k,v)
-    changes=[];result=[];removed=0;expanded=0;names=0;broad_removed=0
+    changes=[];result=[];removed=0;expanded=0;names=0;broad_removed=0;job_routes=0
     reviewed_keys={(r['INFO'],r['tag'],r['target'],r['before_text']) for r in (reviewed or {}).get('removals',[])}
     reviewed_non_job={'1976331762827310505','30356158691410032642','29424225121377211373'}
+    # Actual greetings of NPCs with the original "work" topic. Preserve these
+    # genuine quest entrances after disabling the ambiguous bare noun.
+    work_routes={
+      '16043226829728694':('맡길 일이 있네.','맡길 @일#이 있네.'),
+      '31177231023265928026':('제 일을 조금','제 @일#을 조금'),
+      '22561125242173313063':('아니면 일을 찾으러','아니면 @일#을 찾으러'),
+    }
     for tag,body,header in chunks(raw,16):
         new_body=body
         if tag==b'INFO':
@@ -31,6 +38,11 @@ def patch(source,out,reviewed=None):
                 new=value
                 if field==b'NAME':
                     old=value.rstrip(b'\0').decode('utf8');text=old
+                    if iid in work_routes:
+                        before,after=work_routes[iid]
+                        if before in text:
+                            assert text.count(before)==1
+                            text=text.replace(before,after);job_routes+=1
                     for bad in ['@하지#-@에이#','하지-@에이#']:
                         names+=text.count(bad);text=text.replace(bad,'@하즈-에이#')
                     expanded+=text.count('@일#거리');text=text.replace('@일#거리','@일거리#')
@@ -82,6 +94,7 @@ def patch(source,out,reviewed=None):
     report={'input_sha256':hashlib.sha256(raw).hexdigest(),'output_sha256':hashlib.sha256(patched).hexdigest(),
       'INFO_NAME_changes':len(changes),'invalid_work_tags_removed':removed,'full_work_keywords':expanded,
       'additional_reviewed_wrong_tags_removed':broad_removed,
+      'reviewed_quest_entry_links_preserved':job_routes,
       'proper_name_tags_repaired':names,'other_subrecords':'IDENTICAL','Daedric_BOOK_records':'IDENTICAL',
       'changes':changes,'scope':'New translation data. Historical saved journal text is not rewritten.'}
     return report

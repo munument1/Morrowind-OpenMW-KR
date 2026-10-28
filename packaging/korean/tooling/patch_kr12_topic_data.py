@@ -19,7 +19,7 @@ def patch(source,out,reviewed=None):
     esp=source/(STEM+'.esp');raw=esp.read_bytes()
     pairs=read_forms(source/(STEM+'.top'));forms={}
     for k,v in pairs:forms.setdefault(k,v)
-    changes=[];result=[];removed=0;expanded=0;names=0;broad_removed=0;job_routes=0
+    changes=[];result=[];removed=0;expanded=0;names=0;broad_removed=0;job_routes=0;syntax_repairs=0
     reviewed_keys={(r['INFO'],r['tag'],r['target'],r['before_text']) for r in (reviewed or {}).get('removals',[])}
     reviewed_non_job={'1976331762827310505','30356158691410032642','29424225121377211373'}
     # Actual greetings of NPCs with the original "work" topic. Preserve these
@@ -60,6 +60,12 @@ def patch(source,out,reviewed=None):
                     if text!=old:
                         new=text.encode('utf8')+value[len(value.rstrip(b'\0')):]
                         changes.append({'INFO':iid,'before':old,'after':text})
+                elif field==b'BNAM' and iid=='2535878202473527910':
+                    before=value.rstrip(b'\0').decode('utf8')
+                    if before=='Choice "그녀에게 토지 증서를 건넨다."Keep the land deed" 2':
+                        after='Choice "그녀에게 토지 증서를 건넨다." 1 "토지 증서를 갖는다." 2'
+                        new=after.encode('utf8')+value[len(value.rstrip(b'\0')):]
+                        syntax_repairs+=1
                 packed.append(struct.pack('<4sI',field,len(new))+new)
             new_body=b''.join(packed)
         result.append(header[:4]+struct.pack('<I',len(new_body))+header[8:]+new_body)
@@ -72,7 +78,10 @@ def patch(source,out,reviewed=None):
         aa=list(chunks(av,8));bb=list(chunks(bv,8));assert len(aa)==len(bb)
         for (x,xv,_),(y,yv,_) in zip(aa,bb):
             assert x==y
-            if a!=b'INFO' or x!=b'NAME':assert xv==yv
+            if a==b'INFO' and x==b'BNAM' and xv!=yv:
+                assert xv.rstrip(b'\0')=='Choice "그녀에게 토지 증서를 건넨다."Keep the land deed" 2'.encode('utf8')
+                assert yv.rstrip(b'\0')=='Choice "그녀에게 토지 증서를 건넨다." 1 "토지 증서를 갖는다." 2'.encode('utf8')
+            elif a!=b'INFO' or x!=b'NAME':assert xv==yv
     shutil.copytree(source,out)
     (out/(STEM+'.esp')).write_bytes(patched)
     for ext in ('top','mrk','jrn'):
@@ -95,7 +104,8 @@ def patch(source,out,reviewed=None):
       'INFO_NAME_changes':len(changes),'invalid_work_tags_removed':removed,'full_work_keywords':expanded,
       'additional_reviewed_wrong_tags_removed':broad_removed,
       'reviewed_quest_entry_links_preserved':job_routes,
-      'proper_name_tags_repaired':names,'other_subrecords':'IDENTICAL','Daedric_BOOK_records':'IDENTICAL',
+      'INFO_BNAM_choice_syntax_repairs':syntax_repairs,
+      'proper_name_tags_repaired':names,'other_subrecords':'IDENTICAL except documented INFO.BNAM choice syntax repair','Daedric_BOOK_records':'IDENTICAL',
       'changes':changes,'scope':'New translation data. Historical saved journal text is not rewritten.'}
     return report
 if __name__=='__main__':

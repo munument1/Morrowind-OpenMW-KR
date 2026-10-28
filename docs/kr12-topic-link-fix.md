@@ -12,9 +12,10 @@ both engine discovery and translation markup. KR12 changes both components.
   Player-name expansions and changed translations therefore are not overwritten.
 * Preserve original Daedric glyph input/font data and KR11 Roman numeral coverage.
 
-The data postprocessor writes a new directory. It changes only INFO.NAME and
-reviewed sidecar mappings; scripts, IDs, conditions, journal stages, BOOK records
-and all other subrecords are byte-identical. It repairs split Haj-Ei name tags,
+The data postprocessor writes a new directory. It changes INFO.NAME and reviewed
+sidecar mappings, plus one malformed land-deed Choice result script that restores
+proper quoting and original branch IDs 1/2. IDs, conditions, journal stages, BOOK
+records and all remaining subrecords are byte-identical. It repairs split Haj-Ei name tags,
 unrelated work tags, and an explicit manifest of reviewed additional errors.
 
 Audit the full released translation against locally owned original masters with

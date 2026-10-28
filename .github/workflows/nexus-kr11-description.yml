@@ -64,14 +64,15 @@ jobs:
               '한국어 단어 내부에서 잘못 발견되던 토픽을 보정하고, 일반적인 “일”이 업무 토픽으로 연결되는 문제를 수정했습니다. 번역 데이터 468개 INFO 필드에서 검토한 오연결·이름 분절을 고치고 실제 업무 의뢰 진입 링크는 보강했습니다. KR11 로마 숫자 폰트 수정과 원래 데이드릭 글리프는 유지합니다.',
               `[url=${win.html_url}]Windows KR12 ZIP 및 SHA-256[/url]`,
               '[b]Android KR12[/b]',
-              'Windows KR10의 조사·구형 토픽 복구와 KR12 링크 수정을 이식한 새 ARM64 APK입니다. 데이드릭 슬롯은 원래 DemonicLetters 폰트로 복구했습니다. 수정된 한국어 데이터 KR12 ZIP도 함께 적용하세요.',
+              'Windows KR10의 조사·구형 토픽 복구와 KR12 링크·음성 자막 수정을 이식한 새 ARM64 APK입니다. 데이드릭 슬롯은 원래 DemonicLetters 폰트로 복구했습니다. 수정된 한국어 데이터 KR12 ZIP도 함께 적용하세요.',
+              '두 플랫폼 모두 한국어 NPC 자막이 음성보다 먼저 사라지던 문제를 수정했습니다. NPC 음성과 Say 대사의 자막은 해당 음성의 실제 재생 종료에 맞춰 유지합니다. 음성이 없는 일반 알림과 동영상 SRT는 기존 동작을 유지합니다.',
               '앱 식별자 com.ast.openmw.korean, versionCode 5114, 영구 릴리스 서명을 사용합니다. 기존 KR8(com.ast.openmw) 및 초기 KR9(com.ast.openmw.kr9)를 삭제하거나 덮어쓰지 않습니다. 게임 데이터 경로를 새 앱에서 설정하고 세이브는 백업 후 수동으로 옮기세요.',
               `[url=${android.html_url}]Android KR12 APK·데이터 ZIP 및 SHA-256[/url]`,
               '[b]검증 범위[/b]',
               'Windows에서 한국어 토픽·저널과 로마 숫자·데이드릭 표시를 검사했습니다. Android는 네이티브 컴파일, 토픽/저널 C++ 회귀 검사, Gradle 검사, 서명과 16KiB 정렬 검증을 수행했습니다. Android 기기 전체 플레이 검증을 완료했다고 주장하지 않습니다.',
               'Rebirth 모드 ESP는 이 본편 배포에 포함되지 않습니다. Rebirth의 토픽 연결 및 Daedric 번역 수정은 별도 로컬 검증 대상입니다.'
             ].join('\n\n');
-            const summary = 'OpenMW 0.51.0 한국어 지원 KR12. 대화·저널의 잘못된 토픽 링크와 번역 링크를 수정했습니다. Windows 및 영구 서명 Android ARM64 APK·데이터 제공. 로마 숫자·데이드릭 문자 지원. 정품 게임 데이터 별도 필요.';
+            const summary = 'OpenMW 0.51.0 한국어 지원 KR12. 대화·저널 토픽 링크와 NPC 음성 자막 조기 종료를 수정했습니다. Windows 및 영구 서명 Android ARM64 APK·데이터 제공. 로마 숫자·데이드릭 문자 지원. 정품 게임 데이터 별도 필요.';
             const description = mod.description.startsWith(heading) ? mod.description : notice+'\n\n[spoiler=기존 소개 및 크레딧 (이전 버전 안내 포함)]\n'+mod.description+'\n[/spoiler]';
             fs.writeFileSync('nexus-description-before-kr12.txt',mod.description);
             fs.writeFileSync('nexus-description-proposed-kr12.txt',description);

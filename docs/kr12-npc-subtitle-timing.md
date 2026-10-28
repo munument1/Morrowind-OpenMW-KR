@@ -7,6 +7,9 @@ value, 0.1 seconds. This is separate from movie SRT subtitles.
 On the locally installed English `CharGenName2.mp3`, speech lasts 7.810625 seconds.
 The English script caption has 119 characters (11.9 seconds); the Korean caption
 has 42 (4.2 seconds), explaining approximately 3.61 seconds of premature expiry.
+Across 21 locally measured opening clips, 18 Korean text timers are shorter than
+their corresponding audio. These are asset/code timing comparisons, not 21
+separate rendered gameplay observations.
 
 The fix gives each successfully started speech stream a unique identity. NPC
 Voice INFO and script Say captions follow that identity until it finishes,

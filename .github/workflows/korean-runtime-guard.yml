@@ -51,6 +51,11 @@ jobs:
         run: |
           set -euo pipefail
           git config core.autocrlf false
+          # 0009 modifies a line introduced by 0008; temporarily undo it before
+          # checking the earlier patch, then restore it for the runtime tests.
+          git apply --reverse --check korean/patches/0010-legacy-korean-topic-recovery.patch
+          git apply --reverse --check korean/patches/0009-korean-honorific-particle.patch
+          git apply --reverse korean/patches/0009-korean-honorific-particle.patch
           # 0005 targets the clean upstream openmw-0.51.0 VideoWidget, while this fork's
           # VideoWidget also carries unrelated source differences. Its upstream apply/build
           # validation is handled by the manual korean-windows-port.yml build against the target upstream ref; source equivalence is guarded below.
@@ -65,6 +70,7 @@ jobs:
             echo "Reverse-checking $patch"
             git apply --reverse --check "$patch"
           done
+          git apply korean/patches/0009-korean-honorific-particle.patch
           test -s korean/patches/0005-video-subtitles.patch
 
       - name: Verify Korean runtime invariants
@@ -108,3 +114,5 @@ jobs:
           /tmp/test-journal-index
           g++ -std=c++20 -O2 -I. packaging/korean/tooling/test-legacy-korean-name.cpp -o /tmp/test-legacy-korean-name
           /tmp/test-legacy-korean-name
+          g++ -std=c++20 -O2 -I. packaging/korean/tooling/test-legacy-korean-topic.cpp -o /tmp/test-legacy-korean-topic
+          /tmp/test-legacy-korean-topic

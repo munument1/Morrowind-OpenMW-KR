@@ -1,0 +1,78 @@
+#ifndef OPENMW_MWDIALOGUE_LEGACYKOREANTOPIC_H
+#define OPENMW_MWDIALOGUE_LEGACYKOREANTOPIC_H
+
+#include <components/misc/utf8stream.hpp>
+
+namespace MWDialogue
+{
+    // Only components verified against saved legacy IDs and loaded Korean topic names.
+    // Return no result for unsupported or malformed input; callers must additionally
+    // verify the decoded topic against the loaded content before using it.
+    inline std::string decodeLegacyKoreanTopic(std::string_view text)
+    {
+        // Utf8Stream is permissive; do not accept overlong or invalid UTF-8 as
+        // legacy glyph components that could accidentally identify a real topic.
+        Utf8Stream validation(text);
+        while (!validation.eof())
+        {
+            auto begin = validation.current();
+            auto ch = validation.consume();
+            auto size = validation.current() - begin;
+            if (ch > 0x10ffff || (ch >= 0xd800 && ch <= 0xdfff)
+                || size != (ch < 0x80 ? 1 : ch < 0x800 ? 2 : ch < 0x10000 ? 3 : 4))
+                return {};
+        }
+        Utf8Stream stream(text);
+        std::string result;
+        bool found = false;
+        while (!stream.eof())
+        {
+            auto ch = stream.consume();
+            int lead = ch >= 0x10 && ch <= 0x1f ? static_cast<int>(ch - 0x10)
+                : ch == 0x192 ? 16 : ch == 0x2021 ? 17 : ch == 0xb0 ? 18 : -1;
+            if (lead < 0 && ch >= 0x20 && ch <= 0x7e)
+            {
+                result += static_cast<char>(ch);
+                continue;
+            }
+            if (lead < 0 || stream.eof())
+                return {};
+            int vowel = -1;
+            switch (stream.consume())
+            {
+                case 0xa1: vowel = 0; break; case 0xa2: vowel = 1; break;
+                case 0xa3: vowel = 2; break;
+                case 0xa6: vowel = 4; break; case 0xaa: vowel = 5; break;
+                case 0xb2: vowel = 6; break; case 0xb5: vowel = 7; break;
+                case 0xb7: vowel = 8; break; case 0xba: vowel = 9; break;
+                case 0xbc: vowel = 11; break; case 0xbd: vowel = 12; break;
+                case 0xbf: vowel = 13; break; case 0xc4: vowel = 14; break;
+                case 0xc5: vowel = 15; break; case 0xc6: vowel = 16; break;
+                case 0xc7: vowel = 17; break; case 0xc9: vowel = 18; break;
+                case 0xd1: vowel = 19; break; case 0xd6: vowel = 20; break;
+            }
+            if (vowel < 0 || stream.eof())
+                return {};
+            int final = -1;
+            switch (stream.consume())
+            {
+                case 0x7f: final = 0; break; case 0xdc: final = 1; break;
+                case 0xe1: final = 4; break; case 0xe5: final = 7; break;
+                case 0xe6: final = 8; break; case 0xe7: final = 9; break;
+                case 0xee: final = 16; break; case 0xef: final = 17; break;
+                case 0xf2: final = 19; break; case 0xf3: final = 20; break;
+                case 0xf4: final = 21; break; case 0xf6: final = 22; break;
+                case 0xf7: final = 23; break; // also verified by legacy name tests
+            }
+            if (final < 0)
+                return {};
+            unsigned syllable = 0xac00 + (lead * 21 + vowel) * 28 + final;
+            result += static_cast<char>(0xe0 | (syllable >> 12));
+            result += static_cast<char>(0x80 | ((syllable >> 6) & 0x3f));
+            result += static_cast<char>(0x80 | (syllable & 0x3f));
+            found = true;
+        }
+        return found ? result : std::string();
+    }
+}
+#endif

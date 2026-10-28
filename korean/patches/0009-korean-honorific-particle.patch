@@ -1,0 +1,13 @@
+diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/keywordsearch.cpp
+index d106392a21..55b934068d 100644
+--- a/apps/openmw/mwdialogue/keywordsearch.cpp
++++ b/apps/openmw/mwdialogue/keywordsearch.cpp
+@@ -37,7 +37,7 @@ namespace
+     bool isKoreanParticle(std::string_view ending)
+     {
+         constexpr std::string_view endings[] = {
+-            "은", "는", "이", "가", "을", "를", "의", "에", "에서", "에게", "께", "께서",
++            "은", "는", "이", "가", "을", "를", "의", "에", "에서", "에게", "께", "께서", "께서는",
+             "한테", "한테서", "로", "으로", "와", "과", "랑", "이랑", "하고", "도", "만",
+             "까지", "부터", "조차", "마저", "처럼", "같이", "보다", "밖에", "라도",
+             "이라도", "나", "이나", "든", "이든", "든지", "이든지", "라고", "이라고",

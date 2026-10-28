@@ -6,20 +6,20 @@ OpenMW 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 플�
 
 ## 현재 배포판
 
-**OpenMW 0.51.0 Korean Support KR9**
+**OpenMW 0.51.0 Korean Support KR10**
 
-- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr9
-- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR9-Full.zip`
+- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr10
+- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR10-Full.zip`
 - 공식 OpenMW 0.51.0 Windows 설치본 위에 적용하는 compact 패키지
 - 전역 `encoding=utf8` 설정 불필요
 
-KR9는 KR8 번역 데이터를 그대로 유지하면서 NPC 대화와 저널의 한국어 단어 내부 오인식 하이퍼링크를 수정한 엔진 업데이트입니다.
+KR10은 KR8 번역 데이터, KR9의 잘못된 자동 링크 방지, KR9.1의 공식 0.51.0 실행 호환성을 유지하면서 구형 세이브의 저널 토픽 ID와 NPC의 알려진 토픽 ID를 복구합니다. Windows 빌드·테스트 및 사용자 게임 확인을 마쳤습니다. 이미 세이브에서 삭제된 토픽 기록을 재생성하지는 않습니다. 설치 전 중요 세이브를 백업하세요.
 
-## KR9 구성
+## KR10 구성
 
 - 한국어 런타임 패치가 적용된 `openmw.exe`
 - 한국어 번역 데이터 `ESP / CEL / MRK / TOP / JRN / l10n`
-- Gowun Batang 기반 한국어 폰트 구성
+- Galmuri11 기반 한국어 폰트 구성
 - Morrowind 본편 3개 + Bloodmoon 7개, 총 10개 UTF-8 SRT 영상 자막
 - `Movies_New_Game=mw_intro.bik` 등 원본 Morrowind 영상 fallback 복구
 - 기존 `openmw.cfg`와 한국어 모드/엔진 자동 백업
@@ -29,7 +29,7 @@ KR9는 KR8 번역 데이터를 그대로 유지하면서 NPC 대화와 저널의
 
 1. 공식 **OpenMW 0.51.0 Windows x64**를 설치합니다.
 2. OpenMW를 한 번 실행해 사용자 설정 파일이 생성되게 합니다.
-3. KR9 ZIP을 압축 해제합니다.
+3. KR10 ZIP을 압축 해제합니다.
 4. `Install-Korean.bat`을 실행합니다.
 5. OpenMW 설치 폴더를 자동으로 찾지 못하면 `openmw.exe`가 있는 폴더를 직접 지정합니다.
 
@@ -47,6 +47,8 @@ KR9는 KR8 번역 데이터를 그대로 유지하면서 NPC 대화와 저널의
 6. `0006-journal-topic-keywords.patch` — 저널의 정식 주제명과 `.jrn` 별칭 검색 지원
 7. `0007-korean-journal-index.patch` — 한국어 저널 초성 색인 지원
 8. `0008-korean-implicit-topic-boundaries.patch` — 한국어 대화·저널 링크의 잘못된 단어 내부 일치 방지
+9. `0009-korean-honorific-particle.patch` — 정상 조사 `께서는`의 토픽 링크 보완
+10. `0010-legacy-korean-topic-recovery.patch` — 현재 데이터와 대조해 구형 저널/NPC 토픽 ID 복구
 
 ## 영상 자막
 
@@ -82,7 +84,7 @@ video/mw_intro.srt
 - Windows CI: `.github/workflows/windows.yml`
 - 한국어 패치/패키지 검증: `.github/workflows/korean-*.yml`
 
-KR9 compact 배포판은 공식 OpenMW 0.51.0에 이미 포함된 DLL과 도구를 중복 배포하지 않고, 한국어 지원에 필요한 파일만 설치합니다.
+KR10 compact 배포판은 공식 OpenMW 0.51.0에 이미 포함된 DLL과 도구를 중복 배포하지 않고, 한국어 지원에 필요한 파일만 설치합니다.
 
 ## 라이선스
 

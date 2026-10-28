@@ -20,7 +20,7 @@ def patch(source,out,reviewed=None):
     pairs=read_forms(source/(STEM+'.top'));forms={}
     for k,v in pairs:forms.setdefault(k,v)
     changes=[];result=[];removed=0;expanded=0;names=0;broad_removed=0
-    reviewed_keys={(r['INFO'],r['tag'],r['target']) for r in (reviewed or {}).get('removals',[])}
+    reviewed_keys={(r['INFO'],r['tag'],r['target'],r['before_text']) for r in (reviewed or {}).get('removals',[])}
     reviewed_non_job={'1976331762827310505','30356158691410032642','29424225121377211373'}
     for tag,body,header in chunks(raw,16):
         new_body=body
@@ -37,11 +37,11 @@ def patch(source,out,reviewed=None):
                     def clean(m):
                         nonlocal removed,broad_removed
                         phrase=m[1];target=forms.get(phrase,phrase)
-                        if (iid,phrase,target) in reviewed_keys:
+                        if (iid,phrase,target,old) in reviewed_keys:
                             broad_removed+=1;return phrase
                         if target=='일' and phrase not in ('일','일거리'):
                             removed+=1;return phrase
-                        if iid in reviewed_non_job and phrase=='일':
+                        if iid in reviewed_non_job and phrase=='일' and any(s in old for s in ('훌륭한 @일#','만@일#','소행@일#')):
                             removed+=1;return phrase
                         return m[0]
                     text=re.sub(r'@([^@#]+)#',clean,text)

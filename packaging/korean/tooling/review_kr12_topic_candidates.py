@@ -47,6 +47,7 @@ def select(audit):
             reason='Flowers_of_Gold_is_a_cornerclub_name'
         if reason:
             approved.append({'INFO':row['INFO'],'tag':row['tag'],'target':row['target'],
+                'before_text':row['text'],'identity':row['identity'],
                 'reason':reason,'context':row['context'],'original':row['original'],'containing_words':sorted(words)})
     return {'status':'REVIEWED_REMOVALS_ONLY','count':len(approved),
       'by_target':dict(Counter(r['target'] for r in approved)),

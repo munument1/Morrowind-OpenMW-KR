@@ -37,7 +37,7 @@ namespace MWScript
                 std::string_view text = runtime.getStringLiteral(runtime[0].mInteger);
                 runtime.pop();
 
-                auto* soundManager = MWBase::Environment::get().getSoundManager();
+                auto soundManager = MWBase::Environment::get().getSoundManager();
                 const auto previousSpeechId = soundManager->getSaySoundId(ptr);
                 soundManager->say(ptr, Misc::ResourceHelpers::correctSoundPath(file));
                 const auto speechId = soundManager->getSaySoundId(ptr);

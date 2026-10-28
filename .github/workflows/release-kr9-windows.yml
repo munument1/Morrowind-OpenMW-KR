@@ -1,18 +1,60 @@
-name: Build and publish verified Windows KR9
+name: Build KR8-based Windows topic hotfix candidate
 
 on:
-  push:
-    branches: [master]
+  pull_request:
     paths:
       - '.github/workflows/release-kr9-windows.yml'
+      - '.github/workflows/windows.yml'
+      - 'korean/patches/**'
+      - 'packaging/korean/tooling/package_kr9_windows.py'
   workflow_dispatch:
+    inputs:
+      publish_release:
+        description: Publish KR9.1 only after real-game verification
+        required: true
+        default: false
+        type: boolean
 
 permissions:
-  contents: write
+  contents: read
   actions: read
 
 jobs:
+  verify-kr8-source-and-topic-scope:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure KR8 patches are unchanged and 0008 changes only keywordsearch.cpp
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin refs/tags/openmw-0.51.0-kr8:refs/tags/audit-kr8
+          patches=(korean/patches/000[1-7]-*.patch)
+          test "${#patches[@]}" -eq 7
+          for patch in "${patches[@]}"; do
+            git show "refs/tags/audit-kr8:$patch" | cmp - "$patch"
+          done
+          test "$(grep -c '^diff --git' korean/patches/0008-korean-implicit-topic-boundaries.patch)" -eq 1
+          grep -Fx 'diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/keywordsearch.cpp' \
+            korean/patches/0008-korean-implicit-topic-boundaries.patch
+      - name: Verify pinned official OpenMW 0.51.0 and patch chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --branch openmw-0.51.0 https://github.com/OpenMW/openmw.git upstream
+          test "$(git -C upstream rev-parse HEAD)" = 'f4bec41444214a7903bebd178389ca22ca13f646'
+          # No KR9 development defaults or resource changes may be included.
+          ! grep -Fq 'mouse emulation cursor' upstream/files/settings-default.cfg
+          for patch in korean/patches/000[1-8]-*.patch; do
+            git -C upstream apply --check "$GITHUB_WORKSPACE/$patch"
+            git -C upstream apply --whitespace=nowarn "$GITHUB_WORKSPACE/$patch"
+          done
+          git -C upstream diff --check
+          grep -F 'hasKoreanDisplayBoundary(current->mKeyword' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
+
   build-windows-kr9:
+    needs: verify-kr8-source-and-topic-scope
     uses: ./.github/workflows/windows.yml
     with:
       image: '2022'
@@ -20,6 +62,9 @@ jobs:
       build-type: Release
       package: false
       release: false
+      source_repository: OpenMW/openmw
+      source_ref: f4bec41444214a7903bebd178389ca22ca13f646
+      korean_overlay: true
       store_runtime_executable: true
     secrets: inherit
 
@@ -27,13 +72,16 @@ jobs:
     needs: build-windows-kr9
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: read
     env:
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
-      RELEASE_TAG: openmw-0.51.0-kr9
+      RELEASE_TAG: openmw-0.51.0-kr9.1
       SOURCE_TAG: openmw-0.51.0-kr8
       SOURCE_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR8-Full.zip
-      OUTPUT_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR9-Full.zip
+      OUTPUT_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR9.1-Full.zip
     steps:
       - uses: actions/checkout@v4
       - name: Download tested Windows executable
@@ -63,6 +111,7 @@ jobs:
             --source "input/$SOURCE_ASSET" \
             --executable runtime/openmw.exe \
             --output "output/$OUTPUT_ASSET" \
+            --release-tag "$RELEASE_TAG" \
             --expected-source-sha256 "$expected" \
             | tee output/kr9-verification.json
           (cd output && sha256sum --check "$OUTPUT_ASSET.sha256")
@@ -71,13 +120,13 @@ jobs:
       - name: Retain verified KR9 Windows release candidate
         uses: actions/upload-artifact@v4
         with:
-          name: Morrowind-Korean-OpenMW-0.51.0-KR9-Windows
+          name: Morrowind-Korean-OpenMW-0.51.0-KR9.1-Windows-Candidate
           path: output/
           if-no-files-found: error
           retention-days: 30
 
-      - name: Publish KR9 Windows release only on master
-        if: github.ref == 'refs/heads/master'
+      - name: Publish corrected KR9.1 only on explicit verified master dispatch
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_release && github.ref == 'refs/heads/master' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -86,17 +135,18 @@ jobs:
             exit 1
           fi
           cat > output/notes.md <<'EOF'
-          ## OpenMW 0.51.0 Korean Support KR9
+          ## OpenMW 0.51.0 Korean Support KR9.1 (KR8-based hotfix)
 
+          - Rebuilt strictly from official OpenMW 0.51.0 commit f4bec41444214a7903bebd178389ca22ca13f646 and the unchanged KR8 patchset (0001-0007), plus only the KR9 topic-boundary fix (0008).
           - Fix unintended blue hyperlinks inside Korean dialogue, NPC greetings, persuasion responses and journal text.
           - Preserve explicit dialogue topics, legitimate Korean particles and longer multi-word topic names.
           - Preserve all KR8 translation data including the Aradraen official-add-on CELL correction.
-          - Windows/Ubuntu engine tests, real OpenMW parser integration tests and 25,641-record KR8 translation audit passed before packaging.
+          - Reuses the KR8-compatible defaults/resources and unchanged KR8 translation data; automated build, tests and package checks passed.
           - Verified the release ZIP differs from KR8 **only** in `payload/openmw.exe`; full ZIP SHA-256 and executable hashes are available in the packaged verification report.
 
-          In-game testing was intentionally waived for this release. This Windows package does not imply that the Android engine has been updated.
+          This Windows package does not imply that the Android engine has been updated.
           EOF
           gh release create "$RELEASE_TAG" \
             "output/$OUTPUT_ASSET" "output/$OUTPUT_ASSET.sha256" \
-            --title 'OpenMW 0.51.0 Korean Support KR9 — Korean dialogue and journal hyperlink fix' \
+            --title 'OpenMW 0.51.0 Korean Support KR9.1 — KR8-based topic hyperlink hotfix' \
             --notes-file output/notes.md --target "$GITHUB_SHA" --latest

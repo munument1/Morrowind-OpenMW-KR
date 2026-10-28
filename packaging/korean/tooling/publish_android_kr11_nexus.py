@@ -82,6 +82,20 @@ Rebirth ESP, game master files and signing keys are not included.
     mod=nexus('/v1/games/morrowind/mods/60496.json',legacy=True)
     assert str(user['user_id'])==str(mod['user']['member_id'])
     uid=str(mod['uid'])
+    def record_result(file_id,versions,already_present=False):
+        matches=[v for v in versions if v['version']==VERSION]
+        assert matches
+        report={'status':'PUBLISHED_AND_READ_BACK','file_id':str(file_id),'version':VERSION,
+          'already_present':already_present,
+          'version_ids':[str(v['id']) for v in matches],
+          'bundle_sha256':None if already_present else digest,
+          'prepared_bundle_sha256':digest,
+          'source_asset_sha256':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in (APK,DATA)},
+          'GitHub_release':release['html_url'],'Nexus_mod':'https://www.nexusmods.com/morrowind/mods/60496'}
+        # An idempotent retry can rebuild a ZIP with different filesystem times;
+        # do not mislabel that new outer ZIP digest as the already uploaded one.
+        (OUT/'Nexus-Android-KR12-result.json').write_text(json.dumps(report,indent=2))
+        print(json.dumps(report,indent=2))
     candidates=[f for f in nexus('/v3/mods/'+uid+'/files')['mod_files'] if f['is_active'] and f['name']==NAME]
     assert len(candidates)<=1
     existing=candidates[0] if candidates else None
@@ -89,6 +103,7 @@ Rebirth ESP, game master files and signing keys are not included.
         versions=nexus('/v3/mod-files/'+str(existing['id'])+'/versions')['versions']
         if any(v['version']==VERSION for v in versions):
             print('Android KR12 already exists on Nexus; no duplicate upload.')
+            record_result(existing['id'],versions,already_present=True)
             return
     if os.environ.get('DRY_RUN','true')=='true':
         print('Android KR12 bundle and Nexus owner verified. Dry run; no writes.')
@@ -114,15 +129,25 @@ Rebirth ESP, game master files and signing keys are not included.
     if existing:
         body['archive_existing_file']=False
         response=nexus('/v3/mod-files/'+str(existing['id'])+'/versions','POST',body)
-        file_id=str(existing['id'])
     else:
         body['mod_id']=uid
         response=nexus('/v3/mod-files','POST',body)
-        file_id=str(response['id'])
-    versions=nexus('/v3/mod-files/'+file_id+'/versions')['versions']
-    assert any(v['version']==VERSION for v in versions)
-    report={'status':'PUBLISHED_AND_READ_BACK','file_id':file_id,'version':VERSION,
-      'bundle_sha256':digest,'GitHub_release':release['html_url'],'Nexus_mod':'https://www.nexusmods.com/morrowind/mods/60496'}
-    (OUT/'Nexus-Android-KR12-result.json').write_text(json.dumps(report,indent=2))
-    print(json.dumps(report,indent=2))
+    # Registration may precede visibility through the read API. Resolve the
+    # canonical group from the mod's file list instead of immediately failing
+    # on a transient 404 or confusing creation-response ID scopes.
+    for attempt in range(15):
+        candidates=[f for f in nexus('/v3/mods/'+uid+'/files')['mod_files'] if f['is_active'] and f['name']==NAME]
+        assert len(candidates)<=1
+        if candidates:
+            file_id=str(candidates[0]['id'])
+            try:
+                versions=nexus('/v3/mod-files/'+file_id+'/versions')['versions']
+            except RuntimeError as error:
+                if 'HTTP 404' not in str(error):raise
+            else:
+                if any(v['version']==VERSION for v in versions):
+                    record_result(file_id,versions)
+                    return
+        time.sleep(2)
+    raise RuntimeError('Upload registered but not yet visible through Nexus read API; retry safely without duplicate upload')
 if __name__=='__main__':main()

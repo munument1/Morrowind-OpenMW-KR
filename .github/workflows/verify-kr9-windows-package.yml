@@ -5,6 +5,11 @@ on:
     paths:
       - 'packaging/korean/tooling/package_kr9_windows.py'
       - '.github/workflows/verify-kr9-windows-package.yml'
+  pull_request:
+    paths:
+      - 'packaging/korean/tooling/package_kr9_windows.py'
+      - '.github/workflows/verify-kr9-windows-package.yml'
+      - '.github/workflows/release-kr9-windows.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -63,4 +68,54 @@ jobs:
                          if n not in report['changed_entries'])
           print('KR9_WINDOWS_PACKAGE_GUARD=PASS')
           print('WARNING: synthetic test executable deliberately corrupted. Never publish.')
+          PY
+      - name: Test next-release document cleanup on the genuine KR9.1 ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release download openmw-0.51.0-kr9.1 \
+            --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR9.1-Full.zip' \
+            --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR9.1-Full.zip.sha256' --dir input
+          (cd input && sha256sum -c Morrowind-Korean-OpenMW-0.51.0-KR9.1-Full.zip.sha256)
+          python3 - <<'PY'
+          from importlib.util import spec_from_file_location, module_from_spec
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib
+          spec=spec_from_file_location('pkg', 'packaging/korean/tooling/package_kr9_windows.py')
+          mod=module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          source=Path('input/Morrowind-Korean-OpenMW-0.51.0-KR9.1-Full.zip')
+          with ZipFile(source) as original:
+              names=original.namelist()
+              runtime=[n for n in names if n.replace('\\','/').lower() == 'payload/openmw.exe']
+              assert len(runtime) == 1, runtime
+              runtime=runtime[0]
+              old=original.read(runtime)
+          digest=hashlib.sha256(source.read_bytes()).hexdigest()
+          candidate=bytearray(old)
+          candidate[-1]^=1  # Synthetic test data only; DO NOT publish.
+          exe=Path('staged/TEST-ONLY-corrupted.exe')
+          exe.write_bytes(candidate)
+          out=Path('staged/TEST-ONLY-cleaned.zip')
+          result=mod.build(source, exe, out, digest,
+                           release_tag='openmw-0.51.0-kr9.2', prune_legacy_docs=True)
+          assert set(result['removed_legacy_docs']) == mod.LEGACY_ROOT_DOCS
+          assert set(result['changed_entries']) == {runtime, 'README-KOREAN.txt'}
+          assert result['archive_members'] == len(names) - len(mod.LEGACY_ROOT_DOCS)
+          with ZipFile(source) as original, ZipFile(out) as cleaned:
+              assert cleaned.testzip() is None
+              assert set(cleaned.namelist()) == set(names) - mod.LEGACY_ROOT_DOCS
+              assert all(original.read(n) == cleaned.read(n)
+                         for n in cleaned.namelist() if n not in result['changed_entries'])
+              assert 'openmw-0.51.0-kr9.2' in cleaned.read('README-KOREAN.txt').decode('utf-8')
+              normalized={n.replace('\\','/') for n in cleaned.namelist()}
+              assert mod.ESSENTIAL_MEMBERS.issubset(normalized)
+              assert 'payload/resources/vfs/fonts/Galmuri11-OFL-1.1.md' in normalized
+          legacy=Path('staged/TEST-ONLY-legacy.zip')
+          prior=mod.build(source, exe, legacy, digest, release_tag='openmw-0.51.0-kr9.1')
+          assert prior['removed_legacy_docs'] == []
+          assert prior['changed_entries'] == [runtime]
+          print('NEXT_RELEASE_DOC_CLEANUP_AND_KR9.1_COMPATIBILITY=PASS')
+          print('WARNING: synthetic executable deliberately corrupted. Never publish.')
           PY

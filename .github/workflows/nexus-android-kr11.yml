@@ -1,0 +1,39 @@
+name: Publish verified Android KR11 APK and data to Nexus
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Verify release and prepare ZIP without uploading to Nexus
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: nexus-android-kr11-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_API_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      DRY_RUN: ${{ inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify and publish optional Android file
+        run: python packaging/korean/tooling/publish_android_kr11_nexus.py
+      - name: Preserve public release evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Nexus-Android-KR11-public-evidence
+          path: |
+            nexus-android-kr11/*.sha256
+            nexus-android-kr11/*verification.json
+            nexus-android-kr11/*result.json
+            nexus-android-kr11/README-ANDROID-KR11.txt
+          if-no-files-found: warn

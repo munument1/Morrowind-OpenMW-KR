@@ -10,6 +10,7 @@ on:
       - apps/openmw/mwdialogue/keywordsearch.cpp
       - apps/openmw/mwdialogue/keywordsearch.hpp
       - apps/openmw/mwgui/videowidget.cpp
+      - apps/openmw/mwgui/widgets.cpp
       - apps/openmw/mwgui/videowidget.hpp
       - components/esm3/esmreader.cpp
       - components/translation/translation.cpp
@@ -27,6 +28,7 @@ on:
       - apps/openmw/mwdialogue/keywordsearch.cpp
       - apps/openmw/mwdialogue/keywordsearch.hpp
       - apps/openmw/mwgui/videowidget.cpp
+      - apps/openmw/mwgui/widgets.cpp
       - apps/openmw/mwgui/videowidget.hpp
       - components/esm3/esmreader.cpp
       - components/translation/translation.cpp
@@ -51,6 +53,8 @@ jobs:
         run: |
           set -euo pipefail
           git config core.autocrlf false
+          git apply --reverse --check korean/patches/0013-korean-spell-duration-order.patch
+          git apply --reverse korean/patches/0013-korean-spell-duration-order.patch
           git apply --reverse --check korean/patches/0012-voice-synchronized-subtitles.patch
           git apply --reverse korean/patches/0012-voice-synchronized-subtitles.patch
           git apply --reverse --check korean/patches/0011-korean-topic-discovery-and-work-links.patch
@@ -77,6 +81,7 @@ jobs:
           git apply korean/patches/0009-korean-honorific-particle.patch
           git apply korean/patches/0011-korean-topic-discovery-and-work-links.patch
           git apply korean/patches/0012-voice-synchronized-subtitles.patch
+          git apply korean/patches/0013-korean-spell-duration-order.patch
           test -s korean/patches/0005-video-subtitles.patch
 
       - name: Verify Korean runtime invariants
@@ -98,6 +103,8 @@ jobs:
           grep -F 'translationStorage.journalKeywords(topic.getName())' apps/openmw/mwgui/journalviewmodel.cpp
           grep -F 'loadData(mJournalKeywords, esmNameNoExtension, "jrn", dataFileCollections);' components/translation/translation.cpp
           grep -F 'voiceSubtitle(info->mResponse' apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+          grep -F 'if (durationMarker == "동안")' apps/openmw/mwgui/widgets.cpp
+          grep -F 'spellLine += " 동안";' apps/openmw/mwgui/widgets.cpp
           grep -F 'isSaySoundPlaying((*it)->mSpeechId)' apps/openmw/mwgui/messagebox.cpp
           grep -F 'getSaySoundId(ptr)' apps/openmw/mwscript/soundextensions.cpp
 

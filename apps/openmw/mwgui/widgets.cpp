@@ -448,13 +448,17 @@ namespace MWGui::Widgets
             if (mEffectParams.mDuration > 0 && !(magicEffect->mData.mFlags & ESM::MagicEffect::NoDuration))
             {
                 const std::string_view durationMarker = windowManager->getGameSettingString("sfor", {});
-                if (durationMarker == "동안")
+                if (durationMarker == "동안" || durationMarker == "지속:")
                 {
-                    // Korean puts the unit immediately after the number and the duration marker last.
-                    spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration);
+                    // Render Korean durations without a space before "초".
+                    spellLine += ' ';
+                    if (durationMarker == "지속:")
+                        spellLine += "지속: ";
+                    spellLine += MyGUI::utility::toString(mEffectParams.mDuration);
                     spellLine += windowManager->getGameSettingString(
                         (mEffectParams.mDuration == 1) ? "ssecond" : "sseconds", {});
-                    spellLine += " 동안";
+                    if (durationMarker == "동안")
+                        spellLine += " 동안";
                 }
                 else
                 {

@@ -103,6 +103,8 @@ jobs:
           grep -F 'translationStorage.journalKeywords(topic.getName())' apps/openmw/mwgui/journalviewmodel.cpp
           grep -F 'loadData(mJournalKeywords, esmNameNoExtension, "jrn", dataFileCollections);' components/translation/translation.cpp
           grep -F 'voiceSubtitle(info->mResponse' apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+          grep -F 'durationMarker == "동안" || durationMarker == "지속:"' apps/openmw/mwgui/widgets.cpp
+          grep -F 'spellLine += "지속: ";' apps/openmw/mwgui/widgets.cpp
           grep -F 'if (durationMarker == "동안")' apps/openmw/mwgui/widgets.cpp
           grep -F 'spellLine += " 동안";' apps/openmw/mwgui/widgets.cpp
           grep -F 'isSaySoundPlaying((*it)->mSpeechId)' apps/openmw/mwgui/messagebox.cpp

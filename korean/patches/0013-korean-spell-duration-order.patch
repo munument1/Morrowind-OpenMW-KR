@@ -1,7 +1,7 @@
 diff --git a/apps/openmw/mwgui/widgets.cpp b/apps/openmw/mwgui/widgets.cpp
 --- a/apps/openmw/mwgui/widgets.cpp
 +++ b/apps/openmw/mwgui/widgets.cpp
-@@ -445,13 +445,26 @@
+@@ -445,13 +445,30 @@
              if (!(magicEffect->mData.mFlags & ESM::MagicEffect::AppliedOnce))
                  mEffectParams.mDuration = std::max(1, mEffectParams.mDuration);
  
@@ -12,16 +12,21 @@ diff --git a/apps/openmw/mwgui/widgets.cpp b/apps/openmw/mwgui/widgets.cpp
 -                spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration)
 -                    + ((mEffectParams.mDuration == 1) ? sec : secs);
 -            }
+-
 +            if (mEffectParams.mDuration > 0 && !(magicEffect->mData.mFlags & ESM::MagicEffect::NoDuration))
 +            {
 +                const std::string_view durationMarker = windowManager->getGameSettingString("sfor", {});
-+                if (durationMarker == "동안")
++                if (durationMarker == "동안" || durationMarker == "지속:")
 +                {
-+                    // Korean puts the unit immediately after the number and the duration marker last.
-+                    spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration);
++                    // Render Korean durations without a space before "초".
++                    spellLine += ' ';
++                    if (durationMarker == "지속:")
++                        spellLine += "지속: ";
++                    spellLine += MyGUI::utility::toString(mEffectParams.mDuration);
 +                    spellLine += windowManager->getGameSettingString(
 +                        (mEffectParams.mDuration == 1) ? "ssecond" : "sseconds", {});
-+                    spellLine += " 동안";
++                    if (durationMarker == "동안")
++                        spellLine += " 동안";
 +                }
 +                else
 +                {
@@ -32,6 +37,6 @@ diff --git a/apps/openmw/mwgui/widgets.cpp b/apps/openmw/mwgui/widgets.cpp
 +                        + ((mEffectParams.mDuration == 1) ? sec : secs);
 +                }
 +            }
- 
++
              if (mEffectParams.mArea > 0)
              {

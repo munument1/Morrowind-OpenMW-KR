@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   stable-source-check:
@@ -27,7 +28,9 @@ jobs:
       - name: Confirm stable source and apply full Korean patchset
         shell: bash
         run: |
-          set -euo pipefail
+          set -o pipefail
+          {
+          set -e
           grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
           for patch in _korean_port/korean/patches/*.patch; do
             echo "::group::Applying $(basename "$patch")"
@@ -37,6 +40,23 @@ jobs:
           done
           grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
           git diff --check
+          } 2>&1 | tee stable-patch-check.log
+      - name: Record incompatible patch details on draft PR
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          {
+            echo "Stable OpenMW 0.51.0 patch compatibility failed."
+            echo ""
+            echo "Workflow: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo ""
+            echo '```text'
+            tail -n 55 stable-patch-check.log 2>/dev/null || true
+            echo '```'
+          } > stable-port-diagnostic.md
+          gh pr comment 39 --body-file stable-port-diagnostic.md
 
   build-stable-engine:
     needs: stable-source-check

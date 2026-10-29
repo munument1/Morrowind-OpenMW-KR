@@ -1,0 +1,37 @@
+diff --git a/apps/openmw/mwgui/widgets.cpp b/apps/openmw/mwgui/widgets.cpp
+--- a/apps/openmw/mwgui/widgets.cpp
++++ b/apps/openmw/mwgui/widgets.cpp
+@@ -445,13 +445,26 @@
+             if (!(magicEffect->mData.mFlags & ESM::MagicEffect::AppliedOnce))
+                 mEffectParams.mDuration = std::max(1, mEffectParams.mDuration);
+ 
+-            if (mEffectParams.mDuration > 0 && !(magicEffect->mData.mFlags & ESM::MagicEffect::NoDuration))
+-            {
+-                spellLine += ' ';
+-                spellLine += windowManager->getGameSettingString("sfor", {});
+-                spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration)
+-                    + ((mEffectParams.mDuration == 1) ? sec : secs);
+-            }
++            if (mEffectParams.mDuration > 0 && !(magicEffect->mData.mFlags & ESM::MagicEffect::NoDuration))
++            {
++                const std::string_view durationMarker = windowManager->getGameSettingString("sfor", {});
++                if (durationMarker == "동안")
++                {
++                    // Korean puts the unit immediately after the number and the duration marker last.
++                    spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration);
++                    spellLine += windowManager->getGameSettingString(
++                        (mEffectParams.mDuration == 1) ? "ssecond" : "sseconds", {});
++                    spellLine += " 동안";
++                }
++                else
++                {
++                    // Preserve the original English/game-setting word order for all other locales.
++                    spellLine += ' ';
++                    spellLine += durationMarker;
++                    spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration)
++                        + ((mEffectParams.mDuration == 1) ? sec : secs);
++                }
++            }
+ 
+             if (mEffectParams.mArea > 0)
+             {

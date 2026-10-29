@@ -447,10 +447,23 @@ namespace MWGui::Widgets
 
             if (mEffectParams.mDuration > 0 && !(magicEffect->mData.mFlags & ESM::MagicEffect::NoDuration))
             {
-                spellLine += ' ';
-                spellLine += windowManager->getGameSettingString("sfor", {});
-                spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration)
-                    + ((mEffectParams.mDuration == 1) ? sec : secs);
+                const std::string_view durationMarker = windowManager->getGameSettingString("sfor", {});
+                if (durationMarker == "동안")
+                {
+                    // Korean puts the unit immediately after the number and the duration marker last.
+                    spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration);
+                    spellLine += windowManager->getGameSettingString(
+                        (mEffectParams.mDuration == 1) ? "ssecond" : "sseconds", {});
+                    spellLine += " 동안";
+                }
+                else
+                {
+                    // Preserve the original English/game-setting word order for all other locales.
+                    spellLine += ' ';
+                    spellLine += durationMarker;
+                    spellLine += ' ' + MyGUI::utility::toString(mEffectParams.mDuration)
+                        + ((mEffectParams.mDuration == 1) ? sec : secs);
+                }
             }
 
             if (mEffectParams.mArea > 0)

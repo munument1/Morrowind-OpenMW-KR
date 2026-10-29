@@ -15,6 +15,10 @@ $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
 
 $requiredRuntimeFiles = @(
     "openmw.exe",
+    "settings-default.cfg",
+    "resources\vfs\mygui\openmw_hud.layout",
+    "resources\vfs\mygui\openmw_hud_box.skin.xml",
+    "resources\vfs\textures\omw_mouse_emulation_cursor.dds",
     "resources\vfs\fonts\Galmuri11.ttf",
     "resources\vfs\fonts\Galmuri11-OFL-1.1.md",
     "resources\vfs\fonts\MysticCards.omwfont",
@@ -116,7 +120,7 @@ if (-not (Test-OpenMWInstall $OpenMWPath)) {
     throw "OpenMW installation not found at: $OpenMWPath"
 }
 
-$backupDir = Join-Path $OpenMWPath "korean-kr4-backup-$timestamp"
+$backupDir = Join-Path $OpenMWPath "korean-kr12-2-backup-$timestamp"
 $runtimeBackup = Join-Path $backupDir "runtime"
 $modBackup = Join-Path $backupDir "mod"
 $legacyModBackup = Join-Path $backupDir "legacy-mod"
@@ -177,15 +181,15 @@ if ([string]::IsNullOrWhiteSpace($ConfigPath)) {
 }
 
 $marker = @"
-OpenMW 0.51.0 Korean Support KR4
+OpenMW 0.51.0 Korean Support KR12.2
 Installed: $timestamp
 Font: Galmuri11
 Backup: $backupDir
 "@
-Set-Content -LiteralPath (Join-Path $OpenMWPath "OPENMW-KOREAN-KR4.txt") -Value $marker -Encoding UTF8
+Set-Content -LiteralPath (Join-Path $OpenMWPath "OPENMW-KOREAN-KR12.2.txt") -Value $marker -Encoding UTF8
 
 Write-Host ""
-Write-Host "Korean OpenMW KR4 installation completed."
+Write-Host "Korean OpenMW KR12.2 installation completed."
 Write-Host "OpenMW         : $OpenMWPath"
 Write-Host "Korean mod     : $targetMod"
 Write-Host "Font           : Galmuri11"

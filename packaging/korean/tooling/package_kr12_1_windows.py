@@ -11,6 +11,35 @@ ESP_SHA = "0f04a21d69ecae16a1c2ae3bb0b739ac4e71cdb59054c809fc844128e2c12327"
 EXE = "payload/openmw.exe"
 ESP = "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp"
 CEL = "payload/mods/Morrowind_Korean_ReTranslation/Siege at Firemoth.cel"
+README = "README-KOREAN.txt"
+README_TEXT = """OpenMW 0.51.0 한국어 KR12.1 — Windows
+
+적용: 공식 OpenMW 0.51.0 Windows x64 설치본과 정품 Morrowind 데이터가 필요합니다.
+
+설치 방법
+1. 이 ZIP 파일을 별도 폴더에 압축 해제합니다.
+2. Install-Korean.bat을 실행하여 OpenMW 설치 폴더를 지정합니다.
+3. 설치기는 기존 실행 파일, 한국어 모드, 설정 등을 백업한 뒤 갱신합니다.
+
+KR12.1 변경 사항
+- 마법 효과 Light: 경량 → 빛
+- 지속 시간: 지속: 30초
+- 적용 범위: 적용: 자신 / 접촉 / 대상
+- 드로'사카르 퀘스트의 대화 토픽 링크 복구
+- Siege at Firemoth 공식 플러그인 내부 셀 10곳의 한국어 이름 별칭 추가
+
+pillow shipment 퀘스트 조건은 변경하지 않았습니다.
+추후 Patch for Purists 한국어화·호환성 작업에서 별도 검토합니다.
+
+구성
+- payload/openmw.exe: KR12.1 한국어 대응 엔진
+- payload/mods/Morrowind_Korean_ReTranslation/: ESP, CEL, MRK, TOP, JRN, l10n, 영상 SRT 자막
+- payload/resources/vfs/fonts/: 한국어 글꼴 및 라이선스
+- Install-Korean.bat, install-korean*.ps1: 설치 및 설정 스크립트
+
+Android 버전은 별도 GitHub Releases에서만 배포하며 Nexus Mods에는 올리지 않습니다.
+실제 게임에서의 모든 퀘스트·셀 표시 검증까지 완료된 것은 아닙니다.
+"""
 
 
 def sha(data):
@@ -44,13 +73,20 @@ def main():
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(args.output, "w") as target:
             for item in updated.infolist():
-                value = binary if item.filename == EXE else updated.read(item.filename)
+                if item.filename == EXE:
+                    value = binary
+                elif item.filename == README:
+                    value = README_TEXT.encode("utf-8")
+                else:
+                    value = updated.read(item.filename)
                 target.writestr(item, value)
     with zipfile.ZipFile(args.output) as result:
         assert result.testzip() is None
         assert result.namelist() == new_names
         assert result.read(EXE) == binary
         assert sha(result.read(ESP)) == ESP_SHA
+        assert result.read(README) == README_TEXT.encode("utf-8")
+        assert not any(name.lower().endswith((".jpg", ".jpeg", ".png")) for name in result.namelist())
     report = {
         "version": "KR12.1",
         "baseline_zip_sha256": BASE_SHA,
@@ -58,7 +94,7 @@ def main():
         "new_exe": True,
         "esp_sha256": ESP_SHA,
         "output_zip_sha256": sha(args.output.read_bytes()),
-        "files_unchanged_except_exe_translation_esp_and_new_firemoth_cel": True,
+        "files_unchanged_except_exe_translation_esp_new_firemoth_cel_and_readme": True,
         "pillow_shipment_changed": False,
         "live_gameplay_verified": False,
     }

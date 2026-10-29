@@ -1,0 +1,200 @@
+name: Finalize KR12.1 Windows from previously compiled and audited runtime
+
+on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/finalize-kr12-1-windows.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: kr12-1-windows-finalize
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BASE_SHA: 23ad7cb800eb17bea5dce87e6b13b5e01e16842c
+      BASE_RUN: '40857229155'
+      TAG: openmw-0.51.0-kr12.1
+      BASE_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12-Full.zip
+      ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate compilation provenance and the precise Korean test-only fix
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "::error::KR12.1 already released; never overwrite."
+            exit 1
+          fi
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$BASE_RUN" > run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$BASE_RUN/jobs?per_page=100" > jobs.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/12892870596" > artifact.json
+          python3 - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          run=json.loads(Path('run.json').read_text())
+          job=next(j for j in json.loads(Path('jobs.json').read_text())['jobs'] if j['name']=='build-runtime / windows-2022')
+          artifact=json.loads(Path('artifact.json').read_text())
+          base=os.environ['BASE_SHA']
+          assert run['head_sha']==base and run['conclusion']=='failure'
+          steps={s['name']:s['conclusion'] for s in job['steps']}
+          assert steps['Build OpenMW']=='success'
+          assert steps['Store Korean runtime executable']=='success'
+          assert steps['Run components tests']=='success'
+          assert steps['Run OpenMW tests']=='failure'
+          assert artifact['workflow_run']['head_sha']==base and not artifact['expired']
+          assert artifact['digest']=='sha256:60e9df9e6e66ca57295b2559351892f738c492a48550363949754476feba6018'
+          allowed={'apps/openmw_tests/mwdialogue/testkeywordsearch.cpp',
+                   'packaging/korean/tooling/package_kr12_1_windows.py',
+                   '.github/workflows/finalize-kr12-1-windows.yml'}
+          changed=set(subprocess.check_output(['git','diff','--name-only',base,os.environ['GITHUB_SHA']],text=True).splitlines())
+          assert changed==allowed, f'Native C++ must be identical to compiled runtime: {changed}'
+          tests=Path('apps/openmw_tests/mwdialogue/testkeywordsearch.cpp').read_text()
+          assert 'ASSERT_EQ(matches.size(), 2);' in tests
+          assert 'ASSERT_EQ(discovery.size(), 2);' in tests
+          assert 'ASSERT_EQ(realDiscovery.size(), 1);' in tests
+          code=Path('apps/openmw/mwdialogue/keywordsearch.cpp').read_text()
+          assert 'if (keyword == "일")' in code
+          assert 'hasKoreanDisplayBoundary(current->mKeyword' in code
+          native=Path('apps/openmw/mwgui/widgets.cpp').read_text()
+          assert 'durationMarker == "동안" || durationMarker == "지속:"' in native
+          print('Compiled native runtime unchanged; test expectations corrected without undoing Korean topic safeguards.')
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          name: korean-runtime-executable-23ad7cb800eb17bea5dce87e6b13b5e01e16842c
+          run-id: 40857229155
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          path: engine
+      - name: Assemble and strictly verify KR12.1 Windows release ZIP
+        run: |
+          set -euo pipefail
+          mkdir -p input output
+          gh release download openmw-0.51.0-kr12 --pattern "$BASE_ZIP" --dir input
+          echo "4c1ab3d6163391e7592957552292f4fc5aff22ad0d14020130062ad2ae5c135c  input/$BASE_ZIP" | sha256sum -c -
+          python3 - <<'PY'
+          from pathlib import Path
+          found=list(Path('engine').rglob('openmw.exe'))
+          assert len(found)==1, f'Exactly one compiled executable expected: {found}'
+          if found[0]!=Path('engine/openmw.exe'):
+              Path('engine/openmw.exe').write_bytes(found[0].read_bytes())
+          assert Path('engine/openmw.exe').stat().st_size>10000000
+          PY
+          python3 packaging/korean/tooling/rebuild_kr12_reported_data.py \
+            --platform windows --source "input/$BASE_ZIP" \
+            --output output/KR12-1-data-only.zip \
+            --report output/KR12.1-Windows-data-verification.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open('output/KR12.1-Windows-data-verification.json'))
+          assert r['patched_esp_sha256']=='0f04a21d69ecae16a1c2ae3bb0b739ac4e71cdb59054c809fc844128e2c12327'
+          assert r['record_count_unchanged']==48146 and len(r['changed_subrecords'])==4
+          assert r['pillow_shipment_vanilla_condition_changed'] is False
+          assert r['other_zip_members_byte_identical'] is True
+          PY
+          python3 packaging/korean/tooling/package_kr12_1_windows.py \
+            --baseline "input/$BASE_ZIP" --data output/KR12-1-data-only.zip \
+            --exe engine/openmw.exe --output "output/$ZIP" \
+            --report output/KR12.1-Windows-verification.json
+          unzip -tq "output/$ZIP"
+          (cd output && sha256sum -c "$ZIP.sha256")
+          python3 - <<'PY'
+          import zipfile,os
+          with zipfile.ZipFile('output/'+os.environ['ZIP']) as z:
+              readme=z.read('README-KOREAN.txt').decode('utf-8')
+              assert 'KR12.1' in readme and '[이전 설치 안내]' not in readme
+              assert len(readme)<3000
+              assert not any(p.lower().endswith(('.jpg','.jpeg','.png')) for p in z.namelist())
+          print('KR12.1 README clean, previous release notes removed; no image attachments.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KR12.1-Windows-Complete-Verified
+          path: |
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip.sha256
+            output/KR12.1-Windows-verification.json
+            output/KR12.1-Windows-data-verification.json
+          retention-days: 30
+      - name: Publish fresh Windows KR12.1 GitHub release
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then exit 1; fi
+          cat > release-notes.md <<'EOF'
+          ## Windows KR12.1 — OpenMW 0.51.0 Korean Support
+          - Updated native duration display to 지속: 30초 and magic effects Light to 빛.
+          - Range labels: 적용: 자신 / 접촉 / 대상.
+          - Dro'Sakhar explicit dialogue hyperlink restored.
+          - Ten official Siege at Firemoth interior name aliases.
+          - pillow shipment is unchanged, deferred to Patch for Purists translation.
+          - README has been consolidated to KR12.1-only instructions.
+          
+          The Windows runtime was compiled successfully in the earlier KR12.1 workflow;
+          535/537 OpenMW tests passed, and the two stale topic-test assertions were updated
+          to match the intentional prevention of spurious Korean work links.
+          No production runtime source changes followed that executable build.
+          Full release ZIP and TES3 data structure have been independently verified.
+          Live gameplay confirmation remains outstanding.
+          Android builds are distributed separately on GitHub, not Nexus.
+          EOF
+          gh release create "$TAG" \
+            "output/$ZIP" "output/$ZIP.sha256" \
+            output/KR12.1-Windows-verification.json \
+            output/KR12.1-Windows-data-verification.json \
+            --title 'OpenMW 0.51.0 Korean Support KR12.1 — Windows' \
+            --notes-file release-notes.md --target "$GITHUB_SHA" --latest
+
+  nexus-windows:
+    needs: publish
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_ID: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+      FILE: Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+    steps:
+      - id: check
+        run: |
+          if [[ -n "$NEXUS_KEY" && "$NEXUS_ID" =~ ^[0-9]+$ ]]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo "::warning::Nexus credentials or source file ID not configured; no upload."
+          fi
+      - name: Fetch and verify released Windows ZIP
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download openmw-0.51.0-kr12.1 \
+            --pattern "$FILE" --pattern "$FILE.sha256" --dir dist
+          (cd dist && sha256sum -c "$FILE.sha256")
+      - name: Nexus Mods #60496 Windows-only update
+        if: steps.check.outputs.ready == 'true'
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.10
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+          filename: dist/Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+          version: 0.51.0-KR12.1
+          display_name: OpenMW 0.51.0 Korean KR12.1 Windows
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+          mod_id: '60496'
+          changelog: 'KR12.1: Light/빛, 지속: N초, 적용: 대상, DroSakhar dialogue links, Firemoth cell names; pillow shipment deferred.'

@@ -1,0 +1,41 @@
+name: Discover Nexus #60496 file group for KR12.1 (read-only)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/discover-nexus-kr12-1-file-id.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - name: Read only Nexus Mods official v3 API — never upload here
+        run: |
+          set -euo pipefail
+          test -n "$NEXUS_KEY"
+          python3 - <<'PY'
+          import os,json,urllib.request
+          def get(url):
+              req=urllib.request.Request(
+                  url,headers={'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json'})
+              with urllib.request.urlopen(req,timeout=20) as res:
+                  return json.load(res)
+          mod=get('https://api.nexusmods.com/v3/games/morrowind/mods/60496')['data']
+          assert str(mod['game_scoped_id'])=='60496', 'Wrong Nexus mod'
+          print('MOD:',json.dumps({k:mod.get(k) for k in ('id','name','game_scoped_id','game_id')},ensure_ascii=False))
+          all_files=get('https://api.nexusmods.com/v3/mods/'+str(mod['id'])+'/files')['data']
+          file_groups=all_files['mod_files']
+          assert isinstance(file_groups,list) and file_groups, 'No Nexus file groups'
+          for group in file_groups:
+              print('FILE_GROUP:',json.dumps({k:group.get(k) for k in
+                  ('id','name','is_active','versions_count','archived_count','removed_count')},ensure_ascii=False))
+          print('READ_ONLY_COMPLETE; no files or mod data modified')
+          PY

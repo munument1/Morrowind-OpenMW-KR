@@ -384,13 +384,14 @@ TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
                              "은을 찾고 할 일이 있다. 마법사 길드에서 만났다.";
     const auto matches = search.parseHyperText(text, storage);
 
-    ASSERT_EQ(matches.size(), 3);
+    // KR12 deliberately avoids auto-linking the single syllable "일":
+    // the everyday noun and the work topic are indistinguishable here.
+    // An explicit @일# or unambiguous "일거리" link is required.
+    ASSERT_EQ(matches.size(), 2);
     EXPECT_EQ(matches[0].getDisplayName(), "은");
     EXPECT_EQ(matches[0].mTopicId, "silver");
-    EXPECT_EQ(matches[1].getDisplayName(), "일");
-    EXPECT_EQ(matches[1].mTopicId, "work");
-    EXPECT_EQ(matches[2].getDisplayName(), "마법사 길드");
-    EXPECT_EQ(matches[2].mTopicId, "mages guild");
+    EXPECT_EQ(matches[1].getDisplayName(), "마법사 길드");
+    EXPECT_EQ(matches[1].mTopicId, "mages guild");
 }
 
 TEST_F(KeywordSearchTest, korean_explicit_links_and_topic_discovery_remain_available)
@@ -408,13 +409,21 @@ TEST_F(KeywordSearchTest, korean_explicit_links_and_topic_discovery_remain_avail
     EXPECT_EQ(display[0].mTopicId, "은");
     EXPECT_EQ(display[1].mTopicId, "일");
 
-    // Topic discovery deliberately retains permissive overlapping recognition.
+    // Even in overlapping topic-discovery mode, accidental syllables inside
+    // "싫은" and "것일" must NOT unlock unrelated dialogue topics.
+    // The two explicit links must still unlock their intended topics.
     const auto discovery = search.parseHyperText(text, storage, true);
-    ASSERT_GE(discovery.size(), 4);
-    EXPECT_EQ(discovery[0].mTopicId, "silver");
-    EXPECT_EQ(discovery[1].mTopicId, "work");
-    EXPECT_TRUE(discovery[2].mExplicit);
-    EXPECT_TRUE(discovery[3].mExplicit);
+    ASSERT_EQ(discovery.size(), 2);
+    EXPECT_TRUE(discovery[0].mExplicit);
+    EXPECT_TRUE(discovery[1].mExplicit);
+    EXPECT_EQ(discovery[0].mTopicId, "은");
+    EXPECT_EQ(discovery[1].mTopicId, "일");
+
+    // Genuine standalone inflected topic words are still discoverable.
+    const auto realDiscovery = search.parseHyperText("은을 찾았다.", storage, true);
+    ASSERT_EQ(realDiscovery.size(), 1);
+    EXPECT_EQ(realDiscovery[0].mTopicId, "silver");
+    EXPECT_FALSE(realDiscovery[0].mExplicit);
 }
 
 TEST_F(KeywordSearchTest, korean_longest_topic_and_postposition)

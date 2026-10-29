@@ -1,0 +1,79 @@
+name: Verify KR12.2 Windows compatibility release candidate
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - fix/kr12-2-windows-runtime-resources
+    paths:
+      - .github/workflows/verify-kr12-2-windows.yml
+      - packaging/korean/install-korean.ps1
+      - packaging/korean/tooling/package_kr12_2_windows.py
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BASE_TAG: openmw-0.51.0-kr12.1
+      BASE_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+      CANDIDATE: Morrowind-Korean-OpenMW-0.51.0-KR12.2-RC.zip
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Confirm pinned source tag and acquire verified KR12.1 baseline
+        run: |
+          set -euo pipefail
+          git rev-parse --verify "refs/tags/$BASE_TAG^{commit}"
+          mkdir -p input output
+          gh release download "$BASE_TAG" --pattern "$BASE_ZIP" --dir input
+          gh release download "$BASE_TAG" --pattern "$BASE_ZIP.sha256" --dir input
+          (cd input && sha256sum -c "$BASE_ZIP.sha256")
+      - name: Assemble and validate non-public KR12.2 candidate
+        run: |
+          set -euo pipefail
+          python3 packaging/korean/tooling/package_kr12_2_windows.py \
+            --baseline "input/$BASE_ZIP" \
+            --output "output/$CANDIDATE" \
+            --report output/KR12.2-Windows-candidate-verification.json
+          unzip -tq "output/$CANDIDATE"
+          (cd output && sha256sum -c "$CANDIDATE.sha256")
+          python3 - <<'PY'
+          import json
+          d = json.load(open("output/KR12.2-Windows-candidate-verification.json"))
+          assert d["package_integrity"] == "PASS"
+          assert d["executable_unchanged"] is True
+          assert d["translation_esp_unchanged"] is True
+          assert len(d["runtime_assets"]) == 4
+          assert d["live_windows_gameplay_tested"] is False
+          assert d["release_ready"] is False
+          PY
+      - name: Save release candidate for manual in-game verification
+        uses: actions/upload-artifact@v4
+        with:
+          name: KR12.2-Windows-RC-not-for-public-release
+          path: |
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-RC.zip
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-RC.zip.sha256
+            output/KR12.2-Windows-candidate-verification.json
+          retention-days: 14
+
+  verify-installer-syntax:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: PowerShell installer parses without syntax errors
+        shell: pwsh
+        run: |
+          $file = Join-Path $env:GITHUB_WORKSPACE "packaging/korean/install-korean.ps1"
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            $file, [ref]$tokens, [ref]$errors
+          ) | Out-Null
+          if ($errors.Count -gt 0) { throw ($errors | Out-String) }

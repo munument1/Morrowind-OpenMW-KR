@@ -1,0 +1,51 @@
+name: Reconcile Nexus KR12.1 changelog only (NO file upload)
+
+on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/reconcile-nexus-kr12-1-changelog.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-60496-kr12-1-changelog-only
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - name: Verify new Windows version exists, then write only missing changelog via canonical v3 mod UID
+        run: |
+          set -euo pipefail
+          test -n "$NEXUS_KEY"
+          python3 - <<'PY'
+          import json,os,urllib.request,urllib.error
+          base='https://api.nexusmods.com/v3'
+          headers={'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json',
+                   'Content-Type':'application/json'}
+          def api(path,body=None):
+              req=urllib.request.Request(base+path,headers=headers,
+                  data=json.dumps(body,ensure_ascii=False).encode('utf-8') if body is not None else None,
+                  method='POST' if body is not None else 'GET')
+              with urllib.request.urlopen(req,timeout=35) as res:
+                  return json.load(res)
+          mod=api('/games/morrowind/mods/60496')['data']
+          assert mod['name']=='(KR) OpenMW Korean Translation Patcher'
+          assert str(mod['id'])=='429496790096'
+          groups=api('/mods/'+str(mod['id'])+'/files')['data']['mod_files']
+          windows=[v for v in groups if str(v['id'])=='8110335']
+          assert len(windows)==1 and windows[0]['is_active'] is True
+          assert windows[0]['name']=='Morrowind Korean OpenMW'
+          assert windows[0]['versions_count']>=11, 'KR12.1 file version not yet present'
+          print('VERIFIED: existing Windows mod-file group contains the newly uploaded KR12.1 version.')
+          payload={'version':'0.51.0-KR12.1',
+                   'changelog':'KR12.1 Windows: Light 마법 효과 빛, 지속: 30초, 적용: 대상, 드로 사카르 토픽 링크, Firemoth 내부 셀 한국어 이름 10개. pillow shipment는 Patch for Purists 번역 검토로 보류.'}
+          answer=api('/mods/'+str(mod['id'])+'/changelogs',payload)
+          print('NEXUS_CHANGELOG_POST_SUCCESS: canonical mod UID; no file upload or Android update occurred.')
+          PY

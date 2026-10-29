@@ -118,3 +118,18 @@ jobs:
             output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip.sha256
             output/KR12.2-Stable051-Test-Verification.json
           retention-days: 14
+      - name: Link completed test candidate in the draft PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          {
+            echo "**KR12.2 OpenMW 0.51.0 TEST ZIP built (not official).**"
+            echo ""
+            echo "Download the KR12.2-Stable051-Windows-TEST-not-official artifact from:"
+            echo "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo ""
+            echo "The ZIP includes the matching 0.51.0 Korean executable and KR12.1 translation data."
+            echo "Manual Windows gameplay testing has not been performed."
+          } > test-artifact.md
+          gh pr comment 39 --body-file test-artifact.md

@@ -198,3 +198,42 @@ jobs:
           update_mod_version: true
           mod_id: '60496'
           changelog: 'KR12.1: Light/빛, 지속: N초, 적용: 대상, DroSakhar dialogue links, Firemoth cell names; pillow shipment deferred.'
+
+  cleanup-obsolete-kr12-screenshots:
+    needs: publish
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Remove only the seven screenshot JPGs from old KR12 GitHub release assets
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/openmw-0.51.0-kr12" > old-release.json
+          python3 - <<'PY'
+          import json
+          data=json.load(open('old-release.json'))
+          expected={
+              'KR12-Haj-Ei-journal-link.jpg',
+              'KR12-Haj-Ei-journal-target.jpg',
+              'KR12-NPC-subtitle-after-5.7s.jpg',
+              'KR12-NPC-subtitle-after-8.8s.jpg',
+              'KR12-NPC-subtitle-before-5.7s.jpg',
+              'KR12-work-quest-entrance.jpg',
+              'KR12-work-quest-response.jpg',
+          }
+          assets=data['assets']
+          images={a['name'] for a in assets if a['name'].lower().endswith(('.jpg','.jpeg','.png'))}
+          assert images==expected, f'Release assets differ from audited list: {images}'
+          required={'Morrowind-Korean-OpenMW-0.51.0-KR12-Full.zip',
+                    'Morrowind-Korean-OpenMW-0.51.0-KR12-Full.zip.sha256',
+                    'KR12-Windows-verification.json','KR12-Windows-import-verification.json'}
+          assert required<={a['name'] for a in assets}
+          with open('deletion-ids.txt','w') as out:
+              for a in assets:
+                  if a['name'] in expected:out.write(str(a['id'])+' '+a['name']+'\n')
+          PY
+          while read -r id filename; do
+            echo "Removing old screenshot asset $filename only"
+            gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id"
+          done < deletion-ids.txt
+          echo 'KR12 source ZIP, checksums and JSON verification assets preserved.'

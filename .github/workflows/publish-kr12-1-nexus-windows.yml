@@ -1,0 +1,84 @@
+name: Publish verified Windows KR12.1 to Nexus #60496 (never Android)
+
+on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/publish-kr12-1-nexus-windows.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-60496-windows-kr12-1
+  cancel-in-progress: false
+
+jobs:
+  publish-nexus:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      ASSET: Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+      FILE_GROUP: '8110335'
+    steps:
+      - name: Check Nexus authenticated mod/group identity (read-only)
+        run: |
+          set -euo pipefail
+          test -n "$NEXUS_KEY"
+          python3 - <<'PY'
+          import os,json,urllib.request
+          def get(url):
+              req=urllib.request.Request(url,headers={
+                  'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json'})
+              with urllib.request.urlopen(req,timeout=30) as response:
+                  return json.load(response)['data']
+          mod=get('https://api.nexusmods.com/v3/games/morrowind/mods/60496')
+          assert str(mod['id'])=='429496790096'
+          assert str(mod['game_scoped_id'])=='60496'
+          assert mod['name']=='(KR) OpenMW Korean Translation Patcher'
+          groups=get('https://api.nexusmods.com/v3/mods/'+str(mod['id'])+'/files')['mod_files']
+          windows=[g for g in groups if str(g['id'])==os.environ['FILE_GROUP']]
+          assert len(windows)==1
+          assert windows[0]['name']=='Morrowind Korean OpenMW'
+          assert windows[0]['is_active'] is True
+          assert all(g.get('name')!='OpenMW Android Korean APK and Data' or
+              str(g.get('id'))!=os.environ['FILE_GROUP'] for g in groups)
+          print('VERIFIED: Nexus mod 60496, existing active Windows file group 8110335.')
+          print('Android file group 8257539 will not be changed or uploaded.')
+          PY
+      - name: Download exact KR12.1 Windows GitHub release archive
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download 'openmw-0.51.0-kr12.1' \
+            --repo 'munument1/Morrowind-OpenMW-KR' \
+            --pattern "$ASSET" --pattern "$ASSET.sha256" --dir dist
+          (cd dist && sha256sum -c "$ASSET.sha256")
+          unzip -tq "dist/$ASSET"
+          python3 - <<'PY'
+          from zipfile import ZipFile
+          with ZipFile('dist/Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip') as z:
+              names=z.namelist()
+              assert 'payload/openmw.exe' in names
+              assert 'payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp' in names
+              readme=z.read('README-KOREAN.txt').decode('utf8')
+              assert readme.startswith('OpenMW 0.51.0 한국어 KR12.1')
+              assert '[이전 설치 안내]' not in readme
+              assert not any(n.lower().endswith(('.jpg','.jpeg','.png','.apk')) for n in names)
+          PY
+      - name: Upload Windows KR12.1 as new version of the verified existing main file
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.10
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: '8110335'
+          filename: dist/Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+          version: 0.51.0-KR12.1
+          display_name: Morrowind Korean OpenMW 0.51.0-KR12.1 Windows
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+          mod_id: '60496'
+          changelog: 'KR12.1 Windows: 빛, 지속: 30초, 적용: 대상, DroSakhar dialogue topic link, Firemoth Korean cell names; pillow shipment deferred.'

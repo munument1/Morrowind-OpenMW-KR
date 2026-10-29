@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Build a KR12.2 release candidate from the immutable KR12.1 Windows ZIP.
+"""PROTOTYPE ONLY — blocked for 0.52-to-0.51 compatibility audit.
+
+Previously intended to build a KR12.2 release candidate from KR12.1.
 
 KR12.1 ships a newer openmw.exe but does not install the matching default
 settings, HUD layout/skin, and mouse-cursor texture.  This packages the
@@ -69,6 +71,23 @@ def pinned_file(path: str) -> bytes:
         ["git", "show", f"{SOURCE_REF}:{path}"], cwd=REPO
     )
 
+def require_stable_engine_source() -> None:
+    """Fail closed: this hotfix must not ship a 0.52 development runtime as 0.51."""
+    cmake = pinned_file("CMakeLists.txt").decode("utf-8")
+    required = (
+        "set(OPENMW_VERSION_MAJOR 0)",
+        "set(OPENMW_VERSION_MINOR 51)",
+        "set(OPENMW_VERSION_RELEASE 0)",
+    )
+    if not all(line in cmake for line in required):
+        raise ValueError(
+            "BLOCKED: KR12.1 source is OpenMW 0.52 development, not official 0.51.0. "
+            "Do not package KR12.2 against it. Rebase Korean patches onto the "
+            "official OpenMW 0.51.0 tag, rebuild the engine, and verify the "
+            "matching runtime resources and DLLs first."
+        )
+
+
 def verify_assets(assets: dict[str, bytes], installer: bytes) -> None:
     settings = assets["payload/settings-default.cfg"].decode("utf-8")
     layout = assets["payload/resources/vfs/mygui/openmw_hud.layout"].decode("utf-8")
@@ -98,6 +117,7 @@ def main() -> None:
     if args.baseline.resolve() == args.output.resolve():
         raise ValueError("Baseline and output ZIP paths must differ")
 
+    require_stable_engine_source()
     installer = (REPO / "packaging/korean/install-korean.ps1").read_bytes()
     assets = {dest: pinned_file(src) for dest, src in RUNTIME_ASSETS.items()}
     verify_assets(assets, installer)

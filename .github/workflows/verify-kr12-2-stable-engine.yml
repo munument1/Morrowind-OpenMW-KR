@@ -1,0 +1,54 @@
+name: KR12.2 — verify stable 0.51 Korean engine port
+
+on:
+  push:
+    branches: [fix/kr12-2-openmw-051-port]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stable-source-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout official stable OpenMW 0.51.0
+        uses: actions/checkout@v4
+        with:
+          repository: OpenMW/openmw
+          ref: openmw-0.51.0
+          fetch-depth: 1
+      - name: Checkout Korean patch source separately
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.sha }}
+          path: _korean_port
+      - name: Confirm stable source and apply full Korean patchset
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          for patch in _korean_port/korean/patches/*.patch; do
+            echo "::group::Applying $(basename "$patch")"
+            git apply --check "$patch"
+            git apply "$patch"
+            echo "::endgroup::"
+          done
+          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          git diff --check
+
+  build-stable-engine:
+    needs: stable-source-check
+    uses: ./.github/workflows/windows.yml
+    with:
+      image: '2022'
+      msvc: '2022'
+      build-type: Release
+      package: false
+      release: false
+      source_repository: OpenMW/openmw
+      source_ref: openmw-0.51.0
+      korean_overlay: true
+      store_runtime_executable: true
+    secrets: inherit

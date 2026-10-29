@@ -1,0 +1,232 @@
+name: KR12.2 — verify stable 0.51 Korean engine port
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - .github/workflows/verify-kr12-2-stable-engine.yml
+      - packaging/korean/tooling/package_kr12_2_stable_windows.py
+      - korean/patches/**
+  workflow_dispatch:
+
+concurrency:
+  group: kr122-test-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  stable-source-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout official stable OpenMW 0.51.0
+        uses: actions/checkout@v4
+        with:
+          repository: OpenMW/openmw
+          ref: openmw-0.51.0
+          fetch-depth: 1
+      - name: Checkout Korean patch source separately
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.sha }}
+          path: _korean_port
+      - name: Confirm stable source and apply full Korean patchset
+        shell: bash
+        run: |
+          set -o pipefail
+          {
+          set -e
+          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          for patch in _korean_port/korean/patches/*.patch; do
+            echo "::group::Applying $(basename "$patch")"
+            git apply --check "$patch"
+            git apply "$patch"
+            echo "::endgroup::"
+          done
+          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          git diff --check
+          } 2>&1 | tee stable-patch-check.log
+      - name: Record incompatible patch details on draft PR
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          {
+            echo "Stable OpenMW 0.51.0 patch compatibility failed."
+            echo ""
+            echo "Workflow: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo ""
+            echo '```text'
+            tail -n 55 stable-patch-check.log 2>/dev/null || true
+            echo '```'
+          } > stable-port-diagnostic.md
+          gh pr comment 39 --body-file stable-port-diagnostic.md
+
+  build-stable-engine:
+    needs: stable-source-check
+    runs-on: windows-2022
+    timeout-minutes: 80
+    steps:
+      - name: Checkout official OpenMW 0.51.0
+        uses: actions/checkout@v4
+        with:
+          repository: OpenMW/openmw
+          ref: openmw-0.51.0
+          fetch-depth: 1
+      - name: Checkout Korean patch source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ github.sha }}
+          path: _korean_port
+      - name: Verify stable engine and apply Korean runtime patches
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          for patch in _korean_port/korean/patches/*.patch; do
+            git apply --check "$patch"
+            git apply "$patch"
+          done
+          git diff --check
+          install -m 0644 _korean_port/files/data/fonts/DejaVuLGCSansMono.omwfont files/data/fonts/DejaVuLGCSansMono.omwfont
+          install -m 0644 _korean_port/files/data/fonts/MysticCards.omwfont files/data/fonts/MysticCards.omwfont
+          install -m 0644 _korean_port/files/data/fonts/Galmuri11.omwfont files/data/fonts/Galmuri11.omwfont
+          install -m 0644 _korean_port/files/data/fonts/Galmuri11.ttf files/data/fonts/Galmuri11.ttf
+          install -m 0644 _korean_port/files/data/fonts/Galmuri11-OFL-1.1.md files/data/fonts/Galmuri11-OFL-1.1.md
+      - name: Read upstream dependency versions
+        shell: bash
+        run: |
+          sed '/^\s*#/d; /^\s*$/d' CI/deps_versions.msvc.sh >> "$GITHUB_ENV"
+      - name: Download verified prebuilt Windows dependencies
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path deps, deps/Qt | Out-Null
+          Set-Location deps
+          $manifest = "vcpkg-x64-windows-2022-$env:VCPKG_TAG-manifest.txt"
+          curl.exe --fail --retry 3 -L -o $manifest "https://gitlab.com/OpenMW/openmw-deps/-/raw/main/windows/$manifest"
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency manifest download failed' }
+          $lines = Get-Content $manifest
+          $url = $lines[0]
+          $hashParts = -split $lines[1]
+          $hash = $hashParts[0]
+          $archive = $hashParts[1]
+          curl.exe --fail --retry 3 -L -o $archive $url
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency archive download failed' }
+          if ((Get-FileHash $archive -Algorithm SHA512).Hash -ne $hash) { throw 'Dependency archive checksum mismatch' }
+          7z x -y "-ovcpkg-x64-windows-2022-$env:VCPKG_TAG" $archive
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency archive extraction failed' }
+      - name: Restore Qt cache
+        id: qt-cache
+        uses: actions/cache@v4
+        with:
+          path: deps/Qt/${{ env.QT_VER }}/msvc2019_64
+          key: kr122-qt-${{ env.QT_VER }}-msvc2019_64-v1
+      - name: Download Qt installer if cache is absent
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: |
+          curl.exe --fail --retry 3 -L -o deps/Qt/aqt_x64.exe https://github.com/miurahr/aqtinstall/releases/download/v3.1.15/aqt_x64.exe
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot download Qt installer' }
+      - name: Install Qt if cache is absent
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        working-directory: deps/Qt
+        run: |
+          .\aqt_x64.exe install-qt windows desktop $env:QT_VER win64_msvc2019_64
+          if ($LASTEXITCODE -ne 0) { throw 'Qt installation failed' }
+      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: seanmiddleditch/gha-setup-ninja@master
+      - name: Configure OpenMW 0.51.0 executable only
+        shell: pwsh
+        run: >
+          cmake -S . -B build -G Ninja
+          -D CMAKE_BUILD_TYPE=Release
+          -D CMAKE_TOOLCHAIN_FILE="$env:GITHUB_WORKSPACE/deps/vcpkg-x64-windows-2022-$env:VCPKG_TAG/scripts/buildsystems/vcpkg.cmake"
+          -D CMAKE_PREFIX_PATH="$env:GITHUB_WORKSPACE/deps/Qt/$env:QT_VER/msvc2019_64"
+          -D LuaJit_INCLUDE_DIR="$env:GITHUB_WORKSPACE/deps/vcpkg-x64-windows-2022-$env:VCPKG_TAG/installed/x64-windows/include/luajit"
+          -D LuaJit_LIBRARY="$env:GITHUB_WORKSPACE/deps/vcpkg-x64-windows-2022-$env:VCPKG_TAG/installed/x64-windows/lib/lua51.lib"
+          -D BUILD_BENCHMARKS=OFF
+          -D BUILD_COMPONENTS_TESTS=OFF
+          -D BUILD_OPENMW_TESTS=OFF
+          -D BUILD_OPENCS_TESTS=OFF
+          -D OPENMW_USE_SYSTEM_SQLITE3=OFF
+          -D OPENMW_USE_SYSTEM_YAML_CPP=OFF
+          -D OPENMW_LTO_BUILD=OFF
+      - name: Compile only openmw.exe
+        shell: pwsh
+        run: |
+          cmake --build build --target openmw --parallel 4
+          if ($LASTEXITCODE -ne 0) { throw 'KR12.2 0.51.0 runtime build failed' }
+          if (-not (Test-Path -LiteralPath build/openmw.exe -PathType Leaf)) { throw 'openmw.exe missing' }
+      - name: Save only stable Korean runtime executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: korean-runtime-executable-${{ github.sha }}
+          path: build/openmw.exe
+          if-no-files-found: error
+          retention-days: 14
+  package-test-candidate:
+    needs: [stable-source-check, build-stable-engine]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BASE_TAG: openmw-0.51.0-kr12.1
+      BASE_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
+      TEST_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download newly built stable OpenMW 0.51.0 Korean runtime
+        uses: actions/download-artifact@v4
+        with:
+          name: korean-runtime-executable-${{ github.sha }}
+          path: engine
+      - name: Download verified KR12.1 data-only baseline
+        run: |
+          set -euo pipefail
+          mkdir -p input output
+          gh release download "$BASE_TAG" --pattern "$BASE_ZIP" --dir input
+          gh release download "$BASE_TAG" --pattern "$BASE_ZIP.sha256" --dir input
+          (cd input && sha256sum -c "$BASE_ZIP.sha256")
+      - name: Create auditable Windows KR12.2 test candidate
+        run: |
+          set -euo pipefail
+          python3 packaging/korean/tooling/package_kr12_2_stable_windows.py \
+            --baseline "input/$BASE_ZIP" \
+            --engine engine/openmw.exe \
+            --output "output/$TEST_ZIP" \
+            --report output/KR12.2-Stable051-Test-Verification.json
+          unzip -tq "output/$TEST_ZIP"
+          (cd output && sha256sum -c "$TEST_ZIP.sha256")
+      - name: Keep TEST artifact only; never publish official release
+        uses: actions/upload-artifact@v4
+        with:
+          name: KR12.2-Stable051-Windows-TEST-not-official
+          path: |
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip.sha256
+            output/KR12.2-Stable051-Test-Verification.json
+          retention-days: 14
+      - name: Link completed test candidate in the draft PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          {
+            echo "**KR12.2 OpenMW 0.51.0 TEST ZIP built (not official).**"
+            echo ""
+            echo "Download the KR12.2-Stable051-Windows-TEST-not-official artifact from:"
+            echo "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo ""
+            echo "The ZIP includes the matching 0.51.0 Korean executable and KR12.1 translation data."
+            echo "Manual Windows gameplay testing has not been performed."
+          } > test-artifact.md
+          gh pr comment 39 --body-file test-artifact.md

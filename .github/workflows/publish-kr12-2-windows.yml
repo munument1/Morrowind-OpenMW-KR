@@ -1,0 +1,180 @@
+name: Publish KR12.2 Windows + Nexus (user-tested 0.51.0 engine)
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - .github/workflows/publish-kr12-2-windows.yml
+      - packaging/korean/tooling/promote_kr12_2_test_to_release.py
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/publish-kr12-2-windows.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: kr122-publish-windows
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  TAG: openmw-0.51.0-kr12.2
+  TEST_RUN: '40969072933'
+  TEST_ARTIFACT: KR12.2-Stable051-Windows-TEST-not-official
+  TEST_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip
+  FINAL_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip
+  REPORT: KR12.2-Windows-release-verification.json
+
+jobs:
+  verify-release-bundle:
+    name: Validate and promote tested KR12.2 ZIP without rebuilding
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve the user-tested Windows Run 5 artifact
+        run: |
+          set -euo pipefail
+          mkdir -p source output
+          gh run download "$TEST_RUN" --repo "$GITHUB_REPOSITORY" \
+            --name "$TEST_ARTIFACT" --dir source
+          test -s "source/$TEST_ZIP"
+      - name: Correct KR6 installer labels, preserve tested engine and translation
+        run: |
+          set -euo pipefail
+          python3 packaging/korean/tooling/promote_kr12_2_test_to_release.py \
+            --source "source/$TEST_ZIP" \
+            --output "output/$FINAL_ZIP" \
+            --report "output/$REPORT"
+          unzip -tq "output/$FINAL_ZIP"
+          (cd output && sha256sum -c "$FINAL_ZIP.sha256")
+          python3 - <<'PY'
+          import json, pathlib
+          d=json.loads(pathlib.Path('output/KR12.2-Windows-release-verification.json').read_text())
+          assert d['other_members_byte_identical'] is True
+          assert d['archive_integrity']=='PASS'
+          assert d['test_run']==40969072933
+          assert d['engine_sha256']=='219df4c203c59021b515233de006eeb365b8362ac20f1dbcc2f69e73b24ec47f'
+          assert d['translation_esp_sha256']=='0f04a21d69ecae16a1c2ae3bb0b739ac4e71cdb59054c809fc844128e2c12327'
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KR12.2-Windows-Release-Verified
+          path: output/
+          retention-days: 30
+          if-no-files-found: error
+
+  preflight-nexus:
+    name: Check GH release uniqueness and Nexus credentials before publication
+    if: github.event_name != 'pull_request'
+    needs: verify-release-bundle
+    runs-on: ubuntu-24.04
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_FILE_ID: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+    steps:
+      - name: Refuse duplicate GitHub release
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "::error::KR12.2 already published. Refusing overwrite."
+            exit 1
+          fi
+      - name: Check existing Nexus integration
+        run: |
+          set -euo pipefail
+          if [[ -z "$NEXUS_KEY" || ! "$NEXUS_FILE_ID" =~ ^[0-9]+$ ]]; then
+            echo "::error::Nexus integration unavailable: configure NEXUSMODS_API_KEY and NEXUS_OPENMW_MAIN_FILE_ID for mod 60496."
+            exit 1
+          fi
+
+  publish-github:
+    name: Publish GitHub KR12.2 Windows release
+    if: github.event_name != 'pull_request'
+    needs: preflight-nexus
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: KR12.2-Windows-Release-Verified
+          path: output
+      - name: Publish SHA-checked Windows release (never Android)
+        run: |
+          set -euo pipefail
+          (cd output && sha256sum -c "$FINAL_ZIP.sha256")
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "::error::Release already exists"
+            exit 1
+          fi
+          cat > release-notes.md <<'EOF'
+          ## OpenMW Korean KR12.2 — Windows x64
+
+          - Stable engine base: upstream OpenMW 0.51.0 with Korean patches. Not a 0.52 development runtime.
+          - Addresses the OpenMW 0.51 / 0.52 mismatch and HUD mouse emulation cursor startup error reported with KR12.1.
+          - Korean ESP, CEL, TOP, MRK, JRN, fonts and SRT videos are unchanged from KR12.1.
+          - Installer now displays KR12.2 and uses KR12.2 backup/marker paths rather than leftover KR6 labels.
+          - Prior Korean fallback configuration recovery still makes a backup when needed.
+
+          The Windows Korean engine was built, package-verified and user-tested from
+          https://github.com/munument1/Morrowind-OpenMW-KR/actions/runs/40969072933 .
+          The user confirmed normal gameplay and Korean dialogue/topic links on 2026-10-30.
+          The promoted release ZIP changes only installer version strings and README;
+          the tested engine and all translation data are unchanged, verified by SHA-256.
+
+          Installation requires original Morrowind game data and OpenMW 0.51.0 for Windows x64.
+          Back up settings, saves and your OpenMW installation first, then run Install-Korean.bat
+          and choose the OpenMW installation folder, not Morrowind Data Files.
+
+          Source provenance: GitHub tag tracks packaging verification tooling; the shipped
+          runtime came from upstream OpenMW/openmw tag openmw-0.51.0 plus Korean source patches.
+          See the release verification JSON for exact checksums.
+          This is Windows-only; Android remains separately distributed via GitHub.
+          EOF
+          gh release create "$TAG" \
+            "output/$FINAL_ZIP" \
+            "output/$FINAL_ZIP.sha256" \
+            "output/$REPORT" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title 'OpenMW 0.51.0 Korean Support KR12.2 — Windows x64' \
+            --notes-file release-notes.md \
+            --target "$GITHUB_SHA" --latest
+
+  publish-nexus:
+    name: Update Nexus Mods Morrowind mod 60496 (Windows only)
+    if: github.event_name != 'pull_request'
+    needs: publish-github
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: KR12.2-Windows-Release-Verified
+          path: output
+      - name: Verify GitHub asset before Nexus upload
+        run: |
+          set -euo pipefail
+          (cd output && sha256sum -c "$FINAL_ZIP.sha256")
+          mkdir -p github-check
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "$FINAL_ZIP.sha256" --dir github-check
+          cmp "output/$FINAL_ZIP.sha256" "github-check/$FINAL_ZIP.sha256"
+      - name: Update owned Nexus Mods using existing v3 API integration
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.11
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+          filename: output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip
+          version: 0.51.0-KR12.2
+          display_name: Morrowind Korean OpenMW 0.51.0-KR12.2 (Windows)
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+          mod_id: '60496'
+          changelog: 'KR12.2: official 0.51.0-stable Korean engine removes 0.52-dev mismatch and HUD startup issue; preserves KR12.1 Korean data; fixes KR6 installer labels; user gameplay test passed.'

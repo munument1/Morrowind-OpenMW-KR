@@ -1,0 +1,44 @@
+name: Verify reported KR12 translation fixes
+
+on:
+  pull_request:
+    paths:
+      - 'packaging/korean/tooling/rebuild_kr12_reported_data.py'
+      - '.github/workflows/verify-kr12-issue27-data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-data-fix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download the immutable published KR12 baseline
+        run: |
+          mkdir -p source output
+          gh release download 'openmw-0.51.0-kr12' \
+            --repo 'munument1/Morrowind-OpenMW-KR' \
+            --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR12-Full.zip' --dir source
+      - name: Rebuild, verify and retain a candidate only (never republish)
+        run: |
+          set -euo pipefail
+          python3 'packaging/korean/tooling/rebuild_kr12_reported_data.py' \
+            --platform 'windows' \
+            --source 'source/Morrowind-Korean-OpenMW-0.51.0-KR12-Full.zip' \
+            --output 'output/KR12-issue27-windows-candidate.zip' \
+            --report 'output/issue27-windows-verification.json'
+          unzip -tq 'output/KR12-issue27-windows-candidate.zip'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KR12-Issue27-windows-Verified-Candidate
+          path: output/
+          if-no-files-found: error
+          retention-days: 14

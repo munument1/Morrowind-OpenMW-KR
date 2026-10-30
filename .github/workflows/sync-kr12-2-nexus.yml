@@ -1,0 +1,66 @@
+name: Sync already released KR12.2 Windows ZIP to Nexus Mods
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-nexus-kr12-2
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  TAG: openmw-0.51.0-kr12.2
+  FILE: Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip
+  EXPECTED_SHA256: f00dcc9501762588cd6dd1ba190006fd2f2caa50fd662113db49e2b9ed7f6097
+
+jobs:
+  nexus-kr12-2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_FILE_ID: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+    steps:
+      - name: Confirm Nexus owner credentials (without printing secrets)
+        run: |
+          set -euo pipefail
+          if [[ -z "$NEXUS_KEY" || ! "$NEXUS_FILE_ID" =~ ^[0-9]+$ ]]; then
+            echo "::error::Missing NEXUSMODS_API_KEY GitHub Actions secret or numeric NEXUS_OPENMW_MAIN_FILE_ID repository variable for owned Morrowind mod #60496."
+            exit 1
+          fi
+      - name: Download published verified KR12.2 Windows release, never rebuild
+        run: |
+          set -euo pipefail
+          mkdir -p output
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "$FILE" \
+            --pattern "$FILE.sha256" \
+            --pattern "KR12.2-Windows-release-verification.json" --dir output
+          (cd output && sha256sum -c "$FILE.sha256")
+          echo "$EXPECTED_SHA256  output/$FILE" | sha256sum -c -
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("output/KR12.2-Windows-release-verification.json")
+          d=json.loads(p.read_text(encoding="utf-8"))
+          assert d["released_zip_sha256"] == "f00dcc9501762588cd6dd1ba190006fd2f2caa50fd662113db49e2b9ed7f6097"
+          assert d["engine_sha256"] == "219df4c203c59021b515233de006eeb365b8362ac20f1dbcc2f69e73b24ec47f"
+          assert d["other_members_byte_identical"] is True
+          PY
+      - name: Upload GitHub-identical KR12.2 Windows ZIP to owned Nexus mod
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.11
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+          filename: output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip
+          version: 0.51.0-KR12.2
+          display_name: Morrowind Korean OpenMW 0.51.0-KR12.2 (Windows)
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+          mod_id: '60496'
+          changelog: 'KR12.2: 0.51.0 stable Korean engine replaces 0.52-development mismatch and HUD startup error; unchanged KR12.1 Korean translations; fixed KR6 installer labels. Windows gameplay, Korean dialogue and topic links user-tested.'

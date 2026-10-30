@@ -1,6 +1,9 @@
 name: Sync already released KR12.2 Windows ZIP to Nexus Mods
 
 on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/sync-kr12-2-nexus.yml]
   workflow_dispatch:
 
 permissions:
@@ -22,15 +25,43 @@ jobs:
     timeout-minutes: 30
     env:
       NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
-      NEXUS_FILE_ID: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+      NEXUS_FILE_ID: '8110335' # Verified previous KR12 and KR12.1 Windows file group, not a mod ID
     steps:
-      - name: Confirm Nexus owner credentials (without printing secrets)
+      - id: nexus-check
+        name: Validate existing Nexus Windows file group and avoid duplicate versions
         run: |
           set -euo pipefail
-          if [[ -z "$NEXUS_KEY" || ! "$NEXUS_FILE_ID" =~ ^[0-9]+$ ]]; then
-            echo "::error::Missing NEXUSMODS_API_KEY GitHub Actions secret or numeric NEXUS_OPENMW_MAIN_FILE_ID repository variable for owned Morrowind mod #60496."
-            exit 1
-          fi
+          test -n "$NEXUS_KEY" || { echo "::error::Nexus API secret absent"; exit 1; }
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          BASE = "https://api.nexusmods.com"
+          def get(path):
+              request = urllib.request.Request(BASE + path, headers={
+                  "apikey": os.environ["NEXUS_KEY"],
+                  "Accept": "application/json",
+                  "User-Agent": "KR-OpenMW-051-Release-Sync",
+              })
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return json.load(response)["data"]
+          mod = get("/v3/games/morrowind/mods/60496")
+          assert str(mod["id"]) == "429496790096", "Unexpected Nexus mod UID"
+          assert str(mod["game_scoped_id"]) == "60496", "Unexpected mod ID"
+          files = get("/v3/mods/" + str(mod["id"]) + "/files")["mod_files"]
+          file_id = os.environ["NEXUS_FILE_ID"]
+          matching = [f for f in files if str(f["id"]) == file_id and f["is_active"]]
+          assert len(matching) == 1, "Windows file group not found or inactive"
+          assert matching[0]["name"] == "Morrowind Korean OpenMW", "Wrong Nexus file group"
+          assert file_id != "8257539", "Refusing Android file group"
+          versions = get("/v3/mod-files/" + file_id + "/versions")["versions"]
+          def norm(s):
+              return re.sub(r"(?i)-kr", "-kr", s.strip()).lower()
+          existing = [v for v in versions if norm(str(v.get("version", ""))) == norm("0.51.0-KR12.2") and str(v.get("category", "")).lower() != "removed"]
+          upload = not bool(existing)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write("upload=" + str(upload).lower() + "\n")
+          print("VERIFIED: Nexus mod 60496, active Windows file group " + file_id)
+          print("KR12.2 version present:", bool(existing), "; upload needed:", upload)
+          PY
       - name: Download published verified KR12.2 Windows release, never rebuild
         run: |
           set -euo pipefail
@@ -51,10 +82,11 @@ jobs:
           assert d["other_members_byte_identical"] is True
           PY
       - name: Upload GitHub-identical KR12.2 Windows ZIP to owned Nexus mod
-        uses: Nexus-Mods/upload-action@v1.0.0-beta.11
+        if: steps.nexus-check.outputs.upload == 'true'
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23 # previously successful v1.0.0-beta.10
         with:
           api_key: ${{ secrets.NEXUSMODS_API_KEY }}
-          file_id: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+          file_id: '8110335'
           filename: output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip
           version: 0.51.0-KR12.2
           display_name: Morrowind Korean OpenMW 0.51.0-KR12.2 (Windows)
@@ -62,5 +94,19 @@ jobs:
           archive_existing_version: true
           primary_mod_manager_download: true
           update_mod_version: true
-          mod_id: '60496'
-          changelog: 'KR12.2: 0.51.0 stable Korean engine replaces 0.52-development mismatch and HUD startup error; unchanged KR12.1 Korean translations; fixed KR6 installer labels. Windows gameplay, Korean dialogue and topic links user-tested.'
+
+      - name: Confirm new or pre-existing KR12.2 version in the same Windows Nexus file group
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          req=urllib.request.Request(
+              "https://api.nexusmods.com/v3/mod-files/8110335/versions",
+              headers={"apikey":os.environ["NEXUS_KEY"],"Accept":"application/json"})
+          with urllib.request.urlopen(req,timeout=30) as response:
+              versions=json.load(response)["data"]["versions"]
+          found=[v for v in versions if str(v.get("version","")).lower()=="0.51.0-kr12.2" and str(v.get("category","")).lower()!="removed"]
+          if not found:
+              raise SystemExit("KR12.2 version missing from verified Nexus Windows file group 8110335")
+          print("SUCCESS: Nexus Windows file group 8110335 contains 0.51.0-KR12.2")
+          PY

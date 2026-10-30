@@ -76,6 +76,8 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: verify-release-bundle
     runs-on: ubuntu-24.04
+    outputs:
+      ready: ${{ steps.credentials.outputs.ready }}
     env:
       NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
       NEXUS_FILE_ID: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
@@ -87,12 +89,15 @@ jobs:
             echo "::error::KR12.2 already published. Refusing overwrite."
             exit 1
           fi
-      - name: Check existing Nexus integration
+      - id: credentials
+        name: Check existing Nexus integration
         run: |
           set -euo pipefail
           if [[ -z "$NEXUS_KEY" || ! "$NEXUS_FILE_ID" =~ ^[0-9]+$ ]]; then
-            echo "::error::Nexus integration unavailable: configure NEXUSMODS_API_KEY and NEXUS_OPENMW_MAIN_FILE_ID for mod 60496."
-            exit 1
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Nexus publication postponed: configure NEXUSMODS_API_KEY and NEXUS_OPENMW_MAIN_FILE_ID for mod 60496."
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
   publish-github:
@@ -148,8 +153,8 @@ jobs:
 
   publish-nexus:
     name: Update Nexus Mods Morrowind mod 60496 (Windows only)
-    if: github.event_name != 'pull_request'
-    needs: publish-github
+    if: github.event_name != 'pull_request' && needs.preflight-nexus.outputs.ready == 'true'
+    needs: [publish-github, preflight-nexus]
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/download-artifact@v4

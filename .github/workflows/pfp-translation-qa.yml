@@ -1,0 +1,32 @@
+name: PFP 5.0.7 KR12.4 translation tooling QA
+
+on:
+  pull_request:
+    paths:
+      - 'packaging/korean/mods/patch-for-purists/**'
+      - '.github/workflows/pfp-translation-qa.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'packaging/korean/mods/patch-for-purists/**'
+      - '.github/workflows/pfp-translation-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-structural-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax check local-only PFP builder
+        run: python3 -m py_compile packaging/korean/mods/patch-for-purists/pfp507_build_overwrite_kr124.py packaging/korean/mods/patch-for-purists/test_pfp507_builder.py
+      - name: Exercise record, subrecord, and SHA-preservation checks
+        run: python3 -m unittest discover -s packaging/korean/mods/patch-for-purists -p 'test_*.py' -v
+      - name: Confirm local-only build interface
+        run: python3 packaging/korean/mods/patch-for-purists/pfp507_build_overwrite_kr124.py --help
+
+# Deliberately no access to private translation corpus, copyrighted source ESM,
+# GitHub Releases or write tokens. Full physical QA is performed on a local PC.

@@ -57,7 +57,7 @@ jobs:
               core.setFailed('Only published stable releases can be uploaded.');
               return;
             }
-            const match = /^openmw-(\d+\.\d+\.\d+)-kr(\d+)(\.\d+)?$/i.exec(release.tag_name);
+            const match = /^openmw-(\d+\.\d+\.\d+)-kr(\d+)((?:\.\d+)*)$/i.exec(release.tag_name);
             if (!match) {
               if (context.eventName === 'workflow_dispatch') core.setFailed('Expected a Korean tag such as openmw-0.51.0-kr4.');
               else core.notice('This is not a Korean OpenMW release; skipping.');
@@ -181,8 +181,8 @@ jobs:
             const fileId = String(candidates[0].id);
             const versions = (await nexus(`/v3/mod-files/${fileId}/versions`)).data.versions;
             function normalise(version) {
-              const match = /^(\d+)\.(\d+)(?:\.(\d+))?-kr(\d+)(?:\.(\d+))?$/i.exec(version);
-              return match ? `${Number(match[1])}.${Number(match[2])}.${Number(match[3] || 0)}-kr${Number(match[4])}${match[5] ? `.${Number(match[5])}` : ''}` : version.toLowerCase();
+              const match = /^(\d+)\.(\d+)(?:\.(\d+))?-kr(\d+)((?:\.\d+)*)$/i.exec(version);
+              return match ? `${Number(match[1])}.${Number(match[2])}.${Number(match[3] || 0)}-kr${Number(match[4])}${match[5] || ''}` : version.toLowerCase();
             }
             if (versions.some(v => normalise(v.version) === normalise(process.env.VERSION) && !['removed', 'archived'].includes(v.category))) {
               core.notice('This version already exists on Nexus; skipping duplicate upload.');

@@ -1,6 +1,6 @@
 {
   "schema": "morrowind_rebirth_7_2_kr12_v56_final_baseline_pointer",
-  "status": "provenance_recorded_final_archive_not_imported",
+  "status": "v56_final_corpus_extracted_verified_in_conversation_not_committed",
   "source_mod": "Morrowind Rebirth 7.2",
   "source_package_label": "Morrowind Rebirth 37795 7.2 2026-10-23T19-19Z nOlkOzNs",
   "final_package_name": "Morrowind_Rebirth_7.2_Korean_OpenMW_KR12_v56_Full_Layout.zip",
@@ -33,9 +33,37 @@
   "original_binaries_in_repository": false,
   "final_archive_binaries_in_repository": false,
   "final_translation_overlay_in_repository": false,
-  "one_corpus_generated": false,
+  "one_corpus_generated": true,
   "extractions_requires_local_original_and_final_zip": true,
   "prior_versions_moved": false,
   "automatic_release": false,
-  "nexus_publication": false
+  "nexus_publication": false,
+  "original_rar_sha256": "8f31db65c01e41744842c10151a3a5259e1e57668e6f89e444b10a73a2a20ee0",
+  "verified_actual_changed_fields": 27016,
+  "verified_changed_field_counts": {
+    "main": 13268,
+    "alternate": 13268,
+    "addons": {
+      "Birthsigns": 40,
+      "Mercenaries": 330,
+      "Races": 51,
+      "Skills": 19,
+      "Tools": 40,
+      "Game_Settings": 0
+    },
+    "compatibility_patches_all_seven": 0
+  },
+  "topic_sidecar_paths": [
+    "Data Files/Morrowind Rebirth [Main].top",
+    "Alternate Version/Morrowind Rebirth [Main].top",
+    "Data Files/Morrowind Rebirth - Mercenaries [Addon].top"
+  ],
+  "source_only_scpt_sctx_changed_fields": 39,
+  "final_corpus_filename": "REBIRTH_72_KR12_V56_CONSOLIDATED_PRIVATE.jsonl.gz",
+  "final_corpus_sha256": "63605e2f063247ec6ccc66e1fd8fdf1650237629a14779e3fddfe2cf59a47c43",
+  "final_corpus_bytes": 4980743,
+  "private_manifest_sha256": "5fd88c27ae398a0142292b70e50dcd4e9047eb73cfa385a665f2990ed6f72f6f",
+  "qa": "PASS_ALL_15_PLUGINS_BYTE_EXACT_AND_3_TOP_FILES",
+  "kr124_game_verified": false,
+  "release_ready": false
 }

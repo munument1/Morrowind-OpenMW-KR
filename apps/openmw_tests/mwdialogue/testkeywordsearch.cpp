@@ -486,6 +486,12 @@ TEST_F(KeywordSearchTest, korean_issue42_verb_keywords_and_false_positives)
     EXPECT_EQ(hits[2].mTopicId, "freedom");
     EXPECT_EQ(hits[3].mTopicId, "company");
     EXPECT_EQ(hits[4].mTopicId, "wisdom");
+    const auto further = search.parseHyperText(
+        "풀어주시겠다고? 풀어주시겠어요? 동행하겠다.", storage);
+    ASSERT_EQ(further.size(), 3);
+    EXPECT_EQ(further[0].mTopicId, "freedom");
+    EXPECT_EQ(further[1].mTopicId, "freedom");
+    EXPECT_EQ(further[2].mTopicId, "company");
 
     // Do not turn verb prefixes, compound words, or a lone topic syllable
     // into quest links merely by accepting Korean predicate endings.

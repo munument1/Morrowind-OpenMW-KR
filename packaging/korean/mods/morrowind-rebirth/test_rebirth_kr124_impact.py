@@ -66,7 +66,7 @@ class ImpactTests(unittest.TestCase):
 
     def test_non_pinned_archive_rejected(self):
         self.write_fixture()
-        with self.assertRaisesRegex(ValueError,"sha mismatch"):
+        with self.assertRaisesRegex(ValueError,"Not the pinned Rebirth v56"):
             impact.audit(self.path,verified_sha=True)
 
 if __name__=="__main__":

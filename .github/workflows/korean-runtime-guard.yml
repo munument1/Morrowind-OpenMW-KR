@@ -53,6 +53,9 @@ jobs:
         run: |
           set -euo pipefail
           git config core.autocrlf false
+          # New regression fix must be removed before checking older patches.
+          git apply --reverse --check korean/patches/0014-korean-quotative-topic-boundaries.patch
+          git apply --reverse korean/patches/0014-korean-quotative-topic-boundaries.patch
           git apply --reverse --check korean/patches/0013-korean-spell-duration-order.patch
           git apply --reverse korean/patches/0013-korean-spell-duration-order.patch
           git apply --reverse --check korean/patches/0012-voice-synchronized-subtitles.patch
@@ -82,6 +85,7 @@ jobs:
           git apply korean/patches/0011-korean-topic-discovery-and-work-links.patch
           git apply korean/patches/0012-voice-synchronized-subtitles.patch
           git apply korean/patches/0013-korean-spell-duration-order.patch
+          git apply korean/patches/0014-korean-quotative-topic-boundaries.patch
           test -s korean/patches/0005-video-subtitles.patch
 
       - name: Verify Korean runtime invariants

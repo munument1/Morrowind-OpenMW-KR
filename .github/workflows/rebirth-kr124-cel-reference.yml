@@ -1,0 +1,48 @@
+name: Rebirth KR12.4 source CEL reference for coverage audit
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/rebirth-kr124-cel-reference.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_TAG: openmw-0.51.0-kr12.4
+      SOURCE_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip
+      SOURCE_SHA: 71fbbd1ae5506df4444fe47f31b29101f010a96fa5d73bb4b8699977cd211497
+    steps:
+      - name: Download exact published KR12.4 reference
+        run: |
+          mkdir -p input reference
+          gh release download "$SOURCE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$SOURCE_ZIP" --dir input
+          echo "$SOURCE_SHA  input/$SOURCE_ZIP" | sha256sum -c -
+      - name: Extract CEL dictionary only; never change source or publish an update
+        run: |
+          python3 - <<'PY'
+          import zipfile,os,hashlib,json
+          from pathlib import Path
+          p=Path('input')/os.environ['SOURCE_ZIP']
+          with zipfile.ZipFile(p) as z:
+              matches=[n for n in z.namelist() if n.lower().endswith('/morrowind_korean_retranslation.cel')]
+              assert len(matches)==1,matches
+              content=z.read(matches[0])
+              assert content.count(b'\t')>100
+              print('CEL bytes:',len(content),'SHA256:',hashlib.sha256(content).hexdigest())
+              (Path('reference')/'Morrowind_Korean_ReTranslation_KR12.4.cel').write_bytes(content)
+              (Path('reference')/'SOURCE_QA.json').write_text(json.dumps({'kr124_zip_sha256':os.environ['SOURCE_SHA'],'cel_sha256':hashlib.sha256(content).hexdigest(),'source_member':matches[0]},indent=2),encoding='utf-8')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rebirth-kr124-cel-only-reference
+          path: reference/
+          retention-days: 3
+          if-no-files-found: error

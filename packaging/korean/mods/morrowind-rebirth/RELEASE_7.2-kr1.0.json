@@ -58,7 +58,7 @@
     "Compability Patches/Uvirith's Legacy 3.53 [For Rebirth].esp"
   ],
   "binary_and_full_translation_data_in_public_git_repo": false,
-  "nexus_upload_status": "NOT_UPLOADED_PENDING_CONFIRMED_PACKAGE_TRANSPORT_AND_GAMEPLAY_REVIEW",
+  "nexus_upload_status": "PUBLISHED_METADATA_VERIFIED_FILE_CONTENT_NOT_DOWNLOADED",
   "previous_package_status": "superseded_by_cell_name_complete_kr1.0",
   "previous_unfixed_archive_sha256": "f336e6291e3079ac566b02c2ddf129bb1f34319f3c222b33490bdf74a583bfff",
   "release_archives": {
@@ -72,5 +72,21 @@
       "sha256": "75e0b0d9cecb625e90a5ce5d3973afa09084639b59ccc87ef45257c89854ce75",
       "bytes": 47380
     }
+  },
+  "nexus_verification": {
+    "checked_at": "2026-11-01T02:01+09:00",
+    "mod_game_scoped_id": 60805,
+    "mod_uid": "429496790405",
+    "version": "7.2-kr1.0",
+    "file_group_id": "8257641",
+    "main_file_version_id": "430496803027",
+    "main_file_game_scoped_id": "1000073427",
+    "display_name": "Rebirth 7.2 Korean",
+    "category": "main",
+    "previous_v56": "archived",
+    "previous_v55": "archived",
+    "description_updated": true,
+    "archive_sha256_verified_against_published_nexus_asset": false,
+    "source": "Nexus read-only API / GitHub Actions run 41220798137, rerun job 124599796790"
   }
 }

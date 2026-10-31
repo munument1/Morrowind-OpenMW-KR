@@ -437,6 +437,62 @@ TEST_F(KeywordSearchTest, korean_quest_topic_extended_noun_endings)
     EXPECT_TRUE(search.parseHyperText("마법사. 발견했다. 하지 말라는 명령.", storage).empty());
 }
 
+TEST_F(KeywordSearchTest, korean_issue42_zero_coda_noun_endings)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("도망친 노예", "escaped slave");
+    search.seed("디바이스 피르의 아내", "wives of divayth fyr");
+    search.seed("아주라의 바보", "azura fool");
+    search.seed("생명 없는 자", "lifeless one");
+    search.seed("모로윈드의 수호자", "defender");
+    search.seed("에노 로마리", "eno");
+    const auto hits = search.parseHyperText(
+        "도망친 노예요. 디바이스 피르의 아내지. 아주라의 바보다. "
+        "생명 없는 자여. 모로윈드의 수호자로서. 에노 로마리라 하오.", storage);
+    ASSERT_EQ(hits.size(), 6);
+    EXPECT_EQ(hits[0].mTopicId, "escaped slave");
+    EXPECT_EQ(hits[1].mTopicId, "wives of divayth fyr");
+    EXPECT_EQ(hits[2].mTopicId, "azura fool");
+    EXPECT_EQ(hits[3].mTopicId, "lifeless one");
+    EXPECT_EQ(hits[4].mTopicId, "defender");
+    EXPECT_EQ(hits[5].mTopicId, "eno");
+
+    const auto learned = search.parseHyperText(
+        "도망친 노예요. 생명 없는 자여.", storage, true);
+    ASSERT_EQ(learned.size(), 2);
+    EXPECT_FALSE(learned[0].mExplicit);
+    EXPECT_FALSE(learned[1].mExplicit);
+}
+
+TEST_F(KeywordSearchTest, korean_issue42_verb_keywords_and_false_positives)
+{
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("그대를 네레바린으로 지명하겠", "nomination");
+    search.seed("풀어주시겠", "freedom");
+    search.seed("동행하겠", "company");
+    search.seed("지혜가 나를 이끈다", "wisdom");
+    search.seed("마법", "magic");
+    search.seed("말", "speech");
+    search.seed("행", "journey");
+    search.seed("발견", "found");
+    const auto hits = search.parseHyperText(
+        "그대를 네레바린으로 지명하겠소. 그대를 네레바린으로 지명하겠네. "
+        "풀어주시겠다면. 동행하겠습니다. 지혜가 나를 이끈다면.", storage);
+    ASSERT_EQ(hits.size(), 5);
+    EXPECT_EQ(hits[0].mTopicId, "nomination");
+    EXPECT_EQ(hits[1].mTopicId, "nomination");
+    EXPECT_EQ(hits[2].mTopicId, "freedom");
+    EXPECT_EQ(hits[3].mTopicId, "company");
+    EXPECT_EQ(hits[4].mTopicId, "wisdom");
+
+    // Do not turn verb prefixes, compound words, or a lone topic syllable
+    // into quest links merely by accepting Korean predicate endings.
+    EXPECT_TRUE(search.parseHyperText(
+        "마법사다. 발견했다. 말라. 행여. 지혜가 나를 이끈다면야.", storage).empty());
+}
+
 TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
 {
     MWDialogue::KeywordSearch search;

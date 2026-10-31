@@ -11,6 +11,7 @@ on:
       - packaging/korean/tooling/verify-issue42-topic-endings.cpp
       - packaging/korean/tooling/patch_issue42_audenian_alias.py
       - packaging/korean/tooling/test_issue42_audenian_alias.py
+      - packaging/korean/tooling/audit_issue42_reported_candidates.py
       - .github/workflows/issue42-branch-qa.yml
   workflow_dispatch:
 
@@ -147,4 +148,34 @@ jobs:
           path: |
             qa/Morrowind_Korean_ReTranslation.top
             qa/issue42-audenian-alias-qa.json
+          if-no-files-found: error
+
+
+  published-corpus-source-anchored-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download pinned released ESP and original public issue 42 CSV Gist
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.3.1/Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip' \
+            --output /tmp/issue42-published.zip
+          unzip -tq /tmp/issue42-published.zip
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://api.github.com/gists/36892c800dad56c657b418d0b42956f2' \
+            --output /tmp/issue42-gist.json
+      - name: Source-anchor all 426+71 records; inspect translated script AddTopic; never mutate game data
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/audit_issue42_reported_candidates.py
+          python3 packaging/korean/tooling/audit_issue42_reported_candidates.py \
+            --zip /tmp/issue42-published.zip \
+            --gist /tmp/issue42-gist.json \
+            --output qa/issue42-published-source-anchored-review.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-source-anchored-426-links-71-topics-READONLY
+          path: qa/issue42-published-source-anchored-review.json
           if-no-files-found: error

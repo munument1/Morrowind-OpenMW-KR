@@ -1,3 +1,22 @@
+## 정식 한국어판 패키지 7.2-kr1.0 (2026-11-01)
+
+**Rebirth 원본 버전 7.2 / 한글패치 첫 정식 번호 kr1.0**으로 표기한다.
+기존 `KR12 v56`은 내부 최종 작업 번호이고, 이번에는 **번역 데이터 자체를 수정하지 않았다.**
+
+- ZIP: `Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4.zip`
+- SHA-256: `f336e6291e3079ac566b02c2ddf129bb1f34319f3c222b33490bdf74a583bfff`
+- 52,978,233바이트, 파일 14개: ESP/ESM **8개**(일반/대체 메인 2, 선택 애드온 6), `.top` **3개**, 설명·검증 문서 **3개**.
+- **미번역 Compability Patches 원본 7개는 한국어판 패키지에서 제외.** 필요하면 Rebirth 원본의 호환 패치와 해당 원본 모드의 설치 안내에 따른다. 호환 패치 자체가 삭제되거나 지원이 중단된 것은 아니다.
+- ESP/ESM 8개와 `.top` 3개는 KR12 v56 최종본과 **파일 단위 SHA 완전 동일**.
+- **Game Settings 애드온**은 표시 번역 대상이 없어 원본 그대로 포함. 활성화 여부는 플레이어 선택.
+- KR12.4 공식 릴리스의 INFO/TOP 변경 영향 정적 검수에서 Rebirth 소유 직접 수정 대상 0건. **KR12.4 인게임 시험 및 전반적 호환성은 미검증**.
+- Nexus 대상 페이지: https://www.nexusmods.com/morrowind/mods/60805 . **이 GitHub 변경은 Nexus 업로드 또는 공개를 실행하지 않는다.**
+- 기준 기록: [RELEASE_7.2-kr1.0.json](RELEASE_7.2-kr1.0.json). 실제 최종 한국어 ZIP은 사용자에게 별도 전달하며, 원본 바이너리나 번역 완성 ESP/ESM은 이 공개 GitHub 저장소에 올리지 않는다.
+
+설치: 원본 Rebirth 7.2를 먼저 설치한 후 한국어 ZIP의 `Data Files` 내용을 원본 Rebirth의 동일 폴더에 적용하고, `Morrowind_Korean_ReTranslation.esp`보다 뒤에 Rebirth 메인 ESP를 로드한다. 대체 메인은 기본 메인 대신 사용하며, 같은 이름의 TOP을 함께 적용한다. 호환 패치는 동봉하지 않는다.
+
+---
+
 # Morrowind Rebirth 7.2 — v56 최종본 통합 관리
 
 이 경로의 유일한 이관 기준은 **`Morrowind_Rebirth_7.2_Korean_OpenMW_KR12_v56_Full_Layout.zip`**이다. v1~v55 중간 단계, 초기 `optional_ko_v1` 150필드 초안, 수백 개의 작업용 JSON/QA를 이 저장소로 복사하지 않는다.

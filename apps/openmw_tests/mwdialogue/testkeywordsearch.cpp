@@ -387,15 +387,19 @@ TEST_F(KeywordSearchTest, korean_quest_topic_quotative_particles)
     const std::string source = "바스라는 강령술사 소굴. 강령술사라는 말. "
                                "바스이란 지명. 바스란 이름. 드로'사카르라는 이름.";
     const auto display = search.parseHyperText(source, storage);
-    ASSERT_EQ(display.size(), 5);
+    // Besides five suffixed cases, the input also contains the standalone
+    // topic "강령술사" and the standalone topic "말".
+    ASSERT_EQ(display.size(), 7);
     EXPECT_EQ(display[0].mTopicId, "vas");
     EXPECT_EQ(display[1].mTopicId, "necromancer");
-    EXPECT_EQ(display[2].mTopicId, "vas");
-    EXPECT_EQ(display[3].mTopicId, "vas");
-    EXPECT_EQ(display[4].mTopicId, "dro'sakhar");
+    EXPECT_EQ(display[2].mTopicId, "necromancer");
+    EXPECT_EQ(display[3].mTopicId, "speech");
+    EXPECT_EQ(display[4].mTopicId, "vas");
+    EXPECT_EQ(display[5].mTopicId, "vas");
+    EXPECT_EQ(display[6].mTopicId, "dro'sakhar");
 
     const auto discovery = search.parseHyperText(source, storage, true);
-    ASSERT_EQ(discovery.size(), 5);
+    ASSERT_EQ(discovery.size(), 7);
     for (const auto& match : discovery)
         EXPECT_FALSE(match.mExplicit);
 

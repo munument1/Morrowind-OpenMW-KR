@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Create a private KR12.2 TEST candidate from a real OpenMW 0.51.0 build.
+"""Package an unreleased KR12.2 quest-topic test from official OpenMW 0.51.0.
 
-Only used by the dedicated CI workflow that checks out OpenMW/openmw
-tag openmw-0.51.0 and applies Korean runtime patches. This does NOT
-publish a release or assert live game compatibility.
+CI must verify that the compiled engine comes from the exact upstream
+openmw-0.51.0 commit, not the fork's 0.52.0 master. The published KR12.2
+data is the baseline and only the four source-anchored quest INFO.NAME
+strings may change. No original archives or saves are modified.
 """
 import argparse
 import hashlib
@@ -11,31 +12,30 @@ import json
 import pathlib
 import zipfile
 
+from patch_kr12_quest_entry_topics import rewrite as rewrite_quest_topics
+
 BASE_ESP = "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp"
 EXE = "payload/openmw.exe"
 README = "README-KOREAN.txt"
 KNOWN_ESP_SHA = "0f04a21d69ecae16a1c2ae3bb0b739ac4e71cdb59054c809fc844128e2c12327"
+EXPECTED_QUEST_ESP_SHA = "c0cb2f5702da067e11820e5a11ffb4b758ea28e101779fc43a721072783ed253"
 
-README_TEXT = """OpenMW 0.51.0 Korean Support KR12.2 — Windows TEST CANDIDATE
+README_TEXT = """OpenMW 0.51.0 Korean Support KR12.2 — Quest Topic TEST CANDIDATE
 
-이 파일은 Windows 시험용이며 공식 KR12.2 릴리스가 아닙니다.
-공식 OpenMW 0.51.0 소스에 한국어 엔진 패치를 적용하여 빌드한
-openmw.exe 및 KR12.1의 번역 데이터를 포함합니다.
+이 파일은 Windows 비공개 시험용이며 공식 KR12.2/차기 릴리스가 아닙니다.
+엔진은 공식 OpenMW/openmw 0.51.0 소스(f4bec41444214a7903bebd178389ca22ca13f646)에
+한국어 패치를 적용해 빌드했습니다. 이 저장소 master의 0.52.0 소스는 사용하지 않았습니다.
+번역 데이터는 공개 KR12.2 기준이고, 퀘스트 시작용 토픽 링크 4건만
+조건과 스크립트를 변경하지 않고 수정했습니다.
 
-필수: 정품 Morrowind 및 공식 OpenMW 0.51.0 Windows x64 설치본.
+1. 기존 게임 설치, 환경설정, 세이브를 백업하세요.
+2. 별도 시험용 폴더에 풀고 설치 경로를 확인하세요.
+3. 전사 길드 바스, 도둑 길드 이에니스, 메인 퀘스트 승진, 블러드문 결정 토픽을 확인하세요.
+4. 다른 길드 및 대사 링크가 잘못 활성화되지 않는지도 검증하세요.
+5. 오류는 log, 게임 버전, 모드 목록, 퀘스트 단계와 재현 절차를 제보하세요.
 
-1. 기존 OpenMW 설치 폴더와 설정, 세이브를 먼저 백업하세요.
-2. 별도 폴더에 ZIP을 풀고 Install-Korean.bat을 실행하세요.
-3. 실행할 OpenMW 설치 폴더를 직접 확인하고 선택하세요.
-4. HUD, 커서, 한국어 대화, 영상 자막, 새 게임 시작을 확인하세요.
-5. 오류가 발생하면 openmw.log, openmw.cfg, 재현 절차를 제보하세요.
-
-주의: 'meshes/base_anim.nif not found'는 원본 Morrowind.bsa 또는
-Data Files 등록 문제일 수 있습니다. 별도로 확인하세요.
-
-ESP/CEL/MRK/TOP/JRN 번역 데이터는 KR12.1 그대로 유지합니다.
-실제 Windows 게임 플레이 테스트는 아직 수행되지 않았습니다.
-이 후보 파일을 정식 배포본처럼 재배포하지 마세요.
+원본 Bethesda 게임 데이터가 별도로 필요합니다.
+테스트 통과 전 공식 한국어판처럼 재배포하지 마세요.
 """
 
 def sha(data):
@@ -61,15 +61,23 @@ def main():
         for name in (EXE, BASE_ESP, "Install-Korean.bat", "install-korean.ps1", README):
             if names.count(name) != 1:
                 raise ValueError("Missing required entry " + name)
-        if sha(src.read(BASE_ESP)) != KNOWN_ESP_SHA:
-            raise ValueError("Original ESP is not the verified KR12.1 release")
+        original_esp = src.read(BASE_ESP)
+        if sha(original_esp) != KNOWN_ESP_SHA:
+            raise ValueError("Original ESP is not the verified published KR12.2 release")
+        candidate_esp, quest_qa = rewrite_quest_topics(original_esp)
+        if sha(candidate_esp) != EXPECTED_QUEST_ESP_SHA:
+            raise ValueError("Unexpected quest-topic candidate ESP hash")
+        if not quest_qa["all_other_records_and_fields_unchanged"] or quest_qa["changed_info_count"] != 4:
+            raise ValueError("Quest-topic source physical QA failed")
         if src.read(EXE) == exe:
-            raise ValueError("0.51 candidate binary equals the KR12.1 0.52 binary")
+            raise ValueError("0.51 candidate executable identical to published baseline")
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(args.output, "w") as dst:
             for member in src.infolist():
                 if member.filename == EXE:
                     value = exe
+                elif member.filename == BASE_ESP:
+                    value = candidate_esp
                 elif member.filename == README:
                     value = README_TEXT.encode("utf-8")
                 else:
@@ -79,15 +87,19 @@ def main():
         assert after.testzip() is None
         assert before.namelist() == after.namelist()
         for name in before.namelist():
-            if name not in (EXE, README) and before.read(name) != after.read(name):
-                raise ValueError("Unexpected original KR12.1 member change: " + name)
+            if name not in (EXE, BASE_ESP, README) and before.read(name) != after.read(name):
+                raise ValueError("Unexpected published KR12.2 member change: " + name)
         assert after.read(EXE) == exe
+        assert after.read(BASE_ESP) == candidate_esp
     result = {
-        "candidate": "KR12.2 Windows TEST",
+        "candidate": "KR12.2 Windows quest-topic TEST (unreleased)",
         "engine_source": "OpenMW/openmw@openmw-0.51.0 + Korean patchset",
+        "pinned_source_commit": "f4bec41444214a7903bebd178389ca22ca13f646",
         "engine_sha256": sha(exe),
-        "kr12_1_esp_preserved": True,
-        "kr12_1_other_translation_assets_preserved": True,
+        "source_kr12_2_esp_sha256": sha(original_esp),
+        "candidate_quest_esp_sha256": sha(candidate_esp),
+        "quest_info_physical_qa": quest_qa,
+        "other_kr12_2_translation_assets_preserved": True,
         "baseline_sha256": sha(args.baseline.read_bytes()),
         "output_sha256": sha(args.output.read_bytes()),
         "zip_integrity": "PASS",

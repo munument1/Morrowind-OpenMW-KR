@@ -201,9 +201,9 @@ jobs:
     timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
-      BASE_TAG: openmw-0.51.0-kr12.1
-      BASE_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.1-Full.zip
-      TEST_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip
+      BASE_TAG: openmw-0.51.0-kr12.2
+      BASE_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip
+      TEST_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.2-QUEST-TOPIC-TEST.zip
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -214,14 +214,14 @@ jobs:
         with:
           name: korean-runtime-executable-${{ github.sha }}
           path: engine
-      - name: Download verified KR12.1 data-only baseline
+      - name: Download verified published KR12.2 data baseline
         run: |
           set -euo pipefail
           mkdir -p input output
           gh release download "$BASE_TAG" --pattern "$BASE_ZIP" --dir input
           gh release download "$BASE_TAG" --pattern "$BASE_ZIP.sha256" --dir input
           (cd input && sha256sum -c "$BASE_ZIP.sha256")
-      - name: Create auditable Windows KR12.2 test candidate
+      - name: Create OpenMW 0.51.0 quest-topic hotfix test candidate
         run: |
           set -euo pipefail
           python3 packaging/korean/tooling/package_kr12_2_stable_windows.py \
@@ -234,10 +234,10 @@ jobs:
       - name: Keep TEST artifact only; never publish official release
         uses: actions/upload-artifact@v4
         with:
-          name: KR12.2-Stable051-Windows-TEST-not-official
+          name: KR12.2-QuestTopic-Stable051-Windows-TEST-not-official
           path: |
-            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip
-            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-TEST.zip.sha256
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-QUEST-TOPIC-TEST.zip
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.2-QUEST-TOPIC-TEST.zip.sha256
             output/KR12.2-Stable051-Test-Verification.json
           retention-days: 14
       - name: Link completed test candidate in the draft PR
@@ -248,10 +248,10 @@ jobs:
           {
             echo "**KR12.2 OpenMW 0.51.0 TEST ZIP built (not official).**"
             echo ""
-            echo "Download the KR12.2-Stable051-Windows-TEST-not-official artifact from:"
+            echo "Download KR12.2-QuestTopic-Stable051-Windows-TEST-not-official from:"
             echo "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             echo ""
-            echo "The ZIP includes the matching 0.51.0 Korean executable and KR12.1 translation data."
+            echo "The ZIP includes OpenMW 0.51.0 executable and published KR12.2 translation with four verified quest-topic fixes."
             echo "Manual Windows gameplay testing has not been performed."
           } > test-artifact.md
           if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then

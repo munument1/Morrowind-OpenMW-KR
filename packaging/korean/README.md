@@ -2,7 +2,7 @@
 
 이 디렉터리는 OpenMW 0.51.0 Korean Support의 Windows 설치기 구성 파일을 관리합니다.
 
-현재 배포판은 [Windows KR11](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr11)입니다. KR10 실행 파일과 번역 데이터를 유지하며, 폰트 설정 두 파일에 U+2160–U+217F 로마 숫자 범위를 추가합니다. 이미 삭제된 토픽 기록은 재생성하지 않습니다.
+현재 Windows 정식 배포판은 [KR12.3.1](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.3.1)입니다. KR12.3의 한국어 퀘스트 토픽·대사 교정을 유지하며, 릴리스 설명 및 ZIP 내 `README-KOREAN.txt`의 UTF-8 한글 인코딩 오류를 바로잡았습니다. KR12.3.1에서 엔진 및 ESP 자체는 KR12.3 대비 변경되지 않았습니다. Android는 [별도 저장소의 KR12.1](https://github.com/munument1/Morrowind-OpenMW-Android-KR/releases/tag/android-korean-0.51.0-12-kr12.1-permanent)이 최신 정식판이며, Windows KR12.3.x의 후속 수정은 아직 반영되지 않았습니다.
 
 ## 설치 흐름
 
@@ -17,7 +17,7 @@
 5. ESP/CEL/MRK/TOP/JRN, `l10n`, 영상 SRT 10개를 검증합니다.
 6. `install-korean-config.ps1`로 사용자 `openmw.cfg`를 백업하고 갱신합니다.
 
-KR11 compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
+Windows compact 패키지는 공식 OpenMW 0.51.0에 이미 포함된 DLL/도구를 중복 배포하지 않습니다.
 
 ## openmw.cfg 관리
 
@@ -78,7 +78,7 @@ payload/mods/Morrowind_Korean_ReTranslation/
 
 필수 번역 데이터나 자막이 누락된 패키지는 배포하지 않아야 합니다.
 
-## KR10에 적용한 문서 정리
+## 이전 KR10 배포 시 적용한 문서 정리
 
 KR9.1 ZIP은 이전 버전 ZIP을 상속하면서 KR4~KR7 변경 이력, KR5 시험판 안내,
 오래된 검증 JSON, 실제 실행 파일과 맞지 않는 내부 `SHA256SUMS.txt`,

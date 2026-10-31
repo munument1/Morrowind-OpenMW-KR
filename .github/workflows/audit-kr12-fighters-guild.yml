@@ -28,6 +28,7 @@ jobs:
         run: |
           python -m py_compile packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py packaging/korean/tooling/audit_kr12_gamewide_topics.py
           python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_gamewide_topics.py' -v
+          python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_quest_entry_topics.py' -v
           python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_fighters_topic_candidates.py' -v
       - name: Download pinned official KR12.2 ZIP (never write game saves or masters)
         run: |
@@ -52,12 +53,22 @@ jobs:
             --output qa/kr12.2-gamewide-topic-audit.json \
             > qa-global-stdout.log
           cat qa-global-stdout.log
+      - name: Verify 4 confirmed quest-entry topic tags on a new candidate ESP
+        run: |
+          python packaging/korean/tooling/patch_kr12_quest_entry_topics.py \
+            --source-zip KR12.2-Full.zip \
+            --output-esp qa/private-candidate-not-for-release.esp \
+            --report qa/kr12.2-quest-entry-candidate-qa.json \
+            > qa-quest-stdout.log
+          cat qa-quest-stdout.log
       - uses: actions/upload-artifact@v4
         with:
           name: kr12-2-gamewide-topic-audit
           path: |
             qa/kr12.2-fighters-topic-candidates.json
             qa/kr12.2-gamewide-topic-audit.json
+            qa/kr12.2-quest-entry-candidate-qa.json
+            qa-quest-stdout.log
             qa-stdout.log
             qa-global-stdout.log
           if-no-files-found: error

@@ -187,8 +187,8 @@ def main():
     p.add_argument("--examples",type=int,default=500)
     args=p.parse_args()
     data=package(args.zip)
-    if not 0 <= args.examples <= 5000:
-        raise ValueError("--examples must be 0..5000")
+    if not 0 <= args.examples <= 10000:
+        raise ValueError("--examples must be 0..10000")
     result=inspect(data,args.cpp.read_text(encoding="utf-8"),args.examples)
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")

@@ -48,6 +48,7 @@ jobs:
           python packaging/korean/tooling/audit_kr12_gamewide_topics.py \
             --zip KR12.2-Full.zip \
             --cpp apps/openmw/mwdialogue/keywordsearch.cpp \
+            --examples 10000 \
             --output qa/kr12.2-gamewide-topic-audit.json \
             > qa-global-stdout.log
           cat qa-global-stdout.log

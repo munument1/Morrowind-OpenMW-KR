@@ -1,0 +1,74 @@
+name: KR12.2 game-wide dialogue topic audit (read-only)
+
+on:
+  pull_request:
+    paths:
+      - 'apps/openmw/mwdialogue/keywordsearch.cpp'
+      - 'apps/openmw_tests/mwdialogue/testkeywordsearch.cpp'
+      - 'packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py'
+      - 'packaging/korean/tooling/test_kr12_fighters_topic_candidates.py'
+      - 'packaging/korean/tooling/audit_kr12_gamewide_topics.py'
+      - 'packaging/korean/tooling/test_kr12_gamewide_topics.py'
+      - '.github/workflows/audit-kr12-fighters-guild.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax and scanner regression checks
+        run: |
+          python -m py_compile packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py packaging/korean/tooling/audit_kr12_gamewide_topics.py
+          python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_gamewide_topics.py' -v
+          python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_quest_entry_topics.py' -v
+          python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_fighters_topic_candidates.py' -v
+      - name: Download pinned official KR12.2 ZIP (never write game saves or masters)
+        run: |
+          curl --fail --location --silent --show-error --retry 3 --retry-delay 2 \
+            'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.2/Morrowind-Korean-OpenMW-0.51.0-KR12.2-Full.zip' \
+            --output KR12.2-Full.zip
+          unzip -tq KR12.2-Full.zip
+      - name: Audit ALL translated dialogue and flag Fighters Guild candidates
+        run: |
+          python packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py \
+            --zip KR12.2-Full.zip \
+            --expected-esp-sha 0f04a21d69ecae16a1c2ae3bb0b739ac4e71cdb59054c809fc844128e2c12327 \
+            --output qa/kr12.2-fighters-topic-candidates.json \
+            > qa-stdout.log
+          cat qa-stdout.log
+      - name: Audit all factions, NPC dialogue, quests and journals
+        run: |
+          python packaging/korean/tooling/audit_kr12_gamewide_topics.py \
+            --zip KR12.2-Full.zip \
+            --cpp apps/openmw/mwdialogue/keywordsearch.cpp \
+            --examples 10000 \
+            --output qa/kr12.2-gamewide-topic-audit.json \
+            > qa-global-stdout.log
+          cat qa-global-stdout.log
+      - name: Verify 4 confirmed quest-entry topic tags on a new candidate ESP
+        run: |
+          python packaging/korean/tooling/patch_kr12_quest_entry_topics.py \
+            --source-zip KR12.2-Full.zip \
+            --output-esp qa/private-candidate-not-for-release.esp \
+            --report qa/kr12.2-quest-entry-candidate-qa.json \
+            > qa-quest-stdout.log
+          cat qa-quest-stdout.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kr12-2-gamewide-topic-audit
+          path: |
+            qa/kr12.2-fighters-topic-candidates.json
+            qa/kr12.2-gamewide-topic-audit.json
+            qa/kr12.2-quest-entry-candidate-qa.json
+            qa-quest-stdout.log
+            qa-stdout.log
+            qa-global-stdout.log
+          if-no-files-found: error

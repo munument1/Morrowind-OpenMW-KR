@@ -372,6 +372,71 @@ TEST_F(KeywordSearchTest, parse_hypertext_mark_file_overrides_keyword)
 }
 
 
+TEST_F(KeywordSearchTest, korean_quest_topic_quotative_particles)
+{
+    // Issue #40: Vas / Fighters Guild quest must discover topics in
+    // "바스라는" and "바스이라는" without reopening false mid-word links.
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("바스", "vas");
+    search.seed("강령술사", "necromancer");
+    search.seed("드로'사카르", "dro'sakhar");
+    search.seed("일", "work");
+    search.seed("말", "speech");
+
+    const std::string source = "바스라는 강령술사 소굴. 강령술사라는 말. "
+                               "바스이란 지명. 바스란 이름. 드로'사카르라는 이름.";
+    const auto display = search.parseHyperText(source, storage);
+    // Besides five suffixed cases, the input also contains the standalone
+    // topic "강령술사" and the standalone topic "말".
+    ASSERT_EQ(display.size(), 7);
+    EXPECT_EQ(display[0].mTopicId, "vas");
+    EXPECT_EQ(display[1].mTopicId, "necromancer");
+    EXPECT_EQ(display[2].mTopicId, "necromancer");
+    EXPECT_EQ(display[3].mTopicId, "speech");
+    EXPECT_EQ(display[4].mTopicId, "vas");
+    EXPECT_EQ(display[5].mTopicId, "vas");
+    EXPECT_EQ(display[6].mTopicId, "dro'sakhar");
+
+    const auto discovery = search.parseHyperText(source, storage, true);
+    ASSERT_EQ(discovery.size(), 7);
+    for (const auto& match : discovery)
+        EXPECT_FALSE(match.mExplicit);
+
+    // Don't link an internal substring, or the generic single-syllable "일".
+    EXPECT_TRUE(search.parseHyperText("사바스라는 곳. 일이라는 명령. 하지 말라는 요청.", storage).empty());
+}
+
+TEST_F(KeywordSearchTest, korean_quest_topic_extended_noun_endings)
+{
+    // Attested phrases from KR12.2: the main quest, Tribunal, local murder case.
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("네레바린", "n");
+    search.seed("다고스 우르", "d");
+    search.seed("트리뷰널", "t");
+    search.seed("반지", "ring");
+    search.seed("이에니스", "ienith");
+    search.seed("마법", "magic");
+    search.seed("발견", "found");
+    search.seed("말", "speech");
+
+    const auto hits = search.parseHyperText(
+        "네레바린인 사람, 네레바린이자 용사, 네레바린임을 알렸다. "
+        "다고스 우르와의 전쟁, 트리뷰널과의 전쟁. 그의 반지였어. 이에니스야.", storage);
+    ASSERT_EQ(hits.size(), 7);
+    EXPECT_EQ(hits[0].mTopicId, "n");
+    EXPECT_EQ(hits[1].mTopicId, "n");
+    EXPECT_EQ(hits[2].mTopicId, "n");
+    EXPECT_EQ(hits[3].mTopicId, "d");
+    EXPECT_EQ(hits[4].mTopicId, "t");
+    EXPECT_EQ(hits[5].mTopicId, "ring");
+    EXPECT_EQ(hits[6].mTopicId, "ienith");
+
+    // Do not turn the prefixes of verbs or compound words into hyperlinks.
+    EXPECT_TRUE(search.parseHyperText("마법사. 발견했다. 하지 말라는 명령.", storage).empty());
+}
+
 TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
 {
     MWDialogue::KeywordSearch search;

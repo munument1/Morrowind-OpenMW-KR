@@ -39,6 +39,7 @@ namespace
         constexpr std::string_view endings[] = {
             "은", "는", "이", "가", "을", "를", "의", "에", "에서", "에게", "께", "께서", "께서는",
             "한테", "한테서", "로", "으로", "와", "과", "랑", "이랑", "하고", "도", "만",
+            "라는", "이라는", "란", "이란",
             "까지", "부터", "조차", "마저", "처럼", "같이", "보다", "밖에", "라도",
             "이라도", "나", "이나", "든", "이든", "든지", "이든지", "라고", "이라고",
             "이라", "이라면", "에서부터", "에게서", "에는", "에서는", "에게는",
@@ -111,7 +112,22 @@ namespace
                 || std::find(std::begin(extendedSuffixes), std::end(extendedSuffixes), ending)
                     != std::end(extendedSuffixes);
         };
+        // Short topic nouns such as "말" also occur inside the verb "말라는"
+        // ("do not..."); avoid introducing false links for one-syllable topics.
+        if (keyword.size() == 3
+            && (suffix == "라는" || suffix == "이라는" || suffix == "란" || suffix == "이란"))
+            return false;
         if (isEnding(suffix))
+            return true;
+
+        // Common Korean predicate/relationship endings, but only for longer noun
+        // topics: the single-syllable "말" inside "말인" is too ambiguous.
+        constexpr std::string_view contextualNounEndings[] = {
+            "와의", "과의", "인", "이자", "임을", "였어", "야"
+        };
+        if (keyword.size() >= 6
+            && std::find(std::begin(contextualNounEndings), std::end(contextualNounEndings), suffix)
+                != std::end(contextualNounEndings))
             return true;
 
         // Plural nouns take case particles too: "블레이드 교관들에", "길드원들에게".

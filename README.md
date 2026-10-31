@@ -1,96 +1,73 @@
-# OpenMW Korean Support
+# OpenMW 한국어판
 
-OpenMW 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 플레이하기 위한 Windows용 런타임/번역 통합 지원 저장소입니다.
+[OpenMW](https://openmw.org/) 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 실행하기 위한 **Windows x64용 한국어 엔진·번역 통합판**입니다. Bethesda의 Morrowind 원본 데이터는 포함하지 않으며 정품 게임이 필요합니다.
 
-> Morrowind 원본 게임 데이터는 포함하지 않습니다. 정품 Morrowind가 필요합니다.
+## 최신 정식 배포판 — KR12.4 (2026-10-31)
 
-## 현재 배포판
+- [**KR12.4 릴리스 및 Windows 통합 ZIP 다운로드**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.4)
+- 파일명: `Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip`
+- 기준: 공식 `OpenMW/openmw` **0.51.0**, 커밋 `f4bec41444214a7903bebd178389ca22ca13f646` + 한국어 런타임 패치 0001~0016
+- 이 저장소의 개발용 master가 OpenMW 0.52 계열 코드를 포함하더라도 **KR12.4 Windows 실행 파일은 0.51.0 기반**입니다.
+- **별도 이슈 #42 패치를 설치할 필요가 없습니다.** 기존 KR12.3.1의 누적 업데이트입니다.
 
-**OpenMW 0.51.0 Korean Support KR11**
+### KR12.4 변경 사항
 
-- 릴리즈: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr11
-- 설치 파일: `Morrowind-Korean-OpenMW-0.51.0-KR11-Full.zip`
-- 공식 OpenMW 0.51.0 Windows 설치본 위에 적용하는 compact 패키지
-- 전역 `encoding=utf8` 설정 불필요
+1. 한국어 조사·서술격·호격·동사 어미에 걸친 토픽 자동 탐색 경계 개선 (`0016-korean-predicative-topic-boundaries.patch`).
+2. 잘못된 명시 대사 링크 **79건** 정리 (설원곰·설원늑대 74건 포함).
+3. 동일 INFO ID의 영어 원본과 비교한 퀘스트 대사 **12건**에 명시 토픽 링크 추가.
+4. 아우데니안 발리우스 관련 `.top` 별칭 **3개**의 잘못된 연결 대상 수정.
+5. 나머지 번역 문자열·퀘스트 조건·스크립트·모드 자산은 KR12.3.1을 유지합니다.
 
-KR11은 폰트 설정에서 빠진 U+2160–U+217F 로마 숫자 범위를 추가해 `Ⅰ`, `Ⅺ`, `Ⅻ` 등이 밑줄로 표시되는 문제를 수정합니다. KR10의 실행 파일·번역 데이터·토픽 복구 기능은 그대로 유지합니다. KR10 사용자에게 엔진 재빌드나 전역 인코딩 변경은 필요하지 않습니다. 패키지 검증 결과에는 변경 파일과 보존 파일이 기록됩니다.
+[이슈 #42](https://github.com/munument1/Morrowind-OpenMW-KR/issues/42)에서 검사 방법과 알려진 한계를 확인할 수 있습니다. 원본 ESP/TOP SHA, TES3 구조·표시 문자열 보존, 91개 INFO.NAME 및 별칭 3개만 변경한 사실, ZIP 무결성, 네이티브 토픽 회귀 시험 및 Windows 컴파일·OpenMW 테스트를 검증했습니다. [빌드/배포 CI](https://github.com/munument1/Morrowind-OpenMW-KR/actions/runs/41183812834)의 검증 결과 JSON도 릴리스에 첨부되어 있습니다.
 
-KR10부터 구형 세이브의 저널 토픽 ID와 NPC의 알려진 토픽 ID를 현재 데이터와 대조해 복구합니다. 이미 세이브에서 삭제된 토픽 기록은 재생성하지 않습니다. Rebirth 모드의 대화/스크립트 한글화는 본편 KR11 업데이트와 별도이며 이 배포물에 포함되지 않습니다.
+> **한계:** 실제 게임에서 모든 NPC와 퀘스트 단계의 토픽 클릭·습득을 플레이하여 검증한 것은 아닙니다. 제보된 219줄/51개 토픽이 모두 해결됐다고 주장하지 않습니다. 의심되는 대사와 퀘스트 단계는 이슈 #42에 제보해 주세요.
 
-## KR11 구성
+## 설치 및 업데이트 (Windows)
 
-- 한국어 런타임 패치가 적용된 `openmw.exe`
-- 한국어 번역 데이터 `ESP / CEL / MRK / TOP / JRN / l10n`
-- Galmuri11 기반 한국어 폰트 구성
-- Morrowind 본편 3개 + Bloodmoon 7개, 총 10개 UTF-8 SRT 영상 자막
-- `Movies_New_Game=mw_intro.bik` 등 원본 Morrowind 영상 fallback 복구
-- 기존 `openmw.cfg`와 한국어 모드/엔진 자동 백업
-- 이전 설치에서 한국어 관리 블록이 중간에 끊긴 경우 자동 복구
+1. 공식 **OpenMW 0.51.0 Windows x64**와 정품 Morrowind(필요한 Tribunal/Bloodmoon 원본 데이터 포함)를 준비합니다.
+2. 기존 OpenMW 설치 폴더, 사용자 설정 파일과 세이브를 백업합니다.
+3. 위의 **KR12.4 Full ZIP**을 별도 폴더에 압축 해제합니다.
+4. `Install-Korean.bat`을 실행하고 안내에 따라 OpenMW 설치 폴더를 지정합니다. **Morrowind의 `Data Files`가 아니라 `openmw.exe`가 있는 폴더**입니다.
+5. 기존 KR12.3.1 사용자도 같은 설치기로 업데이트할 수 있습니다. 문제가 생기면 백업에서 복원하고 로그와 설치 버전을 제보해 주세요.
 
-## 설치
+설치기는 한국어 엔진·폰트·번역 모드와 `openmw.cfg`의 한국어 관리 설정을 갱신하며, 기존 파일을 백업합니다. 전역 `encoding=utf8`을 무조건 강제할 필요는 없습니다.
 
-1. 공식 **OpenMW 0.51.0 Windows x64**를 설치합니다.
-2. OpenMW를 한 번 실행해 사용자 설정 파일이 생성되게 합니다.
-3. KR11 ZIP을 압축 해제합니다.
-4. `Install-Korean.bat`을 실행합니다.
-5. OpenMW 설치 폴더를 자동으로 찾지 못하면 `openmw.exe`가 있는 폴더를 직접 지정합니다.
+### 포함 구성
 
-설치기는 기존 `openmw.exe`, 관리 대상 폰트, 한국어 모드 폴더와 `%Documents%\My Games\OpenMW\openmw.cfg`를 백업합니다. 사용자의 다른 `data=`, `content=` 항목과 모드 상대 순서, 기존 `encoding=` 값은 유지합니다.
+- 한국어 대응 Windows `openmw.exe`
+- `Morrowind_Korean_ReTranslation`의 `ESP / CEL / MRK / TOP / JRN / l10n`
+- Galmuri11 기반 한국어 글꼴 및 라이선스
+- Morrowind 본편 3개와 Bloodmoon 7개, 총 10개 UTF-8 SRT 영상 자막
+- `Install-Korean.bat`, PowerShell 설치·환경설정 스크립트
 
-## 한국어 런타임 패치
+## Android
 
-`korean/patches`에는 OpenMW 0.51.0에 적용하는 한국어 지원 패치가 있습니다.
+**KR12.4는 Windows x64 전용**입니다. Android APK나 Android용 엔진 실행 파일은 ZIP에 포함되지 않습니다. 수정한 ESP/TOP 데이터는 Android에도 공통으로 적용할 수 있는 후보이지만, `keywordsearch.cpp`의 네이티브 변경은 Android 엔진을 별도로 재빌드·검증해야 합니다. [GitHub Releases](https://github.com/munument1/Morrowind-OpenMW-KR/releases)에서 Android용 자산이 명시된 릴리스만 선택하세요.
 
-1. `0001-cjk-topic-discovery.patch` — 한국어/CJK 대화 토픽 탐색 보완
-2. `0002-utf8-bom-sidecars.patch` — BOM 기반 UTF-8 CEL/TOP/MRK 지원
-3. `0003-mixed-utf8-esm-reader.patch` — 기존 win1252 마스터와 UTF-8 한국어 문자열 혼용 지원
-4. `0004-legacy-korean-journal-recovery.patch` — 이전 저장 파일의 한국어 저널 텍스트 복구
-5. `0005-video-subtitles.patch` — BIK 영상과 같은 이름의 외부 UTF-8 SRT 자막 지원
-6. `0006-journal-topic-keywords.patch` — 저널의 정식 주제명과 `.jrn` 별칭 검색 지원
-7. `0007-korean-journal-index.patch` — 한국어 저널 초성 색인 지원
-8. `0008-korean-implicit-topic-boundaries.patch` — 한국어 대화·저널 링크의 잘못된 단어 내부 일치 방지
-9. `0009-korean-honorific-particle.patch` — 정상 조사 `께서는`의 토픽 링크 보완
-10. `0010-legacy-korean-topic-recovery.patch` — 현재 데이터와 대조해 구형 저널/NPC 토픽 ID 복구
+## 개발자: 한국어 OpenMW 패치
 
-## 영상 자막
+`korean/patches`에는 공식 OpenMW 0.51.0 소스에 적용하는 누적 패치가 있습니다.
 
-자막 파일은 `korean/subtitles/video`에 있으며, 영상과 같은 VFS 경로/이름을 사용합니다.
+| 패치 | 기능 |
+|---|---|
+| 0001 | 한국어/CJK 대화 토픽 탐색 |
+| 0002 | UTF-8 BOM 사이드카 파일 |
+| 0003 | 혼합 원본 인코딩/UTF-8 레코드 읽기 |
+| 0004 | 구형 한국어 저널 복구 |
+| 0005 | 원본 영상 외부 SRT 자막 |
+| 0006 | 저널 토픽 별칭 |
+| 0007 | 한국어 저널 색인 |
+| 0008–0011 | 한국어 단어 경계·조사·토픽 습득 개선 |
+| 0012 | 음성 시간 동기화 자막 |
+| 0013 | 마법 지속 시간 표시 |
+| 0014–0015 | 인용형 조사 및 명사형 토픽 연결 |
+| 0016 | 한국어 서술격·호격·동사 어미 경계 |
 
-예:
+토픽 QA 도구는 `packaging/korean/tooling`에 있습니다. 영어 원본 파일을 로컬에서 대조하려면 [원본 대조 안내](packaging/korean/tooling/ISSUE42_ORIGINAL_MASTER_QA.md)를 참고하세요. **상용 `Morrowind.esm`, `Tribunal.esm`, `Bloodmoon.esm`을 저장소나 CI에 올리지 마세요.**
 
-```text
-video/mw_intro.bik
-video/mw_intro.srt
-```
+## 라이선스·상위 프로젝트
 
-포함된 자막:
+OpenMW의 라이선스는 GPLv3입니다. 글꼴과 서드파티 구성 요소는 각 라이선스 고지를 참고하세요.
 
-- `mw_intro.srt`
-- `mw_cavern.srt`
-- `mw_end.srt`
-- `bm_bearhunt1.srt`
-- `bm_bearhunt2.srt`
-- `bm_ceremony1.srt`
-- `bm_ceremony2.srt`
-- `bm_endgame.srt`
-- `bm_frostgiant1.srt`
-- `bm_frostgiant2.srt`
-
-원본 BIK 영상은 수정하거나 재배포하지 않습니다.
-
-## 개발/패키징
-
-- Windows 설치기: `packaging/korean`
-- 한국어 패치셋: `korean/patches`
-- 영상 자막: `korean/subtitles/video`
-- Windows CI: `.github/workflows/windows.yml`
-- 한국어 패치/패키지 검증: `.github/workflows/korean-*.yml`
-
-KR10 compact 배포판은 공식 OpenMW 0.51.0에 이미 포함된 DLL과 도구를 중복 배포하지 않고, 한국어 지원에 필요한 파일만 설치합니다.
-
-## 라이선스
-
-OpenMW 본체는 GPLv3입니다. 자세한 내용은 저장소의 `LICENSE`와 upstream OpenMW 프로젝트를 확인하세요.
-
-- OpenMW: https://openmw.org/
-- Upstream repository: https://gitlab.com/OpenMW/openmw
+- [OpenMW 공식 사이트](https://openmw.org/)
+- [OpenMW 소스 저장소](https://github.com/OpenMW/openmw)

@@ -1,0 +1,65 @@
+name: Rebirth Nexus 60805 API owner and version probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/rebirth-nexus-60805-probe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - name: Read target mod and v56 available files (NO writes)
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, urllib.error, urllib.request
+          key=os.environ.get('NEXUS_KEY','').strip()
+          if not key: raise SystemExit("UNAVAILABLE: NEXUSMODS_API_KEY repository secret is missing")
+          hdr={"apikey":key,"User-Agent":"Rebirth-KR-60805-Owner-Probe/1.0",
+               "Accept":"application/json"}
+          def get(p):
+              req=urllib.request.Request("https://api.nexusmods.com"+p,headers=hdr)
+              with urllib.request.urlopen(req,timeout=30) as x:
+                  return json.load(x)
+          user=get("/v1/users/validate.json")
+          mod=get("/v1/games/morrowind/mods/60805.json")
+          account=str(user.get('user_id',''))
+          owner=str((mod.get('user') or {}).get('member_id',''))
+          print("TARGET",mod.get('name'),"V1_MOD_ID",60805,"PUBLIC_VERSION",mod.get('version'))
+          print("OWNERSHIP", "PASS" if account and owner and account==owner else "DENIED: key belongs to a different account")
+          if account != owner or not account:
+              raise SystemExit("Refuse modification: account does not own Nexus Morrowind 60805")
+          canonical=str(mod.get('uid',''))
+          if not canonical: raise SystemExit("Missing canonical mod UID")
+          print("CANONICAL_UID",canonical)
+          v3=get("/v3/games/morrowind/mods/60805").get('data',{})
+          if str(v3.get('id',''))!=canonical:
+              raise SystemExit("V3 canonical mod ID mismatch")
+          print("V3_VERSION",v3.get("version"),"SUMMARY_BYTES",len(str(v3.get("summary","")).encode()))
+          desc=v3.get("description","")
+          print("DESCRIPTION_BYTES",len(str(desc).encode()),"DESCRIPTION_SHA256",hashlib.sha256(str(desc).encode()).hexdigest() if desc else "NOT_PRESENT_IN_V3_VIEW")
+          group=get("/v3/mods/"+canonical+"/files").get('data',{}).get('mod_files',[])
+          print("FILE_GROUP_COUNT",len(group))
+          for g in group:
+              gid=str(g.get('id',''))
+              vers=get("/v3/mod-files/"+gid+"/versions").get("data",{}).get("versions",[])
+              print("GROUP",gid,"ACTIVE",g.get('is_active'),"NAME",g.get('name'),"VERSION_COUNT",len(vers))
+              for v in vers[:30]:
+                  print("FILE_VERSION",v.get("id"),"GAME_FILE_ID",v.get("game_scoped_id"),
+                        "VERSION",v.get("version"),"CATEGORY",v.get("category"),
+                        "NAME",v.get("name"))
+          data=get("/v1/games/morrowind/mods/60805/files.json")
+          print("V1_FILES",len(data.get("files",[])))
+          for f in data.get("files",[])[:35]:
+              print("V1_FILE",f.get("file_id"),f.get("version"),
+                    f.get("category_name"),f.get("file_name"))
+          print("READ_ONLY_SUCCESS target 60805; no file or description modified")
+          PY

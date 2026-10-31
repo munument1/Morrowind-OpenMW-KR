@@ -132,3 +132,35 @@ jobs:
                   raise SystemExit("KR12.4 missing from Nexus after upload; check Nexus API status.")
               time.sleep(5)
           PY
+      - name: Reconcile missing KR12.4 changelog using canonical Nexus UID (never re-upload)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, urllib.request
+          BASE="https://api.nexusmods.com"
+          hdr={"apikey":os.environ["NEXUS_KEY"],"Accept":"application/json",
+               "Content-Type":"application/json","User-Agent":"Morrowind-KR12.4-Changelog"}
+          def call(path,body=None):
+              req=urllib.request.Request(BASE+path,headers=hdr,
+                  data=json.dumps(body,ensure_ascii=False).encode("utf-8") if body is not None else None,
+                  method="POST" if body is not None else "GET")
+              with urllib.request.urlopen(req,timeout=35) as response:
+                  return json.load(response)
+          mod=call("/v3/games/morrowind/mods/60496")["data"]
+          assert str(mod["id"])=="429496790096" and str(mod["game_scoped_id"])=="60496"
+          assert str(mod.get("version","")).casefold()=="0.51.0-kr12.4", "Mod version has not yet been updated"
+          versions=call("/v3/mod-files/8110335/versions")["data"]["versions"]
+          assert any(str(x.get("version","")).casefold()=="0.51.0-kr12.4"
+                     and str(x.get("category","")).casefold()!="removed" for x in versions), "Missing Windows file version"
+          logs=call("/v1/games/morrowind/mods/60496/changelogs.json")
+          if not isinstance(logs,dict):
+              raise ValueError("Nexus v1 changelog list has unexpected shape; refusing duplicate append")
+          prior=[k for k in logs if k.casefold()=="0.51.0-kr12.4"]
+          if prior:
+              print("KR12.4 changelog already exists; no new changelog entry was added.")
+          else:
+              body={"version":"0.51.0-KR12.4",
+                    "changelog":"KR12.4 Windows 누적 업데이트: 한국어 서술격·호격·동사 어미 토픽 인식 개선. 잘못된 대사 링크 79건 수정, 원본 영어 대조 퀘스트 링크 12건 복구, 아우데니안 발리우스 TOP 별칭 3건 정정. KR12.3.1 설치기를 그대로 사용하며 이슈 #42 전용 패치는 필요하지 않습니다. 정적·엔진 자동 검증 통과, 전체 실게임 퀘스트 및 Android 버전은 미검증."}
+              result=call("/v3/mods/"+str(mod["id"])+"/changelogs",body)
+              print("KR12.4 changelog appended using canonical Nexus mod UID 429496790096.")
+          PY

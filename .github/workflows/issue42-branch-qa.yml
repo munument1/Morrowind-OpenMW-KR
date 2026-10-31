@@ -122,6 +122,9 @@ jobs:
           words=['아우데니안 발리우스','마법부여사 아우데니안 발리우스','마법부여사 아우데니안','자물쇠 따개','자물쇠따개']
           for word in words:
               print('TARGET',json.dumps({'name':word,'is_DIAL':word in topics,'TOP_alias':aliases.get(word),'MRK_keyword':sidecar(data['mrk']).get(word)},ensure_ascii=False))
+          for key,value in sorted(aliases.items()):
+              if '아우데니안' in key:
+                  print('RELATED_ALIAS',json.dumps({'label':key,'target':value,'target_exists':value in topics},ensure_ascii=False))
           for row in infos:
               text=row['text']
               if any('@'+word+'#' in text for word in words) or ('아우데니안 발리우스' in text):

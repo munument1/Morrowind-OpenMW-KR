@@ -382,6 +382,7 @@ TEST_F(KeywordSearchTest, korean_quest_topic_quotative_particles)
     search.seed("강령술사", "necromancer");
     search.seed("드로'사카르", "dro'sakhar");
     search.seed("일", "work");
+    search.seed("말", "speech");
 
     const std::string source = "바스라는 강령술사 소굴. 강령술사라는 말. "
                                "바스이란 지명. 바스란 이름. 드로'사카르라는 이름.";

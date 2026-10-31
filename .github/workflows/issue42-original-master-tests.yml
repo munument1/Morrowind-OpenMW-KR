@@ -1,0 +1,35 @@
+name: Issue 42 English master comparator (synthetic-only CI)
+
+on:
+  push:
+    branches:
+      - fix/issue42-korean-predicate-topic-boundaries-20261031
+    paths:
+      - packaging/korean/tooling/audit_issue42_original_masters.py
+      - packaging/korean/tooling/test_issue42_original_masters.py
+      - .github/workflows/issue42-original-master-tests.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  english-master-parser-unit-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static syntax check and synthetic TES3 record tests
+        run: |
+          set -euo pipefail
+          python3 -m py_compile \
+            packaging/korean/tooling/audit_issue42_original_masters.py \
+            packaging/korean/tooling/test_issue42_original_masters.py
+          python3 -m unittest discover \
+            -s packaging/korean/tooling \
+            -p 'test_issue42_original_masters.py' -v
+      - name: Explain limits
+        run: |
+          echo "Synthetic parser unit tests only."
+          echo "No original commercial ESMs are present or uploaded."
+          echo "No original English cross-comparison or gameplay QA claimed."

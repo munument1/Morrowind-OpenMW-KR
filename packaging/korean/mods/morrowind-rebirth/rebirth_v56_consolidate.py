@@ -36,8 +36,14 @@ TEXT_FIELDS = {
     "MISC": {"FNAM"}, "ACTI": {"FNAM"}, "CONT": {"FNAM"},
     "DOOR": {"FNAM"}, "LIGH": {"FNAM"}, "SPEL": {"FNAM"},
     "ENCH": {"FNAM"}, "BODY": {"FNAM"}, "SOUN": {"FNAM"},
+    "REPA": {"FNAM"}, "LOCK": {"FNAM"}, "PROB": {"FNAM"},
 }
 ADDONS = {"birthsigns", "mercenaries", "races", "skills", "tools", "game settings"}
+TOP_PATHS = {
+    "Alternate Version/Morrowind Rebirth [Main].top",
+    "Data Files/Morrowind Rebirth - Mercenaries [Addon].top",
+    "Data Files/Morrowind Rebirth [Main].top",
+}
 
 
 def digest(data: bytes) -> str:
@@ -57,7 +63,7 @@ def canonical_path(name: str) -> str:
             tail = [x for x in parts[index + 1:] if x.casefold() != "data files"]
             return "/".join((parts[index], *tail))
     if "data files" in lower:
-        return "/".join(parts[lower.index("data files") + 1:])
+        return "/".join(parts[lower.index("data files"):])
     # Only top-level plugin paths are valid without a recognized mod folder.
     if len(parts) == 1:
         return parts[0]
@@ -102,6 +108,27 @@ def scan_final_zip(path: pathlib.Path):
             result[key] = archive.read(entry)
     validate_layout(result)
     return result
+
+
+def scan_final_top_files(path: pathlib.Path) -> list[dict]:
+    """Retain v56 OpenMW topic alias sidecars in the ONE corpus."""
+    results = []
+    with zipfile.ZipFile(path) as archive:
+        for entry in archive.infolist():
+            if entry.is_dir() or not entry.filename.casefold().endswith(".top"):
+                continue
+            normalized = canonical_path(entry.filename)
+            content = archive.read(entry)
+            content.decode("utf-8")
+            assert normalized in TOP_PATHS, ("Unexpected topic sidecar", normalized)
+            results.append({
+                "kind": "sidecar", "path": normalized,
+                "target_base64": base64.b64encode(content).decode("ascii"),
+                "sha256": digest(content), "size": len(content),
+            })
+    assert {r["path"] for r in results} == TOP_PATHS
+    assert len(results) == 3
+    return sorted(results, key=lambda row: row["path"].casefold())
 
 
 def scan_original_root(root: pathlib.Path, expected: dict[str, bytes]):
@@ -240,6 +267,7 @@ def capture(args):
     out = ensure_fresh_output(pathlib.Path(args.out), [final_zip, source_root])
     finals = scan_final_zip(final_zip)
     originals = scan_original_root(source_root, finals)
+    top_sidecars = scan_final_top_files(final_zip)
     rows = []
     files = []
     stats = collections.Counter()
@@ -256,10 +284,17 @@ def capture(args):
             "records": count, "changed_fields": len(patches),
             "source_only_script_fields": sum(r["review_flag"] is not None for r in patches),
         })
+    translated_field_count = len(rows)
+    rows.extend(top_sidecars)
     manifest = {
-        "schema": "rebirth_72_kr12_v56_consolidated_source_anchored_v1",
+        "schema": "rebirth_72_kr12_v56_one_final_corpus_v2",
         "v56_archive_sha256": FINAL_V56_SHA256,
-        "plugin_count": len(files), "changed_fields": len(rows),
+        "plugin_count": len(files), "changed_fields": translated_field_count,
+        "sidecar_top_count": len(top_sidecars),
+        "sidecar_top_files": [
+            {"path": row["path"], "sha256": row["sha256"], "size": row["size"]}
+            for row in top_sidecars
+        ],
         "by_category": dict(stats), "plugins": files,
         "historical_intermediate_versions_included": False,
         "complete_binary_roundtrip": True,
@@ -287,13 +322,26 @@ def apply(args):
     validate_layout(plugins)
     originals = scan_original_root(root, plugins)
     grouped = collections.defaultdict(list)
+    sidecars = {}
     with gzip.open(corpus / CORPUS_FILENAME, "rt", encoding="utf-8") as raw:
         for line in raw:
             if not line.strip():
                 continue
             row = json.loads(line)
-            assert row["plugin"] in plugins
-            grouped[row["plugin"]].append(row)
+            if row.get("kind") == "sidecar":
+                name = row["path"]
+                assert name in TOP_PATHS and name not in sidecars
+                content = base64.b64decode(row["target_base64"], validate=True)
+                assert digest(content) == row["sha256"] and len(content) == row["size"]
+                sidecars[name] = content
+            else:
+                assert row["plugin"] in plugins
+                grouped[row["plugin"]].append(row)
+    assert len(sidecars) == manifest.get("sidecar_top_count") == 3
+    assert set(sidecars) == TOP_PATHS
+    for expected in manifest["sidecar_top_files"]:
+        assert digest(sidecars[expected["path"]]) == expected["sha256"]
+        assert len(sidecars[expected["path"]]) == expected["size"]
     results = {}
     total = 0
     for file in manifest["plugins"]:
@@ -308,18 +356,19 @@ def apply(args):
         total += len(rows)
     assert total == manifest["changed_fields"]
     out.mkdir(parents=True, exist_ok=False)
-    for name, data in results.items():
+    for name, data in {**results, **sidecars}.items():
         dest = out.joinpath(*pathlib.PurePosixPath(name).parts)
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(data)
     (out / "RECONSTRUCTION_QA.json").write_text(
-        json.dumps({"status": "PASS_EXACT_V56_PLUGIN_RECONSTRUCTION",
+        json.dumps({"status": "PASS_EXACT_V56_PLUGINS_AND_TOP_RECONSTRUCTION",
                     "plugin_count": len(results), "changed_fields": total,
+                    "sidecar_top_count": len(sidecars),
                     "source_only_script_runtime_verified": False,
                     "kr124_game_verified": False, "release_ready": False},
                    indent=2) + "\n", encoding="utf-8"
     )
-    print(f"Reconstructed {len(results)} original-layout plugins in new folder: {out}")
+    print(f"Reconstructed {len(results)} plugins and {len(sidecars)} TOP files: {out}")
 
 
 def main():

@@ -8,7 +8,7 @@ diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/k
 +        // Common Korean predicate/relationship endings, but only for longer noun
 +        // topics: the single-syllable "말" inside "말인" is too ambiguous.
 +        constexpr std::string_view contextualNounEndings[] = {
-+            "와의", "과의", "인", "이자", "임을", "였어"
++            "와의", "과의", "인", "이자", "임을", "였어", "야"
 +        };
 +        if (keyword.size() >= 6
 +            && std::find(std::begin(contextualNounEndings), std::end(contextualNounEndings), suffix)

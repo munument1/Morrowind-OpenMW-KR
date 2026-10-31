@@ -412,20 +412,22 @@ TEST_F(KeywordSearchTest, korean_quest_topic_extended_noun_endings)
     search.seed("다고스 우르", "d");
     search.seed("트리뷰널", "t");
     search.seed("반지", "ring");
+    search.seed("이에니스", "ienith");
     search.seed("마법", "magic");
     search.seed("발견", "found");
     search.seed("말", "speech");
 
     const auto hits = search.parseHyperText(
         "네레바린인 사람, 네레바린이자 용사, 네레바린임을 알렸다. "
-        "다고스 우르와의 전쟁, 트리뷰널과의 전쟁. 그의 반지였어.", storage);
-    ASSERT_EQ(hits.size(), 6);
+        "다고스 우르와의 전쟁, 트리뷰널과의 전쟁. 그의 반지였어. 이에니스야.", storage);
+    ASSERT_EQ(hits.size(), 7);
     EXPECT_EQ(hits[0].mTopicId, "n");
     EXPECT_EQ(hits[1].mTopicId, "n");
     EXPECT_EQ(hits[2].mTopicId, "n");
     EXPECT_EQ(hits[3].mTopicId, "d");
     EXPECT_EQ(hits[4].mTopicId, "t");
     EXPECT_EQ(hits[5].mTopicId, "ring");
+    EXPECT_EQ(hits[6].mTopicId, "ienith");
 
     // Do not turn the prefixes of verbs or compound words into hyperlinks.
     EXPECT_TRUE(search.parseHyperText("마법사. 발견했다. 하지 말라는 명령.", storage).empty());

@@ -11,7 +11,7 @@ import audit_kr12_gamewide_topics as audit
 CPP = '''
 constexpr std::string_view endings[] = { "이라는", "라는", "을", "들" };
 constexpr std::string_view extendedSuffixes[] = { "입니다", "에서만" };
-constexpr std::string_view contextualNounEndings[] = { "와의", "과의", "인", "이자", "임을", "였어" };
+constexpr std::string_view contextualNounEndings[] = { "와의", "과의", "인", "이자", "임을", "였어", "야" };
 '''
 
 class FullCorpusAuditTest(unittest.TestCase):

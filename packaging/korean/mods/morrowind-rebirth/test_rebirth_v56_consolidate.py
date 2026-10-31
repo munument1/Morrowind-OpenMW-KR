@@ -63,6 +63,14 @@ class RebirthV56Tests(unittest.TestCase):
                 original.write_bytes(base)
                 z.writestr("Complete Rebirth v56/" + path, changed)
                 self.content[rb.canonical_path(path)] = changed
+        self.sidecars = {
+            "Alternate Version/Morrowind Rebirth [Main].top": b"hello\\tworld\\r\\n",
+            "Data Files/Morrowind Rebirth - Mercenaries [Addon].top": b"Mercenary\\tTopic\\r\\n",
+            "Data Files/Morrowind Rebirth [Main].top": b"Main\\tTopic\\r\\n",
+        }
+        with zipfile.ZipFile(self.zip_path, "a") as archive:
+            for path, payload in self.sidecars.items():
+                archive.writestr("Complete Rebirth v56/" + path, payload)
 
     def capture_apply(self):
         dest = self.root / "corpus"
@@ -80,18 +88,19 @@ class RebirthV56Tests(unittest.TestCase):
 
     def test_v56_fifteen_plugin_single_corpus_roundtrip(self):
         dest, restored, rows = self.capture_apply()
-        self.assertEqual(len(rows), 2)
+        self.assertEqual(len(rows), 5)
         manifest = json.loads((dest / rb.MANIFEST_FILENAME).read_text("utf-8"))
         self.assertEqual(manifest["plugin_count"], 15)
         self.assertEqual(manifest["changed_fields"], 2)
+        self.assertEqual(manifest["sidecar_top_count"], 3)
         self.assertTrue(manifest["complete_binary_roundtrip"])
         self.assertFalse(manifest["kr124_game_verified"])
         self.assertEqual(sum(f["changed_fields"] for f in manifest["plugins"]), 2)
         self.assertEqual(
-            sorted([r["review_flag"] for r in rows if r["review_flag"]]), 
+            sorted([r["review_flag"] for r in rows if r.get("review_flag")]), 
             ["source_only_script_requires_KR124_runtime_check"]
         )
-        for path, expected in self.content.items():
+        for path, expected in {**self.content, **self.sidecars}.items():
             self.assertEqual((restored / path).read_bytes(), expected)
 
     def test_reject_nontext_binary_change(self):

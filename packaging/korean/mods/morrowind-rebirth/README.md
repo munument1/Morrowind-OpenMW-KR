@@ -33,12 +33,12 @@ python packaging/korean/mods/morrowind-rebirth/rebirth_v56_consolidate.py captur
 
 성공하면 새 출력 폴더에 파일 두 개만 생성한다.
 
-- `REBIRTH_72_KR12_V56_CONSOLIDATED_PRIVATE.jsonl.gz`: 15개 플러그인의 **최종 v56 변경 필드 전부**를 담은 단일 비공개 코퍼스. 원본 파일별 SHA 및 각 원문 서브레코드 오프셋/해시로 고정.
+- `REBIRTH_72_KR12_V56_CONSOLIDATED_PRIVATE.jsonl.gz`: 15개 플러그인의 **최종 v56 변경 필드 전부와 세 개의 .top 토픽 별칭 데이터**를 담은 단일 비공개 코퍼스. 원본 파일별 SHA 및 각 원문 서브레코드 오프셋/해시로 고정.
 - `REBIRTH_72_KR12_V56_SOURCE_ANCHORED_MANIFEST.json`: 15개 원본 및 v56 결과 SHA, 변경 수량, 컴파일 검토 필요 SCTX 수량.
 
 새 번역으로 재생성하지 않는다. 모든 변경을 **v56 출력물 자체에서 추출**한다.
 
-## 나중에 동일한 v56 플러그인 15개를 재생성하려면
+## 나중에 동일한 v56 플러그인 15개와 TOP 3개를 재생성하려면
 
 ```powershell
 python packaging/korean/mods/morrowind-rebirth/rebirth_v56_consolidate.py apply `
@@ -53,4 +53,21 @@ python packaging/korean/mods/morrowind-rebirth/rebirth_v56_consolidate.py apply 
 
 v56은 KR12 기준으로 빌드·검사된 과거 최종본이다. `DIAL.NAME`과 `AddTopic` 연결, `SCPT.SCTX`/컴파일된 `SCDT`, NPC 대사, 자막, 선택지, 저널, 지역 표시는 **KR12.4 변경 영향**을 별도로 확인해야 한다. 특히 대체 메인은 기본 메인의 번역 데이터를 통째로 덮어서는 안 된다.
 
-**현재 이관 상태:** 저장소에는 v56 SHA·구성 및 재현 도구를 추가했지만, v56 ZIP 실물이 현재 연결된 소스에서 확인되지 않아 최종 코퍼스 생성/대상별 SHA QA는 아직 실행하지 못했다. 비공개 중간 자료·원본 게임 파일·Nexus 페이지·기존 OpenMW KR 정식 배포는 수정하지 않았다.
+## 2026-11-01 실제 v56 파일 전수 대조 결과
+
+사용자가 제공한 **v56 최종 ZIP(91,344,684 bytes)**과 **Rebirth 7.2 원본 RAR**의 ESP/ESM 15개를 직접 대조했다.
+
+- v56 전체 ZIP SHA: `8b07aec7d2400f22c60f9833d6339185a54acea687de9ed7f8a9c1030bf6d8f3` (기존 기록과 일치)
+- 원본 RAR SHA: `8f31db65c01e41744842c10151a3a5259e1e57668e6f89e444b10a73a2a20ee0`
+- 실제 번역/문자열 변경: **27,016개 필드** — 일반 메인 13,268 / 대체 메인 13,268 / Birthsigns 40 / Mercenaries 330 / Races 51 / Skills 19 / Tools 40.
+- Game Settings 애드온 및 호환 패치 7종은 원본 바이너리와 동일.
+- **3개 TOP 토픽 별칭 파일**은 배포에 필수이므로 동일한 단일 코퍼스에 포함. 일반 메인·대체 메인·용병 애드온에 대응하며 상대 경로와 내용 SHA도 검증.
+- 변경은 TES3의 허용된 표시 문자열 필드에 한정; `REPA.FNAM`, `LOCK.FNAM`, `PROB.FNAM` 역시 v56 실제 변경이 있어 검증 대상에 추가.
+- `SCPT.SCTX` **39개는 소스만 바뀌었으므로** KR12.4에서 실제 스크립트 실행/컴파일 경로 별도 검증 필요.
+- 전체 15개 플러그인과 3개 TOP 파일은 단일 코퍼스를 통한 바이트 단위 재구성 및 v56 원본 파일과의 SHA 대조 **PASS**.
+
+생성된 비공개 코퍼스: `REBIRTH_72_KR12_V56_CONSOLIDATED_PRIVATE.jsonl.gz` (4,980,743 bytes), SHA-256 `63605e2f063247ec6ccc66e1fd8fdf1650237629a14779e3fddfe2cf59a47c43`.
+
+**이 공개 GitHub 저장소에는 비공개 번역 코퍼스 실물을 넣지 않는다.** 추출 결과는 사용자의 이번 대화에서 생성한 별도 파일로 제공한다. 업로드/공개 여부가 확정되지 않은 원본 게임 모드 바이너리도 저장소에 넣지 않았다. 저장소에는 정확한 해시·검사 도구·합성 테스트·재구성 방법만 관리한다. KR12.4 실제 게임 플레이, Android 실행, Nexus 배포는 진행하지 않았다.
+
+**현재 이관 상태:** 저장소에는 v56 SHA·구성 및 재현 도구를 추가했지만, v56 ZIP과 원본 RAR로 최종 코퍼스 생성·대상별 SHA 재구성 QA를 완료했다. 비공개 중간 자료·원본 게임 파일·Nexus 페이지·기존 OpenMW KR 정식 배포는 수정하지 않았다.

@@ -1,7 +1,5 @@
 """Standalone synthetic tests: full KR12.2 corpus audit does not need game masters."""
-import importlib.util
 import sys
-import struct
 import unittest
 from pathlib import Path
 
@@ -22,7 +20,7 @@ class FullCorpusAuditTest(unittest.TestCase):
         self.assertEqual(result["info_count"],1)
         self.assertEqual(result["topic_count"],1)
         self.assertEqual(result["additional_missing_suffix_candidates"],1)
-        self.assertEqual(result["top_unhandled_suffixes"][0],["라서",1] if False else ("라서",1))
+        self.assertEqual(result["top_unhandled_suffixes"][0], ("라서", 1))
 
     def test_explicit_links_do_not_count(self):
         data=make_data("@바스#라서 간다.")

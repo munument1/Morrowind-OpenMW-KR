@@ -112,6 +112,11 @@ namespace
                 || std::find(std::begin(extendedSuffixes), std::end(extendedSuffixes), ending)
                     != std::end(extendedSuffixes);
         };
+        // Short topic nouns such as "말" also occur inside the verb "말라는"
+        // ("do not..."); avoid introducing false links for one-syllable topics.
+        if (keyword.size() == 3
+            && (suffix == "라는" || suffix == "이라는" || suffix == "란" || suffix == "이란"))
+            return false;
         if (isEnding(suffix))
             return true;
 

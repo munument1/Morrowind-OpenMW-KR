@@ -400,7 +400,7 @@ TEST_F(KeywordSearchTest, korean_quest_topic_quotative_particles)
         EXPECT_FALSE(match.mExplicit);
 
     // Don't link an internal substring, or the generic single-syllable "일".
-    EXPECT_TRUE(search.parseHyperText("사바스라는 곳. 일이라는 말.", storage).empty());
+    EXPECT_TRUE(search.parseHyperText("사바스라는 곳. 일이라는 명령. 하지 말라는 요청.", storage).empty());
 }
 
 TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)

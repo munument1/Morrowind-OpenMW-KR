@@ -33,11 +33,11 @@ def patch_aliases(original: bytes, topics: set[str]) -> tuple[bytes, list[dict]]
     result = []
     seen = {}
     for line in original.splitlines(keepends=True):
-        bom = b"\\xef\\xbb\\xbf" if line.startswith(b"\\xef\\xbb\\xbf") else b""
+        bom = b"\xef\xbb\xbf" if line.startswith(b"\xef\xbb\xbf") else b""
         actual = line[len(bom):]
-        content = actual.rstrip(b"\\r\\n")
+        content = actual.rstrip(b"\r\n")
         ending = actual[len(content):]
-        head, sep, target = content.partition(b"\\t")
+        head, sep, target = content.partition(b"\t")
         label = head.decode("utf-8") if sep else None
         if label in EXACT_ALIASES:
             if label in seen:

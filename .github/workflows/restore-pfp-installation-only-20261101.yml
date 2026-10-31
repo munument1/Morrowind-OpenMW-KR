@@ -75,14 +75,17 @@ jobs:
             if(typeof current.description!=='string') throw new Error('Description missing');
             fs.writeFileSync('saved/nexus-pfp-60826-live-current.txt',current.description);
             core.info('LIVE_DESCRIPTION_SHA256='+hash(current.description)+'; LEN='+current.description.length+'; EXPECTED='+hash(lastErroneous));
-            core.info('Read-only capture of current Nexus description; no new PATCH in this run');
-            return;
-            if(current.description!==nexusNormalized(lastErroneous) && current.description!==lastErroneous && current.description!==restored && current.description!==nexusNormalized(restored)) throw new Error('Nexus description differs from posted draft or its normalised format. Preserving unknown user changes.');
+            core.info('Live description captured; proceed with exact expected normalized-content comparison');
+            const escapedNexusVersion=restored.replace(/<br \/>/g,'&lt;br /&gt;').replace(/\n/g,'\n<br />');
+            if(current.description!==escapedNexusVersion && current.description!==restored) throw new Error('Nexus live description no longer equals the exact known previous restore. Refusing to overwrite it.');
             fs.writeFileSync('saved/nexus-pfp-60826-restored-install-only.txt',restored);
-            if(current.description!==restored && current.description!==nexusNormalized(restored)) await api('/v3/mods/'+modUid,'PATCH',{description:restored});
+            const postBody=restored.replace(/\n<br \/>/g,'\n');
+            if(nexusNormalized(postBody)!==restored) throw new Error('Cannot roundtrip Nexus line-break serialization');
+            if(current.description!==restored) await api('/v3/mods/'+modUid,'PATCH',{description:postBody});
             const readBackData=(await api('/v3/mods/'+modUid)).data;
             const readBack=readBackData.mod||readBackData;
-            if(readBack.description!==restored && readBack.description!==nexusNormalized(restored)) throw new Error('Nexus readback is not the expected restored text (allowing only known Nexus newline normalization)');
+            fs.writeFileSync('saved/nexus-pfp-60826-live-after.txt',readBack.description);
+            if(readBack.description!==restored) throw new Error('Nexus readback does not exactly match original except install list');
             core.info('RESTORE PASS: Complete original description preserved; only install [list=1] changed. '+hash(restored));
             await core.summary.addHeading('Nexus PFP #60826 recovered').addRaw('The original pre-edit description was restored byte-for-byte except for its numbered installation list. Version, summary and mod files unchanged. Hash: '+hash(restored)).write();
       - name: Save proof of original and repaired descriptions

@@ -123,11 +123,23 @@ namespace
         // Common Korean predicate/relationship endings, but only for longer noun
         // topics: the single-syllable "말" inside "말인" is too ambiguous.
         constexpr std::string_view contextualNounEndings[] = {
-            "와의", "과의", "인", "이자", "임을", "였어", "야"
+            "와의", "과의", "인", "이자", "임을", "였어", "야",
+            "다", "요", "지", "지만", "라면", "여", "로서", "인지"
         };
         if (keyword.size() >= 6
             && std::find(std::begin(contextualNounEndings), std::end(contextualNounEndings), suffix)
                 != std::end(contextualNounEndings))
+            return true;
+
+        // The .mrk file uses actual inflected verbal stems such as
+        // "그대를 네레바린으로 지명하겠". Only handle endings following 겠;
+        // do not accept these suffixes after arbitrary noun prefixes.
+        constexpr std::string_view contractedVerbEndings[] = {
+            "소", "네", "다면", "습니다"
+        };
+        if (keyword.size() >= 12 && keyword.ends_with("겠")
+            && std::find(std::begin(contractedVerbEndings), std::end(contractedVerbEndings), suffix)
+                != std::end(contractedVerbEndings))
             return true;
 
         // Plural nouns take case particles too: "블레이드 교관들에", "길드원들에게".

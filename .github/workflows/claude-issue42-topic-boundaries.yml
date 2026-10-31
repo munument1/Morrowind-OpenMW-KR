@@ -1,0 +1,44 @@
+name: Claude Issue 42 Topic Boundary QA
+
+on:
+  pull_request:
+    paths:
+      - 'apps/openmw/mwdialogue/keywordsearch.cpp'
+      - 'korean/patches/0015-korean-contextual-noun-topic-endings.patch'
+      - 'packaging/korean/tooling/test_claude_issue42_boundaries.py'
+      - '.github/workflows/claude-issue42-topic-boundaries.yml'
+  push:
+    paths:
+      - 'apps/openmw/mwdialogue/keywordsearch.cpp'
+      - 'korean/patches/0015-korean-contextual-noun-topic-endings.patch'
+      - 'packaging/korean/tooling/test_claude_issue42_boundaries.py'
+      - '.github/workflows/claude-issue42-topic-boundaries.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  real-parser-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify upstream-0.51 patch matches the current engine source
+        run: git apply --reverse --check korean/patches/0015-korean-contextual-noun-topic-endings.patch
+      - name: Compile the existing real OpenMW keyword parser test runner
+        run: |
+          g++ -std=c++20 -O2 -I. \
+            packaging/korean/tooling/verify-journal-links.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/verify-journal-links
+      - name: Existing Korean topic boundary regression
+        run: python3 packaging/korean/tooling/test_kr12_topic_links.py /tmp/verify-journal-links
+      - name: Claude issue 42 regression and false-positive control
+        run: python3 packaging/korean/tooling/test_claude_issue42_boundaries.py /tmp/verify-journal-links

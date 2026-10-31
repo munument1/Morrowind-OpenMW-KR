@@ -191,11 +191,37 @@ def inspect(data, gist):
                 "needs_individual_manual_review": True
             })
 
+    investigated_fragments = [
+        "@설원#곰", "@설원#늑대", "정@말#", "@말입니까?#",
+        "@이나 다른#", "@는 제국#", "@가 제국#"
+    ]
+    fragment_evidence = {}
+    for needle in investigated_fragments:
+        hits = [
+            {"INFO": row["info"], "DIAL": row["parent"], "actor": row["actor"],
+             "context": row["text"][max(0,row["text"].find(needle)-35):
+                                     row["text"].find(needle)+len(needle)+55]}
+            for row in infos if needle in row["text"]
+        ]
+        fragment_evidence[needle] = {"count":len(hits),"examples":hits[:14]}
+    relevant_topic_names = [
+        "설원곰", "설원늑대", "설원", "제국", "임페리얼",
+        "말", "대화", "은신", "아우데니안 발리우스"
+    ]
+    topic_evidence = {
+        name: {"present_DIAL": name in topics,
+               "top_alias_target": top.get(name),
+               "mrk_keyword": mrk.get(name)}
+        for name in relevant_topic_names
+    }
+
     result = {
         "status": "READ_ONLY_LEXICAL_TRIAGE_NO_GAMEPLAY_OR_MASTER_COMPARISON",
         "source": "published KR12.3.1 ESP and public issue #42 Gist",
         "source_esp_sha256": actual_sha,
         "source_top_sha256": hashlib.sha256(data["top"]).hexdigest(),
+        "investigated_fragment_evidence": fragment_evidence,
+        "relevant_topic_evidence": topic_evidence,
         "topic_count": len(topics), "info_count": len(infos),
         "reported_link_rows": len(raw_misses),
         "reported_link_types": dict(Counter(x["유형"] for x in raw_misses)),
@@ -245,7 +271,8 @@ def main():
         raise ValueError("Output report already exists; new-only")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    for key in ("topic_count", "info_count", "reported_link_rows",
+    for key in ("investigated_fragment_evidence", "relevant_topic_evidence",
+                "topic_count", "info_count", "reported_link_rows",
                 "reported_topic_rows", "source_anchor_discrepancies",
                 "unlearnable_with_script_refs_in_translated_esp",
                 "confirmed_sidecar_wrong_aliases",

@@ -1,0 +1,46 @@
+name: Inspect Nexus KR12.4 metadata without writes
+on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/inspect-nexus-kr124-metadata.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - name: Read official Nexus v1/v3 KR12.4 version and changelog metadata
+        run: |
+          set -euo pipefail
+          test -n "$NEXUS_KEY"
+          python3 - <<'PY'
+          import os,json,urllib.request,urllib.error
+          def get(path):
+              req=urllib.request.Request('https://api.nexusmods.com'+path,headers={
+                'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json','User-Agent':'Morrowind-KR12.4-Metadata-Inspect'})
+              try:
+                  with urllib.request.urlopen(req,timeout=30) as resp:return json.load(resp)
+              except urllib.error.HTTPError as e:
+                  print('read-only endpoint HTTP status:',path,e.code)
+                  return None
+          m3=get('/v3/games/morrowind/mods/60496')
+          if m3:
+              d=m3['data'];print('V3_MOD_VERSION:',d.get('version'))
+              print('V3_MOD_KEYS:',sorted(d.keys()))
+              print('V3_CHANGELOG_TYPE:',type(d.get('changelogs')).__name__)
+              print('V3_CHANGELOG_VERSIONS:',sorted((d.get('changelogs') or {}).keys()) if isinstance(d.get('changelogs'),dict) else 'unavailable')
+          m1=get('/v1/games/morrowind/mods/60496.json')
+          if m1:
+              print('V1_MOD_VERSION:',m1.get('version'))
+              print('V1_MOD_KEYS:',sorted(m1.keys()))
+              print('V1_CHANGELOG_TYPE:',type(m1.get('changelogs')).__name__)
+              print('V1_CHANGELOG_VERSIONS:',sorted((m1.get('changelogs') or {}).keys()) if isinstance(m1.get('changelogs'),dict) else 'unavailable')
+          f=get('/v3/mod-files/8110335/versions')
+          if f:
+              vs=f['data']['versions']
+              recent=[{'version':x.get('version'),'category':x.get('category'),'id':x.get('id')} for x in vs if 'kr12.4' in str(x.get('version')).lower()]
+              print('NEXUS_KR124_VERSION_RECORDS:',json.dumps(recent))
+          PY

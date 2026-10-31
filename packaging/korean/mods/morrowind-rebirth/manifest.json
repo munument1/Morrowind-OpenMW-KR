@@ -1,0 +1,41 @@
+{
+  "schema": "morrowind_rebirth_7_2_kr12_v56_final_baseline_pointer",
+  "status": "provenance_recorded_final_archive_not_imported",
+  "source_mod": "Morrowind Rebirth 7.2",
+  "source_package_label": "Morrowind Rebirth 37795 7.2 2026-10-23T19-19Z nOlkOzNs",
+  "final_package_name": "Morrowind_Rebirth_7.2_Korean_OpenMW_KR12_v56_Full_Layout.zip",
+  "final_package_sha256": "8b07aec7d2400f22c60f9833d6339185a54acea687de9ed7f8a9c1030bf6d8f3",
+  "engine_reference": "OpenMW 0.51.0 KR12",
+  "target_compatibility": "OpenMW KR12.4 (not yet revalidated)",
+  "expected_plugin_counts": {
+    "main": 1,
+    "alternate": 1,
+    "addon": 6,
+    "compatibility": 7,
+    "total": 15
+  },
+  "included_optional_addons": [
+    "Birthsigns",
+    "Mercenaries",
+    "Races",
+    "Skills",
+    "Tools",
+    "Game Settings"
+  ],
+  "known_state": {
+    "main": "v56 final package; previously tested selected Windows gameplay paths on KR12",
+    "alternate_main": "v56 final package retaining distinct alternate gameplay configuration",
+    "addons": "v56 aggregate; five translated/processed and Game Settings intentionally unchanged",
+    "compatibility_patches": "seven original-preserved, unlocalized and not game verified",
+    "android": "not game verified",
+    "kr124": "not verified"
+  },
+  "original_binaries_in_repository": false,
+  "final_archive_binaries_in_repository": false,
+  "final_translation_overlay_in_repository": false,
+  "one_corpus_generated": false,
+  "extractions_requires_local_original_and_final_zip": true,
+  "prior_versions_moved": false,
+  "automatic_release": false,
+  "nexus_publication": false
+}

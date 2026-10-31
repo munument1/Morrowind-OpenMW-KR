@@ -1,0 +1,31 @@
+name: Rebirth v56 consolidated tooling QA
+
+on:
+  pull_request:
+    paths:
+      - 'packaging/korean/mods/morrowind-rebirth/**'
+      - '.github/workflows/rebirth-v56-qa.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'packaging/korean/mods/morrowind-rebirth/**'
+      - '.github/workflows/rebirth-v56-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-rebirth-v56:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile offline Python tooling
+        run: python3 -m py_compile packaging/korean/mods/morrowind-rebirth/rebirth_v56_consolidate.py packaging/korean/mods/morrowind-rebirth/test_rebirth_v56_consolidate.py
+      - name: Reconstruct synthetic 15-plugin archive with SHA and byte preservation
+        run: python3 -m unittest discover -s packaging/korean/mods/morrowind-rebirth -p 'test_*.py' -v
+      - name: Assert local-only CLI entry points
+        run: python3 packaging/korean/mods/morrowind-rebirth/rebirth_v56_consolidate.py --help
+
+# NO v56 game assets, Korean translations, private corpus or publishing credentials.

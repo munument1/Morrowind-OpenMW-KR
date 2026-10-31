@@ -130,3 +130,19 @@ jobs:
               if any('@'+word+'#' in text for word in words) or ('아우데니안 발리우스' in text):
                   print('INFO',json.dumps({'parent':row['parent'],'INAM':row['info'],'actor':row['actor'],'text':text[:900]},ensure_ascii=False))
           PY
+
+      - name: Verify source-locked alias patch regression and emit candidate sidecar
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s packaging/korean/tooling -p 'test_issue42_audenian_alias.py' -v
+          python3 packaging/korean/tooling/patch_issue42_audenian_alias.py \
+            --source-zip /tmp/issue42-published.zip \
+            --output-top qa/Morrowind_Korean_ReTranslation.top \
+            --report qa/issue42-audenian-alias-qa.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-Audenian-alias-DATA-ONLY-candidate-NOT-RELEASED
+          path: |
+            qa/Morrowind_Korean_ReTranslation.top
+            qa/issue42-audenian-alias-qa.json
+          if-no-files-found: error

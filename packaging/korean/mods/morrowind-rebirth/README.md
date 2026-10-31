@@ -1,3 +1,25 @@
+## 중요: kr1.0 CELL 지명 누락 정정 (2026-11-01)
+
+**기존 `Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4.zip` 파일은 CELL 지명이 불완전한 이전 빌드다. 새 배포에는 사용하지 않는다.**
+
+- 전체 정정본: `Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4_CellNames.zip`
+  - SHA256: `a659c3a8db5c5ed45019654d7aa6a4ba66966fc5891cf5fe1ab4296e7872e96f`
+- 기존 설치 사용자용 소형 패치: `Morrowind_Rebirth_7.2-kr1.0_CELL_187_Only.zip`
+  - SHA256: `75e0b0d9cecb625e90a5ce5d3973afa09084639b59ccc87ef45257c89854ce75`
+- OpenMW KR12.4 정식 `.cel` 사전(1440개 영한 지명)과 Rebirth **고유 지명 1,403개**를 대조했다.
+  - 기존 KR12.4 대응: 1,216개
+  - Rebirth 고유 미번역: **187개** (실내 186, 실외 1)
+- 기본/대체 메인 ESP가 모두 해당 이름 세트를 가지고 있어 각 메인과 같은 이름의 `.cel` 두 개를 추가했다.
+- 각 `.cel`은 공식 번역 1,216개를 그대로 사용하고 Rebirth 고유 187개에 한국어 표시 별칭을 부여한다. 즉 1,403개 전부가 대응된다.
+- 원래 **CELL 식별자, CELL 레코드, ESP 8개 및 TOP 3개는 바이트 단위 원본 v56 보존**.
+- `components/translation/translation.cpp`의 `loadTranslationData`는 ESM/ESP와 같은 파일명 기반의 `.cel`을 자동 로드하고, UTF-8 BOM 및 탭 구분 별칭을 지원한다.
+- `Alternate Version`은 기본 메인 **대신** 쓰며, 이에 맞는 `.cel`도 함께 설치한다.
+- 새 별칭 번역의 실게임 문맥·음역 검수는 아직 미실시. Nexus 60805에는 이 변경을 아직 업로드하지 않았다.
+
+기존 배포용 ZIP 자체의 검증 기록과 다운로드 이름이 변경되므로 이전 SHA `f336e6291e3079ac566b02c2ddf129bb1f34319f3c222b33490bdf74a583bfff`는 **폐기된 빌드의 SHA**로만 남긴다. 자세한 상태는 [RELEASE_7.2-kr1.0.json](RELEASE_7.2-kr1.0.json)을 참조.
+
+---
+
 ## 정식 한국어판 패키지 7.2-kr1.0 (2026-11-01)
 
 **Rebirth 원본 버전 7.2 / 한글패치 첫 정식 번호 kr1.0**으로 표기한다.

@@ -5,9 +5,9 @@
   "translation_basis": "KR12 v56 final layout",
   "engine_reference": "OpenMW 0.51.0 Korean KR12.4",
   "nexus_mod_page": "https://www.nexusmods.com/morrowind/mods/60805",
-  "release_archive_filename": "Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4.zip",
-  "release_archive_sha256": "f336e6291e3079ac566b02c2ddf129bb1f34319f3c222b33490bdf74a583bfff",
-  "release_archive_bytes": 52978233,
+  "release_archive_filename": "Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4_CellNames.zip",
+  "release_archive_sha256": "a659c3a8db5c5ed45019654d7aa6a4ba66966fc5891cf5fe1ab4296e7872e96f",
+  "release_archive_bytes": 53141261,
   "v56_archive_sha256": "8b07aec7d2400f22c60f9833d6339185a54acea687de9ed7f8a9c1030bf6d8f3",
   "verified": {
     "preserved_binary_plugin_files": 8,
@@ -18,11 +18,20 @@
     "original_v56_plugin_and_top_sha_identical": true,
     "old_translation_content_modified": false,
     "kr124_release_delta_owned_changes": 0,
-    "kr124_ingame_tested": false
+    "kr124_ingame_tested": false,
+    "official_kr124_cel_source_sha256": "b339fe17c4a238db3dccbf84304a01e6dcef1acf2355d394c158a28575e59569",
+    "official_existing_cel_name_matches": 1216,
+    "rebirth_unique_names_added": 187,
+    "total_unique_named_cells": 1403,
+    "custom_cel_sidecars": 2,
+    "cell_record_internal_ids_unchanged": true,
+    "cell_name_sidecar_sha256": "c2c2c924e7dee44f4ac47be8cbcd9dec1b330977a2e960e8174ec7f4977dbc30",
+    "translation_additions_gameplay_tested": false,
+    "release_binary_file_count": 8,
+    "unchanged_esp_and_top_sha_identical_to_v56": true
   },
   "included_paths": [
-    "Data Files/Morrowind Rebirth [Main].ESP",
-    "Data Files/Morrowind Rebirth [Main].top",
+    "Alternate Version/Morrowind Rebirth [Main].cel",
     "Alternate Version/Morrowind Rebirth [Main].ESP",
     "Alternate Version/Morrowind Rebirth [Main].top",
     "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
@@ -32,9 +41,12 @@
     "Data Files/Morrowind Rebirth - Races [Addon].esp",
     "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
     "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
-    "README_KOREAN.txt",
+    "Data Files/Morrowind Rebirth [Main].cel",
+    "Data Files/Morrowind Rebirth [Main].ESP",
+    "Data Files/Morrowind Rebirth [Main].top",
+    "Documents/7.2-kr1.0_CELL_NAMES_QA.json",
     "Documents/CHANGELOG_7.2-kr1.0.txt",
-    "Documents/7.2-kr1.0_RELEASE_QA.json"
+    "README_KOREAN.txt"
   ],
   "omitted_compatibility_patch_paths": [
     "Compability Patches/Julan Ashlander Companion 2.02 [For Rebirth].esp",
@@ -46,5 +58,19 @@
     "Compability Patches/Uvirith's Legacy 3.53 [For Rebirth].esp"
   ],
   "binary_and_full_translation_data_in_public_git_repo": false,
-  "nexus_upload_status": "NOT_UPLOADED_BY_THIS_CHANGE"
+  "nexus_upload_status": "NOT_UPLOADED_PENDING_CONFIRMED_PACKAGE_TRANSPORT_AND_GAMEPLAY_REVIEW",
+  "previous_package_status": "superseded_by_cell_name_complete_kr1.0",
+  "previous_unfixed_archive_sha256": "f336e6291e3079ac566b02c2ddf129bb1f34319f3c222b33490bdf74a583bfff",
+  "release_archives": {
+    "full": {
+      "name": "Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4_CellNames.zip",
+      "sha256": "a659c3a8db5c5ed45019654d7aa6a4ba66966fc5891cf5fe1ab4296e7872e96f",
+      "bytes": 53141261
+    },
+    "cel_only": {
+      "name": "Morrowind_Rebirth_7.2-kr1.0_CELL_187_Only.zip",
+      "sha256": "75e0b0d9cecb625e90a5ce5d3973afa09084639b59ccc87ef45257c89854ce75",
+      "bytes": 47380
+    }
+  }
 }

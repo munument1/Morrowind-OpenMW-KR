@@ -130,6 +130,39 @@ namespace
                 != std::end(contextualNounEndings))
             return true;
 
+        // A few translated topic keywords themselves end in a conjugated verb
+        // stem ("...하겠", "...이끈다"). Treat their attested following
+        // endings as verbal grammar, not noun particles (issue #42).
+        constexpr std::string_view futureVerbEndings[] = { "소", "네", "다면", "습니다", "다고", "어요", "다" };
+        if (keyword.size() >= 6 && keyword.ends_with("겠")
+            && std::find(std::begin(futureVerbEndings), std::end(futureVerbEndings), suffix)
+                != std::end(futureVerbEndings))
+            return true;
+        if (keyword.find(' ') != std::string_view::npos && keyword.ends_with("다") && suffix == "면")
+            return true;
+
+        // Zero-coda nouns take predicate and vocative endings WITHOUT "이":
+        // "도망친 노예요", "아내지", "아주라의 바보다", "생명 없는 자여".
+        // Do not accept these after one-syllable topics (말/행), nouns with a
+        // final consonant, or before longer unrecognized compound tails.
+        if (keyword.size() >= 6)
+        {
+            const std::string_view last = keyword.substr(keyword.size() - 3);
+            const auto a = static_cast<unsigned char>(last[0]);
+            const auto b = static_cast<unsigned char>(last[1]);
+            const auto c = static_cast<unsigned char>(last[2]);
+            const char32_t syllable = ((a & 0x0f) << 12) | ((b & 0x3f) << 6) | (c & 0x3f);
+            if ((syllable - 0xac00) % 28 == 0)
+            {
+                constexpr std::string_view zeroCodaNounEndings[] = {
+                    "다", "요", "지", "지만", "라", "라면", "여", "로서"
+                };
+                if (std::find(std::begin(zeroCodaNounEndings), std::end(zeroCodaNounEndings), suffix)
+                    != std::end(zeroCodaNounEndings))
+                    return true;
+            }
+        }
+
         // Plural nouns take case particles too: "블레이드 교관들에", "길드원들에게".
         // Keep the longest noun topic rather than falling back to a short prefix.
         return suffix.starts_with("들") && suffix.size() > std::string_view("들").size()

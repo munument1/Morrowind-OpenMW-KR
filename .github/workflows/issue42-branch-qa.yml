@@ -1,0 +1,215 @@
+name: Issue 42 Korean dialogue topic QA (branch-only)
+
+on:
+  push:
+    branches:
+      - fix/issue42-korean-predicate-topic-boundaries-20261031
+    paths:
+      - apps/openmw/mwdialogue/keywordsearch.cpp
+      - apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+      - korean/patches/**
+      - packaging/korean/tooling/verify-issue42-topic-endings.cpp
+      - packaging/korean/tooling/patch_issue42_audenian_alias.py
+      - packaging/korean/tooling/test_issue42_audenian_alias.py
+      - packaging/korean/tooling/audit_issue42_reported_candidates.py
+      - packaging/korean/tooling/patch_issue42_explicit_markup.py
+      - packaging/korean/tooling/test_issue42_explicit_markup.py
+      - .github/workflows/issue42-branch-qa.yml
+  workflow_dispatch:
+
+concurrency:
+  group: issue42-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  native-topic-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile real OpenMW KeywordSearch and run issue 42 smoke tests
+        run: |
+          set -euo pipefail
+          g++ -std=c++20 -O2 -I. \
+            packaging/korean/tooling/verify-issue42-topic-endings.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/verify-issue42
+          /tmp/verify-issue42
+
+  official-051-patch-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OpenMW/openmw
+          ref: openmw-0.51.0
+          path: upstream
+          fetch-depth: 1
+      - name: Check official 0.51 source and apply every Korean patch in release order
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream rev-parse HEAD)" = f4bec41444214a7903bebd178389ca22ca13f646
+          grep -Fx 'set(OPENMW_VERSION_MINOR 51)' upstream/CMakeLists.txt
+          for patch in korean/patches/*.patch; do
+            echo "Validating $patch"
+            git -C upstream apply --check "../$patch"
+            git -C upstream apply "../$patch"
+          done
+          grep -F 'futureVerbEndings' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
+          grep -F 'zeroCodaNounEndings' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
+          git -C upstream diff --check
+
+  reporter-gist-triage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Read issue 42 public CSV evidence (read-only; no game data writes)
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://api.github.com/gists/36892c800dad56c657b418d0b42956f2' \
+            --output /tmp/issue42-gist.json
+          python3 - <<'PY'
+          import csv, io, json
+          payload=json.load(open('/tmp/issue42-gist.json',encoding='utf-8'))
+          for name, file in sorted(payload.get('files',{}).items()):
+              print('FILE',name,'size',file.get('size'),'truncated',file.get('truncated'))
+              if not name.endswith('.csv'):
+                  continue
+              content=file.get('content') or ''
+              reader=csv.DictReader(io.StringIO(content))
+              rows=list(reader)
+              print('COLUMNS',reader.fieldnames,'ROWS',len(rows))
+              if 'link_misses' in name:
+                  from collections import Counter
+                  type_col=reader.fieldnames[0]
+                  print('TYPE_COUNTS',dict(Counter(x[type_col] for x in rows)))
+                  for category in sorted({x[type_col] for x in rows}):
+                      group=[x for x in rows if x[type_col]==category]
+                      print('SUFFIX_COUNTS',category,dict(Counter(x['토픽 뒤 끝말'] for x in group)))
+              limit=75 if 'unlearnable' in name else 27
+              for i,row in enumerate(rows[:limit],1):
+                  print('ROW',i,json.dumps(row,ensure_ascii=False))
+          PY
+
+  explicit-alias-source-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download immutable published KR12.3.1 ZIP
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.3.1/Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip' \
+            -o /tmp/issue42-published.zip
+          unzip -tq /tmp/issue42-published.zip
+      - name: Read-only check of the reported Audenian Valius alias target
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, sys
+          sys.path.insert(0,'packaging/korean/tooling')
+          from audit_kr12_fighters_topic_candidates import package, dialogue, sidecar
+          data=package('/tmp/issue42-published.zip')
+          expected='c0cb2f5702da067e11820e5a11ffb4b758ea28e101779fc43a721072783ed253'
+          sha=hashlib.sha256(data['esp']).hexdigest()
+          print('ESP_SHA',sha,'VERIFIED',sha==expected)
+          if sha != expected: raise SystemExit('Unexpected source')
+          topics, infos=dialogue(data['esp'])
+          aliases=sidecar(data['top'])
+          words=['아우데니안 발리우스','마법부여사 아우데니안 발리우스','마법부여사 아우데니안','자물쇠 따개','자물쇠따개']
+          for word in words:
+              print('TARGET',json.dumps({'name':word,'is_DIAL':word in topics,'TOP_alias':aliases.get(word),'MRK_keyword':sidecar(data['mrk']).get(word)},ensure_ascii=False))
+          for key,value in sorted(aliases.items()):
+              if '아우데니안' in key:
+                  print('RELATED_ALIAS',json.dumps({'label':key,'target':value,'target_exists':value in topics},ensure_ascii=False))
+          for row in infos:
+              text=row['text']
+              if any('@'+word+'#' in text for word in words) or ('아우데니안 발리우스' in text):
+                  print('INFO',json.dumps({'parent':row['parent'],'INAM':row['info'],'actor':row['actor'],'text':text[:900]},ensure_ascii=False))
+          PY
+
+      - name: Verify source-locked alias patch regression and emit candidate sidecar
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s packaging/korean/tooling -p 'test_issue42_audenian_alias.py' -v
+          python3 packaging/korean/tooling/patch_issue42_audenian_alias.py \
+            --source-zip /tmp/issue42-published.zip \
+            --output-top qa/Morrowind_Korean_ReTranslation.top \
+            --report qa/issue42-audenian-alias-qa.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-Audenian-alias-DATA-ONLY-candidate-NOT-RELEASED
+          path: |
+            qa/Morrowind_Korean_ReTranslation.top
+            qa/issue42-audenian-alias-qa.json
+          if-no-files-found: error
+
+
+  published-explicit-markup-candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify published 0.51.0 KR12.3.1 source package
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.3.1/Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip' \
+            -o /tmp/issue42-published.zip
+          unzip -tq /tmp/issue42-published.zip
+      - name: Test safe selective INFO.NAME rewrite
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s packaging/korean/tooling -p 'test_issue42_explicit_markup.py' -v
+          python3 packaging/korean/tooling/patch_issue42_explicit_markup.py \
+            --source-zip /tmp/issue42-published.zip \
+            --output-esp qa/Morrowind_Korean_ReTranslation.esp \
+            --report qa/issue42-explicit-markup-physical-QA.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-79-explicit-markup-fixes-ESP-candidate-NOT-RELEASED
+          path: |
+            qa/Morrowind_Korean_ReTranslation.esp
+            qa/issue42-explicit-markup-physical-QA.json
+          if-no-files-found: error
+
+  published-corpus-source-anchored-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download pinned released ESP and original public issue 42 CSV Gist
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.3.1/Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip' \
+            --output /tmp/issue42-published.zip
+          unzip -tq /tmp/issue42-published.zip
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://api.github.com/gists/36892c800dad56c657b418d0b42956f2' \
+            --output /tmp/issue42-gist.json
+      - name: Source-anchor all 426+71 records; inspect translated script AddTopic; never mutate game data
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/audit_issue42_reported_candidates.py
+          python3 packaging/korean/tooling/audit_issue42_reported_candidates.py \
+            --zip /tmp/issue42-published.zip \
+            --gist /tmp/issue42-gist.json \
+            --output qa/issue42-published-source-anchored-review.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-source-anchored-426-links-71-topics-READONLY
+          path: qa/issue42-published-source-anchored-review.json
+          if-no-files-found: error

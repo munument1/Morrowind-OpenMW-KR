@@ -1,0 +1,164 @@
+name: Promote KR12.4 Windows from source-identical tested 0.51.0 executable
+
+on:
+  push:
+    branches:
+      - fix/issue42-korean-predicate-topic-boundaries-20261031
+    paths:
+      - .github/workflows/promote-kr12-4-tested-windows.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: kr124-verified-prebuilt-promotion
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  RELEASE_TAG: openmw-0.51.0-kr12.4
+  PREVIOUS_RUN: '41180513164'
+  PREVIOUS_HEAD: '72c38a6b66a83fa2242c5b8ed4730a8e01108cb6'
+  PREVIOUS_BUILD_REF: '89607890512632e5d30d0fddea53e64a673870c1'
+  PREVIOUS_ARTIFACT: korean-runtime-executable-89607890512632e5d30d0fddea53e64a673870c1
+  PREVIOUS_EXE_SHA256: '8e7073837146e4a8bcf064ccbf8627bbbc475dc09069f245b7acc6cb75a3878d'
+  OLD_TAG: openmw-0.51.0-kr12.3.1
+  OLD_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip
+  NEW_ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require unique release tag and checked source provenance
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "::error::KR12.4 already published; refuse overwrite"
+            exit 1
+          fi
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$PREVIOUS_RUN" > /tmp/previous-run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$PREVIOUS_RUN/jobs?per_page=100" > /tmp/previous-jobs.json
+          gh api "repos/$GITHUB_REPOSITORY/contents/korean/patches?ref=$PREVIOUS_BUILD_REF" > /tmp/previous-patches.json
+          gh api "repos/$GITHUB_REPOSITORY/contents/korean/patches?ref=$GITHUB_SHA" > /tmp/current-patches.json
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          run=json.loads(Path('/tmp/previous-run.json').read_text())
+          assert run['id']==int(os.environ['PREVIOUS_RUN'])
+          assert run['head_sha']==os.environ['PREVIOUS_HEAD']
+          assert run['conclusion']=='success'
+          jobs=json.loads(Path('/tmp/previous-jobs.json').read_text())['jobs']
+          native=[j for j in jobs if j['name']=='build-windows-kr9 / windows-2022']
+          assert len(native)==1 and native[0]['conclusion']=='success'
+          steps={s['name']:s['conclusion'] for s in native[0]['steps']}
+          for name in ['Apply Korean runtime patchset and assets','Build OpenMW','Store Korean runtime executable','Run components tests','Run OpenMW tests']:
+              assert steps[name]=='success',f'{name} not successful: {steps.get(name)}'
+          prev=json.loads(Path('/tmp/previous-patches.json').read_text())
+          current=json.loads(Path('/tmp/current-patches.json').read_text())
+          ordered=lambda xs:sorted((x['name'],x['sha']) for x in xs)
+          assert len(prev)==len(current)==16
+          assert ordered(prev)==ordered(current),'Native patchset changed since tested build'
+          assert '0016-korean-predicative-topic-boundaries.patch' in {x['name'] for x in current}
+          print('PASS: previous Windows build and full tests successful; all 16 Korean native patches byte-identical')
+          PY
+      - name: Verify upstream source pin and native regression
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/package_kr12_4_windows.py
+          python3 -m unittest discover -s packaging/korean/tooling -p 'test_issue42_explicit_markup.py' -v
+          python3 -m unittest discover -s packaging/korean/tooling -p 'test_issue42_audenian_alias.py' -v
+          g++ -std=c++20 -O2 -I. \
+            packaging/korean/tooling/verify-issue42-topic-endings.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/issue42
+          /tmp/issue42
+      - name: Download proven native executable from successful Windows job
+        run: |
+          set -euo pipefail
+          mkdir -p engine source output
+          gh run download "$PREVIOUS_RUN" --repo "$GITHUB_REPOSITORY" \
+            --name "$PREVIOUS_ARTIFACT" --dir engine
+          test -f engine/openmw.exe
+          echo "$PREVIOUS_EXE_SHA256  engine/openmw.exe" | sha256sum -c -
+          test "$(od -An -tx1 -N2 engine/openmw.exe | tr -d ' \n')" = '4d5a'
+      - name: Download immutable KR12.3.1 baseline
+        run: |
+          set -euo pipefail
+          gh release download "$OLD_TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "$OLD_ZIP" --pattern "$OLD_ZIP.sha256" --dir source
+          (cd source && sha256sum -c "$OLD_ZIP.sha256")
+      - name: Assemble final KR12.4 installer + engine + data
+        run: |
+          set -euo pipefail
+          python3 packaging/korean/tooling/package_kr12_4_windows.py \
+            --baseline "source/$OLD_ZIP" \
+            --engine engine/openmw.exe \
+            --manifest packaging/korean/tooling/issue42_original_english_12_quest_link_manifest.json \
+            --output "output/$NEW_ZIP" \
+            --report output/KR12.4-Windows-release-verification.json
+          unzip -tq "output/$NEW_ZIP"
+          (cd output && sha256sum -c "$NEW_ZIP.sha256")
+          python3 - <<'PY'
+          import json,os
+          a=json.load(open('output/KR12.4-Windows-release-verification.json'))
+          assert a['compiled_windows_exe_sha256']==os.environ['PREVIOUS_EXE_SHA256']
+          assert a['changed_INFO_NAME_count']==91 and a['changed_TOP_aliases']==3
+          assert a['patched_esp_sha256']=='2276384ad93fd3e56bc0d401aacc45418ba38993ee798e0e1a7e09564a375d3a'
+          assert a['patched_top_sha256']=='0516f17495afbdf5e3712d40aad9f11dc314edc7bd75ef33c9a8018b5fc60b16'
+          assert a['zip_crc_integrity']=='PASS'
+          assert a['all_other_TES3_fields_byte_identical'] and a['all_displayed_Korean_unchanged']
+          assert not a['live_gameplay_verified'] and not a['android_build_included']
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KR12.4-Windows-Cumulative-Verified-Release
+          path: |
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip
+            output/Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip.sha256
+            output/KR12.4-Windows-release-verification.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publish full Windows KR12.4 GitHub release
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "::error::KR12.4 appeared concurrently, refusing duplicate"
+            exit 1
+          fi
+          cat > /tmp/release-notes.md <<'EOF'
+          ## OpenMW 0.51.0 한국어 KR12.4 — Windows x64
+
+          기존 KR12.3.1의 **누적 통합 업데이트**입니다. 이슈 #42 전용 패치를 따로 설치하지 않습니다.
+
+          - 한국어 토픽의 동사 어미·서술격·호격 자동 탐색 엔진 보완 (OpenMW 0.51.0 + 한국어 패치 0001–0016).
+          - 원본 영어 대사와 같은 INFO ID를 비교해 퀘스트 토픽 명시 링크 12건 복구.
+          - 잘못 끊어진 명시 링크 79건 교정(설원곰·설원늑대 포함).
+          - 아우데니안 발리우스 TOP 별칭 연결 3건 수정.
+          - 기존 설치기(Install-Korean.bat)·그 밖의 한국어 번역 파일·퀘스트 조건·스크립트 유지.
+
+          **검증:** 공식 KR12.3.1 ESP/TOP 고정 SHA, 91개 INFO.NAME과 TOP 3개만 변경, 다른 TES3 필드/표시 한국어 불변, ZIP CRC, 실제 OpenMW KeywordSearch 회귀 검사 통과. Windows 실행 파일은 같은 네이티브 패치 16개를 사용해 빌드되고 컴포넌트·OpenMW 테스트를 모두 통과한 CI 실행 41180513164의 검증된 바이너리(별도 SHA 검증)를 재사용했습니다. 해당 바이너리의 기반 소스는 공식 OpenMW 0.51.0 입니다.
+
+          **미검증:** 게임 내 모든 NPC의 토픽 습득/퀘스트 단계는 플레이 테스트를 하지 않았습니다. 219줄/51토픽이 모두 수정됐다는 의미는 아닙니다. 문의 및 제보는 이슈 #42를 사용해 주세요.
+
+          **설치:** ZIP을 해제하고 기존처럼 Install-Korean.bat을 실행하세요. 기존 설정·세이브·게임 폴더를 백업해 두세요. 정품 Morrowind 데이터가 필요합니다.
+
+          **플랫폼:** Windows x64. Android APK는 포함되지 않으며 별도 빌드 대상입니다.
+          EOF
+          gh release create "$RELEASE_TAG" \
+            "output/$NEW_ZIP" "output/$NEW_ZIP.sha256" \
+            "output/KR12.4-Windows-release-verification.json" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title 'OpenMW 0.51.0 한국어 KR12.4 — 대화 토픽 개선 (Windows x64)' \
+            --notes-file /tmp/release-notes.md \
+            --target "$GITHUB_SHA" --latest

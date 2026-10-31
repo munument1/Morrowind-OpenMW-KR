@@ -54,6 +54,8 @@ jobs:
           set -euo pipefail
           git config core.autocrlf false
           # New regression fix must be removed before checking older patches.
+          git apply --reverse --check korean/patches/0016-korean-predicative-topic-boundaries.patch
+          git apply --reverse korean/patches/0016-korean-predicative-topic-boundaries.patch
           git apply --reverse --check korean/patches/0015-korean-contextual-noun-topic-endings.patch
           git apply --reverse korean/patches/0015-korean-contextual-noun-topic-endings.patch
           git apply --reverse --check korean/patches/0014-korean-quotative-topic-boundaries.patch
@@ -89,6 +91,7 @@ jobs:
           git apply korean/patches/0013-korean-spell-duration-order.patch
           git apply korean/patches/0014-korean-quotative-topic-boundaries.patch
           git apply korean/patches/0015-korean-contextual-noun-topic-endings.patch
+          git apply korean/patches/0016-korean-predicative-topic-boundaries.patch
           test -s korean/patches/0005-video-subtitles.patch
 
       - name: Verify Korean runtime invariants
@@ -132,6 +135,17 @@ jobs:
             -o /tmp/verify-journal-links
           python3 packaging/korean/tooling/test_journal_links.py /tmp/verify-journal-links
           python3 packaging/korean/tooling/test_kr12_topic_links.py /tmp/verify-journal-links
+          g++ -std=c++20 -O2 -I. \
+            packaging/korean/tooling/verify-issue42-topic-endings.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/verify-issue42
+          /tmp/verify-issue42
           python3 packaging/korean/tooling/audit_topic_collisions.py --self-test
 
       - name: Verify Korean journal index groups

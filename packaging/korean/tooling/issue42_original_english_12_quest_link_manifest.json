@@ -1,0 +1,96 @@
+{
+  "status": "DATA_ONLY_CANDIDATE_NOT_RELEASED_NO_GAMEPLAY_QA",
+  "baseline_esp_sha256": "c0cb2f5702da067e11820e5a11ffb4b758ea28e101779fc43a721072783ed253",
+  "original_english_master_sha256": {
+    "Morrowind.esm": "5c3c8c2cbd20e25901b59b3ece33d36b7ef0e3d60ad8d11828bcc61a5ead1647",
+    "Tribunal.esm": "2ace511f23cc2a9ddd5f3aa59c7919789b9378cf4b17c8ae3375dd6b782f3f2b",
+    "Bloodmoon.esm": "bd27090d0e6ad4c1bf1abc83f1a2dac56fcc82cae7bfe8263c413fb301801357"
+  },
+  "candidate_12_esp_sha256": "4a34f168bb234e760a0c7fb3ed622e820153b6b2216f26027ee5751762715032",
+  "candidate_combined_91_esp_sha256": "2276384ad93fd3e56bc0d401aacc45418ba38993ee798e0e1a7e09564a375d3a",
+  "data_only_candidate_info_rows_total": 91,
+  "top_alias_rows_total": 3,
+  "verified_source_english_literal_keyword": true,
+  "gameplay_verified": false,
+  "release_approved": false,
+  "cases": [
+    {
+      "INFO": "26689110631261324944",
+      "target": "제국 교단에 가입",
+      "source_phrase": "제국 교단에 가입하는",
+      "candidate_markup": "@제국 교단에 가입#하는"
+    },
+    {
+      "INFO": "24205752258151922",
+      "target": "제국 교단에 가입",
+      "source_phrase": "제국 교단에 가입하시겠습니까",
+      "candidate_markup": "@제국 교단에 가입#하시겠습니까"
+    },
+    {
+      "INFO": "2569266611020420362",
+      "target": "공작원으로 승진",
+      "source_phrase": "공작원으로 승진시키는",
+      "candidate_markup": "@공작원으로 승진#시키는"
+    },
+    {
+      "INFO": "713021754425128647",
+      "target": "레도란 가문에 가입",
+      "source_phrase": "레도란 가문에 가입해야",
+      "candidate_markup": "@레도란 가문에 가입#해야"
+    },
+    {
+      "INFO": "210385542530924589",
+      "target": "레도란 가문에 가입",
+      "source_phrase": "레도란 가문에 가입하지",
+      "candidate_markup": "@레도란 가문에 가입#하지"
+    },
+    {
+      "INFO": "685137928821210",
+      "target": "모락 통에 가입",
+      "source_phrase": "모락 통에 가입할",
+      "candidate_markup": "@모락 통에 가입#할"
+    },
+    {
+      "INFO": "15871201801537426826",
+      "target": "모락 통에 가입",
+      "source_phrase": "모락 통에 가입할",
+      "candidate_markup": "@모락 통에 가입#할"
+    },
+    {
+      "INFO": "159522145792925173",
+      "target": "모락 통에 가입",
+      "source_phrase": "모락 통에 가입하기로",
+      "candidate_markup": "@모락 통에 가입#하기로"
+    },
+    {
+      "INFO": "29712284933271723190",
+      "target": "모락 통에 가입",
+      "source_phrase": "모락 통에 가입할",
+      "candidate_markup": "@모락 통에 가입#할"
+    },
+    {
+      "INFO": "19294183501106417663",
+      "target": "제국 군단에 입대",
+      "source_phrase": "제국 군단에 입대하러",
+      "candidate_markup": "@제국 군단에 입대#하러"
+    },
+    {
+      "INFO": "2572521291321832207",
+      "target": "카이우스 코사데스에게 보고",
+      "source_phrase": "카이우스 코사데스에게 보고하라",
+      "candidate_markup": "@카이우스 코사데스에게 보고#하라"
+    },
+    {
+      "INFO": "22806201441497819089",
+      "target": "카이우스 코사데스에게 보고",
+      "source_phrase": "카이우스 코사데스에게 보고하라",
+      "candidate_markup": "@카이우스 코사데스에게 보고#하라"
+    }
+  ],
+  "limitations": [
+    "Original English topic keyword present in identical INFO; not proof of runtime clickability.",
+    "Standalone, not-for-release candidate was generated and independently checked outside the repo.",
+    "No proprietary English ESM files or their full texts are committed.",
+    "No save, original game master, Android APK or published package modified."
+  ]
+}

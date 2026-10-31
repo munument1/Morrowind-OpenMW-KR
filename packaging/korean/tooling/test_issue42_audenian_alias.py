@@ -15,7 +15,7 @@ class AudenianAliasTest(unittest.TestCase):
         original = self.fixture()
         patched, changed = patch_aliases(original, {DESTINATION})
         self.assertEqual(len(changed), 3)
-        self.assertEqual(patched.count(DESTINATION.encode()), 3)
+        self.assertEqual(patched.count(("\t" + DESTINATION).encode()), 3)
         self.assertTrue(patched.startswith(b"\xef\xbb\xbf"))
         self.assertEqual(patched.count(b"\r\n"), original.count(b"\r\n"))
         self.assertIn("유지할 토픽\t마법부여".encode(), patched)

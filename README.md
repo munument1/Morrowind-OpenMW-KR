@@ -9,9 +9,9 @@
 | 플랫폼 | 최신 정식판 | 다운로드 | 설치 파일 |
 | --- | --- | --- | --- |
 | Windows x64 | **OpenMW 0.51.0 KR12.3.1** | [Windows KR12.3.1](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.3.1) | `Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip` |
-| Android ARM64 | **OpenMW Android 0.51.0-12 KR12.1** | [Android KR12.1](https://github.com/munument1/Morrowind-OpenMW-Android-KR/releases/tag/android-korean-0.51.0-12-kr12.1-permanent) | APK와 한국어 데이터 ZIP **모두 필요** |
+| Android ARM64 | **OpenMW Android 0.51.0-12 KR12.2** | [Android KR12.2](https://github.com/munument1/Morrowind-OpenMW-Android-KR/releases/tag/android-korean-0.51.0-12-kr12.2-permanent) | APK와 한국어 데이터 ZIP **모두 필요** |
 
-**중요:** Windows KR12.3.1에 포함된 최신 퀘스트 토픽 수정은 Android KR12.1에 아직 이식·배포되지 않았습니다. Android APK/데이터를 Windows ZIP으로 덮어쓰면 안 됩니다.
+**플랫폼별 배포:** Android KR12.2에는 Windows KR12.3.x의 한국어 토픽/퀘스트 링크 수정이 이식되었습니다. APK와 데이터 ZIP을 함께 사용하세요. Windows ZIP/실행 파일은 Android용이 아닙니다.
 
 ## Windows KR12.3.1의 변경 사항
 
@@ -37,15 +37,15 @@ Windows 패키지는 한국어 지원 엔진(`openmw.exe`), `ESP/CEL/MRK/TOP/JRN
 
 ## Android 설치 및 Windows와의 차이
 
-Android는 **[별도 저장소](https://github.com/munument1/Morrowind-OpenMW-Android-KR)**에서 배포합니다. 현재 정식판 KR12.1의 APK(`OpenMW-Android-0.51.0-12-Korean-KR12.1-Permanent-16K.apk`)와 데이터 ZIP(`OpenMW-Android-0.51.0-12-Korean-Data-KR12.1.zip`)을 **한 세트로** 받아야 합니다.
+Android는 **[별도 저장소](https://github.com/munument1/Morrowind-OpenMW-Android-KR)**에서 배포합니다. 현재 정식판 KR12.2의 APK(`OpenMW-Android-0.51.0-12-Korean-KR12.2-Permanent-16K.apk`)와 데이터 ZIP(`OpenMW-Android-0.51.0-12-Korean-Data-KR12.2.zip`)을 **한 세트로** 받아야 합니다.
 
 1. 이전 Android 앱을 삭제하기 전에 사용자 설정과 세이브를 백업합니다.
-2. KR12.1 서명 APK를 설치하고 정품 Morrowind 게임 데이터를 설정합니다.
+2. KR12.2 서명 APK를 설치하고 정품 Morrowind 게임 데이터를 설정합니다.
 3. 한국어 데이터 ZIP의 `Morrowind_Korean_ReTranslation` 폴더를 데이터 경로에 추가하고, 한국어 ESP를 마스터 파일 뒤에 활성화합니다.
 
-KR12.1은 이전 Android KR12 기능에 더해 마법 효과의 **빛·지속·적용** 표시, 드로'사카르 대화 연결, Siege at Firemoth 내부 지명 표기를 보완했습니다. 앱 식별자는 `com.ast.openmw.korean`, versionCode는 `5115`입니다. KR8/초기 KR9는 서로 다른 앱 식별자이므로 세이브는 자동 이전되지 않습니다. 네이티브 빌드·서명·16 KiB 정렬 검사 결과는 있지만 **Android 실기기 전체 플레이는 아직 미검증**입니다.
+KR12.2는 KR12.1의 마법 효과 **빛·지속·적용**, 드로'사카르 대화, Siege at Firemoth 지명 표기를 유지하며 한국어 토픽 경계 및 퀘스트 대사 링크 4건을 추가로 수정했습니다. 앱 식별자는 `com.ast.openmw.korean`, versionCode는 `5116`입니다. KR8/초기 KR9는 서로 다른 앱 식별자이므로 세이브는 자동 이전되지 않습니다. 네이티브 빌드·서명·16 KiB 정렬 검사 결과는 있지만 **Android 실기기 전체 플레이는 아직 미검증**입니다.
 
-Windows에서 추가로 수정한 한국어 토픽 경계 판정(C++ 엔진)과 퀘스트 대사 교정(번역 ESP)은 Android에서 각각 **네이티브 APK 재빌드** 및 **데이터 ZIP 갱신** 대상입니다. Android용 후속 검증판이 공개되기 전까지 KR12.1을 최신 정식판으로 안내합니다.
+Android KR12.2의 네이티브 APK 및 번역 데이터 ZIP은 빌드·서명·해시·16KiB·대사 레코드 검증을 통과했습니다. 다만 Android 실기기에서 퀘스트 전체 진행은 아직 검증되지 않았습니다.
 
 ## 개발·검증 자료
 

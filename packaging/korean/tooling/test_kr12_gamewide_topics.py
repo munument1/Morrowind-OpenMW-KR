@@ -11,6 +11,7 @@ import audit_kr12_gamewide_topics as audit
 CPP = '''
 constexpr std::string_view endings[] = { "이라는", "라는", "을", "들" };
 constexpr std::string_view extendedSuffixes[] = { "입니다", "에서만" };
+constexpr std::string_view contextualNounEndings[] = { "와의", "과의", "인", "이자", "임을", "였어" };
 '''
 
 class FullCorpusAuditTest(unittest.TestCase):
@@ -21,6 +22,12 @@ class FullCorpusAuditTest(unittest.TestCase):
         self.assertEqual(result["topic_count"],1)
         self.assertEqual(result["additional_missing_suffix_candidates"],1)
         self.assertEqual(result["top_unhandled_suffixes"][0], ("라서", 1))
+
+    def test_existing_long_noun_suffixes_are_counted_as_covered(self):
+        data=make_data("바스와의 일과 바스이자 성지.")
+        result=audit.inspect(data,CPP)
+        self.assertEqual(result["additional_missing_suffix_candidates"],0)
+        self.assertGreaterEqual(result["existing_accepted_suffix_matches"],2)
 
     def test_explicit_links_do_not_count(self):
         data=make_data("@바스#라서 간다.")

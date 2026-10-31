@@ -21,13 +21,17 @@ RE_TAG = re.compile(r"@[^@#]*#")
 def read_cpp_endings(source):
     """Extract the actual runtime allowlists, rather than hardcode guesses."""
     endings = set()
-    for declaration in ("endings", "extendedSuffixes"):
+    contextual = set()
+    for declaration in ("endings", "extendedSuffixes", "contextualNounEndings"):
         pattern = r"constexpr std::string_view " + declaration + r"\[\] = \{(.*?)\};"
         match = re.search(pattern, source, re.S)
         if match is None:
             raise ValueError("runtime missing suffix table: " + declaration)
-        endings.update(RE_QUOTED.findall(match.group(1)))
-    return endings
+        if declaration == "contextualNounEndings":
+            contextual.update(RE_QUOTED.findall(match.group(1)))
+        else:
+            endings.update(RE_QUOTED.findall(match.group(1)))
+    return endings, contextual
 
 
 def raw_sidecar(data):
@@ -78,7 +82,7 @@ def inspect(data, cpp_source, limit=500):
     for key in reverse:
         reverse[key].sort(key=lambda t: -len(t[0]))
 
-    permitted = read_cpp_endings(cpp_source)
+    permitted, contextual = read_cpp_endings(cpp_source)
     source_groups, unhandled, covered = Counter(), [], Counter()
     missing_by_suffix, missing_by_topic, missing_by_actor, missing_by_parent = Counter(), Counter(), Counter(), Counter()
     covered_by_suffix = Counter()
@@ -110,7 +114,8 @@ def inspect(data, cpp_source, limit=500):
             tail = RE_HANGUL.match(text, end).group()
             if not tail:
                 continue
-            if tail in permitted or (tail.startswith("들") and tail[1:] in permitted):
+            if (tail in permitted or (len(keyword) >= 2 and tail in contextual)
+                    or (tail.startswith("들") and tail[1:] in permitted)):
                 covered[topic] += 1
                 covered_by_suffix[tail] += 1
                 continue
@@ -150,6 +155,7 @@ def inspect(data, cpp_source, limit=500):
         "topic_count":len(topics),
         "info_count":len(infos),
         "allowed_suffix_count":len(permitted),
+        "contextual_noun_suffix_count":len(contextual),
         "existing_accepted_suffix_matches":sum(covered.values()),
         "additional_missing_suffix_candidates":sum(missing_by_suffix.values()),
         "missing_by_record_kind":dict(source_groups),

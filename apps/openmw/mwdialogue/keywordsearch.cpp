@@ -120,6 +120,16 @@ namespace
         if (isEnding(suffix))
             return true;
 
+        // Common Korean predicate/relationship endings, but only for longer noun
+        // topics: the single-syllable "말" inside "말인" is too ambiguous.
+        constexpr std::string_view contextualNounEndings[] = {
+            "와의", "과의", "인", "이자", "임을", "였어"
+        };
+        if (keyword.size() >= 6
+            && std::find(std::begin(contextualNounEndings), std::end(contextualNounEndings), suffix)
+                != std::end(contextualNounEndings))
+            return true;
+
         // Plural nouns take case particles too: "블레이드 교관들에", "길드원들에게".
         // Keep the longest noun topic rather than falling back to a short prefix.
         return suffix.starts_with("들") && suffix.size() > std::string_view("들").size()

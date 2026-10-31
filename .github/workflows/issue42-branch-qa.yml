@@ -12,6 +12,8 @@ on:
       - packaging/korean/tooling/patch_issue42_audenian_alias.py
       - packaging/korean/tooling/test_issue42_audenian_alias.py
       - packaging/korean/tooling/audit_issue42_reported_candidates.py
+      - packaging/korean/tooling/patch_issue42_explicit_markup.py
+      - packaging/korean/tooling/test_issue42_explicit_markup.py
       - .github/workflows/issue42-branch-qa.yml
   workflow_dispatch:
 
@@ -150,6 +152,34 @@ jobs:
             qa/issue42-audenian-alias-qa.json
           if-no-files-found: error
 
+
+  published-explicit-markup-candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify published 0.51.0 KR12.3.1 source package
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.3.1/Morrowind-Korean-OpenMW-0.51.0-KR12.3.1-Full.zip' \
+            -o /tmp/issue42-published.zip
+          unzip -tq /tmp/issue42-published.zip
+      - name: Test safe selective INFO.NAME rewrite
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s packaging/korean/tooling -p 'test_issue42_explicit_markup.py' -v
+          python3 packaging/korean/tooling/patch_issue42_explicit_markup.py \
+            --source-zip /tmp/issue42-published.zip \
+            --output-esp qa/Morrowind_Korean_ReTranslation.esp \
+            --report qa/issue42-explicit-markup-physical-QA.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-79-explicit-markup-fixes-ESP-candidate-NOT-RELEASED
+          path: |
+            qa/Morrowind_Korean_ReTranslation.esp
+            qa/issue42-explicit-markup-physical-QA.json
+          if-no-files-found: error
 
   published-corpus-source-anchored-review:
     runs-on: ubuntu-24.04

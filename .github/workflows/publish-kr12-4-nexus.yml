@@ -109,8 +109,7 @@ jobs:
           archive_existing_version: true
           primary_mod_manager_download: true
           update_mod_version: true
-          mod_id: '60496'
-          changelog: 'KR12.4: 91 dialogue INFO link fixes, 3 corrected topic aliases, OpenMW 0.51.0 Korean predicate/verb topic boundary engine improvements. Automated QA passed; in-game quest QA and Android remain pending.'
+          # Changelog is reconciled using the canonical Nexus mod UID, not game-scoped 60496.
       - name: Confirm Nexus has KR12.4 in the correct Windows file group
         run: |
           set -euo pipefail

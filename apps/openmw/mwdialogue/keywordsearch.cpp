@@ -133,7 +133,7 @@ namespace
         // A few translated topic keywords themselves end in a conjugated verb
         // stem ("...하겠", "...이끈다"). Treat their attested following
         // endings as verbal grammar, not noun particles (issue #42).
-        constexpr std::string_view futureVerbEndings[] = { "소", "네", "다면", "습니다" };
+        constexpr std::string_view futureVerbEndings[] = { "소", "네", "다면", "습니다", "다고", "어요", "다" };
         if (keyword.size() >= 6 && keyword.ends_with("겠")
             && std::find(std::begin(futureVerbEndings), std::end(futureVerbEndings), suffix)
                 != std::end(futureVerbEndings))

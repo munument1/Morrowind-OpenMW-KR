@@ -1,0 +1,67 @@
+diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/keywordsearch.cpp
+--- a/apps/openmw/mwdialogue/keywordsearch.cpp
++++ b/apps/openmw/mwdialogue/keywordsearch.cpp
+@@ -39,7 +39,8 @@
+         constexpr std::string_view endings[] = {
+             "은", "는", "이", "가", "을", "를", "의", "에", "에서", "에게", "께", "께서", "께서는",
+             "한테", "한테서", "로", "으로", "와", "과", "랑", "이랑", "하고", "도", "만",
++            "라는", "이라는", "란", "이란",
+             "까지", "부터", "조차", "마저", "처럼", "같이", "보다", "밖에", "라도",
+             "이라도", "나", "이나", "든", "이든", "든지", "이든지", "라고", "이라고",
+             "이라", "이라면", "에서부터", "에게서", "에는", "에서는", "에게는",
+             "에게도", "으로는", "로는", "들의", "들은", "들을", "들이", "들과", "들"
+@@ -111,7 +112,12 @@
+                 || std::find(std::begin(extendedSuffixes), std::end(extendedSuffixes), ending)
+                     != std::end(extendedSuffixes);
+         };
++        // Short topic nouns such as "말" also occur inside the verb "말라는"
++        // ("do not..."); avoid introducing false links for one-syllable topics.
++        if (keyword.size() == 3
++            && (suffix == "라는" || suffix == "이라는" || suffix == "란" || suffix == "이란"))
++            return false;
+         if (isEnding(suffix))
+             return true;
+ 
+         // Plural nouns take case particles too: "블레이드 교관들에", "길드원들에게".
+diff --git a/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp b/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+--- a/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
++++ b/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+@@ -372,7 +372,38 @@
+ }
+ 
+ 
++TEST_F(KeywordSearchTest, korean_quest_topic_quotative_particles)
++{
++    // Issue #40: Vas / Fighters Guild quest must discover topics in
++    // "바스라는" and "바스이라는" without reopening false mid-word links.
++    MWDialogue::KeywordSearch search;
++    Translation::Storage storage;
++    search.seed("바스", "vas");
++    search.seed("강령술사", "necromancer");
++    search.seed("드로'사카르", "dro'sakhar");
++    search.seed("일", "work");
++    search.seed("말", "speech");
++
++    const std::string source = "바스라는 강령술사 소굴. 강령술사라는 말. "
++                               "바스이란 지명. 바스란 이름. 드로'사카르라는 이름.";
++    const auto display = search.parseHyperText(source, storage);
++    ASSERT_EQ(display.size(), 5);
++    EXPECT_EQ(display[0].mTopicId, "vas");
++    EXPECT_EQ(display[1].mTopicId, "necromancer");
++    EXPECT_EQ(display[2].mTopicId, "vas");
++    EXPECT_EQ(display[3].mTopicId, "vas");
++    EXPECT_EQ(display[4].mTopicId, "dro'sakhar");
++
++    const auto discovery = search.parseHyperText(source, storage, true);
++    ASSERT_EQ(discovery.size(), 5);
++    for (const auto& match : discovery)
++        EXPECT_FALSE(match.mExplicit);
++
++    // Don't link an internal substring, or the generic single-syllable "일".
++    EXPECT_TRUE(search.parseHyperText("사바스라는 곳. 일이라는 명령. 하지 말라는 요청.", storage).empty());
++}
++
+ TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
+ {
+     MWDialogue::KeywordSearch search;
+     Translation::Storage storage;

@@ -53,6 +53,9 @@ int main()
             "풀어주시겠다면. 동행하겠습니다. 지혜가 나를 이끈다면.",
             { "nomination", "nomination", "freedom", "company", "wisdom" });
         expectHits(verbs, storage,
+            "풀어주시겠다고? 풀어주시겠어요? 동행하겠다.",
+            { "freedom", "freedom", "company" });
+        expectHits(verbs, storage,
             "마법사다. 발견했다. 말라. 행여. 지혜가 나를 이끈다면야.", {});
         std::cout << "PASS: issue #42 noun/verb topic suffixes, discovery and false-positive guards\n";
     }

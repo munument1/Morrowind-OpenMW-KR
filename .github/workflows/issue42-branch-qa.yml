@@ -60,3 +60,29 @@ jobs:
           grep -F 'futureVerbEndings' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
           grep -F 'zeroCodaNounEndings' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
           git -C upstream diff --check
+
+  reporter-gist-triage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Read issue 42 public CSV evidence (read-only; no game data writes)
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://api.github.com/gists/36892c800dad56c657b418d0b42956f2' \
+            --output /tmp/issue42-gist.json
+          python3 - <<'PY'
+          import csv, io, json
+          payload=json.load(open('/tmp/issue42-gist.json',encoding='utf-8'))
+          for name, file in sorted(payload.get('files',{}).items()):
+              print('FILE',name,'size',file.get('size'),'truncated',file.get('truncated'))
+              if not name.endswith('.csv'):
+                  continue
+              content=file.get('content') or ''
+              reader=csv.DictReader(io.StringIO(content))
+              rows=list(reader)
+              print('COLUMNS',reader.fieldnames,'ROWS',len(rows))
+              limit=75 if 'unlearnable' in name else 18
+              for i,row in enumerate(rows[:limit],1):
+                  print('ROW',i,json.dumps(row,ensure_ascii=False))
+          PY

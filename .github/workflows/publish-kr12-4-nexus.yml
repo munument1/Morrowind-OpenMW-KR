@@ -1,0 +1,87 @@
+name: Publish verified KR12.4 Windows release to Nexus Mods
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/publish-kr12-4-nexus.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-kr124-windows
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  TAG: openmw-0.51.0-kr12.4
+  ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip
+
+jobs:
+  verify-and-upload:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_FILE_ID: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify official GitHub KR12.4 release exists
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" > /tmp/kr124-release.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/kr124-release.json'))
+          assert r['tag_name']=='openmw-0.51.0-kr12.4' and not r['draft'] and not r['prerelease']
+          files={x['name']:x for x in r['assets']}
+          file=files['Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip']
+          assert file['digest']=='sha256:71fbbd1ae5506df4444fe47f31b29101f010a96fa5d73bb4b8699977cd211497'
+          assert file['size']>10000000
+          assert 'Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip.sha256' in files
+          assert 'KR12.4-Windows-release-verification.json' in files
+          PY
+      - name: Download published release files and verify SHA
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "$ZIP" --pattern "$ZIP.sha256" \
+            --pattern KR12.4-Windows-release-verification.json --dir dist
+          (cd dist && sha256sum -c "$ZIP.sha256")
+          unzip -tq "dist/$ZIP"
+          python3 - <<'PY'
+          import json
+          d=json.load(open('dist/KR12.4-Windows-release-verification.json'))
+          assert d['version']=='KR12.4'
+          assert d['changed_INFO_NAME_count']==91
+          assert d['changed_TOP_aliases']==3
+          assert d['zip_crc_integrity']=='PASS'
+          assert not d['live_gameplay_verified']
+          PY
+      - name: Check preconfigured Nexus credentials without exposing them
+        id: nexus
+        run: |
+          if [[ -n "$NEXUS_KEY" && "$NEXUS_FILE_ID" =~ ^[0-9]+$ ]]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo "::warning::Nexus upload skipped: no configured API secret or verified main file ID. GitHub KR12.4 remains available."
+          fi
+      - name: Upload same verified KR12.4 Windows ZIP to existing Nexus mod 60496
+        if: steps.nexus.outputs.ready == 'true'
+        uses: Nexus-Mods/upload-action@v1.0.0-beta.11
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ vars.NEXUS_OPENMW_MAIN_FILE_ID }}
+          filename: dist/Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip
+          version: 0.51.0-KR12.4
+          display_name: Morrowind Korean OpenMW 0.51.0-KR12.4 (Windows)
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+          mod_id: '60496'
+          changelog: 'KR12.4 cumulative Windows update: issue #42 Korean topic boundary rules, 91 verified dialogue hyperlink repairs and 3 corrected Audenian aliases. No separate patch needed. Automated tests passed; in-game quest QA and Android remain pending.'

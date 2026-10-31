@@ -90,7 +90,7 @@ def scan(data):
     by_tail = defaultdict(list)
     for topic in topics:
         keyword = mark.get(topic, topic)
-        if keyword and keyword != "일" and hangul(keyword[-1]):
+        if keyword and len(keyword) > 1 and keyword != "일" and hangul(keyword[-1]):
             by_tail[keyword[-1]].append((topic, keyword))
 
     findings, orphan = [], []

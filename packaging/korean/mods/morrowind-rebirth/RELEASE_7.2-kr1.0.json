@@ -1,0 +1,50 @@
+{
+  "schema": "morrowind_rebirth_korean_release_7_2_kr1_0",
+  "version": "7.2-kr1.0",
+  "source_mod_version": "7.2",
+  "translation_basis": "KR12 v56 final layout",
+  "engine_reference": "OpenMW 0.51.0 Korean KR12.4",
+  "nexus_mod_page": "https://www.nexusmods.com/morrowind/mods/60805",
+  "release_archive_filename": "Morrowind_Rebirth_7.2-kr1.0_OpenMW-KR12.4.zip",
+  "release_archive_sha256": "f336e6291e3079ac566b02c2ddf129bb1f34319f3c222b33490bdf74a583bfff",
+  "release_archive_bytes": 52978233,
+  "v56_archive_sha256": "8b07aec7d2400f22c60f9833d6339185a54acea687de9ed7f8a9c1030bf6d8f3",
+  "verified": {
+    "preserved_binary_plugin_files": 8,
+    "preserved_binary_topic_alias_files": 3,
+    "unchanged_game_settings_addon": 1,
+    "removed_untranslated_compatibility_plugins": 7,
+    "total_zip_entries": 14,
+    "original_v56_plugin_and_top_sha_identical": true,
+    "old_translation_content_modified": false,
+    "kr124_release_delta_owned_changes": 0,
+    "kr124_ingame_tested": false
+  },
+  "included_paths": [
+    "Data Files/Morrowind Rebirth [Main].ESP",
+    "Data Files/Morrowind Rebirth [Main].top",
+    "Alternate Version/Morrowind Rebirth [Main].ESP",
+    "Alternate Version/Morrowind Rebirth [Main].top",
+    "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+    "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+    "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+    "Data Files/Morrowind Rebirth - Mercenaries [Addon].top",
+    "Data Files/Morrowind Rebirth - Races [Addon].esp",
+    "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+    "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+    "README_KOREAN.txt",
+    "Documents/CHANGELOG_7.2-kr1.0.txt",
+    "Documents/7.2-kr1.0_RELEASE_QA.json"
+  ],
+  "omitted_compatibility_patch_paths": [
+    "Compability Patches/Julan Ashlander Companion 2.02 [For Rebirth].esp",
+    "Compability Patches/Julan Ashlander Companion 3.0 beta [For Rebirth].esp",
+    "Compability Patches/Morrowind Patch Project v1.6.6 [For Rebirth].esm",
+    "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+    "Compability Patches/Siege at Firemoth [For Rebirth].esp",
+    "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+    "Compability Patches/Uvirith's Legacy 3.53 [For Rebirth].esp"
+  ],
+  "binary_and_full_translation_data_in_public_git_repo": false,
+  "nexus_upload_status": "NOT_UPLOADED_BY_THIS_CHANGE"
+}

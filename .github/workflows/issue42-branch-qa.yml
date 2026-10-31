@@ -1,0 +1,62 @@
+name: Issue 42 Korean dialogue topic QA (branch-only)
+
+on:
+  push:
+    branches:
+      - fix/issue42-korean-predicate-topic-boundaries-20261031
+    paths:
+      - apps/openmw/mwdialogue/keywordsearch.cpp
+      - apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+      - korean/patches/**
+      - packaging/korean/tooling/verify-issue42-topic-endings.cpp
+      - .github/workflows/issue42-branch-qa.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-topic-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile real OpenMW KeywordSearch and run issue 42 smoke tests
+        run: |
+          set -euo pipefail
+          g++ -std=c++20 -O2 -I. \
+            packaging/korean/tooling/verify-issue42-topic-endings.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/verify-issue42
+          /tmp/verify-issue42
+
+  official-051-patch-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: OpenMW/openmw
+          ref: openmw-0.51.0
+          path: upstream
+          fetch-depth: 1
+      - name: Check official 0.51 source and apply every Korean patch in release order
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream rev-parse HEAD)" = f4bec41444214a7903bebd178389ca22ca13f646
+          grep -Fx 'set(OPENMW_VERSION_MINOR 51)' upstream/CMakeLists.txt
+          for patch in korean/patches/*.patch; do
+            echo "Validating $patch"
+            git -C upstream apply --check "../$patch"
+            git -C upstream apply "../$patch"
+          done
+          grep -F 'futureVerbEndings' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
+          grep -F 'zeroCodaNounEndings' upstream/apps/openmw/mwdialogue/keywordsearch.cpp
+          git -C upstream diff --check

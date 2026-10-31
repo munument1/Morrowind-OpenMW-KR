@@ -1,8 +1,10 @@
 # OpenMW 한국어판 Windows 설치 패키지
 
-이 디렉터리는 OpenMW 0.51.0 Korean Support의 Windows 설치기 구성 파일을 관리합니다.
+이 디렉터리는 공식 OpenMW 0.51.0 기반 Windows 설치기 구성 파일을 관리합니다.
 
-현재 Windows 정식 배포판은 [KR12.3.1](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.3.1)입니다. KR12.3의 한국어 퀘스트 토픽·대사 교정을 유지하며, 릴리스 설명 및 ZIP 내 `README-KOREAN.txt`의 UTF-8 한글 인코딩 오류를 바로잡았습니다. KR12.3.1에서 엔진 및 ESP 자체는 KR12.3 대비 변경되지 않았습니다. Android는 [별도 저장소의 KR12.2](https://github.com/munument1/Morrowind-OpenMW-Android-KR/releases/tag/android-korean-0.51.0-12-kr12.2-permanent)가 최신 정식판이며, Windows KR12.3.x의 한국어 토픽 경계·퀘스트 링크 수정이 Android용 APK/데이터 ZIP에 이식되어 있습니다.
+현재 Windows 정식 배포판은 [**KR12.4**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.4)입니다. 기존 KR12.3.1에서 한국어 토픽 경계 엔진 수정(패치 0016), 대사 명시 링크 91건, 토픽 TOP 별칭 3건을 누적 반영했습니다. 사용자에게 별도 이슈 전용 패치 설치를 요구하지 않습니다.
+
+Android는 [**영구 서명 APK KR12.2**](https://github.com/munument1/Morrowind-OpenMW-Android-KR/releases/tag/android-korean-0.51.0-12-kr12.2-permanent)와 [**한국어 데이터 KR12.4**](https://github.com/munument1/Morrowind-OpenMW-Android-KR/releases/tag/android-korean-0.51.0-12-kr12.4-data-only)를 함께 사용합니다. ESP/TOP 링크 수정은 반영됐지만 Android APK의 엔진 0016 패치는 아직 별도 빌드/검증이 필요하므로 두 플랫폼의 네이티브 동작이 완전히 같다고 주장하지 않습니다.
 
 ## 설치 흐름
 

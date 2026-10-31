@@ -1,4 +1,4 @@
-name: KR12.2 Fighters Guild topic audit (read-only)
+name: KR12.2 game-wide dialogue topic audit (read-only)
 
 on:
   pull_request:
@@ -7,6 +7,8 @@ on:
       - 'apps/openmw_tests/mwdialogue/testkeywordsearch.cpp'
       - 'packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py'
       - 'packaging/korean/tooling/test_kr12_fighters_topic_candidates.py'
+      - 'packaging/korean/tooling/audit_kr12_gamewide_topics.py'
+      - 'packaging/korean/tooling/test_kr12_gamewide_topics.py'
       - '.github/workflows/audit-kr12-fighters-guild.yml'
   workflow_dispatch:
 
@@ -24,7 +26,8 @@ jobs:
           python-version: '3.12'
       - name: Syntax and scanner regression checks
         run: |
-          python -m py_compile packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py
+          python -m py_compile packaging/korean/tooling/audit_kr12_fighters_topic_candidates.py packaging/korean/tooling/audit_kr12_gamewide_topics.py
+          python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_gamewide_topics.py' -v
           python -m unittest discover -s packaging/korean/tooling -p 'test_kr12_fighters_topic_candidates.py' -v
       - name: Download pinned official KR12.2 ZIP (never write game saves or masters)
         run: |
@@ -40,10 +43,20 @@ jobs:
             --output qa/kr12.2-fighters-topic-candidates.json \
             > qa-stdout.log
           cat qa-stdout.log
+      - name: Audit all factions, NPC dialogue, quests and journals
+        run: |
+          python packaging/korean/tooling/audit_kr12_gamewide_topics.py \
+            --zip KR12.2-Full.zip \
+            --cpp apps/openmw/mwdialogue/keywordsearch.cpp \
+            --output qa/kr12.2-gamewide-topic-audit.json \
+            > qa-global-stdout.log
+          cat qa-global-stdout.log
       - uses: actions/upload-artifact@v4
         with:
-          name: kr12-2-fighters-topic-audit
+          name: kr12-2-gamewide-topic-audit
           path: |
             qa/kr12.2-fighters-topic-candidates.json
+            qa/kr12.2-gamewide-topic-audit.json
             qa-stdout.log
+            qa-global-stdout.log
           if-no-files-found: error

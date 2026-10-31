@@ -17,6 +17,11 @@ permissions:
   contents: read
   pull-requests: write
 
+# The fork's master currently tracks OpenMW 0.52.0. Never use that source
+# for Korean 0.51.0 releases: pin the official upstream release commit.
+env:
+  OPENMW_051_SOURCE_COMMIT: f4bec41444214a7903bebd178389ca22ca13f646
+
 jobs:
   stable-source-check:
     runs-on: ubuntu-24.04
@@ -39,14 +44,24 @@ jobs:
           set -o pipefail
           {
           set -e
-          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          source_commit="$(git rev-parse HEAD)"
+          test "$source_commit" = "$OPENMW_051_SOURCE_COMMIT"
+          grep -Fx 'set(OPENMW_VERSION_MAJOR 0)' CMakeLists.txt
+          grep -Fx 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          grep -Fx 'set(OPENMW_VERSION_RELEASE 0)' CMakeLists.txt
+          if grep -Fq 'set(OPENMW_VERSION_MINOR 52)' CMakeLists.txt; then
+            echo "::error::OpenMW 0.52.0 source is forbidden for KR12.2"
+            exit 1
+          fi
+          echo "Verified official OpenMW 0.51.0 source: $source_commit" | tee -a "$GITHUB_STEP_SUMMARY"
           for patch in _korean_port/korean/patches/*.patch; do
             echo "::group::Applying $(basename "$patch")"
             git apply --check "$patch"
             git apply "$patch"
             echo "::endgroup::"
           done
-          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          test "$(git rev-parse HEAD)" = "$OPENMW_051_SOURCE_COMMIT"
+          grep -Fx 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
           git diff --check
           } 2>&1 | tee stable-patch-check.log
       - name: Record incompatible patch details on draft PR
@@ -64,7 +79,9 @@ jobs:
             tail -n 55 stable-patch-check.log 2>/dev/null || true
             echo '```'
           } > stable-port-diagnostic.md
-          gh pr comment 39 --body-file stable-port-diagnostic.md
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file stable-port-diagnostic.md
+          fi
 
   build-stable-engine:
     needs: stable-source-check
@@ -87,7 +104,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          grep -F 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          test "$(git rev-parse HEAD)" = "$OPENMW_051_SOURCE_COMMIT"
+          grep -Fx 'set(OPENMW_VERSION_MAJOR 0)' CMakeLists.txt
+          grep -Fx 'set(OPENMW_VERSION_MINOR 51)' CMakeLists.txt
+          grep -Fx 'set(OPENMW_VERSION_RELEASE 0)' CMakeLists.txt
+          if grep -Fq 'set(OPENMW_VERSION_MINOR 52)' CMakeLists.txt; then
+            echo "::error::Refusing OpenMW 0.52.0 source for KR12.2"
+            exit 1
+          fi
+          echo "Verified official OpenMW 0.51.0 source: $(git rev-parse HEAD)" | tee -a "$GITHUB_STEP_SUMMARY"
           for patch in _korean_port/korean/patches/*.patch; do
             git apply --check "$patch"
             git apply "$patch"
@@ -229,4 +254,6 @@ jobs:
             echo "The ZIP includes the matching 0.51.0 Korean executable and KR12.1 translation data."
             echo "Manual Windows gameplay testing has not been performed."
           } > test-artifact.md
-          gh pr comment 39 --body-file test-artifact.md
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file test-artifact.md
+          fi

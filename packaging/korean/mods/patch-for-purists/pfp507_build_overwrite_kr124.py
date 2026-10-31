@@ -24,7 +24,7 @@ DEFERRED_OFFSETS = {1706649,2177943,2184319,2190359,2278201,2278314,2306076,2626
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
-def source_records(data):
+def source_records(data, expected_records=10202):
     pos = 0
     ordinal = 0
     while pos < len(data):
@@ -48,7 +48,7 @@ def source_records(data):
         yield ordinal, pos, header, data[pos:end], children
         pos = end
         ordinal += 1
-    assert ordinal == 10202
+    assert ordinal == expected_records
 
 def load_drafts(draft_path, report_path):
     draft_path = draft_path.resolve(strict=True)
@@ -81,13 +81,13 @@ def load_drafts(draft_path, report_path):
     assert len(rows) == 8815, len(rows)
     return rows, sha(draft_path.read_bytes()), sha(report_path.read_bytes())
 
-def build(original, rows):
+def build(original, rows, expected_records=10202, expected_fields=8815):
     assert sha(original) == ORIGINAL_SHA, "Not the exact PFP 5.0.7 original"
     parts = []
     used = set()
     untouched = 0
     protected = collections.Counter()
-    for ordinal, offset, head, parent, children in source_records(original):
+    for ordinal, offset, head, parent, children in source_records(original, expected_records):
         rebuilt = bytearray()
         parent_sha = sha(parent)
         for tag, field, sub, raw, end in children:
@@ -114,12 +114,12 @@ def build(original, rows):
             rebuilt += tag + struct.pack("<I",len(translated)) + translated
         assert len(rebuilt) < 2**32
         parts.append(head[:4] + struct.pack("<I",len(rebuilt)) + head[8:16] + rebuilt)
-    assert used == set(rows) and len(used) == 8815
+    assert used == set(rows) and len(used) == expected_fields
     result = b"".join(parts)
     # All non-translation bytes must round-trip without changes, including scripts.
     checked = 0
-    original_iter = source_records(original)
-    rebuilt_iter = source_records(result)
+    original_iter = source_records(original, expected_records)
+    rebuilt_iter = source_records(result, expected_records)
     for old,new in zip(original_iter,rebuilt_iter):
         ori,op,oh,oraw,osub=old
         newri,np,nh,nraw,nsub=new
@@ -134,9 +134,9 @@ def build(original, rows):
                 nuls=len(raw)-len(raw.rstrip(b"\x00"))
                 assert nr == rows[off]["ko"].encode("utf-8") + b"\x00"*nuls
                 checked += 1
-    assert checked == 8815
+    assert checked == expected_fields
     return result,{"translated_fields":checked,"untouched_subrecords":untouched,
-                   "protected_unmodified":dict(protected),"record_count":10202,
+                   "protected_unmodified":dict(protected),"record_count":expected_records,
                    "independent_nontranslation_byte_check":"PASS"}
 
 def main():

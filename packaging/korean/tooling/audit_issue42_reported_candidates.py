@@ -142,6 +142,25 @@ def inspect(data, gist):
             "not_proven_unlearnable": True,
         })
 
+    # Review concrete misplaced/semantically surprising explicit links before editing.
+    observed_tags = []
+    targeted = {"말입니까?", "이나 다른", "는 제국", "말"}
+    for row in infos:
+        source = row["text"]
+        for m in LINK_RE.finditer(source):
+            label = m.group(1).replace("\x7f", "")
+            if label not in targeted:
+                continue
+            prev = source[max(0, m.start()-12):m.start()]
+            nxt = source[m.end():m.end()+32]
+            observed_tags.append({
+                "INFO": row["info"], "DIAL": row["parent"], "actor": row["actor"],
+                "label": label, "top_target": top.get(label, label),
+                "target_DIAL_exists": top.get(label, label) in topics,
+                "preceding": prev, "following": nxt,
+                "full_text": source[:1200]
+            })
+
     wrong_alias = []
     for label in ("마법부여사 아우데니안",
                   "마법부여사 아우데니안 발리우스",
@@ -192,9 +211,18 @@ def inspect(data, gist):
         ],
         "confirmed_sidecar_wrong_aliases": wrong_alias,
         "explicit_tags_touching_Hangul_count": len(explicit),
+        "explicit_tags_start_inside_Hangul_count": sum(x["starts_inside_Hangul"] for x in explicit),
+        "suspect_explicit_tag_rows": observed_tags[:150],
         "explicit_tags_touching_Hangul_examples": explicit[:300],
         "link_candidates": detail_misses,
         "reported_unlearnable_topics": unlearnable,
+        "reported_source_keyword_mismatch_examples": [
+            {"INFO": x["INFO"], "topic": x["topic"], "keyword": x["keyword"],
+             "record": x["source_anchored"][0]["full_source_response"][:500]}
+            for x in detail_misses
+            if x["source_anchored"] and not any(
+                y["keyword_in_full_text"] for y in x["source_anchored"])
+        ][:40],
         "limitations": [
             "No English original Morrowind/Tribunal/Bloodmoon master data; not a proof of quest progression.",
             "SCPT/INFO.BNAM in the translation ESP is only an incomplete subset of runtime scripts.",
@@ -221,7 +249,10 @@ def main():
                 "reported_topic_rows", "source_anchor_discrepancies",
                 "unlearnable_with_script_refs_in_translated_esp",
                 "confirmed_sidecar_wrong_aliases",
-                "explicit_tags_touching_Hangul_count"):
+                "explicit_tags_touching_Hangul_count",
+                "explicit_tags_start_inside_Hangul_count",
+                "suspect_explicit_tag_rows",
+                "reported_source_keyword_mismatch_examples"):
         print(key, json.dumps(report[key], ensure_ascii=False))
     print("OUTPUT", args.output)
 

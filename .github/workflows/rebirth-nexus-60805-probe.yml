@@ -56,10 +56,18 @@ jobs:
                   print("FILE_VERSION",v.get("id"),"GAME_FILE_ID",v.get("game_scoped_id"),
                         "VERSION",v.get("version"),"CATEGORY",v.get("category"),
                         "NAME",v.get("name"))
-          data=get("/v1/games/morrowind/mods/60805/files.json")
-          print("V1_FILES",len(data.get("files",[])))
-          for f in data.get("files",[])[:35]:
-              print("V1_FILE",f.get("file_id"),f.get("version"),
-                    f.get("category_name"),f.get("file_name"))
+          try:
+              data=get("/v1/games/morrowind/mods/60805/files.json")
+              print("V1_FILES",len(data.get("files",[])))
+          except urllib.error.HTTPError as e:
+              print("V1_FILES_UNAVAILABLE_HTTP",e.code)
+          try:
+              links=get("/v1/games/morrowind/mods/60805/files/1000073248/download_link.json")
+              print("V56_DOWNLOAD_LINK_STATUS","AVAILABLE" if isinstance(links,list) and links else "EMPTY",
+                    "CDN_COUNT",len(links) if isinstance(links,list) else "UNEXPECTED")
+          except urllib.error.HTTPError as e:
+              print("V56_DOWNLOAD_LINK_HTTP",e.code)
+          detail=get("/v3/mod-file-versions/430496802848").get("data",{})
+          print("V56_VERSION_DETAILS_AVAILABLE_FIELDS",sorted(detail.keys()))
           print("READ_ONLY_SUCCESS target 60805; no file or description modified")
           PY

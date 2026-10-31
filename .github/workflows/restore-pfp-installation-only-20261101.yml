@@ -75,6 +75,8 @@ jobs:
             if(typeof current.description!=='string') throw new Error('Description missing');
             fs.writeFileSync('saved/nexus-pfp-60826-live-current.txt',current.description);
             core.info('LIVE_DESCRIPTION_SHA256='+hash(current.description)+'; LEN='+current.description.length+'; EXPECTED='+hash(lastErroneous));
+            core.info('Read-only capture of current Nexus description; no new PATCH in this run');
+            return;
             if(current.description!==nexusNormalized(lastErroneous) && current.description!==lastErroneous && current.description!==restored && current.description!==nexusNormalized(restored)) throw new Error('Nexus description differs from posted draft or its normalised format. Preserving unknown user changes.');
             fs.writeFileSync('saved/nexus-pfp-60826-restored-install-only.txt',restored);
             if(current.description!==restored && current.description!==nexusNormalized(restored)) await api('/v3/mods/'+modUid,'PATCH',{description:restored});

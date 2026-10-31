@@ -97,7 +97,7 @@ class RebirthV56Tests(unittest.TestCase):
         self.assertFalse(manifest["kr124_game_verified"])
         self.assertEqual(sum(f["changed_fields"] for f in manifest["plugins"]), 2)
         self.assertEqual(
-            sorted([r["review_flag"] for r in rows if r["review_flag"]]), 
+            sorted([r["review_flag"] for r in rows if r.get("review_flag")]), 
             ["source_only_script_requires_KR124_runtime_check"]
         )
         for path, expected in {**self.content, **self.sidecars}.items():

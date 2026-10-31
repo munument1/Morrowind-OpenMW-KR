@@ -72,7 +72,9 @@ jobs:
             const currentData=(await api('/v3/mods/'+modUid)).data;
             const current=currentData.mod||currentData;
             if(typeof current.description!=='string') throw new Error('Description missing');
-            if(current.description!==lastErroneous && current.description!==restored) throw new Error('Nexus description changed after previous run. Preserving newer change rather than overwriting.');
+            fs.writeFileSync('saved/nexus-pfp-60826-live-current.txt',current.description);
+            core.info('LIVE_DESCRIPTION_SHA256='+hash(current.description)+'; LEN='+current.description.length+'; EXPECTED='+hash(lastErroneous));
+            if(current.description!==lastErroneous && current.description!==restored) throw new Error('Nexus description differs from posted draft. Live description saved as an artifact for comparison.');
             fs.writeFileSync('saved/nexus-pfp-60826-restored-install-only.txt',restored);
             if(current.description!==restored) await api('/v3/mods/'+modUid,'PATCH',{description:restored});
             const readBackData=(await api('/v3/mods/'+modUid)).data;

@@ -1,0 +1,48 @@
+{
+  "schema": "rebirth_kr124_verified_release_source_deltas_v1",
+  "checked_on": "2026-11-01",
+  "source_v56": "Morrowind Rebirth 7.2 Korean KR12 v56 Full Layout",
+  "source_v56_zip_sha256": "8b07aec7d2400f22c60f9833d6339185a54acea687de9ed7f8a9c1030bf6d8f3",
+  "kr124_reference_release": "https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.4",
+  "official_kr124_esp_sha256": "2276384ad93fd3e56bc0d401aacc45418ba38993ee798e0e1a7e09564a375d3a",
+  "official_kr124_esp_binary_fully_compared": false,
+  "inspected": {
+    "esp_esm_files": 15,
+    "top_files": 3,
+    "v56_changed_korean_fields": 27016
+  },
+  "release_scope": {
+    "kr124_quest_info_id_cases": 12,
+    "kr124_malformed_topic_markup_occurrences": 79,
+    "kr124_top_alias_cases": 3,
+    "kr123_quest_info_id_cases": 4
+  },
+  "translated_rebirth_main_and_addons": {
+    "matched_kr124_quest_info_ids": 0,
+    "matched_kr123_quest_info_ids": 0,
+    "matched_kr124_bad_markup_occurrences": 0,
+    "matched_kr124_top_aliases": 0,
+    "modifications_made": 0
+  },
+  "unchanged_english_compatibility_file": {
+    "path": "Compability Patches/Morrowind Patch Project v1.6.6 [For Rebirth].esm",
+    "kr124_info_id_hits": [
+      "713021754425128647",
+      "22806201441497819089"
+    ],
+    "kr123_info_id_hits": [
+      "6986172382590219429"
+    ],
+    "existing_english_bytes_preserved": true,
+    "modified": false
+  },
+  "decision": "NO_REBIRTH_TRANSLATION_BINARY_CHANGE_NEEDED_FOR_IDENTIFIED_KR124_RELEASE_DELTAS",
+  "existing_v56_corpus_retained": true,
+  "updated_engine_data_distribution_not_repacked": true,
+  "android_gameplay_tested": false,
+  "kr124_gameplay_tested": false,
+  "existing_release_modified": false,
+  "release_ready": false,
+  "followup": "Use KR12.4 full Windows base installation + KR12.4 Korean ESP, with Rebirth v56 files separately; check mod load order and quest topic behavior in-game. No new v57 release solely for zero binary changes.",
+  "notes": "Data-only impact audit based on official GitHub release source scripts and pinned IDs/tag patterns; not full 12->12.4 glossary byte comparison. Compatibility patch records may matter under different load orders."
+}

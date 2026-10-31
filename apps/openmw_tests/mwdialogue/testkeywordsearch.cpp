@@ -372,6 +372,36 @@ TEST_F(KeywordSearchTest, parse_hypertext_mark_file_overrides_keyword)
 }
 
 
+TEST_F(KeywordSearchTest, korean_quest_topic_quotative_particles)
+{
+    // Issue #40: Vas / Fighters Guild quest must discover topics in
+    // "바스라는" and "바스이라는" without reopening false mid-word links.
+    MWDialogue::KeywordSearch search;
+    Translation::Storage storage;
+    search.seed("바스", "vas");
+    search.seed("강령술사", "necromancer");
+    search.seed("드로'사카르", "dro'sakhar");
+    search.seed("일", "work");
+
+    const std::string source = "바스라는 강령술사 소굴. 강령술사라는 말. "
+                               "바스이란 지명. 바스란 이름. 드로'사카르라는 이름.";
+    const auto display = search.parseHyperText(source, storage);
+    ASSERT_EQ(display.size(), 5);
+    EXPECT_EQ(display[0].mTopicId, "vas");
+    EXPECT_EQ(display[1].mTopicId, "necromancer");
+    EXPECT_EQ(display[2].mTopicId, "vas");
+    EXPECT_EQ(display[3].mTopicId, "vas");
+    EXPECT_EQ(display[4].mTopicId, "dro'sakhar");
+
+    const auto discovery = search.parseHyperText(source, storage, true);
+    ASSERT_EQ(discovery.size(), 5);
+    for (const auto& match : discovery)
+        EXPECT_FALSE(match.mExplicit);
+
+    // Don't link an internal substring, or the generic single-syllable "일".
+    EXPECT_TRUE(search.parseHyperText("사바스라는 곳. 일이라는 말.", storage).empty());
+}
+
 TEST_F(KeywordSearchTest, korean_implicit_links_require_word_boundaries)
 {
     MWDialogue::KeywordSearch search;

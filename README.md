@@ -1,3 +1,5 @@
+> 최신 누적 Windows 통합판: [KR12.5](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.5). 29개 대사의 잘못된 명시 링크 31개를 정리했으며 KR12.4 엔진을 유지합니다. [변경 내역](packaging/korean/KR12.5.md). 아래 KR12.4 상세 내역은 기반 릴리스의 기록입니다.
+
 # OpenMW 한국어판
 
 [OpenMW](https://openmw.org/) 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 실행하기 위한 **Windows x64용 한국어 엔진·번역 통합판**입니다. Bethesda의 Morrowind 원본 데이터는 포함하지 않으며 정품 게임이 필요합니다.

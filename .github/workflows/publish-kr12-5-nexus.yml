@@ -1,0 +1,162 @@
+name: Publish verified KR12.5 Windows release to Nexus Mods
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-kr124-windows
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  TAG: openmw-0.51.0-kr12.5
+  ZIP: Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.zip
+
+jobs:
+  verify-and-upload:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_FILE_ID: '8110335' # Verified Windows main file group from prior KR12.1/12.2 uploads; Android is 8257539
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify official GitHub KR12.5 release exists
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" > /tmp/kr124-release.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/kr124-release.json'))
+          assert r['tag_name']=='openmw-0.51.0-kr12.5' and not r['draft'] and not r['prerelease']
+          files={x['name']:x for x in r['assets']}
+          file=files['Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.zip']
+          assert file['digest']=='sha256:eec9cc81bcb8de14e621e8e27c63c728ca4b2393ca372d68c3fc1867bd5f7479'
+          assert file['size']>10000000
+          assert 'Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.zip.sha256' in files
+          assert 'Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.verification.json' in files
+          PY
+      - name: Download published release files and verify SHA
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "$ZIP" --pattern "$ZIP.sha256" \
+            --pattern Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.verification.json --dir dist
+          (cd dist && sha256sum -c "$ZIP.sha256")
+          unzip -tq "dist/$ZIP"
+          python3 - <<'PY'
+          import json
+          d=json.load(open('dist/Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.verification.json'))
+          assert d['esp_before']=='2276384ad93fd3e56bc0d401aacc45418ba38993ee798e0e1a7e09564a375d3a'
+          assert d['changed_info']==29
+          assert d['removed_tags']==31
+          assert d['all_other_esp_fields_unchanged'] and d['visible_text_unchanged']
+          assert not d['gameplay_tested']
+          PY
+      - name: Verify the owned Nexus mod, Windows file group and existing versions
+        id: nexus
+        run: |
+          set -euo pipefail
+          test -n "$NEXUS_KEY" || { echo "::error::NEXUSMODS_API_KEY repository secret is absent."; exit 1; }
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          BASE="https://api.nexusmods.com"
+          def get(path):
+              request=urllib.request.Request(BASE+path,headers={
+                  "apikey": os.environ["NEXUS_KEY"],
+                  "Accept": "application/json",
+                  "User-Agent": "Morrowind-KR12.5-GitHub-Release-Sync",
+              })
+              with urllib.request.urlopen(request,timeout=30) as response:
+                  return json.load(response)["data"]
+          mod=get("/v3/games/morrowind/mods/60496")
+          assert str(mod["id"])=="429496790096", "Wrong Nexus mod UID"
+          assert str(mod["game_scoped_id"])=="60496", "Wrong game scoped mod ID"
+          groups=get("/v3/mods/"+str(mod["id"])+"/files")["mod_files"]
+          file_id=os.environ["NEXUS_FILE_ID"]
+          assert file_id=="8110335" and file_id!="8257539", "Refusing Android file group"
+          found=[f for f in groups if str(f["id"])==file_id and f["is_active"]]
+          assert len(found)==1 and found[0]["name"]=="Morrowind Korean OpenMW", "Windows main file group missing, renamed, or inactive"
+          versions=get("/v3/mod-files/"+file_id+"/versions")["versions"]
+          def normal(v):
+              return re.sub(r"(?i)-kr","-kr",str(v).strip()).casefold()
+          existed=any(normal(v.get("version",""))==normal("0.51.0-KR12.5")
+                      and str(v.get("category","")).casefold()!="removed" for v in versions)
+          with open(os.environ["GITHUB_OUTPUT"],"a",encoding="utf-8") as out:
+              out.write("upload="+str(not existed).lower()+"\n")
+          print("Verified Nexus Morrowind mod 60496; active Windows file group",file_id)
+          print("KR12.5 previously uploaded:",existed)
+          PY
+      - name: Upload verified KR12.5 to existing Windows Nexus file group
+        if: steps.nexus.outputs.upload == 'true'
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23 # pinned previously successful v1.0.0-beta.10
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: '8110335'
+          filename: dist/Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.zip
+          version: 0.51.0-KR12.5
+          display_name: Morrowind Korean OpenMW 0.51.0-KR12.5 (Windows)
+          description: 'Cumulative Windows release: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.5'
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+          # Changelog is reconciled using the canonical Nexus mod UID, not game-scoped 60496.
+      - name: Confirm Nexus has KR12.5 in the correct Windows file group
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, time, urllib.request
+          url="https://api.nexusmods.com/v3/mod-files/8110335/versions"
+          req=urllib.request.Request(url,headers={
+              "apikey":os.environ["NEXUS_KEY"],"Accept":"application/json",
+              "User-Agent":"Morrowind-KR12.5-GitHub-Release-Sync"})
+          for attempt in range(6):
+              with urllib.request.urlopen(req,timeout=30) as response:
+                  versions=json.load(response)["data"]["versions"]
+              found=[v for v in versions
+                     if str(v.get("version","")).casefold()=="0.51.0-kr12.5"
+                     and str(v.get("category","")).casefold()!="removed"]
+              if found:
+                  print("SUCCESS: KR12.5 is present in the Nexus Windows main file group 8110335; no Android file changed.")
+                  break
+              if attempt==5:
+                  raise SystemExit("KR12.5 missing from Nexus after upload; check Nexus API status.")
+              time.sleep(5)
+          PY
+      - name: Reconcile missing KR12.5 changelog using canonical Nexus UID (never re-upload)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, urllib.request
+          BASE="https://api.nexusmods.com"
+          hdr={"apikey":os.environ["NEXUS_KEY"],"Accept":"application/json",
+               "Content-Type":"application/json","User-Agent":"Morrowind-KR12.5-Changelog"}
+          def call(path,body=None):
+              req=urllib.request.Request(BASE+path,headers=hdr,
+                  data=json.dumps(body,ensure_ascii=False).encode("utf-8") if body is not None else None,
+                  method="POST" if body is not None else "GET")
+              with urllib.request.urlopen(req,timeout=35) as response:
+                  return json.load(response)
+          mod=call("/v3/games/morrowind/mods/60496")["data"]
+          assert str(mod["id"])=="429496790096" and str(mod["game_scoped_id"])=="60496"
+          assert str(mod.get("version","")).casefold()=="0.51.0-kr12.5", "Mod version has not yet been updated"
+          versions=call("/v3/mod-files/8110335/versions")["data"]["versions"]
+          assert any(str(x.get("version","")).casefold()=="0.51.0-kr12.5"
+                     and str(x.get("category","")).casefold()!="removed" for x in versions), "Missing Windows file version"
+          logs=call("/v1/games/morrowind/mods/60496/changelogs.json")
+          if not isinstance(logs,dict):
+              raise ValueError("Nexus v1 changelog list has unexpected shape; refusing duplicate append")
+          prior=[k for k in logs if k.casefold()=="0.51.0-kr12.5"]
+          if prior:
+              print("KR12.5 changelog already exists; no new changelog entry was added.")
+          else:
+              body={"version":"0.51.0-KR12.5",
+                    "changelog":"KR12.5 Windows 누적 업데이트: 한국어 서술격·호격·동사 어미 토픽 인식 개선. 잘못된 대사 링크 79건 수정, 원본 영어 대조 퀘스트 링크 12건 복구, 아우데니안 발리우스 TOP 별칭 3건 정정. KR12.3.1 설치기를 그대로 사용하며 이슈 #42 전용 패치는 필요하지 않습니다. 정적·엔진 자동 검증 통과, 전체 실게임 퀘스트 및 Android 버전은 미검증."}
+              result=call("/v3/mods/"+str(mod["id"])+"/changelogs",body)
+              print("KR12.5 changelog appended using canonical Nexus mod UID 429496790096.")
+          PY

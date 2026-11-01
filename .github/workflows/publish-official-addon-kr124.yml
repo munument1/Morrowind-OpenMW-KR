@@ -1,0 +1,82 @@
+name: Publish Official Add-ons Korean optional for KR12.4
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/publish-official-addon-kr124.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nexus-official-addon-kr124
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUSMODS_API_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download immutable archived optional patch and current main
+        run: |
+          gh release download openmw-0.51.0-kr3 --repo "$GITHUB_REPOSITORY" --pattern Morrowind_OfficialAddon_KR.zip --pattern Morrowind_OfficialAddon_KR.zip.sha256
+          gh release download openmw-0.51.0-kr12.4 --repo "$GITHUB_REPOSITORY" --pattern Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip
+      - name: Verify source archive and current main have expected bytes, original masters and no overlap
+        run: python3 packaging/korean/tooling/publish_official_addon_kr124.py verify
+      - name: Add standalone translation assets to the published KR12.4 GitHub release
+        run: |
+          set -euo pipefail
+          gh release view openmw-0.51.0-kr12.4 --repo "$GITHUB_REPOSITORY" --json assets > release-assets.json
+          python3 - <<'PY'
+          import json
+          names = {a['name'] for a in json.load(open('release-assets.json'))['assets']}
+          for p in ('Morrowind_OfficialAddon_KR.zip', 'Morrowind_OfficialAddon_KR.zip.sha256'):
+              print(p, 'already published' if p in names else 'needs upload')
+          PY
+          for name in Morrowind_OfficialAddon_KR.zip Morrowind_OfficialAddon_KR.zip.sha256; do
+            if ! jq -e --arg filename "$name" '.assets[] | select(.name == $filename)' release-assets.json >/dev/null; then
+              gh release upload openmw-0.51.0-kr12.4 "$name" --repo "$GITHUB_REPOSITORY"
+            fi
+          done
+      - name: Add GOG/Steam and load-order instructions to GitHub release notes
+        run: |
+          set -euo pipefail
+          gh release view openmw-0.51.0-kr12.4 --repo "$GITHUB_REPOSITORY" --json body > release-body.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          body=json.loads(Path('release-body.json').read_text())['body']
+          marker='## 공식 애드온 8종 한국어 번역 (선택 설치)'
+          if marker not in body:
+              body += """
+
+          ## 공식 애드온 8종 한국어 번역 (선택 설치)
+
+          - 별도 파일: `Morrowind_OfficialAddon_KR.zip` (KR3에서 제작한 기존 번역 그대로 재배포, SHA256 검증 완료)
+          - **GOG판:** 베데스다 공식 애드온 8종이 기본 포함됩니다. OpenMW에서 사용하려는 애드온이 활성화됐는지 확인하세요.
+          - **Steam판:** [베데스다 Official Plugins 원본](https://www.nexusmods.com/morrowind/mods/3882?tab=files)을 다운로드해 8개 플러그인 모두 설치하세요. 개별 8종과 합본을 중복 활성화하지 마세요.
+          - `Morrowind_OfficialAddon_KR.esp`는 공식 애드온 8종 및 `Morrowind_Korean_ReTranslation.esp` 이후에 로드하고, `.top`/`.mrk`/`.cel`은 ESP와 같은 폴더에 두세요.
+          - 원본 베데스다 애드온은 번역 ZIP에 포함되지 않습니다. 하나라도 없으면 번역 ESP를 활성화하지 마세요.
+          - KR12.4 전체 퀘스트 실게임 재검증은 수행되지 않았습니다.
+          """
+              Path('release-notes.txt').write_text(body,encoding='utf-8')
+              print('release-notes-changed=true')
+          else:
+              Path('release-notes.txt').write_text(body,encoding='utf-8')
+              print('release-notes-changed=false')
+          PY
+          gh release edit openmw-0.51.0-kr12.4 --repo "$GITHUB_REPOSITORY" --notes-file release-notes.txt
+      - name: Create separate Nexus OPTIONAL file, never replace main
+        run: python3 packaging/korean/tooling/publish_official_addon_kr124.py nexus
+      - name: Summary
+        if: always()
+        run: |
+          echo 'Source: published KR3 Official Add-ons translation ZIP, checksum pinned' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Target: KR12.4 GitHub release / Nexus Morrowind mod 60496 OPTIONAL group' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Main Windows file group 8110335 and Android file group 8257539 are never updated.' >> "$GITHUB_STEP_SUMMARY"

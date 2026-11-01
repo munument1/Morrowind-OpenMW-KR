@@ -112,7 +112,8 @@ def publish_nexus(source):
     signed = urllib.parse.parse_qs(urllib.parse.urlsplit(presigned).query).get("X-Amz-SignedHeaders", [""])[0]
     print("Presigned URL expected headers:", signed, flush=True)
     req = urllib.request.Request(presigned, method="PUT", data=data, headers={
-        "Content-Disposition": f'attachment; filename="{SOURCE_NAME}"'
+        "Content-Disposition": f'attachment; filename="{SOURCE_NAME}"',
+        "Content-Type": "application/octet-stream"
     })
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:

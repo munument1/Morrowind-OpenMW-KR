@@ -1,11 +1,6 @@
 name: Publish Official Add-ons Korean optional for KR12.4
 
 on:
-  push:
-    branches: [master]
-    paths:
-      - .github/workflows/publish-official-addon-kr124.yml
-      - packaging/korean/tooling/publish_official_addon_kr124.py
   workflow_dispatch:
 
 permissions:

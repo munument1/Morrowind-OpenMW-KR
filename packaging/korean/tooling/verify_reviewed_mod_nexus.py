@@ -1,5 +1,5 @@
 """Verify both owned Nexus releases and download their published bytes through API."""
-import os,json,urllib.request,hashlib,time
+import os,json,urllib.request,urllib.error,hashlib,time
 from pathlib import Path
 key=os.environ['NEXUS_KEY']
 def call(path,body=None):
@@ -13,8 +13,17 @@ for mid,uid,gid,version,filename,log in targets:
  versions=call(f'/v3/mod-files/{gid}/versions')['data']['versions']
  candidates=[v for v in versions if str(v.get('version','')).casefold()==version.casefold() and str(v.get('category','')).casefold()!='removed']
  assert len(candidates)==1
- v=candidates[0];fid=v['game_scoped_id'];links=call(f'/v1/games/morrowind/mods/{mid}/files/{fid}/download_link.json')
- with urllib.request.urlopen(links[0]['URI'],timeout=120) as r:download=r.read()
+ v=candidates[0];fid=v['game_scoped_id']
+ for attempt in range(6):
+  links=call(f'/v1/games/morrowind/mods/{mid}/files/{fid}/download_link.json')
+  try:
+   req=urllib.request.Request(links[0]['URI'],headers={'User-Agent':'KR125-Mod-Translation-Audit'})
+   with urllib.request.urlopen(req,timeout=120) as r:download=r.read()
+   break
+  except urllib.error.HTTPError as e:
+   print('CDN_RETRY',mid,attempt+1,e.code)
+   if attempt==5:raise
+   time.sleep(10)
  expected=hashlib.sha256((Path('dist')/filename).read_bytes()).hexdigest()
  assert hashlib.sha256(download).hexdigest()==expected,'Published bytes mismatch'
  logs=call(f'/v1/games/morrowind/mods/{mid}/changelogs.json')

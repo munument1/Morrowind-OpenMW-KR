@@ -1,0 +1,30 @@
+name: Verify published Rebirth and PFP kr1.1 bytes without uploading
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        description: Successful upload run containing the original built ZIP artifact
+        required: true
+        default: '41323412147'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download original generated release bytes, never rebuild or re-upload
+        env:
+          SOURCE_RUN: ${{ inputs.source_run }}
+        run: gh run download "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --name reviewed-mod-translations-kr11-publication --dir dist
+      - run: python packaging/korean/tooling/verify_reviewed_mod_nexus.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nexus-reviewed-mods-final-verification
+          path: dist/NEXUS_MODS_PUBLICATION_VERIFICATION.json
+          retention-days: 14

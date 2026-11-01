@@ -156,7 +156,7 @@ jobs:
               print("KR12.5 changelog already exists; no new changelog entry was added.")
           else:
               body={"version":"0.51.0-KR12.5",
-                    "changelog":"KR12.5 Windows 누적 업데이트: 한국어 서술격·호격·동사 어미 토픽 인식 개선. 잘못된 대사 링크 79건 수정, 원본 영어 대조 퀘스트 링크 12건 복구, 아우데니안 발리우스 TOP 별칭 3건 정정. KR12.3.1 설치기를 그대로 사용하며 이슈 #42 전용 패치는 필요하지 않습니다. 정적·엔진 자동 검증 통과, 전체 실게임 퀘스트 및 Android 버전은 미검증."}
+                    "changelog":"KR12.5 Windows 누적 업데이트: 29개 대사의 잘못된 명시 토픽 태그 31개를 제거했습니다. 신체 부위 입/입니다, 자신의, 자네/자격/가입하고자, 법정의에서 문맥과 무관한 연결을 정리했습니다. 표시 한국어와 다른 ESP 필드 및 스크립트는 보존합니다. 검증된 KR12.4의 0.51.0 한국어 엔진을 그대로 사용합니다. 정적 구조/ZIP/회귀 검증 통과, 실게임 플레이 검증은 미수행."}
               result=call("/v3/mods/"+str(mod["id"])+"/changelogs",body)
               print("KR12.5 changelog appended using canonical Nexus mod UID 429496790096.")
           PY

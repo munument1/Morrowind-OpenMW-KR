@@ -42,6 +42,17 @@ jobs:
                   print(info.filename,info.file_size,'CRC',hex(info.CRC))
                   assert not info.filename.startswith('/') and '..' not in Path(info.filename).parts
               assert any(n.lower().endswith('morrowind_officialaddon_kr.esp') for n in names)
+              notes=z.read('README.txt')
+              for encoding in ('utf-8-sig','cp949','cp1252'):
+                  try:
+                      print('OLD README:',notes.decode(encoding))
+                      break
+                  except UnicodeDecodeError:
+                      continue
+              esp=z.read('Morrowind_OfficialAddon_KR.esp')
+              assert esp[:4]==b'TES3'
+              print('ESP TES3 header:', esp[:100].hex())
+              print('ESP master markers:',[esp[i:i+80] for i in range(len(esp)) if esp[i:i+4]==b'MAST'][:20])
           with zipfile.ZipFile(new) as z:
               assert z.testzip() is None
               relevant=[n for n in z.namelist() if ('official' in n.lower() or 'addon' in n.lower())]

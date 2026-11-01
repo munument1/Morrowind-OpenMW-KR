@@ -103,16 +103,29 @@ def publish_nexus(source):
     data = Path(source).read_bytes()
     digest = hashlib.md5(data).digest()
     created = response_data(request_api("POST", "/uploads", key, {
-        "filename": SOURCE_NAME, "size_bytes": len(data), "md5": digest.hex()
+        "filename": SOURCE_NAME, "size_bytes": len(data)
     }))
     upload_id = created["id"]
     presigned = created["presigned_url"]
+    import urllib.parse
+    from xml.etree import ElementTree
+    signed = urllib.parse.parse_qs(urllib.parse.urlsplit(presigned).query).get("X-Amz-SignedHeaders", [""])[0]
+    print("Presigned URL expected headers:", signed, flush=True)
     req = urllib.request.Request(presigned, method="PUT", data=data, headers={
-        "Content-Disposition": f'attachment; filename="{SOURCE_NAME}"',
-        "Content-MD5": base64.b64encode(digest).decode("ascii")
+        "Content-Disposition": f'attachment; filename="{SOURCE_NAME}"'
     })
-    with urllib.request.urlopen(req, timeout=90) as resp:
-        assert resp.status in (200, 201, 204), "Presigned PUT rejected"
+    try:
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            assert resp.status in (200, 201, 204), "Presigned PUT rejected"
+    except urllib.error.HTTPError as exc:
+        raw = exc.read()
+        try:
+            root = ElementTree.fromstring(raw)
+            code = root.findtext("Code", "?")
+            message = root.findtext("Message", "?")
+        except Exception:
+            code, message = "unknown", "non-XML error response"
+        raise RuntimeError(f"Presigned PUT HTTP {exc.code}: {code}: {message}") from None
     request_api("POST", f"/uploads/{upload_id}/finalise", key, {})
     for attempt in range(12):
         state = response_data(request_api("GET", f"/uploads/{upload_id}", key)).get("state")

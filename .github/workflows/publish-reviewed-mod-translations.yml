@@ -1,0 +1,77 @@
+name: Publish reviewed Rebirth and PFP kr1.1 translations to Nexus
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: reviewed-mod-translations-kr11
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify patch and engine alias semantics
+        run: |
+          python -m unittest discover -s packaging/korean/tooling -p test_reviewed_mods.py -q
+          python -m unittest discover -s packaging/korean/mods/morrowind-rebirth -q
+          python -m unittest discover -s packaging/korean/mods/patch-for-purists -q
+      - name: Fetch exact current owned baselines through Nexus API
+        run: python packaging/korean/tooling/fetch_owned_mod_audit.py
+      - name: Build from verified Nexus packages and KR12.5 reference
+        run: |
+          mkdir -p reference
+          gh release download openmw-0.51.0-kr12.5 --repo "$GITHUB_REPOSITORY" --pattern Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.zip --dir reference
+          python packaging/korean/tooling/package_reviewed_mods.py --input audit-input --output dist --base-zip reference/Morrowind-Korean-OpenMW-0.51.0-KR12.5-Full.zip
+          (cd dist && sha256sum --check *.zip.sha256)
+      - name: Verify exact existing Nexus file groups
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for mid,uid,gid in [(60805,'429496790405','8257641'),(60826,'429496790426','8280147')]:
+              d=json.loads(Path(f'audit-input/{mid}-metadata.json').read_text())
+              assert str(d['uid'])==uid
+              assert any(str(g['id'])==gid and g['is_active'] for g in d['groups'])
+          PY
+      - name: Update existing Rebirth Nexus file
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: '8257641'
+          filename: dist/Morrowind_Rebirth_7.2-kr1.1_OpenMW-KR12.5.zip
+          version: 7.2-kr1.1
+          display_name: Rebirth 7.2 Korean
+          description: 'kr1.1: 채집 식물 이름 4곳을 롤랜드의 눈물로 통일. 기본/대체 메인 수정, CEL 및 다른 필드 보존. OpenMW KR12.5 정적 검증. 실게임 미검증.'
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+      - name: Update existing PFP Nexus file
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: '8280147'
+          filename: dist/PFP_5.0.7-kr1.1_OpenMW-KR12.5.zip
+          version: 5.0.7-kr1.1
+          display_name: PFP Korean
+          description: 'kr1.1: 책/간판 명칭 3곳, 명시 토픽 링크 표시 범위 12개 교정. TOP 별칭 3개 추가. 표시 대사와 기존 연결 대상 및 비대상 필드 보존. OpenMW KR12.5 정적 검증. 실게임 미검증.'
+          category: main
+          archive_existing_version: true
+          primary_mod_manager_download: true
+          update_mod_version: true
+      - name: Verify published metadata and download hashes through Nexus API
+        run: python packaging/korean/tooling/verify_reviewed_mod_nexus.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reviewed-mod-translations-kr11-publication
+          path: dist/
+          retention-days: 14

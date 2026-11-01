@@ -1,0 +1,202 @@
+{
+  "60805": {
+    "baseline_zip_sha256": "a659c3a8db5c5ed45019654d7aa6a4ba66966fc5891cf5fe1ab4296e7872e96f",
+    "cases": [
+      {
+        "file": "Alternate Version/Morrowind Rebirth [Main].ESP",
+        "kind": "CONT",
+        "identity": "flora_gold_kanet_01_uni",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "e3db3289f15688a352e676c78a7ee6e2aa62dbc2bd3089c9111db4fbc66d0f86",
+        "after": "롤랜드의 눈물"
+      },
+      {
+        "file": "Alternate Version/Morrowind Rebirth [Main].ESP",
+        "kind": "CONT",
+        "identity": "flora_gold_kanet_02_uni",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "e3db3289f15688a352e676c78a7ee6e2aa62dbc2bd3089c9111db4fbc66d0f86",
+        "after": "롤랜드의 눈물"
+      },
+      {
+        "file": "Data Files/Morrowind Rebirth [Main].ESP",
+        "kind": "CONT",
+        "identity": "flora_gold_kanet_01_uni",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "e3db3289f15688a352e676c78a7ee6e2aa62dbc2bd3089c9111db4fbc66d0f86",
+        "after": "롤랜드의 눈물"
+      },
+      {
+        "file": "Data Files/Morrowind Rebirth [Main].ESP",
+        "kind": "CONT",
+        "identity": "flora_gold_kanet_02_uni",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "e3db3289f15688a352e676c78a7ee6e2aa62dbc2bd3089c9111db4fbc66d0f86",
+        "after": "롤랜드의 눈물"
+      }
+    ]
+  },
+  "60826": {
+    "baseline_zip_sha256": "c3abe7681d628ecd47447e3e5116fdd15ca7054b07296b7a6129df4673498b5e",
+    "cases": [
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "ACTI",
+        "identity": "furn_bannerd_wa_shop_01",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "36e2feb00203fa834381514b4413b9fa428a6e25c7c1520dc28724f9eaeb91fc",
+        "after": "마니크키: 방어구 제작자"
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "BOOK",
+        "identity": "bk_playscript",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "5467b454e3335c6409b9afc3c458f1b319a7c2bc2a52599417492e0ba672d90d",
+        "after": "지르 성의 공포"
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "ACTI",
+        "identity": "furn_bannerd_wa_shop_sadrit_02",
+        "parent": "",
+        "position": 2,
+        "field": "FNAM",
+        "before_sha256": "dc5ed547b119c4803be20a529fdaf63bbe3c5e10c781d712baf5aeeb0a0cd583",
+        "after": "마니크키: 방어구 제작자"
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "2067113803781732690",
+        "parent": "Antecedents of Dwemer Law",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "3a7e821d0552262b9e1228477db04f5bfc2109824ae03663bcd898e4a476e7a5",
+        "after": "에테스 에보스가 @제국# 시험에 합격해 시로딜로 가려는 마음으로 그 책을 공부하고 있었소. 그에게 사본을 만들어 달라고 할 수 있을지도 모르오."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "25282306142985410947",
+        "parent": "donate Cyrodilic brandy",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "f7683351b5ec566ab89d1998a209f89fa25f27ffe2afafc088c8019de5931dfa",
+        "after": "시로딜식 브랜디 다섯 병이라고? 제국 교단을 위해서? 내가 @제국#의 앞잡이로 보이나? 당장 꺼져."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "1416302811026009",
+        "parent": "Redoran Hortator",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "3a8f64082fc953e6c4fa4eabb55652db3b2391d52c31d8f1ac7ec3245575d87e",
+        "after": "아틴 사레티와 이야기했네. 그는 자네 이야기를 믿고, 자네를 신뢰할 수 있다고 하더군. 나는 아틴 사레티가 어릴 때부터 알고 지냈으며 그의 판단을 전적으로 믿네. 먼저 자네를 찾아가 곧바로 받아들이지 못한 것을 사과하겠네. 자네가 @제국#의 첩자라는 소문을 믿었던 것도 용서해 주게. 내 표는 자네 것이네. 광부 아로바르는 이로써 %PCName을 레도란 가문의 호타토르로 승인하네. 다른 평의원들에게 내가 축복을 내렸다고 전하게."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "3117283612745114922",
+        "parent": "Redoran Hortator",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "3a8f64082fc953e6c4fa4eabb55652db3b2391d52c31d8f1ac7ec3245575d87e",
+        "after": "아틴 사레티와 이야기했네. 그는 자네 이야기를 믿고, 자네를 신뢰할 수 있다고 하더군. 나는 아틴 사레티가 어릴 때부터 알고 지냈으며 그의 판단을 전적으로 믿네. 먼저 자네를 찾아가 곧바로 받아들이지 못한 것을 사과하겠네. 자네가 @제국#의 첩자라는 소문을 믿었던 것도 용서해 주게. 내 표는 자네 것이네. 광부 아로바르는 이로써 %PCName을 레도란 가문의 호타토르로 승인하네. 다른 평의원들에게 내가 축복을 내렸다고 전하게."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "28644302842562514556",
+        "parent": "Daedra worship",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "20756a40e87f2c811e4bb057fb51a986c62f5a671621eeecaa3f84d08bbc793c",
+        "after": "마법사 길드는 @제국#의 허가를 받아 데이드라를 불러내고 소환할 수 있습니다. 이는 길드와 지방 당국 사이의 마찰 원인이며, 길드는 마법사들에게 소환 마법을 사용할 때 공개적인 논란을 일으키지 않도록 주의하라고 요구합니다."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "2371318541461129659",
+        "parent": "Abolitionists",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "9167b4b73b1a9ebede04d2cfe9e1f498bf233928e8d386cfc1d78e2a56707c9d",
+        "after": "도망치는 @노예#를 돕는 것은 절도이자 범죄요. 모로윈드에서 노예는 재산이니까."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "1588253092529329077",
+        "parent": "little secret",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "0cd36ff91c708ae06edde9f1de16f0964acdb5c5c21f2cfe3091df377b76c17d",
+        "after": "모로윈드에서 가장 위험한 곳이 어디냐고? 글쎄, 아마 붉은 산의 유령 장벽 안쪽에 있는 재의 뱀파이어 성채들이겠지. 하지만 유령 @장벽 바깥이라면#? 데이드릭 유적이 가장 위험할 거야. 곳곳에 널려 있고, @사악한 데이드라#와 그들을 소환하는 미친 자들로 가득하거든. 뱀파이어도 꽤 위험하다고 들었지만, 나는 직접 본 적은 없어. 드웨머 유적지도 상당히 위험하고."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "31228123011781867",
+        "parent": "Advancement",
+        "position": 6,
+        "field": "NAME",
+        "before_sha256": "83c8e03dfae84194eb0a2eef59ca400db8741e564f7539042d82ca8147d4202b",
+        "after": "나는 더 이상 승급시켜 @줄 수# 없소. 에본하트의 @제국#의 용 기사 바루스 반티니우스와 이야기하시오."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "2093774921459322547",
+        "parent": "Trebonius",
+        "position": 6,
+        "field": "NAME",
+        "before_sha256": "603154d5e50e84378a673e7a10f5e7318c868491e74fecb3c5ecece474f69b67",
+        "after": "트레보니우스가 임무를 줬습니까? 작년에는 텔바니가 @제국#의 교역을 방해하지 못하게 본토까지 터널을 파라고 했습니다. 나는 그저 일정대로 진행 중이라고 말합니다."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "2971328764764617224",
+        "parent": "Dagon Fel",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "9f1f55c5f4dd9e2efdeac43f6743b4063f566b92e8a4c405e9fccd74c86a7be0",
+        "after": "수천 년 전 이곳은 노드 정착지였지만, 던머가 노드인을 모로윈드에서 몰아냈다. 그 뒤 드웨머가 이곳에 도시를 세웠고, 지금의 마을은 그 드웨머 도시의 폐허 위에 들어섰다. 모로윈드가 @제국#의 속주가 된 뒤로 노드 어부들이 다시 이곳으로 돌아왔다. 제국 학자와 모험가들도 셰오고라드 곳곳의 드웨머와 데이드릭 폐허를 탐사하려고 찾아온다."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "19651266562534313346",
+        "parent": "Orders",
+        "position": 6,
+        "field": "NAME",
+        "before_sha256": "e7740403ce7cc92c3502b87aa0fcc8cb6b2e445bbfa2c627a0c60658d88e074b",
+        "after": "더는 줄 명령이 없어. 각 요새의 수호 기사들에게 확인하고, 준비가 되면 에본하트의 @제국# 용기사 바루스 반티니우스를 찾아가."
+      },
+      {
+        "file": "Patch for Purists.esm",
+        "kind": "INFO",
+        "identity": "31167212471997124948",
+        "parent": "Orders",
+        "position": 5,
+        "field": "NAME",
+        "before_sha256": "59ca470f1a268079aa88f0a5daf01cec34fd014751684b32c34ddf922c6dca2a",
+        "after": "더는 줄 명령이 없어. 각 군단 요새의 수호 기사들과 에본하트의 @제국# 용기사 바루스 반티니우스에게 확인해."
+      }
+    ]
+  }
+}

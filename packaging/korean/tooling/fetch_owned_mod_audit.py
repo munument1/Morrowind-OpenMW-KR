@@ -6,14 +6,14 @@ def get(path):
  req=urllib.request.Request('https://api.nexusmods.com'+path,headers={'apikey':key,'Accept':'application/json','User-Agent':'KR125-Mod-Translation-Audit'})
  with urllib.request.urlopen(req,timeout=40) as r:return json.load(r)
 account=str(get('/v1/users/validate.json')['user_id'])
-for modid in (60805,60826,45096):
+for modid in (60805,60826)+((45096,) if os.environ.get('FETCH_ORIGINAL_REFERENCE')=='1' else ()):
  mod=get(f'/v1/games/morrowind/mods/{modid}.json')
  if modid!=45096:assert str(mod['user']['member_id'])==account,'Not owned'
  uid=str(mod['uid']);groups=get(f'/v3/mods/{uid}/files')['data']['mod_files']
  files=get(f'/v1/games/morrowind/mods/{modid}/files.json')['files']
  meta={'modid':modid,'uid':uid,'version':mod['version'],'groups':groups,'files':files}
  (root/f'{modid}-metadata.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf8')
- print('OWNED',modid,uid,mod['version'])
+ print('REFERENCE' if modid==45096 else 'OWNED',modid,uid,mod['version'])
  for f in files:
   if str(f.get('category_name','')).upper()!='MAIN':continue
   fid=f['file_id'];print('CURRENT',modid,fid,f.get('version'),f.get('file_name'))

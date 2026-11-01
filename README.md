@@ -32,6 +32,17 @@
 
 설치기는 한국어 엔진·폰트·번역 모드와 `openmw.cfg`의 한국어 관리 설정을 갱신하며, 기존 파일을 백업합니다. 전역 `encoding=utf8`을 무조건 강제할 필요는 없습니다.
 
+### 베데스다 공식 애드온 8종 한국어화 (선택 설치)
+
+베데스다 **Official Plugins** 8종에 대한 기존 한국어 번역은 본편 KR12.4 Full ZIP과 별도입니다. 해당 애드온을 사용하지 않는다면 설치할 필요가 없습니다.
+
+- **GOG판:** Official Plugins가 기본 제공되므로 별도 다운로드는 필요하지 않습니다. 게임 `Data Files`에 애드온 ESP가 실제로 존재하는지, OpenMW에서 사용할 애드온이 활성화되었는지는 확인하세요.
+- **Steam판:** Official Plugins가 포함되지 않습니다. [Bethesda Official Plugins (Nexus #3882)](https://www.nexusmods.com/morrowind/mods/3882?tab=files)에서 원본 애드온 8종을 내려받아 `Data Files`에 설치하고 사용할 플러그인을 활성화하세요. **8개 개별 플러그인과 합본(Official Mods Compilation)을 중복 활성화하지 마세요.**
+- **한국어 번역:** [KR3에서 공개한 `Morrowind_OfficialAddon_KR.zip`](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr3)의 한국어 ESP 및 OpenMW용 `.top`/`.mrk`/`.cel` 보조 파일을 사용합니다. 원본 애드온 없이 번역 파일만 설치하지 마세요.
+- **로드 순서:** 공식 애드온과 `Morrowind_Korean_ReTranslation.esp` 다음에 `Morrowind_OfficialAddon_KR.esp`를 로드하세요. 보조 파일도 같은 OpenMW 번역 데이터 경로에 둡니다.
+
+이 번역 패치는 원본 Bethesda 애드온 파일을 재배포하지 않습니다. **KR3 번역 ZIP의 무결성(SHA-256 `404dfe169203bdec679ec67d456aa7516421298dbec89620331a6af931bbe79f`)과 파일 구성은 확인했지만 KR12.4 전체 퀘스트/플러그인 조합을 실게임에서 재검증한 것은 아닙니다.**
+
 ### 포함 구성
 
 - 한국어 대응 Windows `openmw.exe`

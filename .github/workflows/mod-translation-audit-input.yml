@@ -1,0 +1,18 @@
+name: Fetch owned Rebirth and PFP releases for translation audit
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python packaging/korean/tooling/fetch_owned_mod_audit.py
+        env:
+          NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: owned-mod-audit-input
+          path: audit-input/
+          retention-days: 3

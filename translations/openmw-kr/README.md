@@ -4,9 +4,9 @@
 
 | 모드 | 원문 버전 | 번역 필드 | CEL 표시명 | TOP/MRK/JRN 연결(각각) |
 |---|---|---:|---:|---:|
-| [Tamriel Data](tamriel-data/26.08/manifest.json) | 26.08 HD | 25,788 | 1 | 39 |
-| [Project Cyrodiil](cyr-main/26.09a/manifest.json) | 26.09a Hotfix 1 | 15,035 | 200 | 221 |
-| [Skyrim: Home of the Nords](sky-main/26.09a/manifest.json) | 26.09a | 8,202 | 169 | 104 |
+| [Tamriel Data](tamriel-data/26.08/manifest.json) | 26.08 HD | 25,788 | 2 | 111 |
+| [Project Cyrodiil](cyr-main/26.09a/manifest.json) | 26.09a Hotfix 1 | 15,035 | 552 | 606 |
+| [Skyrim: Home of the Nords](sky-main/26.09a/manifest.json) | 26.09a | 8,202 | 431 | 355 |
 
 GitHub에는 번역 데이터·보조 표·도구만 저장합니다. ESM과 설치 ZIP은 게시하지 않으며, 모드 릴리스는 Nexus Mods에서만 합니다.
 
@@ -31,7 +31,9 @@ Data Files/
 
 보조 파일은 UTF-8 BOM을 붙인 탭 구분 텍스트입니다. 실제 일반 대화 DIAL을 대상으로 하는지, 중복·역방향 연결·본편 및 메인랜드와의 충돌을 검사합니다. 원래 DIAL.NAME, INFO.INAM/PNAM/NNAM, 조건, 스크립트, 마스터 목록, CELL과 문 목적지 ID를 바꾸지 않습니다.
 
-기존 셀·이름 번역과 스카이림 우선 용어 자료를 재사용했습니다. 미확정 셀·토픽은 영어 표시를 유지하고 각 `sidecar_holds.json`에 기록합니다. 완전한 지명·토픽 번역을 뜻하지 않습니다. **KR12.5의 MRK는 본문 검색용이므로 토픽 목록 제목까지 자동 번역하지 않습니다.** 이번 작업에서 엔진/UI는 변경하지 않았습니다.
+기존 셀·이름 번역과 스카이림 우선 용어 자료를 재사용하고, [보류 지명·토픽의 번역 1,109종](term_translations_20261102.json)을 추가했습니다. 반복되는 지명 구성요소를 조합하여 실사용 셀 985개를 번역했으며, 내부용 셀 19개는 원문 보존합니다. 실사용 지명과 토픽 표현의 미번역은 0개입니다. 새 이름의 음역은 잠정 표기이고 `NOT_REVIEWED`를 유지합니다.
+
+토픽 1,229개 중 1,072개는 TOP/MRK/JRN으로 연결하고, 157개는 번역은 있으나 자동 연결을 보류합니다. 짧아 오인하기 쉬운 검색어 119개, 본편·메인랜드의 기존 연결과 충돌하는 표현 38개입니다. 모드별 `sidecar_holds.json`에 번역과 사유를 보관하며, 이들에 임의의 토픽 ID를 연결하지 않습니다. **KR12.5의 MRK는 본문 검색용이므로 토픽 목록 제목까지 자동 번역하지 않습니다.** 이번 작업에서 엔진/UI는 변경하지 않았습니다.
 
 `strings.jsonl.gz`의 검수 상태는 기존 그대로입니다. Tamriel Data의 남은 책 722개는 모두 미검수 상태이며, 기존 가상언어 보존과 순화판 재사용도 유지했습니다. 메인랜드의 별도 v3 작업 자료는 변경하지 않았습니다.
 

@@ -1,0 +1,4445 @@
+{
+  "scope": "Tamriel Data 26.08, Cyr_Main 26.09a, Sky_Main 26.09a held display terms",
+  "method": "offline translation with existing terminology and provisional proper-name transliteration",
+  "language_review": "NOT_REVIEWED",
+  "runtime_tested": false,
+  "API_calls": 0,
+  "terms": [
+    {
+      "en": "Abandoned Cellar",
+      "ko": "버려진 지하실"
+    },
+    {
+      "en": "Abandoned Manor",
+      "ko": "버려진 저택"
+    },
+    {
+      "en": "Abandoned Passageway",
+      "ko": "버려진 통로"
+    },
+    {
+      "en": "Abecean Sea",
+      "ko": "아비시안 해"
+    },
+    {
+      "en": "Abolitionists",
+      "ko": "노예제 폐지론자들"
+    },
+    {
+      "en": "Acharamz",
+      "ko": "아차람즈"
+    },
+    {
+      "en": "Ada-Mantia",
+      "ko": "아다만티아"
+    },
+    {
+      "en": "Adjird",
+      "ko": "아지르드"
+    },
+    {
+      "en": "Advancement",
+      "ko": "승진"
+    },
+    {
+      "en": "Aejoir",
+      "ko": "아에요이르"
+    },
+    {
+      "en": "Aeredus",
+      "ko": "아에레두스"
+    },
+    {
+      "en": "Agi Bay",
+      "ko": "아기 만"
+    },
+    {
+      "en": "Agi Bay Grotto",
+      "ko": "아기 만 동굴"
+    },
+    {
+      "en": "Ahreg",
+      "ko": "아레그"
+    },
+    {
+      "en": "Akavir",
+      "ko": "아카비르"
+    },
+    {
+      "en": "Akna Mine",
+      "ko": "아크나 광산"
+    },
+    {
+      "en": "Aladoer's book",
+      "ko": "알라도어의 책"
+    },
+    {
+      "en": "Albatross Apartments",
+      "ko": "알바트로스 아파트"
+    },
+    {
+      "en": "Alchemical Remedies",
+      "ko": "연금술 치료제"
+    },
+    {
+      "en": "Alchemists",
+      "ko": "연금술사들"
+    },
+    {
+      "en": "Aldmeris",
+      "ko": "알드메리스"
+    },
+    {
+      "en": "Alovachtara",
+      "ko": "알로바크타라"
+    },
+    {
+      "en": "Alrasaide",
+      "ko": "알라사이드"
+    },
+    {
+      "en": "Altmer",
+      "ko": "알트머"
+    },
+    {
+      "en": "Altmer tea",
+      "ko": "알트머 차"
+    },
+    {
+      "en": "Alvur",
+      "ko": "알부르"
+    },
+    {
+      "en": "Amiel Richton",
+      "ko": "아미엘 릭튼"
+    },
+    {
+      "en": "Anechoic Chamber",
+      "ko": "무향실"
+    },
+    {
+      "en": "Angturiel",
+      "ko": "앙투리엘"
+    },
+    {
+      "en": "Ansedeus",
+      "ko": "안세데우스"
+    },
+    {
+      "en": "Antre",
+      "ko": "안트레"
+    },
+    {
+      "en": "Apartments",
+      "ko": "아파트"
+    },
+    {
+      "en": "Apelles Matius",
+      "ko": "아펠레스 마티우스"
+    },
+    {
+      "en": "Arahn's wound",
+      "ko": "아란의 상처"
+    },
+    {
+      "en": "Aransel",
+      "ko": "아란셀"
+    },
+    {
+      "en": "Arcanium",
+      "ko": "아르카니움"
+    },
+    {
+      "en": "Arcanium Dome",
+      "ko": "아르카니움 돔"
+    },
+    {
+      "en": "Arkngthamz",
+      "ko": "아르큰담즈"
+    },
+    {
+      "en": "Arsaig",
+      "ko": "아르세이그"
+    },
+    {
+      "en": "Aschar",
+      "ko": "아스카르"
+    },
+    {
+      "en": "Astinius Residence",
+      "ko": "아스티니우스 주택"
+    },
+    {
+      "en": "Asvirsang Barrow",
+      "ko": "아스비르상 고분"
+    },
+    {
+      "en": "Atrene",
+      "ko": "아트레네"
+    },
+    {
+      "en": "Auditorium",
+      "ko": "강당"
+    },
+    {
+      "en": "Auxiliary Tower",
+      "ko": "보조 탑"
+    },
+    {
+      "en": "Axilas Grotto",
+      "ko": "악실라스 동굴"
+    },
+    {
+      "en": "Background",
+      "ko": "내력"
+    },
+    {
+      "en": "Bad Man",
+      "ko": "나쁜 남자"
+    },
+    {
+      "en": "Bailcnoss",
+      "ko": "베일크노스"
+    },
+    {
+      "en": "Balefire",
+      "ko": "베일파이어"
+    },
+    {
+      "en": "Barjorg's plan",
+      "ko": "바르요르그의 계획"
+    },
+    {
+      "en": "Barn",
+      "ko": "헛간"
+    },
+    {
+      "en": "Barrowlands",
+      "ko": "고분 지대"
+    },
+    {
+      "en": "Bathhouse",
+      "ko": "목욕탕"
+    },
+    {
+      "en": "Bathmvall",
+      "ko": "바스므발"
+    },
+    {
+      "en": "Bathmvall Barrow",
+      "ko": "바스므발 고분"
+    },
+    {
+      "en": "Bear Clan Den",
+      "ko": "곰 씨족 소굴"
+    },
+    {
+      "en": "Beccha Barrow",
+      "ko": "베카 고분"
+    },
+    {
+      "en": "Beds",
+      "ko": "침상"
+    },
+    {
+      "en": "Benirus Crypt",
+      "ko": "베니루스 묘지"
+    },
+    {
+      "en": "Benirus crypt",
+      "ko": "베니루스 묘지"
+    },
+    {
+      "en": "Berfall",
+      "ko": "베르팔"
+    },
+    {
+      "en": "Bergarojh Barrow",
+      "ko": "베르가로이 고분"
+    },
+    {
+      "en": "Berjodhre",
+      "ko": "베르요드레"
+    },
+    {
+      "en": "Bernd is innocent",
+      "ko": "베른트의 결백"
+    },
+    {
+      "en": "Bespoke Perfumes",
+      "ko": "맞춤 향수"
+    },
+    {
+      "en": "Bethorst",
+      "ko": "베토르스트"
+    },
+    {
+      "en": "Betmeri",
+      "ko": "베트머"
+    },
+    {
+      "en": "Bharani",
+      "ko": "바라니"
+    },
+    {
+      "en": "Bitterfish tribe",
+      "ko": "비터피시 부족"
+    },
+    {
+      "en": "Bjagherd",
+      "ko": "비아게르드"
+    },
+    {
+      "en": "Black Circuit",
+      "ko": "검은 순환"
+    },
+    {
+      "en": "Black Isle Company",
+      "ko": "블랙 아일 회사"
+    },
+    {
+      "en": "Black Teeth Caverns",
+      "ko": "검은 이빨 동굴"
+    },
+    {
+      "en": "Blackfish Cave",
+      "ko": "블랙피시 동굴"
+    },
+    {
+      "en": "Blackstone Mine",
+      "ko": "블랙스톤 광산"
+    },
+    {
+      "en": "Bladachan",
+      "ko": "블라다칸"
+    },
+    {
+      "en": "Blades Trainers",
+      "ko": "블레이드 훈련교관"
+    },
+    {
+      "en": "Blencath",
+      "ko": "블렌카스"
+    },
+    {
+      "en": "Blind Dock Lodgings",
+      "ko": "블라인드 도크 숙소"
+    },
+    {
+      "en": "Blood Paw Lodge",
+      "ko": "블러드 포 별장"
+    },
+    {
+      "en": "Blue Raven",
+      "ko": "블루 레이븐"
+    },
+    {
+      "en": "Bodenboog",
+      "ko": "보덴부그"
+    },
+    {
+      "en": "Bolgardall",
+      "ko": "볼가르달"
+    },
+    {
+      "en": "Bosmer",
+      "ko": "보스머"
+    },
+    {
+      "en": "Bosmeri tribe",
+      "ko": "보스머 부족"
+    },
+    {
+      "en": "Braignainesaide",
+      "ko": "브라이그나인사이드"
+    },
+    {
+      "en": "Braljor",
+      "ko": "브랄요르"
+    },
+    {
+      "en": "Breakneck Den",
+      "ko": "브레이크넥 소굴"
+    },
+    {
+      "en": "Breezeway",
+      "ko": "바람길"
+    },
+    {
+      "en": "Brennan Bluffs",
+      "ko": "브레넌 절벽"
+    },
+    {
+      "en": "Briagmar Mine",
+      "ko": "브리아그마르 광산"
+    },
+    {
+      "en": "Brielle's soul",
+      "ko": "브리엘의 영혼"
+    },
+    {
+      "en": "Brine Stone",
+      "ko": "소금돌"
+    },
+    {
+      "en": "Briricca Company",
+      "ko": "브리리카 회사"
+    },
+    {
+      "en": "Broken Fang tribe",
+      "ko": "부러진 송곳니 부족"
+    },
+    {
+      "en": "Bruaram Barrow",
+      "ko": "브루아람 고분"
+    },
+    {
+      "en": "Buralca",
+      "ko": "부랄카"
+    },
+    {
+      "en": "Bvojou",
+      "ko": "브보요우"
+    },
+    {
+      "en": "Caius Cosades",
+      "ko": "카이우스 코사데스"
+    },
+    {
+      "en": "Camoran Usurper",
+      "ko": "찬탈자 카모란"
+    },
+    {
+      "en": "Canal West Tenements",
+      "ko": "서부 운하 공동주택"
+    },
+    {
+      "en": "Captain",
+      "ko": "선장"
+    },
+    {
+      "en": "Caravan Stop",
+      "ko": "대상단 쉼터"
+    },
+    {
+      "en": "Cartar",
+      "ko": "카르타르"
+    },
+    {
+      "en": "Carthalo",
+      "ko": "카르탈로"
+    },
+    {
+      "en": "Carvisa",
+      "ko": "카르비사"
+    },
+    {
+      "en": "Cassius Manor",
+      "ko": "카시우스 저택"
+    },
+    {
+      "en": "Castle Dragonstar",
+      "ko": "드래곤스타 성"
+    },
+    {
+      "en": "Castrum",
+      "ko": "카스트룸"
+    },
+    {
+      "en": "Castrum Dome",
+      "ko": "카스트룸 돔"
+    },
+    {
+      "en": "Cathay-Raht",
+      "ko": "캐세이 라트"
+    },
+    {
+      "en": "Catraso family heirloom",
+      "ko": "카트라소 가문의 가보"
+    },
+    {
+      "en": "Cejovo Grotto",
+      "ko": "세요보 동굴"
+    },
+    {
+      "en": "Celera",
+      "ko": "셀레라"
+    },
+    {
+      "en": "Cellars",
+      "ko": "지하실들"
+    },
+    {
+      "en": "Census and Excise Office",
+      "ko": "인구조사 및 과세국"
+    },
+    {
+      "en": "Chaerraich Barrow",
+      "ko": "카에라이크 고분"
+    },
+    {
+      "en": "Chamber of Commerce",
+      "ko": "상공회의소"
+    },
+    {
+      "en": "Chapel of Crimson Strings",
+      "ko": "진홍의 현 예배당"
+    },
+    {
+      "en": "Chapel of Persisting Sustenance",
+      "ko": "영원한 양식의 예배당"
+    },
+    {
+      "en": "Chapel of Solemn Echoes",
+      "ko": "장엄한 메아리의 예배당"
+    },
+    {
+      "en": "Chapel of the Tranquil Sky",
+      "ko": "고요한 하늘의 예배당"
+    },
+    {
+      "en": "Chapel of the West Wind",
+      "ko": "서풍의 예배당"
+    },
+    {
+      "en": "Chief Narkhagikh gro-Guruzug",
+      "ko": "족장 나르카기크 그로구루주그"
+    },
+    {
+      "en": "Chief Urok gro-Mogo",
+      "ko": "족장 우로크 그로모고"
+    },
+    {
+      "en": "Children",
+      "ko": "아이들"
+    },
+    {
+      "en": "Chimer",
+      "ko": "치머"
+    },
+    {
+      "en": "Cistern",
+      "ko": "저수조"
+    },
+    {
+      "en": "Cita",
+      "ko": "시타"
+    },
+    {
+      "en": "Citabelda",
+      "ko": "시타벨다"
+    },
+    {
+      "en": "Citayond",
+      "ko": "시타욘드"
+    },
+    {
+      "en": "City Granary",
+      "ko": "도시 곡물창고"
+    },
+    {
+      "en": "City Walls",
+      "ko": "성벽"
+    },
+    {
+      "en": "Clan Cabin",
+      "ko": "씨족 오두막"
+    },
+    {
+      "en": "Clan Direnni",
+      "ko": "디렌니 가문"
+    },
+    {
+      "en": "Cloudshaper Dome",
+      "ko": "구름조형자의 돔"
+    },
+    {
+      "en": "Club",
+      "ko": "클럽"
+    },
+    {
+      "en": "Coast Guard Barracks",
+      "ko": "해안 경비대 막사"
+    },
+    {
+      "en": "Collapsed Cellar",
+      "ko": "무너진 지하실"
+    },
+    {
+      "en": "Collapsed Watchtower",
+      "ko": "무너진 감시탑"
+    },
+    {
+      "en": "Colovia",
+      "ko": "콜로비아"
+    },
+    {
+      "en": "Colovian Highlands",
+      "ko": "콜로비아 고지대"
+    },
+    {
+      "en": "Colovian barrows",
+      "ko": "콜로비아의 고분들"
+    },
+    {
+      "en": "Commander",
+      "ko": "사령관"
+    },
+    {
+      "en": "Communal Hut",
+      "ko": "공동 오두막"
+    },
+    {
+      "en": "Conomorus Crypt",
+      "ko": "코노모루스 묘지"
+    },
+    {
+      "en": "Cooper",
+      "ko": "통 제작자"
+    },
+    {
+      "en": "Corcaran Aster",
+      "ko": "코르카란 애스터"
+    },
+    {
+      "en": "Cranngin Camp",
+      "ko": "크란긴 야영지"
+    },
+    {
+      "en": "Criagachsaide",
+      "ko": "크리아가크사이드"
+    },
+    {
+      "en": "Criaglorc",
+      "ko": "크리아글로르크"
+    },
+    {
+      "en": "Crossing",
+      "ko": "건널목"
+    },
+    {
+      "en": "Crossing Inn",
+      "ko": "건널목 여관"
+    },
+    {
+      "en": "Crow Hall Cave",
+      "ko": "크로 홀 동굴"
+    },
+    {
+      "en": "Crown Palace",
+      "ko": "왕관 궁전"
+    },
+    {
+      "en": "Crown Prince's offer",
+      "ko": "왕세자의 제안"
+    },
+    {
+      "en": "Crypsis",
+      "ko": "크립시스"
+    },
+    {
+      "en": "Crypts",
+      "ko": "묘지들"
+    },
+    {
+      "en": "Cult of Dibella",
+      "ko": "디벨라 교단"
+    },
+    {
+      "en": "Cult of the Winds",
+      "ko": "바람의 교단"
+    },
+    {
+      "en": "Cymon",
+      "ko": "시몬"
+    },
+    {
+      "en": "Cyrodiil lore",
+      "ko": "시로딜의 전승"
+    },
+    {
+      "en": "Cyrodiilic brandy",
+      "ko": "시로딜 브랜디"
+    },
+    {
+      "en": "Daedra cults",
+      "ko": "데이드라 교단들"
+    },
+    {
+      "en": "Dagon",
+      "ko": "데이건"
+    },
+    {
+      "en": "Daimon",
+      "ko": "다이몬"
+    },
+    {
+      "en": "Dara Nuin",
+      "ko": "다라 누인"
+    },
+    {
+      "en": "Darach Barrow",
+      "ko": "다라크 고분"
+    },
+    {
+      "en": "Darvatir",
+      "ko": "다르바티르"
+    },
+    {
+      "en": "Dasek Marsh",
+      "ko": "다세크 습지"
+    },
+    {
+      "en": "Deeps",
+      "ko": "심층부"
+    },
+    {
+      "en": "Den",
+      "ko": "소굴"
+    },
+    {
+      "en": "Direnni Castellum",
+      "ko": "디렌니 성채"
+    },
+    {
+      "en": "Direnni registers",
+      "ko": "디렌니 장부"
+    },
+    {
+      "en": "Distillery",
+      "ko": "증류소"
+    },
+    {
+      "en": "Docks Storage",
+      "ko": "부두 창고"
+    },
+    {
+      "en": "Dorahame",
+      "ko": "도라헤임"
+    },
+    {
+      "en": "Dragon Cult",
+      "ko": "드래곤 교단"
+    },
+    {
+      "en": "Drowned Citadel",
+      "ko": "가라앉은 성채"
+    },
+    {
+      "en": "Drowned Pit",
+      "ko": "물에 잠긴 구덩이"
+    },
+    {
+      "en": "Drowner contract",
+      "ko": "드라우너 계약"
+    },
+    {
+      "en": "Drowner's ritual",
+      "ko": "드라우너의 의식"
+    },
+    {
+      "en": "Druabith",
+      "ko": "드루아비스"
+    },
+    {
+      "en": "Druadach Highlands",
+      "ko": "드루아다크 고지대"
+    },
+    {
+      "en": "Duibhmarad",
+      "ko": "뒤브마라드"
+    },
+    {
+      "en": "Dunard",
+      "ko": "두나르드"
+    },
+    {
+      "en": "Duskwatch Keep",
+      "ko": "더스크워치 성채"
+    },
+    {
+      "en": "Edric",
+      "ko": "에드릭"
+    },
+    {
+      "en": "Einluk Mine",
+      "ko": "아인루크 광산"
+    },
+    {
+      "en": "Elgvring",
+      "ko": "엘그브링"
+    },
+    {
+      "en": "Emerald Council",
+      "ko": "에메랄드 의회"
+    },
+    {
+      "en": "Emperor Cassynder",
+      "ko": "카신더 황제"
+    },
+    {
+      "en": "Emperor Zero",
+      "ko": "제로 황제"
+    },
+    {
+      "en": "Empire",
+      "ko": "제국"
+    },
+    {
+      "en": "Enchanter and Soothsayer",
+      "ko": "마법부여사와 점술사"
+    },
+    {
+      "en": "End Grotto",
+      "ko": "끝자락 동굴"
+    },
+    {
+      "en": "Enman Septim",
+      "ko": "엔만 셉팀"
+    },
+    {
+      "en": "Eran Grotto",
+      "ko": "에란 동굴"
+    },
+    {
+      "en": "Erkild",
+      "ko": "에르킬드"
+    },
+    {
+      "en": "Eumaeus",
+      "ko": "에우마에우스"
+    },
+    {
+      "en": "Falco Galenus",
+      "ko": "팔코 갈레누스"
+    },
+    {
+      "en": "Faldarach",
+      "ko": "팔다라크"
+    },
+    {
+      "en": "Faldarachsaide",
+      "ko": "팔다라크사이드"
+    },
+    {
+      "en": "Falkheim Region",
+      "ko": "팔크하임 지역"
+    },
+    {
+      "en": "Far West Fleet",
+      "ko": "극서 함대"
+    },
+    {
+      "en": "Farkon",
+      "ko": "파르콘"
+    },
+    {
+      "en": "Farmhand",
+      "ko": "농장 일꾼"
+    },
+    {
+      "en": "Felcius Farm",
+      "ko": "펠키우스 농장"
+    },
+    {
+      "en": "Fight Pit",
+      "ko": "투기장"
+    },
+    {
+      "en": "First Light",
+      "ko": "첫빛"
+    },
+    {
+      "en": "Five Citadels",
+      "ko": "다섯 성채"
+    },
+    {
+      "en": "Five Fathoms Flophouse",
+      "ko": "파이브 패덤스 싸구려 숙소"
+    },
+    {
+      "en": "Fleets",
+      "ko": "함대들"
+    },
+    {
+      "en": "Flight Deck",
+      "ko": "비행 갑판"
+    },
+    {
+      "en": "Flooded Banquet",
+      "ko": "물에 잠긴 연회장"
+    },
+    {
+      "en": "Fluke",
+      "ko": "플루크"
+    },
+    {
+      "en": "Folly",
+      "ko": "어리석음"
+    },
+    {
+      "en": "Food",
+      "ko": "음식"
+    },
+    {
+      "en": "Forkya",
+      "ko": "포르키아"
+    },
+    {
+      "en": "Forsaken Shoal",
+      "ko": "버려진 여울"
+    },
+    {
+      "en": "Fort Telodrach",
+      "ko": "텔로드라크 요새"
+    },
+    {
+      "en": "Fort Wavemoth",
+      "ko": "웨이브모스 요새"
+    },
+    {
+      "en": "Forts",
+      "ko": "요새들"
+    },
+    {
+      "en": "Fortyd Barrow",
+      "ko": "포르티드 고분"
+    },
+    {
+      "en": "Frandar Hunding",
+      "ko": "프란다르 헌딩"
+    },
+    {
+      "en": "Frigidarium",
+      "ko": "냉탕실"
+    },
+    {
+      "en": "Fundamentum",
+      "ko": "기초부"
+    },
+    {
+      "en": "Furnace Halls",
+      "ko": "용광로 홀"
+    },
+    {
+      "en": "Fyrignar",
+      "ko": "피리그나르"
+    },
+    {
+      "en": "Gate Tower",
+      "ko": "성문 탑"
+    },
+    {
+      "en": "Gear Room",
+      "ko": "기어실"
+    },
+    {
+      "en": "Geldwyr Manor",
+      "ko": "겔드위르 저택"
+    },
+    {
+      "en": "General Quarters",
+      "ko": "일반 거주구"
+    },
+    {
+      "en": "Ghostfence",
+      "ko": "고스트펜스"
+    },
+    {
+      "en": "Gilded Hills Region",
+      "ko": "황금빛 구릉 지역"
+    },
+    {
+      "en": "Gilded-Shield Estate",
+      "ko": "황금방패 영지"
+    },
+    {
+      "en": "Glisterpike",
+      "ko": "글리스터파이크"
+    },
+    {
+      "en": "God of Sorrow",
+      "ko": "슬픔의 신"
+    },
+    {
+      "en": "Goddess of Air",
+      "ko": "공기의 여신"
+    },
+    {
+      "en": "Gold Coast Region",
+      "ko": "골드코스트 지역"
+    },
+    {
+      "en": "Good Traitors",
+      "ko": "선한 배신자들"
+    },
+    {
+      "en": "Granary",
+      "ko": "곡물창고"
+    },
+    {
+      "en": "Grand Foyer",
+      "ko": "대현관"
+    },
+    {
+      "en": "Gravetender",
+      "ko": "무덤지기"
+    },
+    {
+      "en": "Great Bazaar",
+      "ko": "대시장"
+    },
+    {
+      "en": "Great Hallowhall",
+      "ko": "대성소 홀"
+    },
+    {
+      "en": "Grey Plains",
+      "ko": "회색 평원"
+    },
+    {
+      "en": "Guild disciplines",
+      "ko": "길드의 수련"
+    },
+    {
+      "en": "Guild of Ratcatchers",
+      "ko": "쥐잡이 길드"
+    },
+    {
+      "en": "Gula Cave",
+      "ko": "굴라 동굴"
+    },
+    {
+      "en": "Gulaida",
+      "ko": "굴라이다"
+    },
+    {
+      "en": "Gurm the Steadfast",
+      "ko": "불굴의 구름"
+    },
+    {
+      "en": "Gurmshal",
+      "ko": "구름샬"
+    },
+    {
+      "en": "Hadrach Crypt",
+      "ko": "하드라크 묘지"
+    },
+    {
+      "en": "Hadrach Manor",
+      "ko": "하드라크 저택"
+    },
+    {
+      "en": "Halgern Manor",
+      "ko": "할게른 저택"
+    },
+    {
+      "en": "Hall of Dissonance",
+      "ko": "불협화음의 홀"
+    },
+    {
+      "en": "Hall of the Boar Snout Clan",
+      "ko": "멧돼지 주둥이 씨족의 홀"
+    },
+    {
+      "en": "Harbor Granary",
+      "ko": "항구 곡물창고"
+    },
+    {
+      "en": "Harbormaster",
+      "ko": "항만장"
+    },
+    {
+      "en": "Harkir",
+      "ko": "하르키르"
+    },
+    {
+      "en": "Harkisius Barrow",
+      "ko": "하르키시우스 고분"
+    },
+    {
+      "en": "Hearth Hostel",
+      "ko": "난롯가 숙소"
+    },
+    {
+      "en": "Hearthrend",
+      "ko": "하스렌드"
+    },
+    {
+      "en": "Heat Lightning",
+      "ko": "먼 번개"
+    },
+    {
+      "en": "Heating Room",
+      "ko": "난방실"
+    },
+    {
+      "en": "Hecul",
+      "ko": "헤쿨"
+    },
+    {
+      "en": "Heifnil",
+      "ko": "헤이프닐"
+    },
+    {
+      "en": "Hemiall Mine",
+      "ko": "헤미알 광산"
+    },
+    {
+      "en": "Herlundsval Barrow",
+      "ko": "헤를룬드스발 고분"
+    },
+    {
+      "en": "Herma-Mora",
+      "ko": "헤르마 모라"
+    },
+    {
+      "en": "Hermontar",
+      "ko": "헤르몬타르"
+    },
+    {
+      "en": "Hidden Cellar",
+      "ko": "숨겨진 지하실"
+    },
+    {
+      "en": "Hierophants",
+      "ko": "대사제들"
+    },
+    {
+      "en": "Hirda",
+      "ko": "히르다"
+    },
+    {
+      "en": "Hjalmar's captives",
+      "ko": "흐얄마르의 포로들"
+    },
+    {
+      "en": "Hoarbeld",
+      "ko": "호어벨드"
+    },
+    {
+      "en": "Hoarfrost Arcade",
+      "ko": "흰서리 회랑"
+    },
+    {
+      "en": "Hole",
+      "ko": "구멍"
+    },
+    {
+      "en": "Home Fleet",
+      "ko": "본토 함대"
+    },
+    {
+      "en": "Hostel of Saint Rosunius",
+      "ko": "성 로수니우스 숙소"
+    },
+    {
+      "en": "House of Mara",
+      "ko": "마라의 집"
+    },
+    {
+      "en": "Hrakja",
+      "ko": "흐라키아"
+    },
+    {
+      "en": "Hrakja Cavern",
+      "ko": "흐라키아 동굴"
+    },
+    {
+      "en": "Humanoid Races",
+      "ko": "인간형 종족들"
+    },
+    {
+      "en": "Humans",
+      "ko": "인간들"
+    },
+    {
+      "en": "Husteng",
+      "ko": "후스텡"
+    },
+    {
+      "en": "Ice-Moon Manor",
+      "ko": "얼음달 저택"
+    },
+    {
+      "en": "Ikan Grotto",
+      "ko": "이칸 동굴"
+    },
+    {
+      "en": "Iliac Fleet",
+      "ko": "일리악 함대"
+    },
+    {
+      "en": "Ilujra",
+      "ko": "일루이라"
+    },
+    {
+      "en": "Imperial Astrological Society",
+      "ko": "제국 점성술 학회"
+    },
+    {
+      "en": "Imperial Geographical Society",
+      "ko": "제국 지리학회"
+    },
+    {
+      "en": "Imperial Office of Census and Excise",
+      "ko": "제국 인구조사 및 과세국"
+    },
+    {
+      "en": "Imperial Simulacrum",
+      "ko": "제국의 가짜 황제 시대"
+    },
+    {
+      "en": "Imperial cult doctrine",
+      "ko": "임페리얼 교단의 교리"
+    },
+    {
+      "en": "Imperial culture",
+      "ko": "제국의 문화"
+    },
+    {
+      "en": "Imperial provinces",
+      "ko": "제국의 속주들"
+    },
+    {
+      "en": "Imperial whoresons",
+      "ko": "제국의 개자식들"
+    },
+    {
+      "en": "Inner Hall",
+      "ko": "안쪽 홀"
+    },
+    {
+      "en": "Inner Maw",
+      "ko": "안쪽 아가리"
+    },
+    {
+      "en": "Iron Man Tavern",
+      "ko": "아이언 맨 선술집"
+    },
+    {
+      "en": "Iron-Mane Farm",
+      "ko": "아이언메인 농장"
+    },
+    {
+      "en": "Iron-Mane Residence",
+      "ko": "아이언메인 주택"
+    },
+    {
+      "en": "Itinerant Priests",
+      "ko": "순회 사제들"
+    },
+    {
+      "en": "Ivrol Crypt",
+      "ko": "이브롤 묘지"
+    },
+    {
+      "en": "Ivrol Manor",
+      "ko": "이브롤 저택"
+    },
+    {
+      "en": "Jaloch Clan House",
+      "ko": "얄로크 씨족의 집"
+    },
+    {
+      "en": "Jarl Horir",
+      "ko": "호리르 야를"
+    },
+    {
+      "en": "Jaskav Barrow",
+      "ko": "야스카브 고분"
+    },
+    {
+      "en": "Javrashal",
+      "ko": "야브라샬"
+    },
+    {
+      "en": "Jondo",
+      "ko": "욘도"
+    },
+    {
+      "en": "Joranta",
+      "ko": "요란타"
+    },
+    {
+      "en": "Juniper",
+      "ko": "주니퍼"
+    },
+    {
+      "en": "Jurgar and Drydo",
+      "ko": "유르가르와 드리도"
+    },
+    {
+      "en": "Kali Mes",
+      "ko": "칼리 메스"
+    },
+    {
+      "en": "Kar Toronr Barrow",
+      "ko": "카르 토로느르 고분"
+    },
+    {
+      "en": "Karrel",
+      "ko": "카렐"
+    },
+    {
+      "en": "Karskaer Barrow",
+      "ko": "카르스케어 고분"
+    },
+    {
+      "en": "Karthwasten Caves",
+      "ko": "카스웨이스턴 동굴"
+    },
+    {
+      "en": "Keep of the Shore-Kings",
+      "ko": "해안 왕들의 성채"
+    },
+    {
+      "en": "Kejev Cavern",
+      "ko": "케예브 동굴"
+    },
+    {
+      "en": "Kerlingroff Mine",
+      "ko": "케를링로프 광산"
+    },
+    {
+      "en": "Khulari",
+      "ko": "쿨라리"
+    },
+    {
+      "en": "Kicsiver Barrow",
+      "ko": "킥시베르 고분"
+    },
+    {
+      "en": "Kimoi Manor",
+      "ko": "키모이 저택"
+    },
+    {
+      "en": "King Barda",
+      "ko": "바르다 왕"
+    },
+    {
+      "en": "King Claudius",
+      "ko": "클라우디우스 왕"
+    },
+    {
+      "en": "King Orgnum",
+      "ko": "오르그넘 왕"
+    },
+    {
+      "en": "Kingdom of Artemon",
+      "ko": "아르테몬 왕국"
+    },
+    {
+      "en": "Kingdom of Chorrol",
+      "ko": "코롤 왕국"
+    },
+    {
+      "en": "Kingdom of Delodiil",
+      "ko": "델로디일 왕국"
+    },
+    {
+      "en": "Kingdom of Sarchal",
+      "ko": "사르찰 왕국"
+    },
+    {
+      "en": "Kingdom of Skingrad",
+      "ko": "스킨그라드 왕국"
+    },
+    {
+      "en": "Kingfisher Cave",
+      "ko": "킹피셔 동굴"
+    },
+    {
+      "en": "Kitchen",
+      "ko": "주방"
+    },
+    {
+      "en": "Kitia Grotto",
+      "ko": "키티아 동굴"
+    },
+    {
+      "en": "Kjorgnir Barrow",
+      "ko": "키요르그니르 고분"
+    },
+    {
+      "en": "Klovla",
+      "ko": "클로블라"
+    },
+    {
+      "en": "Knight of Cups",
+      "ko": "성배의 기사"
+    },
+    {
+      "en": "Kolfinna's gang",
+      "ko": "콜핀나의 무리"
+    },
+    {
+      "en": "Kolgath Hollow",
+      "ko": "콜가스 골짜기"
+    },
+    {
+      "en": "Konungrshof",
+      "ko": "코눙그르스호프"
+    },
+    {
+      "en": "Kulmar",
+      "ko": "쿨마르"
+    },
+    {
+      "en": "Kyrdhoj",
+      "ko": "키르드호이"
+    },
+    {
+      "en": "Lacorius Crypt",
+      "ko": "라코리우스 묘지"
+    },
+    {
+      "en": "Lacorius Estate",
+      "ko": "라코리우스 영지"
+    },
+    {
+      "en": "Lakush's remains",
+      "ko": "라쿠시의 유해"
+    },
+    {
+      "en": "Land",
+      "ko": "땅"
+    },
+    {
+      "en": "Lazur Grotto",
+      "ko": "라주르 동굴"
+    },
+    {
+      "en": "Ledu",
+      "ko": "레두"
+    },
+    {
+      "en": "Lindasael",
+      "ko": "린다셀"
+    },
+    {
+      "en": "Little Arenthia",
+      "ko": "리틀 아렌시아"
+    },
+    {
+      "en": "Lorchwuir Heath",
+      "ko": "로르크위르 황야"
+    },
+    {
+      "en": "Lord Trinimac",
+      "ko": "트리니막 님"
+    },
+    {
+      "en": "Lorhame",
+      "ko": "로르헤임"
+    },
+    {
+      "en": "Lost Stars Hollow",
+      "ko": "잃어버린 별의 골짜기"
+    },
+    {
+      "en": "Lower Barrow",
+      "ko": "하층 고분"
+    },
+    {
+      "en": "Lower Floors",
+      "ko": "아래층"
+    },
+    {
+      "en": "Lower Mineworks",
+      "ko": "하층 갱도"
+    },
+    {
+      "en": "Maingaell",
+      "ko": "마잉겔"
+    },
+    {
+      "en": "Maira",
+      "ko": "마이라"
+    },
+    {
+      "en": "Mairager",
+      "ko": "마이라게르"
+    },
+    {
+      "en": "Maitarra Grotto",
+      "ko": "마이타라 동굴"
+    },
+    {
+      "en": "Malagrok",
+      "ko": "말라그로크"
+    },
+    {
+      "en": "Malahame",
+      "ko": "말라헤임"
+    },
+    {
+      "en": "Malatu Mallari",
+      "ko": "말라투 말라리"
+    },
+    {
+      "en": "Malthorc",
+      "ko": "말소르크"
+    },
+    {
+      "en": "Mand",
+      "ko": "만드"
+    },
+    {
+      "en": "Mara's work",
+      "ko": "마라의 일"
+    },
+    {
+      "en": "Marbaildomuin",
+      "ko": "마르바일도무인"
+    },
+    {
+      "en": "Maricius Residence",
+      "ko": "마리키우스 주택"
+    },
+    {
+      "en": "Marina",
+      "ko": "마리나"
+    },
+    {
+      "en": "Marine Temple",
+      "ko": "바다의 사원"
+    },
+    {
+      "en": "Markema",
+      "ko": "마르케마"
+    },
+    {
+      "en": "Marshals",
+      "ko": "원수들"
+    },
+    {
+      "en": "Masqued Captain",
+      "ko": "가면 쓴 선장"
+    },
+    {
+      "en": "Matriarch",
+      "ko": "여족장"
+    },
+    {
+      "en": "Mead Hall of Thane Gorvrda",
+      "ko": "고르브르다 쎄인의 벌꿀주 홀"
+    },
+    {
+      "en": "Medericus Distillery",
+      "ko": "메데리쿠스 증류소"
+    },
+    {
+      "en": "Meginhard Barrow",
+      "ko": "메긴하르드 고분"
+    },
+    {
+      "en": "Melestrata",
+      "ko": "멜레스트라타"
+    },
+    {
+      "en": "Merax Farm",
+      "ko": "메락스 농장"
+    },
+    {
+      "en": "Merduibh",
+      "ko": "메르뒤브"
+    },
+    {
+      "en": "Mhemadh",
+      "ko": "므헤마드"
+    },
+    {
+      "en": "Midkarth",
+      "ko": "미드카르스"
+    },
+    {
+      "en": "Miners Quarters",
+      "ko": "광부 숙소"
+    },
+    {
+      "en": "Mirilstern",
+      "ko": "미릴스테른"
+    },
+    {
+      "en": "Mirta Grotto",
+      "ko": "미르타 동굴"
+    },
+    {
+      "en": "Mischarstette",
+      "ko": "미샤르슈테테"
+    },
+    {
+      "en": "Miskar Barrow",
+      "ko": "미스카르 고분"
+    },
+    {
+      "en": "Mistbinder Grounds",
+      "ko": "안개구속자의 정원"
+    },
+    {
+      "en": "Mival",
+      "ko": "미발"
+    },
+    {
+      "en": "Mormolycea",
+      "ko": "모르몰리케아"
+    },
+    {
+      "en": "Morven",
+      "ko": "모르벤"
+    },
+    {
+      "en": "Mrakal Caverns",
+      "ko": "므라칼 동굴"
+    },
+    {
+      "en": "Muladansa's debt",
+      "ko": "물라단사의 빚"
+    },
+    {
+      "en": "Mwezi",
+      "ko": "므웨지"
+    },
+    {
+      "en": "Mykoi",
+      "ko": "미코이"
+    },
+    {
+      "en": "Mykoi Isles",
+      "ko": "미코이 제도"
+    },
+    {
+      "en": "Mykoi Lighthouse",
+      "ko": "미코이 등대"
+    },
+    {
+      "en": "Nabor",
+      "ko": "나보르"
+    },
+    {
+      "en": "Nagaiarelle",
+      "ko": "나가이아렐"
+    },
+    {
+      "en": "Nagasel",
+      "ko": "나가셀"
+    },
+    {
+      "en": "Nagaseli",
+      "ko": "나가셀리"
+    },
+    {
+      "en": "Naharine River",
+      "ko": "나하린 강"
+    },
+    {
+      "en": "Nargozh Camp",
+      "ko": "나르고즈 야영지"
+    },
+    {
+      "en": "Navarch",
+      "ko": "함대장"
+    },
+    {
+      "en": "Navy Officer Lodgings",
+      "ko": "해군 장교 숙소"
+    },
+    {
+      "en": "Navy armor",
+      "ko": "해군 갑옷"
+    },
+    {
+      "en": "Nedic Stand",
+      "ko": "네드의 저항지"
+    },
+    {
+      "en": "Nefa",
+      "ko": "네파"
+    },
+    {
+      "en": "Nibenay",
+      "ko": "니베나이"
+    },
+    {
+      "en": "Nobius Residence",
+      "ko": "노비우스 주택"
+    },
+    {
+      "en": "Nordic gods",
+      "ko": "노드의 신들"
+    },
+    {
+      "en": "Norinia",
+      "ko": "노리니아"
+    },
+    {
+      "en": "North Guard Towers",
+      "ko": "북쪽 경비탑"
+    },
+    {
+      "en": "North Wall Apartments",
+      "ko": "북쪽 성벽 아파트"
+    },
+    {
+      "en": "Notte Industries",
+      "ko": "노테 산업"
+    },
+    {
+      "en": "Ocsenna",
+      "ko": "옥세나"
+    },
+    {
+      "en": "Odric",
+      "ko": "오드릭"
+    },
+    {
+      "en": "Ogima",
+      "ko": "오기마"
+    },
+    {
+      "en": "Old Thraswatch",
+      "ko": "올드 스라스워치"
+    },
+    {
+      "en": "Olen Benirus",
+      "ko": "올렌 베니루스"
+    },
+    {
+      "en": "Olive Ridley",
+      "ko": "올리브 리들리"
+    },
+    {
+      "en": "Olomachus",
+      "ko": "올로마쿠스"
+    },
+    {
+      "en": "Oloman",
+      "ko": "올로만"
+    },
+    {
+      "en": "Olvos",
+      "ko": "올보스"
+    },
+    {
+      "en": "Olvus Kalchariu",
+      "ko": "올부스 칼카리우"
+    },
+    {
+      "en": "Onol'Mor",
+      "ko": "오놀모르"
+    },
+    {
+      "en": "Orc",
+      "ko": "오크"
+    },
+    {
+      "en": "Order of Dibella Estetica",
+      "ko": "디벨라 에스테티카 기사단"
+    },
+    {
+      "en": "Order of Kynareth Irremitenta",
+      "ko": "키나레스 이레미텐타 기사단"
+    },
+    {
+      "en": "Order of the Breath-of-Kyne",
+      "ko": "카인의 숨결 기사단"
+    },
+    {
+      "en": "Orkey",
+      "ko": "오르키"
+    },
+    {
+      "en": "Ormurin Barrow",
+      "ko": "오르무린 고분"
+    },
+    {
+      "en": "Orsinium",
+      "ko": "오시니움"
+    },
+    {
+      "en": "Orsuld",
+      "ko": "오르술드"
+    },
+    {
+      "en": "Ossius Ranch",
+      "ko": "오시우스 목장"
+    },
+    {
+      "en": "Pale Bay Cave",
+      "ko": "페일 만 동굴"
+    },
+    {
+      "en": "Pallatium",
+      "ko": "팔라티움"
+    },
+    {
+      "en": "Pallatium Dome",
+      "ko": "팔라티움 돔"
+    },
+    {
+      "en": "Panalian Residence",
+      "ko": "파날리안 주택"
+    },
+    {
+      "en": "Pawnbroker & Loans",
+      "ko": "전당포와 대출소"
+    },
+    {
+      "en": "Pelelius Crypt",
+      "ko": "펠렐리우스 묘지"
+    },
+    {
+      "en": "Pelelius Manor",
+      "ko": "펠렐리우스 저택"
+    },
+    {
+      "en": "Pelladia ancestral relic",
+      "ko": "펠라디아 가문의 선조 유물"
+    },
+    {
+      "en": "Placid Drowner Cult",
+      "ko": "고요한 드라우너 교단"
+    },
+    {
+      "en": "Port Quarter",
+      "ko": "항구 지구"
+    },
+    {
+      "en": "Potions",
+      "ko": "물약"
+    },
+    {
+      "en": "Praetor",
+      "ko": "법무관"
+    },
+    {
+      "en": "Prince Oringar",
+      "ko": "오링가르 왕자"
+    },
+    {
+      "en": "Pyraeus",
+      "ko": "피라에우스"
+    },
+    {
+      "en": "Quarantine",
+      "ko": "격리 구역"
+    },
+    {
+      "en": "Queen Akaterina",
+      "ko": "아카테리나 여왕"
+    },
+    {
+      "en": "Queen Millona",
+      "ko": "밀로나 여왕"
+    },
+    {
+      "en": "Queen's investment",
+      "ko": "여왕의 투자"
+    },
+    {
+      "en": "Queens",
+      "ko": "여왕들"
+    },
+    {
+      "en": "Ra-Habi Company",
+      "ko": "라하비 회사"
+    },
+    {
+      "en": "Ra-Habi Company Hall",
+      "ko": "라하비 회사 회관"
+    },
+    {
+      "en": "Racha",
+      "ko": "라차"
+    },
+    {
+      "en": "Ragnvald Barrow",
+      "ko": "라그느발드 고분"
+    },
+    {
+      "en": "Ralen Hlaalo",
+      "ko": "랄렌 흘라알로"
+    },
+    {
+      "en": "Rath Arach",
+      "ko": "라스 아라크"
+    },
+    {
+      "en": "Rath Cnoss",
+      "ko": "라스 크노스"
+    },
+    {
+      "en": "Rath Quilla",
+      "ko": "라스 퀼라"
+    },
+    {
+      "en": "Ratiocinatory",
+      "ko": "추론실"
+    },
+    {
+      "en": "Reachman thieves",
+      "ko": "리치인 도둑들"
+    },
+    {
+      "en": "Reachman woman",
+      "ko": "리치인 여성"
+    },
+    {
+      "en": "Red Palace",
+      "ko": "붉은 궁전"
+    },
+    {
+      "en": "Red Treasury",
+      "ko": "붉은 국고"
+    },
+    {
+      "en": "Reeve",
+      "ko": "치안관"
+    },
+    {
+      "en": "Relds Farm",
+      "ko": "렐드 농장"
+    },
+    {
+      "en": "Requirements",
+      "ko": "필요 조건"
+    },
+    {
+      "en": "Respite",
+      "ko": "휴식처"
+    },
+    {
+      "en": "Rianard's work",
+      "ko": "리아나르드의 일"
+    },
+    {
+      "en": "Rift",
+      "ko": "균열"
+    },
+    {
+      "en": "Rilsyl Barrow",
+      "ko": "릴실 고분"
+    },
+    {
+      "en": "Rilus",
+      "ko": "릴루스"
+    },
+    {
+      "en": "Round-Head Manor",
+      "ko": "라운드헤드 저택"
+    },
+    {
+      "en": "Royal Chambers",
+      "ko": "왕실 거처"
+    },
+    {
+      "en": "Ruari",
+      "ko": "루아리"
+    },
+    {
+      "en": "Ruari Crypt",
+      "ko": "루아리 묘지"
+    },
+    {
+      "en": "Ruby Drake Inn",
+      "ko": "루비 드레이크 여관"
+    },
+    {
+      "en": "Rufrius",
+      "ko": "루프리우스"
+    },
+    {
+      "en": "Rugdugbash gro-Oshgana",
+      "ko": "루그두그바시 그로오시가나"
+    },
+    {
+      "en": "Rusolv",
+      "ko": "루솔브"
+    },
+    {
+      "en": "Rycius Ossiu",
+      "ko": "리키우스 오시우"
+    },
+    {
+      "en": "S'Viir's hoard",
+      "ko": "스비르의 비축물"
+    },
+    {
+      "en": "Saccoro Farm",
+      "ko": "사코로 농장"
+    },
+    {
+      "en": "Sacred Baths",
+      "ko": "성스러운 목욕탕"
+    },
+    {
+      "en": "Sacred Depths",
+      "ko": "성스러운 심층부"
+    },
+    {
+      "en": "Sacred Rage",
+      "ko": "성스러운 분노"
+    },
+    {
+      "en": "Sacred Workshops",
+      "ko": "성스러운 작업장"
+    },
+    {
+      "en": "Saern",
+      "ko": "세른"
+    },
+    {
+      "en": "Saern Crypt",
+      "ko": "세른 묘지"
+    },
+    {
+      "en": "Saint Amiel Officer",
+      "ko": "성 아미엘 장교"
+    },
+    {
+      "en": "Saint Amiel Officers' Club",
+      "ko": "성 아미엘 장교 클럽"
+    },
+    {
+      "en": "Saint Bendu Square",
+      "ko": "성 벤두 광장"
+    },
+    {
+      "en": "Saint Emmelia",
+      "ko": "성 에멜리아"
+    },
+    {
+      "en": "Saint Rosunius",
+      "ko": "성 로수니우스"
+    },
+    {
+      "en": "Salinen",
+      "ko": "살리넨"
+    },
+    {
+      "en": "Saltgrass Poet",
+      "ko": "소금풀 시인"
+    },
+    {
+      "en": "Salvage Mine",
+      "ko": "샐비지 광산"
+    },
+    {
+      "en": "Sarchse",
+      "ko": "사르크세"
+    },
+    {
+      "en": "Scarlet Sand Company",
+      "ko": "스칼렛 샌드 회사"
+    },
+    {
+      "en": "Scrolls of Turn Undead",
+      "ko": "언데드 퇴치 두루마리"
+    },
+    {
+      "en": "Sea Elves",
+      "ko": "시 엘프"
+    },
+    {
+      "en": "Sea of Mists",
+      "ko": "안개의 바다"
+    },
+    {
+      "en": "Seastone House",
+      "ko": "시스톤 저택"
+    },
+    {
+      "en": "Secret Passage",
+      "ko": "비밀 통로"
+    },
+    {
+      "en": "Selkies",
+      "ko": "셀키"
+    },
+    {
+      "en": "Services Wing",
+      "ko": "서비스동"
+    },
+    {
+      "en": "Sheor",
+      "ko": "셰오르"
+    },
+    {
+      "en": "Shield",
+      "ko": "방패"
+    },
+    {
+      "en": "Shipworks",
+      "ko": "조선소"
+    },
+    {
+      "en": "Shore-King",
+      "ko": "해안의 왕"
+    },
+    {
+      "en": "Silo",
+      "ko": "저장탑"
+    },
+    {
+      "en": "Simleth Caverns",
+      "ko": "심레스 동굴"
+    },
+    {
+      "en": "Sinalon",
+      "ko": "시날론"
+    },
+    {
+      "en": "Siralius Crypt",
+      "ko": "시랄리우스 묘지"
+    },
+    {
+      "en": "Siralius Manor",
+      "ko": "시랄리우스 저택"
+    },
+    {
+      "en": "Skaldvir",
+      "ko": "스칼드비르"
+    },
+    {
+      "en": "Skjuggefald Deeps",
+      "ko": "스키우게팔드 심층부"
+    },
+    {
+      "en": "Skorunde Barrow",
+      "ko": "스코룬데 고분"
+    },
+    {
+      "en": "Skyanchor Halls",
+      "ko": "하늘닻의 홀"
+    },
+    {
+      "en": "Skyrim lore",
+      "ko": "스카이림의 전승"
+    },
+    {
+      "en": "Sleeps-in-Grass' taxes",
+      "ko": "풀밭에서-잠드는-자의 세금"
+    },
+    {
+      "en": "Snapleg Passage",
+      "ko": "스냅레그 통로"
+    },
+    {
+      "en": "Sodden Hollow",
+      "ko": "물먹은 골짜기"
+    },
+    {
+      "en": "Solar",
+      "ko": "햇볕방"
+    },
+    {
+      "en": "Sonance Vestibule",
+      "ko": "울림의 전실"
+    },
+    {
+      "en": "Sorhuk",
+      "ko": "소르후크"
+    },
+    {
+      "en": "Soulrest Uprising",
+      "ko": "소울레스트 봉기"
+    },
+    {
+      "en": "South Guard Towers",
+      "ko": "남쪽 경비탑"
+    },
+    {
+      "en": "Spearmouth Inn",
+      "ko": "스피어마우스 여관"
+    },
+    {
+      "en": "Srethuun Tribe",
+      "ko": "스레툰 부족"
+    },
+    {
+      "en": "Srethuun Tribe Apartment",
+      "ko": "스레툰 부족 아파트"
+    },
+    {
+      "en": "Stables Storage",
+      "ko": "마구간 창고"
+    },
+    {
+      "en": "Staff Lodgings",
+      "ko": "직원 숙소"
+    },
+    {
+      "en": "Staff Quarters",
+      "ko": "직원 거주구"
+    },
+    {
+      "en": "Stand",
+      "ko": "저항지"
+    },
+    {
+      "en": "Stanius Residence",
+      "ko": "스타니우스 주택"
+    },
+    {
+      "en": "Starflight Halls",
+      "ko": "별비행의 홀"
+    },
+    {
+      "en": "Starlight Sanctum",
+      "ko": "별빛 성소"
+    },
+    {
+      "en": "Stirk Isle",
+      "ko": "스티르크 섬"
+    },
+    {
+      "en": "Stonehead Cave",
+      "ko": "스톤헤드 동굴"
+    },
+    {
+      "en": "Storage",
+      "ko": "창고"
+    },
+    {
+      "en": "Storage Shed",
+      "ko": "창고 헛간"
+    },
+    {
+      "en": "Straler Loronu",
+      "ko": "스트랄레르 로로누"
+    },
+    {
+      "en": "Strand",
+      "ko": "스트랜드"
+    },
+    {
+      "en": "Strid",
+      "ko": "스트리드"
+    },
+    {
+      "en": "Strident Coast",
+      "ko": "스트리덴트 해안"
+    },
+    {
+      "en": "Stuhn",
+      "ko": "스툰"
+    },
+    {
+      "en": "Subfuscous Cupola",
+      "ko": "어스름 지붕"
+    },
+    {
+      "en": "Suite",
+      "ko": "스위트룸"
+    },
+    {
+      "en": "Summerset Isle",
+      "ko": "서머셋 섬"
+    },
+    {
+      "en": "Summerset linens and tea",
+      "ko": "서머셋산 리넨과 차"
+    },
+    {
+      "en": "Sunset Hotel",
+      "ko": "선셋 호텔"
+    },
+    {
+      "en": "Sur-Rata Caverns",
+      "ko": "수르라타 동굴"
+    },
+    {
+      "en": "Sutch-Anvil Tollhouse",
+      "ko": "서치앤빌 통행료 징수소"
+    },
+    {
+      "en": "Svaer",
+      "ko": "스베르"
+    },
+    {
+      "en": "Swordmoth Legion Fort",
+      "ko": "소드모스 군단 요새"
+    },
+    {
+      "en": "Syradri",
+      "ko": "시라드리"
+    },
+    {
+      "en": "TEM Brinerunner",
+      "ko": "템 브라인러너호"
+    },
+    {
+      "en": "TEM Eye of the Abecean",
+      "ko": "템 아비시안의 눈호"
+    },
+    {
+      "en": "TEM Ithalin",
+      "ko": "템 이탈린호"
+    },
+    {
+      "en": "TEM Kintyra",
+      "ko": "템 킨티라호"
+    },
+    {
+      "en": "TEM Parhelion",
+      "ko": "템 파헬리온호"
+    },
+    {
+      "en": "TEM Red Tempest",
+      "ko": "템 레드 템페스트호"
+    },
+    {
+      "en": "TEM Senecus Goddkey",
+      "ko": "템 세네쿠스 갓키호"
+    },
+    {
+      "en": "TEM Sunset Sword",
+      "ko": "템 선셋 소드호"
+    },
+    {
+      "en": "TEM Surfrunner",
+      "ko": "템 서프러너호"
+    },
+    {
+      "en": "Talgiana Crypt",
+      "ko": "탈기아나 묘지"
+    },
+    {
+      "en": "Talgiana Orchard",
+      "ko": "탈기아나 과수원"
+    },
+    {
+      "en": "Taliesinntara",
+      "ko": "탈리에신타라"
+    },
+    {
+      "en": "Tarnabye",
+      "ko": "타르나비"
+    },
+    {
+      "en": "Tarnwasel Palace Ruins",
+      "ko": "타른와셀 궁전 폐허"
+    },
+    {
+      "en": "Taurus Hall Concordat",
+      "ko": "타우루스 홀 협약"
+    },
+    {
+      "en": "Telvor Crypt",
+      "ko": "텔보르 묘지"
+    },
+    {
+      "en": "Telvor Manor",
+      "ko": "텔보르 저택"
+    },
+    {
+      "en": "Tempest Depths",
+      "ko": "폭풍 심층부"
+    },
+    {
+      "en": "Temple of Diagna",
+      "ko": "디아그나 사원"
+    },
+    {
+      "en": "Temple of Dibella Estetica",
+      "ko": "디벨라 에스테티카 사원"
+    },
+    {
+      "en": "Temple of the First Breath",
+      "ko": "첫 숨결의 사원"
+    },
+    {
+      "en": "Tenet-reading",
+      "ko": "교리 해독"
+    },
+    {
+      "en": "Thalur Grotto",
+      "ko": "탈루르 동굴"
+    },
+    {
+      "en": "The Abecean Monitor",
+      "ko": "아비시안 모니터"
+    },
+    {
+      "en": "The Scupper",
+      "ko": "스커퍼"
+    },
+    {
+      "en": "The Voice",
+      "ko": "포효"
+    },
+    {
+      "en": "Thesigir Chasm",
+      "ko": "테시기르 협곡"
+    },
+    {
+      "en": "Thimistrel Crypt",
+      "ko": "티미스트렐 묘지"
+    },
+    {
+      "en": "Thimistrel Manor",
+      "ko": "티미스트렐 저택"
+    },
+    {
+      "en": "Thras",
+      "ko": "스라스"
+    },
+    {
+      "en": "Throne Room",
+      "ko": "왕좌실"
+    },
+    {
+      "en": "Tinemaich",
+      "ko": "티네마이크"
+    },
+    {
+      "en": "To-Nagri Cave Dwelling",
+      "ko": "토나그리 동굴 거처"
+    },
+    {
+      "en": "Tomb of the Shore-Kings",
+      "ko": "해안 왕들의 무덤"
+    },
+    {
+      "en": "Tool Shed",
+      "ko": "도구 창고"
+    },
+    {
+      "en": "Training Room",
+      "ko": "훈련실"
+    },
+    {
+      "en": "Treaty of Chorrol",
+      "ko": "코롤 조약"
+    },
+    {
+      "en": "Trident Exchange",
+      "ko": "트라이던트 거래소"
+    },
+    {
+      "en": "Tro-Tuktura Pass",
+      "ko": "트로툭투라 고개"
+    },
+    {
+      "en": "Tuskengryd Barrow",
+      "ko": "투스켄그리드 고분"
+    },
+    {
+      "en": "Unrest in Cyrodiil City",
+      "ko": "시로딜 시의 소요"
+    },
+    {
+      "en": "Unsullied Halls",
+      "ko": "티 없는 홀"
+    },
+    {
+      "en": "Upper Floors",
+      "ko": "위층"
+    },
+    {
+      "en": "Upper Mineworks",
+      "ko": "상층 갱도"
+    },
+    {
+      "en": "Uramok Camp",
+      "ko": "우라모크 야영지"
+    },
+    {
+      "en": "Uriel Septim",
+      "ko": "우리엘 셉팀"
+    },
+    {
+      "en": "Vabriasel",
+      "ko": "바브리아셀"
+    },
+    {
+      "en": "Vadich Residence",
+      "ko": "바디크 주택"
+    },
+    {
+      "en": "Val Ansvech Barrow",
+      "ko": "발 안스베크 고분"
+    },
+    {
+      "en": "Valcha Farmhouse",
+      "ko": "발카 농가"
+    },
+    {
+      "en": "Valenwood delicacies",
+      "ko": "발렌우드의 별미"
+    },
+    {
+      "en": "Vallanytha Grotto",
+      "ko": "발라니타 동굴"
+    },
+    {
+      "en": "Valley of Diamonds",
+      "ko": "다이아몬드 계곡"
+    },
+    {
+      "en": "Valsar",
+      "ko": "발사르"
+    },
+    {
+      "en": "Vampyrum Order",
+      "ko": "뱀피룸 결사"
+    },
+    {
+      "en": "Vari-Vedis Ophiliu",
+      "ko": "바리베디스 오필리우"
+    },
+    {
+      "en": "Vars Tharnil",
+      "ko": "바르스 사르닐"
+    },
+    {
+      "en": "Varsius Residence",
+      "ko": "바르시우스 주택"
+    },
+    {
+      "en": "Vault",
+      "ko": "금고"
+    },
+    {
+      "en": "Viduscan Isles",
+      "ko": "비두스칸 제도"
+    },
+    {
+      "en": "Vilenkin",
+      "ko": "빌렌킨"
+    },
+    {
+      "en": "Villa",
+      "ko": "별장"
+    },
+    {
+      "en": "Vinicius Manor",
+      "ko": "비니키우스 저택"
+    },
+    {
+      "en": "Vinka Barrow",
+      "ko": "빈카 고분"
+    },
+    {
+      "en": "Vintage Wolfsblood Wine",
+      "ko": "빈티지 울프스블러드 포도주"
+    },
+    {
+      "en": "Visitor",
+      "ko": "방문객"
+    },
+    {
+      "en": "Vitta Barrow",
+      "ko": "비타 고분"
+    },
+    {
+      "en": "Voiceless Harmony",
+      "ko": "소리 없는 조화"
+    },
+    {
+      "en": "Vornberg",
+      "ko": "보른베르그"
+    },
+    {
+      "en": "Vorndgad Forest",
+      "ko": "보른드가드 숲"
+    },
+    {
+      "en": "Vorndgad Forest Region",
+      "ko": "보른드가드 숲 지역"
+    },
+    {
+      "en": "Vorngond",
+      "ko": "보른곤드"
+    },
+    {
+      "en": "Vorngyd",
+      "ko": "보른기드"
+    },
+    {
+      "en": "Vorngyd's Stand",
+      "ko": "보른기드의 저항지"
+    },
+    {
+      "en": "Vostangar",
+      "ko": "보스탄가르"
+    },
+    {
+      "en": "Vvardenfell",
+      "ko": "바덴펠"
+    },
+    {
+      "en": "Vyridia Decator",
+      "ko": "비리디아 데카토르"
+    },
+    {
+      "en": "War of Bend'r-Mahk",
+      "ko": "벤드르마크 전쟁"
+    },
+    {
+      "en": "Water Mill",
+      "ko": "물레방앗간"
+    },
+    {
+      "en": "Wave Reaver tribe",
+      "ko": "파도 약탈자 부족"
+    },
+    {
+      "en": "Wavemoth Legion Fort",
+      "ko": "웨이브모스 군단 요새"
+    },
+    {
+      "en": "Wayfarer Building",
+      "ko": "웨이페어러 건물"
+    },
+    {
+      "en": "West Guard Towers",
+      "ko": "서쪽 경비탑"
+    },
+    {
+      "en": "West Lookout Tower",
+      "ko": "서쪽 망루"
+    },
+    {
+      "en": "West Navy High Command",
+      "ko": "서부 해군 최고사령부"
+    },
+    {
+      "en": "West Wind Suites",
+      "ko": "서풍 스위트룸"
+    },
+    {
+      "en": "Weylus Orchard",
+      "ko": "웨일루스 과수원"
+    },
+    {
+      "en": "White Reef",
+      "ko": "흰 암초"
+    },
+    {
+      "en": "Windweaver Dome",
+      "ko": "바람직조자의 돔"
+    },
+    {
+      "en": "Wine Cellar",
+      "ko": "포도주 저장고"
+    },
+    {
+      "en": "Woodhearth",
+      "ko": "우드하스"
+    },
+    {
+      "en": "Wormusoel",
+      "ko": "워무소엘"
+    },
+    {
+      "en": "Wya",
+      "ko": "위아"
+    },
+    {
+      "en": "Yard Gate Tenements",
+      "ko": "야드 게이트 공동주택"
+    },
+    {
+      "en": "Yata",
+      "ko": "야타"
+    },
+    {
+      "en": "Ylliolos",
+      "ko": "일리올로스"
+    },
+    {
+      "en": "Yoku Gods",
+      "ko": "요쿠의 신들"
+    },
+    {
+      "en": "Yokuda",
+      "ko": "요쿠다"
+    },
+    {
+      "en": "Z'en",
+      "ko": "젠"
+    },
+    {
+      "en": "a better suggestion",
+      "ko": "더 나은 제안"
+    },
+    {
+      "en": "a song",
+      "ko": "노래 한 곡"
+    },
+    {
+      "en": "a step up from Firsthold",
+      "ko": "퍼스트홀드보다 나은 곳"
+    },
+    {
+      "en": "a warning to Drydo",
+      "ko": "드리도에게 보낼 경고"
+    },
+    {
+      "en": "accuse poisoner",
+      "ko": "독살범 고발"
+    },
+    {
+      "en": "acquisition",
+      "ko": "물품 확보"
+    },
+    {
+      "en": "acrobatics",
+      "ko": "곡예술"
+    },
+    {
+      "en": "addictive narcotic",
+      "ko": "중독성 마약"
+    },
+    {
+      "en": "additional donation",
+      "ko": "추가 기부"
+    },
+    {
+      "en": "all this time",
+      "ko": "그동안의 일"
+    },
+    {
+      "en": "almanac",
+      "ko": "역서"
+    },
+    {
+      "en": "alms for Mara",
+      "ko": "마라를 위한 자선"
+    },
+    {
+      "en": "an informal duty",
+      "ko": "비공식 임무"
+    },
+    {
+      "en": "an unrelated matter",
+      "ko": "별개의 문제"
+    },
+    {
+      "en": "and Elixirs",
+      "ko": "및 엘릭서"
+    },
+    {
+      "en": "apple",
+      "ko": "사과"
+    },
+    {
+      "en": "apprentice's murder",
+      "ko": "견습생 살인 사건"
+    },
+    {
+      "en": "ascetic",
+      "ko": "금욕주의자"
+    },
+    {
+      "en": "assist the cult",
+      "ko": "교단 지원"
+    },
+    {
+      "en": "athletics",
+      "ko": "운동신경"
+    },
+    {
+      "en": "auspicious date",
+      "ko": "길일"
+    },
+    {
+      "en": "available for hire",
+      "ko": "고용 가능 여부"
+    },
+    {
+      "en": "axe",
+      "ko": "도끼"
+    },
+    {
+      "en": "bad omens",
+      "ko": "불길한 징조"
+    },
+    {
+      "en": "ban on levitation",
+      "ko": "공중부양 금지령"
+    },
+    {
+      "en": "bandit threat",
+      "ko": "산적의 위협"
+    },
+    {
+      "en": "bandits",
+      "ko": "산적들"
+    },
+    {
+      "en": "bandits in Thesigir Chasm",
+      "ko": "테시기르 협곡의 산적들"
+    },
+    {
+      "en": "become a painter",
+      "ko": "화가가 되는 일"
+    },
+    {
+      "en": "beseech Sarchse",
+      "ko": "사르크세에게 간청"
+    },
+    {
+      "en": "best gloves",
+      "ko": "최고의 장갑"
+    },
+    {
+      "en": "big door",
+      "ko": "큰 문"
+    },
+    {
+      "en": "birthsign",
+      "ko": "별자리"
+    },
+    {
+      "en": "blessings",
+      "ko": "축복"
+    },
+    {
+      "en": "blunt weapon",
+      "ko": "둔기"
+    },
+    {
+      "en": "board members",
+      "ko": "이사회 구성원"
+    },
+    {
+      "en": "body of a boar",
+      "ko": "멧돼지의 사체"
+    },
+    {
+      "en": "body on the mesa",
+      "ko": "탁상대지 위의 시체"
+    },
+    {
+      "en": "book I brought",
+      "ko": "내가 가져온 책"
+    },
+    {
+      "en": "book club",
+      "ko": "독서 모임"
+    },
+    {
+      "en": "books for the entry hall",
+      "ko": "현관 홀에 둘 책"
+    },
+    {
+      "en": "books from Benirus Manor",
+      "ko": "베니루스 저택의 책"
+    },
+    {
+      "en": "bounty",
+      "ko": "현상금"
+    },
+    {
+      "en": "bounty hunter",
+      "ko": "현상금 사냥꾼"
+    },
+    {
+      "en": "break me out",
+      "ko": "탈옥시켜 주는 일"
+    },
+    {
+      "en": "bring back my horses",
+      "ko": "내 말을 되찾는 일"
+    },
+    {
+      "en": "business with Nito",
+      "ko": "니토와의 거래"
+    },
+    {
+      "en": "captive Reachmen",
+      "ko": "붙잡힌 리치인들"
+    },
+    {
+      "en": "carriage service",
+      "ko": "마차 운송"
+    },
+    {
+      "en": "case of fabric",
+      "ko": "직물 상자"
+    },
+    {
+      "en": "cave trolls",
+      "ko": "동굴 트롤"
+    },
+    {
+      "en": "cave-ins destroyed the bridge",
+      "ko": "낙반으로 무너진 다리"
+    },
+    {
+      "en": "change the plan",
+      "ko": "계획 변경"
+    },
+    {
+      "en": "chicken menace",
+      "ko": "닭의 위협"
+    },
+    {
+      "en": "clans",
+      "ko": "씨족들"
+    },
+    {
+      "en": "clear the hideout",
+      "ko": "은신처 소탕"
+    },
+    {
+      "en": "coal for the furnace rooms",
+      "ko": "난방실에 필요한 석탄"
+    },
+    {
+      "en": "coins to spare",
+      "ko": "여윳돈"
+    },
+    {
+      "en": "collect a donation",
+      "ko": "기부금 모금"
+    },
+    {
+      "en": "collect intelligence",
+      "ko": "정보 수집"
+    },
+    {
+      "en": "collect plants",
+      "ko": "식물 채집"
+    },
+    {
+      "en": "collecting Divine favors",
+      "ko": "신들의 은총을 모으는 일"
+    },
+    {
+      "en": "collection of curiosities",
+      "ko": "진기한 물건 수집품"
+    },
+    {
+      "en": "commission a painting",
+      "ko": "그림 의뢰"
+    },
+    {
+      "en": "common disease",
+      "ko": "일반 질병"
+    },
+    {
+      "en": "companies",
+      "ko": "회사들"
+    },
+    {
+      "en": "compensation",
+      "ko": "보상"
+    },
+    {
+      "en": "components for a ritual",
+      "ko": "의식에 필요한 재료"
+    },
+    {
+      "en": "consummation ritual",
+      "ko": "완성의 의식"
+    },
+    {
+      "en": "contract",
+      "ko": "계약"
+    },
+    {
+      "en": "contract Hjeld the Steady",
+      "ko": "흔들림 없는 혤드와 계약"
+    },
+    {
+      "en": "corrosive slime",
+      "ko": "부식성 점액"
+    },
+    {
+      "en": "cowardice",
+      "ko": "겁쟁이 짓"
+    },
+    {
+      "en": "craichebann",
+      "ko": "크라이헤반"
+    },
+    {
+      "en": "create a thunderstorm",
+      "ko": "뇌우를 일으키는 일"
+    },
+    {
+      "en": "crystal ball",
+      "ko": "수정구"
+    },
+    {
+      "en": "current events",
+      "ko": "최근 정세"
+    },
+    {
+      "en": "dashing doublet",
+      "ko": "멋들어진 더블릿"
+    },
+    {
+      "en": "dead gods",
+      "ko": "죽은 신들"
+    },
+    {
+      "en": "debt to the Abecette",
+      "ko": "아베세트에게 진 빚"
+    },
+    {
+      "en": "deliver a package",
+      "ko": "소포 배달"
+    },
+    {
+      "en": "deliver moon sugar",
+      "ko": "문슈거 배달"
+    },
+    {
+      "en": "deposit funds",
+      "ko": "자금 예치"
+    },
+    {
+      "en": "destination",
+      "ko": "목적지"
+    },
+    {
+      "en": "detect key potion",
+      "ko": "열쇠 탐지 물약"
+    },
+    {
+      "en": "digging in the yard",
+      "ko": "마당 파헤치기"
+    },
+    {
+      "en": "diplomatic mission",
+      "ko": "외교 사절 임무"
+    },
+    {
+      "en": "display cases",
+      "ko": "진열장"
+    },
+    {
+      "en": "disturbing dreams",
+      "ko": "불길한 꿈"
+    },
+    {
+      "en": "donations for the Hostel",
+      "ko": "숙소를 위한 기부금"
+    },
+    {
+      "en": "down from a tree",
+      "ko": "나무에서 내려오는 일"
+    },
+    {
+      "en": "dragons",
+      "ko": "드래곤들"
+    },
+    {
+      "en": "dreugh monstrosity",
+      "ko": "괴물 드레우그"
+    },
+    {
+      "en": "drinks",
+      "ko": "마실 것"
+    },
+    {
+      "en": "drug lord",
+      "ko": "마약 두목"
+    },
+    {
+      "en": "duties",
+      "ko": "임무"
+    },
+    {
+      "en": "eight Circuits",
+      "ko": "여덟 순환"
+    },
+    {
+      "en": "eight kingdoms of Colovia",
+      "ko": "콜로비아의 여덟 왕국"
+    },
+    {
+      "en": "employ Nito Nesba",
+      "ko": "니토 네스바 고용"
+    },
+    {
+      "en": "enchant",
+      "ko": "마법부여"
+    },
+    {
+      "en": "enchanters",
+      "ko": "마법부여사들"
+    },
+    {
+      "en": "enchanting experiment",
+      "ko": "마법부여 실험"
+    },
+    {
+      "en": "enchanting items",
+      "ko": "물품에 마법부여"
+    },
+    {
+      "en": "enchantments",
+      "ko": "마법 효과"
+    },
+    {
+      "en": "enlightenment",
+      "ko": "깨달음"
+    },
+    {
+      "en": "entrance to Taliesinntara",
+      "ko": "탈리에신타라 입구"
+    },
+    {
+      "en": "escape Mairager",
+      "ko": "마이라게르 탈출"
+    },
+    {
+      "en": "escort Anaryan",
+      "ko": "아나리안 호위"
+    },
+    {
+      "en": "experienced professional",
+      "ko": "숙련된 전문가"
+    },
+    {
+      "en": "explore Garlas Agea",
+      "ko": "가를라스 아게아 탐사"
+    },
+    {
+      "en": "extenuating circumstances",
+      "ko": "참작할 사정"
+    },
+    {
+      "en": "eyes of Cyrodiil",
+      "ko": "시로딜의 눈"
+    },
+    {
+      "en": "facilitate a meet-cute",
+      "ko": "낭만적인 첫 만남 주선"
+    },
+    {
+      "en": "factions",
+      "ko": "세력들"
+    },
+    {
+      "en": "faith",
+      "ko": "신앙"
+    },
+    {
+      "en": "family sword",
+      "ko": "가문의 검"
+    },
+    {
+      "en": "feed Sal",
+      "ko": "살에게 먹이 주기"
+    },
+    {
+      "en": "few more words",
+      "ko": "몇 마디 더"
+    },
+    {
+      "en": "fight pit",
+      "ko": "투기장"
+    },
+    {
+      "en": "fight together",
+      "ko": "함께 싸우는 일"
+    },
+    {
+      "en": "fighter disciplines",
+      "ko": "전사의 수련"
+    },
+    {
+      "en": "find Dalach's spy",
+      "ko": "달라크의 첩자 찾기"
+    },
+    {
+      "en": "find Santaral Osi",
+      "ko": "산타랄 오시 찾기"
+    },
+    {
+      "en": "find Volanil",
+      "ko": "볼라닐 찾기"
+    },
+    {
+      "en": "find an adventure",
+      "ko": "모험 찾기"
+    },
+    {
+      "en": "fine shoes",
+      "ko": "고급 구두"
+    },
+    {
+      "en": "fines and compensation",
+      "ko": "벌금과 배상금"
+    },
+    {
+      "en": "fire petals",
+      "ko": "불꽃잎"
+    },
+    {
+      "en": "first attempt",
+      "ko": "첫 시도"
+    },
+    {
+      "en": "first riddle",
+      "ko": "첫 번째 수수께끼"
+    },
+    {
+      "en": "fitted breeches",
+      "ko": "몸에 맞춘 반바지"
+    },
+    {
+      "en": "five types of pearl",
+      "ko": "다섯 종류의 진주"
+    },
+    {
+      "en": "fix your mistake",
+      "ko": "실수 바로잡기"
+    },
+    {
+      "en": "flashgrit license",
+      "ko": "플래시그릿 허가증"
+    },
+    {
+      "en": "flin",
+      "ko": "플린"
+    },
+    {
+      "en": "flying creatures",
+      "ko": "날아다니는 생물"
+    },
+    {
+      "en": "food from Morrowind",
+      "ko": "모로윈드에서 온 음식"
+    },
+    {
+      "en": "forge travel papers",
+      "ko": "통행증 위조"
+    },
+    {
+      "en": "formula notes",
+      "ko": "제조법 기록"
+    },
+    {
+      "en": "fortify potions",
+      "ko": "능력 강화 물약"
+    },
+    {
+      "en": "generous donors",
+      "ko": "관대한 기부자들"
+    },
+    {
+      "en": "geographic regions",
+      "ko": "지리적 구역"
+    },
+    {
+      "en": "geography",
+      "ko": "지리"
+    },
+    {
+      "en": "geography of Colovia",
+      "ko": "콜로비아의 지리"
+    },
+    {
+      "en": "geography of Cyrodiil",
+      "ko": "시로딜의 지리"
+    },
+    {
+      "en": "geography of Skyrim",
+      "ko": "스카이림의 지리"
+    },
+    {
+      "en": "geography of the world",
+      "ko": "세계의 지리"
+    },
+    {
+      "en": "get cured",
+      "ko": "치료받는 일"
+    },
+    {
+      "en": "get in contact with Halvir",
+      "ko": "할비르와 접촉"
+    },
+    {
+      "en": "get me out",
+      "ko": "여기서 꺼내 주는 일"
+    },
+    {
+      "en": "gift of vampirism",
+      "ko": "흡혈귀의 은총"
+    },
+    {
+      "en": "give a performance",
+      "ko": "공연하기"
+    },
+    {
+      "en": "go free",
+      "ko": "자유의 몸"
+    },
+    {
+      "en": "goblin trouble",
+      "ko": "고블린 문제"
+    },
+    {
+      "en": "goblins",
+      "ko": "고블린들"
+    },
+    {
+      "en": "gods and spirits",
+      "ko": "신들과 영혼들"
+    },
+    {
+      "en": "going out to eat",
+      "ko": "외식"
+    },
+    {
+      "en": "gremlin speech",
+      "ko": "그렘린의 말"
+    },
+    {
+      "en": "group of radicals",
+      "ko": "급진파 집단"
+    },
+    {
+      "en": "guild guide",
+      "ko": "길드 안내인"
+    },
+    {
+      "en": "hand to hand",
+      "ko": "맨손 격투"
+    },
+    {
+      "en": "hear a story",
+      "ko": "이야기 듣기"
+    },
+    {
+      "en": "hearth gods",
+      "ko": "가정의 신들"
+    },
+    {
+      "en": "heating room",
+      "ko": "난방실"
+    },
+    {
+      "en": "heavy loads",
+      "ko": "무거운 짐"
+    },
+    {
+      "en": "hedonist",
+      "ko": "쾌락주의자"
+    },
+    {
+      "en": "help free a poor Wood Elf",
+      "ko": "불쌍한 우드 엘프 해방"
+    },
+    {
+      "en": "help my crew out",
+      "ko": "내 선원들을 돕는 일"
+    },
+    {
+      "en": "her politicking",
+      "ko": "그녀의 정치 공작"
+    },
+    {
+      "en": "herd animals",
+      "ko": "가축들"
+    },
+    {
+      "en": "hide and seek",
+      "ko": "숨바꼭질"
+    },
+    {
+      "en": "hire retainers",
+      "ko": "가신 고용"
+    },
+    {
+      "en": "hostage situation",
+      "ko": "인질 사태"
+    },
+    {
+      "en": "hunt them down",
+      "ko": "추적하여 사냥"
+    },
+    {
+      "en": "impossible riddle",
+      "ko": "불가능한 수수께끼"
+    },
+    {
+      "en": "improve my effectiveness",
+      "ko": "내 실력 향상"
+    },
+    {
+      "en": "improvements",
+      "ko": "개선 사항"
+    },
+    {
+      "en": "incantory neonymic",
+      "ko": "주문용 네오니믹"
+    },
+    {
+      "en": "informants",
+      "ko": "정보원들"
+    },
+    {
+      "en": "insurgent elements",
+      "ko": "반란 세력"
+    },
+    {
+      "en": "interloper",
+      "ko": "침입자"
+    },
+    {
+      "en": "investigate Malrec",
+      "ko": "말레크 조사"
+    },
+    {
+      "en": "investigate the ruins",
+      "ko": "유적 조사"
+    },
+    {
+      "en": "jobs",
+      "ko": "일거리"
+    },
+    {
+      "en": "join House Hlaalu",
+      "ko": "흘라알루 가문 가입"
+    },
+    {
+      "en": "join House Indoril",
+      "ko": "인도릴 가문 가입"
+    },
+    {
+      "en": "join House Redoran",
+      "ko": "레도란 가문 가입"
+    },
+    {
+      "en": "join House Telvanni",
+      "ko": "텔바니 가문 가입"
+    },
+    {
+      "en": "join the Fighters Guild",
+      "ko": "전사 길드 가입"
+    },
+    {
+      "en": "join the Itinerant Priests",
+      "ko": "순회 사제단 가입"
+    },
+    {
+      "en": "join the Ja-Natta Syndicate",
+      "ko": "자나타 조직 가입"
+    },
+    {
+      "en": "join the Kingdom of Anvil",
+      "ko": "앤빌 왕국 가입"
+    },
+    {
+      "en": "join the Kingdom of Sutch",
+      "ko": "서치 왕국 가입"
+    },
+    {
+      "en": "join the Kingdom of the Reach",
+      "ko": "리치 왕국 가입"
+    },
+    {
+      "en": "join the Mages Guild",
+      "ko": "메이지 길드 가입"
+    },
+    {
+      "en": "join the Ordinators",
+      "ko": "오디네이터 가입"
+    },
+    {
+      "en": "join the Thieves Guild",
+      "ko": "도둑 길드 가입"
+    },
+    {
+      "en": "keep me healthy",
+      "ko": "건강 유지"
+    },
+    {
+      "en": "key in the barn",
+      "ko": "헛간의 열쇠"
+    },
+    {
+      "en": "kill the wormmouth",
+      "ko": "웜마우스 처치"
+    },
+    {
+      "en": "kwama egg",
+      "ko": "크와마 알"
+    },
+    {
+      "en": "landscape painting",
+      "ko": "풍경화"
+    },
+    {
+      "en": "last shipment of flour",
+      "ko": "마지막 밀가루 화물"
+    },
+    {
+      "en": "latest rumors",
+      "ko": "최근 소문"
+    },
+    {
+      "en": "learn something too",
+      "ko": "무언가를 배우는 일"
+    },
+    {
+      "en": "leave Mairager",
+      "ko": "마이라게르를 떠나는 일"
+    },
+    {
+      "en": "letter to Kha'Raji",
+      "ko": "카 라지에게 보낼 편지"
+    },
+    {
+      "en": "light armor",
+      "ko": "경갑"
+    },
+    {
+      "en": "like my pa",
+      "ko": "내 아버지처럼"
+    },
+    {
+      "en": "lingering undead",
+      "ko": "남아 있는 언데드"
+    },
+    {
+      "en": "little advice",
+      "ko": "작은 조언"
+    },
+    {
+      "en": "little secret",
+      "ko": "작은 비밀"
+    },
+    {
+      "en": "loan for Thelius",
+      "ko": "텔리우스의 대출"
+    },
+    {
+      "en": "local pearls",
+      "ko": "현지 진주"
+    },
+    {
+      "en": "local priests",
+      "ko": "현지 사제들"
+    },
+    {
+      "en": "locked chest in the vault",
+      "ko": "금고 안의 잠긴 상자"
+    },
+    {
+      "en": "long blade",
+      "ko": "장검"
+    },
+    {
+      "en": "look for a craftsman",
+      "ko": "장인 찾기"
+    },
+    {
+      "en": "looking anxious",
+      "ko": "불안한 모습"
+    },
+    {
+      "en": "lost heirloom",
+      "ko": "잃어버린 가보"
+    },
+    {
+      "en": "lottchach brigands",
+      "ko": "로트카크 도적들"
+    },
+    {
+      "en": "love of my life",
+      "ko": "내 평생의 사랑"
+    },
+    {
+      "en": "love potion",
+      "ko": "사랑의 묘약"
+    },
+    {
+      "en": "lucky amulet",
+      "ko": "행운의 아뮬렛"
+    },
+    {
+      "en": "lucky dagger",
+      "ko": "행운의 단검"
+    },
+    {
+      "en": "mage disciplines",
+      "ko": "마법사의 수련"
+    },
+    {
+      "en": "make amends",
+      "ko": "잘못을 만회하는 일"
+    },
+    {
+      "en": "many nice coins",
+      "ko": "많은 좋은 동전"
+    },
+    {
+      "en": "map of the tunnels",
+      "ko": "통로 지도"
+    },
+    {
+      "en": "marksman",
+      "ko": "사격술"
+    },
+    {
+      "en": "mead",
+      "ko": "벌꿀주"
+    },
+    {
+      "en": "medium armor",
+      "ko": "평갑"
+    },
+    {
+      "en": "mercantile",
+      "ko": "상술"
+    },
+    {
+      "en": "mercantile skills",
+      "ko": "상업 기술"
+    },
+    {
+      "en": "mercenaries",
+      "ko": "용병들"
+    },
+    {
+      "en": "message for Vesmorah",
+      "ko": "베스모라에게 전할 소식"
+    },
+    {
+      "en": "might find some",
+      "ko": "좀 찾을 수도 있는 곳"
+    },
+    {
+      "en": "minor cults",
+      "ko": "소규모 교단들"
+    },
+    {
+      "en": "misguided kin",
+      "ko": "잘못된 길에 든 동족"
+    },
+    {
+      "en": "missing buck",
+      "ko": "사라진 수사슴"
+    },
+    {
+      "en": "missing caravan",
+      "ko": "실종된 대상단"
+    },
+    {
+      "en": "missing goats",
+      "ko": "사라진 염소들"
+    },
+    {
+      "en": "missing gods",
+      "ko": "사라진 신들"
+    },
+    {
+      "en": "missions",
+      "ko": "임무들"
+    },
+    {
+      "en": "moths and butterflies",
+      "ko": "나방과 나비"
+    },
+    {
+      "en": "mugger",
+      "ko": "노상강도"
+    },
+    {
+      "en": "my Legion days",
+      "ko": "내 군단 시절"
+    },
+    {
+      "en": "my bread",
+      "ko": "내 빵"
+    },
+    {
+      "en": "my lucky charm",
+      "ko": "내 행운의 부적"
+    },
+    {
+      "en": "my never-ending adventures",
+      "ko": "끝나지 않는 내 모험"
+    },
+    {
+      "en": "my research",
+      "ko": "내 연구"
+    },
+    {
+      "en": "my trade",
+      "ko": "내 직업"
+    },
+    {
+      "en": "mysticism",
+      "ko": "신비마법"
+    },
+    {
+      "en": "native creatures",
+      "ko": "토착 생물"
+    },
+    {
+      "en": "necromancy",
+      "ko": "강령술"
+    },
+    {
+      "en": "negotiate goods",
+      "ko": "상품 협상"
+    },
+    {
+      "en": "neighbor problem",
+      "ko": "이웃 문제"
+    },
+    {
+      "en": "new guild guide",
+      "ko": "새 길드 안내인"
+    },
+    {
+      "en": "new performer",
+      "ko": "새 공연자"
+    },
+    {
+      "en": "news of the war",
+      "ko": "전쟁 소식"
+    },
+    {
+      "en": "newspaper",
+      "ko": "신문"
+    },
+    {
+      "en": "nine-holes",
+      "ko": "나인홀 놀이"
+    },
+    {
+      "en": "no love for the Dur-Gada",
+      "ko": "두르가다를 향한 반감"
+    },
+    {
+      "en": "noises in the sewers",
+      "ko": "하수도의 소음"
+    },
+    {
+      "en": "nudri",
+      "ko": "누드리"
+    },
+    {
+      "en": "offering to Arkay",
+      "ko": "아케이에게 바칠 공물"
+    },
+    {
+      "en": "one particular spell",
+      "ko": "특정 주문 하나"
+    },
+    {
+      "en": "other cells",
+      "ko": "다른 감방들"
+    },
+    {
+      "en": "our dark powers",
+      "ko": "우리의 어둠의 힘"
+    },
+    {
+      "en": "our famous ballads",
+      "ko": "우리의 유명한 발라드"
+    },
+    {
+      "en": "our lost sister",
+      "ko": "실종된 우리 자매"
+    },
+    {
+      "en": "our mission",
+      "ko": "우리의 사명"
+    },
+    {
+      "en": "overrun with spikeworms",
+      "ko": "스파이크웜이 들끓는 곳"
+    },
+    {
+      "en": "oversee the repairs",
+      "ko": "수리 감독"
+    },
+    {
+      "en": "passage through the wall",
+      "ko": "벽을 통과하는 통로"
+    },
+    {
+      "en": "pay back the value",
+      "ko": "값을 변상하는 일"
+    },
+    {
+      "en": "payment dispute",
+      "ko": "대금 분쟁"
+    },
+    {
+      "en": "perplexing phrase",
+      "ko": "수수께끼 같은 문구"
+    },
+    {
+      "en": "pilgrimage",
+      "ko": "순례"
+    },
+    {
+      "en": "place a bet",
+      "ko": "내기 걸기"
+    },
+    {
+      "en": "poison Farkon's wheat",
+      "ko": "파르콘의 밀에 독 풀기"
+    },
+    {
+      "en": "poor Dovoc",
+      "ko": "불쌍한 도보크"
+    },
+    {
+      "en": "potion of Fortify Willpower",
+      "ko": "의지력 강화 물약"
+    },
+    {
+      "en": "practice hunting",
+      "ko": "사냥 연습"
+    },
+    {
+      "en": "predators",
+      "ko": "포식자들"
+    },
+    {
+      "en": "price on your head",
+      "ko": "당신에게 걸린 현상금"
+    },
+    {
+      "en": "profit",
+      "ko": "이익"
+    },
+    {
+      "en": "proselytizing",
+      "ko": "포교 활동"
+    },
+    {
+      "en": "purchase any silver ore",
+      "ko": "은광석 매입"
+    },
+    {
+      "en": "purchase decor",
+      "ko": "장식품 구입"
+    },
+    {
+      "en": "put on the Khulari ring",
+      "ko": "쿨라리 반지 착용"
+    },
+    {
+      "en": "races",
+      "ko": "종족들"
+    },
+    {
+      "en": "raga",
+      "ko": "라가"
+    },
+    {
+      "en": "ready to fight",
+      "ko": "전투 준비"
+    },
+    {
+      "en": "ready to sail",
+      "ko": "출항 준비"
+    },
+    {
+      "en": "rebuild the network",
+      "ko": "연락망 재건"
+    },
+    {
+      "en": "reclaim the research",
+      "ko": "연구 자료 회수"
+    },
+    {
+      "en": "recruit Davanna",
+      "ko": "다바나 영입"
+    },
+    {
+      "en": "recruiter for Dalach's gang",
+      "ko": "달라크 패거리의 모집책"
+    },
+    {
+      "en": "red hat",
+      "ko": "붉은 모자"
+    },
+    {
+      "en": "redeemed servants",
+      "ko": "구원받은 종들"
+    },
+    {
+      "en": "regulated substance",
+      "ko": "규제 물질"
+    },
+    {
+      "en": "release the spell",
+      "ko": "주문 해제"
+    },
+    {
+      "en": "removing the tree",
+      "ko": "나무 제거"
+    },
+    {
+      "en": "repay a loan",
+      "ko": "대출금 상환"
+    },
+    {
+      "en": "repossess a painting",
+      "ko": "그림 압류"
+    },
+    {
+      "en": "reproduce the invocation",
+      "ko": "소환문 재현"
+    },
+    {
+      "en": "research",
+      "ko": "연구"
+    },
+    {
+      "en": "resistance from the Navy",
+      "ko": "해군의 반대"
+    },
+    {
+      "en": "restore the guild guide connection",
+      "ko": "길드 안내인 연결 복구"
+    },
+    {
+      "en": "retain access",
+      "ko": "출입 권한 유지"
+    },
+    {
+      "en": "riddle contest",
+      "ko": "수수께끼 대회"
+    },
+    {
+      "en": "ring",
+      "ko": "반지"
+    },
+    {
+      "en": "royal auction",
+      "ko": "왕실 경매"
+    },
+    {
+      "en": "rules",
+      "ko": "규칙"
+    },
+    {
+      "en": "rumors of a curse",
+      "ko": "저주에 관한 소문"
+    },
+    {
+      "en": "sacred hut",
+      "ko": "성스러운 오두막"
+    },
+    {
+      "en": "sacred shrine of Kyne",
+      "ko": "카인의 성스러운 성소"
+    },
+    {
+      "en": "saints",
+      "ko": "성인들"
+    },
+    {
+      "en": "seadrake",
+      "ko": "바다 드래곤"
+    },
+    {
+      "en": "second Simulacrum",
+      "ko": "두 번째 가짜 황제 사태"
+    },
+    {
+      "en": "second attempt",
+      "ko": "두 번째 시도"
+    },
+    {
+      "en": "second riddle",
+      "ko": "두 번째 수수께끼"
+    },
+    {
+      "en": "secrets of the Taliesinn",
+      "ko": "탈리에신의 비밀"
+    },
+    {
+      "en": "security",
+      "ko": "보안 기술"
+    },
+    {
+      "en": "semi-stable summoning",
+      "ko": "준안정 소환"
+    },
+    {
+      "en": "send another Guild member",
+      "ko": "다른 길드원 파견"
+    },
+    {
+      "en": "sent by the villagers",
+      "ko": "마을 사람들이 보낸 자"
+    },
+    {
+      "en": "serve a local temple",
+      "ko": "현지 사원 봉사"
+    },
+    {
+      "en": "set up a meeting",
+      "ko": "만남 주선"
+    },
+    {
+      "en": "settlements in Colovia",
+      "ko": "콜로비아의 정착지들"
+    },
+    {
+      "en": "shadowmage",
+      "ko": "그림자 마법사"
+    },
+    {
+      "en": "shadows",
+      "ko": "그림자들"
+    },
+    {
+      "en": "shady-looking Nord",
+      "ko": "수상해 보이는 노드"
+    },
+    {
+      "en": "shield her soul",
+      "ko": "그녀의 영혼 보호"
+    },
+    {
+      "en": "short blade",
+      "ko": "단검술"
+    },
+    {
+      "en": "shrines",
+      "ko": "성소들"
+    },
+    {
+      "en": "sick from the ale",
+      "ko": "에일을 마시고 생긴 병"
+    },
+    {
+      "en": "siding with Drydo",
+      "ko": "드리도 편들기"
+    },
+    {
+      "en": "signet ring",
+      "ko": "인장 반지"
+    },
+    {
+      "en": "simple scam",
+      "ko": "단순한 사기"
+    },
+    {
+      "en": "skill for languages",
+      "ko": "언어에 대한 재능"
+    },
+    {
+      "en": "skis",
+      "ko": "스키"
+    },
+    {
+      "en": "skooma",
+      "ko": "스쿠마"
+    },
+    {
+      "en": "slavery",
+      "ko": "노예제"
+    },
+    {
+      "en": "snakes",
+      "ko": "뱀들"
+    },
+    {
+      "en": "someone in particular",
+      "ko": "특정 인물"
+    },
+    {
+      "en": "something useful",
+      "ko": "유용한 것"
+    },
+    {
+      "en": "sorrowful wife",
+      "ko": "슬픔에 잠긴 아내"
+    },
+    {
+      "en": "speak to the head priest",
+      "ko": "수석 사제와 대화"
+    },
+    {
+      "en": "spear",
+      "ko": "창술"
+    },
+    {
+      "en": "specific place",
+      "ko": "특정 장소"
+    },
+    {
+      "en": "stationery",
+      "ko": "문구류"
+    },
+    {
+      "en": "stealth disciplines",
+      "ko": "은밀한 수련"
+    },
+    {
+      "en": "stolen bread",
+      "ko": "도난당한 빵"
+    },
+    {
+      "en": "stolen family heirloom",
+      "ko": "도난당한 가보"
+    },
+    {
+      "en": "stop the rumors",
+      "ko": "소문 막기"
+    },
+    {
+      "en": "storm atronach's soul",
+      "ko": "폭풍 아트로나크의 영혼"
+    },
+    {
+      "en": "strange accent",
+      "ko": "이상한 억양"
+    },
+    {
+      "en": "strange-smelling candles",
+      "ko": "이상한 냄새가 나는 양초"
+    },
+    {
+      "en": "stress reliever",
+      "ko": "스트레스 해소제"
+    },
+    {
+      "en": "stridmeet",
+      "ko": "스트리드미트"
+    },
+    {
+      "en": "stronghold",
+      "ko": "요새"
+    },
+    {
+      "en": "student of Conjuration",
+      "ko": "소환마법 수련생"
+    },
+    {
+      "en": "stupid bounty",
+      "ko": "멍청한 현상금"
+    },
+    {
+      "en": "sujamma",
+      "ko": "수자마"
+    },
+    {
+      "en": "supply chests",
+      "ko": "보급품 상자"
+    },
+    {
+      "en": "supply of provisions",
+      "ko": "식량 보급"
+    },
+    {
+      "en": "supply of wood",
+      "ko": "목재 공급"
+    },
+    {
+      "en": "take on Orgak gro-Ulagash",
+      "ko": "오르가크 그로울라가시 상대"
+    },
+    {
+      "en": "take out a loan",
+      "ko": "대출받기"
+    },
+    {
+      "en": "tampered barrel",
+      "ko": "손댄 흔적이 있는 통"
+    },
+    {
+      "en": "tantha",
+      "ko": "탄사"
+    },
+    {
+      "en": "taste the Old Magic",
+      "ko": "옛 마법을 맛보는 일"
+    },
+    {
+      "en": "tax collection",
+      "ko": "세금 징수"
+    },
+    {
+      "en": "teleportation practice",
+      "ko": "순간이동 연습"
+    },
+    {
+      "en": "ten-thousand-drake debt",
+      "ko": "만 드레이크의 빚"
+    },
+    {
+      "en": "testing gods",
+      "ko": "시험하는 신들"
+    },
+    {
+      "en": "the Armiger",
+      "ko": "아미거"
+    },
+    {
+      "en": "the Balefire's wreck",
+      "ko": "베일파이어호의 잔해"
+    },
+    {
+      "en": "the Beast",
+      "ko": "야수"
+    },
+    {
+      "en": "the Chosen",
+      "ko": "선택받은 자"
+    },
+    {
+      "en": "the Corsairs",
+      "ko": "해적들"
+    },
+    {
+      "en": "the Empire",
+      "ko": "제국"
+    },
+    {
+      "en": "the Reach",
+      "ko": "리치"
+    },
+    {
+      "en": "the Snake",
+      "ko": "뱀"
+    },
+    {
+      "en": "the other night",
+      "ko": "며칠 전 밤"
+    },
+    {
+      "en": "the rules",
+      "ko": "규칙"
+    },
+    {
+      "en": "the witch and her cult",
+      "ko": "마녀와 그 교단"
+    },
+    {
+      "en": "thief with a bottle of wine",
+      "ko": "포도주 병을 든 도둑"
+    },
+    {
+      "en": "thieving pirates",
+      "ko": "도둑질하는 해적들"
+    },
+    {
+      "en": "thieving witch",
+      "ko": "도둑질하는 마녀"
+    },
+    {
+      "en": "third attempt",
+      "ko": "세 번째 시도"
+    },
+    {
+      "en": "third riddle",
+      "ko": "세 번째 수수께끼"
+    },
+    {
+      "en": "three bolts of Moth-Silk",
+      "ko": "나방 비단 세 필"
+    },
+    {
+      "en": "three marks",
+      "ko": "세 개의 표식"
+    },
+    {
+      "en": "three relics",
+      "ko": "세 개의 유물"
+    },
+    {
+      "en": "trade mission to Akavir",
+      "ko": "아카비르 무역 사절 임무"
+    },
+    {
+      "en": "trade stocks",
+      "ko": "주식 거래"
+    },
+    {
+      "en": "trading ship",
+      "ko": "상선"
+    },
+    {
+      "en": "transaction of ownership",
+      "ko": "소유권 이전"
+    },
+    {
+      "en": "travel papers",
+      "ko": "통행증"
+    },
+    {
+      "en": "travel to Bailcnoss",
+      "ko": "베일크노스로 가는 여행"
+    },
+    {
+      "en": "travel together",
+      "ko": "함께 여행하기"
+    },
+    {
+      "en": "treason",
+      "ko": "반역"
+    },
+    {
+      "en": "tribe cousin",
+      "ko": "부족의 친족"
+    },
+    {
+      "en": "tribeless Bosmer",
+      "ko": "부족 없는 보스머"
+    },
+    {
+      "en": "tricks from old Yarok",
+      "ko": "늙은 야로크의 요령"
+    },
+    {
+      "en": "trouble in Karthgad",
+      "ko": "카르스가드의 문제"
+    },
+    {
+      "en": "turned into a vampire",
+      "ko": "흡혈귀가 된 일"
+    },
+    {
+      "en": "twilight gods",
+      "ko": "황혼의 신들"
+    },
+    {
+      "en": "twin thrones",
+      "ko": "쌍둥이 왕좌"
+    },
+    {
+      "en": "two Orc bandits",
+      "ko": "오크 산적 두 명"
+    },
+    {
+      "en": "unarmored",
+      "ko": "비무장 방어"
+    },
+    {
+      "en": "undead at Strand",
+      "ko": "스트랜드의 언데드"
+    },
+    {
+      "en": "under pressure",
+      "ko": "압박받는 상황"
+    },
+    {
+      "en": "unemployed Orc",
+      "ko": "실업자 오크"
+    },
+    {
+      "en": "unjustly imprisoned",
+      "ko": "억울한 투옥"
+    },
+    {
+      "en": "unpaid taxes",
+      "ko": "미납 세금"
+    },
+    {
+      "en": "unwanted advances",
+      "ko": "원치 않는 구애"
+    },
+    {
+      "en": "using enchantments",
+      "ko": "마법부여 물품 사용"
+    },
+    {
+      "en": "vacation package",
+      "ko": "휴가 상품"
+    },
+    {
+      "en": "vampires",
+      "ko": "흡혈귀들"
+    },
+    {
+      "en": "viable route",
+      "ko": "이용 가능한 경로"
+    },
+    {
+      "en": "vicious Colovian bear",
+      "ko": "사나운 콜로비아 곰"
+    },
+    {
+      "en": "vile hag",
+      "ko": "사악한 노파"
+    },
+    {
+      "en": "visit to the Sailors' Home",
+      "ko": "선원의 집 방문"
+    },
+    {
+      "en": "visiting the alehouse",
+      "ko": "에일하우스 방문"
+    },
+    {
+      "en": "warm water",
+      "ko": "따뜻한 물"
+    },
+    {
+      "en": "warning Jurgar",
+      "ko": "유르가르에게 경고"
+    },
+    {
+      "en": "water creatures",
+      "ko": "수중 생물"
+    },
+    {
+      "en": "weird people",
+      "ko": "이상한 사람들"
+    },
+    {
+      "en": "werewolves",
+      "ko": "늑대인간들"
+    },
+    {
+      "en": "wicked Bear Clan",
+      "ko": "사악한 곰 씨족"
+    },
+    {
+      "en": "wine",
+      "ko": "포도주"
+    },
+    {
+      "en": "winning bid",
+      "ko": "낙찰가"
+    },
+    {
+      "en": "withdraw funds",
+      "ko": "자금 인출"
+    },
+    {
+      "en": "wolves",
+      "ko": "늑대들"
+    },
+    {
+      "en": "words in Aldmeris",
+      "ko": "알드메리스어 단어들"
+    },
+    {
+      "en": "work",
+      "ko": "일"
+    },
+    {
+      "en": "works",
+      "ko": "저작물"
+    },
+    {
+      "en": "wretched cave",
+      "ko": "비참한 동굴"
+    },
+    {
+      "en": "yearns for love",
+      "ko": "사랑을 갈망하는 마음"
+    },
+    {
+      "en": "young, charming Breton",
+      "ko": "젊고 매력적인 브레튼"
+    },
+    {
+      "en": "your account",
+      "ko": "당신의 계좌"
+    }
+  ]
+}

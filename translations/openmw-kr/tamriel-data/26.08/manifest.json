@@ -1,4 +1,6 @@
 {
+  "term_translation_status": "NOT_REVIEWED",
+  "term_translation_batch": "term_translations_20261102.json",
   "format_version": 1,
   "source_plugin": "Tamriel_Data.esm",
   "source_version": "26.08",
@@ -9,20 +11,20 @@
   "translated_fields": 25788,
   "strings_sha256": "78d9023f331250250c1f99e0d26c610c37850c0c3e57a4c6af6a3dd234f8cd46",
   "sidecar_sha256": {
-    "cel": "6e287251202708288b8975f444f111a4f5d96a306f25e540a77d0f02311bd855",
-    "mrk": "66cbcdbb7cf629a897731a60a45722c961624edd46fc4c296e734234b976ac7e",
-    "top": "04d16123e5478b72eeb0428417ddfd056d1249aacbf9ef6f979547d93f3de307",
-    "jrn": "04d16123e5478b72eeb0428417ddfd056d1249aacbf9ef6f979547d93f3de307"
+    "cel": "4a9547e8361b42008cd858e77ae8f15f953e2ead44a00a1f852a0fa7c8518171",
+    "mrk": "fbc4989be2cfeb1072ddd35bdbb258ebf99a3940190feda231482a783a0116e7",
+    "top": "051ba7f10df6cd7f5e78de1838ef4c4e8f4761144a335b80d9f285c96f742afa",
+    "jrn": "051ba7f10df6cd7f5e78de1838ef4c4e8f4761144a335b80d9f285c96f742afa"
   },
   "sidecar_counts": {
-    "cel": 1,
-    "mrk": 39,
-    "top": 39,
-    "jrn": 39
+    "cel": 2,
+    "mrk": 111,
+    "top": 111,
+    "jrn": 111
   },
   "hold_counts": {
-    "cell": 16,
-    "topic": 122
+    "cell": 15,
+    "topic": 50
   },
   "review_counts": {
     "EXISTING_TRANSLATION_UNREVIEWED": 22714,

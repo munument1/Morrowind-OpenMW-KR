@@ -1,28 +1,23 @@
 [
   {
     "kind": "cell",
-    "en": "Gold Coast Region",
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "cell",
     "en": "T_Banish",
-    "reason": "no_unambiguous_existing_translation"
+    "reason": "internal_cell_preserved"
   },
   {
     "kind": "cell",
     "en": "T_BanishTemp",
-    "reason": "no_unambiguous_existing_translation"
+    "reason": "internal_cell_preserved"
   },
   {
     "kind": "cell",
     "en": "T_Gallery",
-    "reason": "no_unambiguous_existing_translation"
+    "reason": "internal_cell_preserved"
   },
   {
     "kind": "cell",
     "en": "T_GazeOfVeloth",
-    "reason": "no_unambiguous_existing_translation"
+    "reason": "internal_cell_preserved"
   },
   {
     "kind": "cell",
@@ -77,13 +72,13 @@
   {
     "kind": "cell",
     "en": "T_Wabbajack",
-    "reason": "no_unambiguous_existing_translation"
+    "reason": "internal_cell_preserved"
   },
   {
     "kind": "topic",
     "en": "Advancement",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "승진",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -93,21 +88,9 @@
   },
   {
     "kind": "topic",
-    "en": "Aldmeris",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "Altmer",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Apelles Matius",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "알트머",
+    "reason": "base_top_collision"
   },
   {
     "kind": "topic",
@@ -118,20 +101,14 @@
   {
     "kind": "topic",
     "en": "Background",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "내력",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "Beds",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Betmeri",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "침상",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -141,33 +118,15 @@
   },
   {
     "kind": "topic",
-    "en": "Blades Trainers",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Bosmer",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "Chimer",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "치머",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "Cyrodiil",
     "ko": "시로딜",
     "reason": "base_top_collision"
-  },
-  {
-    "kind": "topic",
-    "en": "Cyrodiilic brandy",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
   },
   {
     "kind": "topic",
@@ -184,8 +143,8 @@
   {
     "kind": "topic",
     "en": "Empire",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "제국",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -195,33 +154,9 @@
   },
   {
     "kind": "topic",
-    "en": "Guild disciplines",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Humanoid Races",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Humans",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "Imga",
     "ko": "임가",
     "reason": "unsafe_keyword"
-  },
-  {
-    "kind": "topic",
-    "en": "Imperial Office of Census and Excise",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
   },
   {
     "kind": "topic",
@@ -231,39 +166,9 @@
   },
   {
     "kind": "topic",
-    "en": "Imperial cult doctrine",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Imperial culture",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Imperial provinces",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Itinerant Priests",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "Khajiit",
     "ko": "카짓",
     "reason": "unsafe_keyword"
-  },
-  {
-    "kind": "topic",
-    "en": "King Orgnum",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
   },
   {
     "kind": "topic",
@@ -286,8 +191,8 @@
   {
     "kind": "topic",
     "en": "Orc",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "오크",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -297,39 +202,15 @@
   },
   {
     "kind": "topic",
-    "en": "Ralen Hlaalo",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "Redguard",
     "ko": "레드가드",
     "reason": "base_top_collision"
   },
   {
     "kind": "topic",
-    "en": "Requirements",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "Sea Elves",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "Skyrim",
     "ko": "스카이림",
     "reason": "base_top_collision"
-  },
-  {
-    "kind": "topic",
-    "en": "Summerset Isle",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
   },
   {
     "kind": "topic",
@@ -352,14 +233,8 @@
   {
     "kind": "topic",
     "en": "Uriel Septim",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "acrobatics",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "우리엘 셉팀",
+    "reason": "base_top_collision"
   },
   {
     "kind": "topic",
@@ -369,33 +244,15 @@
   },
   {
     "kind": "topic",
-    "en": "athletics",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "axe",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "bandits",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "birthsign",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "도끼",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "blessings",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "축복",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -406,74 +263,32 @@
   {
     "kind": "topic",
     "en": "blunt weapon",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "deposit funds",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "둔기",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "duties",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "임무",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "enchant",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "enchanters",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "enchanting items",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "fighter disciplines",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "마법부여",
+    "reason": "base_top_collision"
   },
   {
     "kind": "topic",
     "en": "flin",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "fortify potions",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "플린",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "guard",
     "ko": "경비병",
     "reason": "base_top_collision"
-  },
-  {
-    "kind": "topic",
-    "en": "guild guide",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "hand to hand",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
   },
   {
     "kind": "topic",
@@ -484,194 +299,32 @@
   {
     "kind": "topic",
     "en": "jobs",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join House Hlaalu",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join House Indoril",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join House Redoran",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join House Telvanni",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Fighters Guild",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Itinerant Priests",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Ja-Natta Syndicate",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Kingdom of Anvil",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Kingdom of Sutch",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Kingdom of the Reach",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Mages Guild",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Ordinators",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "join the Thieves Guild",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "일거리",
+    "reason": "base_jrn_collision"
   },
   {
     "kind": "topic",
     "en": "light armor",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "little advice",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "little secret",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "경갑",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "long blade",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "mage disciplines",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "make amends",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "marksman",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "장검",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "medium armor",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "평갑",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "mercantile",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "mercantile skills",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "missions",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "my trade",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "mysticism",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "necromancy",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "nine-holes",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "price on your head",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "races",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "repay a loan",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "상술",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -682,38 +335,8 @@
   {
     "kind": "topic",
     "en": "rules",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "saints",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "security",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "short blade",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "shrines",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "skooma",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "규칙",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -724,8 +347,8 @@
   {
     "kind": "topic",
     "en": "spear",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "창술",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
@@ -735,80 +358,20 @@
   },
   {
     "kind": "topic",
-    "en": "stealth disciplines",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "supply chests",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "take out a loan",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
     "en": "the Empire",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "제국",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "the rules",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "trade stocks",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "unarmored",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "using enchantments",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "vampires",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "withdraw funds",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "규칙",
+    "reason": "unsafe_keyword"
   },
   {
     "kind": "topic",
     "en": "work",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "works",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
-  },
-  {
-    "kind": "topic",
-    "en": "your account",
-    "ko": null,
-    "reason": "no_unambiguous_existing_translation"
+    "ko": "일",
+    "reason": "unsafe_keyword"
   }
 ]

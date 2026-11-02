@@ -53,13 +53,17 @@
 - Morrowind 본편 3개와 Bloodmoon 7개, 총 10개 UTF-8 SRT 영상 자막
 - `Install-Korean.bat`, PowerShell 설치·환경설정 스크립트
 
-## Project Cyrodiil 한국어 테스트 번역
+## 모드 번역 데이터 보관 및 배포
 
-엔진 통합판과 별도로 사용하는 [Project Cyrodiil 26.09a 한영 대조표·재현 빌드·Nexus 선택 파일 배포 안내](translations/cyr-main/README.md)를 제공합니다. 실제 게임 검증 전 테스트본이며 보류 8개와 기존 번역의 검수 상태를 공개합니다.
+모드의 번역 데이터·검수 상태·빌드 도구는 [translations](translations/README.md)에 보관하고, 실제 모드 파일 릴리스는 Nexus Mods에서만 진행합니다. GitHub Releases에는 모드 설치 ZIP을 게시하지 않습니다.
 
-## Skyrim: Home of the Nords 한국어 테스트 번역
+### Project Cyrodiil 한국어 번역 데이터
 
-[Sky_Main 26.09a 한영 대조표·재현 빌드·Nexus 선택 파일 배포 안내](translations/sky-main/README.md)를 제공합니다. 8,279개 대조 행 중 8,202개 필드가 번역 적용되며, 보류 4개와 개발용 마커 73개는 원문을 유지합니다. 실제 게임 검증 전 테스트본입니다.
+엔진 통합판과 별도로 사용하는 [Project Cyrodiil 26.09a 한영 대조표·재현 빌드·Nexus 배포 안내](translations/cyr-main/README.md)를 제공합니다. 실제 게임 검증 전 테스트본이며 보류 8개와 기존 번역의 검수 상태를 공개합니다.
+
+### Skyrim: Home of the Nords 한국어 번역 데이터
+
+[Sky_Main 26.09a 한영 대조표·재현 빌드·Nexus 배포 안내](translations/sky-main/README.md)를 제공합니다. 8,279개 대조 행 중 8,202개 필드가 번역 적용되며, 보류 4개와 개발용 마커 73개는 원문을 유지합니다. 실제 게임 검증 전 테스트본입니다.
 
 ## Android
 

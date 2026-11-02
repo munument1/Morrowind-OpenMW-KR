@@ -5,7 +5,6 @@ OpenMW-KR에서 사용하는 **별도 선택 모드 번역**입니다. 원본 Sk
 - [Excel 한영 대조표](26.09a/Sky_Main.en_ko.xlsx): 종류, 레코드 ID, 토픽 ID, 영어·한국어, 검수 상태, 원문 위치 키로 확인합니다.
 - [원문 보존 JSONL](26.09a/Sky_Main.en_ko.jsonl.gz): 태그·개행·변수·원문 해시를 보존하는 재빌드 입력입니다.
 - [버전과 해시](26.09a/manifest.json), [독립 ESM 검증](26.09a/independent_binary_validation.json), [이번 표본 점검의 수정 내역](26.09a/spotcheck_corrections.json).
-- [테스트 ZIP 릴리스](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/sky-main-26.09a-kr-test-20261102).
 
 8,279개 대조 행 가운데 실제 번역 적용은 8,202개입니다.
 
@@ -32,10 +31,12 @@ python translations/sky-main/build.py --source "원본/Sky_Main.ESM" --output "�
 
 원본 SHA-256, 레코드 위치, 하위 레코드 해시, 영어·한국어 태그·변수·링크·내부 ID와 출력 ESM 해시를 검증합니다. 원본 또는 이미 존재하는 출력 파일을 덮어쓰지 않습니다. 실제 설치에는 원본 모드의 전체 자산을 유지하고 같은 `Sky_Main.ESM`을 하나만 활성화해야 합니다.
 
-## Nexus 배포 준비
+## 배포 방침
 
-`.github/workflows/nexus-sky-main.yml`은 테스트 ZIP을 확인하는 수동 워크플로입니다. `dry_run=true`는 Nexus 파일 ID 없이 실행할 수 있습니다.
+GitHub에는 번역 대조 데이터·검수 상태·해시·재빌드 도구만 보관합니다. 모드 ESM/ESP 및 설치 ZIP은 GitHub Releases에 게시하지 않습니다. 앞서 게시한 테스트 릴리스는 로컬에 백업한 뒤 공개 목록에서 제거했습니다.
 
-실제 업로드에는 **Sky_Main 선택 파일 전용 v3 업로드 API File ID**와 저장소 secret `NEXUSMODS_API_KEY`가 필요합니다. 현재 방식은 이미 등록된 파일의 새 버전을 업로드하므로 첫 모드 페이지·파일 등록은 별도로 준비해야 합니다. 기본 엔진 통합판 파일 ID를 사용하지 마세요. `category=optional`, `update_mod_version=false`이며 기존 파일을 보관 처리하지 않습니다.
+실제 모드 파일 배포는 Nexus Mods에서만 진행합니다. 로컬에서 해당 원본 모드로 재빌드·패키징한 테스트 ZIP을 Nexus에 올립니다. 기존 엔진 통합판의 파일과 혼동하지 않도록 별도의 모드 파일 항목을 사용합니다.
 
-이 커밋은 Nexus에 업로드하거나 모드 페이지를 공개하지 않습니다. 원본 모드 제작진과 기존 한국어 번역 자료를 바탕으로 제작한 테스트 번역이며, **실제 게임의 토픽 클릭·저널 링크·서적 글꼴·세이브 로드는 아직 검증하지 않았습니다.**
+기존 이름의 `nexus-sky-main.yml` 워크플로는 이제 번역 데이터 검사만 수행합니다. GitHub Release를 생성·다운로드하거나 Nexus에 파일을 업로드하지 않습니다.
+
+실제 게임의 토픽·저널 링크·서적 글꼴·세이브 로드는 별도로 시험해야 합니다.

@@ -1,5 +1,7 @@
 # Project Cyrodiil 26.09a 한국어 테스트 번역
 
+현재 배포 구성은 [같은 이름 ESM 교체 + CEL/TOP/MRK/JRN](../openmw-kr/README.md)입니다. 별도 번역 addon을 추가하지 않습니다.
+
 OpenMW-KR용 **독립 선택 모드 번역**입니다. 엔진 통합판에 자동 설치하지 않습니다.
 원본 Project Cyrodiil 26.09a Hotfix 1과 그 필수 모드가 필요합니다.
 

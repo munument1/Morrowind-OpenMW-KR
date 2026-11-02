@@ -1,5 +1,7 @@
 # Tamriel Data 한국어 번역 데이터
 
+현재 배포 구성은 [같은 이름 ESM 교체 + CEL/TOP/MRK/JRN](../openmw-kr/README.md)입니다. 아래 데이터와 본문 검수 상태는 보존하고, 위 보조 파일을 함께 쓰는 빌드 도구를 추가했습니다.
+
 Tamriel Data 26.08 (HD)의 영어·한국어 대조 데이터와 원문 위치, 검수 상태, 대상별 수정 기록입니다. 모드 ESM 및 설치 ZIP은 GitHub에 게시하지 않습니다. 모드 릴리스는 Nexus Mods에서만 진행합니다.
 
 - [대조 데이터](26.08/Tamriel_Data.en_ko.jsonl.gz): 26,498개 행. `applied`가 참인 25,788개 필드만 테스트본에 반영합니다. 보류 행의 `ko`는 영어 원문이며, `candidate_ko`가 있으면 적용되지 않은 후보입니다.

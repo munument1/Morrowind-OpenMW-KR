@@ -1,5 +1,7 @@
 # Skyrim: Home of the Nords 26.09a 한국어 테스트 번역
 
+현재 배포 구성은 [같은 이름 ESM 교체 + CEL/TOP/MRK/JRN](../openmw-kr/README.md)입니다. 별도 번역 addon을 추가하지 않습니다.
+
 OpenMW-KR에서 사용하는 **별도 선택 모드 번역**입니다. 원본 Skyrim: Home of the Nords 26.09a와 해당 버전의 필수 모드가 필요합니다.
 
 - [Excel 한영 대조표](26.09a/Sky_Main.en_ko.xlsx): 종류, 레코드 ID, 토픽 ID, 영어·한국어, 검수 상태, 원문 위치 키로 확인합니다.

@@ -11,8 +11,8 @@ on:
         default: 'cyr-main-26.09a-kr-test-20261102'
         type: string
       cyr_file_id:
-        description: 'Nexus upload API File ID dedicated to the Cyrodiil OPTIONAL file'
-        required: true
+        description: 'Cyrodiil OPTIONAL upload API File ID (required only for actual upload)'
+        required: false
         type: string
       dry_run:
         description: 'Validate without uploading to Nexus'
@@ -43,11 +43,14 @@ jobs:
           GH_REPO: ${{ github.repository }}
           TAG: ${{ inputs.tag }}
           CYR_FILE_ID: ${{ inputs.cyr_file_id }}
+          DRY_RUN: ${{ inputs.dry_run }}
           ENGINE_FILE_ID: ${{ vars.NEXUSMODS_FILE_ID }}
         run: |
           [[ "$TAG" == cyr-main-26.09a-kr-test-* ]] || exit 1
-          [[ "$CYR_FILE_ID" =~ ^[0-9]+$ ]] || exit 1
-          [[ -z "$ENGINE_FILE_ID" || "$CYR_FILE_ID" != "$ENGINE_FILE_ID" ]] || exit 1
+          if [[ "$DRY_RUN" != "true" ]]; then
+            [[ "$CYR_FILE_ID" =~ ^[1-9][0-9]*$ ]] || exit 1
+            [[ -z "$ENGINE_FILE_ID" || "$CYR_FILE_ID" != "$ENGINE_FILE_ID" ]] || exit 1
+          fi
           gh release download "$TAG" --pattern 'Cyr_Main_26.09a_KR_TEST_20261102.zip' --pattern 'Cyr_Main_26.09a_KR_TEST_20261102.zip.sha256' --dir assets
       - name: Verify ZIP and ESM against bilingual manifest
         if: github.event_name == 'workflow_dispatch'
@@ -80,3 +83,4 @@ jobs:
           archive_existing_version: 'false'
           allow_mod_manager_download: 'false'
           update_mod_version: 'false'
+

@@ -55,7 +55,10 @@
     "TR_Mainland_binary_QA.json": "dc048352f7ebf2bbf9af8786c6ac578e336a09e320369c235712bea0160d028e",
     "post_handoff_overlay_20261102.json": "305edf3a21f7e0c1fe4d093b8a4dc2ef092778f6e86d1fe3e334fc1e8204ed18",
     "topic_link_overlay_20261102.jsonl.gz": "2251cb5317f860fd5ec87952b4b24e3aca13b7dcd650f6fe3287893ef96ff623",
-    "script_display_overlay_20261102.jsonl.gz": "33658dee31006be96d6532814a2741e339554113b4a959c3639974f9a49e4f2b"
+    "script_display_overlay_20261102.jsonl.gz": "33658dee31006be96d6532814a2741e339554113b4a959c3639974f9a49e4f2b",
+    "remaining_display_changes_20261102.jsonl.gz": "3f4c177dcba71e9fd5436eda8532308bcdfa923a7159db65b1d0b2827efa8b27",
+    "remaining_literal_review_20261102.jsonl.gz": "ad1ab186511d14ca9510d03a6ae08d87ecf813ca05b213260e7105c08078a8bb",
+    "remaining_display_release_20261102.json": "33a1962cbac04b43d4a4f244d71e26d53c6720a9d88dca18bc572d0a265af116"
   },
   "post_handoff_20261102": {
     "current_release_sha256": "92b7290deb3e98d03fd917284888baa7ae4bba4eaf1cded4a2cc1d68a563c080",
@@ -64,5 +67,18 @@
     "runtime_tested": false,
     "translation_review": "NOT_REVIEWED preserved",
     "legacy_build_output_sha_is_baseline_only": true
+  },
+  "remaining_script_pass_20261102": {
+    "current_mainland_sha256": "c6b11249ce4f5b815acd850ba2753235d75cf9fd0adf481a0aca769fb5e6e74b",
+    "current_factions_sha256": "fe18107e0c66dd1c8182d950d1604a9ba9c0d777b7f7103fd9dd467af9c4f2d1",
+    "script_literal_occurrences": 782,
+    "fields": 625,
+    "numeric_structural_reviewed": 47,
+    "numeric_structural_unresolved": 3,
+    "context_reviewed_candidates": 292,
+    "context_remaining": 182,
+    "runtime_tested": false,
+    "language_review": "NOT_FULLY_REVIEWED",
+    "baseline_build_sha_unchanged": true
   }
 }

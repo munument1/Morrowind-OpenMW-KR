@@ -1,2 +1,4 @@
 * text eol=lf
 *.gz binary
+# Preserve UTF-8 BOM, CRLF and hidden link keys exactly for updated TOP sidecars.
+*.top -text whitespace=cr-at-eol

@@ -1,0 +1,22 @@
+{
+  "mod": "tr-mainland",
+  "original_esm_sha256": "b599835ebdd16259ac96213ef92407dfbeb27f8328684ae833a059fd5c4cffda",
+  "current_release_esm_sha256": "92b7290deb3e98d03fd917284888baa7ae4bba4eaf1cded4a2cc1d68a563c080",
+  "overlay_source_sha256": "199aac2ef5e8203cb259a2ce3c27a67a564747baf166fe47d73ff8b6aee8cb1a",
+  "compressed_overlay_sha256": "2251cb5317f860fd5ec87952b4b24e3aca13b7dcd650f6fe3287893ef96ff623",
+  "verified_INFO_NAME_changes": 3590,
+  "visible_translation_unchanged": true,
+  "previous_TOP_keys": 755,
+  "post_TOP_keys": 778,
+  "added_TOP_keys": 23,
+  "previous_TOP_mappings_preserved": true,
+  "top_sha256": "2899c51d0046f80f259c1f3cab3e6a068dd34ca123dd4bf0b16adb631033d470",
+  "game_applied": false,
+  "runtime_tested": false,
+  "language_review": "NOT_REVIEWED unchanged",
+  "script_display_fields": 6784,
+  "script_overlay_sha256": "33658dee31006be96d6532814a2741e339554113b4a959c3639974f9a49e4f2b",
+  "script_source_sha256": "7e9b6362bb34cf4334d9eb962f54b4c302e9bca5284c8f7f78ce418411dacd3c",
+  "structural_holds": 45,
+  "context_holds_unique": 474
+}

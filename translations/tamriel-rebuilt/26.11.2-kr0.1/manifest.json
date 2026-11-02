@@ -30,7 +30,9 @@
     "cel_entries": 3887,
     "internal_cell_holds": 120,
     "top_mrk_jrn_entries_each": 755,
-    "new_place_name_spellings_provisional": true
+    "new_place_name_spellings_provisional": true,
+    "TOP_additional_hidden_aliases_after_link_alignment": 23,
+    "TOP_current_entries": 778
   },
   "game_binaries_included": false,
   "runtime_tested": false,
@@ -49,7 +51,18 @@
     "TR_Mainland.en_ko.jsonl.gz": "21cc707d5647b2bfbbcaae1b483c5b8c93cc9d5b6960d76e8421790bf3c27d2f",
     "TR_Mainland.jrn": "4ffe31485507d18a0899350077825b655fa14ce2b8fc9199a5bc1f9bbc1cbd96",
     "TR_Mainland.mrk": "632329a94f678f78c4a51dde1f42db49cd056a62d5046bbd3f4b541f8783dd2c",
-    "TR_Mainland.top": "4ffe31485507d18a0899350077825b655fa14ce2b8fc9199a5bc1f9bbc1cbd96",
-    "TR_Mainland_binary_QA.json": "dc048352f7ebf2bbf9af8786c6ac578e336a09e320369c235712bea0160d028e"
+    "TR_Mainland.top": "2899c51d0046f80f259c1f3cab3e6a068dd34ca123dd4bf0b16adb631033d470",
+    "TR_Mainland_binary_QA.json": "dc048352f7ebf2bbf9af8786c6ac578e336a09e320369c235712bea0160d028e",
+    "post_handoff_overlay_20261102.json": "305edf3a21f7e0c1fe4d093b8a4dc2ef092778f6e86d1fe3e334fc1e8204ed18",
+    "topic_link_overlay_20261102.jsonl.gz": "2251cb5317f860fd5ec87952b4b24e3aca13b7dcd650f6fe3287893ef96ff623",
+    "script_display_overlay_20261102.jsonl.gz": "33658dee31006be96d6532814a2741e339554113b4a959c3639974f9a49e4f2b"
+  },
+  "post_handoff_20261102": {
+    "current_release_sha256": "92b7290deb3e98d03fd917284888baa7ae4bba4eaf1cded4a2cc1d68a563c080",
+    "topic_link_INFO_fields": 3590,
+    "script_display_fields": 6784,
+    "runtime_tested": false,
+    "translation_review": "NOT_REVIEWED preserved",
+    "legacy_build_output_sha_is_baseline_only": true
   }
 }

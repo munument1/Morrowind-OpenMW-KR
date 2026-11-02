@@ -1,0 +1,17 @@
+{
+  "mod": "sky-main",
+  "original_esm_sha256": "1ba13ca6f2ca4b8715359c884b4f1173ffe975b0897740a896b97cfc307cafab",
+  "current_release_esm_sha256": "28453abc5fb95735590667fb8d5546863035eef5cf7c36f486aa7d4533943c0f",
+  "overlay_source_sha256": "1dabb44b7f755ad199d97de9e1cf5e7e9980866c770d92d88b8dfb4af0565962",
+  "compressed_overlay_sha256": "1315dc660dfd7ba067962228c2a8f458cf38843bc45682453c03abc25fbbca36",
+  "verified_INFO_NAME_changes": 85,
+  "visible_translation_unchanged": true,
+  "previous_TOP_keys": 355,
+  "post_TOP_keys": 369,
+  "added_TOP_keys": 14,
+  "previous_TOP_mappings_preserved": true,
+  "top_sha256": "ba7503762abc05303833e5cce8432635b29d40a9dc81c413e29c459b5151678f",
+  "game_applied": false,
+  "runtime_tested": false,
+  "language_review": "NOT_REVIEWED unchanged"
+}

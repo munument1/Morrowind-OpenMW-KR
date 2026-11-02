@@ -1,0 +1,17 @@
+{
+  "mod": "tamriel-data",
+  "original_esm_sha256": "1f4b4c91a0c54061b1dfdecb2f5cfb26c75a180396a18f949e5c917cc8550fa5",
+  "current_release_esm_sha256": "647b7950857fc74e03fba8ad58680a75e55b90287e4044bfecf011ce9002a9b4",
+  "overlay_source_sha256": "3c4667244610e3dcd9237578efd771c5b993ca5bb13c2c1d1fea24f11e4cb1b7",
+  "compressed_overlay_sha256": "0419b9577d36ee56ab2bc6cd5e0d6599ca7cf88aecd5d870f217b725b5c70650",
+  "verified_INFO_NAME_changes": 453,
+  "visible_translation_unchanged": true,
+  "previous_TOP_keys": 111,
+  "post_TOP_keys": 126,
+  "added_TOP_keys": 15,
+  "previous_TOP_mappings_preserved": true,
+  "top_sha256": "99f18b02b2c9224717292ac8d527504e87a6691f146c91a4e01adfd14ae03ead",
+  "game_applied": false,
+  "runtime_tested": false,
+  "language_review": "NOT_REVIEWED unchanged"
+}

@@ -1,0 +1,17 @@
+{
+  "mod": "cyr-main",
+  "original_esm_sha256": "c80244460e1a3df87926dd5c58f2f417cbf3d3db1e1895c8b4e3e032ceca2366",
+  "current_release_esm_sha256": "d16323effcbbec7a29ba8e1ef247b24b902e62e017c6666aaa284595b95b035c",
+  "overlay_source_sha256": "b71d4da6c005a1aab296de6c3e821de19bde34ae8fc173ceda0339d8fb946d5f",
+  "compressed_overlay_sha256": "fd8799a776e48bfd5b13d1fec968679358f28776ea26e091bca47e6f1fe7b349",
+  "verified_INFO_NAME_changes": 519,
+  "visible_translation_unchanged": true,
+  "previous_TOP_keys": 606,
+  "post_TOP_keys": 623,
+  "added_TOP_keys": 17,
+  "previous_TOP_mappings_preserved": true,
+  "top_sha256": "ec5150e5df95b9534bd183458d67879f0185ae8a7f28c36c8b4bb9e202645f48",
+  "game_applied": false,
+  "runtime_tested": false,
+  "language_review": "NOT_REVIEWED unchanged"
+}

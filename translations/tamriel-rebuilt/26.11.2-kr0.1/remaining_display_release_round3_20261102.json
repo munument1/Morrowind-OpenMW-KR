@@ -1,0 +1,17 @@
+{
+  "output_esm_sha256": "b15cf49dc7ddc545c486f5b2d8417723ff1de9c983c41adf6c369536f58a3bcb",
+  "output_factions_sha256": "6f078fab0ae05757af08628ec15669bc4ba521cadc81a458fb4c467f27da0405",
+  "output_zip_sha256": "59d285b326a04b101079dd6f1371471710796944155e98d7597079a4facb2a65",
+  "backup": "D:\\Codex_Trans\\Morrowind mod\\work\\regional_translation_review\\work\\rdc_remaining_display_round3_backup_20261102_212109",
+  "fields_changed": 689,
+  "literal_occurrences": 843,
+  "packaging": true,
+  "game_applied": false,
+  "runtime_tested": false,
+  "holds": {
+    "numeric_unresolved": 3,
+    "script_context_unresolved": 13
+  },
+  "source_esm": "D:\\Codex_Trans\\Morrowind mod\\work\\regional_translation_review\\outputs\\Tamriel Rebuilt 26.11.2-kr0.1\\Data Files\\TR_Mainland.esm",
+  "zip": "D:\\Codex_Trans\\Morrowind mod\\work\\regional_translation_review\\outputs\\Tamriel Rebuilt 26.11.2-kr0.1\\Tamriel Rebuilt 26.11.2-kr0.1.zip"
+}

@@ -1,4 +1,6 @@
 {
+  "term_translation_status": "NOT_REVIEWED",
+  "term_translation_batch": "term_translations_20261102.json",
   "format_version": 1,
   "source_plugin": "Sky_Main.ESM",
   "source_version": "26.09a",
@@ -9,20 +11,20 @@
   "translated_fields": 8202,
   "strings_sha256": "7bdfcf5a014f650101a3b7f9e6eff8441c4e44215d880ff781b0305480fd307c",
   "sidecar_sha256": {
-    "cel": "8f4b9341bfef5ae48c265cddba6779bb4b054cef5665ddf7dd454cc0e4702d40",
-    "mrk": "d115cd3a6a8b45775277c1cc17c63cf91ff77c1677f02d04b1947979f0c63112",
-    "top": "e7d0e19e7973ea61654d87bfeed3d81b2d5095b0d37f3a307d171a8d78b01052",
-    "jrn": "e7d0e19e7973ea61654d87bfeed3d81b2d5095b0d37f3a307d171a8d78b01052"
+    "cel": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da",
+    "mrk": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42",
+    "top": "d95a4e5c3b3f6f410def8ef77026eb63c904e5b3320971aa5aa3d31c2192b4a9",
+    "jrn": "d95a4e5c3b3f6f410def8ef77026eb63c904e5b3320971aa5aa3d31c2192b4a9"
   },
   "sidecar_counts": {
-    "cel": 169,
-    "mrk": 104,
-    "top": 104,
-    "jrn": 104
+    "cel": 431,
+    "mrk": 355,
+    "top": 355,
+    "jrn": 355
   },
   "hold_counts": {
-    "cell": 263,
-    "topic": 295
+    "cell": 1,
+    "topic": 44
   },
   "review_counts": {
     "EXISTING_TRANSLATION_UNREVIEWED": 6698,

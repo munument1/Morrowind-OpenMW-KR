@@ -1,10 +1,31 @@
-> 최신 누적 Windows 통합판: [KR12.5](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.5). 29개 대사의 잘못된 명시 링크 31개를 정리했으며 KR12.4 엔진을 유지합니다. [변경 내역](packaging/korean/KR12.5.md). 아래 KR12.4 상세 내역은 기반 릴리스의 기록입니다.
+> **최신 Windows x64 통합판: [KR12.6](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.6).** OpenMW 0.51.0 기반이며 KR12.5에 명시 토픽 링크 범위 교정이 추가되었습니다. [KR12.6 변경 내역](packaging/korean/KR12.6.md) · [통합 ZIP 바로 다운로드](https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.6/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip).
 
 # OpenMW 한국어판
 
 [OpenMW](https://openmw.org/) 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 실행하기 위한 **Windows x64용 한국어 엔진·번역 통합판**입니다. Bethesda의 Morrowind 원본 데이터는 포함하지 않으며 정품 게임이 필요합니다.
 
-## 최신 정식 배포판 — KR12.4 (2026-10-31)
+## 최신 정식 배포판 — KR12.6 (2026-11-02)
+
+- [**KR12.6 공식 릴리스 / 검증 보고서**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.6)
+- [**Windows x64 통합 ZIP 직접 다운로드**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.6/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip)
+- 파일명: `Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip`
+- 기준 엔진: **OpenMW 0.51.0**. KR12.5에 포함된 Windows 실행 파일과 설치기를 그대로 사용하며, 엔진을 새로 컴파일한 버전은 아닙니다.
+- 변경 내용: 본편 `INFO.NAME` **230개 필드**의 명시 토픽 링크 **256개** 클릭 범위 재정렬, 기존 목표 ID 유지를 위한 `.top` 별칭 **86개** 추가.
+- 화면에 표시되는 한국어 문장과 기존 퀘스트 조건·스크립트·DIAL/INFO ID는 유지했습니다.
+- KR12.5까지의 누적 패치를 포함한 **전체 ZIP**이므로 이전 버전을 먼저 설치할 필요가 없습니다.
+- ZIP SHA-256: `2f4bb6b9cfd5916fd9574b6207628e4bb16f8bdc4f1c68fc1ef7581c970989e9`
+- [**KR12.6 상세 변경 내역·검증·한계**](packaging/korean/KR12.6.md)
+
+> **검증 범위:** TES3 구조, 대화 표시 문자열 보존, 명시 링크 목표 및 ZIP 무결성을 정적으로 검사했습니다. 게임 내 NPC·퀘스트 단계별 실플레이는 아직 전수 검증하지 않았으며, 클릭 경계 판단이 불확실한 **48개 후보**와 [이슈 #42](https://github.com/munument1/Morrowind-OpenMW-KR/issues/42)의 모든 제보가 해결됐다고 주장하지 않습니다.
+
+## 이전 릴리스 및 변경 내역
+
+### KR12.5
+
+- [KR12.5 이전 통합판](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.5): 29개 대사에서 잘못 지정된 명시 링크 31개 정리. KR12.4의 Windows 실행 파일 유지.
+- [KR12.5 변경 내역](packaging/korean/KR12.5.md)
+
+### KR12.4 (2026-10-31)
 
 - [**KR12.4 릴리스 및 Windows 통합 ZIP 다운로드**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.4)
 - 파일명: `Morrowind-Korean-OpenMW-0.51.0-KR12.4-Full.zip`
@@ -12,7 +33,7 @@
 - 이 저장소의 개발용 master가 OpenMW 0.52 계열 코드를 포함하더라도 **KR12.4 Windows 실행 파일은 0.51.0 기반**입니다.
 - **별도 이슈 #42 패치를 설치할 필요가 없습니다.** 기존 KR12.3.1의 누적 업데이트입니다.
 
-### KR12.4 변경 사항
+#### KR12.4 변경 사항
 
 1. 한국어 조사·서술격·호격·동사 어미에 걸친 토픽 자동 탐색 경계 개선 (`0016-korean-predicative-topic-boundaries.patch`).
 2. 잘못된 명시 대사 링크 **79건** 정리 (설원곰·설원늑대 74건 포함).
@@ -28,22 +49,22 @@
 
 1. 공식 **OpenMW 0.51.0 Windows x64**와 정품 Morrowind(필요한 Tribunal/Bloodmoon 원본 데이터 포함)를 준비합니다.
 2. 기존 OpenMW 설치 폴더, 사용자 설정 파일과 세이브를 백업합니다.
-3. 위의 **KR12.4 Full ZIP**을 별도 폴더에 압축 해제합니다.
+3. 위의 **KR12.6 Full ZIP**을 별도 폴더에 압축 해제합니다. KR12.4/12.5 패치를 따로 순서대로 설치할 필요는 없습니다.
 4. `Install-Korean.bat`을 실행하고 안내에 따라 OpenMW 설치 폴더를 지정합니다. **Morrowind의 `Data Files`가 아니라 `openmw.exe`가 있는 폴더**입니다.
-5. 기존 KR12.3.1 사용자도 같은 설치기로 업데이트할 수 있습니다. 문제가 생기면 백업에서 복원하고 로그와 설치 버전을 제보해 주세요.
+5. 기존 KR12.3.1~KR12.5 사용자도 같은 설치기로 최신 KR12.6으로 업데이트할 수 있습니다. 문제가 생기면 백업에서 복원하고 로그와 설치 버전을 제보해 주세요.
 
 설치기는 한국어 엔진·폰트·번역 모드와 `openmw.cfg`의 한국어 관리 설정을 갱신하며, 기존 파일을 백업합니다. 전역 `encoding=utf8`을 무조건 강제할 필요는 없습니다.
 
 ### 베데스다 공식 애드온 8종 한국어화 (선택 설치)
 
-베데스다 **Official Plugins** 8종에 대한 기존 한국어 번역은 본편 KR12.4 Full ZIP과 별도입니다. 해당 애드온을 사용하지 않는다면 설치할 필요가 없습니다.
+베데스다 **Official Plugins** 8종에 대한 기존 한국어 번역은 본편 KR12.6 Full ZIP과 별도입니다. 해당 애드온을 사용하지 않는다면 설치할 필요가 없습니다.
 
 - **GOG판:** Official Plugins가 기본 제공되므로 별도 다운로드는 필요하지 않습니다. 게임 `Data Files`에 애드온 ESP가 실제로 존재하는지, OpenMW에서 사용할 애드온이 활성화되었는지는 확인하세요.
 - **Steam판:** Official Plugins가 포함되지 않습니다. [Bethesda Official Plugins (Nexus #3882)](https://www.nexusmods.com/morrowind/mods/3882?tab=files)에서 원본 애드온 8종을 내려받아 `Data Files`에 설치하고 사용할 플러그인을 활성화하세요. **8개 개별 플러그인과 합본(Official Mods Compilation)을 중복 활성화하지 마세요.**
 - **한국어 번역:** [KR12.4 릴리스의 `Morrowind_OfficialAddon_KR.zip`](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.4) 또는 [Nexus Mods #60496의 Optional Files](https://www.nexusmods.com/morrowind/mods/60496?tab=files)에서 별도로 다운로드합니다. KR3에서 제작한 ESP 및 OpenMW용 `.top`/`.mrk`/`.cel` 보조 파일을 그대로 재배포한 것입니다. 원본 애드온 8종이 모두 없으면 번역 ESP를 활성화하지 마세요.
 - **로드 순서:** 공식 애드온과 `Morrowind_Korean_ReTranslation.esp` 다음에 `Morrowind_OfficialAddon_KR.esp`를 로드하세요. 보조 파일도 같은 OpenMW 번역 데이터 경로에 둡니다.
 
-이 번역 패치는 원본 Bethesda 애드온 파일을 재배포하지 않습니다. **KR3 번역 ZIP의 무결성(SHA-256 `404dfe169203bdec679ec67d456aa7516421298dbec89620331a6af931bbe79f`)과 파일 구성은 확인했지만 KR12.4 전체 퀘스트/플러그인 조합을 실게임에서 재검증한 것은 아닙니다.**
+이 번역 패치는 원본 Bethesda 애드온 파일을 재배포하지 않습니다. **KR3 번역 ZIP의 무결성(SHA-256 `404dfe169203bdec679ec67d456aa7516421298dbec89620331a6af931bbe79f`)과 파일 구성은 확인했지만 KR12.4~KR12.6 전체 퀘스트/플러그인 조합을 실게임에서 재검증한 것은 아닙니다.**
 
 ### 포함 구성
 
@@ -67,7 +88,7 @@
 
 ## Android
 
-**KR12.4는 Windows x64 전용**입니다. Android APK나 Android용 엔진 실행 파일은 ZIP에 포함되지 않습니다. 수정한 ESP/TOP 데이터는 Android에도 공통으로 적용할 수 있는 후보이지만, `keywordsearch.cpp`의 네이티브 변경은 Android 엔진을 별도로 재빌드·검증해야 합니다. [GitHub Releases](https://github.com/munument1/Morrowind-OpenMW-KR/releases)에서 Android용 자산이 명시된 릴리스만 선택하세요.
+**KR12.6 Windows 통합 ZIP은 Windows x64 전용**입니다. Android APK나 Android용 엔진 실행 파일은 ZIP에 포함되지 않습니다. 수정한 ESP/TOP 데이터는 Android에도 공통으로 적용할 수 있는 후보이지만, `keywordsearch.cpp`의 네이티브 변경은 Android 엔진을 별도로 재빌드·검증해야 합니다. [GitHub Releases](https://github.com/munument1/Morrowind-OpenMW-KR/releases)에서 Android용 자산이 명시된 릴리스만 선택하세요.
 
 ## 개발자: 한국어 OpenMW 패치
 

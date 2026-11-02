@@ -1,3 +1,17 @@
+## 2026-11-02 PfP 5.0.7-kr1.2 유지보수
+
+OpenMW KR12.6 기준, Nexus 60826의 기존 kr1.1 공개 파일을 재사용해 잘못된 명시 토픽 링크 태그 2건을 삭제한 누적 덮어쓰기 번역본이다. 독립적인 새 ESP를 만들거나 Rebirth 모드를 변경하지 않는다.
+
+- 검수 가능한 한국어 데이터 패치: `translations/openmw-kr/pfp/kr1.2.json` (INFO ID·레코드 위치·수정 전후 SHA 고정).
+- 재현 가능한 PFP 전용 빌더: `packaging/korean/tooling/publish_pfp_kr12.py`.
+- Nexus API 갱신 전용 워크플로: `.github/workflows/publish-pfp-kr12-only.yml` (PFP 기존 파일 그룹만 수정, Rebirth 제외).
+- 원본 kr1.1 ESM SHA-256: `2abad0747ee024d51043d2b525c821e826215a8e3fc1b304606d5b3d55e6b45f`.
+- 교정된 kr1.2 ESM SHA-256: `87875cb0d5a5259b623e2dda56d056a2813ce03c51194836134c3d5b39236889`.
+- 오직 INFO.NAME 2개 변경, 기타 서브레코드 91,498개 보존, 화면의 한국어 문자열 및 TOP/MRK 그대로. 실게임 미검증.
+- 비공개 번역 전체 DB, Bethesda 데이터, 원본 PFP ESM은 공개 저장소에 포함하지 않는다.
+
+---
+
 ## 2026-11-02 후속 검수 및 kr1.1
 
 Nexus 60826: 5.0.7-kr1.1. 실제 공개 kr1.0 패키지를 기준으로 책/간판 3필드, INFO 링크 범위 12필드와 TOP 별칭 3개 교정. 아래 v19 초안 빌더와는 별개의 공개 배포본 유지보수 작업이다.

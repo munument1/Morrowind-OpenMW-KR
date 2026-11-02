@@ -1,0 +1,38 @@
+{
+  "project": "Patch for Purists",
+  "source_version": "5.0.7-kr1.1",
+  "target_version": "5.0.7-kr1.2",
+  "main_game": "Morrowind",
+  "nexus_mod_id": 60826,
+  "nexus_existing_file_group": "8280147",
+  "reference_kr11_github_actions_run": 41323412147,
+  "reference_archive": "PFP_5.0.7-kr1.1_OpenMW-KR12.5.zip",
+  "source_zip_sha256": "c02765a4d4d1cee1712cb330d9a06686d55072e7e06b6f43603a1b72079208d4",
+  "source_esm_sha256": "2abad0747ee024d51043d2b525c821e826215a8e3fc1b304606d5b3d55e6b45f",
+  "expected_esm_sha256": "87875cb0d5a5259b623e2dda56d056a2813ce03c51194836134c3d5b39236889",
+  "cases": [
+    {
+      "record_index": 2770,
+      "subrecord_index": 4,
+      "info_id": "1946625247392230995",
+      "original_markup": "@코프루스 짐승들#",
+      "replacement": "코프루스 짐승들",
+      "field_sha256": "5add09679498caf1b7e264dea5ec1025aaaa81e4f90e6ebb5ea5578750b435ce",
+      "expected_field_sha256": "be0f233e121fd7eaf01b8d5841a64aec4f7332e338bc31d52e4e86e1267b7197",
+      "classification": "confirmed_unresolved_explicit_reference",
+      "review_status": "static_qa_pass_runtime_unverified"
+    },
+    {
+      "record_index": 6053,
+      "subrecord_index": 6,
+      "info_id": "1262718877221279099",
+      "original_markup": "@대가 칭호를 선택해#",
+      "replacement": "대가 칭호를 선택해",
+      "field_sha256": "0f5e98086bc1d3f68f6d31f9b1555f22c96accba7e56d3ba2a80445e921b112f",
+      "expected_field_sha256": "05f586a8f662da13ce16d498c8f9830745c9afa25254c2f8c9c842cfcb67e2a0",
+      "classification": "confirmed_unresolved_explicit_reference",
+      "review_status": "static_qa_pass_runtime_unverified"
+    }
+  ],
+  "note": "Public repository stores reviewable deltas and build validation only. Existing kr1.1 published bytes are reconstructed from the immutable Actions artifact; all unreleased/private full translation source stays private. Rebirth left unchanged."
+}

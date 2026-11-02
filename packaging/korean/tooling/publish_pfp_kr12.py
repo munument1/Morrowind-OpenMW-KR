@@ -135,11 +135,12 @@ def inspect_nexus(mode, outdir):
         assert str(mod["version"]).casefold()==plan["source_version"], "Nexus version already changed; refuse duplicate upload"
         status={"preflight":"PASS","owned":True,"nexus_version":mod["version"],"file_group":plan["nexus_existing_file_group"]}
     else:
-        assert str(mod["version"]).casefold()==plan["target_version"],("Nexus version not yet updated",mod["version"])
+        # Nexus v1 mod metadata lags behind the public page and v3 file versions after an upload.
+        # The active file group's v3 version is authoritative for the uploaded artifact.
         version_info=nexus_call("/v3/mod-files/8280147/versions",key)["data"]["versions"]
         matching=[x for x in version_info if str(x.get("version","")).casefold()==plan["target_version"] and str(x.get("category","")).casefold()!="removed"]
-        assert len(matching)==1,matching
-        status={"nexus_metadata":"PASS","owned":True,"nexus_version":mod["version"],"version_records":len(matching),
+        assert len(matching)==1,("Nexus v3 file group does not report kr1.2",[(x.get("version"),x.get("category")) for x in version_info])
+        status={"nexus_metadata":"PASS","owned":True,"v1_mod_version_cached":mod["version"],"nexus_file_version":matching[0]["version"],"version_records":len(matching),
             "game_scoped_file_id":matching[0].get("game_scoped_id"),
             "CDN_sha256_verified":False,"CDN_reason":"Not checked; previous Nexus CDN 403 from Actions"}
         detail="kr1.2: 명시 링크 목표가 확인되지 않는 2개 대사의 잘못된 링크 태그를 제거. 한국어 표시문장, 그 밖의 번역 및 TOP/MRK·퀘스트 조건·스크립트 보존. OpenMW KR12.6 기준 정적 검증 통과, 실게임 미검증."

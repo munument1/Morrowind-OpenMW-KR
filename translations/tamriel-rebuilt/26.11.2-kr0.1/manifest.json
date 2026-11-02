@@ -1,0 +1,55 @@
+{
+  "version": "26.11.2-kr0.1",
+  "release_status": "EARLY_TEST_RUNTIME_PENDING",
+  "mainland": {
+    "source_sha256": "d8c55de18c07afb7026de8354d7b71d9fe60b9a3484df5a8cd9735fbac1b3b08",
+    "output_sha256": "b599835ebdd16259ac96213ef92407dfbeb27f8328684ae833a059fd5c4cffda",
+    "output_bytes": 247956553,
+    "records": 115865,
+    "candidate_rows": 90106,
+    "applied": 88521,
+    "holds": 1585,
+    "review_status_counts": {
+      "EXISTING_TRANSLATION_UNREVIEWED": 87013,
+      "HOLD_SOURCE_PRESERVED": 1585,
+      "AI_SOURCE_REVIEWED_TEST_DRAFT": 1508
+    }
+  },
+  "factions": {
+    "source_sha256": "c261070b6873b7a159386d7d7fbee6f67039fbf0a1261d68475436bbb94c9eae",
+    "output_sha256": "a1478b73c7881434110305743a82b641d87d56a1cc96f29d55c9ef3e07c297fc",
+    "output_bytes": 137442,
+    "records": 247,
+    "static_rows": 318,
+    "applied_static": 315,
+    "internal_holds": 3,
+    "script_display_occurrences": 19,
+    "SCDT_unchanged": true
+  },
+  "sidecars": {
+    "cel_entries": 3887,
+    "internal_cell_holds": 120,
+    "top_mrk_jrn_entries_each": 755,
+    "new_place_name_spellings_provisional": true
+  },
+  "game_binaries_included": false,
+  "runtime_tested": false,
+  "human_reviewed_all": false,
+  "translation_API_calls": 0,
+  "files_sha256": {
+    "cell_lexicon.tsv": "520e579a4e30873f1b639a6b8ffeec279f5ac138a13fdc7c9d9192c6ad420b54",
+    "cell_translation_candidates.jsonl.gz": "ee82cd3563a391f71fece9b2060c384e8aa522656747a174a6eb303cd5f8782f",
+    "cell_translation_holds.jsonl.gz": "7a6649c61190e5160963b344257d39c1d1c124ec05b48df15f6f0b0d52eb1290",
+    "dialogue_context_equivalence.jsonl.gz": "a834d646913012e6db2de876deb4d261d083fb56eea7a5d3be4a1b4f8d288f34",
+    "OpenMW_sidecar_QA.json": "b6bb1c8b9c17541c9f6f66f09d2a864aaf28a51b9efd92f765379087e862f6dd",
+    "TR_Factions.en_ko.jsonl.gz": "93f53ee481a699248e0253650e0ae409a8b9efef5129f8db9980afc05d596f1f",
+    "TR_Factions.script_display.jsonl.gz": "a8a750a9af7d887979d79fa4c9f8dc72df497159183bf139fe2947c215a2a4a0",
+    "TR_Factions_QA.json": "e0f582591cd5c183d3c4b6d927695fbef1d323907be8841d4614b77cda7b246f",
+    "TR_Mainland.cel": "22a0e6c18d31a70c7c53b665c0597b22359e77355be0c1bbb62311c42874005a",
+    "TR_Mainland.en_ko.jsonl.gz": "21cc707d5647b2bfbbcaae1b483c5b8c93cc9d5b6960d76e8421790bf3c27d2f",
+    "TR_Mainland.jrn": "4ffe31485507d18a0899350077825b655fa14ce2b8fc9199a5bc1f9bbc1cbd96",
+    "TR_Mainland.mrk": "632329a94f678f78c4a51dde1f42db49cd056a62d5046bbd3f4b541f8783dd2c",
+    "TR_Mainland.top": "4ffe31485507d18a0899350077825b655fa14ce2b8fc9199a5bc1f9bbc1cbd96",
+    "TR_Mainland_binary_QA.json": "dc048352f7ebf2bbf9af8786c6ac578e336a09e320369c235712bea0160d028e"
+  }
+}

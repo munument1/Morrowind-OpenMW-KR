@@ -1,0 +1,18 @@
+{
+  "plugin": "TR_Mainland.esm",
+  "source_SHA256": "d8c55de18c07afb7026de8354d7b71d9fe60b9a3484df5a8cd9735fbac1b3b08",
+  "output_SHA256": "b599835ebdd16259ac96213ef92407dfbeb27f8328684ae833a059fd5c4cffda",
+  "binary_validation": "PASS",
+  "subrecord_identity_and_order": "PASS",
+  "HEDR_record_count": "PASS",
+  "master_filenames_unchanged": "PASS",
+  "untouched_fields_byte_identical": "PASS",
+  "translated_UTF8_and_NUL_padding": "PASS",
+  "counts": {
+    "records": 115865,
+    "untouched_subrecords": 6244669,
+    "translated_subrecords": 88521
+  },
+  "runtime_tested": false,
+  "game_applied": false
+}

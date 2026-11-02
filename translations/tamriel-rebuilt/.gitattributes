@@ -1,0 +1,2 @@
+# Preserve BOM, CR/LF and manifest hashes exactly across Windows/Linux checkouts.
+26.11.2-kr0.1/** -text whitespace=cr-at-eol

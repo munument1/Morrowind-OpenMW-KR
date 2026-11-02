@@ -1,0 +1,21 @@
+{
+  "source_sha256": "c261070b6873b7a159386d7d7fbee6f67039fbf0a1261d68475436bbb94c9eae",
+  "output_sha256": "a1478b73c7881434110305743a82b641d87d56a1cc96f29d55c9ef3e07c297fc",
+  "source_unchanged": true,
+  "static_display_fields_translated": 315,
+  "rank_fields": 109,
+  "internal_control_fields_preserved": 3,
+  "script_display_literals_translated": 19,
+  "scripts_code_outside_literals_unchanged": true,
+  "SCDT_compiled_script_bytes_unchanged": true,
+  "script_compatibility": "OpenMW compiles SCTX/BNAM source; legacy engine compiled SCDT is not localized",
+  "binary_QA": "PASS",
+  "esmtool_exit_code": 0,
+  "counts": {
+    "records": 247,
+    "unchanged_subrecords": 2061,
+    "changed_subrecords": 329,
+    "unchanged_compiled_scripts": 10
+  },
+  "runtime_tested": false
+}

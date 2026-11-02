@@ -4,6 +4,7 @@ GitHub는 번역 데이터·대조표·검수 상태와 재현 가능한 빌드 
 
 - [현재 OpenMW-KR 전용 ESM 교체 + CEL/TOP/MRK/JRN 구성](openmw-kr/README.md)
 - [Tamriel Data](tamriel-data/README.md)
+- [Tamriel Rebuilt — Mainland 및 Factions](tamriel-rebuilt/README.md)
 - [Project Cyrodiil](cyr-main/README.md)
 - [Skyrim: Home of the Nords](sky-main/README.md)
 

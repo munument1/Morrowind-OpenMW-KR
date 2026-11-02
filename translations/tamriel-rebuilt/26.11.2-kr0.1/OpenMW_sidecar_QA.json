@@ -1,0 +1,42 @@
+{
+  "sidecar_UTF8_BOM_tabs_unique_keys": "PASS",
+  "CEL_complete_ordinary_source_names": "PASS",
+  "CEL_entries": 3887,
+  "excluded_internal_names": 120,
+  "translated_regions": 27,
+  "translated_door_destinations": 3562,
+  "source_door_destinations": 3598,
+  "DIAL_link_targets_and_bidirectional_maps": "PASS",
+  "TOP_MRK_JRN_entries_each": 755,
+  "selected_variable_HTML_link_newline_QA": "PASS",
+  "numeric_10_corkbulb_fix": "PASS",
+  "translated_fields_by_type": {
+    "FACT.FNAM": 2,
+    "SPEL.FNAM": 516,
+    "NPC_.FNAM": 9644,
+    "DOOR.FNAM": 313,
+    "MISC.FNAM": 1376,
+    "WEAP.FNAM": 419,
+    "CONT.FNAM": 1276,
+    "CREA.FNAM": 835,
+    "LIGH.FNAM": 33,
+    "ARMO.FNAM": 235,
+    "CLOT.FNAM": 414,
+    "REPA.FNAM": 4,
+    "ACTI.FNAM": 868,
+    "APPA.FNAM": 20,
+    "LOCK.FNAM": 1,
+    "PROB.FNAM": 1,
+    "INGR.FNAM": 69,
+    "BOOK.FNAM": 1140,
+    "BOOK.TEXT": 960,
+    "ALCH.FNAM": 107,
+    "INFO.NAME": 70288
+  },
+  "esmtool_exit_codes": {
+    "TR_Mainland.esm": 0,
+    "TR_Factions.esp": 0
+  },
+  "separate_door_ESP_absent": "PASS",
+  "runtime_tested": false
+}

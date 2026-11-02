@@ -1,0 +1,202 @@
+{
+  "Cyr_Main": {
+    "display_title": "Cyr_Main-kr0.1",
+    "source_version": "26.09a",
+    "source_plugin_sha256": "0e23edd68d4f374ad55e873f8a7d77ec3a8e05a5bf8da1d092bf622e8bccf87a",
+    "overwrite_zip": "Cyr_Main-kr0.1.zip",
+    "zip_sha256": "a4dc5abcf14107733d8989b094fafea67be75c8169e523c559e485d69be318ff",
+    "zip_size_bytes": 17454152,
+    "files": {
+      "Cyr_Main.ESM": {
+        "bytes": 49886084,
+        "sha256": "d16323effcbbec7a29ba8e1ef247b24b902e62e017c6666aaa284595b95b035c"
+      },
+      "Cyr_Main.cel": {
+        "bytes": 31161,
+        "sha256": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa"
+      },
+      "Cyr_Main.top": {
+        "bytes": 21732,
+        "sha256": "ec5150e5df95b9534bd183458d67879f0185ae8a7f28c36c8b4bb9e202645f48"
+      },
+      "Cyr_Main.mrk": {
+        "bytes": 20452,
+        "sha256": "63603ec4862cd1773a09b26a059a01ccc3bf9ed01d08cba3da49396d4d604bad"
+      },
+      "Cyr_Main.jrn": {
+        "bytes": 20452,
+        "sha256": "ab6e23df0bcc68e230124717d07745f4df2d471975174689417b3d658f122dbe"
+      }
+    },
+    "verification": {
+      "sha256": "d16323effcbbec7a29ba8e1ef247b24b902e62e017c6666aaa284595b95b035c",
+      "bytes": 49886084,
+      "TES3_records": 20268,
+      "master_size_hints": {
+        "Morrowind.esm": 79837557,
+        "Tribunal.esm": 4565686,
+        "Bloodmoon.esm": 9631798,
+        "Tamriel_Data.esm": 18536570
+      },
+      "esmtool": "PASS"
+    },
+    "install": "same-named plugin overwrite only; original mod assets required",
+    "runtime_tested": false,
+    "all_translation_human_reviewed": false,
+    "no_original_game_files_modified": true
+  },
+  "Sky_Main": {
+    "display_title": "Sky_Main-kr0.1",
+    "source_version": "26.09a",
+    "source_plugin_sha256": "311907b5feca991b4232ef02d9ddaa73ece4b99673af63b676d6f57d15527888",
+    "overwrite_zip": "Sky_Main-kr0.1.zip",
+    "zip_sha256": "8207a9f14f0edc73b181dcc692417fc3d142b75edd34c09363c3192b76179ea4",
+    "zip_size_bytes": 10394502,
+    "files": {
+      "Sky_Main.ESM": {
+        "bytes": 31770936,
+        "sha256": "28453abc5fb95735590667fb8d5546863035eef5cf7c36f486aa7d4533943c0f"
+      },
+      "Sky_Main.cel": {
+        "bytes": 25931,
+        "sha256": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da"
+      },
+      "Sky_Main.top": {
+        "bytes": 13317,
+        "sha256": "ba7503762abc05303833e5cce8432635b29d40a9dc81c413e29c459b5151678f"
+      },
+      "Sky_Main.mrk": {
+        "bytes": 11945,
+        "sha256": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42"
+      },
+      "Sky_Main.jrn": {
+        "bytes": 11945,
+        "sha256": "d95a4e5c3b3f6f410def8ef77026eb63c904e5b3320971aa5aa3d31c2192b4a9"
+      }
+    },
+    "verification": {
+      "sha256": "28453abc5fb95735590667fb8d5546863035eef5cf7c36f486aa7d4533943c0f",
+      "bytes": 31770936,
+      "TES3_records": 11340,
+      "master_size_hints": {
+        "Morrowind.esm": 79837557,
+        "Tribunal.esm": 4565686,
+        "Bloodmoon.esm": 9631798,
+        "Tamriel_Data.esm": 18536570
+      },
+      "esmtool": "PASS"
+    },
+    "install": "same-named plugin overwrite only; original mod assets required",
+    "runtime_tested": false,
+    "all_translation_human_reviewed": false,
+    "no_original_game_files_modified": true
+  },
+  "Tamriel_Data": {
+    "display_title": "Tamriel_Data-kr0.1",
+    "source_version": "26.08",
+    "source_plugin_sha256": "e94ca3a5c62e0228ac3782e813cae58c4e10da2e9e8b7611e0a8f5ff9a98d06f",
+    "overwrite_zip": "Tamriel_Data-kr0.1.zip",
+    "zip_sha256": "aa291a23185f26e770be988437f81ebc89eb3bac395504f2826a19e5fe60adf5",
+    "zip_size_bytes": 3487301,
+    "files": {
+      "Tamriel_Data.esm": {
+        "bytes": 18536570,
+        "sha256": "647b7950857fc74e03fba8ad58680a75e55b90287e4044bfecf011ce9002a9b4"
+      },
+      "Tamriel_Data.cel": {
+        "bytes": 100,
+        "sha256": "4a9547e8361b42008cd858e77ae8f15f953e2ead44a00a1f852a0fa7c8518171"
+      },
+      "Tamriel_Data.top": {
+        "bytes": 5012,
+        "sha256": "99f18b02b2c9224717292ac8d527504e87a6691f146c91a4e01adfd14ae03ead"
+      },
+      "Tamriel_Data.mrk": {
+        "bytes": 3340,
+        "sha256": "fbc4989be2cfeb1072ddd35bdbb258ebf99a3940190feda231482a783a0116e7"
+      },
+      "Tamriel_Data.jrn": {
+        "bytes": 3340,
+        "sha256": "051ba7f10df6cd7f5e78de1838ef4c4e8f4761144a335b80d9f285c96f742afa"
+      }
+    },
+    "verification": {
+      "sha256": "647b7950857fc74e03fba8ad58680a75e55b90287e4044bfecf011ce9002a9b4",
+      "bytes": 18536570,
+      "TES3_records": 58872,
+      "master_size_hints": {
+        "Morrowind.esm": 79837557,
+        "Tribunal.esm": 4565686,
+        "Bloodmoon.esm": 9631798
+      },
+      "esmtool": "PASS"
+    },
+    "install": "same-named plugin overwrite only; original mod assets required",
+    "runtime_tested": false,
+    "all_translation_human_reviewed": false,
+    "no_original_game_files_modified": true
+  },
+  "TR_Mainland": {
+    "display_title": "TR_Mainland-kr0.1",
+    "source_version": "26.11.2",
+    "source_plugin_sha256": "d8c55de18c07afb7026de8354d7b71d9fe60b9a3484df5a8cd9735fbac1b3b08",
+    "overwrite_zip": "TR_Mainland-kr0.1.zip",
+    "zip_sha256": "53bbb93a4bc99884f2d23302df6b762debb8cad50c1a70812503ca261e702f18",
+    "zip_size_bytes": 95944477,
+    "files": {
+      "TR_Mainland.esm": {
+        "bytes": 248680022,
+        "sha256": "1627359756ab5a429893044a8337a10b8688c5f5cdf1fa4ecdab628dbaa8a183"
+      },
+      "TR_Factions.esp": {
+        "bytes": 137442,
+        "sha256": "7906b753a801085e5984419575834692f5ac1c618cb5925a9a42b1d8c949e2fd"
+      },
+      "TR_Mainland.cel": {
+        "bytes": 227887,
+        "sha256": "22a0e6c18d31a70c7c53b665c0597b22359e77355be0c1bbb62311c42874005a"
+      },
+      "TR_Mainland.top": {
+        "bytes": 27629,
+        "sha256": "2899c51d0046f80f259c1f3cab3e6a068dd34ca123dd4bf0b16adb631033d470"
+      },
+      "TR_Mainland.mrk": {
+        "bytes": 24513,
+        "sha256": "632329a94f678f78c4a51dde1f42db49cd056a62d5046bbd3f4b541f8783dd2c"
+      },
+      "TR_Mainland.jrn": {
+        "bytes": 24513,
+        "sha256": "4ffe31485507d18a0899350077825b655fa14ce2b8fc9199a5bc1f9bbc1cbd96"
+      }
+    },
+    "verification": {
+      "sha256": "1627359756ab5a429893044a8337a10b8688c5f5cdf1fa4ecdab628dbaa8a183",
+      "bytes": 248680022,
+      "TES3_records": 115865,
+      "master_size_hints": {
+        "Morrowind.esm": 79837557,
+        "Tribunal.esm": 4565686,
+        "Bloodmoon.esm": 9631798,
+        "Tamriel_Data.esm": 18536570
+      },
+      "esmtool": "PASS",
+      "factions": {
+        "sha256": "7906b753a801085e5984419575834692f5ac1c618cb5925a9a42b1d8c949e2fd",
+        "bytes": 137442,
+        "TES3_records": 247,
+        "master_size_hints": {
+          "Morrowind.esm": 79837557,
+          "Tribunal.esm": 4565686,
+          "Bloodmoon.esm": 9631798,
+          "Tamriel_Data.esm": 18536570,
+          "TR_Mainland.esm": 248680022
+        },
+        "esmtool": "PASS"
+      }
+    },
+    "install": "same-named plugin overwrite only; original mod assets required",
+    "runtime_tested": false,
+    "all_translation_human_reviewed": false,
+    "no_original_game_files_modified": true
+  }
+}

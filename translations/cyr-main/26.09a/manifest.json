@@ -1,0 +1,19 @@
+{
+  "plugin": "Cyr_Main.ESM",
+  "mod_version": "26.09a Hotfix 1",
+  "format_version": 1,
+  "source_sha256": "0e23edd68d4f374ad55e873f8a7d77ec3a8e05a5bf8da1d092bf622e8bccf87a",
+  "test_ESM_sha256": "c80244460e1a3df87926dd5c58f2f417cbf3d3db1e1895c8b4e3e032ceca2366",
+  "rows": 15046,
+  "review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 8538,
+    "AI_SOURCE_REVIEWED": 6500,
+    "HOLD": 8
+  },
+  "bilingual_gzip_sha256": "1d6e7fa04ae9bb8bd00e8eab5028292e17526de43e1561dfa811d3df50f5e0ce",
+  "runtime_tested": false,
+  "test_only": true,
+  "game_applied": false,
+  "workbook_sha256": "57166becaec707fd29557ac730fba7d49e32920e2b41248acbb1932014241973",
+  "test_ZIP_sha256": "50c5e1d2c32ae47bb04206c2852126b58ae42cab98b7ebd80cf6ddb1c4b75ceb"
+}

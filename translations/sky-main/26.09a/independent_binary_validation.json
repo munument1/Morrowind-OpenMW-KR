@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "source_sha256": "311907b5feca991b4232ef02d9ddaa73ece4b99673af63b676d6f57d15527888",
+  "staged_sha256": "1ba13ca6f2ca4b8715359c884b4f1173ffe975b0897740a896b97cfc307cafab",
+  "records": 11340,
+  "translated_subrecords": 8202,
+  "unchanged_subrecords": 883993,
+  "changed_type_counts": {
+    "SPEL.FNAM": 16,
+    "DOOR.FNAM": 33,
+    "MISC.FNAM": 96,
+    "WEAP.FNAM": 30,
+    "CONT.FNAM": 115,
+    "CREA.FNAM": 78,
+    "LIGH.FNAM": 4,
+    "NPC_.FNAM": 924,
+    "ARMO.FNAM": 27,
+    "CLOT.FNAM": 43,
+    "ACTI.FNAM": 85,
+    "INGR.FNAM": 2,
+    "BOOK.FNAM": 105,
+    "BOOK.TEXT": 103,
+    "ALCH.FNAM": 6,
+    "INFO.NAME": 6535
+  },
+  "h_count_valid": true,
+  "no_DIAL_topic_rename": true,
+  "no_script_or_conditions_changed": true,
+  "all_other_subrecords_byte_identical": true,
+  "runtime_tested": false
+}

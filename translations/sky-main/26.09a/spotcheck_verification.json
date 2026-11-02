@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "translated_fields_structural_checked": 8202,
+  "unchanged_other_subrecords": 883993,
+  "bilingual_rows": 8279,
+  "sample_records_examined": 40,
+  "books_sample_scope": "Excerpt inspection, not full independent editorial rereview",
+  "confirmed_corrections": 7,
+  "remaining_NPC_name_particle_candidates": 0,
+  "source_rebuild_sha256": "1ba13ca6f2ca4b8715359c884b4f1173ffe975b0897740a896b97cfc307cafab",
+  "workbook_rows_checked": 8279,
+  "workbook_all_display_cells_match_export_after_XML_EOL_normalization": true,
+  "engine_line_endings_preserved_in_JSONL": true,
+  "runtime_tested": false,
+  "game_applied": false,
+  "translation_API_calls": 0,
+  "all_existing_prose_editorially_reapproved": false
+}

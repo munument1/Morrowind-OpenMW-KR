@@ -1,0 +1,49 @@
+{
+  "mod": "Cyr_Main",
+  "rebirth_version": "7.2",
+  "source_mod_version": "26.09a",
+  "source_mod_sha256": "0e23edd68d4f374ad55e873f8a7d77ec3a8e05a5bf8da1d092bf622e8bccf87a",
+  "translated_source_sha256": "d16323effcbbec7a29ba8e1ef247b24b902e62e017c6666aaa284595b95b035c",
+  "input_compatch_sha256": "35881fda4f443e97e977ecbaa843b21ddadd9df03f03c3b57b848aa24100c99a",
+  "input_compatch_file": "Project Cyrodiil [For Rebirth].esm",
+  "output_compatch_sha256": "7794af1214b759a0c85d655b2b40eb8774beb396ee7775dd76e965e63dbbca1e",
+  "zip": "Project_Cyrodiil_For_Rebirth-kr0.1.zip",
+  "zip_sha256": "bf19a338417bc97263b86adb44691bfa593ed13e01b834b848922500bc16a795",
+  "changed_subrecords": 15034,
+  "preserved_other_subrecords": 1323016,
+  "records": 20269,
+  "categorized_record_status": {
+    "master_size_hint_refreshed": 1,
+    "identified_unique_records": 19220,
+    "compatch_padding_normalized": 285,
+    "source_preserved_catalog_rows": 11,
+    "compatch_only_html_wax_seal_removed": 7,
+    "skipped_nonunique_or_unidentified_records": 1048,
+    "manual_compatch_specific_info_translated": 3
+  },
+  "patch_specific_text_fields_left_original": 0,
+  "sample_patch_text_holds": [],
+  "latest_kr_sidecars": {
+    "Project Cyrodiil [For Rebirth].cel": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa",
+    "Project Cyrodiil [For Rebirth].jrn": "ab6e23df0bcc68e230124717d07745f4df2d471975174689417b3d658f122dbe",
+    "Project Cyrodiil [For Rebirth].mrk": "63603ec4862cd1773a09b26a059a01ccc3bf9ed01d08cba3da49396d4d604bad",
+    "Project Cyrodiil [For Rebirth].top": "ec5150e5df95b9534bd183458d67879f0185ae8a7f28c36c8b4bb9e202645f48"
+  },
+  "master_size_hints_before": {
+    "Morrowind.esm": 79837557,
+    "Tribunal.esm": 4565686,
+    "Bloodmoon.esm": 9631798,
+    "Tamriel_Data.esm": 14887395
+  },
+  "master_size_hints": {
+    "Morrowind.esm": 79837557,
+    "Tribunal.esm": 4565686,
+    "Bloodmoon.esm": 9631798,
+    "Tamriel_Data.esm": 18536570
+  },
+  "master_hint_only_metadata_change": true,
+  "esmtool": "PASS",
+  "input_file_untouched": true,
+  "runtime_tested": false,
+  "full_language_review": false
+}

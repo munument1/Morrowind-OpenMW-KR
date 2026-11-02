@@ -86,6 +86,10 @@
 
 [Sky_Main 26.09a 한영 대조표·재현 빌드·Nexus 배포 안내](translations/sky-main/README.md)를 제공합니다. 8,279개 대조 행 중 8,202개 필드가 번역 적용되며, 보류 4개와 개발용 마커 73개는 원문을 유지합니다. 실제 게임 검증 전 테스트본입니다.
 
+### Morrowind Rebirth 7.2 지역 확장 모드 호환판 한국어화
+
+[Project Cyrodiil·Skyrim Home of the Nords 호환 ESM kr0.1 번역 데이터 및 검증](translations/openmw-kr/rebirth-compat/7.2/README.md)를 제공합니다. 번역된 동일 이름의 ESM 덮어쓰기 ZIP은 **Nexus의 Morrowind Rebirth 한국어판 Optional Files에 수동 배포**하는 방식이며 GitHub에는 번역 데이터만 저장합니다. **Tamriel Rebuilt와 Morrowind Rebirth 사이의 호환성이 해결된 것은 아닙니다.** 해당 원본 Rebirth 7.2 패키지에는 TR 전용 호환 패치가 없습니다.
+
 ## Android
 
 **KR12.6 Windows 통합 ZIP은 Windows x64 전용**입니다. Android APK나 Android용 엔진 실행 파일은 ZIP에 포함되지 않습니다. 수정한 ESP/TOP 데이터는 Android에도 공통으로 적용할 수 있는 후보이지만, `keywordsearch.cpp`의 네이티브 변경은 Android 엔진을 별도로 재빌드·검증해야 합니다. [GitHub Releases](https://github.com/munument1/Morrowind-OpenMW-KR/releases)에서 Android용 자산이 명시된 릴리스만 선택하세요.

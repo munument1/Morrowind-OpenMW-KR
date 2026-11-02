@@ -1,0 +1,47 @@
+{
+  "mod": "Sky_Main",
+  "rebirth_version": "7.2",
+  "source_mod_version": "26.09a",
+  "source_mod_sha256": "311907b5feca991b4232ef02d9ddaa73ece4b99673af63b676d6f57d15527888",
+  "translated_source_sha256": "28453abc5fb95735590667fb8d5546863035eef5cf7c36f486aa7d4533943c0f",
+  "input_compatch_sha256": "f7e7b902b1ace85f198b91fde6cfb65b46abd3c6e59455f540ea97cbc774cf7f",
+  "input_compatch_file": "Skyrim Home of the Nords [For Rebirth].esm",
+  "output_compatch_sha256": "fbfe6a982c69d5da86120043e3e13dd2104f1569d8c846302367d070165d54f6",
+  "zip": "Skyrim_Home_of_the_Nords_For_Rebirth-kr0.1.zip",
+  "zip_sha256": "f82a80ba233fa8ff6f208a11d433b40bb5813911404d8be7a40b61a758d7a153",
+  "changed_subrecords": 8202,
+  "preserved_other_subrecords": 895208,
+  "records": 11340,
+  "categorized_record_status": {
+    "master_size_hint_refreshed": 1,
+    "identified_unique_records": 10775,
+    "source_preserved_catalog_rows": 77,
+    "compatch_padding_normalized": 103,
+    "skipped_nonunique_or_unidentified_records": 564
+  },
+  "patch_specific_text_fields_left_original": 0,
+  "sample_patch_text_holds": [],
+  "latest_kr_sidecars": {
+    "Skyrim Home of the Nords [For Rebirth].cel": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da",
+    "Skyrim Home of the Nords [For Rebirth].jrn": "d95a4e5c3b3f6f410def8ef77026eb63c904e5b3320971aa5aa3d31c2192b4a9",
+    "Skyrim Home of the Nords [For Rebirth].mrk": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42",
+    "Skyrim Home of the Nords [For Rebirth].top": "ba7503762abc05303833e5cce8432635b29d40a9dc81c413e29c459b5151678f"
+  },
+  "master_size_hints_before": {
+    "Morrowind.esm": 79837557,
+    "Tribunal.esm": 4565686,
+    "Bloodmoon.esm": 9631798,
+    "Tamriel_Data.esm": 14887395
+  },
+  "master_size_hints": {
+    "Morrowind.esm": 79837557,
+    "Tribunal.esm": 4565686,
+    "Bloodmoon.esm": 9631798,
+    "Tamriel_Data.esm": 18536570
+  },
+  "master_hint_only_metadata_change": true,
+  "esmtool": "PASS",
+  "input_file_untouched": true,
+  "runtime_tested": false,
+  "full_language_review": false
+}

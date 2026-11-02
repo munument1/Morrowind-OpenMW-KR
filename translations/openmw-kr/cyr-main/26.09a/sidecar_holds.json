@@ -1,0 +1,4465 @@
+[
+  {
+    "kind": "cell",
+    "en": "Acharamz",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Acharamz, Ratiocinatory",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Aeredus",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Agi Bay",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Agi Bay Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Akna Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ansedeus, Inner Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ansedeus, Outer Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Abecean Trading Company: Lower Floors",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Abecean Trading Company: Upper Floors",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Albatross Apartments",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Astinius Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Barn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Bathhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Bathhouse: Apartments",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Bathhouse: Heating Room",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Bespoke Perfumes, Potions, and Elixirs",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Blind Dock Lodgings",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Canal West Tenements",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Caravan Stop",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Census and Excise Office",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Census and Excise Office: Coast Guard Barracks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Chamber of Commerce",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Chamber of Commerce: Vaults",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Chapel of Solemn Echoes",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Chapel of the Tranquil Sky",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, City Walls",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Cularyia's Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Daravas: Enchanter and Soothsayer",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Erline Bertault's Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Five Fathoms Flophouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Goldenrod House: Kitchen",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Goldenrod House: Services Wing",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Goldenrod House: Staff Quarters",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Guild of Ratcatchers",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Hadrach Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Harbormaster",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Hostel of Saint Rosunius",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Imperial Astrological Society",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Imperial Geographical Society",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Little Arenthia",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Marina",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Micella Marin's Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Navy Officer Lodgings",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, North Wall Apartments",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Olvus Kalcharius' Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Othesarre: Pawnbroker & Loans",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Pelelius Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Port Quarter",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Red Treasury",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Red Treasury: Praetor's Villa",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Red Treasury: Upper Offices",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Sailor's Fluke: Fight Pit",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Saint Amiel Officers' Club",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Saint Amiel Officers' Club: Top Floor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Seastone House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Sewers: Little Arenthia",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Sewers: Marina",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Sewers: Port Quarter",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Shipworks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Siralius Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Siralius Manor: Top Floor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Srethuun Tribe Apartment",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Straler Loronus' Apartment: Hidden Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Tava's Hearth Hostel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Antechamber",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Auditorium",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Cellars",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Frigidarium",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Furnace Halls",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Guard Quarters",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Hermitage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Inner Sanctum",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Sacred Baths",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Sacred Workshops",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of Dibella Estetica: Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Temple of the First Breath",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, The Abecean Monitor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, The Abecette: Fight Pit",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, The Abecette: Inner Hall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, The Scupper",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Thimistrel Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Thimistrel Manor: East Wing",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Thimistrel Manor: Top Floor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Thimistrel Manor: Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Thimistrel Manor: West Wing",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Thirroth: Alchemical Remedies",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Trident Exchange",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Vari-Vedis Ophilius' Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Vinicius Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Wayfarer Building",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, West Wind Suites",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, West Wind Suites: Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Anvil, Yard Gate Tenements",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Archad, Water Mill",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Aschar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Atrene",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Axilas Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Balefire: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Balefire: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Beccha Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Beldaburo, Citabelda",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Beldaburo, Citayond",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Beldaburo, Hecul",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Beldaburo, Malahame",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Benirus Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blackfish Cave",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blue Raven: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Chapel of Crimson Strings",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Crossing Inn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Crypts",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Granary",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Halgern Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Halgern Manor: Wine Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Kimoi Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Maricius Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Medericus Distillery",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Medericus Distillery: Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, North Guard Towers",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Panalian Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, South Guard Towers",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, Varsius Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brina Cross, West Guard Towers",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brine Stone: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Brine Stone: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Buralca",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Carthalo",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Carthalo, Interior",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Chaerraich Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Chapel of the West Wind",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Chapel of the West Wind: Basement",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Docks Storage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Granary",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Granary: Silo",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Harbormaster",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Sunset Hotel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Sunset Hotel: Aquamarine Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Sunset Hotel: Coral Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Sunset Hotel: Opal Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Sunset Hotel: Pearl Suite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Sunset Hotel: Staff Lodgings",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Charach, Telvor Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Conomorus Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Corcaran Aster: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Corcaran Aster: Gear Room",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Corcaran Aster: Lower Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Corcaran Aster: Upper Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Crow Hall Cave",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Crow Hall Cave: Gallery",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Crypsis: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Crypsis: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Darach Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Darach Barrow, Lower Level",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Duskwatch Keep",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Duskwatch Keep, Dock Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Duskwatch Keep, Interior",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Einluk Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Emperor Cassynder: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Emperor Cassynder: Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Emperor Cassynder: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Eran Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Eumaeus",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Eumaeus, Barracks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Eumaeus, Interior",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Eumaeus, Prison",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Eumaeus, Vault",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Felcius Farm, Farmhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Felcius Farm, Shed",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "First Light",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Forsaken Shoal, Drowned Pit",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Heath, Commander's Chamber",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Heath, Gate Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Heath, General Quarters",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Heath, Iron Man Tavern",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Heath, Miners Quarters",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Heath, West Lookout Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Auxiliary Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Barracks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Captains' Apartments",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, East Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Foyer",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Lighthouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Navarch's Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, Watchtower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fort Telodrach, West Navy High Command",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fortyd Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Agea, Aransel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Agea, Cita",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Agea, Dorahame",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Agea, Malatu Mallari",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Agea, Nagaseli",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Agea, Nedic Stand",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Malatar, Lorhame",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Garlas Malatar, Nagasel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded Hills Region",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Glisterpike",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gold Coast Region",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Goldstone, Grand Foyer",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Goldstone, Royal Chambers",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Goldstone, Solar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gula Cave",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gulaida",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hadrach Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hal Sadek, Spearmouth Inn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hal Sadek, Water Mill",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Harkisius Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hearthrend: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hearthrend: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Heat Lightning, Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Heat Lightning, Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ikan Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ivrol Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Jaskav Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Joranta",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Juniper",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kar Toronr Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karrel: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karskaer Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kicsiver Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kingfisher Cave",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kitia Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Lacorius Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Land's End Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Lazur Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Lindasael",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Lindasael, Flooded Banquet",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Lost Stars Hollow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Maitarra Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Marav, Barn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Marav, Nobius Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Marav, Storage Shed",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Marav, Tool Shed",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Marav, Valcha Farmhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Meginhard Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Melestrata",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merax Farm, Barn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merax Farm, Farmhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirta Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mischarstette",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mischarstette, Keep of the Shore-Kings",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mischarstette, Quarantine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mischarstette, Royal Chambers",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mischarstette, Southeast Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mischarstette, Tomb of the Shore-Kings",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Miskar Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mormolycea",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mwezi",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mykoi Lighthouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nabor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nagaiarelle",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nagaiarelle, Drowned Citadel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nagaiarelle, Respite",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nefa, Starlight Sanctum",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Norinia",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ogima",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Old Thraswatch",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Old Thraswatch, Abandoned Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Old Thraswatch, Collapsed Watchtower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Olive Ridley: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Olive Ridley: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Olomachus",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Olomachus, Interior",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ossius Ranch, Mudahvi's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ossius Ranch, Rycius Ossius' House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "PC_HOLD_BazaarAptsOld",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "PC_HOLD_old navy lighthouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Pale Bay Cave",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Pale Bay Cave, Sodden Hollow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Pelelius Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Pyraeus",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Relds Farm, Alvur's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Relds Farm, Chaney's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rilsyl Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Saccoro Farm, Ledus' House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Saint Emmelia: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Saint Emmelia: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Salinen",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Saltgrass Poet",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Salthearth, Farmhands' Lodge",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Salthearth, Ivrol Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Salthearth, Ivrol Manor: Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Salvage Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Sinalon",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Siralius Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Sorhuk",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Stonehead Cave",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Stonehead Cave, Inner Maw",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Strand",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Sutch-Anvil Tollhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Swordmoth Legion Fort",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Swordmoth Legion Fort, Interior",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Brinerunner",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Eye of the Abecean: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Eye of the Abecean: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Ithalin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Kintyra's Shield: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Kintyra's Shield: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Parhelion: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Parhelion: Flight Deck",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Parhelion: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Red Tempest: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Red Tempest: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Senecus Goddkey: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Senecus Goddkey: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Sunset Sword: Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Sunset Sword: Hold",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "TEM Surfrunner",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "T_Test_PC",
+    "reason": "internal_cell_preserved"
+  },
+  {
+    "kind": "cell",
+    "en": "Talgiana Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Talgiana Orchard",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Talgiana Orchard, Barn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Talgiana Orchard, Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Talgiana Orchard, Stanius Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Talgiana Orchard, Vulpin Gavach's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Telvor Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Telvor Crypt, Passage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thalur Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thesigir Chasm",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thesigir Chasm, Deeps",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thimistrel Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Chapel of Persisting Sustenance",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Cistern",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Jaloch Clan House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Lacorius Estate: Distillery",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Lacorius Estate: Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Lacorius Estate: Merania Chaldrava's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Lacorius Estate: Storage Shed",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Thresvy, Vadich Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vabriasel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vabriasel, Marine Temple",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Val Ansvech Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vallanytha Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Valley of Diamonds",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Valsar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Valsar, Pilgrims' Rest",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Valsar, Tarnabye",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vilenkin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vinka Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vitta Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vitta Barrow, Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Voiceless Harmony",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Voiceless Harmony, Anechoic Chamber",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Voiceless Harmony, Hall of Dissonance",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Voiceless Harmony, Sonance Vestibule",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Wavemoth Legion Fort",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Wavemoth Legion Fort, Interior",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Wavemoth Legion Fort, Lighthouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Weylus Orchard, Barn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Weylus Orchard, Farmhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "White Reef",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Wormusoel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Wormusoel, Secret Passage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Wormusoel, Unsullied Halls",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Abecean Sea",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Abolitionists",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Advancement",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Agi Bay Grotto",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Akavir",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Altmer tea",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Amiel Richton",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Anvil",
+    "ko": "앤빌",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Arahn's wound",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Atrene",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Background",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bad Man",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Barrowlands",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Beds",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Benirus crypt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bernd is innocent",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bitterfish tribe",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Black Circuit",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Black Isle Company",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bosmeri tribe",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Brennan Bluffs",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Brine Stone",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Briricca Company",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Broken Fang tribe",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Caius Cosades",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Camoran Usurper",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Catraso family heirloom",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Chapel of Crimson Strings",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Chapel of Persisting Sustenance",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Chapel of the Tranquil Sky",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Chapel of the West Wind",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Colovia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Colovian Highlands",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Colovian barrows",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Conomorus Crypt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Corcaran Aster",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Crow Hall Cave",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Crypsis",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Cult of Dibella",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Cult of the Winds",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Cyrodiil lore",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Daedra cults",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Dasek Marsh",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Direnni Castellum",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Drowner contract",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Drowner's ritual",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Duskwatch Keep",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Emperor Cassynder",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Emperor Zero",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Empire",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Enman Septim",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Falco Galenus",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Far West Fleet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Fighters Guild",
+    "ko": "파이터 길드",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Five Citadels",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Five Fathoms Flophouse",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Fleets",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Fort Telodrach",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Fort Wavemoth",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Fortyd Barrow",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Ghostfence",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "God of Sorrow",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Goddess of Air",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Goldstone",
+    "ko": "금석",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Good Traitors",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Gulaida",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Hadrach Crypt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Hermontar",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Hierophants",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Home Fleet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Hostel of Saint Rosunius",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Iliac Fleet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Imga",
+    "ko": "임가",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial Astrological Society",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial Geographical Society",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial Legion",
+    "ko": "제국군",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial Simulacrum",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial cult",
+    "ko": "제국 교단",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Itinerant Priests",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Jafan",
+    "ko": "자판",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Kali Mes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kar Toronr Barrow",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Karrel",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "King Claudius",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kingdom of Artemon",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kingdom of Chorrol",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kingdom of Delodiil",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kingdom of Sarchal",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kingdom of Skingrad",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kingfisher Cave",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Knight of Cups",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kod",
+    "ko": "코드",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Kuram",
+    "ko": "쿠람",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Lacorius Estate",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Little Arenthia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Lya",
+    "ko": "리아",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Marina",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Marshals",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Masqued Captain",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Medericus Distillery",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Mischarstette",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Morrowind",
+    "ko": "모로윈드",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Mwezi",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Mykoi",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Mykoi Isles",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Nagaiarelle",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Naharine River",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Navy armor",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Nedic Stand",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Nibenay",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Notte Industries",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Old Thraswatch",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Olen Benirus",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Oloman",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Olvos",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Order of Dibella Estetica",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Order of Kynareth Irremitenta",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Order of the Breath-of-Kyne",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Orders",
+    "ko": "지시",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Pale Bay Cave",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Pelladia ancestral relic",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Placid Drowner Cult",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Port Quarter",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Quarters",
+    "ko": "숙소",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Queen Akaterina",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Queen Millona",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Queen's investment",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Queens",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Racha",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Red Treasury",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Reeve",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Rilus",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Rufrius",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Sacred Baths",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Saint Amiel Officers' Club",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Saint Bendu Square",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Saint Emmelia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Saint Rosunius",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Salinen",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Scarlet Sand Company",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Scrolls of Turn Undead",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Sea of Mists",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Selkies",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Shipworks",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Shore-King",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Sleeps-in-Grass' taxes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Soulrest Uprising",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Srethuun Tribe",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Stirk Isle",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Strand",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Strid",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Strident Coast",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Summerset linens and tea",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Sutch",
+    "ko": "서치",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Syradri",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "TEM Parhelion",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "TEM Red Tempest",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Talgiana Crypt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Talgiana Orchard",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Tava",
+    "ko": "타바",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Temple of Dibella Estetica",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Tenet-reading",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "The Abecean Monitor",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "The Scupper",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Thieves Guild",
+    "ko": "도둑 길드",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Thimistrel Manor",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Thras",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Trident Exchange",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Unrest in Cyrodiil City",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Uriel Septim",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Valenwood delicacies",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Valsar",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vampyrum Order",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Viduscan Isles",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vitta Barrow",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vvardenfell",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vyridia Decator",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Wave Reaver tribe",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Woodhearth",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Wormusoel",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Wya",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Yard Gate Tenements",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Yenna",
+    "ko": "옌나",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Ylliolos",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Yokuda",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Z'en",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "a better suggestion",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "a step up from Firsthold",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "acquisition",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "addictive narcotic",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "adun",
+    "ko": "아둔",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "akul",
+    "ko": "아쿨",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "all this time",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "almanac",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "alphyn",
+    "ko": "알핀",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "an informal duty",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "apple",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "ascetic",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "assist the cult",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "auspicious date",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "available for hire",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bandit threat",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bandits in Thesigir Chasm",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "become a painter",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "best gloves",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "blessings",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "board members",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "book I brought",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "book club",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "books for the entry hall",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "books from Benirus Manor",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bounty",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bounty hunter",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "business with Nito",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "change the plan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "coal for the furnace rooms",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "collect a donation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "collect plants",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "collecting Divine favors",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "collection of curiosities",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "commission a painting",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "companies",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "compensation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "consummation ritual",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "contract",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "contract Hjeld the Steady",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "corrosive slime",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "cowardice",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "create a thunderstorm",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "crystal ball",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "dashing doublet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "debt to the Abecette",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "deliver a package",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "deposit funds",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "destination",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "detect key potion",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "display cases",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "disturbing dreams",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "donations for the Hostel",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "donkey",
+    "ko": "나귀",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "dragons",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "dreugh",
+    "ko": "드루그",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "dreugh monstrosity",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "drinks",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "drug lord",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "duties",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "eight Circuits",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "eight kingdoms of Colovia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "employ Nito Nesba",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "enchanting experiment",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "enchanting items",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "enchantments",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "escort Anaryan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "experienced professional",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "explore Garlas Agea",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "extenuating circumstances",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "eyes of Cyrodiil",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "facilitate a meet-cute",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "faith",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "family sword",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "feed Sal",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fight pit",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fight together",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "find Santaral Osi",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "find Volanil",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "find an adventure",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fine shoes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fire petals",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "first attempt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fitted breeches",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "five types of pearl",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "flashgrit license",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "flin",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "flying creatures",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "food from Morrowind",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "geography",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "geography of Colovia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "geography of Cyrodiil",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "geography of the world",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "get me out",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "give a performance",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "goblin trouble",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "goblins",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "going out to eat",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "gremlin speech",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "group of radicals",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "guild guide",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "heating room",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "heavy loads",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "hedonist",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "help my crew out",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "her politicking",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "herd animals",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "hire retainers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "honey",
+    "ko": "꿀",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "hostage situation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "improve my effectiveness",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "improvements",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "incantory neonymic",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "insurgent elements",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "interloper",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "investigate the ruins",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "jobs",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Fighters Guild",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Itinerant Priests",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Kingdom of Anvil",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Mages Guild",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Thieves Guild",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "keep me healthy",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "key in the barn",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "kwama egg",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "landscape painting",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "latest rumors",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "letter to Kha'Raji",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "lingering undead",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "little advice",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "little secret",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "loan for Thelius",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "local pearls",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "local priests",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "looking anxious",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "love of my life",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "love potion",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "lucky amulet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "lucky dagger",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "make amends",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "mercenaries",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "might find some",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "minor cults",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "missing buck",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "mori",
+    "ko": "모리",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "moths and butterflies",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "mugger",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my Legion days",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my trade",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "native creatures",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "necromancy",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "neighbor problem",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "new performer",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "newspaper",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "nine-holes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "noises in the sewers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "offering to Arkay",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "our mission",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "oversee the repairs",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "pay back the value",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "payment dispute",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "perplexing phrase",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "pilgrimage",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "place a bet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "poem",
+    "ko": "시",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "potion of Fortify Willpower",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "practice hunting",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "predators",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "price on your head",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "profit",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "proselytizing",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "purchase decor",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "races",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "raga",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "ready to sail",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "red hat",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "redeemed servants",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "regulated substance",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "removing the tree",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "repay a loan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "repossess a painting",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "reproduce the invocation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "research",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "resistance from the Navy",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "ring",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "royal auction",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "rumors of a curse",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "seadrake",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "second Simulacrum",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "second attempt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "semi-stable summoning",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "serve a local temple",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "set up a meeting",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "settlements in Colovia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "shady-looking Nord",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "shield her soul",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "shrines",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "signet ring",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "simple scam",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "skis",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "skooma",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "slavery",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "snakes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "someone in particular",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "speak to the head priest",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "specific place",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stationery",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stop the rumors",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "storm atronach's soul",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stress reliever",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stridmeet",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stronghold",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "student of Conjuration",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "sujamma",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "supply of provisions",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "supply of wood",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "take out a loan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tantha",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tax collection",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "ten-thousand-drake debt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Armiger",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Balefire's wreck",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Corsairs",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Empire",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Snake",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "thief with a bottle of wine",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "thieving pirates",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "thieving witch",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "third attempt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "three marks",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "three relics",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "trade mission to Akavir",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "trade stocks",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "trading ship",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "travel together",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "treason",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tribe cousin",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tribeless Bosmer",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "turned into a vampire",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "twin thrones",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "undead at Strand",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "under pressure",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "unemployed Orc",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "unjustly imprisoned",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "unpaid taxes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "unwanted advances",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "vacation package",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "viable route",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "vicious Colovian bear",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "visit to the Sailors' Home",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "warm water",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "water creatures",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "werewolves",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "wine",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "winning bid",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "withdraw funds",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "wolves",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "work",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "works",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "yearns for love",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "young, charming Breton",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "your account",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  }
+]

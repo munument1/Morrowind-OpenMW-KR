@@ -1,0 +1,21 @@
+name: OpenMW-KR replacement ESM translation data
+on:
+  pull_request:
+    paths: ['translations/openmw-kr/**', 'translations/openmw_kr_replacement.py', 'translations/test_openmw_kr.py', '.github/workflows/openmw-kr-mod-data.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s translations -p test_openmw_kr.py -v
+      - name: Validate translation data without publishing mod binaries
+        run: |
+          for manifest in translations/openmw-kr/*/*/manifest.json; do
+            python translations/openmw_kr_replacement.py --dataset "$(dirname "$manifest")" --check-only
+          done

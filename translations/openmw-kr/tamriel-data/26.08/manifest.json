@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "source_plugin": "Tamriel_Data.esm",
+  "source_version": "26.08",
+  "source_sha256": "e94ca3a5c62e0228ac3782e813cae58c4e10da2e9e8b7611e0a8f5ff9a98d06f",
+  "translated_copy_sha256": "1f4b4c91a0c54061b1dfdecb2f5cfb26c75a180396a18f949e5c917cc8550fa5",
+  "plugin_stem": "Tamriel_Data",
+  "package_architecture": "same-name ESM replacement with matching sidecars",
+  "translated_fields": 25788,
+  "strings_sha256": "78d9023f331250250c1f99e0d26c610c37850c0c3e57a4c6af6a3dd234f8cd46",
+  "sidecar_sha256": {
+    "cel": "6e287251202708288b8975f444f111a4f5d96a306f25e540a77d0f02311bd855",
+    "mrk": "66cbcdbb7cf629a897731a60a45722c961624edd46fc4c296e734234b976ac7e",
+    "top": "04d16123e5478b72eeb0428417ddfd056d1249aacbf9ef6f979547d93f3de307",
+    "jrn": "04d16123e5478b72eeb0428417ddfd056d1249aacbf9ef6f979547d93f3de307"
+  },
+  "sidecar_counts": {
+    "cel": 1,
+    "mrk": 39,
+    "top": 39,
+    "jrn": 39
+  },
+  "hold_counts": {
+    "cell": 16,
+    "topic": 122
+  },
+  "review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 22714,
+    "AI_SOURCE_REVIEWED": 2412,
+    "UNREVIEWED_DRAFT": 662
+  },
+  "all_source_dataset_review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 22837,
+    "AI_SOURCE_REVIEWED": 2914,
+    "HOLD_SOURCE_PRESERVED": 85,
+    "UNREVIEWED_DRAFT": 662
+  },
+  "pending_book_review_status": "NOT_REVIEWED",
+  "original_identifiers_preserved": true,
+  "topic_list_display_translated": false,
+  "game_applied": false,
+  "runtime_tested": false,
+  "translation_API_calls": 0,
+  "distribution_policy": "GitHub: translation data and tooling only; Nexus Mods: mod releases"
+}

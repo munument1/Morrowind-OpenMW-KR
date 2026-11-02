@@ -1,0 +1,3087 @@
+[
+  {
+    "kind": "cell",
+    "en": "Adjird",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Aejoir",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ahreg",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ahreg, Daimon's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Alovachtara",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Alrasaide",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Breezeway",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Cloudshaper Dome",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Hoarfrost Arcade",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Mistbinder Grounds",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Skyanchor Halls",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Tempest Depths",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Angturiel, Windweaver Dome",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Arkngthamz",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Arsaig",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Asvirsang Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss, Caebhir's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss, Communal Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss, Dheorsa's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss, Morasdan's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss, Seonach's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bailcnoss, Visitor's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bathmvall Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Berfall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bergarojh Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Berjodhre",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bethorst",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bharani",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bjagherd",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bjagherd, Hideout",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Black Teeth Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blackstone Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blackstone Mine, Lower Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blencath",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blood Paw Lodge",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blood Paw Lodge, Clan Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blood Paw Lodge, Jurgar Bear-Biter's Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Blood Paw Lodge, Ordolf Bear-Bane's Cabin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bodenboog",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bolgardall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Braignainesaide",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Braignainesaide, Marbaildomuin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Breakneck Den",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Briagmar Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bruaram Barrow, Entrance",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bruaram Barrow, Lower Level",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Bvojou",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Cartar's Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Carvisa",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Cejovo Grotto",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Celera",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Cranngin Camp, Cathova's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Cranngin Camp, Eidean's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Cranngin Camp, Laomain's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Criagachsaide",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Criaglorc",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Criaglorc, Caotir's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Criaglorc, Farwain's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Criaglorc, Matriarch's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Cymon's Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dara Nuin",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Darvatir",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Darvatir, Communal Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Darvatir, Hunnath Keep",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Darvatir, Sanctum",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Abandoned Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Arena: Fight Pit",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Castle Dragonstar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Castle Dragonstar: Lower Dungeon",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Castle Dragonstar: Throne Room",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Castle Dragonstar: Upper Dungeon",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Castle Dragonstar: Upper Quarters",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Castle Dragonstar: Vault",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Collapsed Cellar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Dunard's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Erkild's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, House of Mara",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Ice-Moon Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar East, Mrakal Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Alen: Cooper",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Balgor, Rilgor and Velgor: Alchemists",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Crown Palace: Guard Quarters",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Crown Palace: North Wing",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Crown Palace: Throne Room",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Geldwyr Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Great Bazaar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Ra-Habi Company Hall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Storage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, Temple of Diagna",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar West, To-Nagri Cave Dwelling",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Dragonstar, Census and Excise Office",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Duibhmarad",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Elgvring",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarach",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarach, Lorhaic's Den",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarachsaide",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarachsaide, Commander's Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarachsaide, Garrison Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarachsaide, Mess Hall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Faldarachsaide, Workshop",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Falkheim Region",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Forkya",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Fyrignar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded-Shield Estate",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded-Shield Estate, Barracks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded-Shield Estate, Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded-Shield Estate, Manor: Dining Hall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded-Shield Estate, Manor: Kitchen",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gilded-Shield Estate, Manor: Upper Level",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gurmshal",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gurmshal, Konungrshof",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Gurmshal, Tsun's Crossing",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Haimtir, Communal Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Haimtir, Farkon's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Haimtir, Great Hallowhall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Harkir's Hole",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Heifnil's Folly",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hemiall Mine",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Herlundsval Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Herlundsval Barrow, Lower Level",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Herlundsval Barrow, Sepulcher",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hirda",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hoarbeld",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hrakja",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Hurfrid's Farm, Morven's Farmhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Husteng",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ilujra",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Iron-Mane Farm",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Iron-Mane Farm, Iron-Mane Residence",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Iron-Mane Farm, Sava's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Iron-Mane Farm, Vidrad's Farmhouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Iron-Mane Farm, Windmill",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Javrashal",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Jondo's Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthgad, Bear Clan Den",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthgad, Mead Hall of Thane Gorvrda",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten Caves",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten Caves, Lower Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten Caves, Sur-Rata Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten Caves, Tarnwasel Palace Ruins",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten Caves, Thieves Guild Hideout",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten Caves, Upper Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Braljor's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Cassius Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Cassius Manor: Top Floor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, City Granary",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Guard Barracks: Training Room",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Hall of the Boar Snout Clan",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Harbor Granary",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Harbormaster",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Red Palace",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Red Palace: Barracks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Red Palace: Basement",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Red Palace: Dining Hall",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Red Palace: Upper Floor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Red Palace: Vault",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Round-Head Manor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Ruby Drake Inn",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, Stables Storage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Karthwasten, The Dancing Saber: Den",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kejev Cavern",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kerlingroff Mine, Lower Mineworks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kerlingroff Mine, Upper Mineworks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kjorgnir Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Klovla",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kolgath Hollow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kulmar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kyrdhoj",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kyrdhoj, Depths",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Kyrdhoj, Lower Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager, Alythe's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager, Communal Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager, Eldarn's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager, Gaelyga's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager, Gylghi's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mairager, Makova's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Malagrok",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mand",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Markema's Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh, Berdac's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh, Communal Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh, Delpha's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh, Hwanin's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh, Meirach's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Merduibh, Rhuma's Tradehouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mhemadh",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Abandoned Passageway",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Antre",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Arcanium",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Arcanium Dome",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Castrum",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Castrum Dome",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Fundamentum",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Lower Passage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Pallatium",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mirilstern, Pallatium Dome",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Mival",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nargozh Camp",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nargozh Camp, Agli gra-Lashgurgol's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nargozh Camp, Chief Narkhagikh gro-Guruzug's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nargozh Camp, Rugdugbash gro-Oshgana's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nargozh Camp, Yarok gra-Malash's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Nargozh Camp, Yatur gro-Namor's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ocsenna",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Onol'Mor",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ormurin Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Orsuld",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ragnvald Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Arach",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Arach, Gravetender's Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Cnoss",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Cnoss, Hut",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Cnoss, Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Quilla",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rath Quilla, Tower",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Daracam's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Daracam's Tradehouse",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Llothael's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Mayra's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Saeti's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Tareesh: Smith",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Ruari, Uthore's House",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Rusolv",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Saern",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Saern Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skaldvir",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skjuggefald Deeps",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skjuggefald Deeps, Abyss",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skjuggefald Deeps, Chasm",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skjuggefald Deeps, Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skjuggefald Deeps, Rift",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Skorunde Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Sky_ScriptHolder",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Snapleg Passage",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Subfuscous Cupola",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Svaer",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Taliesinntara",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Taliesinntara, Sacred Depths",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Tro-Tuktura Pass",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Tuskengryd Barrow",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Uramok Camp",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Uramok Camp, Bazuk gro-Urok's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Uramok Camp, Chief Urok gro-Mogo's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Uramok Camp, Durak gro-Bal's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Uramok Camp, Larga gra-Shabak's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Uramok Camp, Ragmak gro-Magor's Yurt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vars Tharnil, Emerald Council",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vars Tharnil, Simleth Caverns",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vars Tharnil, Starflight Halls",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vornberg",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vorndgad Forest Region",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vorngond",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vorngyd's Stand",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vorngyd's Stand, Barracks",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Vostangar",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "cell",
+    "en": "Yata's Crypt",
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Ada-Mantia",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Advancement",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Ahreg",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Aladoer's book",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Angturiel",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Azzam",
+    "ko": "아잠",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Background",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bailcnoss",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Barjorg's plan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bathmvall",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Beds",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Beloth",
+    "ko": "벨로스",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Blackstone Mine",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Bladachan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Blencath",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Blood Paw Lodge",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Brielle's soul",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Cael",
+    "ko": "카엘",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Caius Cosades",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Cathay-Raht",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Children",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Clan Direnni",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Conall",
+    "ko": "코날",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Criaglorc",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Crown Prince's offer",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Dagon",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Darvatir",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Direnni registers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Dragon Cult",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Druabith",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Druadach Highlands",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Duncan",
+    "ko": "던컨",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Dwemer ruins",
+    "ko": "드웨머 폐허",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Edric",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Faldarachsaide",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Farkon",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Fighters Guild",
+    "ko": "파이터 길드",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Food",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Forts",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Frandar Hunding",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Grey Plains",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Gurm the Steadfast",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Herma-Mora",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Hjalmar's captives",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Hoarbeld",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "HoonDing",
+    "ko": "훈딩",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Hrakja Cavern",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial cult",
+    "ko": "제국 교단",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Imperial whoresons",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Iron-Mane Farm",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Jarl Horir",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Jhunal",
+    "ko": "쥬날",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Jurgar and Drydo",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Khajiit",
+    "ko": "카짓",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Khulari",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "King Barda",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kolfinna's gang",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Kyne",
+    "ko": "카인",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Kyra",
+    "ko": "키라",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Lakush's remains",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Lorchwuir Heath",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Lord Trinimac",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Maingaell",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Maira",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Mairager",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Malthorc",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Mara",
+    "ko": "마라",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Mara's work",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Merduibh",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Midkarth",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Muladansa's debt",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Nargozh Camp",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Nazn",
+    "ko": "나즌",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Nordic gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Odric",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Orc",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Orders",
+    "ko": "지시",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Orkey",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Orsinium",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Prince Oringar",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Ra-Habi Company",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Rakan",
+    "ko": "라칸",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Reachman thieves",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Reachman woman",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Reesha",
+    "ko": "리샤",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Rianard's work",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Ruari",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "S'Viir's hoard",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Sacred Rage",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Saern",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Saram",
+    "ko": "사람",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Sarchse",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Sheor",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Shor",
+    "ko": "쇼어",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Skyrim lore",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Stuhn",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Talos",
+    "ko": "탈로스",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Taurus Hall Concordat",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "The Voice",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Thieves Guild",
+    "ko": "도둑 길드",
+    "reason": "base_top_collision"
+  },
+  {
+    "kind": "topic",
+    "en": "Tinemaich",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Treaty of Chorrol",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Tro-Tuktura Pass",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Tsun",
+    "ko": "쑨",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "Uramok Camp",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vars Tharnil",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vintage Wolfsblood Wine",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vorndgad Forest",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Vorngyd's Stand",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "War of Bend'r-Mahk",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "Yoku Gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "a song",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "a warning to Drydo",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "accuse poisoner",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "additional donation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "alms for Mara",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "an unrelated matter",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "apprentice's murder",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "available for hire",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bad omens",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "ban on levitation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "beer",
+    "ko": "맥주",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "beseech Sarchse",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "big door",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "blessings",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bodja",
+    "ko": "보자",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "body of a boar",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "body on the mesa",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bounty",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "break me out",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "bring back my horses",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "captive Reachmen",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "carriage service",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "case of fabric",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "cave trolls",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "cave-ins destroyed the bridge",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "change the plan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "chicken menace",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "clans",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "clear the hideout",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "coins to spare",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "collect intelligence",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "common disease",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "components for a ritual",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "contract",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "craichebann",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "current events",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "dead gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "deliver moon sugar",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "deposit funds",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "destination",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "digging in the yard",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "diplomatic mission",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "down from a tree",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "duties",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "enlightenment",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "entrance to Taliesinntara",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "escape Mairager",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "factions",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "few more words",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "find Dalach's spy",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fines and compensation",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "first riddle",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "fix your mistake",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "forge travel papers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "formula notes",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "generous donors",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "geographic regions",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "geography of Skyrim",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "get cured",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "get in contact with Halvir",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "gift of vampirism",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "go free",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "goblins",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "gods and spirits",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "guild guide",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "hear a story",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "hearth gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "heavy loads",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "help free a poor Wood Elf",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "hide and seek",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "hunt them down",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "impossible riddle",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "improve my effectiveness",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "informants",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "investigate Malrec",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "jobs",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Fighters Guild",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "join the Thieves Guild",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "keep me healthy",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "kill the wormmouth",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "last shipment of flour",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "latest rumors",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "learn something too",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "leave Mairager",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "like my pa",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "little advice",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "little secret",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "locked chest in the vault",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "look for a craftsman",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "lost heirloom",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "lottchach brigands",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "make amends",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "many nice coins",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "map of the tunnels",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "mead",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "message for Vesmorah",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "misguided kin",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "missing caravan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "missing goats",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "missing gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my bread",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my lucky charm",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my never-ending adventures",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my research",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "my trade",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "negotiate goods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "new guild guide",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "news of the war",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "no love for the Dur-Gada",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "nudri",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "one particular spell",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "other cells",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "our dark powers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "our famous ballads",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "our lost sister",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "overrun with spikeworms",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "passage through the wall",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "poison Farkon's wheat",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "poor Dovoc",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "price on your head",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "purchase any silver ore",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "put on the Khulari ring",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "raki",
+    "ko": "라키",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "ready to fight",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "rebuild the network",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "reclaim the research",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "recruit Davanna",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "recruiter for Dalach's gang",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "release the spell",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "repay a loan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "restore the guild guide connection",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "retain access",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "riddle contest",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "sacred hut",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "sacred shrine of Kyne",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "second riddle",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "secrets of the Taliesinn",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "send another Guild member",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "sent by the villagers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "shadowmage",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "shadows",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "shrines",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "sick from the ale",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "siding with Drydo",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "skill for languages",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "someone in particular",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "something useful",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "sorrowful wife",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "specific place",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stolen bread",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stolen family heirloom",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "strange accent",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "strange-smelling candles",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "stupid bounty",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "take on Orgak gro-Ulagash",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "take out a loan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tampered barrel",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "taste the Old Magic",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "teleportation practice",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "testing gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Beast",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Chosen",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the Reach",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the other night",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the rules",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "the witch and her cult",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "third riddle",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "three bolts of Moth-Silk",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "transaction of ownership",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "travel papers",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "travel to Bailcnoss",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "travel together",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tricks from old Yarok",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "trouble in Karthgad",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "tunnel",
+    "ko": "터널",
+    "reason": "unsafe_keyword"
+  },
+  {
+    "kind": "topic",
+    "en": "twilight gods",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "two Orc bandits",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "vile hag",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "visiting the alehouse",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "warning Jurgar",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "weird people",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "wicked Bear Clan",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "words in Aldmeris",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  },
+  {
+    "kind": "topic",
+    "en": "wretched cave",
+    "ko": null,
+    "reason": "no_unambiguous_existing_translation"
+  }
+]

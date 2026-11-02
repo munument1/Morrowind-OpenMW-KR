@@ -1,0 +1,50 @@
+# OpenMW-KR 전용 ESM 교체형 번역
+
+**원본과 같은 이름의 번역 ESM으로 교체하는 배포 구성**입니다. 별도 번역 ESP나 OMWADDON을 추가하지 않습니다. 원본 모드의 필수 자산은 유지하고, 교체 ESM 옆에 같은 stem의 CEL/TOP/MRK/JRN을 함께 둡니다.
+
+| 모드 | 원문 버전 | 번역 필드 | CEL 표시명 | TOP/MRK/JRN 연결(각각) |
+|---|---|---:|---:|---:|
+| [Tamriel Data](tamriel-data/26.08/manifest.json) | 26.08 HD | 25,788 | 1 | 39 |
+| [Project Cyrodiil](cyr-main/26.09a/manifest.json) | 26.09a Hotfix 1 | 15,035 | 200 | 221 |
+| [Skyrim: Home of the Nords](sky-main/26.09a/manifest.json) | 26.09a | 8,202 | 169 | 104 |
+
+GitHub에는 번역 데이터·보조 표·도구만 저장합니다. ESM과 설치 ZIP은 게시하지 않으며, 모드 릴리스는 Nexus Mods에서만 합니다.
+
+## 설치 파일의 역할
+
+`Tamriel_Data`의 예:
+
+```text
+Data Files/
+  Tamriel_Data.esm
+  Tamriel_Data.cel
+  Tamriel_Data.top
+  Tamriel_Data.mrk
+  Tamriel_Data.jrn
+```
+
+- ESM: 대사·저널·책 본문과 NPC·아이템 등의 표시 이름.
+- CEL: 영문 셀 이름 → 한국어 표시명. CELL.NAME, 배치 오브젝트 NAME, 문 목적지 DNAM과 지역 참조 RGNN은 원문 보존.
+- TOP: 명시 링크의 표시 표현 → 실제 원문 토픽 ID.
+- MRK: 실제 원문 토픽 ID → 한국어 본문 검색어.
+- JRN: 저널 검색 표현 → 실제 원문 토픽 ID. 저널 본문 전체의 번역 파일이 아님.
+
+보조 파일은 UTF-8 BOM을 붙인 탭 구분 텍스트입니다. 실제 일반 대화 DIAL을 대상으로 하는지, 중복·역방향 연결·본편 및 메인랜드와의 충돌을 검사합니다. 원래 DIAL.NAME, INFO.INAM/PNAM/NNAM, 조건, 스크립트, 마스터 목록, CELL과 문 목적지 ID를 바꾸지 않습니다.
+
+기존 셀·이름 번역과 스카이림 우선 용어 자료를 재사용했습니다. 미확정 셀·토픽은 영어 표시를 유지하고 각 `sidecar_holds.json`에 기록합니다. 완전한 지명·토픽 번역을 뜻하지 않습니다. **KR12.5의 MRK는 본문 검색용이므로 토픽 목록 제목까지 자동 번역하지 않습니다.** 이번 작업에서 엔진/UI는 변경하지 않았습니다.
+
+`strings.jsonl.gz`의 검수 상태는 기존 그대로입니다. Tamriel Data의 남은 책 722개는 모두 미검수 상태이며, 기존 가상언어 보존과 순화판 재사용도 유지했습니다. 메인랜드의 별도 v3 작업 자료는 변경하지 않았습니다.
+
+## 재빌드와 검사
+
+```sh
+python translations/openmw_kr_replacement.py --dataset translations/openmw-kr/tamriel-data/26.08 --check-only
+python translations/openmw_kr_replacement.py --dataset translations/openmw-kr/tamriel-data/26.08 --source "원본/Tamriel_Data.esm" --output "새출력/Tamriel_Data_KR_TEST"
+python -m unittest discover -s translations -p test_openmw_kr.py
+```
+
+다른 모드도 dataset 경로와 해당 원본을 바꿔 같은 도구로 만듭니다. 원본 버전·위치·하위 레코드 해시·태그·변수·연결과 출력 해시를 검사합니다. 새 ESM은 기존에 검증한 번역 테스트본과 바이트 단위로 같습니다. 원본이나 기존 출력 디렉터리를 덮어쓰지 않고, 실제 게임 폴더에 적용하지 않습니다.
+
+배포 시 사용자는 원본 모드의 필수 자산을 설치하고 번역 ESM과 보조 파일로 덮어씁니다. 모드 관리자를 쓰면 번역 폴더가 같은 이름 ESM의 파일 우선순위를 갖도록 합니다. 같은 ESM은 한 번만 로드하며, 다른 버전 원본과 혼용하지 않습니다.
+
+코드 검사·전체 레코드 파싱과 OpenMW esmtool 검사는 통과했습니다. 실게임 대화/저널 클릭·퀘스트·글꼴·저장/불러오기는 아직 검증하지 않았습니다. API 추가 호출, 검수 상태 승격, 게임 적용 및 Nexus 업로드는 하지 않았습니다.

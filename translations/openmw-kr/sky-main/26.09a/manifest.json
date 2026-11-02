@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "source_plugin": "Sky_Main.ESM",
+  "source_version": "26.09a",
+  "source_sha256": "311907b5feca991b4232ef02d9ddaa73ece4b99673af63b676d6f57d15527888",
+  "translated_copy_sha256": "1ba13ca6f2ca4b8715359c884b4f1173ffe975b0897740a896b97cfc307cafab",
+  "plugin_stem": "Sky_Main",
+  "package_architecture": "same-name ESM replacement with matching sidecars",
+  "translated_fields": 8202,
+  "strings_sha256": "7bdfcf5a014f650101a3b7f9e6eff8441c4e44215d880ff781b0305480fd307c",
+  "sidecar_sha256": {
+    "cel": "8f4b9341bfef5ae48c265cddba6779bb4b054cef5665ddf7dd454cc0e4702d40",
+    "mrk": "d115cd3a6a8b45775277c1cc17c63cf91ff77c1677f02d04b1947979f0c63112",
+    "top": "e7d0e19e7973ea61654d87bfeed3d81b2d5095b0d37f3a307d171a8d78b01052",
+    "jrn": "e7d0e19e7973ea61654d87bfeed3d81b2d5095b0d37f3a307d171a8d78b01052"
+  },
+  "sidecar_counts": {
+    "cel": 169,
+    "mrk": 104,
+    "top": 104,
+    "jrn": 104
+  },
+  "hold_counts": {
+    "cell": 263,
+    "topic": 295
+  },
+  "review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 6698,
+    "AI_SOURCE_REVIEWED": 1498,
+    "AI_SPOT_REVIEWED": 6
+  },
+  "all_source_dataset_review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 6698,
+    "AI_SOURCE_REVIEWED": 1498,
+    "HOLD": 4,
+    "INTERNAL_SOURCE_PRESERVED": 73,
+    "AI_SPOT_REVIEWED": 6
+  },
+  "pending_book_review_status": null,
+  "original_identifiers_preserved": true,
+  "topic_list_display_translated": false,
+  "game_applied": false,
+  "runtime_tested": false,
+  "translation_API_calls": 0,
+  "distribution_policy": "GitHub: translation data and tooling only; Nexus Mods: mod releases"
+}

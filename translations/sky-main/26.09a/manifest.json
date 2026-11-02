@@ -1,0 +1,22 @@
+{
+  "plugin": "Sky_Main.ESM",
+  "mod_version": "26.09a",
+  "format_version": 1,
+  "source_sha256": "311907b5feca991b4232ef02d9ddaa73ece4b99673af63b676d6f57d15527888",
+  "test_ESM_sha256": "1ba13ca6f2ca4b8715359c884b4f1173ffe975b0897740a896b97cfc307cafab",
+  "rows": 8279,
+  "applied_rows": 8202,
+  "review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 6698,
+    "AI_SOURCE_REVIEWED": 1498,
+    "HOLD": 4,
+    "INTERNAL_SOURCE_PRESERVED": 73,
+    "AI_SPOT_REVIEWED": 6
+  },
+  "bilingual_gzip_sha256": "c50d6650d199ef63b50e0216ba93eb1cb1283284cd26a23a78d9717bb77acc11",
+  "runtime_tested": false,
+  "test_only": true,
+  "game_applied": false,
+  "workbook_sha256": "bac1144606ef8d2134d173380c86811eb82d7650dd23c0704dac80eb087f6a6b",
+  "test_ZIP_sha256": "bf103fc78c96e722ade23abbdd8c6a2f18007440162a0bcaecb77eafd9f76e85"
+}

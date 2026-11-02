@@ -1,0 +1,87 @@
+name: Skyrim Home of the Nords Korean dataset and Nexus optional file
+
+on:
+  pull_request:
+    paths: ['translations/sky-main/**', '.github/workflows/nexus-sky-main.yml']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Skyrim Home of the Nords GitHub release tag'
+        required: true
+        default: 'sky-main-26.09a-kr-test-20261102'
+        type: string
+      sky_file_id:
+        description: 'Skyrim Home of the Nords OPTIONAL upload API File ID (required only for actual upload)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Validate without uploading to Nexus'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-sky-main-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate bilingual source dataset
+        run: python translations/sky-main/build.py --check-only
+      - name: Download dedicated Skyrim Home of the Nords test release
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ inputs.tag }}
+          SKY_FILE_ID: ${{ inputs.sky_file_id }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          ENGINE_FILE_ID: ${{ vars.NEXUSMODS_FILE_ID }}
+        run: |
+          [[ "$TAG" == sky-main-26.09a-kr-test-* ]] || exit 1
+          if [[ "$DRY_RUN" != "true" ]]; then
+            [[ "$SKY_FILE_ID" =~ ^[1-9][0-9]*$ ]] || exit 1
+            [[ -z "$ENGINE_FILE_ID" || "$SKY_FILE_ID" != "$ENGINE_FILE_ID" ]] || exit 1
+          fi
+          gh release download "$TAG" --pattern 'Sky_Main_26.09a_KR_TEST_20261102.zip' --pattern 'Sky_Main_26.09a_KR_TEST_20261102.zip.sha256' --dir assets
+      - name: Verify ZIP and ESM against bilingual manifest
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          python - <<'PY'
+          import hashlib,json,zipfile
+          from pathlib import Path
+          p=Path('assets/Sky_Main_26.09a_KR_TEST_20261102.zip')
+          expected=p.with_suffix('.zip.sha256').read_text().strip().split()
+          assert len(expected)==2 and expected[1]==p.name
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==expected[0]
+          m=json.loads(Path('translations/sky-main/26.09a/manifest.json').read_text())
+          assert expected[0]==m['test_ZIP_sha256']
+          with zipfile.ZipFile(p) as z:
+              assert z.testzip() is None
+              assert hashlib.sha256(z.read('Data Files/Sky_Main.ESM')).hexdigest()==m['test_ESM_sha256']
+              assert z.read('README_KR_TEST.txt')
+          print('Skyrim Home of the Nords test archive verified; runtime QA remains unperformed.')
+          PY
+      - name: Upload ONLY the designated Skyrim Home of the Nords optional file
+        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ inputs.sky_file_id }}
+          filename: assets/Sky_Main_26.09a_KR_TEST_20261102.zip
+          version: '26.09a-KR-test.20261102'
+          display_name: 'Skyrim Home of the Nords 26.09a Korean TEST'
+          description: 'OpenMW-KR test translation. Four editorial holds remain. No in-game runtime QA. GitHub release: https://github.com/${{ github.repository }}/releases/tag/${{ inputs.tag }}'
+          category: optional
+          archive_existing_version: 'false'
+          allow_mod_manager_download: 'false'
+          update_mod_version: 'false'
+

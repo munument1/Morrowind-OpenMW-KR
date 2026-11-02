@@ -27,17 +27,12 @@ python translations/cyr-main/build.py --source "원본/Cyr_Main.ESM" --output "�
 출력은 검증된 테스트 ESM 해시와 정확히 일치해야 합니다. 원본 덮어쓰기는 거부합니다.
 일반적인 번역 수정을 배포할 때는 변경된 입력과 새 테스트 결과에 맞춰 manifest를 갱신해야 합니다.
 
-## GitHub 및 Nexus 배포
+## 배포 방침
 
-테스트 ZIP과 SHA-256은 `cyr-main-26.09a-kr-test-20261102` 사전 릴리스에 게시합니다.
-Nexus 배포는 `.github/workflows/nexus-cyr-main.yml`의 수동 실행을 사용합니다.
-기존 엔진 Full ZIP 배포와 별개이며 `category: optional`, `update_mod_version: false`입니다.
+GitHub에는 번역 대조 데이터·검수 상태·해시·재빌드 도구만 보관합니다. 모드 ESM/ESP 및 설치 ZIP은 GitHub Releases에 게시하지 않습니다. 앞서 게시한 테스트 릴리스는 로컬에 백업한 뒤 공개 목록에서 제거했습니다.
 
-1. GitHub Release에 `Cyr_Main_26.09a_KR_TEST_20261102.zip`과 같은 이름의 `.sha256`을 업로드합니다.
-2. 기존 저장소 secret `NEXUSMODS_API_KEY`를 사용합니다. 키를 파일에 기록하지 않습니다.
-3. Nexus 관리 화면에서 **시로딜 선택 파일 전용** 업로드 API File ID를 확인합니다. 엔진 통합판 File ID를 넣지 않습니다.
-4. 워크플로에 릴리스 태그와 전용 File ID를 입력하고 먼저 `dry_run=true`로 검증합니다.
-5. 검증 후 `dry_run=false`로 업로드합니다. 현재 버전을 보관하며 엔진 통합판 버전은 변경하지 않습니다.
+실제 모드 파일 배포는 Nexus Mods에서만 진행합니다. 로컬에서 해당 원본 모드로 재빌드·패키징한 테스트 ZIP을 Nexus에 올립니다. 기존 엔진 통합판의 파일과 혼동하지 않도록 별도의 모드 파일 항목을 사용합니다.
 
-**실제 게임 실행·토픽 클릭·책 글꼴 검증은 아직 수행하지 않았습니다.**
-8개 보류를 포함한 시험용 번역이며 Nexus에 정식 검증 완료본으로 표시하지 않습니다.
+기존 이름의 `nexus-cyr-main.yml` 워크플로는 이제 번역 데이터 검사만 수행합니다. GitHub Release를 생성·다운로드하거나 Nexus에 파일을 업로드하지 않습니다.
+
+실제 게임의 토픽·저널 링크·서적 글꼴·세이브 로드는 별도로 시험해야 합니다.

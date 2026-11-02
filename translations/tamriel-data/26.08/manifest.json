@@ -1,0 +1,52 @@
+{
+  "plugin": "Tamriel_Data.esm",
+  "source_version": "Tamriel Data 26.08 (HD)",
+  "source_sha256": "e94ca3a5c62e0228ac3782e813cae58c4e10da2e9e8b7611e0a8f5ff9a98d06f",
+  "test_ESM_sha256": "1f4b4c91a0c54061b1dfdecb2f5cfb26c75a180396a18f949e5c917cc8550fa5",
+  "records": 58872,
+  "translated_fields": 25788,
+  "untouched_subrecords": 316948,
+  "input_field_count": 26498,
+  "review_status_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 22837,
+    "AI_SOURCE_REVIEWED": 2914,
+    "HOLD_SOURCE_PRESERVED": 85,
+    "UNREVIEWED_DRAFT": 662
+  },
+  "source_preservation_reasons": {
+    "internal_or_deprecated_source_preserve": 16,
+    "image_or_empty_source_preserve": 51,
+    "Korean_inside_Daedric_font": 18,
+    "structural_invalid_or_unresolved_text": 1,
+    "previous_editorial_hold": 3
+  },
+  "reference_translation_conflicts_source_preserved": 36,
+  "pending_books_machine_checked": 722,
+  "pending_books_translation_applied": 662,
+  "pending_books_source_preserved": 60,
+  "pending_books_marked_editorially_reviewed": 0,
+  "spot_checked_unique_books": 126,
+  "spot_corrections_books": 116,
+  "API_calls": 0,
+  "structural_validation": "PASS",
+  "independent_binary_validation": "PASS",
+  "original_modified": false,
+  "game_applied": false,
+  "runtime_tested": false,
+  "all_prose_editorially_reviewed": false,
+  "targeted_repairs": 96,
+  "distribution_policy": "GitHub: translation data only; Nexus Mods: mod releases only",
+  "package_architecture": "translated copy of original ESM; no separate translation plugin; CEL/TOP/MRK/JRN sidecars not included",
+  "test_ZIP_sha256": "39fa550b6220a1443bdffc62879b56930549272b110453b5c02e46ce8ba7344d",
+  "test_ZIP_bytes": 4999120,
+  "format_version": 1,
+  "rows": 26498,
+  "review_counts": {
+    "EXISTING_TRANSLATION_UNREVIEWED": 22837,
+    "AI_SOURCE_REVIEWED": 2914,
+    "HOLD_SOURCE_PRESERVED": 85,
+    "UNREVIEWED_DRAFT": 662
+  },
+  "bilingual_gzip_sha256": "12c61927e467c9d7bd360dfaa807d57f49b57dd72c5163f80776b4ad19dec8b9",
+  "test_only": true
+}

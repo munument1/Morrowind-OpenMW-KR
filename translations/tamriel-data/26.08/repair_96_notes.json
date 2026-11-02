@@ -1,0 +1,1358 @@
+[
+  {
+    "row_key": "Tamriel_Data.esm@8724289",
+    "target_index": 0,
+    "before_sha256": "d9dd849955671557707da0875eaab9fa63a1f0695a0e888a88d582d3f7b31ef2",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@8958625",
+    "target_index": 1,
+    "before_sha256": "706100b9b13bb9ff139f36f210a67c85e34a22a3c2ac4a209786c4a3ba7cf5b2",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9002512",
+    "target_index": 2,
+    "before_sha256": "b83afbab574f85163b4c939f3c6273f944f1b3d7ebed977360015dbb72b14c01",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9154470",
+    "target_index": 3,
+    "before_sha256": "3833cfa33ebabd6b9dad33bc497ef5b49a35b422f9174f29e8eff0aaf0305112",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9205397",
+    "target_index": 4,
+    "before_sha256": "ccc1f3b7c38bea2ba3df154006ef9377229305db898fcc3738b058866db1d9bd",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "줄바꿈 위치 이동을 문단 누락으로 잡았던 항목. 기존 표시 문구·태그를 유지하며 원문 개행 순서 복구; HTML 문단 사이의 빈 본문 없음 확인.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9433764",
+    "target_index": 7,
+    "before_sha256": "52757daf983e53645ac12f73ed7fd8163460e1663feb138916c34e2819ac357d",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9511669",
+    "target_index": 10,
+    "before_sha256": "87853c805dec5dbc05577279e413e28a805da3a4da5f20f1be72f65ebf9e9ac3",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9525581",
+    "target_index": 11,
+    "before_sha256": "a6b27f0b93a0d7012ef1ef31a366327d2b316cff0725484d61eb0311257613e6",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9702208",
+    "target_index": 13,
+    "before_sha256": "6ac36bdfd0bd14530de21e81bb23b63df562f76097cdf65de8e66195dbc7f569",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9971038",
+    "target_index": 16,
+    "before_sha256": "d0d3361f1aaf8e7ff1be5cedcfc758639f479f0bd909bd82b4b063c253b25a81",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10433572",
+    "target_index": 21,
+    "before_sha256": "93f24e93a7ab8d870574f088bf12867312971800d3691bc89c48faabf46c93e4",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "줄바꿈 위치 이동을 문단 누락으로 잡았던 항목. 기존 표시 문구·태그를 유지하며 원문 개행 순서 복구; HTML 문단 사이의 빈 본문 없음 확인.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10962386",
+    "target_index": 27,
+    "before_sha256": "cf2259ae7aed536577bda24ad47daec5e5291fa12af2966e5c3af291e05b8081",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "줄바꿈 위치 이동을 문단 누락으로 잡았던 항목. 기존 표시 문구·태그를 유지하며 원문 개행 순서 복구; HTML 문단 사이의 빈 본문 없음 확인.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11103836",
+    "target_index": 29,
+    "before_sha256": "071884ce94d54e6ce0075b5214335f82db4823fcd1ad364b05049d0616bdee75",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "줄바꿈 위치 이동을 문단 누락으로 잡았던 항목. 기존 표시 문구·태그를 유지하며 원문 개행 순서 복구; HTML 문단 사이의 빈 본문 없음 확인.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11308110",
+    "target_index": 31,
+    "before_sha256": "f96e41925620135073bb199f625ad9a07be5454e14844b93e8911794f1846ba8",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11351619",
+    "target_index": 34,
+    "before_sha256": "2eff2c9f7d311c39b84bdcbd8be4880ca8cab1a38c9b2223fac6a8a52db7cccf",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11417898",
+    "target_index": 35,
+    "before_sha256": "f22a522f33acf74ce0e299c4e8e7427835a5d1c17695c667716cf05581009bf4",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11512258",
+    "target_index": 37,
+    "before_sha256": "fb53bb56af58a6fa34b93d5cc3dfc6f19b091a6f28a1cd72f47606569a33b7bc",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11617935",
+    "target_index": 41,
+    "before_sha256": "5edd3465c79ce9f1dce32f4f74677c4c32007b5bfa18e6cf7261a1dd5eae98b5",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12066418",
+    "target_index": 45,
+    "before_sha256": "5304d168755a300ea6d9ffed17da9eed9550ded9cfd6075c7fa4f1fd7c463a9b",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12136637",
+    "target_index": 46,
+    "before_sha256": "d52e855b78cd14e676855a6376618e209430d917887931d8e6cb40bd988a3b18",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12280936",
+    "target_index": 48,
+    "before_sha256": "f01eca790b8856455c3621888a6ba69fec41d5306b1add5b33dedd1643890353",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12334321",
+    "target_index": 50,
+    "before_sha256": "8d12a86347845fae2010891e0a4cbe61c4df521be24d3488a914e576623e1429",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12491130",
+    "target_index": 54,
+    "before_sha256": "b615a04e24392f6c4d0a7e55bdf3f148ec6220553ef5d3d559c28db6a974ac25",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12786015",
+    "target_index": 59,
+    "before_sha256": "e0531477c73489a2aa614dee6576b4d68112315db6c7270271e5e810900e3172",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12917860",
+    "target_index": 60,
+    "before_sha256": "fe4ec4ffa0838088ac124f11b4c27324f1873508bd637d3e34fcf1cb8e3db2db",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12939243",
+    "target_index": 61,
+    "before_sha256": "af8ef686e9806e52813f1f25481ab899de82c862254c7d9eb186059b163104b0",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13116953",
+    "target_index": 64,
+    "before_sha256": "b1b952beb457bb791f658b81fe93272308e427d1b13262a4a84604ccc980669c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13119098",
+    "target_index": 65,
+    "before_sha256": "88d3782cd047c22348314c12b2467178f31826add969a61d42db4453b09a836c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13119413",
+    "target_index": 66,
+    "before_sha256": "f05439ad647cadb097ba444d5bc231d2cfaa64333d84cf212278133e952122df",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13119731",
+    "target_index": 67,
+    "before_sha256": "cc37668c0d5f17d1db488fc14f13c7c9e0a690e15335fd44b85e6a0d19bc9b7b",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13121038",
+    "target_index": 68,
+    "before_sha256": "cf764346ddabc941fc1b2fb8cb39faf2afd4c18c75d880fcc622811ceb0403c4",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13125243",
+    "target_index": 69,
+    "before_sha256": "27e26ebfe31c3f01c1cceb16578f6e272a05f9638fdc79f8e5fd1d074e9da2fb",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13126526",
+    "target_index": 70,
+    "before_sha256": "a2e9381c66b47838c1a865e3f4abc115ece7eb89c9daf4be7131a621552650d2",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13126857",
+    "target_index": 71,
+    "before_sha256": "39ab4c540f73451f2b3123940cbbc245cae3d39538b90843e56f2d921d3294b0",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13132505",
+    "target_index": 72,
+    "before_sha256": "19bf3d9e8a59287588579cb9304e6297f4a211037fc7aef02a839816b80a90b3",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13132805",
+    "target_index": 73,
+    "before_sha256": "795246dd36a5d74f56f11970bde2cb11c646542299fc0baae043747ded5c6bab",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13133116",
+    "target_index": 74,
+    "before_sha256": "931b7019df0b573ccfacc33f360ab2e1f56770b2cbc873c126ce33c9bdf1ca07",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13135957",
+    "target_index": 75,
+    "before_sha256": "a1ea232b9facbe266a316656d7cbc16da8ae4a2b3e77f402691e760267eded1f",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13136317",
+    "target_index": 76,
+    "before_sha256": "0afa781dbf868d54f56695eaddd8b291aafd2db5d7e6d9c30e06d4f5245d2605",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13138765",
+    "target_index": 77,
+    "before_sha256": "8c8d4008aee9a6bc7df3567ad6a7dbb51b773216ee0cc27fb3a9597504e3a376",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13143640",
+    "target_index": 78,
+    "before_sha256": "28ca15b65b136f01b417db7b7e86402daf904487fba6ccecc3fec9bb8f963320",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13143959",
+    "target_index": 79,
+    "before_sha256": "3fd52d40315605b59989e0c22e63eb8facae7f343af69fa174c3e87c8ac4f05d",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13145298",
+    "target_index": 80,
+    "before_sha256": "f6c014801c5fba021b38b8437671a967f59ae28d20e97da0673977690bbf82d9",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13145590",
+    "target_index": 81,
+    "before_sha256": "2d9606eea55d3f8607a8e9e5433ee3b7a9997aaeb1acad6fa50699d69d659290",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13148282",
+    "target_index": 82,
+    "before_sha256": "38bcf9abf7b5cf52efda2b1b7bc321fc805c0b07a2af4cff6a53834fea026aa5",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13148987",
+    "target_index": 83,
+    "before_sha256": "092b0acf9c52c068469f7773ce9784f1337b455fb5392c4961b8dff6f6f8e8de",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문 데이드릭 비문을 그대로 보존하고 기존 한국어 풀이를 닫는 FONT 뒤 일반 글꼴 영역에 배치. 태그·개행·변수 순서는 그대로.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13390437",
+    "target_index": 90,
+    "before_sha256": "46e6f41c6ec685c0773f5a4857a3f995a78acc6c61ade925106c23f1c8cb4e26",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 한국어 구간 순서와 전체 표시 문구를 그대로 두고 원문의 태그·명시 링크·개행 틀에 재배치. 보호 표식은 구간 경계로 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13459650",
+    "target_index": 95,
+    "before_sha256": "896da1adc75fec9e26672621834f482eef3f64a32d98b85303976ac5320d0b5a",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "다알데르의 비영어 시와 해석 근거 없는 콜로폰은 원문 그대로, 기존 한국어 제목만 사용. 임의 해독·직함 번역을 하지 않음.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "foreign_language_preserved": true
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10634724",
+    "target_index": 23,
+    "before_sha256": "3e280b9a08ce6ececca60832d7c5475f1e0a1db6871f2272da92c645e6215dc4",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "대거폴 기존 번역 재사용. 공식 DFU 영어 판본과 대상 본문의 단어 정렬 일치율 0.9991; 맞춤법·저자/장 제목 차이만 확인. 동일 문단을 원문 서식에 재배치하고 누락된 본문 복구. 전체 한국어 재감수 아님.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "reference_book_id": "BOK00105",
+    "reference_english_match": 0.9991471942691454
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10690794",
+    "target_index": 24,
+    "before_sha256": "8184022a698cec8526c8930e3181e7a1be02627b98eb1fe75a0134bd9b3a0467",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "대거폴 기존 번역 재사용. 공식 DFU 영어 판본과 대상 본문의 단어 정렬 일치율 0.9996; 맞춤법·저자/장 제목 차이만 확인. 동일 문단을 원문 서식에 재배치하고 누락된 본문 복구. 전체 한국어 재감수 아님.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "reference_book_id": "BOK00108",
+    "reference_english_match": 0.9995954146999325
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12479695",
+    "target_index": 52,
+    "before_sha256": "430b01d6dd8379c13bf8e5b46f97302eb87a0060cd1bdc0ee85365ca0f7c18db",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "대거폴 기존 번역 재사용. 공식 DFU 영어 판본과 대상 본문의 단어 정렬 일치율 0.9994; 맞춤법·저자/장 제목 차이만 확인. 동일 문단을 원문 서식에 재배치하고 누락된 본문 복구. 전체 한국어 재감수 아님.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "reference_book_id": "BOK00000",
+    "reference_english_match": 0.9993589743589744
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12628411",
+    "target_index": 55,
+    "before_sha256": "598939e1b0eba851686d697377f73e5e1ebbf3faed8eec44b03ba75933e4dc42",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "대거폴 기존 번역 재사용. 공식 DFU 영어 판본과 대상 본문의 단어 정렬 일치율 0.9994; 맞춤법·저자/장 제목 차이만 확인. 동일 문단을 원문 서식에 재배치하고 누락된 본문 복구. 전체 한국어 재감수 아님.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "reference_book_id": "BOK00054",
+    "reference_english_match": 0.9994047619047619
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12648605",
+    "target_index": 56,
+    "before_sha256": "8eb042256b7152f07d7dfa944ca75b1f2be99da3a5dcb25bbbcb6d825d1b88a8",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "대거폴 기존 번역 재사용. 공식 DFU 영어 판본과 대상 본문의 단어 정렬 일치율 0.9988; 맞춤법·저자/장 제목 차이만 확인. 동일 문단을 원문 서식에 재배치하고 누락된 본문 복구. 전체 한국어 재감수 아님.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "reference_book_id": "BOK00054",
+    "reference_english_match": 0.9988095238095238
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9888340",
+    "target_index": 15,
+    "before_sha256": "b6c8bb023f1e0c017b4eb32b417198eeae1d427720e3981559a3717ec74599e3",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "같은 영어 희곡의 다른 기존 초안에서 보호 표식을 복구한 전체 대사를 재사용. 서식·변수 동일 확인.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9269639",
+    "target_index": 5,
+    "before_sha256": "b9512d2c381e19a1cc240bd886c51b9ada731841689946bd9f54cc80a01cc9cb",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 초안의 표시 구간 순서 유지. 원문에서 빠진 문단 한 곳만 번역하여 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10088265",
+    "target_index": 17,
+    "before_sha256": "b96f5e65107547a64a790d4e47fb2c83f3d85ee04566c4bb65caefd9dbd8e4f7",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 초안의 표시 구간 순서 유지. 원문에서 빠진 문단 한 곳만 번역하여 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12371710",
+    "target_index": 51,
+    "before_sha256": "62cc5a730351fbc1cf299bc58136e62245f09d38519408cca0369c3e2bd118cd",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 초안의 표시 구간 순서 유지. 원문에서 빠진 문단 한 곳만 번역하여 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9406868",
+    "target_index": 6,
+    "before_sha256": "cad1cf8d60667a7acac24aea3f7de2ab1a9e9b5c8c5db23860274cb97980832c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "빠진 책 머리말 제목 복구. 본문의 기존 한국어를 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10381185",
+    "target_index": 20,
+    "before_sha256": "e6d87eb4d9efca1fc334de053ea55e70c650453095a1edfce2725fbbcb325d13",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 초안에서 분리된 문장 종결 다.를 앞 문장에 붙이고, 빠져 있던 죽음과 교훈의 마지막 문단 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10919565",
+    "target_index": 25,
+    "before_sha256": "3390c9b2e92c433756d8b01517587c2a3759f7b0775b691f95e2e9f62e3627e3",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "합쳐지거나 순서가 틀어진 책 표제/저자 구간을 원문 틀에 정리. 제5권에서 빠진 킨티라 장 제목 복구. 이미 번역된 본문은 그대로 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10944759",
+    "target_index": 26,
+    "before_sha256": "5f3f52843bf017f487ed2fd660d03b51d6a5bf0a858c2983736a1f2a1f5805de",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "합쳐지거나 순서가 틀어진 책 표제/저자 구간을 원문 틀에 정리. 제5권에서 빠진 킨티라 장 제목 복구. 이미 번역된 본문은 그대로 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9712810",
+    "target_index": 14,
+    "before_sha256": "1aade19acf3d81ec7d28b7fea0b4ada8ede1f4658ac01d76654e0fa684c76fd1",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문은 영어가 아닌 가상언어. 모델이 근거 없이 생성한 한국어 해석을 제거하고 1~50절 원문·기호·서식을 보존. 제목만 음역하며 임의 해독은 하지 않음.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13204514",
+    "target_index": 84,
+    "before_sha256": "11092d59aa49c378ffd25f9c269ce84710901c857ef8b450ec70e9f9419f6695",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "빠진 제목과 해산물 발언/길드의 논평 거부 결말 복구. 원문에 없는 유적 직접 명명 표현과 조사·오타 수정.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13279506",
+    "target_index": 86,
+    "before_sha256": "650e3af1388214c6df4f8b322b1e3c31287891b0dca2fbe5871f9fbc55d75da1",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "누락된 기사 제목 복구. 기존 세 본문 문단 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13382827",
+    "target_index": 88,
+    "before_sha256": "d5ee5d8e1091761fedb458d81c86028fdf25da955843512695da7c516827fdc4",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "빠진 마지막 주가 동향·독자 안내 문단만 원문에서 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13217906",
+    "target_index": 85,
+    "before_sha256": "f25aa55e31cd3a2a3f4909be38a314dd860188ada2c348ee7375b778ec62b641",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "끝에 잘못 추가된 %PCRace 한 번 제거하고, 빠진 노비우스의 농민 옹호 인용문 복구. 원문의 변수 한 번만 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13356446",
+    "target_index": 87,
+    "before_sha256": "f71530b68fd0770ff256746c9c24ad713b600d230d9c36d3e883827021ee2e78",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "원문에 없는 세 번째 %PCName 삭제. 원래 두 번인 이름/종족 변수 횟수를 보존하고 플레이어 이름에 붙은 미완성 조사 회피.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13384357",
+    "target_index": 89,
+    "before_sha256": "2c5b7d74f1930ea94847c3ddc96920d6bff3958b7aea49bbcdc54b2a0d417d3b",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "제목과 첫 문장만 남은 초안의 기사 다섯 문단 복구. %PCName 두 번/%PCRace 한 번을 원문대로 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13396208",
+    "target_index": 93,
+    "before_sha256": "32b180f2c630e8b46e98a656d9772bdf984958cfea254c43795b457382fcb07e",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "누락된 습격 양상·야간 여행 경고·수색 상황과 별도 상점 광고 복구. 신문 기사와 광고 경계 서식 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13423441",
+    "target_index": 94,
+    "before_sha256": "afca93115d995fb62a4216d9412df5e485c18785ea9148c501bf06f01bad7cac",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "문장 하나만 있던 초안에서 빠진 다섯 광산 우화와 대가문 해설을 원문대로 복구. 허구 화자의 편향된 주장임을 유지하고 설정을 임의 수정하지 않음.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9489251",
+    "target_index": 8,
+    "before_sha256": "5056826dd6945ae0fa0418da78aeb6242f736afcd2056a292da162d5f39ec9c5",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "빠진 경비병과 레민의 대화 두 문단 복구. 나머지 초안 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9542044",
+    "target_index": 12,
+    "before_sha256": "a2a68030e2b4f12386db480ee624f0271240d89f7034a2887d849315c306b3bb",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "합쳐진 두 대화 문단을 원문 경계에서 분리. 문구 보존.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10522309",
+    "target_index": 22,
+    "before_sha256": "0231d04bc0aeef968cfd7f59d6b2f98f6a5ef4ccff37e58c0945886d4aa0457b",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "합쳐진 시구 두 곳과 깨진 보호 표식을 분리하고 원문 행 배열 복원. 테어 지명과 뒤바뀐 두 행 수정.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10298838",
+    "target_index": 19,
+    "before_sha256": "aad92c6e2ac0a4b6f5ec1326cb4a12e4d06857de29e0825535c845eb0cc2a683",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·저자·부제 유지, 첫 본문 중단 이후 빠진 본문 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12751114",
+    "target_index": 58,
+    "before_sha256": "ff20125af11fbbd74881ba3857c38b66f7acd41731e770d6b8e81d4b82529789",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "끊긴 여섯 번째 본문과 마지막 세 문단만 보충. 저자의 편향을 포함한 기존 본문 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12488350",
+    "target_index": 53,
+    "before_sha256": "305f053ffb72f8b56aaeb92186ba20e82d792c6e5c6acd113f83fd6083f4a44d",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "제목 뒤 대부분이 빠진 우화의 본문 복구. 원문 문단·태그 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13107613",
+    "target_index": 63,
+    "before_sha256": "fe517685b3abb419d330304bc6f04b424a43861926dd09c1131f73527cc88ee4",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·저자 유지. 누락된 재참마 기원 연구 본문 전체 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13394071",
+    "target_index": 92,
+    "before_sha256": "355b04205a005da3f50faf30d56bf8f7979a853a7e286de5f4b9e9ce94a7aa97",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "첫 문장 뒤 누락된 기사 복구. 기존 제목 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12204536",
+    "target_index": 47,
+    "before_sha256": "89e90f1df6131b53ac062b23397a72e8634d4271525da22aa6fdf3a7898980ad",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "누락된 후렴 한 행 복구. 나머지 노래와 해설은 기존 초안 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12291239",
+    "target_index": 49,
+    "before_sha256": "58eaa332d18dd97d7636d6ffd1a9a61b0d468c807f4de338bc67ce2b0297fe1c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "영어 본문 단위 대조 결과 기존 다른 판본과 정확히 같은 희곡. 해당 판본의 복구 초안을 재사용하고 이 판본에만 있는 기존 한국어 서문 두 구간 유지.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13032043",
+    "target_index": 62,
+    "before_sha256": "7833d4795f85e3e4621fc569988e114664549d95e90f9dbc1c1db6fb66e14bbb",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "깨진 보호 표식 제거. 합쳐진 두 운문 구간을 원문 행 경계에 맞춰 복원하며 기존 의미 보존.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@13391925",
+    "target_index": 91,
+    "before_sha256": "2527731228d9b3c8909e79f4f81f285ae5e0117fbf1ee121cef539cb91ddd62d",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "누락된 태그를 복원하고 문단을 원문 경계로 정렬. 잘못 복제된 플레이어 이름 변수 한 번 삭제. 기존 기사 본문 보존.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11561773",
+    "target_index": 39,
+    "before_sha256": "557b23598fe81d81030351d664b0d58c791ad94c52199c0cc8504cb93369992c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "한국어 초안 없이 영어가 복사된 책. 원문 표시 구간별 한국어 본문 보충.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11345954",
+    "target_index": 33,
+    "before_sha256": "728f02fbb53f38307eff8f844332e619bc11d261fa24f784d20e43d2c621309a",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·첫 문단 유지. 두 번째 문단에서 끊긴 서사와 결말 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11477523",
+    "target_index": 36,
+    "before_sha256": "fcfe20f8d710228a5f3295ad78d523cc043921c2a263fba165f6a20be9c73e23",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 첫 여섯 본문 구간 유지. 끊긴 흐롤 소개 이후 누락된 역사 논증·결론 복구. 제목 오역 수정.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11580734",
+    "target_index": 40,
+    "before_sha256": "f021ae0eace52d94e5aac52e150bcb14585c155cc75cf33af5e6837628cfa539",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·저자·완결된 첫 두 본문 유지. 세 번째 본문 이후 누락된 창조 신화 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11071604",
+    "target_index": 28,
+    "before_sha256": "08b1c555bb448b0ff3ba636f0fcfeddb8c23213c52cdbb509c0bcfe074cb6d01",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 저자 소개와 앞 두 본문 유지. 세 번째 본문 중단 이후 결말까지 복구. 앞 문단의 명백한 오타 수정.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@12734121",
+    "target_index": 57,
+    "before_sha256": "51f55617449f8b4da1d2e751e488e7a4034abb7cdc8772a5042019d68a50e529",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 앞 여섯 문단 보존, 깨진 혼용어·먹힌 유충 대명사 수정. 누락된 경고와 보물 동굴의 결말 복구. 원문 물리 줄바꿈은 같은 문단 안에서 한국어 단어 경계로 재배치.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11733020",
+    "target_index": 43,
+    "before_sha256": "8de244a2c2ed69c30dc87999642b1b5c7e66501c417f8ca928344788ba8ef1ed",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 모로윈드 한국어 순화판 재사용. 초반 장면이 다른 판본이므로 단락 수 차이를 원문 서식 안에서 정렬. 이 판본 차이는 명시적으로 남기며 전체 원문과 무차별 동일한 번역으로 간주하지 않음.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ],
+    "edition_note": "기존 모로윈드 순화판 번역 사용: 초반 장면 3~17 구간은 순화판의 3~5 구간으로 대체. 해당 차이는 의도적이며 NOT_REVIEWED 유지."
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11131135",
+    "target_index": 30,
+    "before_sha256": "fcfac1255bfc67a8860d0c158f926ef7b38f6e89cd06b49f91a1f828d7a4fa90",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목과 앞 두 본문 유지. 세 번째 문단 중단 이후 누락된 전황·전술·결말 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@9501399",
+    "target_index": 9,
+    "before_sha256": "261bbbbf9fa86c74667f14964735d23da10b2a6d4678bead7cbd3bb71ce3ff6c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·저자·첫 문단 유지. 통째로 누락된 대화와 발행인 주석 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@10143182",
+    "target_index": 18,
+    "before_sha256": "50061dad749071d73f7c6985a24580305c33fa1131a25c393d1dae1bf151d517",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·첫 문단 유지, 단어 중단 이후 누락된 성인전 본문 복구. 배신한 가문 관련 명백한 수동태 오역 수정.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11538508",
+    "target_index": 38,
+    "before_sha256": "11df30cfc0b711499911f8283809cf1327a11932e422ba2b223e40caf64fbf8c",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 초안이 영어로 남아 있던 창조 신화의 한국어 보충. 원문 비속어·우화·저자 관점을 유지하고 태그·문단 보존.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11632170",
+    "target_index": 42,
+    "before_sha256": "d52fbd2dc5cd4c6c3af0a5fbbf7edb42882d94bab848c8c18dfbe630cbf6694f",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "합쳐진 표제 구간 정렬. 기존 역사 본문 유지하고 탈로스 생존 인용문 중단 이후의 문화·명소 소개 결말 복구.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11319647",
+    "target_index": 32,
+    "before_sha256": "11eb58f97d4146dbb0ad85ef3b0850345415054f2a5ca76f971920400abba167",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 앞 12개 구간 유지. 이후 통째로 빠진 해방 서사·이름의 유래·임종 결말 복구. 원문에 남은 문장 중간 개행도 보존.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  },
+  {
+    "row_key": "Tamriel_Data.esm@11997760",
+    "target_index": 44,
+    "before_sha256": "9d628c8a9454572ec3d52b49b6603e71600c9ff816ba33ec169dde6d894bb0da",
+    "scope": "targeted_format_and_omission_repair",
+    "language_review": "NOT_REVIEWED",
+    "reason": "기존 제목·편집 주·앞 열 본문 구간 유지. 눈고래의 오블리비언 방문과 기쁨의 논증·결말 누락 복구. 욕설은 원문의 가림 표현에 맞춰 완화된 비속어로 옮김.",
+    "resolved_flags": [
+      "empty_or_truncated_source_span",
+      "strong_compression",
+      "no_Korean_in_prose",
+      "unresolved_archive_edition_difference"
+    ]
+  }
+]

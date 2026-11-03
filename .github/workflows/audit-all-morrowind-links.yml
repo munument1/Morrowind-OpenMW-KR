@@ -1,0 +1,84 @@
+name: Audit Morrowind KR12.6 and all mod translation topic data (read only)
+on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/audit-all-morrowind-links.yml
+      - packaging/korean/tooling/audit_cross_mod_topic_gaps.py
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch immutable official core KR12.6 archive
+        run: |
+          set -euo pipefail
+          mkdir -p input output
+          gh release download openmw-0.51.0-kr12.6 --repo "$GITHUB_REPOSITORY" --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip' --dir input
+          echo '2f4bb6b9cfd5916fd9574b6207628e4bb16f8bdc4f1c68fc1ef7581c970989e9  input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip' | sha256sum -c -
+      - name: Run prior comprehensive lexical audit on current core instead of obsolete KR12.2
+        run: |
+          set -euo pipefail
+          python packaging/korean/tooling/audit_kr12_gamewide_topics.py \
+            --zip input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip \
+            --output output/core_kr126_legacy_scan.json --examples 10000 > output/core_legacy_stdout.txt
+          python3 - <<'PY'
+          import json
+          d=json.load(open('output/core_kr126_legacy_scan.json'))
+          print('CORE_LEGACY_SUMMARY='+json.dumps({k:v for k,v in d.items() if k in ('topic_count','info_count','additional_missing_suffix_candidates','top_unhandled_suffixes','top_candidate_topics','top_candidate_dialogues','top_candidate_actors','limitations')},ensure_ascii=False)[:10000])
+          PY
+      - name: Inspect released mod ZIPs and cross-mod data schemas without modifying originals
+        run: |
+          python3 - <<'PY'
+          import gzip, json, pathlib
+          paths=[
+            'translations/openmw-kr/cyr-main/26.09a/strings.jsonl.gz',
+            'translations/openmw-kr/sky-main/26.09a/strings.jsonl.gz',
+            'translations/openmw-kr/tamriel-data/26.08/strings.jsonl.gz',
+            'translations/tamriel-rebuilt/26.11.2-kr0.1/TR_Mainland.en_ko.jsonl.gz',
+            'translations/openmw-kr/cyr-main/26.09a/topic_link_overlay_20261102.jsonl.gz',
+            'translations/openmw-kr/sky-main/26.09a/topic_link_overlay_20261102.jsonl.gz',
+            'translations/openmw-kr/tamriel-data/26.08/topic_link_overlay_20261102.jsonl.gz',
+            'translations/tamriel-rebuilt/26.11.2-kr0.1/topic_link_overlay_20261102.jsonl.gz',
+            'translations/openmw-kr/rebirth-compat/7.2/cyr_compatch_translation_delta.jsonl.gz',
+            'translations/openmw-kr/rebirth-compat/7.2/sky_compatch_translation_delta.jsonl.gz',
+          ]
+          result=[]
+          for name in paths:
+            p=pathlib.Path(name)
+            if not p.exists():
+              result.append({'path':name,'status':'MISSING'})
+              continue
+            with gzip.open(p,mode='rt',encoding='utf-8') as f:
+              first=json.loads(next(f))
+              second=json.loads(next(f))
+            result.append({'path':name,'bytes':p.stat().st_size,'first':first,'second_keys':list(second)})
+          pathlib.Path('output/mod_schemas.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8')
+          for x in result:
+            print('SCHEMA '+json.dumps({'path':x['path'],'size':x.get('bytes'),'keys':list(x.get('first',{})),'sample':{k:str(v)[:300] for k,v in x.get('first',{}).items() if k in ('record_type','field','ko','en','status','parent','dialogue_topic','topic','translated_text','english','after','new_text','original_text','record_id','row_key','source_index','record_index','subrecord_index','mod')}},ensure_ascii=False))
+          PY
+      - name: Try retaining existing published Rebirth and PFP mod ZIPs as QA input
+        run: |
+          mkdir -p input/reviewed-mods
+          if gh run download 41323412147 --repo "$GITHUB_REPOSITORY" --name reviewed-mod-translations-kr11-publication --dir input/reviewed-mods; then
+            find input/reviewed-mods -maxdepth 2 -type f -printf 'REVIEWED_MOD_ARCHIVE %P %s bytes\n' | head -40
+          else
+            echo 'REVIEWED_MOD_ARCHIVE_NOT_AVAILABLE; continuing with source-backed dataset only'
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Morrowind-KR126-Topic-Preflight-QA
+          path: |
+            output/core_kr126_legacy_scan.json
+            output/mod_schemas.json
+          if-no-files-found: error

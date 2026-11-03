@@ -50,7 +50,7 @@ def scan_one(name,folder,source,overlay,stem,root,runner,max_reported=2000):
             by_key[key]=r
         packed=list(by_key.items())
         tested=0;en_link_occurrences=0;ko_link_occurrences=0;lost_total=0;gained_total=0
-        lost_detail=[];gained_samples=[];english_linked_infos=0;uncertain=collections.Counter()
+        lost_detail=[];loss_buckets={"HIGH_REVIEW":[],"MEDIUM_REVIEW":[],"LOW_REVIEW":[]};gained_samples=[];english_linked_infos=0;uncertain=collections.Counter()
         unique_missing=collections.Counter()
         for start in range(0,len(packed),1200):
             batch=packed[start:start+1200]
@@ -83,8 +83,8 @@ def scan_one(name,folder,source,overlay,stem,root,runner,max_reported=2000):
                     priority="HIGH_REVIEW" if context_flag and known_language else "MEDIUM_REVIEW" if context_flag or known_language else "LOW_REVIEW"
                     unique_missing[english_topic]+=1
                     uncertain[priority]+=1
-                    if len(lost_detail)<max_reported:
-                        lost_detail.append({
+                    if len(loss_buckets[priority])<max_reported:
+                        loss_buckets[priority].append({
                           "plugin":name,
                           "row_key":r["id"],
                           "topic_parent":r.get("parent") or "",
@@ -102,6 +102,7 @@ def scan_one(name,folder,source,overlay,stem,root,runner,max_reported=2000):
                 if gained and len(gained_samples)<20:
                     gained_samples.append({"id":r["id"],"unexpected_Korean_topics":sorted(gained)[:20],
                                            "en":r["en"][:190],"ko":r["ko"][:190]})
+        lost_detail=(loss_buckets["HIGH_REVIEW"]+loss_buckets["MEDIUM_REVIEW"]+loss_buckets["LOW_REVIEW"])[:max_reported]
         lost_detail.sort(key=lambda r:({"HIGH_REVIEW":0,"MEDIUM_REVIEW":1,"LOW_REVIEW":2}[r["priority"]],
                                        str(r["row_key"]),str(r["target_DIAL"])))
         return {

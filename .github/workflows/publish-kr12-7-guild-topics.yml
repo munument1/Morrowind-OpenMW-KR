@@ -33,7 +33,23 @@ jobs:
           gh release download openmw-0.51.0-kr12.6 --repo "$GITHUB_REPOSITORY" --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip'
           echo '2f4bb6b9cfd5916fd9574b6207628e4bb16f8bdc4f1c68fc1ef7581c970989e9  Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip' | sha256sum -c -
           python packaging/korean/tooling/build_kr12_7_guild_join_release.py
-          echo '3e9c3b2e3dcf88391c2e966553d86159638e098ca1e3e4165fd3a3b460961589  Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip' | sha256sum -c -
+          # Different zlib versions can produce different compressed ZIP bytes.
+          # Validate the exact uncompressed ESP and every other member instead.
+          python - <<'PY'
+          import hashlib,zipfile
+          p='Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip'
+          base='Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip'
+          with zipfile.ZipFile(base) as old, zipfile.ZipFile(p) as new:
+            assert new.testzip() is None
+            assert new.namelist()==old.namelist()
+            changed=[]
+            for n in old.namelist():
+              original=old.read(n);candidate=new.read(n)
+              if original!=candidate:changed.append(n)
+            assert changed==['payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp'],changed
+            assert hashlib.sha256(new.read(changed[0])).hexdigest()=='b23701ec5ceb2e2b8bb777971dd1352b014fc118834dfea978bd065332f7e1ef'
+          print('KR12.7 uncompressed ZIP member parity PASS')
+          PY
           python - <<'PY'
           import json,zipfile
           d=json.load(open('KR12.7-source-guarded-verification.json',encoding='utf8'))

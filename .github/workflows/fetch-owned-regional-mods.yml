@@ -1,0 +1,33 @@
+name: Fetch and verify owned published regional translation baselines
+on:
+  push:
+    branches: [master]
+    paths:
+      - packaging/korean/tooling/fetch_owned_regional_audit.py
+      - .github/workflows/fetch-owned-regional-mods.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  read-only-nexus-baselines:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read only download current four owned Nexus regional Korean ZIPs, verify actual ESM and SHA
+        run: |
+          set -euo pipefail
+          python -m py_compile packaging/korean/tooling/fetch_owned_regional_audit.py
+          python packaging/korean/tooling/fetch_owned_regional_audit.py
+      - name: Store private short-lived verified source baselines for audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: owned-regional-kr0.1-verified-readback
+          path: audit-region-download/
+          retention-days: 2
+          if-no-files-found: error

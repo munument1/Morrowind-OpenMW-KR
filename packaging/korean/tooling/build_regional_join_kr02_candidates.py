@@ -216,5 +216,3 @@ def main():
     (OUT/"verify_candidates.json").write_text(json.dumps(reports,ensure_ascii=False,indent=2)+"\n","utf8")
     print("REGIONAL_TESTS_COMPLETE=9_INFO_8_TOP_NO_RELEASE")
 if __name__=="__main__":main()
-
-[executed on device: Deck_Seung (a3b70f16-4906-418e-a5c0-ee1efec6a325)]

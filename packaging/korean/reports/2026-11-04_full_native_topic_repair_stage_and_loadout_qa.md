@@ -80,3 +80,13 @@
 사용자 PC 데이터: `FULL_CORE_3457_DUPLICATE_SOURCE_NATIVE_RECOVERY/summary.json`, `newly_covered_duplicate_INFO_native_audit.jsonl.gz`, `remaining_held_ambiguous_INFO.jsonl.gz`.
 
 **이 작업도 기존 ESM/ESP와 릴리스는 변경하지 않았음.**
+
+### 남은 815건의 유형 분해
+
+실제 한국어 `DIAL.DATA` 종류에 따라 재검사한 결과:
+
+- **저널(JOURNAL, type 04): 663건.** NPC 대화 선택지 자체가 아니라 퀘스트 일지 항목이므로 별도 `.jrn` 및 저널 레코드 검증 대상으로 유지.
+- **일반 대화 토픽(TOPIC, type 00): 151건.** 원문 DIAL 후보가 여러 개이거나 유일한 매핑 근거 부족. 링크 누락 여부는 개별 검토.
+- **음성/전투 대사(VOICE, type 01): 1건.** 대화창의 새 토픽 링크와 별도 성격.
+
+따라서 미매핑 815건을 모두 NPC 토픽 누락 위험으로 집계하는 것은 잘못이다. 전체 31,716 INFO를 순회했고, 그중 30,901건은 네이티브 원문↔한국어 대응 확인, 나머지 815건의 타입별 HOLD 분류까지 완료했다. 이는 여전히 실제 플레이어 상태별 전수 게임 검증을 대신하지 않는다.

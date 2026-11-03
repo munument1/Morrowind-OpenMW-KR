@@ -1,0 +1,42 @@
+name: Read back current owned Rebirth and PFP Nexus translations for QA
+on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/readback-owned-pfp-rebirth.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  readback:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read-only download from Nexus owned main files
+        run: python packaging/korean/tooling/fetch_owned_mod_audit.py
+      - name: Validate archive integrity, ownership, and source member inventory
+        run: |
+          python - <<'PY'
+          import json,zipfile,hashlib
+          from pathlib import Path
+          for mid in (60805,60826):
+              p=Path(f"audit-input/{mid}-current.zip")
+              d=json.loads(Path(f"audit-input/{mid}-metadata.json").read_text())
+              assert p.is_file() and d.get("files")
+              with zipfile.ZipFile(p) as z:
+                  assert z.testzip() is None
+                  names=[x.filename for x in z.infolist()]
+                  assert any(x.casefold().endswith(('.esm','.esp')) for x in names)
+              print("OWNED_NEXUS_READBACK_OK",mid,d["version"],hashlib.sha256(p.read_bytes()).hexdigest(),len(names))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: current-owned-pfp-rebirth-immutable-audit
+          path: audit-input/
+          retention-days: 2
+          if-no-files-found: error

@@ -1,0 +1,94 @@
+name: Publish KR12.7 pinned guild-joining topic hotfix
+on:
+  push:
+    branches: [master]
+    paths:
+      - packaging/korean/tooling/build_kr12_7_guild_join_release.py
+      - .github/workflows/publish-kr12-7-guild-topics.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kr127-guild-links
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse release overwrite
+        run: |
+          if gh release view openmw-0.51.0-kr12.7 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'KR12.7 exists; refusing overwrite'; exit 1
+          fi
+      - name: Download immutable KR12.6 original and build KR12.7
+        run: |
+          set -euo pipefail
+          gh release download openmw-0.51.0-kr12.6 --repo "$GITHUB_REPOSITORY" --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip'
+          echo '2f4bb6b9cfd5916fd9574b6207628e4bb16f8bdc4f1c68fc1ef7581c970989e9  Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip' | sha256sum -c -
+          python packaging/korean/tooling/build_kr12_7_guild_join_release.py
+          echo '3e9c3b2e3dcf88391c2e966553d86159638e098ca1e3e4165fd3a3b460961589  Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip' | sha256sum -c -
+          python - <<'PY'
+          import json,zipfile
+          d=json.load(open('KR12.7-source-guarded-verification.json',encoding='utf8'))
+          assert d['changed_INFO_NAME']==5
+          assert d['total_TES3_records']==48146
+          assert d['all_other_fields_and_ZIP_members_unmodified']
+          assert d['candidate_ESP_sha256']=='b23701ec5ceb2e2b8bb777971dd1352b014fc118834dfea978bd065332f7e1ef'
+          with zipfile.ZipFile('Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip') as z:
+            assert z.testzip() is None
+          PY
+          sha256sum Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip > Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip.sha256
+      - name: Compile actual OpenMW 0.51 Korean parser and verify five repaired edges
+        run: |
+          set -euo pipefail
+          g++ -std=c++20 -O2 -I. -Iapps/openmw/mwdialogue \
+            packaging/korean/tooling/verify-journal-links.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/verify-guild-links
+          python packaging/korean/tooling/audit_guild_entry_targeted_kr126.py \
+            --zip Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip \
+            --runner /tmp/verify-guild-links --output KR12.7-native-before-after.json
+          python - <<'PY'
+          import json
+          s=json.load(open('KR12.7-native-before-after.json',encoding='utf8'))['summary']
+          assert s['source_INFO_checked']==10 and s['proposals_native_passed']==5
+          assert s['proposals_needing_other_topic_review']==0
+          PY
+      - name: Release static-verified incremental Windows hotfix
+        run: |
+          set -euo pipefail
+          cat > notes.md <<'EOF'
+          OpenMW Korean KR12.7 — 길드 가입 대화 토픽 인식 교정
+
+          KR12.6 전체 배포본을 기반으로 한국어 ESP의 INFO.NAME 5개만 수정.
+          랄라티아 바리안(제국 교단), 흐룬디·불꽃눈 에이디스(전사 길드),
+          텔바니 가문 승진 안내, 마법사 길드 임무 안내 가입 링크 복원.
+          화면 표시 한국어, 원본 퀘스트 조건·스크립트, 모든 다른 파일 보존.
+          48,146 TES3 레코드 구조와 실제 OpenMW 한국어 C++ 파서 검증 통과.
+
+          단, 실게임 NPC/플레이어 상태 및 로드 순서별 퀘스트 진행은 미검증.
+          이 버전은 확인된 5개 가입 경로의 핫픽스이며 모든 토픽 누락의
+          수정을 의미하지 않습니다. 명시 링크가 겹친 일반 토픽을 가릴 수 있습니다.
+          사용 전 기존 번역 데이터를 백업하세요.
+          EOF
+          gh release create openmw-0.51.0-kr12.7 \
+            Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip \
+            Morrowind-Korean-OpenMW-0.51.0-KR12.7-Full.zip.sha256 \
+            KR12.7-source-guarded-verification.json \
+            KR12.7-native-before-after.json \
+            --repo "$GITHUB_REPOSITORY" \
+            --title 'OpenMW 한국어 KR12.7 — 길드 가입 토픽 인식 핫픽스' \
+            --notes-file notes.md --target "$GITHUB_SHA"

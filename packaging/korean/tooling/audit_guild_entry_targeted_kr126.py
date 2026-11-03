@@ -213,15 +213,25 @@ def main():
         item["native_before_targets"]=baseline[f"probe-{i}"]["targets"]
         item["native_after_targets"]=patched[f"probe-{i}"]["targets"]
         item["native_unrelated_topic_targets_preserved"]=(b-{target})==(aft-{target})
+        item["native_existing_other_targets_lost"]=sorted((b-aft)-{target})
+        item["native_unexpected_other_targets_added"]=sorted((aft-b)-{target})
         item["full_NPC_quest_state_verified"]=False
-        if item["proposed_INFO_NAME"]:
-            if target in b or target not in aft or not item["native_unrelated_topic_targets_preserved"]:
-                raise ValueError("Unsafe proposed link: "+item["INFO_ID"])
+        if not item["proposed_INFO_NAME"]:
+            item["candidate_qa_status"]="NOT_PROPOSED"
+        elif target in b:
+            item["candidate_qa_status"]="BLOCKED_TARGET_ALREADY_DISCOVERED"
+        elif target not in aft:
+            item["candidate_qa_status"]="BLOCKED_TARGET_NOT_DISCOVERED"
+        elif not item["native_unrelated_topic_targets_preserved"]:
+            item["candidate_qa_status"]="REVIEW_OTHER_TOPIC_TARGET_CHANGES"
+        else:
+            item["candidate_qa_status"]="NATIVE_PARSER_PASS"
     summary={
       "status":"NATIVE_TESTED_ISOLATED_LINK_CANDIDATES_NOT_RELEASED",
       "core_esp_sha256":sha(esp),
       "source_INFO_checked":len(evidence),
-      "proposals_native_passed":sum(bool(e["proposed_INFO_NAME"]) for e in evidence),
+      "proposals_native_passed":sum(e["candidate_qa_status"]=="NATIVE_PARSER_PASS" for e in evidence),
+      "proposals_needing_other_topic_review":sum(e["candidate_qa_status"]=="REVIEW_OTHER_TOPIC_TARGET_CHANGES" for e in evidence),
       "proposals_skipped":sum(not bool(e["proposed_INFO_NAME"]) for e in evidence),
       "unchanged_source_ESP":True,
       "native_parser_used":True,
@@ -240,6 +250,8 @@ def main():
            "id":e["INFO_ID"],"dial":e["source_DIAL"],"target":e["target_DIAL"],"actor":e["actor"],"faction":e["faction"],
            "proposed":e["proposed_INFO_NAME"],"blocked":e["candidate_blocker"],
            "before":e["native_source_expected_target_found"],"after":e["native_candidate_expected_target_found"],
+           "qa_status":e["candidate_qa_status"],"unrelated_lost":e["native_existing_other_targets_lost"],
+           "unrelated_added":e["native_unexpected_other_targets_added"],
            "target":e["target_evidence"],"conditions_count":len(e["source_conditions"]),
         },ensure_ascii=False)[:5000])
 

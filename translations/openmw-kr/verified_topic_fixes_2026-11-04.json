@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "status": "35_NATIVE_VERIFIED_TOPIC_FIXES_STAGED_UNRELEASED",
+  "source_version": "2026-11-04",
+  "source": {
+    "base": "released current Nexus KR0.1",
+    "regional": [
+      "TR 26.11.2",
+      "Tamriel Data 26.08",
+      "Cyrodiil 26.09a",
+      "Skyrim 26.09a"
+    ],
+    "rebirth_compat": "7.2 SHA-guarded independently replayed"
+  },
+  "binary_rules": [
+    "Only exact verified INFO.NAME bytes, matched by record index and INAM",
+    "Append TOP aliases only if all existing aliases and targets unchanged",
+    "All other TES3 records, condition fields, scripts and modules immutable",
+    "Refuse on any input SHA drift; never apply to newer unreviewed sources",
+    "Never overwrite existing published archive or repository source without an explicit rebase"
+  ],
+  "tests": {
+    "regional_source_to_Korean_NATIVE_UI_14_pass": true,
+    "TR_mainland_NATIVE_UI_10_pass": true,
+    "rebirth_compat_NATIVE_UI_11_pass": true,
+    "combined_loadouts_with_changes": 9,
+    "combined_NATIVE_UI_checks": 123,
+    "native_UI_failed": 0,
+    "new_TOP_alias_collision": 0,
+    "old_clickable_links_masked": 0,
+    "Korean_visible_text_changed": 0,
+    "real_playthrough_journal_stage_validated": false
+  },
+  "modules": [
+    {
+      "plugin_path": "Data Files/Cyr_Main.ESM",
+      "id": "Cyr_Main",
+      "Nexus_mod_id": 60846,
+      "baseline_plugin_sha256": "d16323effcbbec7a29ba8e1ef247b24b902e62e017c6666aaa284595b95b035c",
+      "candidate_plugin_sha256": "7027792ea48818994439072a636194b18092e04062fd91c3b6ebd5c84a13bb87",
+      "baseline_TOP_sha256": "ec5150e5df95b9534bd183458d67879f0185ae8a7f28c36c8b4bb9e202645f48",
+      "candidate_TOP_sha256": "339230771055d9843e14c63a7586134c2f5250320c0b6dc532367f91ac4d4014",
+      "new_TOP_aliases": {
+        "하고 싶은가*": "join the Fighters Guild",
+        "가입하려고*": "join the Kingdom of Anvil",
+        "들어가고 싶은 거야*": "join the Thieves Guild",
+        "바를라 스톤*": "varla stone",
+        "되찾았어*": "lucky amulet",
+        "제물을 바치는 걸*": "offering to Arkay",
+        "더 깊이 탐험하는 것을*": "explore Garlas Agea"
+      },
+      "INFO_changes": [
+        {
+          "record_index": 9555,
+          "INFO_INAM": "134507126239913295",
+          "current_DIAL": "Fighters Guild",
+          "target_DIAL": "join the Fighters Guild",
+          "source_row_key": "Cyr_Main.ESM@45291051",
+          "expected_old_INFO_NAME_sha256": "67ec7ebf13024446cbf9673b21290711935c4775372619579b4e7a8aa323411a",
+          "verified_new_INFO_NAME_sha256": "d0762c8967382c3eeb3d9449b393750e1faf0552e560974cf10934d22c89dcf0",
+          "old_korean_text": "난 앤빌의 길드장이야. 전사 길드에 가입하고 싶은가?",
+          "new_korean_text": "난 앤빌의 길드장이야. 전사 길드에 가입@하고 싶은가#?"
+        },
+        {
+          "record_index": 10129,
+          "INFO_INAM": "16785134334757532",
+          "current_DIAL": "Kingdom of Anvil",
+          "target_DIAL": "join the Kingdom of Anvil",
+          "source_row_key": "Cyr_Main.ESM@45516511",
+          "expected_old_INFO_NAME_sha256": "44ada37275aa38879044ab2ccacc5a05e89766ee2d6cfc1e06af83c449be7123",
+          "verified_new_INFO_NAME_sha256": "c1b03ff40a7635ab640311e3b858d8aadafb9cbe1b43f1e7c7ac0fdd03a2ca80",
+          "old_korean_text": "콜로비아 여덟 왕국 중 하나가 %Faction입니다. 제 개인적인 충성심도 그곳을 향하지요. 왕국의 %Rank인 저는 왕국과 밀로나 여왕, 백성을 지키겠다고 맹세했습니다. 앤빌 왕국에 가입하려고 하십니까?",
+          "new_korean_text": "콜로비아 여덟 왕국 중 하나가 %Faction입니다. 제 개인적인 충성심도 그곳을 향하지요. 왕국의 %Rank인 저는 왕국과 밀로나 여왕, 백성을 지키겠다고 맹세했습니다. 앤빌 왕국에 @가입하려고# 하십니까?"
+        },
+        {
+          "record_index": 11672,
+          "INFO_INAM": "4850292022162116767",
+          "current_DIAL": "Thieves Guild",
+          "target_DIAL": "join the Thieves Guild",
+          "source_row_key": "Cyr_Main.ESM@46099084",
+          "expected_old_INFO_NAME_sha256": "d0a7aa891dd50774fea2a8279f33fa78f45c9e6e4dd86f6bba182e49780ef5de",
+          "verified_new_INFO_NAME_sha256": "d9c9225c31d72f871131f574ae848681a02311ff431994d0652f6ab5b2281fde",
+          "old_korean_text": "왜 묻지? 도둑 길드에 들어가고 싶은 거야?",
+          "new_korean_text": "왜 묻지? 도둑 길드에 @들어가고 싶은 거야#?"
+        },
+        {
+          "record_index": 17971,
+          "INFO_INAM": "2942812635768223789",
+          "current_DIAL": "Greeting 1",
+          "target_DIAL": "varla stone",
+          "source_row_key": "Cyr_Main.ESM@48625053",
+          "expected_old_INFO_NAME_sha256": "9bb38c952693b16d7e56a84f28c4638ac722c88cd9a3325ab2cb0d0dcd6a0f11",
+          "verified_new_INFO_NAME_sha256": "c34e6e1eb056de12c217cdbae99099e48806bb50cac3ac1aa3f6c872e6d26a83",
+          "old_korean_text": "%PCName! 다시 보게 되어서 반가워, 하지만 우리가 디벨라 에스테티카 사원에 도착했을 때 무슨 일이 일어났는지 절대 믿지 못할 거야 -- 그들이 바를라 스톤을 가져가 버렸어, 그 망할 수석 여사제는 억지로 입꼬리를 잡아당긴 듯한 미소를 짓더니 그냥 우리보고 떠나라고 하잖아. 쿠람과 나를 위해 네가 해준 그 모든 일들 뒤에 다시 도움을 청하기는 정말 싫지만, 정말로 도시에 머물 곳을 찾아줄 사람이 필요해. 네가 한 또 하나의 선행이라고 쳐줘; 어쩌면 더 작은 사원이라면 우리를 기꺼이 받아주지 않을까?",
+          "new_korean_text": "%PCName! 다시 보게 되어서 반가워, 하지만 우리가 디벨라 에스테티카 사원에 도착했을 때 무슨 일이 일어났는지 절대 믿지 못할 거야 -- 그들이 @바를라 스톤#을 가져가 버렸어, 그 망할 수석 여사제는 억지로 입꼬리를 잡아당긴 듯한 미소를 짓더니 그냥 우리보고 떠나라고 하잖아. 쿠람과 나를 위해 네가 해준 그 모든 일들 뒤에 다시 도움을 청하기는 정말 싫지만, 정말로 도시에 머물 곳을 찾아줄 사람이 필요해. 네가 한 또 하나의 선행이라고 쳐줘; 어쩌면 더 작은 사원이라면 우리를 기꺼이 받아주지 않을까?"
+        },
+        {
+          "record_index": 18647,
+          "INFO_INAM": "16990157761991814001",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "lucky amulet",
+          "source_row_key": "Cyr_Main.ESM@48882088",
+          "expected_old_INFO_NAME_sha256": "ce7ba7e7a8e0c794a18d484e988ab94b8cf7e97c17419a3f036148cf4a1d0da4",
+          "verified_new_INFO_NAME_sha256": "e4af9f5c05924e563e6dbc9ee0ea5dbe08f16c80f884bdb7ab6b99d8d7745a6e",
+          "old_korean_text": "내 행운의 부적을 되찾았어?",
+          "new_korean_text": "내 행운의 부적을 @되찾았어#?"
+        },
+        {
+          "record_index": 19223,
+          "INFO_INAM": "130586384723121468",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "offering to Arkay",
+          "source_row_key": "Cyr_Main.ESM@49068997",
+          "expected_old_INFO_NAME_sha256": "f98a153c7a875b0afcf9351d77628236d01c1d7ab63b976c0848d729e6ad9334",
+          "verified_new_INFO_NAME_sha256": "ff57656398d1c4229a6cde54a594f430bba5e4a4cc93ca598fee6416dae98117",
+          "old_korean_text": "아케이께 제물을 바치는 걸 도울 준비가 됐나?",
+          "new_korean_text": "아케이께 @제물을 바치는 걸# 도울 준비가 됐나?"
+        },
+        {
+          "record_index": 19281,
+          "INFO_INAM": "11763708293733692",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "explore Garlas Agea",
+          "source_row_key": "Cyr_Main.ESM@49086140",
+          "expected_old_INFO_NAME_sha256": "2ca509faeb547e34830fa2a9938dc0be12024f4348b4246729461794a1fd8548",
+          "verified_new_INFO_NAME_sha256": "f39aeac4a3aefd2b910c4062c13056fbf511393f2e4920e5ab4568bc84be1154",
+          "old_korean_text": "다시 뵙게 되어 반가워요. 가르라스 아게아를 더 깊이 탐험하는 것을 도와주시겠어요? 우리 힘만으로는 이 수호자들을 전부 상대할 수가 없어서요.",
+          "new_korean_text": "다시 뵙게 되어 반가워요. 가르라스 아게아를 @더 깊이 탐험하는 것을# 도와주시겠어요? 우리 힘만으로는 이 수호자들을 전부 상대할 수가 없어서요."
+        }
+      ]
+    },
+    {
+      "plugin_path": "Data Files/Sky_Main.ESM",
+      "id": "Sky_Main",
+      "Nexus_mod_id": 60847,
+      "baseline_plugin_sha256": "28453abc5fb95735590667fb8d5546863035eef5cf7c36f486aa7d4533943c0f",
+      "candidate_plugin_sha256": "b5b7c4630d6cc1d0584d4c78583d1d4bb6c4ed0c77e05a7e8a362fce7dbe26ab",
+      "baseline_TOP_sha256": "ba7503762abc05303833e5cce8432635b29d40a9dc81c413e29c459b5151678f",
+      "candidate_TOP_sha256": "7fc65138d1b3b5844094a77c65b6f7ec8e6d97cdd1d5955a39dc087fbe6669fe",
+      "new_TOP_aliases": {
+        "길드원이 아니면*": "join the Fighters Guild",
+        "하고 싶나*": "join the Fighters Guild",
+        "하고 싶나**": "join the Thieves Guild",
+        "모았어*": "components for a ritual"
+      },
+      "INFO_changes": [
+        {
+          "record_index": 5261,
+          "INFO_INAM": "78528553650719841",
+          "current_DIAL": "Advancement",
+          "target_DIAL": "join the Fighters Guild",
+          "source_row_key": "Sky_Main.ESM@29500154",
+          "expected_old_INFO_NAME_sha256": "d0cc8d32a528e93906040b4f518367d7d19bc80c4ae6600e0229304fb4cce885",
+          "verified_new_INFO_NAME_sha256": "98ac2b7b8a899d5238a63d5874538bafa84ab1479036b3a43617257635e4a70f",
+          "old_korean_text": "이럴 시간 없어 -- 길드원이 아니면 승진시켜 줄 수 없다고. 전사 길드에 가입할래?",
+          "new_korean_text": "이럴 시간 없어 -- @길드원이 아니면# 승진시켜 줄 수 없다고. 전사 길드에 가입할래?"
+        },
+        {
+          "record_index": 6030,
+          "INFO_INAM": "12187252882822432436",
+          "current_DIAL": "Fighters Guild",
+          "target_DIAL": "join the Fighters Guild",
+          "source_row_key": "Sky_Main.ESM@29755203",
+          "expected_old_INFO_NAME_sha256": "f9dbc2025e59d30faf8f4e01f66c46b441a519a609547bbcedfa98ce29dd05e5",
+          "verified_new_INFO_NAME_sha256": "df260a16df28b07669880b89a713740d40ccf920861c4dd95aa7aeaf196c0f1f",
+          "old_korean_text": "전사 길드에 가입하고 싶나? 아니라면 내 시간 낭비하지 마.",
+          "new_korean_text": "전사 길드에 가입@하고 싶나#? 아니라면 내 시간 낭비하지 마."
+        },
+        {
+          "record_index": 7990,
+          "INFO_INAM": "4262163401603713917",
+          "current_DIAL": "fix your mistake",
+          "target_DIAL": "join the Thieves Guild",
+          "source_row_key": "Sky_Main.ESM@30463186",
+          "expected_old_INFO_NAME_sha256": "6559db48d0cc851f7e0290b6d7ede3f307f5b8efea8b3f57ad55fbbab9278e91",
+          "verified_new_INFO_NAME_sha256": "36113cb3de2f981cc96170806e2f5002d52f6caa279940ee9d509787bc091884",
+          "old_korean_text": "도비카의 탈출을 돕고 빚도 갚았군. 자네가 한 짓은 용서하겠네. 그래도 도둑 길드에 가입하고 싶나?",
+          "new_korean_text": "도비카의 탈출을 돕고 빚도 갚았군. 자네가 한 짓은 용서하겠네. 그래도 도둑 길드에 가입@하고 싶나#?"
+        },
+        {
+          "record_index": 10492,
+          "INFO_INAM": "16988138932555913235",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "components for a ritual",
+          "source_row_key": "Sky_Main.ESM@31358370",
+          "expected_old_INFO_NAME_sha256": "1110e1493af9fbf4e717be384f297b10b41bb9dbd342da1326ead1766697cc3d",
+          "verified_new_INFO_NAME_sha256": "ccf3ad4e9620cea092768951571f0baae8659cff3641ef2505687d4320ad156f",
+          "old_korean_text": "의식에 쓸 재료를 모았어, %PCName?",
+          "new_korean_text": "의식에 쓸 재료를 @모았어#, %PCName?"
+        }
+      ]
+    },
+    {
+      "plugin_path": "Data Files/Tamriel_Data.esm",
+      "id": "Tamriel_Data",
+      "Nexus_mod_id": 60845,
+      "baseline_plugin_sha256": "647b7950857fc74e03fba8ad58680a75e55b90287e4044bfecf011ce9002a9b4",
+      "candidate_plugin_sha256": "638033424319cfa8d2e3881625bea2ebe731f1869a1ce1cb7ee7af353398eae7",
+      "baseline_TOP_sha256": "99f18b02b2c9224717292ac8d527504e87a6691f146c91a4e01adfd14ae03ead",
+      "candidate_TOP_sha256": "b3c34f0b97f47cd997d7ab52776df34caefcdb306b290eb8790b2ebfefe063d2",
+      "new_TOP_aliases": {
+        "가입해야*": "join House Indoril",
+        "입단하겠다는*": "join the Ordinators",
+        "가입하지 않으면*": "join the Mages Guild"
+      },
+      "INFO_changes": [
+        {
+          "record_index": 52578,
+          "INFO_INAM": "50302191943289174",
+          "current_DIAL": "Advancement",
+          "target_DIAL": "join House Indoril",
+          "source_row_key": "Tamriel_Data.esm@15117505",
+          "expected_old_INFO_NAME_sha256": "f95d21fcba555da7e5d9a01f158921a5ed6c990577e6a88f3762ade64f87fb22",
+          "verified_new_INFO_NAME_sha256": "5702267c7d4d72d1d435285d74b42d6cd9407c998ea8803a940af4bba1dd2b48",
+          "old_korean_text": "우리 가문에서 승진하려면 먼저 인도릴 가문에 가입해야 해.",
+          "new_korean_text": "우리 가문에서 승진하려면 먼저 인도릴 가문에 @가입해야# 해."
+        },
+        {
+          "record_index": 52587,
+          "INFO_INAM": "1517532107256232048",
+          "current_DIAL": "Advancement",
+          "target_DIAL": "join the Ordinators",
+          "source_row_key": "Tamriel_Data.esm@15120535",
+          "expected_old_INFO_NAME_sha256": "cc1bf208ba6d7221290c03185f79477d239916f6278b0fc5b97d5519c4ac0eec",
+          "verified_new_INFO_NAME_sha256": "57693ec251376a80a8f6c868d6e6fe371acc9dc7d5dc5e9349e0c5ff0685ef8f",
+          "old_korean_text": "당신은 우리 신성한 조직의 일원이 아닙니다. 오디네이터에 입단하겠다는 것입니까, %PCRace?",
+          "new_korean_text": "당신은 우리 신성한 조직의 일원이 아닙니다. 오디네이터에 @입단하겠다는# 것입니까, %PCRace?"
+        },
+        {
+          "record_index": 52610,
+          "INFO_INAM": "30557301471962015073",
+          "current_DIAL": "Advancement",
+          "target_DIAL": "join the Mages Guild",
+          "source_row_key": "Tamriel_Data.esm@15129808",
+          "expected_old_INFO_NAME_sha256": "3246be9d6dbf07ce94caa8702c49f877e2f94277554576d3183ced5cf45cd298",
+          "verified_new_INFO_NAME_sha256": "a41b849a9a220aaa7e7a8abcefd17b0f5e79cb81c1bff81035051331e3752473",
+          "old_korean_text": "마법사 길드에 가입하지 않으면 @승진#시켜 줄 수 없어.",
+          "new_korean_text": "마법사 길드에 @가입하지 않으면# @승진#시켜 줄 수 없어."
+        }
+      ]
+    },
+    {
+      "id": "RebirthCompat_Cyr_Main",
+      "plugin_path": "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+      "rebuild_from": "Rebirth 7.2 translated compatch SHA-guarded overlays",
+      "baseline_plugin_sha256": "7794af1214b759a0c85d655b2b40eb8774beb396ee7775dd76e965e63dbbca1e",
+      "candidate_plugin_sha256": "8bfaa51894585e66cd3c05cc2e26ab8dbc0418b7120cef10f9e670a1442de619",
+      "baseline_TOP_sha256": "ec5150e5df95b9534bd183458d67879f0185ae8a7f28c36c8b4bb9e202645f48",
+      "candidate_TOP_sha256": "339230771055d9843e14c63a7586134c2f5250320c0b6dc532367f91ac4d4014",
+      "new_TOP_aliases": {
+        "하고 싶은가*": "join the Fighters Guild",
+        "가입하려고*": "join the Kingdom of Anvil",
+        "들어가고 싶은 거야*": "join the Thieves Guild",
+        "바를라 스톤*": "varla stone",
+        "되찾았어*": "lucky amulet",
+        "제물을 바치는 걸*": "offering to Arkay",
+        "더 깊이 탐험하는 것을*": "explore Garlas Agea"
+      },
+      "INFO_changes": [
+        {
+          "record_index": 10139,
+          "INFO_INAM": "16785134334757532",
+          "current_DIAL": "Kingdom of Anvil",
+          "target_DIAL": "join the Kingdom of Anvil",
+          "expected_old_INFO_NAME_sha256": "44ada37275aa38879044ab2ccacc5a05e89766ee2d6cfc1e06af83c449be7123",
+          "verified_new_INFO_NAME_sha256": "c1b03ff40a7635ab640311e3b858d8aadafb9cbe1b43f1e7c7ac0fdd03a2ca80",
+          "old_korean_text": "콜로비아 여덟 왕국 중 하나가 %Faction입니다. 제 개인적인 충성심도 그곳을 향하지요. 왕국의 %Rank인 저는 왕국과 밀로나 여왕, 백성을 지키겠다고 맹세했습니다. 앤빌 왕국에 가입하려고 하십니까?",
+          "new_korean_text": "콜로비아 여덟 왕국 중 하나가 %Faction입니다. 제 개인적인 충성심도 그곳을 향하지요. 왕국의 %Rank인 저는 왕국과 밀로나 여왕, 백성을 지키겠다고 맹세했습니다. 앤빌 왕국에 @가입하려고# 하십니까?",
+          "source_row_key": "Cyr_Main.ESM@45516511"
+        },
+        {
+          "record_index": 11349,
+          "INFO_INAM": "134507126239913295",
+          "current_DIAL": "Fighters Guild",
+          "target_DIAL": "join the Fighters Guild",
+          "expected_old_INFO_NAME_sha256": "67ec7ebf13024446cbf9673b21290711935c4775372619579b4e7a8aa323411a",
+          "verified_new_INFO_NAME_sha256": "d0762c8967382c3eeb3d9449b393750e1faf0552e560974cf10934d22c89dcf0",
+          "old_korean_text": "난 앤빌의 길드장이야. 전사 길드에 가입하고 싶은가?",
+          "new_korean_text": "난 앤빌의 길드장이야. 전사 길드에 가입@하고 싶은가#?",
+          "source_row_key": "Cyr_Main.ESM@45291051"
+        },
+        {
+          "record_index": 12113,
+          "INFO_INAM": "4850292022162116767",
+          "current_DIAL": "Thieves Guild",
+          "target_DIAL": "join the Thieves Guild",
+          "expected_old_INFO_NAME_sha256": "d0a7aa891dd50774fea2a8279f33fa78f45c9e6e4dd86f6bba182e49780ef5de",
+          "verified_new_INFO_NAME_sha256": "d9c9225c31d72f871131f574ae848681a02311ff431994d0652f6ab5b2281fde",
+          "old_korean_text": "왜 묻지? 도둑 길드에 들어가고 싶은 거야?",
+          "new_korean_text": "왜 묻지? 도둑 길드에 @들어가고 싶은 거야#?",
+          "source_row_key": "Cyr_Main.ESM@46099084"
+        },
+        {
+          "record_index": 14826,
+          "INFO_INAM": "2942812635768223789",
+          "current_DIAL": "Greeting 1",
+          "target_DIAL": "varla stone",
+          "expected_old_INFO_NAME_sha256": "9bb38c952693b16d7e56a84f28c4638ac722c88cd9a3325ab2cb0d0dcd6a0f11",
+          "verified_new_INFO_NAME_sha256": "c34e6e1eb056de12c217cdbae99099e48806bb50cac3ac1aa3f6c872e6d26a83",
+          "old_korean_text": "%PCName! 다시 보게 되어서 반가워, 하지만 우리가 디벨라 에스테티카 사원에 도착했을 때 무슨 일이 일어났는지 절대 믿지 못할 거야 -- 그들이 바를라 스톤을 가져가 버렸어, 그 망할 수석 여사제는 억지로 입꼬리를 잡아당긴 듯한 미소를 짓더니 그냥 우리보고 떠나라고 하잖아. 쿠람과 나를 위해 네가 해준 그 모든 일들 뒤에 다시 도움을 청하기는 정말 싫지만, 정말로 도시에 머물 곳을 찾아줄 사람이 필요해. 네가 한 또 하나의 선행이라고 쳐줘; 어쩌면 더 작은 사원이라면 우리를 기꺼이 받아주지 않을까?",
+          "new_korean_text": "%PCName! 다시 보게 되어서 반가워, 하지만 우리가 디벨라 에스테티카 사원에 도착했을 때 무슨 일이 일어났는지 절대 믿지 못할 거야 -- 그들이 @바를라 스톤#을 가져가 버렸어, 그 망할 수석 여사제는 억지로 입꼬리를 잡아당긴 듯한 미소를 짓더니 그냥 우리보고 떠나라고 하잖아. 쿠람과 나를 위해 네가 해준 그 모든 일들 뒤에 다시 도움을 청하기는 정말 싫지만, 정말로 도시에 머물 곳을 찾아줄 사람이 필요해. 네가 한 또 하나의 선행이라고 쳐줘; 어쩌면 더 작은 사원이라면 우리를 기꺼이 받아주지 않을까?",
+          "source_row_key": "Cyr_Main.ESM@48625053"
+        },
+        {
+          "record_index": 15502,
+          "INFO_INAM": "16990157761991814001",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "lucky amulet",
+          "expected_old_INFO_NAME_sha256": "ce7ba7e7a8e0c794a18d484e988ab94b8cf7e97c17419a3f036148cf4a1d0da4",
+          "verified_new_INFO_NAME_sha256": "e4af9f5c05924e563e6dbc9ee0ea5dbe08f16c80f884bdb7ab6b99d8d7745a6e",
+          "old_korean_text": "내 행운의 부적을 되찾았어?",
+          "new_korean_text": "내 행운의 부적을 @되찾았어#?",
+          "source_row_key": "Cyr_Main.ESM@48882088"
+        },
+        {
+          "record_index": 16078,
+          "INFO_INAM": "130586384723121468",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "offering to Arkay",
+          "expected_old_INFO_NAME_sha256": "f98a153c7a875b0afcf9351d77628236d01c1d7ab63b976c0848d729e6ad9334",
+          "verified_new_INFO_NAME_sha256": "ff57656398d1c4229a6cde54a594f430bba5e4a4cc93ca598fee6416dae98117",
+          "old_korean_text": "아케이께 제물을 바치는 걸 도울 준비가 됐나?",
+          "new_korean_text": "아케이께 @제물을 바치는 걸# 도울 준비가 됐나?",
+          "source_row_key": "Cyr_Main.ESM@49068997"
+        },
+        {
+          "record_index": 16136,
+          "INFO_INAM": "11763708293733692",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "explore Garlas Agea",
+          "expected_old_INFO_NAME_sha256": "2ca509faeb547e34830fa2a9938dc0be12024f4348b4246729461794a1fd8548",
+          "verified_new_INFO_NAME_sha256": "f39aeac4a3aefd2b910c4062c13056fbf511393f2e4920e5ab4568bc84be1154",
+          "old_korean_text": "다시 뵙게 되어 반가워요. 가르라스 아게아를 더 깊이 탐험하는 것을 도와주시겠어요? 우리 힘만으로는 이 수호자들을 전부 상대할 수가 없어서요.",
+          "new_korean_text": "다시 뵙게 되어 반가워요. 가르라스 아게아를 @더 깊이 탐험하는 것을# 도와주시겠어요? 우리 힘만으로는 이 수호자들을 전부 상대할 수가 없어서요.",
+          "source_row_key": "Cyr_Main.ESM@49086140"
+        }
+      ]
+    },
+    {
+      "id": "RebirthCompat_Sky_Main",
+      "plugin_path": "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+      "rebuild_from": "Rebirth 7.2 translated compatch SHA-guarded overlays",
+      "baseline_plugin_sha256": "fbfe6a982c69d5da86120043e3e13dd2104f1569d8c846302367d070165d54f6",
+      "candidate_plugin_sha256": "b436eda282bb6a711eaa56dad3382038a19f9fdf8908746626891df92670ea7d",
+      "baseline_TOP_sha256": "ba7503762abc05303833e5cce8432635b29d40a9dc81c413e29c459b5151678f",
+      "candidate_TOP_sha256": "7fc65138d1b3b5844094a77c65b6f7ec8e6d97cdd1d5955a39dc087fbe6669fe",
+      "new_TOP_aliases": {
+        "길드원이 아니면*": "join the Fighters Guild",
+        "하고 싶나*": "join the Fighters Guild",
+        "하고 싶나**": "join the Thieves Guild",
+        "모았어*": "components for a ritual"
+      },
+      "INFO_changes": [
+        {
+          "record_index": 6667,
+          "INFO_INAM": "4262163401603713917",
+          "current_DIAL": "fix your mistake",
+          "target_DIAL": "join the Thieves Guild",
+          "expected_old_INFO_NAME_sha256": "6559db48d0cc851f7e0290b6d7ede3f307f5b8efea8b3f57ad55fbbab9278e91",
+          "verified_new_INFO_NAME_sha256": "36113cb3de2f981cc96170806e2f5002d52f6caa279940ee9d509787bc091884",
+          "old_korean_text": "도비카의 탈출을 돕고 빚도 갚았군. 자네가 한 짓은 용서하겠네. 그래도 도둑 길드에 가입하고 싶나?",
+          "new_korean_text": "도비카의 탈출을 돕고 빚도 갚았군. 자네가 한 짓은 용서하겠네. 그래도 도둑 길드에 가입@하고 싶나#?",
+          "source_row_key": "Sky_Main.ESM@30463186"
+        },
+        {
+          "record_index": 7153,
+          "INFO_INAM": "12187252882822432436",
+          "current_DIAL": "Fighters Guild",
+          "target_DIAL": "join the Fighters Guild",
+          "expected_old_INFO_NAME_sha256": "f9dbc2025e59d30faf8f4e01f66c46b441a519a609547bbcedfa98ce29dd05e5",
+          "verified_new_INFO_NAME_sha256": "df260a16df28b07669880b89a713740d40ccf920861c4dd95aa7aeaf196c0f1f",
+          "old_korean_text": "전사 길드에 가입하고 싶나? 아니라면 내 시간 낭비하지 마.",
+          "new_korean_text": "전사 길드에 가입@하고 싶나#? 아니라면 내 시간 낭비하지 마.",
+          "source_row_key": "Sky_Main.ESM@29755203"
+        },
+        {
+          "record_index": 8397,
+          "INFO_INAM": "78528553650719841",
+          "current_DIAL": "Advancement",
+          "target_DIAL": "join the Fighters Guild",
+          "expected_old_INFO_NAME_sha256": "d0cc8d32a528e93906040b4f518367d7d19bc80c4ae6600e0229304fb4cce885",
+          "verified_new_INFO_NAME_sha256": "98ac2b7b8a899d5238a63d5874538bafa84ab1479036b3a43617257635e4a70f",
+          "old_korean_text": "이럴 시간 없어 -- 길드원이 아니면 승진시켜 줄 수 없다고. 전사 길드에 가입할래?",
+          "new_korean_text": "이럴 시간 없어 -- @길드원이 아니면# 승진시켜 줄 수 없다고. 전사 길드에 가입할래?",
+          "source_row_key": "Sky_Main.ESM@29500154"
+        },
+        {
+          "record_index": 9037,
+          "INFO_INAM": "16988138932555913235",
+          "current_DIAL": "Greeting 5",
+          "target_DIAL": "components for a ritual",
+          "expected_old_INFO_NAME_sha256": "1110e1493af9fbf4e717be384f297b10b41bb9dbd342da1326ead1766697cc3d",
+          "verified_new_INFO_NAME_sha256": "ccf3ad4e9620cea092768951571f0baae8659cff3641ef2505687d4320ad156f",
+          "old_korean_text": "의식에 쓸 재료를 모았어, %PCName?",
+          "new_korean_text": "의식에 쓸 재료를 @모았어#, %PCName?",
+          "source_row_key": "Sky_Main.ESM@31358370"
+        }
+      ]
+    },
+    {
+      "id": "TR_Mainland",
+      "plugin_path": "Data Files/TR_Mainland.esm",
+      "Nexus_mod_id": 60844,
+      "baseline_plugin_sha256": "1627359756ab5a429893044a8337a10b8688c5f5cdf1fa4ecdab628dbaa8a183",
+      "candidate_plugin_sha256": "e871931b5744162ee72ca19b00d51f14ea6176ebbdde782855452e953d5b6082",
+      "baseline_TOP_sha256": "2899c51d0046f80f259c1f3cab3e6a068dd34ca123dd4bf0b16adb631033d470",
+      "candidate_TOP_sha256": "0f069468a577917dbbe32d34d0d084c8553b69c2f926d16a66da6a67706bc433",
+      "new_TOP_aliases": {
+        "수도원엔*": "monastery of st. felms",
+        "베르밀리우스 벤디치*": "vermilius vendicci",
+        "네트란 바릴레스*": "nethran varileth",
+        "아르니엘 뒤롱*": "arniel duront",
+        "페디부르*": "pedivur",
+        "우네사 사드라티*": "unesa sadrathi",
+        "델리스 흘레트리*": "delis llethri",
+        "아르부드*": "arvud",
+        "사드리스 모라*": "sadrith mora",
+        "흘레린훌*": "hlerynhul"
+      },
+      "INFO_changes": [
+        {
+          "record_index": 88369,
+          "INFO_INAM": "18129489231104332",
+          "target_DIAL": "monastery of st. felms",
+          "source_row_key": "TR_Mainland@88369",
+          "expected_old_INFO_NAME_sha256": "88fbde36c9a601bf36aec5acf780394f362002f2a7f85e934ec30d41fce1dd5b",
+          "verified_new_INFO_NAME_sha256": "9a4821c4a238fe14200926b83899666d0d3dc87289282925ac3dd37995a91c08",
+          "old_korean_text": "좋은 날이군, %pcname. 오늘 성 펠름스 수도원엔 무슨 일인가?",
+          "new_korean_text": "좋은 날이군, %pcname. 오늘 성 펠름스 @수도원엔# 무슨 일인가?"
+        },
+        {
+          "record_index": 89783,
+          "INFO_INAM": "5240151872083423425",
+          "target_DIAL": "vermilius vendicci",
+          "source_row_key": "TR_Mainland@89783",
+          "expected_old_INFO_NAME_sha256": "da2fcf6d6adf8084aae8dd8d5ea15e2e431440c74f5c87ef3fe760f6d3b41f0d",
+          "verified_new_INFO_NAME_sha256": "2022712b3a0c19eb553a87dd7ab3f7aa7c80ba7c7bed9439643d05ff2e0cbc28",
+          "old_korean_text": "아, %PCName. 여기서 나를 찾을 줄 알았지. 베르밀리우스 벤디치와는 얘기가 잘 끝났나? 그 자가 자기는 모든 일에 무고하다고 장담했겠지. 그 말을 믿었나? 뭐, 상관없어, 이렇게 우리 둘 다 여기 있게 되었으니. 어쩌면 날 도와줄 수 있겠나? 새로운 휴전 협상을 위해 적절한 빈티지의 와인을 고르는 중이거든.",
+          "new_korean_text": "아, %PCName. 여기서 나를 찾을 줄 알았지. @베르밀리우스 벤디치#와는 얘기가 잘 끝났나? 그 자가 자기는 모든 일에 무고하다고 장담했겠지. 그 말을 믿었나? 뭐, 상관없어, 이렇게 우리 둘 다 여기 있게 되었으니. 어쩌면 날 도와줄 수 있겠나? 새로운 휴전 협상을 위해 적절한 빈티지의 와인을 고르는 중이거든."
+        },
+        {
+          "record_index": 91833,
+          "INFO_INAM": "18969301881020224301",
+          "target_DIAL": "nethran varileth",
+          "source_row_key": "TR_Mainland@91833",
+          "expected_old_INFO_NAME_sha256": "88927a8f4f1543ac1bb4948a99a7a7f0ec292ab47b1951e828828121e277f2cd",
+          "verified_new_INFO_NAME_sha256": "77765a6c6e956393a13451dee991c37224f17f6041f6fca82a8379ba39e470c4",
+          "old_korean_text": "반갑네, %PCName. 네트란 바릴레스와는 얘기해 볼 기회가 있었나?",
+          "new_korean_text": "반갑네, %PCName. @네트란 바릴레스#와는 얘기해 볼 기회가 있었나?"
+        },
+        {
+          "record_index": 92650,
+          "INFO_INAM": "238631226345684781",
+          "target_DIAL": "arniel duront",
+          "source_row_key": "TR_Mainland@92650",
+          "expected_old_INFO_NAME_sha256": "303e4724a388a385c1f29eee39b410911cd358799d56369eaf65bbcbd808afc9",
+          "verified_new_INFO_NAME_sha256": "bff83a4f92ae296f2d288af294f9e1eb9441bb7fcd6e5ea3e5675fbc274303f0",
+          "old_korean_text": "아르니엘 뒤롱과는 이야기해 보셨습니까? 그가 제게 진 도박 빚을 갚게 만들어야 합니다.",
+          "new_korean_text": "@아르니엘 뒤롱#과는 이야기해 보셨습니까? 그가 제게 진 도박 빚을 갚게 만들어야 합니다."
+        },
+        {
+          "record_index": 94464,
+          "INFO_INAM": "247362953943246515",
+          "target_DIAL": "pedivur",
+          "source_row_key": "TR_Mainland@94464",
+          "expected_old_INFO_NAME_sha256": "e782529859803fe0b3ca655b1cc4c8253830ea89b19ea13bc7643ed1b4588b5b",
+          "verified_new_INFO_NAME_sha256": "93a0326350ebd7061b4426ff29812f0df88e7d7cbd1c2bce430cd405b13fcf97",
+          "old_korean_text": "페디부르와는 대화해 보았나?",
+          "new_korean_text": "@페디부르#와는 대화해 보았나?"
+        },
+        {
+          "record_index": 95552,
+          "INFO_INAM": "1463310108561621176",
+          "target_DIAL": "unesa sadrathi",
+          "source_row_key": "TR_Mainland@95552",
+          "expected_old_INFO_NAME_sha256": "50b5910988f5c7a91386ddb102cd2bd9f7885496eff8fede9d1ea38ac0f0e15c",
+          "verified_new_INFO_NAME_sha256": "f5a196eff06c4d3792f3962cc5fa57d6a2fdea23ae852123ea0c9f5322f1f1d7",
+          "old_korean_text": "우네사 사드라티와는 이야기해 보았나? 로즈에게 무슨 일이 생겼는지 아는 사람은 그 여자뿐이야.",
+          "new_korean_text": "@우네사 사드라티#와는 이야기해 보았나? 로즈에게 무슨 일이 생겼는지 아는 사람은 그 여자뿐이야."
+        },
+        {
+          "record_index": 93223,
+          "INFO_INAM": "1926330437358710797",
+          "target_DIAL": "delis llethri",
+          "source_row_key": "TR_Mainland@93223",
+          "expected_old_INFO_NAME_sha256": "7103a5d9b12173705308241348032a78e6ef622f8482409ae0a478b3f0d8169d",
+          "verified_new_INFO_NAME_sha256": "482cde4ac638ffef1eae4730388977728a24d20a00121def1688c1581d59f446",
+          "old_korean_text": "아, %PCName(이)군요. 델리스 흘레트리로부터 소식을 가지고 온 것 같군요, 제 말이 맞습니까?",
+          "new_korean_text": "아, %PCName(이)군요. @델리스 흘레트리#로부터 소식을 가지고 온 것 같군요, 제 말이 맞습니까?"
+        },
+        {
+          "record_index": 93586,
+          "INFO_INAM": "17566227142230020207",
+          "target_DIAL": "arvud",
+          "source_row_key": "TR_Mainland@93586",
+          "expected_old_INFO_NAME_sha256": "6a424e044756801519a7fda7f03955f30c7630c91029dd5b340ff78c49610b5c",
+          "verified_new_INFO_NAME_sha256": "c8b8182b2a287b36b93aee75438e9be4fd2e907832d9b1a169caba6d1dc513ae",
+          "old_korean_text": "안녕하시오, 이방인. 아르부드엔 처음이지? 혹시 걸어서 온 건가? 혹시 오던 길에 내 친구 아트리반 데라스를 보지 못했나?",
+          "new_korean_text": "안녕하시오, 이방인. @아르부드#엔 처음이지? 혹시 걸어서 온 건가? 혹시 오던 길에 내 친구 아트리반 데라스를 보지 못했나?"
+        },
+        {
+          "record_index": 97534,
+          "INFO_INAM": "5802183621941521337",
+          "target_DIAL": "sadrith mora",
+          "source_row_key": "TR_Mainland@97534",
+          "expected_old_INFO_NAME_sha256": "45e4b8ca55883854c2e9a49477dd8db26f80feab3515d71e0acb19c407abe741",
+          "verified_new_INFO_NAME_sha256": "dd7d8938974051a3529cbd1394d62a96c611bcc63231fa0da79da5afa73aeee1",
+          "old_korean_text": "사드리스 모라에서의 모든 볼일을 마치고 바덴펠을 떠날 준비가 되셨습니까? 본토의 목적지만 말씀해 주시면 태워다 드리겠습니다.",
+          "new_korean_text": "@사드리스 모라#에서의 모든 볼일을 마치고 바덴펠을 떠날 준비가 되셨습니까? 본토의 목적지만 말씀해 주시면 태워다 드리겠습니다."
+        },
+        {
+          "record_index": 88678,
+          "INFO_INAM": "2676248651846222059",
+          "target_DIAL": "hlerynhul",
+          "source_row_key": "TR_Mainland@88678",
+          "expected_old_INFO_NAME_sha256": "21198b4be66c32b6903b3bbc87ef2f6f07aadc3046a0c20549f848a67125195f",
+          "verified_new_INFO_NAME_sha256": "5d027b55aefaab9dd76bde0eda38bacf753634b79fa1a154ec76068ce14dad13",
+          "old_korean_text": "무슨 내용이지...? 오. 오 안 돼, 나의 사랑스러운 울라인. 하지만... 그녀를 떠나는 것이 괴롭긴 하지만, 울라인이 원하는 대로 해야겠지. 미론과 함께 다시 행복해지기를 바란다. 내 경우엔, 흘레린훌에서의 시간은 끝난 것 같군. 하이 락으로 돌아가야겠어. 울라인의 마음을 얻으려고 도와줘서 고마웠어, %PCname. 언젠가 글렌포인트로 놀러 오라고. 다음에 볼 때는 사랑에 더 운이 좋을지도 모르니까.",
+          "new_korean_text": "무슨 내용이지...? 오. 오 안 돼, 나의 사랑스러운 울라인. 하지만... 그녀를 떠나는 것이 괴롭긴 하지만, 울라인이 원하는 대로 해야겠지. 미론과 함께 다시 행복해지기를 바란다. 내 경우엔, @흘레린훌#에서의 시간은 끝난 것 같군. 하이 락으로 돌아가야겠어. 울라인의 마음을 얻으려고 도와줘서 고마웠어, %PCname. 언젠가 글렌포인트로 놀러 오라고. 다음에 볼 때는 사랑에 더 운이 좋을지도 모르니까."
+        }
+      ]
+    }
+  ],
+  "live_release_uploaded": false,
+  "warning": "These 35 are physical fields, not 35 unique original quest bugs. 11 are Rebirth optional repeats. Full 6249 native topic-review bundles not manually cleared."
+}

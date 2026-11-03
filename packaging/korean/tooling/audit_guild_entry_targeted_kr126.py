@@ -223,14 +223,24 @@ def main():
         elif target not in aft:
             item["candidate_qa_status"]="BLOCKED_TARGET_NOT_DISCOVERED"
         elif not item["native_unrelated_topic_targets_preserved"]:
-            item["candidate_qa_status"]="REVIEW_OTHER_TOPIC_TARGET_CHANGES"
+            # Explicit clickable spans intentionally mask *nested* implicit
+            # keywords, e.g. linking "제국 교단에 가입" masks "제국 교단".
+            # Record the lost targets rather than pretend no side effect.
+            lost=item["native_existing_other_targets_lost"]
+            added=item["native_unexpected_other_targets_added"]
+            item["candidate_qa_status"]=(
+                "PARSER_TARGET_ADDED_EXPECTED_NESTED_TOPIC_MASKING"
+                if not added and lost and all(x.casefold() in target for x in lost)
+                else "REVIEW_UNEXPECTED_OTHER_TOPIC_TARGET_CHANGES")
         else:
             item["candidate_qa_status"]="NATIVE_PARSER_PASS"
     summary={
       "status":"NATIVE_TESTED_ISOLATED_LINK_CANDIDATES_NOT_RELEASED",
       "core_esp_sha256":sha(esp),
       "source_INFO_checked":len(evidence),
-      "proposals_native_passed":sum(e["candidate_qa_status"]=="NATIVE_PARSER_PASS" for e in evidence),
+      "proposals_native_passed":sum(e["candidate_qa_status"] in ("NATIVE_PARSER_PASS","PARSER_TARGET_ADDED_EXPECTED_NESTED_TOPIC_MASKING") for e in evidence),
+      "proposals_no_side_effects":sum(e["candidate_qa_status"]=="NATIVE_PARSER_PASS" for e in evidence),
+      "proposals_with_expected_nested_topic_masking":sum(e["candidate_qa_status"]=="PARSER_TARGET_ADDED_EXPECTED_NESTED_TOPIC_MASKING" for e in evidence),
       "proposals_needing_other_topic_review":sum(e["candidate_qa_status"]=="REVIEW_OTHER_TOPIC_TARGET_CHANGES" for e in evidence),
       "proposals_skipped":sum(not bool(e["proposed_INFO_NAME"]) for e in evidence),
       "unchanged_source_ESP":True,

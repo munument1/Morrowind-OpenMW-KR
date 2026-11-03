@@ -39,7 +39,7 @@
 - `Vhul`이 대사마다 `부훌`/ `불`로 달라 용어집 확인 필요
 - `Bal Foyen, and Almalexia? She seems strong.`의 아말렉시아 부분에서 불필요한 `도시`라는 의미가 추가됐는지 검토 필요
 
-11건은 [원본 해시 포함 개별 교정 권고 목록](../../translations/openmw-kr/manual-review-2026-11-04/11-existing-text-issues-review.jsonl) 참조.
+11건은 [원본 해시 포함 개별 교정 권고 목록](../../../translations/openmw-kr/manual-review-2026-11-04/11-existing-text-issues-review.jsonl) 참조.
 
 ## 3. 실물 검사에서 발견한 세부 사항
 
@@ -47,7 +47,7 @@
 
 ## 4. 영구 보존된 검수 파일
 
-GitHub에 [367개 INFO별 수동 토픽 판정표](../../translations/openmw-kr/manual-review-2026-11-04/367-info-topic-semantic-verdicts.jsonl)를 저장했다. **각 INFO의 DIAL 표적, 원본/번역 SHA-256, 검수 결과, 문장 품질 별도 권고, 실제 게임 테스트 여부**를 포함한다. 원본 저작권 텍스트 전문은 공개 GitHub에 다시 복제하지 않았다.
+GitHub에 [367개 INFO별 수동 토픽 판정표](../../../translations/openmw-kr/manual-review-2026-11-04/367-info-topic-semantic-verdicts.jsonl)를 저장했다. **각 INFO의 DIAL 표적, 원본/번역 SHA-256, 검수 결과, 문장 품질 별도 권고, 실제 게임 테스트 여부**를 포함한다. 원본 저작권 텍스트 전문은 공개 GitHub에 다시 복제하지 않았다.
 
 실제 원문·번역 전문과 검수 증거는 사용자 PC의 아래 폴더에서 검증할 수 있다.
 

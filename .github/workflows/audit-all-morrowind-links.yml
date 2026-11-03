@@ -75,10 +75,22 @@ jobs:
           else
             echo 'REVIEWED_MOD_ARCHIVE_NOT_AVAILABLE; continuing with source-backed dataset only'
           fi
+      - name: Inspect real Korean topics across core, regional, Rebirth compatibility, Rebirth and PFP data
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/audit_cross_mod_topic_gaps.py
+          python3 packaging/korean/tooling/audit_cross_mod_topic_gaps.py \
+            --repo . \
+            --core-zip input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip \
+            --reviewed-mods-dir input/reviewed-mods \
+            --output output/cross_mod_kr126_topic_risk_audit.json > output/cross_mod_stdout.txt
+          grep '^CROSS_MOD_SUMMARY=' output/cross_mod_stdout.txt | cut -c1-18000
+          grep '^CROSS_MOD_HIGH_EXAMPLES=' output/cross_mod_stdout.txt | head -10 | cut -c1-6500
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
           path: |
             output/core_kr126_legacy_scan.json
             output/mod_schemas.json
+            output/cross_mod_kr126_topic_risk_audit.json
           if-no-files-found: error

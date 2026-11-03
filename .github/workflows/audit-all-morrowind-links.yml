@@ -206,6 +206,15 @@ jobs:
             },ensure_ascii=False)[:12000])
           Path("output/bilingual_npc_priority.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
           PY
+      - name: Review ten critical guild entry dialogue INFO and native-test isolated one-field proposals
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/audit_guild_entry_targeted_kr126.py
+          python3 packaging/korean/tooling/audit_guild_entry_targeted_kr126.py \
+            --zip input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip \
+            --runner /tmp/verify-kr126-multimod \
+            --output output/kr126_guild_entry_review.json > output/guild_review_stdout.txt
+          grep '^GUILD_ENTRY_REVIEW_' output/guild_review_stdout.txt | cut -c1-4600
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
@@ -217,4 +226,5 @@ jobs:
             output/native_npc_topic_evidence.json
             output/bilingual_native_topic_diff.json
             output/bilingual_npc_priority.json
+            output/kr126_guild_entry_review.json
           if-no-files-found: error

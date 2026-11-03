@@ -148,5 +148,3 @@ def main():
          "zip_size":OUTPUT.stat().st_size,
          "display_text_preserved":True,"release_published":False},ensure_ascii=True))
 if __name__=="__main__":main()
-
-[executed on device: Deck_Seung (a3b70f16-4906-418e-a5c0-ee1efec6a325)]

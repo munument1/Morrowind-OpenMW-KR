@@ -1,0 +1,187 @@
+name: Test Master Index compatibility hotfix
+
+on:
+  push:
+    branches:
+      - fix/master-index-compat
+    paths:
+      - .github/workflows/test-master-index-compat.yml
+      - tools/build_master_index_compat.py
+      - packaging/korean/install-korean-config.ps1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      KR_TAG: openmw-0.51.0-kr3
+      KR_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR3-Full.zip
+      MOD_DIR: payload/mods/Morrowind_Korean_ReTranslation
+      COMPAT_ESP: Morrowind_Korean_MasterIndex_Compat.esp
+      CANDIDATE: Morrowind-Korean-OpenMW-0.51.0-KR3-MasterIndex-Hotfix-Candidate.zip
+
+    steps:
+      - name: Checkout hotfix branch
+        uses: actions/checkout@v6
+
+      - name: Download current KR3 and Bethesda Master Index
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          rm -rf work out
+          mkdir -p work/base work/pkg work/master out
+
+          gh release download "$KR_TAG"             --repo "$GITHUB_REPOSITORY"             --pattern "$KR_ASSET"             --dir work/base             --clobber
+          unzip -q "work/base/$KR_ASSET" -d work/pkg
+
+          if ! curl --fail --retry 3 -L             -o work/master/masterindex.zip             https://cdn.bethsoft.com/elderscrolls/morrowind/other/masterindex.zip; then
+            curl --fail --retry 3 -L               -o work/master/masterindex.zip               https://download.zenimax.com/elderscrolls/morrowind/other/masterindex.zip
+          fi
+          mkdir -p work/master/unpacked
+          unzip -q work/master/masterindex.zip -d work/master/unpacked
+          find work/master/unpacked -type f -iname 'master_index.esp' -print -quit | grep -q .
+
+      - name: Build compatibility overlay
+        shell: bash
+        run: |
+          set -euo pipefail
+          master_index="$(find work/master/unpacked -type f -iname 'master_index.esp' -print -quit)"
+          python3 tools/build_master_index_compat.py             --master-index "$master_index"             --out "work/pkg/$MOD_DIR/$COMPAT_ESP"             --report out/master-index-compat-build.json
+
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("out/master-index-compat-build.json").read_text(encoding="utf-8"))
+          assert report["copied_records"] == {
+              "DIAL": 14,
+              "INFO": 99,
+              "MISC_index_master": 1,
+          }
+          assert report["output"]["type_counts"] == {
+              "TES3": 1,
+              "MISC": 1,
+              "DIAL": 14,
+              "INFO": 99,
+          }
+          assert "master_index.esp" in [x.lower() for x in report["output"]["masters"]]
+          assert report["master_item_name"] == "마스터 프로필론 색인"
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Install updated config helper into candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m 0644 packaging/korean/install-korean-config.ps1 work/pkg/install-korean-config.ps1
+
+      - name: Test conditional load order
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          $root = Join-Path $PWD "work/config-test"
+          $openmw = Join-Path $root "OpenMW"
+          $modDir = Join-Path $openmw "mods/Morrowind_Korean_ReTranslation"
+          New-Item -ItemType Directory -Force -Path $modDir | Out-Null
+          New-Item -ItemType File -Force -Path (Join-Path $openmw "openmw.exe") | Out-Null
+          Copy-Item "work/pkg/$env:MOD_DIR/Morrowind_Korean_ReTranslation.esp" $modDir
+          Copy-Item "work/pkg/$env:MOD_DIR/$env:COMPAT_ESP" $modDir
+
+          $withMaster = Join-Path $root "with-master.cfg"
+          @(
+            'data="C:/Games/Morrowind/Data Files"'
+            'content=Morrowind.esm'
+            'content=Tribunal.esm'
+            'content=Bloodmoon.esm'
+            'content=master_index.esp'
+            'content=ExampleUserMod.esp'
+            'encoding=win1252'
+          ) | Set-Content -LiteralPath $withMaster -Encoding utf8
+
+          & ./packaging/korean/install-korean-config.ps1 -ConfigPath $withMaster -OpenMWPath $openmw
+
+          $lines = [IO.File]::ReadAllLines($withMaster)
+          $kr = [Array]::IndexOf($lines, 'content=Morrowind_Korean_ReTranslation.esp')
+          $master = [Array]::IndexOf($lines, 'content=master_index.esp')
+          $compat = [Array]::IndexOf($lines, "content=$env:COMPAT_ESP")
+          if ($kr -lt 0 -or $master -lt 0 -or $compat -lt 0) {
+            throw "Expected content lines were not written."
+          }
+          if (-not ($compat -gt $kr -and $compat -gt $master)) {
+            throw "Compatibility overlay is not after both the Korean ESP and master_index.esp."
+          }
+          if (($lines | Where-Object { $_ -eq "content=$env:COMPAT_ESP" }).Count -ne 1) {
+            throw "Compatibility overlay content line was duplicated."
+          }
+
+          # Idempotence: a second run must still leave one managed translation and compat entry.
+          & ./packaging/korean/install-korean-config.ps1 -ConfigPath $withMaster -OpenMWPath $openmw
+          $lines2 = [IO.File]::ReadAllLines($withMaster)
+          if (($lines2 | Where-Object { $_ -eq 'content=Morrowind_Korean_ReTranslation.esp' }).Count -ne 1) {
+            throw "Korean ESP line is not idempotent."
+          }
+          if (($lines2 | Where-Object { $_ -eq "content=$env:COMPAT_ESP" }).Count -ne 1) {
+            throw "Compatibility overlay line is not idempotent."
+          }
+
+          $withoutMaster = Join-Path $root "without-master.cfg"
+          @(
+            'data="C:/Games/Morrowind/Data Files"'
+            'content=Morrowind.esm'
+            'content=Tribunal.esm'
+            'content=Bloodmoon.esm'
+            'content=ExampleUserMod.esp'
+            'encoding=win1252'
+          ) | Set-Content -LiteralPath $withoutMaster -Encoding utf8
+
+          & ./packaging/korean/install-korean-config.ps1 -ConfigPath $withoutMaster -OpenMWPath $openmw
+          $plain = [IO.File]::ReadAllLines($withoutMaster)
+          if ($plain -contains "content=$env:COMPAT_ESP") {
+            throw "Compatibility overlay must not activate without master_index.esp."
+          }
+
+          Write-Host "Conditional Master Index load-order tests passed."
+
+      - name: Assemble full candidate package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/pkg/MASTER-INDEX-HOTFIX.txt <<'EOF'
+          Master Index compatibility hotfix candidate
+
+          This candidate adds Morrowind_Korean_MasterIndex_Compat.esp.
+          The installer activates it only when Bethesda's master_index.esp is already active.
+
+          The compatibility ESP:
+          - requires master_index.esp
+          - restores the official plugin's 14 DIAL / 99 INFO dialogue chains after the main Korean ESP
+          - does not override NPC, CELL, GMST, or SCPT records
+          - keeps the Korean ESP's localized NPC names and propylon scripts
+          - localizes Master Propylon Index as "마스터 프로필론 색인"
+
+          Quest-specific dialogue and journal text remain English in this first functional hotfix.
+          EOF
+
+          (
+            cd work/pkg
+            zip -q -r "../../out/$CANDIDATE" .
+          )
+          sha256sum "out/$CANDIDATE" | sed 's#out/##' > "out/$CANDIDATE.sha256"
+          unzip -tq "out/$CANDIDATE"
+          cat "out/$CANDIDATE.sha256"
+
+      - name: Upload hotfix candidate
+        uses: actions/upload-artifact@v6
+        with:
+          name: master-index-hotfix-candidate-${{ github.sha }}
+          path: |
+            out/${{ env.CANDIDATE }}
+            out/${{ env.CANDIDATE }}.sha256
+            out/master-index-compat-build.json
+          if-no-files-found: error

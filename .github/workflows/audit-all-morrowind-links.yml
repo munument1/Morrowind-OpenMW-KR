@@ -169,6 +169,43 @@ jobs:
             --output output/bilingual_native_topic_diff.json > output/bilingual_native_stdout.txt
           grep '^NATIVE_BILINGUAL_MOD=' output/bilingual_native_stdout.txt | cut -c1-15000
           grep '^NATIVE_BILINGUAL_SUMMARY=' output/bilingual_native_stdout.txt | cut -c1-8000
+      - name: Prioritize English-to-Korean missing NPC/quest entry links, excluding apparent journals
+        run: |
+          python3 - <<'PY'
+          import collections, json, re
+          from pathlib import Path
+          report=json.loads(Path("output/bilingual_native_topic_diff.json").read_text(encoding="utf-8"))
+          out=[]
+          for module in report["reports"]:
+            likely=[]
+            for row in module["missing_edges"]:
+              if row["priority"]!="HIGH_REVIEW":continue
+              parent=str(row.get("topic_parent") or "")
+              if re.match(r"^(PC_|Sky_|TR_|Cyr_|BM_|T_)",parent,re.I) or "_Journal" in parent:continue
+              source=str(row.get("source_English") or "")
+              korean=str(row.get("translated_Korean") or "")
+              key=row.get("target_Korean_MRK") or ""
+              row={**row,
+                   "likely_live_dialogue_not_confirmed":True,
+                   "mapped_Korean_topic_keyword_in_response":key in korean,
+                   "missing_keyword_kind":"suffix_or_boundary" if key in korean else "translation_wording_mismatch"}
+              likely.append(row)
+            count=collections.Counter((r["target_DIAL"],r["missing_keyword_kind"]) for r in likely)
+            out.append({"mod":module["plugin"],"all_missing":module["source_to_Korean_missing_edges"],
+                        "high_priority_total":module["missing_edges_by_priority"].get("HIGH_REVIEW",0),
+                        "non_journal_high_priority":len(likely),
+                        "top_target_and_reason":[{"target":k[0],"reason":k[1],"count":v} for k,v in count.most_common(15)],
+                        "examples":likely[:45],
+                        "warn":"Parent name heuristic cannot replace source DIAL.DATA kind and NPC filter evaluation"})
+            print('BILINGUAL_NPC_FOCUS='+json.dumps({
+              "mod":module["plugin"],"all_missing":module["source_to_Korean_missing_edges"],
+              "non_journal_high_priority":len(likely),
+              "top":out[-1]["top_target_and_reason"][:10],
+              "examples":[{k:r.get(k) for k in ("row_key","topic_parent","target_DIAL","target_Korean_MRK","translated_Korean","missing_keyword_kind")}
+                           for r in likely[:10]],
+            },ensure_ascii=False)[:12000])
+          Path("output/bilingual_npc_priority.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
@@ -179,4 +216,5 @@ jobs:
             output/cross_mod_kr126_native_verification.json
             output/native_npc_topic_evidence.json
             output/bilingual_native_topic_diff.json
+            output/bilingual_npc_priority.json
           if-no-files-found: error

@@ -6,6 +6,7 @@ on:
       - .github/workflows/audit-all-morrowind-links.yml
       - packaging/korean/tooling/audit_cross_mod_topic_gaps.py
       - packaging/korean/tooling/audit_guild_entry_targeted_kr126.py
+      - packaging/korean/tooling/audit_selected_regional_entry_aliases.py
       - packaging/korean/tooling/audit_native_bilingual_topic_differential.py
       - packaging/korean/tooling/verify_native_topic_gap_report.py
   workflow_dispatch:
@@ -218,6 +219,15 @@ jobs:
             --runner /tmp/verify-kr126-multimod \
             --output output/kr126_guild_entry_review.json > output/guild_review_stdout.txt
           grep '^GUILD_ENTRY_REVIEW_' output/guild_review_stdout.txt | cut -c1-4600
+      - name: Test 9 regional guild entry links and noncolliding hidden TOP aliases with native engine parser
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/audit_selected_regional_entry_aliases.py
+          python3 packaging/korean/tooling/audit_selected_regional_entry_aliases.py \
+            --repo . --runner /tmp/verify-kr126-multimod \
+            --core-zip input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip \
+            --output output/kr126_regional_entry_review.json > output/regional_review_stdout.txt
+          grep '^REGION_ENTRY_' output/regional_review_stdout.txt | cut -c1-5500
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
@@ -230,4 +240,5 @@ jobs:
             output/bilingual_native_topic_diff.json
             output/bilingual_npc_priority.json
             output/kr126_guild_entry_review.json
+            output/kr126_regional_entry_review.json
           if-no-files-found: error

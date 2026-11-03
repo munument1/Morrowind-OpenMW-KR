@@ -57,6 +57,7 @@ def main():
         global_keys.update(top)
         datasets[name]=(folder,stem,mrk,top,rows,info)
     proposals=[]
+    same_mod_aliases={}
     for i,(mod,rowkey,target,label) in enumerate(CASES):
         folder,stem,mrk,top,rows,info=datasets[mod]
         matched=[r for r in rows if r["id"]==rowkey]
@@ -72,15 +73,20 @@ def main():
                   if not any(left < idx+len(label) and idx < right for left,right in intervals)]
         if len(eligible)!=1:
             raise ValueError(f"Ambiguous display label {rowkey}: {eligible}")
-        key=None;n=None
-        for v in range(1,35):
-            candidate=label+"*"*v
-            if candidate not in global_keys and candidate not in top:
-                key=candidate;n=v;break
-        if key is None:raise ValueError("No unique disambiguator for "+rowkey)
-        # Reserve this key within the whole analysis, including the core and
-        # other plugin files that may be loaded in the same installation.
-        global_keys.add(key)
+        group=(mod,target,label)
+        if group in same_mod_aliases:
+            key,n=same_mod_aliases[group]
+        else:
+            key=None;n=None
+            for v in range(1,35):
+                candidate=label+"*"*v
+                if candidate not in global_keys and candidate not in top:
+                    key=candidate;n=v;break
+            if key is None:raise ValueError("No unique disambiguator for "+rowkey)
+            # Reserve once per (mod, target, label), so two INFO lines
+            # in the same plugin reuse the same TOP disambiguation alias.
+            same_mod_aliases[group]=(key,n)
+            global_keys.add(key)
         start=eligible[0]
         new=r["ko"][:start]+"@"+label+"\x7f"*n+"#"+r["ko"][start+len(label):]
         if visible(new)!=visible(r["ko"]):raise ValueError("Display text changed")
@@ -150,6 +156,7 @@ def main():
       "needs_review":sum(x["QA_status"]!="NATIVE_PROPOSAL_PASS" for x in proposals),
       "visible_text_preserved":True,
       "top_aliases_noncolliding_with_current_core_and_regions":True,
+      "unique_new_top_aliases":len(same_mod_aliases),
       "release_modified":False,
       "actual_actor_conditions_validated":False,
     }

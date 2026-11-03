@@ -1,0 +1,45 @@
+name: Build experimental OpenMW Korean suffix parser (QA only)
+on:
+  push:
+    branches: [master]
+    paths:
+      - packaging/korean/tooling/patch_trial_korean_boundaries.py
+      - .github/workflows/audit-experimental-korean-boundaries.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa-experiment:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Apply experimental grammar patch to temporary checkout only
+        shell: pwsh
+        run: python packaging/korean/tooling/patch_trial_korean_boundaries.py apps/openmw/mwdialogue/keywordsearch.cpp
+      - name: Compile exact OpenMW parser with experimental suffix handling
+        shell: cmd
+        run: |
+          cl /nologo /std:c++20 /O2 /EHsc /MD /I. /Iapps\openmw\mwdialogue ^
+            packaging\korean\tooling\verify-journal-links.cpp ^
+            apps\openmw\mwdialogue\keywordsearch.cpp ^
+            components\translation\translation.cpp ^
+            components\files\collections.cpp ^
+            components\files\multidircollection.cpp ^
+            components\files\conversion.cpp ^
+            components\toutf8\toutf8.cpp ^
+            components\debug\debuglog.cpp ^
+            /Fe:openmw-kr-experimental-grammar-audit.exe
+          if errorlevel 1 exit /b 1
+      - name: Record reproducible SHA256
+        shell: pwsh
+        run: |
+          $h=(Get-FileHash .\openmw-kr-experimental-grammar-audit.exe -Algorithm SHA256).Hash.ToLower()
+          Write-Output "EXPERIMENTAL_WINDOWS_NATIVE_SHA256=$h"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: openmw-kr-native-grammar-experiment
+          path: openmw-kr-experimental-grammar-audit.exe
+          retention-days: 3
+          if-no-files-found: error

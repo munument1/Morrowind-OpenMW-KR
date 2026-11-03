@@ -112,6 +112,54 @@ jobs:
             --output output/cross_mod_kr126_native_verification.json > output/native_verification_stdout.txt
           grep '^NATIVE_TOPIC_MOD=' output/native_verification_stdout.txt | cut -c1-11000
           grep '^NATIVE_TOPIC_SUMMARY=' output/native_verification_stdout.txt | cut -c1-14000
+      - name: Cross-check high-risk source NPC with target DIAL responses (no quest simulation)
+        run: |
+          python3 - <<'PY'
+          import collections,json,zipfile
+          from pathlib import Path
+          import sys
+          sys.path.insert(0,"packaging/korean/tooling")
+          from audit_cross_mod_topic_gaps import binary_rows
+          report=json.loads(Path("output/cross_mod_kr126_native_verification.json").read_text(encoding="utf-8"))
+          with zipfile.ZipFile("input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip") as zip:
+            esp=zip.read(next(p for p in zip.namelist() if p.endswith("Morrowind_Korean_ReTranslation.esp")))
+          _, rows=binary_rows(esp)
+          topic_to_rows=collections.defaultdict(list)
+          for row in rows: topic_to_rows[row["parent"]].append(row)
+          confirmed=[]
+          core=next(x for x in report["detail"] if x["plugin"]=="KR12.6_CORE")
+          for candidate in core["records"]:
+            if candidate["priority"]!="HIGH_REVIEW" or candidate["native_parser_status"]!="PARSER_NOT_DISCOVERED":continue
+            target_rows=topic_to_rows.get(candidate["topic"],[])
+            actor=(candidate.get("actor") or "").casefold()
+            faction=(candidate.get("faction") or "").casefold()
+            target_same_actor=[r for r in target_rows if actor and (r["actor"] or "").casefold()==actor]
+            target_same_faction=[r for r in target_rows if faction and (r["faction"] or "").casefold()==faction]
+            target_generic=[r for r in target_rows if not r["actor"] and not r["faction"]]
+            source_same=[r for r in rows if r["id"]==candidate["id"] and r["parent"]==candidate["parent"]]
+            source_scripts=[r["script"] for r in source_same]
+            row={k:candidate.get(k) for k in ("id","parent","actor","faction","topic","suffix","context","score")}
+            row.update({"target_dial_exists":bool(target_rows),
+                        "target_info_count":len(target_rows),
+                        "target_same_actor_INFO":len(target_same_actor),
+                        "target_same_faction_INFO":len(target_same_faction),
+                        "target_generic_INFO":len(target_generic),
+                        "target_result_scripts":[r["script"][:240] for r in target_same_actor+target_same_faction+target_generic if r["script"]][:3],
+                        "source_result_scripts":source_scripts[:3],
+                        "assumption":"Even matching actor/faction does not prove SCVR/journal filter passes."})
+            confirmed.append(row)
+          detail={"high_priority_unrecognized_core_candidates":confirmed,
+                  "regional_medium_unrecognized_candidates":{}}
+          for scope in report["detail"]:
+            if scope["plugin"]=="KR12.6_CORE":continue
+            selected=[{k:c.get(k) for k in ("id","parent","topic","suffix","context","original_context","same_english_topic_literal","score")}
+                     for c in scope["records"] if c["native_parser_status"]=="PARSER_NOT_DISCOVERED"]
+            if selected: detail["regional_medium_unrecognized_candidates"][scope["plugin"]]=selected
+          Path("output/native_npc_topic_evidence.json").write_text(json.dumps(detail,ensure_ascii=False,indent=2),encoding="utf-8")
+          print('NATIVE_NPC_HIGH='+json.dumps(confirmed,ensure_ascii=False)[:32000])
+          for mod,selected in detail["regional_medium_unrecognized_candidates"].items():
+            print('NATIVE_MOD_MISSES='+json.dumps({"mod":mod,"count":len(selected),"cases":selected[:15]},ensure_ascii=False)[:13000])
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
@@ -120,4 +168,5 @@ jobs:
             output/mod_schemas.json
             output/cross_mod_kr126_topic_risk_audit.json
             output/cross_mod_kr126_native_verification.json
+            output/native_npc_topic_evidence.json
           if-no-files-found: error

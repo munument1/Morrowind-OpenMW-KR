@@ -86,6 +86,32 @@ jobs:
             --output output/cross_mod_kr126_topic_risk_audit.json > output/cross_mod_stdout.txt
           grep '^CROSS_MOD_SUMMARY=' output/cross_mod_stdout.txt | cut -c1-18000
           grep '^CROSS_MOD_HIGH_EXAMPLES=' output/cross_mod_stdout.txt | head -10 | cut -c1-6500
+      - name: Compile the actual KR12.6 native OpenMW topic parser
+        run: |
+          set -euo pipefail
+          g++ -std=c++20 -O2 -I. -Iapps/openmw/mwdialogue \
+            packaging/korean/tooling/verify-journal-links.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp \
+            components/translation/translation.cpp \
+            components/files/collections.cpp \
+            components/files/multidircollection.cpp \
+            components/files/conversion.cpp \
+            components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp \
+            -o /tmp/verify-kr126-multimod
+      - name: Confirm risk-ranked candidates with actual OpenMW parser
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/verify_native_topic_gap_report.py
+          python3 packaging/korean/tooling/verify_native_topic_gap_report.py \
+            --repo . \
+            --core-zip input/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip \
+            --reviewed-mods-dir input/reviewed-mods \
+            --report output/cross_mod_kr126_topic_risk_audit.json \
+            --runner /tmp/verify-kr126-multimod \
+            --output output/cross_mod_kr126_native_verification.json > output/native_verification_stdout.txt
+          grep '^NATIVE_TOPIC_MOD=' output/native_verification_stdout.txt | cut -c1-11000
+          grep '^NATIVE_TOPIC_SUMMARY=' output/native_verification_stdout.txt | cut -c1-14000
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
@@ -93,4 +119,5 @@ jobs:
             output/core_kr126_legacy_scan.json
             output/mod_schemas.json
             output/cross_mod_kr126_topic_risk_audit.json
+            output/cross_mod_kr126_native_verification.json
           if-no-files-found: error

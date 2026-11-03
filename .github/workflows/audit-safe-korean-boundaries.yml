@@ -1,0 +1,45 @@
+name: Build safe candidate native Korean suffix parser (QA only)
+on:
+  push:
+    branches: [master]
+    paths:
+      - packaging/korean/tooling/patch_trial_safe_korean_boundaries.py
+      - .github/workflows/audit-safe-korean-boundaries.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa-safe:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Patch checkout for safe experimental suffixes
+        shell: pwsh
+        run: python packaging/korean/tooling/patch_trial_safe_korean_boundaries.py apps/openmw/mwdialogue/keywordsearch.cpp
+      - name: Compile OpenMW native KeywordSearch with safe candidate
+        shell: cmd
+        run: |
+          cl /nologo /std:c++20 /O2 /EHsc /MD /I. /Iapps\openmw\mwdialogue ^
+            packaging\korean\tooling\verify-journal-links.cpp ^
+            apps\openmw\mwdialogue\keywordsearch.cpp ^
+            components\translation\translation.cpp ^
+            components\files\collections.cpp ^
+            components\files\multidircollection.cpp ^
+            components\files\conversion.cpp ^
+            components\toutf8\toutf8.cpp ^
+            components\debug\debuglog.cpp ^
+            /Fe:openmw-kr-safe-grammar-audit.exe
+          if errorlevel 1 exit /b 1
+      - name: Log reproducible executable hash
+        shell: pwsh
+        run: |
+          $h=(Get-FileHash .\openmw-kr-safe-grammar-audit.exe -Algorithm SHA256).Hash.ToLower()
+          Write-Output "SAFE_KOREAN_GRAMMAR_EXE_SHA256=$h"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: openmw-kr-safe-grammar-native-auditor
+          path: openmw-kr-safe-grammar-audit.exe
+          retention-days: 4
+          if-no-files-found: error

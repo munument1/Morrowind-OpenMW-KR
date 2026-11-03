@@ -160,6 +160,15 @@ jobs:
           for mod,selected in detail["regional_medium_unrecognized_candidates"].items():
             print('NATIVE_MOD_MISSES='+json.dumps({"mod":mod,"count":len(selected),"cases":selected[:15]},ensure_ascii=False)[:13000])
           PY
+      - name: Run complete bilingual English-to-Korean topic-link differential for every mapped regional INFO
+        run: |
+          set -euo pipefail
+          python3 -m py_compile packaging/korean/tooling/audit_native_bilingual_topic_differential.py
+          python3 packaging/korean/tooling/audit_native_bilingual_topic_differential.py \
+            --repo . --runner /tmp/verify-kr126-multimod \
+            --output output/bilingual_native_topic_diff.json > output/bilingual_native_stdout.txt
+          grep '^NATIVE_BILINGUAL_MOD=' output/bilingual_native_stdout.txt | cut -c1-15000
+          grep '^NATIVE_BILINGUAL_SUMMARY=' output/bilingual_native_stdout.txt | cut -c1-8000
       - uses: actions/upload-artifact@v4
         with:
           name: Morrowind-KR126-Topic-Preflight-QA
@@ -169,4 +178,5 @@ jobs:
             output/cross_mod_kr126_topic_risk_audit.json
             output/cross_mod_kr126_native_verification.json
             output/native_npc_topic_evidence.json
+            output/bilingual_native_topic_diff.json
           if-no-files-found: error

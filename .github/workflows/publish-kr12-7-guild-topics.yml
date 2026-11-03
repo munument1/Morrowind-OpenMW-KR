@@ -1,10 +1,5 @@
 name: Publish KR12.7 pinned guild-joining topic hotfix
 on:
-  push:
-    branches: [master]
-    paths:
-      - packaging/korean/tooling/build_kr12_7_guild_join_release.py
-      - .github/workflows/publish-kr12-7-guild-topics.yml
   workflow_dispatch:
 permissions:
   contents: write

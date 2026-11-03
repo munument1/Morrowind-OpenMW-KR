@@ -5,6 +5,9 @@ on:
     paths:
       - .github/workflows/audit-all-morrowind-links.yml
       - packaging/korean/tooling/audit_cross_mod_topic_gaps.py
+      - packaging/korean/tooling/audit_guild_entry_targeted_kr126.py
+      - packaging/korean/tooling/audit_native_bilingual_topic_differential.py
+      - packaging/korean/tooling/verify_native_topic_gap_report.py
   workflow_dispatch:
 permissions:
   contents: read

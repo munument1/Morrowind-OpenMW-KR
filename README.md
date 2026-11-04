@@ -1,10 +1,17 @@
-> **최신 Windows x64 통합판: [KR12.6](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.6).** OpenMW 0.51.0 기반이며 KR12.5에 명시 토픽 링크 범위 교정이 추가되었습니다. [KR12.6 변경 내역](packaging/korean/KR12.6.md) · [통합 ZIP 바로 다운로드](https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.6/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip).
+> **공개된 최신 Windows x64 통합판: [KR12.7](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.7).** 다음 번호 버전 **KR12.8 전체 ZIP 제작·검증 완료(공개 에셋 업로드 전)**: [KR12.8 변경 내역](packaging/korean/KR12.8.md). 지역 모드 **kr0.2**, Rebirth **7.2-kr1.2** 패키지 준비: [파일 목록·SHA-256](packaging/korean/REGIONAL-KR0.2-REBIRTH-KR1.2.md).
 
 # OpenMW 한국어판
 
 [OpenMW](https://openmw.org/) 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 실행하기 위한 **Windows x64용 한국어 엔진·번역 통합판**입니다. Bethesda의 Morrowind 원본 데이터는 포함하지 않으며 정품 게임이 필요합니다.
 
-## 최신 정식 배포판 — KR12.6 (2026-11-02)
+## 새로운 번호 버전 패키지 준비 — KR12.8 / 지역 kr0.2 / Rebirth 7.2-kr1.2 (2026-11-04)
+
+- **KR12.8 본편**: 이전 KR12.7에서 잘못된 한국어 링크 표지만 추가됐던 제국교단 가입 및 전사·마법사 길드·텔바니 가입 5개 INFO를 영문 실제 DIAL ID에 연결. 네이티브 토픽 파서 5/5 성공, 다른 TES3 스크립트·조건 불변.
+- **지역 모드 4종 및 Rebirth 지역 호환 패치 kr0.2**, **Rebirth 본판 7.2-kr1.2**: 367개 INFO 원문 수동 검토, 수정 대상 총 353개 누적·12개 구성 755,471회 토픽 링크 회귀 통과.
+- 번호 버전 ZIP 7개는 로컬 작업 폴더에 완성되어 있으며 **GitHub Releases / Nexus에는 아직 새 에셋을 업로드하지 않았음**. 공개 다운로드 링크는 에셋 게시 후 갱신해야 함. 실게임 NPC 가입·퀘스트 진행 전수 검증은 미완료.
+- [KR12.8 상세 검증](packaging/korean/KR12.8.md) · [지역 kr0.2 / Rebirth kr1.2 파일명·체크섬](packaging/korean/REGIONAL-KR0.2-REBIRTH-KR1.2.md).
+
+## 이전 정식 배포판 기록 — KR12.6 (2026-11-02)
 
 - [**KR12.6 공식 릴리스 / 검증 보고서**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.6)
 - [**Windows x64 통합 ZIP 직접 다운로드**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.6/Morrowind-Korean-OpenMW-0.51.0-KR12.6-Full.zip)

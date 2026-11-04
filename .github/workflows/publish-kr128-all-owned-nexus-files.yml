@@ -77,7 +77,7 @@ jobs:
             category: optional
             primary: false
             update_main: false
-            name: 'Rebirth Cyrodiil and Skyrim compatibility Korean kr0.2'
+            name: 'Rebirth Cyr-Sky KR0.2'
     env:
       GH_TOKEN: ${{ github.token }}
       NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}

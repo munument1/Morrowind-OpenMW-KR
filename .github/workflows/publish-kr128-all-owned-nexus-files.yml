@@ -1,0 +1,171 @@
+name: Publish KR12.8 and kr0.2/kr1.2 seven owned Nexus file updates
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: kr128-seven-nexus-publication
+  cancel-in-progress: false
+jobs:
+  publish-owned:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      max-parallel: 3
+      fail-fast: false
+      matrix:
+        include:
+          - mod_id: 60496
+            canonical: '429496790096'
+            group: '8110335'
+            zip: 'Morrowind-Korean-OpenMW-0.51.0-KR12.8-Full.zip'
+            version: '0.51.0-KR12.8'
+            category: main
+            primary: true
+            update_main: true
+            name: 'Morrowind Korean OpenMW KR12.8 Windows'
+          - mod_id: 60844
+            canonical: '429496790444'
+            group: '8296179'
+            zip: 'TR_Mainland-kr0.2.zip'
+            version: '26.11.2-kr0.2'
+            category: main
+            primary: true
+            update_main: true
+            name: 'Tamriel Rebuilt 26.11.2 Korean kr0.2'
+          - mod_id: 60845
+            canonical: '429496790445'
+            group: '8296167'
+            zip: 'Tamriel_Data-kr0.2.zip'
+            version: '26.08-kr0.2'
+            category: main
+            primary: true
+            update_main: true
+            name: 'Tamriel Data 26.08 Korean kr0.2'
+          - mod_id: 60846
+            canonical: '429496790446'
+            group: '8296161'
+            zip: 'Cyr_Main-kr0.2.zip'
+            version: '26.09a-kr0.2'
+            category: main
+            primary: true
+            update_main: true
+            name: 'Project Cyrodiil 26.09a Korean kr0.2'
+          - mod_id: 60847
+            canonical: '429496790447'
+            group: '8296155'
+            zip: 'Sky_Main-kr0.2.zip'
+            version: '26.09a-kr0.2'
+            category: main
+            primary: true
+            update_main: true
+            name: 'Skyrim Home of the Nords 26.09a Korean kr0.2'
+          - mod_id: 60805
+            canonical: '429496790405'
+            group: '8257641'
+            zip: 'Morrowind_Rebirth7.2-kr1.2.zip'
+            version: '7.2-kr1.2'
+            category: main
+            primary: true
+            update_main: true
+            name: 'Morrowind Rebirth 7.2 Korean kr1.2'
+          - mod_id: 60805
+            canonical: '429496790405'
+            group: '8296377'
+            zip: 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.2.zip'
+            version: '7.2-kr0.2'
+            category: optional
+            primary: false
+            update_main: false
+            name: 'Rebirth Cyrodiil and Skyrim compatibility Korean kr0.2'
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_MOD: ${{ matrix.mod_id }}
+      NEXUS_UID: ${{ matrix.canonical }}
+      NEXUS_FILE_GROUP: ${{ matrix.group }}
+      VERSION: ${{ matrix.version }}
+      ASSET: ${{ matrix.zip }}
+    steps:
+      - name: Verify secret is present
+        run: |
+          test -n "$NEXUS_KEY" || { echo 'Nexus API secret missing'; exit 1; }
+      - name: Download immutable public GitHub KR12.8 assets
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download openmw-0.51.0-kr12.8 --repo "$GITHUB_REPOSITORY" \
+            --pattern "$ASSET" --pattern "$ASSET.sha256" --dir dist
+          cd dist
+          sha256sum --check "$ASSET.sha256"
+          unzip -tq "$ASSET"
+          test "$(stat -c %s "$ASSET")" -gt 10000
+      - name: Preflight owner, exact mod and active group and deduplicate file version
+        id: nexus
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request
+          key=os.environ["NEXUS_KEY"];mod=os.environ["NEXUS_MOD"]
+          uid=os.environ["NEXUS_UID"];gid=os.environ["NEXUS_FILE_GROUP"]
+          version=os.environ["VERSION"]
+          h={"apikey":key,"User-Agent":"OpenMW-KR128-Verified-Nexus-Publisher",
+             "Accept":"application/json"}
+          def get(p):
+            with urllib.request.urlopen(urllib.request.Request(
+                "https://api.nexusmods.com"+p,headers=h),timeout=45) as r:
+              return json.load(r)
+          actor=str(get("/v1/users/validate.json")["user_id"])
+          owned=get(f"/v1/games/morrowind/mods/{mod}.json")
+          assert actor==str(owned["user"]["member_id"]),f"Wrong Nexus owner {mod}"
+          assert uid==str(owned["uid"]),f"Nexus mod UID drift {mod}"
+          v3=get("/v3/games/morrowind/mods/"+mod)["data"]
+          assert uid==str(v3["id"]),f"Nexus v3 UID drift {mod}"
+          groups=get("/v3/mods/"+uid+"/files")["data"]["mod_files"]
+          exact=[x for x in groups if str(x["id"])==gid and x["is_active"]]
+          assert len(exact)==1,f"Existing Nexus active group changed for {mod}/{gid}"
+          assert not (mod=="60496" and gid=="8257539"),"Never modify Android group"
+          versions=get("/v3/mod-files/"+gid+"/versions")["data"]["versions"]
+          existed=any(str(x.get("version","")).casefold()==version.casefold()
+              and str(x.get("category","")).casefold()!="removed" for x in versions)
+          with open(os.environ["GITHUB_OUTPUT"],"a") as out:
+            out.write("upload="+str(not existed).lower()+"\n")
+          print("VERIFIED_OWNED_NEXUS_TARGET",mod,gid,
+                "PREEXISTING_VERSION",existed,"TARGET_VERSION",version)
+          PY
+      - name: Upload to verified EXISTING Nexus mod-file group
+        if: steps.nexus.outputs.upload == 'true'
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ matrix.group }}
+          filename: dist/${{ matrix.zip }}
+          version: ${{ matrix.version }}
+          display_name: ${{ matrix.name }}
+          description: 'Source-checked Korean topic fixes. Native 755471 INFO regression pass. Original scripts and IDs preserved. In-game NPC quest stages are not exhaustively tested. GitHub KR12.8 release: https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.8'
+          category: ${{ matrix.category }}
+          archive_existing_version: true
+          primary_mod_manager_download: ${{ matrix.primary }}
+          update_mod_version: ${{ matrix.update_main }}
+          allow_mod_manager_download: true
+      - name: Read back new Nexus file version and verify canonical target
+        run: |
+          python3 - <<'PY'
+          import json,os,time,urllib.request
+          key=os.environ["NEXUS_KEY"];gid=os.environ["NEXUS_FILE_GROUP"]
+          version=os.environ["VERSION"];mod=os.environ["NEXUS_MOD"]
+          h={"apikey":key,"User-Agent":"OpenMW-KR128-Nexus-Readback","Accept":"application/json"}
+          for attempt in range(12):
+            req=urllib.request.Request(
+                 "https://api.nexusmods.com/v3/mod-files/"+gid+"/versions",headers=h)
+            with urllib.request.urlopen(req,timeout=45) as r:
+              versions=json.load(r)["data"]["versions"]
+            current=[v for v in versions if str(v.get("version","")).casefold()==version.casefold()
+                     and str(v.get("category","")).casefold()!="removed"]
+            if current:
+              print("NEXUS_KR128_PUBLICATION_CONFIRMED mod="+mod+
+                " group="+gid+" version="+version+" count="+str(len(current))+
+                " version_id="+str(current[0].get("id")))
+              break
+            if attempt==11:raise SystemExit("Nexus upload version did not appear in expected group")
+            time.sleep(8)
+          PY

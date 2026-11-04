@@ -1,0 +1,46 @@
+name: Inspect Nexus upload targets for KR12.8 and regional kr0.2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-owned:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+    steps:
+      - name: Verify ownership and list exact active file groups — READ ONLY
+        run: |
+          python3 - <<'PY'
+          import os,urllib.request,json
+          key=os.environ.get("NEXUS_KEY","")
+          if not key:raise SystemExit("Nexus owner key not configured")
+          hdr={"apikey":key,"User-Agent":"OpenMW-KR128-Safe-Target-Inventory",
+               "Accept":"application/json"}
+          def get(path):
+            with urllib.request.urlopen(urllib.request.Request(
+                   "https://api.nexusmods.com"+path,headers=hdr),timeout=40) as r:
+              return json.load(r)
+          uid=str(get("/v1/users/validate.json")["user_id"])
+          print("AUTH_STATUS=VALID")
+          for mid in (60496,60844,60845,60846,60847,60805):
+            old=get(f"/v1/games/morrowind/mods/{mid}.json")
+            if str(old["user"]["member_id"])!=uid:raise SystemExit(f"Not owner {mid}")
+            canonical=str(old["uid"])
+            latest=get("/v3/mods/"+canonical+"/files")["data"]["mod_files"]
+            out=[]
+            for x in latest:
+              if not x.get("is_active"):continue
+              gid=str(x["id"])
+              versions=get("/v3/mod-files/"+gid+"/versions")["data"]["versions"]
+              out.append({"group":gid,"name":x.get("name"),
+                          "category":x.get("category"),"active":x.get("is_active"),
+                          "versions":[{"version":v.get("version"),"id":v.get("id"),
+                                       "category":v.get("category")} for v in versions[:8]]})
+            print("NEXUS_MOD_TARGET="+json.dumps(
+                {"mod":mid,"name":old.get("name"),
+                 "mod_uid":canonical,"source_version":old.get("version"),
+                 "owned":True,"active_file_groups":out},ensure_ascii=False),flush=True)
+          print("NEXUS_KR128_UPLOAD_PREFLIGHT_COMPLETE=6_OWNED_MODS")
+          PY

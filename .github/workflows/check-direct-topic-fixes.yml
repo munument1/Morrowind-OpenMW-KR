@@ -1,0 +1,44 @@
+name: Check direct Korean topic data repairs
+on:
+  pull_request:
+    paths:
+      - packaging/korean/tooling/topic_fix_helpers.py
+      - packaging/korean/tooling/build_direct_topic_fixes.py
+      - packaging/korean/tooling/test_direct_topic_fixes.py
+      - .github/workflows/check-direct-topic-fixes.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check script byte preservation and fail-closed guards
+        run: python -m unittest discover -s packaging/korean/tooling -p test_direct_topic_fixes.py
+      - name: Fetch original Korean core and check exact changed fields
+        run: |
+          curl -fL --retry 3 -o Morrowind-Korean-OpenMW-0.51.0-KR12.8-Full.zip https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.8/Morrowind-Korean-OpenMW-0.51.0-KR12.8-Full.zip
+          python - <<'PY'
+          import sys,zipfile,hashlib,json
+          from pathlib import Path
+          sys.path.insert(0,'packaging/korean/tooling')
+          import topic_fix_helpers as h
+          source=Path('Morrowind-Korean-OpenMW-0.51.0-KR12.8-Full.zip')
+          assert h.sha(source.read_bytes())=='3542bfdfe0bbadff3827f1d36fcb83955193d366d4567b018d8f434a04eadeb6'
+          raw,top,report=h.core_fix()
+          with zipfile.ZipFile(source) as z:original=z.read(h.STEM+'.esp')
+          before=list(h.chunks(original));after=list(h.chunks(raw))
+          assert len(before)==len(after)
+          changed=0
+          for a,b in zip(before,after):
+              if a==b:continue
+              assert a[:4]==b[:4]==b'INFO'
+              aa,bb=h.fs(a),h.fs(b)
+              assert [(k,v) for k,v in aa if k!=b'NAME']==[(k,v) for k,v in bb if k!=b'NAME']
+              assert h.display(h.audit.dec(dict(aa)[b'NAME']))==h.display(h.audit.dec(dict(bb)[b'NAME']))
+              changed+=1
+          assert changed==12 and len(report['new_top_aliases'])==3
+          print('PASS: 12 INFO.NAME fields; visible text and every other field preserved')
+          PY

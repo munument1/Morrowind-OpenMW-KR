@@ -1,0 +1,40 @@
+name: Check KR12.8 deleted guild join targets
+on:
+  pull_request:
+    paths:
+      - packaging/korean/tooling/repair_kr128_deleted_join_targets.py
+      - packaging/korean/tooling/test_kr128_deleted_join_targets.py
+      - .github/workflows/check-kr128-join-targets.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch exact published inputs
+        run: |
+          curl -fL --retry 3 -o core.zip https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.8/Morrowind-Korean-OpenMW-0.51.0-KR12.8-Full.zip
+          curl -fL --retry 3 -o rebirth.zip https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.8/Morrowind_Rebirth7.2-kr1.2.zip
+      - name: Compile actual OpenMW parser
+        run: |
+          g++ -std=c++20 -O2 -I. -Iapps/openmw/mwdialogue \
+            packaging/korean/tooling/verify-journal-links.cpp \
+            apps/openmw/mwdialogue/keywordsearch.cpp components/translation/translation.cpp \
+            components/files/collections.cpp components/files/multidircollection.cpp \
+            components/files/conversion.cpp components/toutf8/toutf8.cpp \
+            components/debug/debuglog.cpp -o /tmp/verify-join-links
+      - name: Verify actual deleted targets and stage candidate
+        run: |
+          python packaging/korean/tooling/test_kr128_deleted_join_targets.py --source core.zip --rebirth rebirth.zip --runner /tmp/verify-join-links --report native-verification.json
+          python packaging/korean/tooling/repair_kr128_deleted_join_targets.py --source core.zip --output Morrowind-KR12.8-join-fix-QA.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kr128-join-fix-QA-not-released
+          path: |
+            native-verification.json
+            Morrowind-KR12.8-join-fix-QA.zip
+            Morrowind-KR12.8-join-fix-QA.verification.json
+          retention-days: 14

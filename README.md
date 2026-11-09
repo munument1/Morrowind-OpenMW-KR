@@ -1,15 +1,17 @@
-> **공개된 최신 Windows x64 통합판: [KR12.7](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.7).** 다음 번호 버전 **KR12.8 전체 ZIP 제작·검증 완료(공개 에셋 업로드 전)**: [KR12.8 변경 내역](packaging/korean/KR12.8.md). 지역 모드 **kr0.2**, Rebirth **7.2-kr1.2** 패키지 준비: [파일 목록·SHA-256](packaging/korean/REGIONAL-KR0.2-REBIRTH-KR1.2.md).
+> 최신 Windows 통합판: [KR12.9](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.9). 변경된 지역 데이터는 kr0.3, Sky kr0.2 및 Rebirth 본체 7.2-kr1.2는 기존 버전 유지.
 
 # OpenMW 한국어판
 
-[OpenMW](https://openmw.org/) 0.51.0에서 《The Elder Scrolls III: Morrowind》를 한국어로 실행하기 위한 **Windows x64용 한국어 엔진·번역 통합판**입니다. Bethesda의 Morrowind 원본 데이터는 포함하지 않으며 정품 게임이 필요합니다.
+OpenMW 0.51.0에서 Morrowind를 한국어로 실행하는 Windows x64 엔진·번역 통합판입니다. 정품 게임과 사용하는 지역 모드의 원본 리소스가 필요합니다.
 
-## 새로운 번호 버전 패키지 준비 — KR12.8 / 지역 kr0.2 / Rebirth 7.2-kr1.2 (2026-11-04)
+## KR12.9 / 지역 데이터 kr0.3 — 2026-11-09
 
-- **KR12.8 본편**: 이전 KR12.7에서 잘못된 한국어 링크 표지만 추가됐던 제국교단 가입 및 전사·마법사 길드·텔바니 가입 5개 INFO를 영문 실제 DIAL ID에 연결. 네이티브 토픽 파서 5/5 성공, 다른 TES3 스크립트·조건 불변.
-- **지역 모드 4종 및 Rebirth 지역 호환 패치 kr0.2**, **Rebirth 본판 7.2-kr1.2**: 367개 INFO 원문 수동 검토, 수정 대상 총 353개 누적·12개 구성 755,471회 토픽 링크 회귀 통과.
-- 번호 버전 ZIP 7개는 로컬 작업 폴더에 완성되어 있으며 **GitHub Releases / Nexus에는 아직 새 에셋을 업로드하지 않았음**. 공개 다운로드 링크는 에셋 게시 후 갱신해야 함. 실게임 NPC 가입·퀘스트 진행 전수 검증은 미완료.
-- [KR12.8 상세 검증](packaging/korean/KR12.8.md) · [지역 kr0.2 / Rebirth kr1.2 파일명·체크섬](packaging/korean/REGIONAL-KR0.2-REBIRTH-KR1.2.md).
+- 기존 번역 ESP/ESM 내부를 직접 수정합니다. 추가 플러그인은 없습니다.
+- 가입 링크 4곳, 초대·탈로스 교단·애완동물 판매 3곳, 카이우스/쌍둥이 등불 링크 5곳 복구.
+- 지역 모드의 AddTopic 인수 19곳 수정. 엔진 실행 파일은 KR12.8과 같습니다.
+- **로드 순서: Morrowind.esm → Tribunal.esm → Bloodmoon.esm → 본편 한글 ESP → Tamriel_Data 및 지역 모드 → 사용하는 TR_Factions/Rebirth 모듈.**
+- 8개 구성, 597,238 INFO 네이티브 대조 및 관련 자동 검사 통과. 실게임 퀘스트 진행·세이브 검증은 아직 하지 않았습니다.
+- [다운로드 및 변경 내역](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.9) · [상세 검증](packaging/korean/reports/2026-11-09_direct_topic_fixes.md)
 
 ## 이전 정식 배포판 기록 — KR12.6 (2026-11-02)
 

@@ -57,6 +57,10 @@ jobs:
               core.setFailed('Only published stable releases can be uploaded.');
               return;
             }
+            if (release.assets.some(a => a.name === 'NEXUS-PUBLICATION-PLAN.json')) {
+              core.notice('Managed multi-file release; use its exact Nexus publication workflow.');
+              return;
+            }
             const match = /^openmw-(\d+\.\d+\.\d+)-kr(\d+)((?:\.\d+)*)$/i.exec(release.tag_name);
             if (!match) {
               if (context.eventName === 'workflow_dispatch') core.setFailed('Expected a Korean tag such as openmw-0.51.0-kr4.');

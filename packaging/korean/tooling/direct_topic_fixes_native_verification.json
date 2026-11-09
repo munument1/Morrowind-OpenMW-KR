@@ -1,0 +1,508 @@
+{
+  "INFO_comparisons": 597238,
+  "configurations": [
+    {
+      "label": "core",
+      "infos_checked": 25794,
+      "changed_links": [
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "tamriel-data",
+      "infos_checked": 28092,
+      "changed_links": [
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "tr",
+      "infos_checked": 101225,
+      "changed_links": [
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "cyr",
+      "infos_checked": 41551,
+      "changed_links": [
+        {
+          "topic": "a1_1_findspymaster",
+          "info": "19032803425526617",
+          "lost": [
+            "caius cosades"
+          ],
+          "added": [
+            "카이우스 코사데스"
+          ]
+        },
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "390813500242161843",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "18405186102623220646",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "31548130972094426071",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "30491192722836529980",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "sky",
+      "infos_checked": 34855,
+      "changed_links": [
+        {
+          "topic": "a1_1_findspymaster",
+          "info": "19032803425526617",
+          "lost": [
+            "caius cosades"
+          ],
+          "added": [
+            "카이우스 코사데스"
+          ]
+        },
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "all-regions",
+      "infos_checked": 121447,
+      "changed_links": [
+        {
+          "topic": "a1_1_findspymaster",
+          "info": "19032803425526617",
+          "lost": [
+            "caius cosades"
+          ],
+          "added": [
+            "카이우스 코사데스"
+          ]
+        },
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "390813500242161843",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "18405186102623220646",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "31548130972094426071",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "30491192722836529980",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "all-rebirth-main",
+      "infos_checked": 122137,
+      "changed_links": [
+        {
+          "topic": "a1_1_findspymaster",
+          "info": "19032803425526617",
+          "lost": [
+            "caius cosades"
+          ],
+          "added": [
+            "카이우스 코사데스"
+          ]
+        },
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "390813500242161843",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "18405186102623220646",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "31548130972094426071",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "30491192722836529980",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    },
+    {
+      "label": "all-rebirth-alt",
+      "infos_checked": 122137,
+      "changed_links": [
+        {
+          "topic": "a1_1_findspymaster",
+          "info": "19032803425526617",
+          "lost": [
+            "caius cosades"
+          ],
+          "added": [
+            "카이우스 코사데스"
+          ]
+        },
+        {
+          "topic": "greeting 1",
+          "info": "16638405123153970",
+          "lost": [],
+          "added": [
+            "초대"
+          ]
+        },
+        {
+          "topic": "greeting 5",
+          "info": "2861216450312110117",
+          "lost": [
+            "탈로스"
+          ],
+          "added": [
+            "탈로스 교단"
+          ]
+        },
+        {
+          "topic": "훈련된 스크립과 쥐",
+          "info": "2693718122219617829",
+          "lost": [],
+          "added": [
+            "판매"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "390813500242161843",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "18405186102623220646",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "31548130972094426071",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        },
+        {
+          "topic": "최근 소문",
+          "info": "30491192722836529980",
+          "lost": [
+            "twin lamps"
+          ],
+          "added": [
+            "쌍둥이 등불"
+          ]
+        }
+      ],
+      "broken_explicit": 0,
+      "collisions": 0,
+      "malformed": 0
+    }
+  ],
+  "gameplay_tested": false,
+  "new_compatibility_plugin": false,
+  "residual_non_test_addtopic_counts": {
+    "core": 1,
+    "tamriel-data": 18,
+    "tr": 3,
+    "cyr": 15,
+    "sky": 10,
+    "all-regions": 1,
+    "all-rebirth-main": 1,
+    "all-rebirth-alt": 1
+  },
+  "partial_mod_sets_note": "Tamriel_Data source references to absent optional regional mods remain; no new broken AddTopic call sites introduced. Full regional combinations retain only the pre-existing English Maurrie fallback."
+}

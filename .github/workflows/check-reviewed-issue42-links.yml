@@ -1,0 +1,32 @@
+name: Check reviewed Korean topic repairs
+on:
+  pull_request:
+    paths:
+      - packaging/korean/tooling/repair_reviewed_issue42_links.py
+      - packaging/korean/tooling/test_reviewed_issue42_links.py
+      - translations/openmw-kr/issue42_reviewed_links_20261111.json
+      - .github/workflows/check-reviewed-issue42-links.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify reviewed field and alias guards
+        run: python -m unittest discover -s packaging/korean/tooling -p test_reviewed_issue42_links.py -v
+      - name: Fetch immutable published input
+        run: |
+          python -c "import urllib.request; urllib.request.urlretrieve('https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.9/Morrowind-Korean-OpenMW-0.51.0-KR12.9-Full.zip', 'source.zip')"
+      - name: Rebuild reviewed data and verify pinned source fields
+        run: python packaging/korean/tooling/repair_reviewed_issue42_links.py --source source.zip --output candidate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue42-reviewed-data-candidate
+          path: candidate/
+          retention-days: 14

@@ -1,0 +1,10 @@
+{
+  "source_zip_sha256": "f13574941ca699af479a2facbf87c06e5b9ae2cd4696d800c4b89e7ec4f88223",
+  "before_esp_sha256": "a5e2de56cf179193b1a0adeb90fc29bc8351cf29487b06cf71433f54f76a71f7",
+  "after_esp_sha256": "9f94b1c96b10a491cec00d4931123ef1e0f52f52c6095da6b9b380eb9a617b1c",
+  "changed_INFO": 105,
+  "reported_pairs_fixed": 67,
+  "new_aliases": 53,
+  "visible_text_unchanged": true,
+  "other_fields_unchanged": true
+}

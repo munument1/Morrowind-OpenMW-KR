@@ -1,0 +1,1820 @@
+{
+  "coverage": 71,
+  "verdict_counts": {
+    "SAME_STATIC_LIMIT_AS_ORIGINAL": 59,
+    "ALREADY_HAS_CURRENT_STATIC_PATH": 10,
+    "FIXED_LANGUAGE_SUFFIX": 1,
+    "UNRELATED_ORIGINAL_COMPOUND": 1
+  },
+  "scope": "The reporter speaker-compatibility approximation, original masters, native topic parsing and result/source-script AddTopic. SCVR/journal progression and creature dialogue eligibility are not simulated; this is not a proof that every original quest is reachable. Original English corpus remains local.",
+  "rows": [
+    {
+      "report_index": 0,
+      "topic": "제국 인구조사 및 세무국",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "imperial office of census and excise",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 1,
+      "topic": "애쉬랜더 유목 야영지 양식",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "ashlander nomadic camp style",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 2,
+      "topic": "텔바니 가문의 골칫거리",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "troubles for house telvanni",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 3,
+      "topic": "레도란 가문의 골칫거리",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "troubles for house redoran",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 4,
+      "topic": "텔바니 탑 도시 양식",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "telvanni tower urban style",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 5,
+      "topic": "던머 대도시 양식",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "dunmer metropolitan style",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 6,
+      "topic": "모로윈드의 수호자",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "protector of morrowind",
+          "source_links": 1,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "protector of morrowind",
+          "parent": "greeting 1",
+          "info": "10737815943294447",
+          "text_sha256": "26ef009de8f8d6875e3c9760e974126bd5ebf69b5ad8b345902bd223dbb8c590"
+        }
+      ]
+    },
+    {
+      "report_index": 7,
+      "topic": "모로윈드의 지리",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 13
+      },
+      "original": [
+        {
+          "topic": "geography of morrowind",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 13
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 8,
+      "topic": "대가문 선택",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "choosing a great house",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 9,
+      "topic": "전쟁세 폐지",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "repeal of the war tax",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 10,
+      "topic": "모로윈드의 이웃들",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 7
+      },
+      "original": [
+        {
+          "topic": "morrowind's neighbors",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 7
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 11,
+      "topic": "정치와 종교",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "politics and religion",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 12,
+      "topic": "블랙 마시의 평화",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "peace in black marsh",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 13,
+      "topic": "대가문을 섬기기",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 5
+      },
+      "original": [
+        {
+          "topic": "serving great houses",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 5
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 14,
+      "topic": "제국 도시 양식",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "imperial urban style",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 15,
+      "topic": "다크 엘프의 저주",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "the dark elven curse",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 16,
+      "topic": "제국의 부패",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "imperial corruption",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 17,
+      "topic": "알드룬의 코프루스",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "corprus in ald'ruhn",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 18,
+      "topic": "디바이스 피르의 아내",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "wife of divayth fyr",
+          "source_links": 1,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "wife of divayth fyr",
+          "parent": "greeting 1",
+          "info": "12625656356661144",
+          "text_sha256": "ab574b7607da3a9628771673adf81d489a023b80bf2bf62acb49b4ea8ef4f66d"
+        }
+      ]
+    },
+    {
+      "report_index": 19,
+      "topic": "구름가르개를 가져가다",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 3
+      },
+      "original": [
+        {
+          "topic": "taking cloudcleaver",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 3
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 20,
+      "topic": "재료와 제작법",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "material and craft",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 21,
+      "topic": "모로윈드의 문화",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "morrowind cultures",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 22,
+      "topic": "마법부여 물품 사용법",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "using enchantments",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 23,
+      "topic": "전쟁에서의 애쉬랜더",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "ashlanders in war",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 24,
+      "topic": "모로윈드의 음식",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 9
+      },
+      "original": [
+        {
+          "topic": "food in morrowind",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 9
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 25,
+      "topic": "1000드레이크 기부 약속",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 7
+      },
+      "original": [
+        {
+          "topic": "1000-drake pledge",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 7
+        }
+      ],
+      "excluded_duplicate_identity_topics": [
+        "generous pledge"
+      ],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 26,
+      "topic": "저주의 천적",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "the curse's bane",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 27,
+      "topic": "지혜가 나를 이끈다",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "wisdom guides me",
+          "source_links": 1,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "wisdom guides me",
+          "parent": "greeting 1",
+          "info": "23424308811920922786",
+          "text_sha256": "566d2184f42c366c6618a4b5d8adb55456b8f11a70a1bea26f520122e78bd35d"
+        }
+      ]
+    },
+    {
+      "report_index": 28,
+      "topic": "마우리에의 보석",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "maurrie's jewels",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [
+        "jewels"
+      ],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 29,
+      "topic": "냉기 센추리온",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "frost centurion",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 30,
+      "topic": "제국 블레이드단",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 3
+      },
+      "original": [
+        {
+          "topic": "imperial blades",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 3
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 31,
+      "topic": "아우데니안 발리우스",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 2,
+        "speaker_compatible_links": 2,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "audenian valius",
+          "source_links": 1,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "audenian valius",
+          "parent": "latest rumors",
+          "info": "65592047847565529",
+          "text_sha256": "ad096d3b31e1a9a94d8baee32de3bf93fca618910d4ec7f5ba7ea9e03e1cea08"
+        }
+      ]
+    },
+    {
+      "report_index": 32,
+      "topic": "다크 엘프 현자",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "darl elf savant",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 33,
+      "topic": "연락할 수 있다",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "can be reached",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 34,
+      "topic": "마르수스 툴리우스",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "marsus tullius",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [
+        "marsus tullius' hides"
+      ],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 35,
+      "topic": "가데인 안다리스",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 5
+      },
+      "original": [
+        {
+          "topic": "gadayn andarys",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 5
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 36,
+      "topic": "렌다의 지참금",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "renda's dower",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 37,
+      "topic": "발 우르 지역",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "bal ur region",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 38,
+      "topic": "아주라의 바보",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "azura's fool",
+          "source_links": 1,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "azura's fool",
+          "parent": "greeting 1",
+          "info": "2113134302501210239",
+          "text_sha256": "fb53f9ab4af1dabfa3ca11fdd15b34c8da63260ca0005e713ea9ee437740f083"
+        }
+      ]
+    },
+    {
+      "report_index": 39,
+      "topic": "생명 없는 자",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 2,
+        "speaker_compatible_links": 2,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "lifeless one",
+          "source_links": 2,
+          "speaker_compatible_links": 2,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "lifeless one",
+          "parent": "vampirism cure",
+          "info": "337795552873830817",
+          "text_sha256": "0eadc57ef07e6bec6af99c88b590198684b1a9a1431826708f6a33de49c506b3"
+        },
+        {
+          "topic": "lifeless one",
+          "parent": "greeting 2",
+          "info": "18401181952688331057",
+          "text_sha256": "dde1884637864f1fa03960ccba0febd31025d4123818d17a3a9816c6f2823fe9"
+        }
+      ]
+    },
+    {
+      "report_index": 40,
+      "topic": "불꽃 꽃잎",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "fire petals",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 41,
+      "topic": "앰풀 꼬투리",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "ampoule pod",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 42,
+      "topic": "피비린내 나는 거짓말",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 3
+      },
+      "original": [
+        {
+          "topic": "bloody lies",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 3
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 43,
+      "topic": "펜 마다치",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "fen madach",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 44,
+      "topic": "포자 주머니",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "spore pod",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 45,
+      "topic": "자물쇠 따개",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "lockpicks",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 46,
+      "topic": "알드메리스",
+      "verdict": "FIXED_LANGUAGE_SUFFIX",
+      "reason": "알드메리스어 6개 응답의 언어 명칭을 알드메리스로 연결해 원본과 같은 정적 진입 경로 복구.",
+      "korean": {
+        "topic": null,
+        "source_links": 6,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "aldmeris",
+          "source_links": 6,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "aldmeris",
+          "parent": "hanging gardens",
+          "info": "211354075813411933",
+          "text_sha256": "85155b016a9c740914e24d83d2f0f522d9023697378ed37a0589ae5ca2f7947d"
+        }
+      ]
+    },
+    {
+      "report_index": 47,
+      "topic": "베트머리",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "betmeri",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 48,
+      "topic": "카르팔",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "karpal",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 49,
+      "topic": "더 잦아진 애쉬랜더 습격",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "more ashlander raids",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 50,
+      "topic": "뼈늑대들",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 0,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 4
+      },
+      "original": [
+        {
+          "topic": "bonewolves",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 4
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 51,
+      "topic": "제1평의회 전쟁",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 5,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "war of the first council",
+          "source_links": 5,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 52,
+      "topic": "호타토르와 네레바린",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 3,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "hortator and nerevarine",
+          "source_links": 9,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 53,
+      "topic": "그대의 활약담",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "tales of your exploits",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 54,
+      "topic": "알아낸 것",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 3,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "what you've learned",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 55,
+      "topic": "소환마법 주문",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 2,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 7
+      },
+      "original": [
+        {
+          "topic": "conjuration spells",
+          "source_links": 2,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 7
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 56,
+      "topic": "동굴의 입",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 12
+      },
+      "original": [
+        {
+          "topic": "mouth of the cave",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 12
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 57,
+      "topic": "변화마법 주문",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 7
+      },
+      "original": [
+        {
+          "topic": "alteration spells",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 7
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 58,
+      "topic": "상업 기술",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 2,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 5
+      },
+      "original": [
+        {
+          "topic": "mercantile skills",
+          "source_links": 2,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 5
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 59,
+      "topic": "아주라의 환영",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "vision of azura",
+          "source_links": 0,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 60,
+      "topic": "선조의 유령",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 2,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "ancestor ghost",
+          "source_links": 2,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 61,
+      "topic": "폭풍 아트로나크",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 9,
+        "speaker_compatible_links": 2,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "storm atronach",
+          "source_links": 9,
+          "speaker_compatible_links": 2,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "storm atronach",
+          "parent": "atronachs",
+          "info": "7458153442470511531",
+          "text_sha256": "9d2e085b23be5d340edfa3ab43fff9802eb0f0e36ebcc0742da5ac12b9a8659f"
+        },
+        {
+          "topic": "storm atronach",
+          "parent": "atronachs",
+          "info": "29198203683166230008",
+          "text_sha256": "9d2e085b23be5d340edfa3ab43fff9802eb0f0e36ebcc0742da5ac12b9a8659f"
+        }
+      ]
+    },
+    {
+      "report_index": 62,
+      "topic": "영혼의 메아리",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "echo of souls",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 63,
+      "topic": "연인의 마음",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 1,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "lover feels",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 64,
+      "topic": "코다 꽃",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 3,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 2
+      },
+      "original": [
+        {
+          "topic": "coda flower",
+          "source_links": 3,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 2
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 65,
+      "topic": "보라르 헬라스",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 5,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 9
+      },
+      "original": [
+        {
+          "topic": "vorar helas",
+          "source_links": 6,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 9
+        }
+      ],
+      "excluded_duplicate_identity_topics": [
+        "drinar varyon"
+      ],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 66,
+      "topic": "초대",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 6,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "invitation",
+          "source_links": 10,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "invitation",
+          "parent": "greeting 1",
+          "info": "16638405123153970",
+          "text_sha256": "ec8042d1b87363ce8ff4d030257df409cf4680862e8b97e77e3f6792b762fc57"
+        }
+      ]
+    },
+    {
+      "report_index": 67,
+      "topic": "신성모독",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 6,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "blasphemy",
+          "source_links": 2,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "blasphemy",
+          "parent": "greeting 5",
+          "info": "26997135081444417433",
+          "text_sha256": "8b7dde936b3c2b1b098ee1855f81048f51eb91accbd30954056623cb378ccb5f"
+        }
+      ]
+    },
+    {
+      "report_index": 68,
+      "topic": "고난",
+      "verdict": "SAME_STATIC_LIMIT_AS_ORIGINAL",
+      "reason": "동일 주제의 원본도 이 정적 규칙에서 화자 호환 외부 링크/AddTopic 경로가 없음. 임의 퀘스트 토픽 부여나 NPC 조건 완화를 하지 않음.",
+      "korean": {
+        "topic": null,
+        "source_links": 22,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "harrowing",
+          "source_links": 1,
+          "speaker_compatible_links": 0,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": []
+    },
+    {
+      "report_index": 69,
+      "topic": "다트",
+      "verdict": "UNRELATED_ORIGINAL_COMPOUND",
+      "reason": "원본의 단 한 화자 호환 일치는 무기 다트가 아니라 Black Dart Gang이라는 조직명에 포함된 부분 문자열임.",
+      "korean": {
+        "topic": null,
+        "source_links": 18,
+        "speaker_compatible_links": 0,
+        "AddTopic": [],
+        "answers": 1
+      },
+      "original": [
+        {
+          "topic": "dart",
+          "source_links": 26,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 1
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "dart",
+          "parent": "little secret",
+          "info": "10185225361949731231",
+          "text_sha256": "fa92e6abb030c40601cd0e71fd595fd25886540273c244d821ae8ff5dd68aaea"
+        }
+      ]
+    },
+    {
+      "report_index": 70,
+      "topic": "판매",
+      "verdict": "ALREADY_HAS_CURRENT_STATIC_PATH",
+      "reason": "KR12.9에서 이미 화자 조건이 양립하는 외부 응답 또는 AddTopic 경로가 있음.",
+      "korean": {
+        "topic": null,
+        "source_links": 17,
+        "speaker_compatible_links": 1,
+        "AddTopic": [],
+        "answers": 20
+      },
+      "original": [
+        {
+          "topic": "selling off",
+          "source_links": 1,
+          "speaker_compatible_links": 1,
+          "AddTopic": [],
+          "answers": 20
+        }
+      ],
+      "excluded_duplicate_identity_topics": [],
+      "original_link_evidence": [
+        {
+          "topic": "selling off",
+          "parent": "trained scribs and rats",
+          "info": "2693718122219617829",
+          "text_sha256": "f506846730e432a40039758bf5c7096a54586a21ed840eb7753a1b4e14bb8f1f"
+        }
+      ]
+    }
+  ]
+}

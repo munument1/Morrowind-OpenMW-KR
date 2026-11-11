@@ -1,0 +1,58 @@
+{
+  "Cyr_Main-kr0.4.zip": {
+    "source_zip_sha256": "0a14e46b52948178fdb741b209127eff2d356327c0524935664f08bf8403ea08",
+    "files": {
+      "Data Files/Cyr_Main.ESM": "fe4df393e40a1cf9e635b1cdde773c5843eb14283ba0fe9f172f5cac219685e5",
+      "Data Files/Cyr_Main.cel": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa",
+      "Data Files/Cyr_Main.jrn": "879b194d0cba7a7f7ceac4579e5bc43239567de1d1ccd300db201b533cbc9b26",
+      "Data Files/Cyr_Main.mrk": "63603ec4862cd1773a09b26a059a01ccc3bf9ed01d08cba3da49396d4d604bad",
+      "Data Files/Cyr_Main.top": "cd527d06512585d2db8f3a1d52b42a1a653688ea85c30e75ac578582863b9b8b"
+    }
+  },
+  "Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.zip": {
+    "source_zip_sha256": "337e25e50f81c8c356570e052ae5a4b23235bc36ced432a08e4a955fdca6dcf3",
+    "files": {
+      "Compability Patches/Project Cyrodiil [For Rebirth].cel": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa",
+      "Compability Patches/Project Cyrodiil [For Rebirth].esm": "490e9e6d6bca994c7dc396d289c8c255a6af7b9c3f387c4b7de0ccb4b42882cf",
+      "Compability Patches/Project Cyrodiil [For Rebirth].jrn": "879b194d0cba7a7f7ceac4579e5bc43239567de1d1ccd300db201b533cbc9b26",
+      "Compability Patches/Project Cyrodiil [For Rebirth].mrk": "63603ec4862cd1773a09b26a059a01ccc3bf9ed01d08cba3da49396d4d604bad",
+      "Compability Patches/Project Cyrodiil [For Rebirth].top": "cd527d06512585d2db8f3a1d52b42a1a653688ea85c30e75ac578582863b9b8b",
+      "Compability Patches/Skyrim Home of the Nords [For Rebirth].cel": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da",
+      "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm": "0c079705725ab8c370bb34bc6669b19769bc7269865d261973aa1fd3f2b8cd8d",
+      "Compability Patches/Skyrim Home of the Nords [For Rebirth].jrn": "56cab98c14f8b43011ce3515ad8d4381915da1819b9cd45e5dae5cde7e2c8d61",
+      "Compability Patches/Skyrim Home of the Nords [For Rebirth].mrk": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42",
+      "Compability Patches/Skyrim Home of the Nords [For Rebirth].top": "6f8a662a9e71844bb14e231080ac1fa6c03476a6f22725bae3410889e7f72e0e"
+    }
+  },
+  "Sky_Main-kr0.3.zip": {
+    "source_zip_sha256": "84dc1db97235bd36bb67e97d34d36350987914e68d29da63ff6183b3deb17c0d",
+    "files": {
+      "Data Files/Sky_Main.ESM": "b34450efa727840d56cbae9cefccb262427ec7151e8f18819e4a6b35db27784b",
+      "Data Files/Sky_Main.cel": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da",
+      "Data Files/Sky_Main.jrn": "56cab98c14f8b43011ce3515ad8d4381915da1819b9cd45e5dae5cde7e2c8d61",
+      "Data Files/Sky_Main.mrk": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42",
+      "Data Files/Sky_Main.top": "6f8a662a9e71844bb14e231080ac1fa6c03476a6f22725bae3410889e7f72e0e"
+    }
+  },
+  "Tamriel_Data-kr0.4.zip": {
+    "source_zip_sha256": "20475d62d06fb3d30335e77a6be140a2df5e6d3954e983b4bd509d41b9f9c8b6",
+    "files": {
+      "Data Files/Tamriel_Data.cel": "4a9547e8361b42008cd858e77ae8f15f953e2ead44a00a1f852a0fa7c8518171",
+      "Data Files/Tamriel_Data.esm": "f2ae77f6ceb55040733b1400e79dddaf119de16d209226a2d72c5b9c7f491760",
+      "Data Files/Tamriel_Data.jrn": "d2e1396ba1cf3fd2fb7595a9d795657a16269f6856a05fb6d09c7e96031f728c",
+      "Data Files/Tamriel_Data.mrk": "fbc4989be2cfeb1072ddd35bdbb258ebf99a3940190feda231482a783a0116e7",
+      "Data Files/Tamriel_Data.top": "f3e1462373294980d08d8ac29018b190b79c87ab2b6bf36c3f1139443920c20b"
+    }
+  },
+  "TR_Mainland-kr0.4.zip": {
+    "source_zip_sha256": "2ef6f39efefdcd755220ec0196fe62ee066954eb195e10c6251c709c8c182b29",
+    "files": {
+      "Data Files/TR_Mainland.cel": "22a0e6c18d31a70c7c53b665c0597b22359e77355be0c1bbb62311c42874005a",
+      "Data Files/TR_Mainland.esm": "da66d9a324ea0565f16b9f2397212869f7dbdb2c17b6513e224ef514bd6b8790",
+      "Data Files/TR_Mainland.jrn": "362d699893f5a9ac7439476f812ae1dc9968fc0d8ea3f41e0bd5511404266482",
+      "Data Files/TR_Mainland.mrk": "632329a94f678f78c4a51dde1f42db49cd056a62d5046bbd3f4b541f8783dd2c",
+      "Data Files/TR_Mainland.top": "3df7c38b814922fe1a23e342edf1e999fe0d30e22be9741258a3fa06027a4b3f",
+      "Faction intergration/TR_Factions.esp": "5ff67415cb12023f64e9c4f6e33388c7894b07647f67a8dd288590a3449a9bbd"
+    }
+  }
+}

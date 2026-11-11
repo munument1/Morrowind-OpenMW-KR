@@ -5,10 +5,10 @@ No network, GitHub or Nexus credentials are required.
 """
 from __future__ import annotations
 
-import ast
 from pathlib import Path
 import re
 import unittest
+from package_kr13_mod_overwrites import SPECS
 
 try:
     import yaml
@@ -49,36 +49,34 @@ class NexusKR13WorkflowTests(unittest.TestCase):
         self.assertEqual(self.upload['if'], '${{ inputs.dry_run == false }}')
         self.assertEqual(self.upload['needs'], 'preflight')
 
-    def test_exact_six_owned_target_groups(self):
+    def test_exact_five_owned_groups_excluding_core_and_android(self):
         matrix = self.upload['strategy']['matrix']['include']
         observed = [(x['mod_id'], x['canonical'], x['group'], x['zip'], x['version'])
                     for x in matrix]
         expected = [
-            (60496, '429496790096', '8110335', 'Morrowind-Korean-OpenMW-0.51.0-KR13-Full.zip', '0.51.0-KR13'),
-            (60844, '429496790444', '8296179', 'TR_Mainland-kr0.4.zip', '26.09.27-kr0.4'),
-            (60845, '429496790445', '8296167', 'Tamriel_Data-kr0.4.zip', '26.08-kr0.4'),
-            (60846, '429496790446', '8296161', 'Cyr_Main-kr0.4.zip', '26.09a-kr0.4'),
-            (60847, '429496790447', '8296155', 'Sky_Main-kr0.3.zip', '26.09a-kr0.3'),
-            (60805, '429496790405', '8296377', 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.zip', '7.2-kr0.4'),
+            (60844, '429496790444', '8296179', 'TR_Mainland-kr0.4.1.zip', '26.11.2-kr0.4.1'),
+            (60845, '429496790445', '8296167', 'Tamriel_Data-kr0.4.1.zip', '26.08-kr0.4.1'),
+            (60846, '429496790446', '8296161', 'Cyr_Main-kr0.4.1.zip', '26.09a-kr0.4.1'),
+            (60847, '429496790447', '8296155', 'Sky_Main-kr0.3.1.zip', '26.09a-kr0.3.1'),
+            (60805, '429496790405', '8296377', 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip', '7.2-kr0.4.1'),
         ]
         self.assertEqual(observed, expected)
         self.assertEqual(self.upload['strategy']['max-parallel'], 2)
-        self.assertEqual(len(matrix), 6)
+        self.assertEqual(len(matrix), 5)
+        self.assertNotIn(60496, {x['mod_id'] for x in matrix})
         self.assertEqual(matrix[-1]['category'], 'optional')
         self.assertIs(matrix[-1]['primary'], False)
         self.assertIs(matrix[-1]['update_main'], False)
 
     def test_preflight_specs_match_upload_matrix(self):
-        program = inline_python(self.preflight['steps'][0]['run'])
-        tree = ast.parse(program)
-        assignment = next(x for x in tree.body if isinstance(x, ast.Assign)
-                          and any(isinstance(k, ast.Name) and k.id == 'specs' for k in x.targets))
-        specs = ast.literal_eval(assignment.value)
+        program = inline_python(next(s['run'] for s in self.preflight['steps'] if 'run' in s))
+        self.assertIn('from package_kr13_mod_overwrites import SPECS,verify_folder,PLAN', program)
+        specs = [(name, mod, str((100 << 32) + mod), group, version)
+                 for _, name, mod, group, version, _ in SPECS]
         matrix = self.upload['strategy']['matrix']['include']
         self.assertEqual(len(specs), len(matrix))
         for item, row in zip(specs, matrix):
-            self.assertEqual(item[:5], (row['zip'], row['mod_id'], row['canonical'], row['group'], row['version']))
-        self.assertEqual([x[5] for x in specs], [0, 2, 1, 1, 1, 2])
+            self.assertEqual(item, (row['zip'], row['mod_id'], row['canonical'], row['group'], row['version']))
 
     def test_inline_python_and_pinned_upload_action(self):
         for job in (self.preflight, self.upload):
@@ -92,13 +90,11 @@ class NexusKR13WorkflowTests(unittest.TestCase):
         self.assertEqual(matches[0]['if'], "steps.nexus.outputs.upload == 'true'")
         self.assertEqual(matches[0]['with']['file_id'], '${{ matrix.group }}')
 
-    def test_sha_crc_patch_only_and_owner_checks(self):
-        program = inline_python(self.preflight['steps'][0]['run'])
+    def test_full_plugin_preflight_and_owner_checks(self):
+        program = inline_python(next(s['run'] for s in self.preflight['steps'] if 'run' in s))
         for phrase in (
-            'NEXUS-PUBLICATION-PLAN.json', "'.sha256'", 'asset_shas=',
-            'file_digest', 'testzip()', 'BSDIFF40',
-            'PATCH-SHA256-MANIFEST.json', "'.esm'", "'.esp'",
-            'full_esm_esp_bsa_fonts_included',
+            'verify_folder(ROOT)', "'.sha256'", 'asset_shas=',
+            'GitHub digest mismatch', 'asset_sizes=',
             '/v1/users/validate.json', '/v3/games/morrowind/mods/',
             '/v3/mod-files/', 'member_id', 'is_active',
         ):
@@ -107,6 +103,7 @@ class NexusKR13WorkflowTests(unittest.TestCase):
         self.assertIn('sha256sum --check --status', self.source)
         self.assertIn('unzip -tq', self.source)
         self.assertIn('NEXUS_KR13_READBACK_PASS', self.source)
+        self.assertIn("actual[0]['size_in_bytes']", self.source)
 
     def test_no_automatic_publish_and_opt_in_changelog(self):
         changelog = next(x for x in self.upload['steps']

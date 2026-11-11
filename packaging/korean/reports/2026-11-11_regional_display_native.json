@@ -71,10 +71,10 @@
       "mode": "discovery",
       "INFO_checked": 117261,
       "additional_copies": 8047,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 64,
-      "gained_destinations": 3848,
+      "reviewed_subject_or_prefix_removals": 301,
+      "gained_destinations": 4043,
       "display_overlaps_still_discoverable": 0
     },
     {
@@ -82,11 +82,11 @@
       "mode": "display",
       "INFO_checked": 117261,
       "additional_copies": 8047,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 36,
-      "gained_destinations": 3694,
-      "display_overlaps_still_discoverable": 51
+      "reviewed_subject_or_prefix_removals": 229,
+      "gained_destinations": 3913,
+      "display_overlaps_still_discoverable": 55
     },
     {
       "configuration": "cyr",
@@ -137,10 +137,10 @@
       "mode": "discovery",
       "INFO_checked": 141117,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 69,
-      "gained_destinations": 5592,
+      "reviewed_subject_or_prefix_removals": 320,
+      "gained_destinations": 5780,
       "display_overlaps_still_discoverable": 0
     },
     {
@@ -148,11 +148,11 @@
       "mode": "display",
       "INFO_checked": 141117,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 45,
-      "gained_destinations": 5312,
-      "display_overlaps_still_discoverable": 150
+      "reviewed_subject_or_prefix_removals": 257,
+      "gained_destinations": 5518,
+      "display_overlaps_still_discoverable": 143
     },
     {
       "configuration": "rebirth-main",
@@ -203,10 +203,10 @@
       "mode": "discovery",
       "INFO_checked": 141806,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 72,
-      "gained_destinations": 16154,
+      "reviewed_subject_or_prefix_removals": 328,
+      "gained_destinations": 16349,
       "display_overlaps_still_discoverable": 0
     },
     {
@@ -214,21 +214,21 @@
       "mode": "display",
       "INFO_checked": 141806,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 44,
-      "gained_destinations": 15721,
-      "display_overlaps_still_discoverable": 968
+      "reviewed_subject_or_prefix_removals": 256,
+      "gained_destinations": 15940,
+      "display_overlaps_still_discoverable": 972
     },
     {
       "configuration": "all-rebirth-alternate",
       "mode": "discovery",
       "INFO_checked": 141806,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 72,
-      "gained_destinations": 16154,
+      "reviewed_subject_or_prefix_removals": 328,
+      "gained_destinations": 16349,
       "display_overlaps_still_discoverable": 0
     },
     {
@@ -236,21 +236,21 @@
       "mode": "display",
       "INFO_checked": 141806,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 44,
-      "gained_destinations": 15721,
-      "display_overlaps_still_discoverable": 968
+      "reviewed_subject_or_prefix_removals": 256,
+      "gained_destinations": 15940,
+      "display_overlaps_still_discoverable": 972
     },
     {
       "configuration": "all-pfp-rebirth",
       "mode": "discovery",
       "INFO_checked": 145342,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 83,
-      "gained_destinations": 16293,
+      "reviewed_subject_or_prefix_removals": 386,
+      "gained_destinations": 16470,
       "display_overlaps_still_discoverable": 0
     },
     {
@@ -258,16 +258,32 @@
       "mode": "display",
       "INFO_checked": 145342,
       "additional_copies": 9205,
-      "reviewed_translated_INFO": 92,
+      "reviewed_translated_INFO": 311,
       "unreviewed_link_losses": 0,
-      "reviewed_subject_or_prefix_removals": 53,
-      "gained_destinations": 15826,
-      "display_overlaps_still_discoverable": 1022
+      "reviewed_subject_or_prefix_removals": 310,
+      "gained_destinations": 16027,
+      "display_overlaps_still_discoverable": 1026
     }
   ],
   "unreviewed_losses": [],
   "pfp_included": true,
   "runner_sha256": "0cdf6563ffc5df7bd2d11a8639373a83dadba7a108534df411e8df123014adac",
   "before_runner_sha256": "b4756a58dba44d8dceea4dab37fc16a25ca158f0ddc5ed12c8a65163b87d5f36",
-  "scope": "All configured INFOs, native discovery/display and pinned translation exceptions. NPC SCVR progression is unchanged but still needs gameplay checks."
+  "scope": "All configured INFOs, native discovery/display and pinned translation exceptions. NPC SCVR progression is unchanged but still needs gameplay checks.",
+  "review_manifest_sha256": "62830264720105aff6e750931da46f7ba52e2b1e31f095e7ae62b816687c35a3",
+  "candidate_archives_sha256": {
+    "Cyr_Main-kr0.3.zip": "be7e589ad0d6257b1ce3920f32c38af51f6a6e62f736d354f0ad60738399af02",
+    "Rebirth7.2-Cyr_Sky_Compatibility-kr0.3.zip": "d9b734e24fce02f4ab398e9c1af32aed846d65c2f195fea10be1bde59e2d6d8e",
+    "Sky_Main-kr0.2.zip": "928c8372dcd5e8db393eb2e2c6b11e3143054a1aa23baed7a79681f489c44fb8",
+    "Tamriel_Data-kr0.3.zip": "8ac7b46a6376b6719d6599228e50f38a0b12689995c1f8327cfe6322c18ac938",
+    "TR_Mainland-kr0.3.zip": "e3e4746ef75cd7305dea72723f357333e37344e36fbe4d349474d4e7f625b7f8"
+  },
+  "candidate_core_sha256": {
+    "core-alias-verification.json": "5dbc1b8766378ad0589ffff0df2a3069552af15d070e07eab0c4e968116b9d12",
+    "Morrowind_Korean_ReTranslation.cel": "b339fe17c4a238db3dccbf84304a01e6dcef1acf2355d394c158a28575e59569",
+    "Morrowind_Korean_ReTranslation.esp": "9f94b1c96b10a491cec00d4931123ef1e0f52f52c6095da6b9b380eb9a617b1c",
+    "Morrowind_Korean_ReTranslation.jrn": "c032c33f25f0704765a3b70bd474af2c14b8dad61dccf362ab6082c716123a59",
+    "Morrowind_Korean_ReTranslation.mrk": "6a987060b90812631726d456c641d0067f67e8caee01fde41288c083aa143f93",
+    "Morrowind_Korean_ReTranslation.top": "928ace2d7245edd01f8085737e76d4fc6e9d1343b1477e7c5ed9eebf78cc6f0b"
+  }
 }

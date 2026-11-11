@@ -1,0 +1,12 @@
+{
+  "run_id": 42965852650,
+  "artifact_id": 13832775671,
+  "artifact_sha256": "373cbebeb0e1c520747a5e80c5a43a21ebb5b64fbae6b8c11ad59aa912ecb1ee",
+  "source_ref": "openmw-0.51.0",
+  "fork_head": "f8971943506cd1ed986b48f3a087c366afb0b7c3",
+  "exe_sha256": "c94e4fe63d59220cb8151c8bdf1449743ea4531731ff7ed1fe1a149cac7cd312",
+  "version": "OpenMW version 0.51.0\nRevision: f4bec41444\n[15:00:17.279 *] Quitting peacefully.",
+  "eligible_for_051_qa": true,
+  "target_051_gameplay_verified": false,
+  "workflow_url": "https://github.com/munument1/Morrowind-OpenMW-KR/actions/runs/42965852650"
+}

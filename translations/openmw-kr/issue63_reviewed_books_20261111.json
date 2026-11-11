@@ -1,5 +1,5 @@
 {
-  "coverage": 6,
+  "coverage": 10,
   "rows": [
     {
       "candidate_index": 30,
@@ -720,6 +720,190 @@
       ],
       "verdict": "SOURCE_REVIEWED_TRANSLATION",
       "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    },
+    {
+      "candidate_index": 53,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23386,
+      "record_id": "TR_m1_FW_College_EnrollmentLog",
+      "field": "TEXT",
+      "source_raw_sha256": "7a046fb548b3be215eb647d117256cb6e0e7cfa4788ca065605e786272953d01",
+      "book_patches": [
+        {
+          "start": 73,
+          "end": 93,
+          "source_sha256": "b8d7e66365536ddca3e1adae2ff7c9864d40dc6146c79f95b72bd6e3208bce1f",
+          "target": "파이어워치 대학"
+        },
+        {
+          "start": 98,
+          "end": 112,
+          "source_sha256": "e7bbd5cae442a704aa49473182a4e990fd421ef05254fda51430bbee88383d29",
+          "target": "등록부"
+        },
+        {
+          "start": 146,
+          "end": 156,
+          "source_sha256": "2f49198f73113f38b7ba3a54b4e079276b04a5579d411a836e485cc491b7e918",
+          "target": "연도 - 427년"
+        },
+        {
+          "start": 164,
+          "end": 220,
+          "source_sha256": "1997d53bfa5862d77fa1616c6a037675d9d9237e3683f93da3674e7f30c1ba20",
+          "target": "- 아데트 리아텔, 3학년 | 마법 기술의 혁신"
+        },
+        {
+          "start": 228,
+          "end": 285,
+          "source_sha256": "07c26cd3d10580c2176991ff0bf089cbfa52bbbbac2b42d3c97cd879a59a7cc1",
+          "target": "- 안토니우스 마쿠스, 4학년 | 근대 모로윈드 역사"
+        },
+        {
+          "start": 293,
+          "end": 341,
+          "source_sha256": "d35432b66e6c16b16864f8dc132d76d106781aaff122ca084558c4ebc64ac862",
+          "target": "- 엔디날라스, 2학년 | 연금술의 원리"
+        },
+        {
+          "start": 349,
+          "end": 405,
+          "source_sha256": "43e69a7ceaa5f8b39dc6590b43d88b1e18bd0627e191b62c7b6d7181bfbe79ca",
+          "target": "- 에리리다 벤디두스, 2학년 | 고고학적 방법론"
+        },
+        {
+          "start": 413,
+          "end": 470,
+          "source_sha256": "2b14af7426ba320d129fe59b02265ebb4eab39a23416914b49e711e6ef695919",
+          "target": "- 라딜, 2학년 | 다크 엘프 사상의 철학"
+        },
+        {
+          "start": 478,
+          "end": 535,
+          "source_sha256": "f7973f8daf87055f1cedbfb5044ed0a2ac88931a6349964b04c4dcc4594833a0",
+          "target": "- 말펙 그로헤르스그룬, 1학년 | 연금술의 원리"
+        },
+        {
+          "start": 543,
+          "end": 609,
+          "source_sha256": "a57cf01fb2f37b79e8a8fc4095564b89d283b58c9b3b0bec796fd5c2bd946ade",
+          "target": "- 마르쿠스 베넬루스, 1학년 | 다크 엘프 사상의 철학"
+        },
+        {
+          "start": 617,
+          "end": 667,
+          "source_sha256": "f2f670ca7f173b6f47e18aec453674f57e0c119b8d85d81b76e46428eccfafe6",
+          "target": "- 페라자, 1학년 | 마법 기술의 혁신"
+        },
+        {
+          "start": 675,
+          "end": 708,
+          "source_sha256": "1ec49587d59ff204d0c2d4d2d5f6d6a490d470bd75ce2490a2c50f08fbe879bc",
+          "target": "[명부는 훨씬 이전까지 이어진다.]"
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
+    },
+    {
+      "candidate_index": 54,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23388,
+      "record_id": "TR_m1_FW_College_LibChimar",
+      "field": "TEXT",
+      "source_raw_sha256": "419696a022bdb80e0c6366958cf31b162a10d312e273ef85dffa3ee8e3ff491a",
+      "book_patches": [
+        {
+          "start": 75,
+          "end": 89,
+          "source_sha256": "dfdf370eff1720eba530e72c8265df625eb3e4fe956c12cd743044407ab77b09",
+          "target": "치마르바미디움"
+        },
+        {
+          "start": 118,
+          "end": 281,
+          "source_sha256": "e10ac436d4b743f9765890d2ae0b5720faebab1e1569097bfd691858c0d5e26d",
+          "target": "아래 전시된 것은 마로바르 술이 전설적으로 전한 드워프 민담인 치마르바미디움의 희귀한 원본이다. 그 이야기는 제1평의회 전쟁 이전까지 거슬러 올라간다."
+        },
+        {
+          "start": 289,
+          "end": 407,
+          "source_sha256": "7536ae479f2665d83c64743ef80dd276a449035cf85526cfa7dc8662b05914d4",
+          "target": "방문객과 학생 여러분께서는 정교한 그림과 선을 자세히 살펴보셔도 좋으나, 유리에 얼룩이 묻지 않도록 주의해 주십시오."
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
+    },
+    {
+      "candidate_index": 55,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23394,
+      "record_id": "TR_m1_FW_College_LibNecrBooks",
+      "field": "TEXT",
+      "source_raw_sha256": "9181d5b251516a075e979bb471b1a077a1b241d9c9af2e96163546b94e06d4d3",
+      "book_patches": [
+        {
+          "start": 73,
+          "end": 90,
+          "source_sha256": "255cda3fe7fca5dabb46efcb139e9881a746081b275dbb51bd0ab407f68f4384",
+          "target": "강령술 문헌"
+        },
+        {
+          "start": 119,
+          "end": 246,
+          "source_sha256": "6aa032cd1c2844a069380de2438e72257d206f7bd72ac0b3ef39c929557f818c",
+          "target": "파이어워치 대학은 법을 준수하는 기관입니다. 따라서 도서관 탑의 강령술 문헌은 오직 이론 연구용으로만 열람할 수 있습니다."
+        },
+        {
+          "start": 254,
+          "end": 488,
+          "source_sha256": "e90814dfa04a810e20dbfc02210e8b2cc4d881a09c738b4ba784d199768c2f28",
+          "target": "감독 아래 이루어지는 학술 연구에 허용된 문헌:\r\n- \"시체 준비\" - 제1권, 제2권, 제3권\r\n- \"망자의 군단\"\r\n- \"강령술에 관하여\"\r\n\r\n교수진이 심사 중이며 아직 연구가 허용되지 않은 문헌:\r\n- \"먼지의 넷째 책\""
+        },
+        {
+          "start": 496,
+          "end": 866,
+          "source_sha256": "1c1c8621131176a2680a14c6202e059d126aafe94f86e8bba974a6d83da6404f",
+          "target": "강령술 문헌의 열람 신청은 모두 학장이 직접 승인해야 합니다. 불경한 저술 \"적, 아케이\", \"은가스타! 크바타! 크바키스!\", \"사카푸니카! 락스폰두! 크바타!\"의 연구는 대학 구내에서 금지되며, 위반 시 징계 대상이 됩니다. 벌레의 왕이나 저주받은 벌레 교단에 관한 연구는 무엇이든 즉각 퇴학 처분을 받습니다."
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
+    },
+    {
+      "candidate_index": 56,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23398,
+      "record_id": "TR_m1_FW_College_MusAnchor",
+      "field": "TEXT",
+      "source_raw_sha256": "6f17cc08bc8d867adbfcf909e82f4c20e6e3973a29eee1fa5667306960ce652a",
+      "book_patches": [
+        {
+          "start": 75,
+          "end": 104,
+          "source_sha256": "114174f7c9b69168ec7904a76341a73355314133719f8c4d5bbd05c374c4dff5",
+          "target": "진홍 폭풍호의 닻"
+        },
+        {
+          "start": 135,
+          "end": 658,
+          "source_sha256": "791ad3d858ad37c5364da6afda5f31588f407e2c1e28dad5b05a20480f80a86c",
+          "target": "아카비르 침공의 마지막 단계에서 우리엘 5세 황제의 기함이었던 TEM 진홍 폭풍호에 실려 있던 거대한 닻 두 개 중 하나이다. 갑판이 다섯 층이나 되는 이 대형 함선은 이오니스에 무사히 도착했지만, 함대가 탐리엘로 돌아오던 중 심하게 파손되어 결국 289년 초 외딴 모래톱에서 자침되었다. 기함과 함대 상당 부분의 상실은 탐리엘과 아카비르에서 겨울을 나던 군단 사이의 보급로가 흔들리게 된 주요 원인 중 하나였다."
+        },
+        {
+          "start": 666,
+          "end": 1101,
+          "source_sha256": "41d32fe73267681d9c76e904a007f07dbd867e6c74bc62254b205af7e8147e33",
+          "target": "진홍 폭풍호의 잔해는 377년 퀘이 어선의 선원들이 파도마익 대양의 외딴 모래톱에서 발견할 때까지 역사 속에 묻혀 있었다. 귀중한 정보나 유물이 유실될 것을 우려한 테마리스의 해군 주둔군은 잔해를 확보하려고 조사대를 보냈지만, 무너져 가는 선체 외에는 거의 아무것도 찾지 못했다. 닻은 이오니스 참사 100주년인 389년에 박물관이 세워질 때까지 테마리스에 보관되었다."
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
     }
   ]
 }

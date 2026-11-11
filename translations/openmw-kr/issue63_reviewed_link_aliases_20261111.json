@@ -77,7 +77,77 @@
       "용병": "mercenary",
       "계량 회관을 털": "rob the measurehall",
       "제니타르의 기적이 선사한 보물": "treasure of zenithar",
-      "흘라알루*": "흘라알루 가문"
+      "흘라알루*": "흘라알루 가문",
+      "그 그림": "painting in raran manor",
+      "프룰리우스 수다티안": "prulius sudatian",
+      "흘라알루 제7가문": "seventh hlaalu family",
+      "새 책": "new book",
+      "카인": "kyne",
+      "임무": "명령",
+      "총독": "proconsul",
+      "약제사의 도움": "서비스",
+      "약제사 일을": "서비스",
+      "모라그 통": "모락 통",
+      "제2가문": "second hlaalu family",
+      "대시장": "grand bazaar",
+      "아티레스": "athires hlaalu",
+      "사리타 흘라루": "saritha hlaalu",
+      "제1가문": "first hlaalu family",
+      "포르투나": "the fortuna",
+      "제국의 관료 조직": "imperial bureaucracy",
+      "옌니 드로스릴": "ienni drothril",
+      "일상 업무": "임무",
+      "푸나비트": "punavit",
+      "크라겐무어": "kragenmoor",
+      "교차로의 갈고리 지팡이": "crook of the crossing",
+      "세상에는 무언가 변화": "change in the world",
+      "그토록 오랫동안": "the long wait",
+      "레만": "reman",
+      "적의": "the enemy",
+      "흘라알루 회사 교환권": "hlaalu company scrip",
+      "워터스 마치": "waters march",
+      "나르시스 경비대": "narsis watch",
+      "흘라알루 대가문": "흘라알루 가문",
+      "서비스": "서비스",
+      "포르피리아성 혈우병": "porphyric hemophilia",
+      "업무*": "임무",
+      "길드 안내원": "길드 안내인",
+      "벤디치 가문": "vendicci family",
+      "제국 신앙": "제국 교단",
+      "소규모 차원의 길드 회관": "pocket guildhall",
+      "나르사라 흘라알루": "narsara hla-alu",
+      "아이스브레이커 성채": "icebreaker keep",
+      "제니타르": "제니타르",
+      "조롱박 하프": "gourd harp",
+      "벨로스의 길": "veloth's path",
+      "오드레니스": "othrenis",
+      "계약": "계약",
+      "의뢰": "계약",
+      "메팔라의 계곡": "mephalan vales",
+      "안시린": "aanthirin",
+      "라스라 여대가": "mistress rathra",
+      "텔바니 대가문": "텔바니 가문",
+      "제6가문의 거점": "제6가문 기지",
+      "전쟁 교단": "order of war",
+      "도박": "gambling",
+      "밀수": "밀수",
+      "아카비르 섭정": "akaviri potentate",
+      "제2제국": "second empire",
+      "호랑이 회관": "tiger hall",
+      "제국 해군": "imperial navy",
+      "로스 로린": "roth roryn",
+      "드루그*": "드루그",
+      "아르네시안 전쟁": "arnesian war",
+      "아직 받지 못한 주문품": "outstanding order",
+      "대마법사 이사도라": "arch-mage ysadora",
+      "직무": "임무",
+      "사방의 악신들": "네 모퉁이",
+      "보상*": "보상",
+      "보수": "보상",
+      "브리리카 사설 은행": "briricca private bank",
+      "브리리카 회사": "briricca company",
+      "분화구의 성채들": "분화구 요새",
+      "분화구 성채들": "분화구 요새"
     }
   },
   "review": [
@@ -1061,6 +1131,1732 @@
       "target_topic": "흘라알루 가문",
       "phrase": "흘라알루",
       "linked_text": "흘라알루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 729,
+      "target_topic": "painting in raran manor",
+      "phrase": "그 그림",
+      "linked_text": "그 그림",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 730,
+      "target_topic": "brevur heights",
+      "phrase": "브레부르 고지",
+      "linked_text": "브레부르 고지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 731,
+      "target_topic": "prulius sudatian",
+      "phrase": "프룰리우스 수다티안",
+      "linked_text": "프룰리우스 수다티안",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 731,
+      "target_topic": "brevur heights",
+      "phrase": "브레부르 고지",
+      "linked_text": "브레부르 고지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 736,
+      "target_topic": "seventh hlaalu family",
+      "phrase": "흘라알루 제7가문",
+      "linked_text": "흘라알루 제7가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 736,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 736,
+      "target_topic": "waterfront",
+      "phrase": "수변",
+      "linked_text": "수변",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 737,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 738,
+      "target_topic": "census and excise",
+      "phrase": "인구조사 및 세무국",
+      "linked_text": "인구조사 및 세무국",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 738,
+      "target_topic": "census",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Retain the full Census and Excise office destination, not a generic census conversation."
+    },
+    {
+      "candidate_index": 739,
+      "target_topic": "new book",
+      "phrase": "새 책",
+      "linked_text": "새 책",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 740,
+      "target_topic": "kyne",
+      "phrase": "카인",
+      "linked_text": "카인",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 744,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 745,
+      "target_topic": "명령",
+      "phrase": "임무",
+      "linked_text": "임무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 757,
+      "target_topic": "proconsul",
+      "phrase": "총독",
+      "linked_text": "총독",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 757,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 758,
+      "target_topic": "서비스",
+      "phrase": "약제사의 도움",
+      "linked_text": "약제사의 도움",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 759,
+      "target_topic": "서비스",
+      "phrase": "약제사의 도움",
+      "linked_text": "약제사의 도움",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 760,
+      "target_topic": "서비스",
+      "phrase": "약제사 일을",
+      "linked_text": "약제사 일을",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 761,
+      "target_topic": "서비스",
+      "phrase": "약제사의 도움",
+      "linked_text": "약제사의 도움",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 762,
+      "target_topic": "eight-bones temple",
+      "phrase": "여덟 뼈 성전",
+      "linked_text": "여덟 뼈 성전",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 762,
+      "target_topic": "서비스",
+      "phrase": "약제사의 도움",
+      "linked_text": "약제사의 도움",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 762,
+      "target_topic": "신전",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Prefer the exact Eight-Bones Temple destination over a generic Temple prefix."
+    },
+    {
+      "candidate_index": 763,
+      "target_topic": "서비스",
+      "phrase": "약제사의 도움",
+      "linked_text": "약제사의 도움",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스 흘라루",
+      "linked_text": "아티레스 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "모락 통",
+      "phrase": "모라그 통",
+      "linked_text": "모라그 통",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "grand bazaar",
+      "phrase": "대시장",
+      "linked_text": "대시장",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "proconsul",
+      "phrase": "총독",
+      "linked_text": "총독",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 764,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스",
+      "linked_text": "아티레스",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "grand bazaar",
+      "phrase": "대시장",
+      "linked_text": "대시장",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "proconsul",
+      "phrase": "총독",
+      "linked_text": "총독",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 765,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 766,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스 흘라루",
+      "linked_text": "아티레스 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 766,
+      "target_topic": "saritha hlaalu",
+      "phrase": "사리타 흘라루",
+      "linked_text": "사리타 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 766,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 766,
+      "target_topic": "용건",
+      "phrase": "업무",
+      "linked_text": "업무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 767,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스",
+      "linked_text": "아티레스",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 767,
+      "target_topic": "saritha hlaalu",
+      "phrase": "사리타 흘라루",
+      "linked_text": "사리타 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 767,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 767,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 772,
+      "target_topic": "tereldyn hlaalu",
+      "phrase": "테렐딘 흘라루",
+      "linked_text": "테렐딘 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 772,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 772,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 775,
+      "target_topic": "hlaalu council company",
+      "phrase": "흘라알루 평의회 회사",
+      "linked_text": "흘라알루 평의회 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 775,
+      "target_topic": "seventh hlaalu family",
+      "phrase": "흘라알루 제7가문",
+      "linked_text": "흘라알루 제7가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 775,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 775,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 775,
+      "target_topic": "세이다 닌",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This is a ship named after Seyda Neen, not the settlement itself."
+    },
+    {
+      "candidate_index": 775,
+      "target_topic": "제국",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire."
+    },
+    {
+      "candidate_index": 776,
+      "target_topic": "seventh hlaalu family",
+      "phrase": "흘라알루 제7가문",
+      "linked_text": "흘라알루 제7가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 776,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 776,
+      "target_topic": "모락 통",
+      "phrase": "모라그 통",
+      "linked_text": "모라그 통",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 776,
+      "target_topic": "the fortuna",
+      "phrase": "포르투나",
+      "linked_text": "포르투나",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 776,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 776,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 777,
+      "target_topic": "seventh hlaalu family",
+      "phrase": "흘라알루 제7가문",
+      "linked_text": "흘라알루 제7가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 777,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 777,
+      "target_topic": "모락 통",
+      "phrase": "모라그 통",
+      "linked_text": "모라그 통",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 777,
+      "target_topic": "the fortuna",
+      "phrase": "포르투나",
+      "linked_text": "포르투나",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 777,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 777,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 782,
+      "target_topic": "sixth hlaalu family",
+      "phrase": "흘라알루 제6가문",
+      "linked_text": "흘라알루 제6가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 783,
+      "target_topic": "sixth hlaalu family",
+      "phrase": "흘라알루 제6가문",
+      "linked_text": "흘라알루 제6가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 783,
+      "target_topic": "mesa exchange",
+      "phrase": "메사 거래소",
+      "linked_text": "메사 거래소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 783,
+      "target_topic": "grand bazaar",
+      "phrase": "대시장",
+      "linked_text": "대시장",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 783,
+      "target_topic": "성인들",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Hidden Saints is the proper name of a local shrine, not the core Temple saints quest conversation."
+    },
+    {
+      "candidate_index": 783,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 783,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "imperial bureaucracy",
+      "phrase": "제국의 관료 조직",
+      "linked_text": "제국의 관료 조직",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "sixth hlaalu family",
+      "phrase": "흘라알루 제6가문",
+      "linked_text": "흘라알루 제6가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "mesa exchange",
+      "phrase": "메사 거래소",
+      "linked_text": "메사 거래소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "grand bazaar",
+      "phrase": "대시장",
+      "linked_text": "대시장",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "성인들",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Hidden Saints is the proper name of a local shrine, not the core Temple saints quest conversation."
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 784,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 785,
+      "target_topic": "hlaalu council company",
+      "phrase": "흘라알루 평의회 회사",
+      "linked_text": "흘라알루 평의회 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 785,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 786,
+      "target_topic": "hlaalu council company",
+      "phrase": "흘라알루 평의회 회사",
+      "linked_text": "흘라알루 평의회 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 786,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 786,
+      "target_topic": "council",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The historical First Council is not the separate local council conversation."
+    },
+    {
+      "candidate_index": 845,
+      "target_topic": "ienni drothril",
+      "phrase": "옌니 드로스릴",
+      "linked_text": "옌니 드로스릴",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 850,
+      "target_topic": "children",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Ilvi's children are family members, not the Nord Children of the Sky lore conversation."
+    },
+    {
+      "candidate_index": 850,
+      "target_topic": "임무",
+      "phrase": "일상 업무",
+      "linked_text": "일상 업무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 852,
+      "target_topic": "punavit",
+      "phrase": "푸나비트",
+      "linked_text": "푸나비트",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 853,
+      "target_topic": "punavit",
+      "phrase": "푸나비트",
+      "linked_text": "푸나비트",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 868,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 932,
+      "target_topic": "kragenmoor",
+      "phrase": "크라겐무어",
+      "linked_text": "크라겐무어",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 935,
+      "target_topic": "crook of the crossing",
+      "phrase": "교차로의 갈고리 지팡이",
+      "linked_text": "교차로의 갈고리 지팡이",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 936,
+      "target_topic": "crook of the crossing",
+      "phrase": "교차로의 갈고리 지팡이",
+      "linked_text": "교차로의 갈고리 지팡이",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 933,
+      "target_topic": "kragenmoor",
+      "phrase": "크라겐무어",
+      "linked_text": "크라겐무어",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 938,
+      "target_topic": "hlaalu council company",
+      "phrase": "흘라알루 평의회 회사",
+      "linked_text": "흘라알루 평의회 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 938,
+      "target_topic": "seventh hlaalu family",
+      "phrase": "흘라알루 제7가문",
+      "linked_text": "흘라알루 제7가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 938,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 938,
+      "target_topic": "세이다 닌",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This is a ship named after Seyda Neen, not the settlement itself."
+    },
+    {
+      "candidate_index": 938,
+      "target_topic": "제국",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire."
+    },
+    {
+      "candidate_index": 943,
+      "target_topic": "모락 통",
+      "phrase": "모라그 통",
+      "linked_text": "모라그 통",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 944,
+      "target_topic": "change in the world",
+      "phrase": "세상에는 무언가 변화",
+      "linked_text": "세상에는 무언가 변화",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 944,
+      "target_topic": "the long wait",
+      "phrase": "그토록 오랫동안",
+      "linked_text": "그토록 오랫동안",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 944,
+      "target_topic": "reman",
+      "phrase": "레만",
+      "linked_text": "레만",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 945,
+      "target_topic": "reman",
+      "phrase": "레만",
+      "linked_text": "레만",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 945,
+      "target_topic": "the enemy",
+      "phrase": "적의",
+      "linked_text": "적의",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 949,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 949,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 951,
+      "target_topic": "hlaalu company scrip",
+      "phrase": "흘라알루 회사 교환권",
+      "linked_text": "흘라알루 회사 교환권",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 952,
+      "target_topic": "waters march",
+      "phrase": "워터스 마치",
+      "linked_text": "워터스 마치",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 953,
+      "target_topic": "waters march",
+      "phrase": "워터스 마치",
+      "linked_text": "워터스 마치",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 953,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 956,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스 흘라루",
+      "linked_text": "아티레스 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 958,
+      "target_topic": "narsis watch",
+      "phrase": "나르시스 경비대",
+      "linked_text": "나르시스 경비대",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 959,
+      "target_topic": "흘라알루 가문",
+      "phrase": "흘라알루 대가문",
+      "linked_text": "흘라알루 대가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 959,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 959,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 961,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 961,
+      "target_topic": "제국",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire."
+    },
+    {
+      "candidate_index": 962,
+      "target_topic": "서비스",
+      "phrase": "서비스",
+      "linked_text": "서비스",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 963,
+      "target_topic": "porphyric hemophilia",
+      "phrase": "포르피리아성 혈우병",
+      "linked_text": "포르피리아성 혈우병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 963,
+      "target_topic": "three days",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This describes vampirism incubation, not Dredase Devani's separate three-day rescue quest."
+    },
+    {
+      "candidate_index": 970,
+      "target_topic": "measurehall",
+      "phrase": "계량 회관",
+      "linked_text": "계량 회관",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 970,
+      "target_topic": "임무",
+      "phrase": "업무",
+      "linked_text": "업무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 973,
+      "target_topic": "길드 안내인",
+      "phrase": "길드 안내원",
+      "linked_text": "길드 안내원",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 975,
+      "target_topic": "vendicci family",
+      "phrase": "벤디치 가문",
+      "linked_text": "벤디치 가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 975,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 976,
+      "target_topic": "제국 교단",
+      "phrase": "제국 신앙",
+      "linked_text": "제국 신앙",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 976,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 979,
+      "target_topic": "pocket guildhall",
+      "phrase": "소규모 차원의 길드 회관",
+      "linked_text": "소규모 차원의 길드 회관",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 980,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 980,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 982,
+      "target_topic": "narsara hla-alu",
+      "phrase": "나르사라 흘라알루",
+      "linked_text": "나르사라 흘라알루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 982,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 983,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 983,
+      "target_topic": "흘라알루 가문",
+      "phrase": "흘라알루 대가문",
+      "linked_text": "흘라알루 대가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 983,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 983,
+      "target_topic": "second hlaalu family",
+      "phrase": "제2가문",
+      "linked_text": "제2가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 984,
+      "target_topic": "모락 통",
+      "phrase": "모라그 통",
+      "linked_text": "모라그 통",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 984,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 986,
+      "target_topic": "icebreaker keep",
+      "phrase": "아이스브레이커 성채",
+      "linked_text": "아이스브레이커 성채",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 986,
+      "target_topic": "quarters",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The commander's personal quarters are rooms, not the Anvil city districts topic."
+    },
+    {
+      "candidate_index": 987,
+      "target_topic": "hlaalu council company",
+      "phrase": "흘라알루 평의회 회사",
+      "linked_text": "흘라알루 평의회 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 987,
+      "target_topic": "sixth hlaalu family",
+      "phrase": "흘라알루 제6가문",
+      "linked_text": "흘라알루 제6가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 987,
+      "target_topic": "market quarter",
+      "phrase": "시장 구역",
+      "linked_text": "시장 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 987,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 992,
+      "target_topic": "제국 교단",
+      "phrase": "제국 신앙",
+      "linked_text": "제국 신앙",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 992,
+      "target_topic": "제니타르",
+      "phrase": "제니타르",
+      "linked_text": "제니타르",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 992,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 993,
+      "target_topic": "gourd harp",
+      "phrase": "조롱박 하프",
+      "linked_text": "조롱박 하프",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 993,
+      "target_topic": "veloth's path",
+      "phrase": "벨로스의 길",
+      "linked_text": "벨로스의 길",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 993,
+      "target_topic": "othrenis",
+      "phrase": "오드레니스",
+      "linked_text": "오드레니스",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 994,
+      "target_topic": "계약",
+      "phrase": "계약",
+      "linked_text": "계약",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 995,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 995,
+      "target_topic": "measurehall",
+      "phrase": "계량 회관",
+      "linked_text": "계량 회관",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 996,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 996,
+      "target_topic": "계약",
+      "phrase": "의뢰",
+      "linked_text": "의뢰",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 996,
+      "target_topic": "아레나",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This is Narsis Arena, not the core Vivec Arena district."
+    },
+    {
+      "candidate_index": 998,
+      "target_topic": "punavit",
+      "phrase": "푸나비트",
+      "linked_text": "푸나비트",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1000,
+      "target_topic": "제국 교단",
+      "phrase": "제국 신앙",
+      "linked_text": "제국 신앙",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1000,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1000,
+      "target_topic": "후견인",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Stendarr is the family's patron deity, not an advancement sponsor."
+    },
+    {
+      "candidate_index": 1001,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1001,
+      "target_topic": "mephalan vales",
+      "phrase": "메팔라의 계곡",
+      "linked_text": "메팔라의 계곡",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1001,
+      "target_topic": "mournhold district",
+      "phrase": "모운홀드 지구",
+      "linked_text": "모운홀드 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1001,
+      "target_topic": "aanthirin",
+      "phrase": "안시린",
+      "linked_text": "안시린",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1001,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1003,
+      "target_topic": "mistress rathra",
+      "phrase": "라스라 여대가",
+      "linked_text": "라스라 여대가",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1003,
+      "target_topic": "텔바니 가문",
+      "phrase": "텔바니 대가문",
+      "linked_text": "텔바니 대가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1004,
+      "target_topic": "sixth house amulet",
+      "phrase": "제6가문 부적",
+      "linked_text": "제6가문 부적",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 964,
+      "target_topic": "porphyric hemophilia",
+      "phrase": "포르피리아성 혈우병",
+      "linked_text": "포르피리아성 혈우병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 964,
+      "target_topic": "three days",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This describes vampirism incubation, not Dredase Devani's separate three-day rescue quest."
+    },
+    {
+      "candidate_index": 965,
+      "target_topic": "porphyric hemophilia",
+      "phrase": "포르피리아성 혈우병",
+      "linked_text": "포르피리아성 혈우병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 965,
+      "target_topic": "three days",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This describes vampirism incubation, not Dredase Devani's separate three-day rescue quest."
+    },
+    {
+      "candidate_index": 966,
+      "target_topic": "porphyric hemophilia",
+      "phrase": "포르피리아성 혈우병",
+      "linked_text": "포르피리아성 혈우병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 966,
+      "target_topic": "three days",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This describes vampirism incubation, not Dredase Devani's separate three-day rescue quest."
+    },
+    {
+      "candidate_index": 967,
+      "target_topic": "porphyric hemophilia",
+      "phrase": "포르피리아성 혈우병",
+      "linked_text": "포르피리아성 혈우병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 967,
+      "target_topic": "three days",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This describes vampirism incubation, not Dredase Devani's separate three-day rescue quest."
+    },
+    {
+      "candidate_index": 968,
+      "target_topic": "porphyric hemophilia",
+      "phrase": "포르피리아성 혈우병",
+      "linked_text": "포르피리아성 혈우병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 968,
+      "target_topic": "three days",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This describes vampirism incubation, not Dredase Devani's separate three-day rescue quest."
+    },
+    {
+      "candidate_index": 977,
+      "target_topic": "제국 교단",
+      "phrase": "제국 신앙",
+      "linked_text": "제국 신앙",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 977,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 978,
+      "target_topic": "제국 교단",
+      "phrase": "제국 신앙",
+      "linked_text": "제국 신앙",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 985,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1002,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1002,
+      "target_topic": "mephalan vales",
+      "phrase": "메팔라의 계곡",
+      "linked_text": "메팔라의 계곡",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1002,
+      "target_topic": "mournhold district",
+      "phrase": "모운홀드 지구",
+      "linked_text": "모운홀드 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1002,
+      "target_topic": "aanthirin",
+      "phrase": "안시린",
+      "linked_text": "안시린",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1002,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1005,
+      "target_topic": "제6가문 기지",
+      "phrase": "제6가문의 거점",
+      "linked_text": "제6가문의 거점",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1005,
+      "target_topic": "crusader's blessing",
+      "phrase": "성전사의 축복",
+      "linked_text": "성전사의 축복",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1007,
+      "target_topic": "order of war",
+      "phrase": "전쟁 교단",
+      "linked_text": "전쟁 교단",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1008,
+      "target_topic": "sixth house amulet",
+      "phrase": "제6가문 부적",
+      "linked_text": "제6가문 부적",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1009,
+      "target_topic": "order of war",
+      "phrase": "전쟁 교단",
+      "linked_text": "전쟁 교단",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1011,
+      "target_topic": "sixth house amulet",
+      "phrase": "제6가문 부적",
+      "linked_text": "제6가문 부적",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1014,
+      "target_topic": "ghostly figure",
+      "phrase": "유령 형상",
+      "linked_text": "유령 형상",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1015,
+      "target_topic": "gambling",
+      "phrase": "도박",
+      "linked_text": "도박",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1019,
+      "target_topic": "market quarter",
+      "phrase": "시장 구역",
+      "linked_text": "시장 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1019,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 1021,
+      "target_topic": "vunal",
+      "phrase": "부날",
+      "linked_text": "부날",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1024,
+      "target_topic": "밀수",
+      "phrase": "밀수",
+      "linked_text": "밀수",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1026,
+      "target_topic": "akaviri potentate",
+      "phrase": "아카비르 섭정",
+      "linked_text": "아카비르 섭정",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1026,
+      "target_topic": "second empire",
+      "phrase": "제2제국",
+      "linked_text": "제2제국",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1026,
+      "target_topic": "reman",
+      "phrase": "레만",
+      "linked_text": "레만",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1027,
+      "target_topic": "tiger hall",
+      "phrase": "호랑이 회관",
+      "linked_text": "호랑이 회관",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1027,
+      "target_topic": "제국 교단",
+      "phrase": "제국 신앙",
+      "linked_text": "제국 신앙",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1027,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1028,
+      "target_topic": "imperial navy",
+      "phrase": "제국 해군",
+      "linked_text": "제국 해군",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1028,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1030,
+      "target_topic": "armun ashlands",
+      "phrase": "아르문 애쉬랜드",
+      "linked_text": "아르문 애쉬랜드",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1030,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1030,
+      "target_topic": "velothis district",
+      "phrase": "벨로시스 지구",
+      "linked_text": "벨로시스 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1030,
+      "target_topic": "roth roryn",
+      "phrase": "로스 로린",
+      "linked_text": "로스 로린",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1030,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1032,
+      "target_topic": "드루그",
+      "phrase": "드루그",
+      "linked_text": "드루그",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1035,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 1037,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 1039,
+      "target_topic": "arnesian war",
+      "phrase": "아르네시안 전쟁",
+      "linked_text": "아르네시안 전쟁",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1041,
+      "target_topic": "outstanding order",
+      "phrase": "아직 받지 못한 주문품",
+      "linked_text": "아직 받지 못한 주문품",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1044,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 1045,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 1047,
+      "target_topic": "arch-mage ysadora",
+      "phrase": "대마법사 이사도라",
+      "linked_text": "대마법사 이사도라",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1047,
+      "target_topic": "vengeance",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Vengeance is part of the spell name Mhas' Vengeance, not the unrelated personal-revenge quest."
+    },
+    {
+      "candidate_index": 1048,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1049,
+      "target_topic": "eight-bones temple",
+      "phrase": "여덟 뼈 성전",
+      "linked_text": "여덟 뼈 성전",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1049,
+      "target_topic": "tereldyn hlaalu",
+      "phrase": "테렐딘 흘라루",
+      "linked_text": "테렐딘 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1049,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1049,
+      "target_topic": "신전",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Prefer the exact Eight-Bones Temple destination over a generic Temple prefix."
+    },
+    {
+      "candidate_index": 1049,
+      "target_topic": "임무",
+      "phrase": "직무",
+      "linked_text": "직무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1050,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1050,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1050,
+      "target_topic": "the catacombs",
+      "phrase": "지하묘지",
+      "linked_text": "지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1050,
+      "target_topic": "necrom",
+      "phrase": "네크롬",
+      "linked_text": "네크롬",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1051,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1051,
+      "target_topic": "first hlaalu family",
+      "phrase": "제1가문",
+      "linked_text": "제1가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1054,
+      "target_topic": "prulius sudatian",
+      "phrase": "프룰리우스 수다티안",
+      "linked_text": "프룰리우스 수다티안",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1031,
+      "target_topic": "armun ashlands",
+      "phrase": "아르문 애쉬랜드",
+      "linked_text": "아르문 애쉬랜드",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1031,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1031,
+      "target_topic": "velothis district",
+      "phrase": "벨로시스 지구",
+      "linked_text": "벨로시스 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1031,
+      "target_topic": "roth roryn",
+      "phrase": "로스 로린",
+      "linked_text": "로스 로린",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1031,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 1036,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 1038,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 727,
+      "target_topic": "네 모퉁이",
+      "phrase": "사방의 악신들",
+      "linked_text": "사방의 악신들",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 738,
+      "target_topic": "보상",
+      "phrase": "보상",
+      "linked_text": "보상",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 988,
+      "target_topic": "보상",
+      "phrase": "보수",
+      "linked_text": "보수",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 932,
+      "target_topic": "briricca private bank",
+      "phrase": "브리리카 사설 은행",
+      "linked_text": "브리리카 사설 은행",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 932,
+      "target_topic": "briricca company",
+      "phrase": "브리리카 회사",
+      "linked_text": "브리리카 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 933,
+      "target_topic": "briricca private bank",
+      "phrase": "브리리카 사설 은행",
+      "linked_text": "브리리카 사설 은행",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 933,
+      "target_topic": "briricca company",
+      "phrase": "브리리카 회사",
+      "linked_text": "브리리카 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1005,
+      "target_topic": "분화구 요새",
+      "phrase": "분화구의 성채들",
+      "linked_text": "분화구의 성채들",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1043,
+      "target_topic": "분화구 요새",
+      "phrase": "분화구 성채들",
+      "linked_text": "분화구 성채들",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1026,
+      "target_topic": "akavir",
+      "phrase": "아카비르",
+      "linked_text": "아카비르",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 1028,
+      "target_topic": "akavir",
+      "phrase": "아카비르",
+      "linked_text": "아카비르",
       "verdict": "RESTORE_REVIEWED_LINK"
     }
   ]

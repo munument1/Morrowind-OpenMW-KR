@@ -63,6 +63,9 @@ INFO 조건 지문과 실제 OpenMW KeywordSearch 결과를 함께 대조했다.
   Rebirth 지역 대체 ESM과 일반 Cyr/Sky를 동시에 활성화하지 않는다.
 - [빌드 검증](2026-11-11_issue42_reviewed_build.json),
   [구성별 원시 결과와 제거한 잘못된 목적지](2026-11-11_issue42_reviewed_native.json).
+- Windows 후보 재생성 CI 통과 후, 기존 지역 데이터 검사에서 오래된 TOP manifest 해시가
+  발견됐다. 현재 TOP의 중복·BOM·MRK/JRN 대응과 모든 데이터 검사를 먼저 확인한 뒤
+  Cyr/Sky/TD manifest의 TOP 해시와 별칭 수만 갱신했다. TOP 파일과 바이너리는 변경하지 않았다.
 
 격리된 실제 KR12.9에서 진흙게 상인을 테스트 셀에 생성했다.
 처음에는 배경만 알도록 설정한 새 캐릭터가 배경 응답을 읽은 뒤

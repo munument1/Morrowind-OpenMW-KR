@@ -8,6 +8,7 @@
 #include <iostream>
 #include <set>
 #include <stdexcept>
+#include <vector>
 
 uint32_t count(std::istream& in)
 {
@@ -39,7 +40,9 @@ int main(int argc,char** argv)
     storage.setEncoder(&encoder);
     storage.loadTranslationData(Files::Collections({std::filesystem::path(argv[3])}),"Morrowind_Korean_ReTranslation.esp");
     const bool patched = std::string_view(argv[4])=="patched";
+    const bool discovery=argc==6 && std::string_view(argv[5])=="discovery";
     std::set<std::string> known;
+    std::vector<std::string> topics;
     auto n=count(in);
     while(n--)
     {
@@ -47,9 +50,30 @@ int main(int argc,char** argv)
         // Consume the protocol's reference value, but use the actual loader result:
         // first-wins duplicate handling and BOM/line endings must match the engine.
         read(in);
+        topics.push_back(topic);
+    }
+    if(!discovery)
+        for(const auto& topic:topics)
+        {
+            const auto id=Misc::StringUtils::lowerCase(topic);
+            if(storage.canonicalTopicId(id)==id)
+            {
+                parser.seed(storage.topicKeyword(topic),id);
+                for(auto alias:storage.topicKeywordAliases(id)) parser.seed(alias,id);
+                if(patched)
+                {
+                    parser.seed(topic,id);
+                    for(auto alias:storage.journalKeywords(topic)) parser.seed(alias,id);
+                }
+            }
+        }
+    for(const auto& topic:topics)
+    {
         auto keyword=storage.topicKeyword(topic);
         auto id=Misc::StringUtils::lowerCase(topic);
-        known.insert(id);parser.seed(keyword,id);
+        known.insert(id);parser.seed(keyword,discovery ? topic : id);
+        if(discovery)
+            for(auto alias:storage.topicKeywordAliases(id)) parser.seed(alias,id);
         if(patched)
         {
             parser.seed(topic,id);
@@ -62,7 +86,6 @@ int main(int argc,char** argv)
     while(n--)
     {
         const auto source=read(in);
-        const bool discovery=argc==6 && std::string_view(argv[5])=="discovery";
         const auto text=patched && !discovery ? MWDialogue::repairLegacyKoreanTopicTags(source) : source;
         auto matches=parser.parseHyperText(text,storage,discovery);
         std::string displayed;

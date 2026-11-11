@@ -625,6 +625,19 @@ namespace MWGui
         MWBase::WindowManager& windowManager = *MWBase::Environment::get().getWindowManager();
         const Translation::Storage& translationStorage = windowManager.getTranslationDataStorage();
 
+        // Prefer a known canonical topic over its old English ID when their
+        // translated keywords coincide; retain English-only saved topics below.
+        for (const auto& keyword : mKeywords)
+        {
+            const std::string topicId = Misc::StringUtils::lowerCase(keyword);
+            if (translationStorage.canonicalTopicId(topicId) == topicId)
+            {
+                mKeywordSearch.seed(translationStorage.topicKeyword(keyword), topicId);
+                for (std::string_view alias : translationStorage.topicKeywordAliases(topicId))
+                    mKeywordSearch.seed(alias, topicId);
+            }
+        }
+
         for (const auto& keyword : mKeywords)
         {
             std::string topicId = Misc::StringUtils::lowerCase(keyword);

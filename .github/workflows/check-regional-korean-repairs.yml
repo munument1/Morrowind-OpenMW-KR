@@ -1,0 +1,79 @@
+name: Check regional Korean repairs on Windows
+on:
+  pull_request:
+    paths:
+      - apps/openmw/mwdialogue/**
+      - apps/openmw/mwgui/dialogue.cpp
+      - apps/openmw/mwgui/journalviewmodel.cpp
+      - apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+      - components/translation/**
+      - korean/patches/0017-regional-core-topic-aliases.patch
+      - packaging/korean/tooling/**
+      - translations/openmw-kr/issue63_*.json
+      - translations/openmw-kr/shared_core_topic_mapping_20261111.json
+      - .github/workflows/check-regional-korean-repairs.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-and-data:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Verify data preservation and failure guards
+        working-directory: packaging/korean/tooling
+        run: python -m unittest test_shared_default_topics test_reviewed_issue42_links test_core_topic_aliases test_shared_core_topics test_regional_core_aliases test_rebirth_sidecar_names test_reviewed_regional_display -v
+      - name: Compile actual Windows keyword parser and translation loader
+        shell: cmd
+        run: |
+          cl /nologo /std:c++20 /utf-8 /O2 /EHsc /MD /I. /Iapps\openmw\mwdialogue ^
+            packaging\korean\tooling\verify-journal-links.cpp ^
+            apps\openmw\mwdialogue\keywordsearch.cpp ^
+            components\translation\translation.cpp ^
+            components\files\collections.cpp ^
+            components\files\multidircollection.cpp ^
+            components\files\conversion.cpp ^
+            components\toutf8\toutf8.cpp ^
+            components\debug\debuglog.cpp ^
+            /Fe:openmw-kr-native-topic-auditor.exe
+          if errorlevel 1 exit /b 1
+      - name: Verify canonical discovery and saved-topic variants
+        run: |
+          python packaging/korean/tooling/test_shared_core_alias_runtime.py openmw-kr-native-topic-auditor.exe
+          python packaging/korean/tooling/test_journal_links.py openmw-kr-native-topic-auditor.exe
+          python packaging/korean/tooling/test_kr12_topic_links.py openmw-kr-native-topic-auditor.exe
+      - name: Fetch pinned published source archives
+        run: |
+          @'
+          import concurrent.futures, pathlib, sys, urllib.request
+          sys.path.insert(0, 'packaging/korean/tooling')
+          from repair_shared_default_topics import CORE, SOURCES
+          root = pathlib.Path('published')
+          root.mkdir()
+          url = 'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.9/'
+          def fetch(name):
+              urllib.request.urlretrieve(url + name, root / name)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              list(pool.map(fetch, [CORE, *SOURCES]))
+          '@ | python -
+      - name: Rebuild core link repair and reviewed regional fields
+        run: |
+          python packaging/korean/tooling/repair_reviewed_issue42_links.py --source published/Morrowind-Korean-OpenMW-0.51.0-KR12.9-Full.zip --output reviewed-core
+          python packaging/korean/tooling/build_reviewed_regional_fixes.py --source published --output candidate --core reviewed-core/Morrowind_Korean_ReTranslation.esp
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-regional-candidate
+          path: |
+            candidate/
+            openmw-kr-native-topic-auditor.exe
+          retention-days: 14
+  windows-engine:
+    uses: ./.github/workflows/windows.yml
+    with:
+      image: '2022'
+      store_runtime_executable: true

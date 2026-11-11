@@ -1,0 +1,183 @@
+diff --git a/apps/openmw/mwdialogue/dialoguemanagerimp.cpp b/apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+index 0fce9cd..e1d453d 100644
+--- a/apps/openmw/mwdialogue/dialoguemanagerimp.cpp
++++ b/apps/openmw/mwdialogue/dialoguemanagerimp.cpp
+@@ -95,7 +95,12 @@ namespace MWDialogue
+             mKeywordSearch.clear();
+ 
+             for (const ESM::Dialogue& topic : dialogue)
++            {
+                 mKeywordSearch.seed(mTranslationDataStorage.topicKeyword(topic.mStringId), topic.mStringId);
++                const std::string topicId = Misc::StringUtils::lowerCase(topic.mStringId);
++                for (std::string_view alias : mTranslationDataStorage.topicKeywordAliases(topicId))
++                    mKeywordSearch.seed(alias, topicId);
++            }
+ 
+             mKeywordSearchInitialized = true;
+         }
+diff --git a/apps/openmw/mwdialogue/keywordsearch.cpp b/apps/openmw/mwdialogue/keywordsearch.cpp
+index 1b22a90..143cfa2 100644
+--- a/apps/openmw/mwdialogue/keywordsearch.cpp
++++ b/apps/openmw/mwdialogue/keywordsearch.cpp
+@@ -348,6 +348,10 @@ namespace MWDialogue
+             }
+         }
+ 
++        if (overlaps)
++            for (Match& match : matches)
++                if (!match.mExplicit)
++                    match.mTopicId = Misc::StringUtils::lowerCase(storage.canonicalTopicId(match.mTopicId));
+         return matches;
+     }
+ 
+diff --git a/apps/openmw/mwgui/dialogue.cpp b/apps/openmw/mwgui/dialogue.cpp
+index 7f2ec6e..4ed0c20 100644
+--- a/apps/openmw/mwgui/dialogue.cpp
++++ b/apps/openmw/mwgui/dialogue.cpp
+@@ -625,6 +625,19 @@ namespace MWGui
+         MWBase::WindowManager& windowManager = *MWBase::Environment::get().getWindowManager();
+         const Translation::Storage& translationStorage = windowManager.getTranslationDataStorage();
+ 
++        // Prefer a known canonical topic over its old English ID when their
++        // translated keywords coincide; retain English-only saved topics below.
++        for (const auto& keyword : mKeywords)
++        {
++            const std::string topicId = Misc::StringUtils::lowerCase(keyword);
++            if (translationStorage.canonicalTopicId(topicId) == topicId)
++            {
++                mKeywordSearch.seed(translationStorage.topicKeyword(keyword), topicId);
++                for (std::string_view alias : translationStorage.topicKeywordAliases(topicId))
++                    mKeywordSearch.seed(alias, topicId);
++            }
++        }
++
+         for (const auto& keyword : mKeywords)
+         {
+             std::string topicId = Misc::StringUtils::lowerCase(keyword);
+diff --git a/apps/openmw/mwgui/journalviewmodel.cpp b/apps/openmw/mwgui/journalviewmodel.cpp
+index ddb209b..3c99a25 100644
+--- a/apps/openmw/mwgui/journalviewmodel.cpp
++++ b/apps/openmw/mwgui/journalviewmodel.cpp
+@@ -61,6 +61,20 @@ namespace MWGui
+                             it->second = nullptr; // Ambiguous INFO identity must not repair historical markup.
+                     }
+ 
++                for (const auto& [_, topic] : journal->getTopics())
++                {
++                    const std::string topicId = Misc::StringUtils::lowerCase(topic.getName());
++                    if (translationStorage.canonicalTopicId(topicId) == topicId)
++                    {
++                        mKeywordSearch.seed(translationStorage.topicKeyword(topic.getName()), topicId);
++                        mKeywordSearch.seed(topic.getName(), topicId);
++                        for (std::string_view alias : translationStorage.topicKeywordAliases(topicId))
++                            mKeywordSearch.seed(alias, topicId);
++                        for (std::string_view alias : translationStorage.journalKeywords(topic.getName()))
++                            mKeywordSearch.seed(alias, topicId);
++                    }
++                }
++
+                 for (const auto& [_, topic] : journal->getTopics())
+                 {
+                     const std::string topicId = Misc::StringUtils::lowerCase(topic.getName());
+diff --git a/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp b/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+index 18036e6..5f68f76 100644
+--- a/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
++++ b/apps/openmw_tests/mwdialogue/testkeywordsearch.cpp
+@@ -12,6 +12,27 @@ protected:
+     void TearDown() override {}
+ };
+ 
++TEST_F(KeywordSearchTest, regional_source_id_uses_canonical_topic_only_for_discovery)
++{
++    Translation::Storage storage;
++    storage.addPhraseForm("talos", "탈로스");
++    storage.addPhraseForm("탈로스", "다른 주제");
++    storage.addPhraseForm("english topic", "another english topic");
++    MWDialogue::KeywordSearch search;
++    search.seed("Talos", "Talos");
++    search.seed("탈로스", "탈로스");
++    const std::string text = "Talos 탈로스";
++    const auto discovery = search.parseHyperText(text, storage, true);
++    ASSERT_EQ(discovery.size(), 2);
++    EXPECT_EQ(discovery[0].mTopicId, "탈로스");
++    EXPECT_EQ(discovery[1].mTopicId, "탈로스");
++    const auto display = search.parseHyperText(text, storage);
++    ASSERT_EQ(display.size(), 2);
++    EXPECT_EQ(display[0].mTopicId, "Talos");
++    EXPECT_EQ(display[1].mTopicId, "탈로스");
++    EXPECT_EQ(storage.canonicalTopicId("english topic"), "english topic");
++}
++
+ TEST_F(KeywordSearchTest, keyword_test_conflict_resolution)
+ {
+     // test to make sure the longest keyword in a chain of conflicting keywords gets chosen
+diff --git a/components/translation/translation.cpp b/components/translation/translation.cpp
+index 5149549..4385124 100644
+--- a/components/translation/translation.cpp
++++ b/components/translation/translation.cpp
+@@ -1,8 +1,10 @@
+ #include "translation.hpp"
+ 
+ #include <fstream>
++#include <algorithm>
+ 
+ #include <components/misc/pathhelpers.hpp>
++#include <components/misc/strings/lower.hpp>
+ 
+ namespace Translation
+ {
+@@ -108,6 +110,38 @@ namespace Translation
+         return entry->second;
+     }
+ 
++    std::vector<std::string_view> Storage::topicKeywordAliases(std::string_view topicId) const
++    {
++        std::vector<std::string_view> result;
++        for (const auto& [source, keyword] : mKeywords)
++        {
++            const std::string sourceId = Misc::StringUtils::lowerCase(source);
++            if (canonicalTopicId(sourceId) == topicId)
++            {
++                if (sourceId != topicId)
++                    result.emplace_back(keyword);
++                if (std::none_of(source.begin(), source.end(), [](unsigned char c) { return c >= 0x80; })
++                    && std::any_of(keyword.begin(), keyword.end(), [](unsigned char c) { return c >= 0x80; }))
++                    result.emplace_back(source);
++            }
++        }
++        return result;
++    }
++
++    std::string_view Storage::canonicalTopicId(std::string_view topicId) const
++    {
++        const auto nonAscii = [](unsigned char c) { return c >= 0x80; };
++        if (std::any_of(topicId.begin(), topicId.end(), nonAscii))
++            return topicId;
++        const auto found = mPhraseForms.find(Misc::StringUtils::lowerCase(topicId));
++        if (found == mPhraseForms.end())
++            return topicId;
++        const std::string_view target = found->second;
++        // TOP phrase forms also contain Korean homonyms and inflections. They
++        // must not reinterpret an already canonical Korean dialogue ID.
++        return std::any_of(target.begin(), target.end(), nonAscii) ? target : topicId;
++    }
++
+     void Storage::addPhraseForm(std::string_view phrase, std::string_view topicId)
+     {
+         mPhraseForms.emplace(phrase, topicId);
+diff --git a/components/translation/translation.hpp b/components/translation/translation.hpp
+index 4da7cf8..2783249 100644
+--- a/components/translation/translation.hpp
++++ b/components/translation/translation.hpp
+@@ -22,6 +22,11 @@ namespace Translation
+         // The phrase that will act as the hyperlink for the given topic ID
+         std::string_view topicKeyword(std::string_view phrase) const;
+ 
++        // Regional English IDs may share a canonical Korean core topic.
++        std::vector<std::string_view> topicKeywordAliases(std::string_view topicId) const;
++
++        std::string_view canonicalTopicId(std::string_view topicId) const;
++
+         // Explicit, reviewed aliases for journal text, including text stored in older saves.
+         std::vector<std::string_view> journalKeywords(std::string_view topicId) const;
+ 

@@ -1,0 +1,324 @@
+name: KR13 core and five patch-only regional Nexus releases
+
+# Manual only. The existing automatic nexus-publish.yml skips releases which
+# carry NEXUS-PUBLICATION-PLAN.json, which is mandatory here.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Read-only verification and Nexus ownership/group/version preflight'
+        type: boolean
+        required: true
+        default: true
+      publish_changelog:
+        description: 'Create absent Nexus version changelogs after upload'
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+concurrency:
+  group: nexus-publish
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      asset_shas: ${{ steps.check.outputs.asset_shas }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      RELEASE_TAG: openmw-0.51.0-kr13
+    steps:
+      - name: Verify six release assets and all six owned Nexus groups before any upload
+        id: check
+        shell: bash
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          test -n "$NEXUS_KEY" || { echo '::error::NEXUSMODS_API_KEY missing'; exit 1; }
+          mkdir -p dist
+          python3 - <<'PY'
+          import hashlib, json, os, re, subprocess, urllib.request, zipfile
+          from pathlib import Path, PurePosixPath
+
+          TAG = os.environ['RELEASE_TAG']
+          REPO = os.environ['GITHUB_REPOSITORY']
+          ROOT = Path('dist')
+          specs = (
+            ('Morrowind-Korean-OpenMW-0.51.0-KR13-Full.zip',60496,'429496790096','8110335','0.51.0-KR13',0),
+            ('TR_Mainland-kr0.4.zip',60844,'429496790444','8296179','26.09.27-kr0.4',2),
+            ('Tamriel_Data-kr0.4.zip',60845,'429496790445','8296167','26.08-kr0.4',1),
+            ('Cyr_Main-kr0.4.zip',60846,'429496790446','8296161','26.09a-kr0.4',1),
+            ('Sky_Main-kr0.3.zip',60847,'429496790447','8296155','26.09a-kr0.3',1),
+            ('Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.zip',60805,'429496790405','8296377','7.2-kr0.4',2),
+          )
+          patches = {
+            'TR_Mainland-kr0.4.zip': {'patches/TR_Mainland.esm.bsdiff','patches/TR_Factions.esp.bsdiff'},
+            'Tamriel_Data-kr0.4.zip': {'patches/Tamriel_Data.esm.bsdiff'},
+            'Cyr_Main-kr0.4.zip': {'patches/Cyr_Main.ESM.bsdiff'},
+            'Sky_Main-kr0.3.zip': {'patches/Sky_Main.ESM.bsdiff'},
+            'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.zip': {
+              'patches/Rebirth_Cyrodiil.esm.bsdiff','patches/Rebirth_Skyrim.esm.bsdiff'},
+          }
+          groups = {
+            'TR_Mainland-kr0.4.zip': ('TR_Mainland',4,{'manifest-factions.json'}),
+            'Tamriel_Data-kr0.4.zip': ('Tamriel_Data',4,set()),
+            'Cyr_Main-kr0.4.zip': ('Cyr_Main',4,set()),
+            'Sky_Main-kr0.3.zip': ('Sky_Main',4,set()),
+            'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.zip': (
+              'RebirthCompat',8,{'manifest-cyrodiil.json','manifest-skyrim.json'}),
+          }
+
+          def gh(*args):
+            return json.loads(subprocess.check_output(['gh','api',*args],text=True))
+          release=gh(f'repos/{REPO}/releases/tags/{TAG}')
+          if release.get('tag_name')!=TAG or release.get('draft') or release.get('prerelease'):
+            raise SystemExit('Expected published stable KR13 release')
+          assets=release['assets']; by_name={a['name']:a for a in assets}
+          wanted={'NEXUS-PUBLICATION-PLAN.json'} | {
+            x[0] for x in specs} | {x[0]+'.sha256' for x in specs}
+          if len(by_name)!=len(assets) or not wanted.issubset(by_name):
+            raise SystemExit(f'Missing or duplicate required release assets: {wanted-set(by_name)}')
+          for name in sorted(wanted):
+            if by_name[name].get('state')!='uploaded':
+              raise SystemExit(f'Incomplete release asset: {name}')
+            subprocess.run(['gh','release','download',TAG,'--repo',REPO,
+                            '--pattern',name,'--dir',str(ROOT)],check=True)
+          plan=json.loads((ROOT/'NEXUS-PUBLICATION-PLAN.json').read_text('utf-8-sig'))
+          if plan.get('tag')!=TAG or not isinstance(plan.get('files'),list):
+            raise SystemExit('Invalid Nexus publication plan tag/files')
+          manifest={row['asset']:row for row in plan['files']}
+          if len(manifest)!=6 or len(plan['files'])!=6 or set(manifest)!={x[0] for x in specs}:
+            raise SystemExit('Nexus plan must pin exactly the six expected ZIPs')
+
+          forbidden={'.esm','.esp','.bsa','.ba2','.exe','.dll','.ttf','.otf',
+                     '.woff','.woff2','.dds','.nif'}
+          sha_map={}
+          for filename,mod,uid,gid,version,patch_count in specs:
+            item=manifest[filename]
+            if any(str(item.get(k))!=str(v) for k,v in (
+              ('mod_id',mod),('uid',uid),('group',gid),('version',version))):
+              raise SystemExit(f'Plan Nexus target/version drift: {filename}')
+            file=ROOT/filename
+            with file.open('rb') as stream:
+              digest=hashlib.file_digest(stream,'sha256').hexdigest()
+            if not re.fullmatch(r'[a-fA-F0-9]{64}',str(item.get('sha256',''))):
+              raise SystemExit(f'Plan missing exact SHA256: {filename}')
+            if digest!=item['sha256'].lower():
+              raise SystemExit(f'Plan SHA mismatch: {filename}')
+            if item.get('bytes') is not None and file.stat().st_size!=int(item['bytes']):
+              raise SystemExit(f'Plan size mismatch: {filename}')
+            if file.stat().st_size<=1000:
+              raise SystemExit(f'Unexpectedly small ZIP: {filename}')
+            lines=(ROOT/(filename+'.sha256')).read_text('utf-8-sig').splitlines()
+            checks=[re.fullmatch(r'([a-fA-F0-9]{64})\s+\*?(.+)',line) for line in lines]
+            if len(checks)!=1 or checks[0] is None or checks[0][1].lower()!=digest or checks[0][2]!=filename:
+              raise SystemExit(f'SHA sidecar missing/ambiguous/mismatched: {filename}')
+            if by_name[filename].get('digest') not in (None,'sha256:'+digest):
+              raise SystemExit(f'GitHub asset SHA mismatch: {filename}')
+            with zipfile.ZipFile(file) as z:
+              infos=z.infolist(); names=[inf.filename for inf in infos]
+              if not names or len(names)!=len(set(n.casefold() for n in names)) or z.testzip() is not None:
+                raise SystemExit(f'ZIP CRC or duplicate members: {filename}')
+              for inf in infos:
+                name=inf.filename; path=PurePosixPath(name)
+                if (inf.flag_bits&1 or not path.parts or name.startswith('/') or ':' in name
+                    or '\\' in name or '//' in name
+                    or any(x in ('.','..') for x in name.split('/'))
+                    or (patch_count and inf.is_dir())):
+                  raise SystemExit(f'Unsafe/extra ZIP member: {filename}/{name}')
+              if patch_count:
+                if any(PurePosixPath(n).suffix.lower() in forbidden for n in names):
+                  raise SystemExit(f'Original/translated ESM/ESP/BSA forbidden: {filename}')
+                prefix,n_sidecars,optionals=groups[filename]
+                sidecars={n for n in names if n.startswith('sidecars/')}
+                if len(sidecars)!=n_sidecars or any(
+                  not n.startswith('sidecars/'+prefix+'/')
+                  or PurePosixPath(n).suffix.lower() not in {'.top','.mrk','.jrn','.cel'}
+                  for n in sidecars):
+                  raise SystemExit(f'Wrong Korean sidecars: {filename}')
+                legal={'manifest.json','PATCH-SHA256-MANIFEST.json',
+                       'apply_regional_deltas.py','README_KO.md'} | patches[filename] | sidecars | optionals
+                if set(names)!=legal:
+                  raise SystemExit(f'Unexpected regional patch-only member: {filename}')
+                meta=json.loads(z.read('PATCH-SHA256-MANIFEST.json'))
+                manifest_json=json.loads(z.read('manifest.json'))
+                if (meta.get('asset')!=filename or meta.get('patch_format')!='BSDIFF40'
+                    or meta.get('full_esm_esp_bsa_fonts_included') is not False
+                    or manifest_json.get('format')!='BSDIFF40'
+                    or set(meta.get('sha256',{}))!=set(names)-{'PATCH-SHA256-MANIFEST.json'}):
+                  raise SystemExit(f'Incorrect BSDIFF40 provenance: {filename}')
+                if len(patches[filename])!=patch_count:
+                  raise SystemExit('Wrong patch count')
+                for member,member_sha in meta['sha256'].items():
+                  if hashlib.sha256(z.read(member)).hexdigest()!=member_sha:
+                    raise SystemExit(f'Patch ZIP internal SHA mismatch: {filename}/{member}')
+                if any(z.read(p)[:8]!=b'BSDIFF40' for p in patches[filename]):
+                  raise SystemExit(f'Incorrect BSDIFF40 magic: {filename}')
+              elif not {'LICENSE-GPL-3.0.txt','SOURCE-PROVENANCE.json',
+                        'THIRD-PARTY-NOTICES.txt'}.issubset(names):
+                raise SystemExit('KR13 full ZIP missing public license/source notices')
+            sha_map[filename]=digest
+            print('RELEASE_SHA_AND_CRC_PASS',filename,digest)
+
+          headers={'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json',
+                   'User-Agent':'OpenMW-KR13-Nexus-Owner-Preflight'}
+          def nexus(path):
+            req=urllib.request.Request('https://api.nexusmods.com'+path,headers=headers)
+            with urllib.request.urlopen(req,timeout=45) as response:
+              return json.load(response)
+          actor=str(nexus('/v1/users/validate.json')['user_id'])
+          outcome=[]
+          for filename,mod,uid,gid,version,_ in specs:
+            owned=nexus(f'/v1/games/morrowind/mods/{mod}.json')
+            if str(owned['user']['member_id'])!=actor or str(owned['uid'])!=uid:
+              raise SystemExit(f'Nexus actor/ownership/mod UID mismatch: {mod}')
+            if str(nexus(f'/v3/games/morrowind/mods/{mod}')['data']['id'])!=uid:
+              raise SystemExit(f'Nexus v3 canonical UID drift: {mod}')
+            file_groups=nexus(f'/v3/mods/{uid}/files')['data']['mod_files']
+            if len([x for x in file_groups if str(x['id'])==gid and x['is_active']])!=1:
+              raise SystemExit(f'Inactive/wrong Nexus group: {mod}/{gid}')
+            if mod==60496 and gid=='8257539':
+              raise SystemExit('Never update Android file group')
+            versions=nexus(f'/v3/mod-files/{gid}/versions')['data']['versions']
+            found=[x for x in versions if str(x.get('version','')).casefold()==version.casefold()]
+            if len(found)>1 or (found and str(found[0].get('category','')).casefold()=='removed'):
+              raise SystemExit(f'Duplicate/removed Nexus version requires manual review: {mod}/{version}')
+            outcome.append((mod,gid,version,'EXISTS_SKIP' if found else 'READY'))
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as output:
+            output.write('asset_shas='+json.dumps(sha_map,separators=(',',':'))+'\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a',encoding='utf-8') as output:
+            output.write('### KR13 '+('DRY RUN' if os.environ['DRY_RUN']=='true' else 'UPLOAD ARMED')+'\n')
+            output.write('Six ZIPs verified: release plan SHA, exact sidecar SHA, CRC, source/patch-only layout.\n\n')
+            for mod,gid,version,state in outcome:
+              output.write(f'- `{mod}/{gid}` `{version}`: {state}\n')
+          print('ALL_SIX_NEXUS_OWNER_AND_VERSION_PREFLIGHT_PASS',len(outcome))
+          PY
+
+  upload-owned:
+    needs: preflight
+    if: ${{ inputs.dry_run == false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - {mod_id: 60496, canonical: '429496790096', group: '8110335', zip: 'Morrowind-Korean-OpenMW-0.51.0-KR13-Full.zip', version: '0.51.0-KR13', category: main, primary: true, update_main: true, name: 'OpenMW Korean KR13 Windows'}
+          - {mod_id: 60844, canonical: '429496790444', group: '8296179', zip: 'TR_Mainland-kr0.4.zip', version: '26.09.27-kr0.4', category: main, primary: true, update_main: true, name: 'Tamriel Rebuilt 26.09.27 Korean patch kr0.4'}
+          - {mod_id: 60845, canonical: '429496790445', group: '8296167', zip: 'Tamriel_Data-kr0.4.zip', version: '26.08-kr0.4', category: main, primary: true, update_main: true, name: 'Tamriel Data 26.08 Korean patch kr0.4'}
+          - {mod_id: 60846, canonical: '429496790446', group: '8296161', zip: 'Cyr_Main-kr0.4.zip', version: '26.09a-kr0.4', category: main, primary: true, update_main: true, name: 'Project Cyrodiil 26.09a Korean patch kr0.4'}
+          - {mod_id: 60847, canonical: '429496790447', group: '8296155', zip: 'Sky_Main-kr0.3.zip', version: '26.09a-kr0.3', category: main, primary: true, update_main: true, name: 'Skyrim Home of the Nords 26.09a Korean patch kr0.3'}
+          - {mod_id: 60805, canonical: '429496790405', group: '8296377', zip: 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.zip', version: '7.2-kr0.4', category: optional, primary: false, update_main: false, name: 'Rebirth 7.2 Cyr-Sky Korean patch kr0.4'}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+      NEXUS_MOD: ${{ matrix.mod_id }}
+      NEXUS_UID: ${{ matrix.canonical }}
+      NEXUS_FILE_GROUP: ${{ matrix.group }}
+      VERSION: ${{ matrix.version }}
+      ASSET: ${{ matrix.zip }}
+      EXPECTED_SHA: ${{ fromJSON(needs.preflight.outputs.asset_shas)[matrix.zip] }}
+    steps:
+      - name: Download only SHA-pinned release ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          gh release download openmw-0.51.0-kr13 --repo "$GITHUB_REPOSITORY" --pattern "$ASSET" --dir dist
+          echo "$EXPECTED_SHA  dist/$ASSET" | sha256sum --check --status
+          unzip -tq "dist/$ASSET"
+      - name: Revalidate Nexus ownership, UID, active group and duplicate version
+        id: nexus
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request
+          uid=os.environ['NEXUS_UID'];mod=os.environ['NEXUS_MOD'];group=os.environ['NEXUS_FILE_GROUP'];version=os.environ['VERSION']
+          headers={'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json','User-Agent':'OpenMW-KR13-Nexus-Before-Upload'}
+          def get(path):
+            with urllib.request.urlopen(urllib.request.Request('https://api.nexusmods.com'+path,headers=headers),timeout=45) as r:
+              return json.load(r)
+          actor=str(get('/v1/users/validate.json')['user_id']);owned=get(f'/v1/games/morrowind/mods/{mod}.json')
+          assert str(owned['user']['member_id'])==actor and str(owned['uid'])==uid,'Wrong Nexus owner/UID'
+          assert str(get(f'/v3/games/morrowind/mods/{mod}')['data']['id'])==uid,'Canonical UID changed'
+          assert len([x for x in get(f'/v3/mods/{uid}/files')['data']['mod_files'] if str(x['id'])==group and x['is_active']])==1,'Nexus group changed'
+          assert not(mod=='60496' and group=='8257539'),'Android group forbidden'
+          versions=get(f'/v3/mod-files/{group}/versions')['data']['versions']
+          existing=[x for x in versions if str(x.get('version','')).casefold()==version.casefold()]
+          assert len(existing)<=1 and (not existing or str(existing[0].get('category','')).casefold()!='removed'),'Ambiguous/removed duplicate'
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+            out.write('upload='+str(not existing).lower()+'\n')
+          print('KR13_NEXUS_VERSION',mod,group,version,'ALREADY_EXISTS' if existing else 'UPLOAD_NEW')
+          PY
+      - name: Upload official action to verified existing Nexus file group
+        if: steps.nexus.outputs.upload == 'true'
+        uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23 # v1.0.0-beta.10
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ matrix.group }}
+          filename: dist/${{ matrix.zip }}
+          version: ${{ matrix.version }}
+          display_name: ${{ matrix.name }}
+          description: 'KR13. Regional ZIPs contain SHA-pinned BSDIFF40 patches and Korean sidecars, NOT full ESM/ESP/BSA. Users supply official upstream originals. https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr13'
+          category: ${{ matrix.category }}
+          archive_existing_version: true
+          primary_mod_manager_download: ${{ matrix.primary }}
+          update_mod_version: ${{ matrix.update_main }}
+          allow_mod_manager_download: true
+      - name: Read back exact uploaded or previously existing Nexus file version
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,os,time,urllib.request
+          mod=os.environ['NEXUS_MOD'];uid=os.environ['NEXUS_UID'];group=os.environ['NEXUS_FILE_GROUP'];version=os.environ['VERSION']
+          headers={'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json','User-Agent':'OpenMW-KR13-Nexus-Readback'}
+          for attempt in range(12):
+            request=urllib.request.Request('https://api.nexusmods.com/v3/mod-files/'+group+'/versions',headers=headers)
+            with urllib.request.urlopen(request,timeout=45) as r:
+              versions=json.load(r)['data']['versions']
+            matches=[x for x in versions if str(x.get('version','')).casefold()==version.casefold()
+                     and str(x.get('category','')).casefold()!='removed']
+            if len(matches)==1:
+              record={'mod_id':mod,'uid':uid,'group':group,'version':version,
+                      'file_version_id':str(matches[0].get('id')),
+                      'game_scoped_file_id':matches[0].get('game_scoped_id'),
+                      'asset':os.environ['ASSET'],'sha256':os.environ['EXPECTED_SHA']}
+              with open('nexus-publication.json','w',encoding='utf-8') as out:
+                json.dump(record,out,ensure_ascii=False,indent=2)
+              print('NEXUS_KR13_READBACK_PASS',json.dumps(record));break
+            if len(matches)>1 or attempt==11:
+              raise SystemExit('Nexus group readback did not show exactly one target version')
+            time.sleep(8)
+          PY
+      - name: Optionally create a missing Nexus version changelog
+        if: ${{ inputs.publish_changelog == true }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request
+          mod=os.environ['NEXUS_MOD'];uid=os.environ['NEXUS_UID'];version=os.environ['VERSION']
+          h={'apikey':os.environ['NEXUS_KEY'],'Accept':'application/json',
+             'Content-Type':'application/json','User-Agent':'OpenMW-KR13-Changelog'}
+          def api(path,data=None):
+            body=json.dumps(data).encode() if data is not None else None
+            req=urllib.request.Request('https://api.nexusmods.com'+path,headers=h,data=body)
+            with urllib.request.urlopen(req,timeout=45) as r:return json.load(r)
+          logs=api(f'/v1/games/morrowind/mods/{mod}/changelogs.json')
+          if not any(str(k).casefold()==version.casefold() for k in logs):
+            note=('KR13 Korean update. Regional archives contain BSDIFF40 patches/sidecars only; '
+                  'no full upstream ESM/ESP files. Official originals and exact SHA256 required. '
+                  'https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr13')
+            api(f'/v3/mods/{uid}/changelogs',{'version':version,'changelog':note})
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nexus-kr13-${{ matrix.group }}
+          path: nexus-publication.json
+          retention-days: 30

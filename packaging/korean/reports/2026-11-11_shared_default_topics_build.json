@@ -1,0 +1,349 @@
+{
+  "shared_topics": {
+    "background": "배경",
+    "latest rumors": "최근 소문",
+    "little secret": "작은 비밀",
+    "little advice": "작은 조언",
+    "my trade": "내 직업",
+    "services": "서비스",
+    "someone in particular": "특정 인물",
+    "specific place": "특정 장소"
+  },
+  "archives": {
+    "Tamriel_Data-kr0.3.zip": {
+      "source_sha256": "db1069dc172333c7cfa45fe0ec654c12f022da5fef17d8252f40d68bfa11c608",
+      "changes": {
+        "Data Files/Tamriel_Data.esm": {
+          "sha256_before": "ba03d14459fc6a3c5426a573e4ab64aeb580803dbaf1fbfb3fdc532a973ef078",
+          "sha256_after": "5fbc4bb2be3cb1fd20d64504ec3aa19332f2a6870580a400f57322264d3c3070",
+          "topics": [
+            {
+              "source_topic": "Background",
+              "korean_topic": "배경",
+              "copied_infos": 28,
+              "source_block_sha256": "b73d390cde98eabc6239f7bdbee0f019a7a5dd314c00175a412a57dba9cab1f0"
+            },
+            {
+              "source_topic": "little advice",
+              "korean_topic": "작은 조언",
+              "copied_infos": 19,
+              "source_block_sha256": "aa94c9591554e0b850701001ef9b03913b84de023bb962c24970d3e703d03985"
+            },
+            {
+              "source_topic": "little secret",
+              "korean_topic": "작은 비밀",
+              "copied_infos": 8,
+              "source_block_sha256": "5ed9d8e65e0aa876ad4131969cbc255531658ffe0f054d1dd884cb389eba35ec"
+            },
+            {
+              "source_topic": "my trade",
+              "korean_topic": "내 직업",
+              "copied_infos": 96,
+              "source_block_sha256": "195357f04d8aac983deaf705da4adaf4f9e8d1a2942f987146ad06ca124fc2e8"
+            }
+          ]
+        }
+      },
+      "candidate_sha256": "64cc60ebfa229aa6c0090935acedb08cbcb7819eb11816cc60ba18c9f653d13c"
+    },
+    "TR_Mainland-kr0.3.zip": {
+      "source_sha256": "8221998908f06516c5f2c4f0600b2394d1820760d0f3af2e1ebc6256790083ee",
+      "changes": {
+        "Data Files/TR_Mainland.esm": {
+          "sha256_before": "cdd723a9b58d0d47e8ff538ccd4731a7af05c88b67de951ca205c4370a914773",
+          "sha256_after": "253a7904743375af1fd6429f7760ead6a5a9ad3ad0c2ed8709337f35af3b2a9f",
+          "topics": [
+            {
+              "source_topic": "someone in particular",
+              "korean_topic": "특정 인물",
+              "copied_infos": 701,
+              "source_block_sha256": "ee8ad9b1986570e61bb14700098fe92e156630509552d796ee2277c57fd3434f"
+            },
+            {
+              "source_topic": "specific place",
+              "korean_topic": "특정 장소",
+              "copied_infos": 396,
+              "source_block_sha256": "fcd7171a2abebbd6f16093eef6ee35ba71eb3ead9114a19714f976e3f995ded2"
+            },
+            {
+              "source_topic": "little advice",
+              "korean_topic": "작은 조언",
+              "copied_infos": 723,
+              "source_block_sha256": "576c80a8eedaf0b76c438ef26b93d3081851677ab6c4746dfc319b189c1dc865"
+            },
+            {
+              "source_topic": "little secret",
+              "korean_topic": "작은 비밀",
+              "copied_infos": 684,
+              "source_block_sha256": "a584ae7fe0441c8f8c887bda0fb8a7733ce199a8dda04a3cd99e8cc7113274b8"
+            },
+            {
+              "source_topic": "latest rumors",
+              "korean_topic": "최근 소문",
+              "copied_infos": 1682,
+              "source_block_sha256": "7362f8aec5b90053dde7578140aec66523818c1c4052012dae0899dd2092b8fc"
+            },
+            {
+              "source_topic": "Background",
+              "korean_topic": "배경",
+              "copied_infos": 2134,
+              "source_block_sha256": "01610228bd3fb0bacc798c291fee9c857c7bfbe3383835822250f586072dbc31"
+            },
+            {
+              "source_topic": "my trade",
+              "korean_topic": "내 직업",
+              "copied_infos": 911,
+              "source_block_sha256": "2833abe53509ca8ae4002da216f89fae407fce27bcb85406d3ba81decc5a2593"
+            },
+            {
+              "source_topic": "Services",
+              "korean_topic": "서비스",
+              "copied_infos": 607,
+              "source_block_sha256": "9ab3171649c0894b6ac885e3614638d3980f6fa15eb073509d497f1dca66cdd8"
+            }
+          ]
+        }
+      },
+      "candidate_sha256": "c2cab5704d5b82b129730532eb15bfe1f9c02468e8ffac6011e983df1d9d7bec"
+    },
+    "Cyr_Main-kr0.3.zip": {
+      "source_sha256": "efdf9d215d207cecc94b624db6d34d57941dd4bd6fa8be0c8f26e448fd865531",
+      "changes": {
+        "Data Files/Cyr_Main.ESM": {
+          "sha256_before": "8c836c8c86a9c7da77c058bafeb6ccd361d3726ff65e779ede739cfe7f4bfe9b",
+          "sha256_after": "8a976ff7d717e2275a0066e7699c6bebafb51bbb70caa11c4b90bd7283596ee6",
+          "topics": [
+            {
+              "source_topic": "Background",
+              "korean_topic": "배경",
+              "copied_infos": 620,
+              "source_block_sha256": "d6ba8e167c71518a61cdf25b5d7ab88df72af72af9a7c930f798d6e3eeda15a9"
+            },
+            {
+              "source_topic": "Services",
+              "korean_topic": "서비스",
+              "copied_infos": 143,
+              "source_block_sha256": "759a0971caf145d123c7ff4bb9440d99d73bf2ae30886f70f87100a6fea67ca0"
+            },
+            {
+              "source_topic": "latest rumors",
+              "korean_topic": "최근 소문",
+              "copied_infos": 337,
+              "source_block_sha256": "2fc6559d8e3423272265ad11bbacb301495211456acf99c00558feecb755efe2"
+            },
+            {
+              "source_topic": "little advice",
+              "korean_topic": "작은 조언",
+              "copied_infos": 141,
+              "source_block_sha256": "591b035358153721f3350a10d5d8a3be50514630225da0476c67473d74b7756c"
+            },
+            {
+              "source_topic": "little secret",
+              "korean_topic": "작은 비밀",
+              "copied_infos": 165,
+              "source_block_sha256": "044275072252df29b933a803e60f5abeb7680ab0d34524fa76b5654e4b0050f6"
+            },
+            {
+              "source_topic": "my trade",
+              "korean_topic": "내 직업",
+              "copied_infos": 199,
+              "source_block_sha256": "814db8a0575653993a6817fa7664fcdb3b313a27ebdd9767606b97dab7ab69e7"
+            },
+            {
+              "source_topic": "someone in particular",
+              "korean_topic": "특정 인물",
+              "copied_infos": 131,
+              "source_block_sha256": "d2d1e3d677dca556a85a72671c13c24dd031444a6c739c16aec6456d22a36b12"
+            },
+            {
+              "source_topic": "specific place",
+              "korean_topic": "특정 장소",
+              "copied_infos": 121,
+              "source_block_sha256": "0c42ae4bff48b5ff827a796080560a1e7213a62a54da84e284ccd746eec03fa2"
+            }
+          ]
+        }
+      },
+      "candidate_sha256": "e3beef51b758a8730c376d783425ecd69f7c7c7982b039d2d68f711d29b99351"
+    },
+    "Sky_Main-kr0.2.zip": {
+      "source_sha256": "6c9c4b947295f3bb1c7b4df0433b202286ad9c9196c275f7d65c46515d157b77",
+      "changes": {
+        "Data Files/Sky_Main.ESM": {
+          "sha256_before": "12c74a5026966eb8d5e1e03977076cb784c02d4363c724743a9fa698312a594b",
+          "sha256_after": "04245854c9e40a2f5c85c5c7e7c0e51149c425ec86c5c8319b4e71e169944afd",
+          "topics": [
+            {
+              "source_topic": "Background",
+              "korean_topic": "배경",
+              "copied_infos": 178,
+              "source_block_sha256": "999a0b7b58ab96eb6bb8404f363d5f4812c749d2508b260c64dacf2a293a6fdb"
+            },
+            {
+              "source_topic": "Services",
+              "korean_topic": "서비스",
+              "copied_infos": 9,
+              "source_block_sha256": "eb97e918395d16b30ea20f7b3266e35c5dd125a51873fc4ea5ba3c7dea7953f5"
+            },
+            {
+              "source_topic": "latest rumors",
+              "korean_topic": "최근 소문",
+              "copied_infos": 125,
+              "source_block_sha256": "9159d43f4a38fcf175cdcf2733474149f685928ad6bb5c410baaf3aaa96032b9"
+            },
+            {
+              "source_topic": "little advice",
+              "korean_topic": "작은 조언",
+              "copied_infos": 126,
+              "source_block_sha256": "6134a195d42137bfb72885e86efb0adeedc0086483df811140f0af1236332682"
+            },
+            {
+              "source_topic": "little secret",
+              "korean_topic": "작은 비밀",
+              "copied_infos": 91,
+              "source_block_sha256": "54480eedf9f0fc23506c1f966435598cb7b1af2221911a1cd58afc2e96e7c573"
+            },
+            {
+              "source_topic": "my trade",
+              "korean_topic": "내 직업",
+              "copied_infos": 70,
+              "source_block_sha256": "e9866686f75ac34d515c35859be0b18243725bb7a0b9d4134581931729aa36a8"
+            },
+            {
+              "source_topic": "someone in particular",
+              "korean_topic": "특정 인물",
+              "copied_infos": 11,
+              "source_block_sha256": "f5144a05838c93ea8b6642c469e4f7d4f79c6d1f352143b570dccaf986ee1dae"
+            },
+            {
+              "source_topic": "specific place",
+              "korean_topic": "특정 장소",
+              "copied_infos": 9,
+              "source_block_sha256": "d2166fe18cbc015ac573c5fd07690cbbf7bd4f9ed1743c0bc20620d8590861d4"
+            }
+          ]
+        }
+      },
+      "candidate_sha256": "d31139237ff181d04a19cc02aca83abe8de5901714b268719952095889e9ed9b"
+    },
+    "Rebirth7.2-Cyr_Sky_Compatibility-kr0.3.zip": {
+      "source_sha256": "e4de18d5de7f2aed2e6a436ec1c0aae0189e3ae6b697c0a4fd10d31033e19cba",
+      "changes": {
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm": {
+          "sha256_before": "b5fbfca6deaf26193bc1a79431b982e1c7a2885dcf19327707b3488725e8d1ef",
+          "sha256_after": "1c522a2404879ebca1ea513dfdf47858b959f10be22145d96d47448074f94a56",
+          "topics": [
+            {
+              "source_topic": "someone in particular",
+              "korean_topic": "특정 인물",
+              "copied_infos": 131,
+              "source_block_sha256": "bd11e56279a37f28021f657d493a323783501920261080a83d517e5b506b4c34"
+            },
+            {
+              "source_topic": "specific place",
+              "korean_topic": "특정 장소",
+              "copied_infos": 121,
+              "source_block_sha256": "2cf184babf88d18a49ba201280b3ac74df7770732686c9a34a9133184b202ca3"
+            },
+            {
+              "source_topic": "little advice",
+              "korean_topic": "작은 조언",
+              "copied_infos": 141,
+              "source_block_sha256": "ade006eef7ef4105463dedf2bb24b83d6af88979f0f13fa9c942f9215344f3ff"
+            },
+            {
+              "source_topic": "little secret",
+              "korean_topic": "작은 비밀",
+              "copied_infos": 165,
+              "source_block_sha256": "2be081d47a412e8a0d421582b22c46eac36d6165acec7c0462f77949c983dfcd"
+            },
+            {
+              "source_topic": "latest rumors",
+              "korean_topic": "최근 소문",
+              "copied_infos": 337,
+              "source_block_sha256": "2498cb9e413afed5919abc10502e8f2214bff3f40b2f85e71653c3b3e066ff31"
+            },
+            {
+              "source_topic": "Background",
+              "korean_topic": "배경",
+              "copied_infos": 620,
+              "source_block_sha256": "2ead34c0f78cecbc8775f65245b62983f9c4d0d19becdc1c241a310237280b40"
+            },
+            {
+              "source_topic": "my trade",
+              "korean_topic": "내 직업",
+              "copied_infos": 199,
+              "source_block_sha256": "c5e84273ba50381bcc5a893bd8cf77899e5451556ccb6ede537bd8ad81ad2fba"
+            },
+            {
+              "source_topic": "Services",
+              "korean_topic": "서비스",
+              "copied_infos": 143,
+              "source_block_sha256": "5a5cf8dbddb6f856bc5a6989a88cc7e9ddb4549d692e22fb15a150c415a292c8"
+            }
+          ]
+        },
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm": {
+          "sha256_before": "a81e29ef11cea08cb45fe9bac4fec8f1d089cdd53c61d7f2f00819e99f53650f",
+          "sha256_after": "fe60a5ff7fe3c0473e1de2b4cfec8c47fb1b76cb698efca0aff5e942e5806324",
+          "topics": [
+            {
+              "source_topic": "someone in particular",
+              "korean_topic": "특정 인물",
+              "copied_infos": 11,
+              "source_block_sha256": "192be01f38e352ff15e3591c8640c52c8e9481f9ceff585db472a420163998fc"
+            },
+            {
+              "source_topic": "specific place",
+              "korean_topic": "특정 장소",
+              "copied_infos": 9,
+              "source_block_sha256": "f7272183cc9bfadffac1c80b4893e9ff5d00cfd44e1f348e8b9696480a78de04"
+            },
+            {
+              "source_topic": "little advice",
+              "korean_topic": "작은 조언",
+              "copied_infos": 126,
+              "source_block_sha256": "bc16dbf8bb3bee57433d085c685a64d1a794d3c663aa7b46750e516b326199ae"
+            },
+            {
+              "source_topic": "little secret",
+              "korean_topic": "작은 비밀",
+              "copied_infos": 91,
+              "source_block_sha256": "be613e36c5ba0b2a529f670ef0d178c7440db18852394034a217e03caf933894"
+            },
+            {
+              "source_topic": "latest rumors",
+              "korean_topic": "최근 소문",
+              "copied_infos": 125,
+              "source_block_sha256": "b4bcdaa56703a8a18f9ec00058e089322ffd12e197054f9329e0055037461073"
+            },
+            {
+              "source_topic": "Background",
+              "korean_topic": "배경",
+              "copied_infos": 178,
+              "source_block_sha256": "697a3fcbdb03352572e387fc2f129337b622653e292253797e4c358571534af7"
+            },
+            {
+              "source_topic": "my trade",
+              "korean_topic": "내 직업",
+              "copied_infos": 70,
+              "source_block_sha256": "978571f456e0cd99eae048218ffdacd60b5914b8d7e3c475c9a50517c1247f69"
+            },
+            {
+              "source_topic": "Services",
+              "korean_topic": "서비스",
+              "copied_infos": 9,
+              "source_block_sha256": "4087c721a53c58afc4a654fa02aeb44c2839c007c29679e66ae5789507a63593"
+            }
+          ]
+        }
+      },
+      "candidate_sha256": "14b0c9a361cb38a853c72e8547183ea73bedc1d687d7cea3b9e4f2bf7f6f70b2"
+    }
+  },
+  "published": false,
+  "engine_changed": false,
+  "additional_plugins": 0,
+  "original_records_preserved": true,
+  "sidecars_preserved": true
+}

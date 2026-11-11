@@ -1,0 +1,131 @@
+{
+  "configurations": [
+    {
+      "label": "core",
+      "before_infos": 25794,
+      "after_infos": 25794,
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "core-pfp",
+      "before_infos": 29350,
+      "after_infos": 29350,
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "tamriel-data",
+      "before_infos": 28092,
+      "after_infos": 28243,
+      "copied_responses_checked": 151,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "tr",
+      "before_infos": 101225,
+      "after_infos": 109214,
+      "copied_responses_checked": 7989,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "cyr",
+      "before_infos": 41551,
+      "after_infos": 43559,
+      "copied_responses_checked": 2008,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "sky",
+      "before_infos": 34855,
+      "after_infos": 35625,
+      "copied_responses_checked": 770,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-regions",
+      "before_infos": 121447,
+      "after_infos": 131912,
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "rebirth-main",
+      "before_infos": 26484,
+      "after_infos": 26484,
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "rebirth-alternate",
+      "before_infos": 26484,
+      "after_infos": 26484,
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-rebirth-main",
+      "before_infos": 122137,
+      "after_infos": 132602,
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-rebirth-alternate",
+      "before_infos": 122137,
+      "after_infos": 132602,
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-pfp-rebirth",
+      "before_infos": 125673,
+      "after_infos": 136138,
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    }
+  ],
+  "pfp_included": true,
+  "master_sha256": {
+    "Morrowind.esm": "5c3c8c2cbd20e25901b59b3ece33d36b7ef0e3d60ad8d11828bcc61a5ead1647",
+    "Tribunal.esm": "2ace511f23cc2a9ddd5f3aa59c7919789b9378cf4b17c8ae3375dd6b782f3f2b",
+    "Bloodmoon.esm": "bd27090d0e6ad4c1bf1abc83f1a2dac56fcc82cae7bfe8263c413fb301801357"
+  },
+  "scope": "Physical preservation and native keyword parsing; NPC eligibility and gameplay require the separate game test."
+}

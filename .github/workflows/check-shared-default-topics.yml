@@ -1,0 +1,43 @@
+name: Check regional Korean shared topics
+on:
+  pull_request:
+    paths:
+      - packaging/korean/tooling/repair_shared_default_topics.py
+      - packaging/korean/tooling/test_shared_default_topics.py
+      - packaging/korean/tooling/verify_shared_default_topics.py
+      - .github/workflows/check-shared-default-topics.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check preservation and failure guards
+        run: python -m unittest discover -s packaging/korean/tooling -p test_shared_default_topics.py -v
+      - name: Fetch pinned published inputs
+        run: |
+          python - <<'PY'
+          import concurrent.futures
+          import pathlib
+          import sys
+          import urllib.request
+          sys.path.insert(0, 'packaging/korean/tooling')
+          from repair_shared_default_topics import CORE, SOURCES
+          root = pathlib.Path('source')
+          root.mkdir()
+          url = 'https://github.com/munument1/Morrowind-OpenMW-KR/releases/download/openmw-0.51.0-kr12.9/'
+          def fetch(name):
+              urllib.request.urlretrieve(url + name, root / name)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              list(pool.map(fetch, [CORE, *SOURCES]))
+          PY
+      - name: Build data copies and verify every original record and ZIP entry
+        run: python packaging/korean/tooling/repair_shared_default_topics.py --source source --output candidate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue66-shared-topic-candidates
+          path: candidate/
+          retention-days: 14

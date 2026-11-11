@@ -1,0 +1,725 @@
+{
+  "coverage": 6,
+  "rows": [
+    {
+      "candidate_index": 30,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23263,
+      "record_id": "TR_M1_Q66_GHT_Ra1_Report",
+      "field": "TEXT",
+      "source_raw_sha256": "7a56d068d43ba47a831921a3a26b239e183743dd80e8b2c49d9a556c992d8320",
+      "book_patches": [
+        {
+          "start": 506,
+          "end": 563,
+          "source_sha256": "ebe2e918300ad00d1700a5f9fe75f7984104ceaeb09ec763ce2f6e7ead48b026",
+          "target": "[보고서는 이와 비슷한 암호로 한동안 계속된다.]"
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    },
+    {
+      "candidate_index": 39,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23322,
+      "record_id": "TR_bk_obituary_i2-428-Tri",
+      "field": "TEXT",
+      "source_raw_sha256": "741ce3f5f523c74b1532699421b07164e4896b61c33ab8c9c7c2893ff7820974",
+      "book_patches": [
+        {
+          "start": 75,
+          "end": 119,
+          "source_sha256": "a9f9a0786e6bb5c89b697c045bc406df702247fca97418938f8e14f161dc93bb",
+          "target": "제1평의회 전쟁의 위대한 영웅들"
+        },
+        {
+          "start": 157,
+          "end": 180,
+          "source_sha256": "8641d96620c1d9d47b252703dc6492518cc8029f30039fdc6bc7171659625a10",
+          "target": "파린 바라스 편찬"
+        },
+        {
+          "start": 192,
+          "end": 587,
+          "source_sha256": "679741084f49fbf932b901c3b47917c4fdec7fd6abfc3207f5e68b9281397884",
+          "target": "이 책은 제1평의회 전쟁의 영웅들을 기록하려는 보잘것없는 시도에 지나지 않는다. 영웅들은 그토록 많고, 가슴을 울리는 업적도 무수하니 그 모두를 적으려면 이번 시대는 물론 다음 시대까지 걸릴 것이다. 그들은 오랫동안 이어 온 전통에 헌신하여 우리 역사상 가장 위대한 승리를 거두었다. 그들의 희생 덕분에 우리 민족과 신앙은 오늘날까지 번영하고 있다."
+        },
+        {
+          "start": 605,
+          "end": 625,
+          "source_sha256": "bcbf6c45abe562ec240ac4cfad351322c06610268b7a3bf76a0e156178325961",
+          "target": "인도릴 네레바르 경"
+        },
+        {
+          "start": 636,
+          "end": 1465,
+          "source_sha256": "638a67c85a728a490e8453b07ffacbf0858669efb19fbdf932cc47d279bbf8fb",
+          "target": "우리 민족 역사상 가장 위대한 전쟁 지도자인 그는 노드 침략자들을 물리치고 모로윈드를 평화와 번영의 황금기로 이끌었다. 그러나 그가 맺은 동맹은 영원할 운명이 아니었다. 가문들은 결국 다섯 정통 가문인 인도릴, 드레스, 레도란, 텔바니, 흘라알루와 두 세속 가문인 드웨머, 다고스로 나뉘었다. 세속 가문들의 불경한 행위는 너무나 위험하고 해로워 벨로스의 땅에 그대로 둘 수 없다는 사실이 곧 분명해졌다. 호타토르인 네레바르는 알름시비의 깃발 아래 백성들을 모아 붉은 산 전투에서 신성모독자들을 쓰러뜨렸다. 그는 더럽고 음흉한 세속 가문 지도자들을 신성한 고향에서 직접 몰아냈으며, 그 과정에서 백성들에게 구원을 가져다주고자 목숨을 바쳤다."
+        },
+        {
+          "start": 1474,
+          "end": 1499,
+          "source_sha256": "a7d5bb1d8efdbd0b5b82a583c619e48bd03719c87e2a6139dc9952830019f708",
+          "target": "대전쟁의 장군들"
+        },
+        {
+          "start": 1507,
+          "end": 2209,
+          "source_sha256": "a63c0027da30037a0e079f1d91d5fe0806418af722e14bb3c601c2e4f22ba244",
+          "target": "인도릴-트리피스 장군 - 인도릴 군대의 용맹한 장군 트리피스는 네레바르 곁에서 싸웠다. 그의 용맹한 업적은 모든 신실한 던머의 귀감이 되어야 한다. 순수한 던머 국가에 헌신한 그는 직접 나서서 모로윈드에서 반역자 다고스 가문의 오점을 지워 버렸다. 처음에는 그 구성원들을 모두 학살하려 했으나, 마음을 바꾸어 제6가문의 어린 구성원들을 살려 주는 큰 자비를 베풀었다. 그 뒤에도 트리피스는 고른 섬에서 평화롭게 숨을 거두는 날까지 백성과 트리뷰널을 성실하게 섬겼다. 그의 영혼은 지금도 바덴펠의 거대한 고스트펜스에 힘을 보태며, 죽어서까지 사랑하는 고향을 지키고 있다."
+        },
+        {
+          "start": 2222,
+          "end": 2645,
+          "source_sha256": "9bc89abbfc8e0b93541422b3cf2b95bba9ec82ce0b8b5fc6888a7268d9b1220c",
+          "target": "레도란-보릴 장군 - 인도릴과 나란히 자신의 가문 전사들을 이끈 용감하고 씩씩한 지도자였다. 노드 야만인들에게서 모로윈드 서부를 지킨 뒤에는 붉은 산에서 레도란 군대를 이끌었다. 보릴은 40년 뒤 병으로 세상을 떠났으나, 그 40년을 레도란의 땅에서 신전을 굳건히 하는 데 바쳤다. 그 헌신 덕분에 그의 가문은 언제나 트리뷰널에 대한 신앙을 굳게 지킬 수 있었다."
+        },
+        {
+          "start": 2657,
+          "end": 2963,
+          "source_sha256": "6f1d5c52dcdb51b6bf37233e7e2b751267fe667fa4c8b7f1b001f47d16681f96",
+          "target": "흘라알루-노테르나스 의원 - 흘라알루 가문의 주된 지도자로서 그는 교활한 지혜를 지니고 있었다. 직접 전투에 나서 싸우지는 않았으나, 성전을 수행하는 데 있어 그의 조언은 결정적인 것으로 판명되었다. 연민과 자비의 모범으로서, 그는 다고스 가문의 무력한 아이들에게도 이 두 가지가 베풀어지도록 힘썼다."
+        },
+        {
+          "start": 2976,
+          "end": 3422,
+          "source_sha256": "e5e77743035d8db3eeef1b376f25b21c29b3401d9c9d9c39f342a0ee01c87b10",
+          "target": "드레스-다린 장군 - 다린은 아르고니아 북부 정글을 급습하며 전쟁의 기술을 배웠다. 그는 이 지식을 활용하여 알름시비의 의지를 받들며 자신의 말 탄 드레스 기수들을 이끌고 세속 가문들에 맞서 싸웠다. 그는 모로윈드에서 그들의 타락을 정화하는 데 자신의 모든 의지를 집중했다. 고귀한 희생 속에서, 그는 홀로 드웨머 전사들의 맹공을 막아내다 사망함으로써 병사들에게 학살을 피할 기회를 주었다."
+        },
+        {
+          "start": 3435,
+          "end": 3901,
+          "source_sha256": "4d6d8975febf20cb48659e5593a472c434fdcfc00af508573ce3b832d4c0a72d",
+          "target": "드레스-사릴 장군 - 사릴은 다린 장군의 순교 이후 드레스 가문의 군세 지휘를 이어받았다. 신앙에 이끌려 그는 붉은 산에서 소규모 정예 드레스 전사 집단을 이끌었다. 승리가 거둔 뒤, 사릴은 제6가문의 고아 두 명을 자신의 가족으로 받아들였다. 그의 굳건한 결단을 지침 삼아, 그들은 불경한 혈통을 극복하고 덕망 있는 던머로 성장했다. 생의 후반부에 사릴은 의원으로서 명예롭게 가문을 계속 섬겼다."
+        },
+        {
+          "start": 3914,
+          "end": 4431,
+          "source_sha256": "d0cd4f38900f76e803f958cf320f86ed8dd655339c797bc25482defafd1be44c",
+          "target": "텔바니-아스린 경 - 강력한 텔바니 마법사였던 아스린 경은 모로윈드를 지키는 일을 무엇보다 앞세웠다. 드웨머 도시 케멜제에서 나온 군세가 텔바니의 땅과 신성한 도시 네크롬을 위협했을 때, 그의 뛰어난 파괴마법은 침략자들을 물리치는 데 큰 역할을 했다. 전장에서는 손짓만으로 드웨머의 기계병기들을 쓸어 버렸다. 전쟁이 끝난 지 2세기가 흐른 뒤, 900세가 된 그는 이제는 오래전에 자취를 감춘 자신의 탑 텔 아스린에서 숨을 거두었다."
+        },
+        {
+          "start": 4449,
+          "end": 4470,
+          "source_sha256": "974ba0ca6c6028bcf6a9fe5e35f0a5fa1e59cffd21f1e860d8d4d33c97b7090e",
+          "target": "주목할 만한 사령관들"
+        },
+        {
+          "start": 4478,
+          "end": 4759,
+          "source_sha256": "3d6308ff816c4d87b9e84f9adfb3f8852cb6e01ce43ca65c47ae17faabb8936e",
+          "target": "가롤 라엘 사령관 - 인도릴-트리피스 장군 휘하의 신실한 장교인 라엘 사령관은 모든 가문의 사령관을 통틀어 가장 용맹하게 복무했다. 그는 마지막 붉은 산 전투에서 장군과 함께 싸우며 드웨머와 다고스의 대열에서 많은 이들을 도살했다."
+        },
+        {
+          "start": 4771,
+          "end": 4958,
+          "source_sha256": "283dbe672808bd6606ac2366889580c8e598c4dabf1c06d2dc001ab248bbd386",
+          "target": "둘로릴 모르바인 사령관 - 평화를 이룬 자로 알려진 인도릴 가문의 모르바인 사령관은 인명 피해를 최소화하며 군대를 이끌어 위대한 업적을 세웠다. 그녀는 병사 한 사람 한 사람의 목숨을 신성하게 여겼다."
+        },
+        {
+          "start": 4970,
+          "end": 5185,
+          "source_sha256": "fbb2ec86116621f23b2832ce8eb0d89a9cb469216dd706b088dbc1fa22c4ab71",
+          "target": "델스 토발 사령관 - 휘하에서 복무하는 모든 이들의 아버지로 알려진 델스 토발의 헌신은 중대의 이들에게 영감을 주었다. 알드룬 방어전 중 맞이한 그의 죽음은 레도란 가문의 모든 이들에 의해 애도되었다."
+        },
+        {
+          "start": 5198,
+          "end": 5627,
+          "source_sha256": "36661681a993520f743ffeb0cea4405c86a61927b1e457cbb1862510018dff87",
+          "target": "에네아 그네렌 사령관 - 그네렌은 사망하기 전까지 모로윈드에서 가장 숙련된 궁수였다. 알름시비의 신성한 의지가 그녀의 조준을 이끌어, 그녀는 느출레프팅스 요새에서 드웨머 장군 르브도릭의 목을 전장 건너편에서 화살로 꿰뚫어 쓰러뜨렸다. 병사들에게 의무감 있는 스승으로서 복무하며 그녀는 자신의 기술을 그들에게 전수했다. 전쟁이 끝날 무렵 그들은 가문 전체에서 가장 위대한 명사수로 알려지게 되었다."
+        },
+        {
+          "start": 5639,
+          "end": 5821,
+          "source_sha256": "a368de21f0f424ad1600f8ec0aa1f4a3dfa448f8b2afa63bfbc0ff2fc5c5bf6f",
+          "target": "셀빌 아렐로스 사령관 - 비벡의 업적에 영감을 받아, 그는 대담한 통솔력으로 레도란 가문 창병 중대를 이끌었으나 드웨머 탑을 공격하던 중 붉은 산에서 전사했다."
+        },
+        {
+          "start": 5833,
+          "end": 5995,
+          "source_sha256": "2f05f1fe0680e0671ed40549b1ebdcf3f90a8055c225140abd4cfc3a7d49cc34",
+          "target": "알티스 바람 사령관 - 레도란 가문의 헌신적인 아들로서, 바람은 서부 모로윈드에서 노드들과 싸웠고 붉은 산 전투 직후 전투에서 전사했다."
+        },
+        {
+          "start": 6008,
+          "end": 6165,
+          "source_sha256": "1f65f364520274b1e51b8554ceb7268e02b6751fd60ae6e30b522b1f2345be68",
+          "target": "아룬 경 - 텔 아룬의 탑에 거주하며 마법사들을 지휘해 수많은 위대한 승리를 거두었고, 바덴펠 동해안에서 드웨머를 몰아내는 데 힘을 보탰다."
+        },
+        {
+          "start": 6184,
+          "end": 6258,
+          "source_sha256": "0af8fcce4a3e5215a359634fc41c32fa24d07aad5a982f9ba7afcb5c241bf5b7",
+          "target": "[본문은 다른 저명한 전사들과 그들의 영웅적 업적을 기리는 내용으로 이어진다.]"
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    },
+    {
+      "candidate_index": 45,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23329,
+      "record_id": "TR_i2-427_bklament",
+      "field": "TEXT",
+      "source_raw_sha256": "8b8c9938ca26828688c53ad596c0af67e5a6f6d036a8912c3b2fa2d0bff2e3af",
+      "book_patches": [
+        {
+          "start": 76,
+          "end": 107,
+          "source_sha256": "3ba9638256ddebe82412ba959ed48370c2cd28a252746eedda5819a34aea6ce5",
+          "target": "애가 두 번째 권"
+        },
+        {
+          "start": 154,
+          "end": 177,
+          "source_sha256": "ae70a2c32b7607e9532cf187dbbe01ea68895b1fd231280d9b3f9fde3afac86c",
+          "target": "알드 로린 전투"
+        },
+        {
+          "start": 191,
+          "end": 809,
+          "source_sha256": "c9829a2bc0e516ee0c4ec97c9ff13501684b75ca91e903e66349f91b841b6f95",
+          "target": "2920년 태양의 절정 4일, 폭군 레만의 제국군이 벨로스 산맥을 넘어 레도란 가문의 트라벨소 의원이 사는 알드 로린 궁전을 습격했다. 잔혹한 공격은 산맥의 얼굴에 흉터를 남겼다. 불길에 시커멓게 그을린 자국과 함께 모독당하거나 형체를 알아볼 수 없을 만큼 훼손된 수많은 시신이 남았다. 시로딜인들의 공격은 그토록 야만스러웠으니, 모로윈드는 그 고통과 아직도 산바람에 실려 들리는 비명을 결코 잊지 못할 것이다. 가족과 친족들을 존엄과 명예로 기억하자. 그들의 희생은 영원히 기억될 것이다."
+        },
+        {
+          "start": 823,
+          "end": 847,
+          "source_sha256": "5d048bb124a56ad0d0c3fdcaba9b346e628877e1e017d66e678640d562495700",
+          "target": "크라겐무어 전투"
+        },
+        {
+          "start": 861,
+          "end": 1514,
+          "source_sha256": "5c8e3f59f5cd02217b01526e37297705c47e5fac747440ecd224ada121ec28f7",
+          "target": "알드 로린이 함락된 지 이틀 뒤, 마틴 아르테비안 장군이 이끄는 레만의 군대가 산 위의 성채이자 영광스러운 도시 크라겐무어를 침략하고 파괴했다. 달아난 자들은 운이 좋았다. 남은 이들은 레스다인 왕국이 시로딜 제국의 철권에서 언제까지나 자유롭기를 바라며 모로윈드를 위해 고통을 견뎠다. 알말렉시아가 도시에 도착했을 때는 죽은 자들의 재밖에 남지 않았다. 우리가 동포들의 고통뿐 아니라 자식들과 신도들의 무의미한 죽음을 지켜본 어머니 알말렉시아의 비통함까지 기억할 수 있도록, 그분의 신성한 눈물이 언제나 우리와 함께하기를."
+        },
+        {
+          "start": 1528,
+          "end": 1544,
+          "source_sha256": "35e2e6e104a8c399cab6db83a289389f3c3a6e7b412e02e1ef77c43e9dfd680d",
+          "target": "실렌다이 장군"
+        },
+        {
+          "start": 1558,
+          "end": 2665,
+          "source_sha256": "1595139092e4620b4bf9265f5298caeffb4f69b4a683df11ada5fe85e80512de",
+          "target": "벨로스 산맥 꼭대기에는 한때 모로윈드 고위 평의회의 수장이 거주하던 거대한 보르 성이 서 있었다. 알드 로린이 함락되자 보르의 산중 전당도 무너졌다. 그러나 서쪽 산맥에서 멀리 떨어진 곳에서, 알말렉시아의 종복 실렌다이 장군은 보르의 몰락을 예감하고 잠에서 깨어났다. 그리고 운명이 다한 전당을 향해 밤낮으로 말을 달렸다. 그의 스카이램프가 숨을 헐떡이며 휴식을 호소했으나, 장군은 자신의 운명을 향해 계속 나아갔다. 도착한 그는 무너져 내리는 요새의 성벽과, 재 폭풍 속의 알리트들처럼 궁전을 에워싼 음흉한 시로딜인들을 보았다. 거대한 검으로 적들의 대열을 가르고 나아간 끝에, 왕좌에 죽은 채 앉아 있는 의원에게 이르렀다. 그 광경에 실패했다고 여긴 실렌다이는 온몸의 힘이 빠졌다. 그러나 알말렉시아가 다가와 그분의 힘과 믿음을 내어 주었다. 그는 다시 일어나 검과 방패를 들고 믿음 없는 레만의 군대를 무찔렀다. 제국이 이해하지 못한 것은 모로윈드의 정신은 꺾을 수 없다는 사실이었다. 그 정신은 신성한 트리뷰널처럼 영원하다. 그 운명은 레만의 덧없는 제국보다 열 배나 위대하다."
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    },
+    {
+      "candidate_index": 46,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23333,
+      "record_id": "TR_i2_238_bk_scrollledger",
+      "field": "TEXT",
+      "source_raw_sha256": "35985b6d6224286e0aedc4488f5117293975a1e5ff0aba6b7a30d9543eac8cd0",
+      "book_patches": [
+        {
+          "start": 75,
+          "end": 104,
+          "source_sha256": "533c82eef717dfaa350866e3b0ee067292f3068cd6fd3e18692521444377d0ba",
+          "target": "두루마리 조달 장부"
+        },
+        {
+          "start": 130,
+          "end": 177,
+          "source_sha256": "97a4a969d951f33a1336ca40865b16130a1281d0922d6e8a48f755038cf74209",
+          "target": "에리미르 - 표식의 두루마리 1장, 귀환의 두루마리 3장"
+        },
+        {
+          "start": 185,
+          "end": 232,
+          "source_sha256": "d276f58e45fa5a5d8c3cee68492abfa6f8ffda5ef162fdfd9598f39e4469c97c",
+          "target": "-목적: 개인 거처로 향하는 순간이동 설정."
+        },
+        {
+          "start": 244,
+          "end": 284,
+          "source_sha256": "34aa53b7e836246e3eedaa01b1853f89249eab44d6fbe562ac02163d02a259b6",
+          "target": "발나 시포소티 - 화염 방호의 두루마리 1장"
+        },
+        {
+          "start": 291,
+          "end": 341,
+          "source_sha256": "ee7f0f21d04ae67c88a2671cb0f97a6d3e8547d5a8279ea1d1a6e789d0727d61",
+          "target": "-목적: 가연성이 높은 물약 조제"
+        },
+        {
+          "start": 353,
+          "end": 388,
+          "source_sha256": "aba4c66c5bebce48a539bde76f55703145284af107b49d7c606dcecac03ef365",
+          "target": "브렌 스미트 - 지옥불의 두루마리 2장"
+        },
+        {
+          "start": 395,
+          "end": 412,
+          "source_sha256": "452fb706b1de8f24164cd95459006ac0a140f48da6678b202798b34fab432bc4",
+          "target": "-목적: 요리"
+        },
+        {
+          "start": 418,
+          "end": 500,
+          "source_sha256": "d05426877d11cff10618ec6a79321b7472bb63fe0c63d7ea38bfe9489553151e",
+          "target": "브렌: 요청은 반려했네. 나를 찾아와 그 두루마리들을 돌려주게. -아렌"
+        },
+        {
+          "start": 512,
+          "end": 583,
+          "source_sha256": "426a1ef9d198d3f2050f124bfa999cce52bda77b9e91ff5f2beffb702e012c7b",
+          "target": "텔라세네 레스 - 치유 두루마리 2장, 육체 회복의 두루마리 2장"
+        },
+        {
+          "start": 590,
+          "end": 633,
+          "source_sha256": "0818660796e7018dfbfb6f50594d6e97a370235bc116ca37a71493f970378cb3",
+          "target": "-목적: 치료 보조용으로 사용."
+        },
+        {
+          "start": 645,
+          "end": 820,
+          "source_sha256": "09e01b48cd0130a96503488d49b773a016ea38e209108a88eddd611649b051ed",
+          "target": "이테산 네심 - 치유 두루마리 2장, 네 번째 방벽 두루마리 2장, 알름시비 개입 두루마리 1장, 브레바의 외면된 눈 두루마리 1장, 원소 폭발: 전격 두루마리 3장"
+        },
+        {
+          "start": 827,
+          "end": 868,
+          "source_sha256": "cd10f4cd5241cb76885a90c6f7eaffa6509be34c84a0e4a70553f83117785ef3",
+          "target": "-목적: 예정된 케멜제 탐사"
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    },
+    {
+      "candidate_index": 47,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23347,
+      "record_id": "TR_i3-30-urnlog",
+      "field": "TEXT",
+      "source_raw_sha256": "aea86fd8c98e27fb6bdb00575cf888fe1f1d2d245cd4fce03b3f008fe6a18ea2",
+      "book_patches": [
+        {
+          "start": 75,
+          "end": 91,
+          "source_sha256": "0b3aab9889aaa2b15a4e165cb9176f98f10aa82768b1a50ec46184b7085b9106",
+          "target": "426년 새벽별"
+        },
+        {
+          "start": 97,
+          "end": 108,
+          "source_sha256": "df878638374107a254c3ec52589b89f33ab186f8ab04270a43afaec3ae4f9238",
+          "target": "반입량: 78"
+        },
+        {
+          "start": 114,
+          "end": 122,
+          "source_sha256": "0092d11d4efe78ba9cd82c02c9cfa68b0a9cf4015da64b2357dc60867a20594d",
+          "target": "사용량: 63"
+        },
+        {
+          "start": 128,
+          "end": 142,
+          "source_sha256": "3485b915e8b74bc3d18e7a30081d7eb6410312c7c0b171565f0869b2b47cb5ef",
+          "target": "잔여량: 231"
+        },
+        {
+          "start": 154,
+          "end": 168,
+          "source_sha256": "2313a028965c6f748f69c2a62e7ed7811cabcc1b5d13d5e1e2386c1b9d6f71fe",
+          "target": "426년 태양의 새벽"
+        },
+        {
+          "start": 174,
+          "end": 185,
+          "source_sha256": "374eaa1e2a612494d745a25333f9e6b81bfc36db8d85dd0ea2dd83c8daa1f443",
+          "target": "반입량: 52"
+        },
+        {
+          "start": 191,
+          "end": 199,
+          "source_sha256": "9ab3d27e920ce3a12cc8521abb3f697ed511e8c6563344aa4f12faa6e767596f",
+          "target": "사용량: 58"
+        },
+        {
+          "start": 205,
+          "end": 218,
+          "source_sha256": "fda37e4ac6aac2d163cdfef2c083d11c8d19e2c02ef19d7b4f7eda037aab2719",
+          "target": "잔여량 225"
+        },
+        {
+          "start": 230,
+          "end": 244,
+          "source_sha256": "45c5b45c33b38a2cff1a316d4c725aeef14e3acf6ff24aa394c79c248cae88cc",
+          "target": "426년 첫 씨앗"
+        },
+        {
+          "start": 250,
+          "end": 261,
+          "source_sha256": "667493d6110405181594262cc8e709836943bb9b67573e386c972c26854f3549",
+          "target": "반입량: 68"
+        },
+        {
+          "start": 267,
+          "end": 275,
+          "source_sha256": "a497cf7fd53eca52f8b6cfc9dd5d340969ab5a6b06e899564980362b95a74502",
+          "target": "사용량: 42"
+        },
+        {
+          "start": 281,
+          "end": 294,
+          "source_sha256": "8333975a0f5e4003abcd5bcb55bbcda9e487fb236a8e4d64503b3b723b2df17f",
+          "target": "잔여량:251"
+        },
+        {
+          "start": 306,
+          "end": 321,
+          "source_sha256": "2bc1457f68817e44ee3492340ac97e8bff89c9ed635ae9c367166b5de2037009",
+          "target": "426년 비의 손"
+        },
+        {
+          "start": 327,
+          "end": 338,
+          "source_sha256": "7897b6d283eb545b3fb68c6e006196bca4524e585e029843519bb75d8c171fd2",
+          "target": "반입량: 54"
+        },
+        {
+          "start": 344,
+          "end": 352,
+          "source_sha256": "75b0cf4c77eac9cf25f76aec094e7408b5814706fba786b541c0c80f2554c035",
+          "target": "사용량: 56"
+        },
+        {
+          "start": 358,
+          "end": 372,
+          "source_sha256": "4a9411742294f8b8fecd2af327e2de709366d6bef5368b860848ac6cae6c8c73",
+          "target": "잔여량: 249"
+        },
+        {
+          "start": 384,
+          "end": 399,
+          "source_sha256": "50d66bf14d7e4e244e59810c7cbb6c767edb2d05af60d0e1f8e4b0f46b0c9484",
+          "target": "426년 둘째 씨앗"
+        },
+        {
+          "start": 405,
+          "end": 416,
+          "source_sha256": "b6c8cffdc3b810d4d659fdaf4d34add3505785534311d8032c95f7f3fab5f46f",
+          "target": "반입량: 67"
+        },
+        {
+          "start": 422,
+          "end": 430,
+          "source_sha256": "c66fffcf5d86da3142fc9b80e2262bc82ea94c8eda771bb165ad4f7fe53f4c1a",
+          "target": "사용량: 52"
+        },
+        {
+          "start": 436,
+          "end": 450,
+          "source_sha256": "3ccfbe9e9758a60fbbf62212f05952d6eb3231107faf2200f48b0329e50a1532",
+          "target": "잔여량: 258"
+        },
+        {
+          "start": 462,
+          "end": 473,
+          "source_sha256": "8de3ba08ccb0376d93c81ecee8c641b97ee29e74cf6e44bc59cb9b23793bfcb0",
+          "target": "426년 한해의 중턱"
+        },
+        {
+          "start": 479,
+          "end": 490,
+          "source_sha256": "882cff2dbfcd96970d25c5e7d658356068f185b724f1c49ee5b4940fb3bbd0b4",
+          "target": "반입량: 19"
+        },
+        {
+          "start": 496,
+          "end": 504,
+          "source_sha256": "0092d11d4efe78ba9cd82c02c9cfa68b0a9cf4015da64b2357dc60867a20594d",
+          "target": "사용량: 63"
+        },
+        {
+          "start": 510,
+          "end": 524,
+          "source_sha256": "5960f4ef1abf988deecfc976114b5411c7f2d28fad1426c22204767e628f51d0",
+          "target": "잔여량: 214"
+        },
+        {
+          "start": 536,
+          "end": 552,
+          "source_sha256": "2d7b498acb5b73cb9db97772db2d50a1d173194ca7b571eef99828cace6bfdfc",
+          "target": "426년 태양의 절정"
+        },
+        {
+          "start": 558,
+          "end": 569,
+          "source_sha256": "848af09de78b8afc288cce7c7f5f45e97b32fa702976a8d293885718ee5a7e40",
+          "target": "반입량: 36"
+        },
+        {
+          "start": 575,
+          "end": 583,
+          "source_sha256": "4775c6a83fbece68e37278bdbbb12edd9b9c68b0dfdafc3b78fe5a57cdfc16f4",
+          "target": "사용량: 39"
+        },
+        {
+          "start": 589,
+          "end": 603,
+          "source_sha256": "f8b68655b6a1b20d47e6bc45a08ecc6d62e07d01e2dff01087de4fc084298d59",
+          "target": "잔여량: 211"
+        },
+        {
+          "start": 615,
+          "end": 628,
+          "source_sha256": "00e9dfdc2a74edfd5bd8156d7fb329c6836d57ad433535775c545d165f0f3826",
+          "target": "426년 마지막 씨앗"
+        },
+        {
+          "start": 634,
+          "end": 645,
+          "source_sha256": "60969289a1404089bec5a30c9159a17ead611a74a3d7d7d26629b2a21e39c054",
+          "target": "반입량: 56"
+        },
+        {
+          "start": 651,
+          "end": 658,
+          "source_sha256": "c6f30d6f8e81fbe5f50e64b4a38194fb8a7df913a80a64e4d0717f3f244dbec5",
+          "target": "사용량:43"
+        },
+        {
+          "start": 664,
+          "end": 678,
+          "source_sha256": "a3b1124238879c2be9a67a5577d463ff35015420136e656a6c42c177e6ab470f",
+          "target": "잔여량: 224"
+        },
+        {
+          "start": 690,
+          "end": 704,
+          "source_sha256": "322f2a0e793d7e37bacb9f958204481c003d6b15a6729b89679f305f3d07f11f",
+          "target": "426년 심장불꽃"
+        },
+        {
+          "start": 710,
+          "end": 721,
+          "source_sha256": "fc929760fba2a48a02c587ee4fd5e784ebc974969095386585de6986830081db",
+          "target": "반입량: 42"
+        },
+        {
+          "start": 727,
+          "end": 735,
+          "source_sha256": "8542de7d586f4d2ed0e74b5d5fd49e70ebf13b873c0e9b23981d479972aaf41f",
+          "target": "사용량: 48"
+        },
+        {
+          "start": 741,
+          "end": 755,
+          "source_sha256": "2d886793b3e6e50095dbf45f18ee41af91d5101162604d500ff65f1cc97e33f9",
+          "target": "잔여량: 218"
+        },
+        {
+          "start": 767,
+          "end": 781,
+          "source_sha256": "6157eb8a001ac17c1fda010b1fbe93395fc545729b99769eea498ca67a36ad52",
+          "target": "426년 서리내림"
+        },
+        {
+          "start": 787,
+          "end": 798,
+          "source_sha256": "848af09de78b8afc288cce7c7f5f45e97b32fa702976a8d293885718ee5a7e40",
+          "target": "반입량: 36"
+        },
+        {
+          "start": 804,
+          "end": 812,
+          "source_sha256": "86af64e4ce59c6cd92871fdcb6ef226f04af7d8425860e83e118cfdd46f331c5",
+          "target": "사용량: 50"
+        },
+        {
+          "start": 818,
+          "end": 832,
+          "source_sha256": "d22cf1f0794e50fe55a09b4e6f3a4b99e00d98fccdf928b605092bfcf656aac5",
+          "target": "잔여량: 204"
+        },
+        {
+          "start": 844,
+          "end": 858,
+          "source_sha256": "632a9b38bee088fe43d2a46e1dc1f92589bcbf1137225ab14bdfa434b6c42122",
+          "target": "426년 태양의 황혼"
+        },
+        {
+          "start": 864,
+          "end": 874,
+          "source_sha256": "26efdbce347d9b93e713d27b770907c4b5cd003c8f1dcb7a2a475165d659d4cd",
+          "target": "반입량:45"
+        },
+        {
+          "start": 880,
+          "end": 888,
+          "source_sha256": "afa2d0a592d6ba3829cd1f7f99e3dabd56d17c80183bbdf528f063285efbf6ce",
+          "target": "사용량: 32"
+        },
+        {
+          "start": 894,
+          "end": 908,
+          "source_sha256": "0b4ca6a5863ee2ffd9ba9a1c44c7537e0369067b46316db2b1100f4f4567e3f7",
+          "target": "잔여량: 217"
+        },
+        {
+          "start": 920,
+          "end": 936,
+          "source_sha256": "5775e9a34d3b562bfc1f19f12b5160fb7983be459f55e821932a9c68147d56c4",
+          "target": "426년 저녁별"
+        },
+        {
+          "start": 942,
+          "end": 953,
+          "source_sha256": "ac8eed6bcb4f02d7548a1c8f6738871e13907cf1eb65e1914700994eb3553eee",
+          "target": "반입량: 61"
+        },
+        {
+          "start": 959,
+          "end": 967,
+          "source_sha256": "99c5f891889095eeabcf9c890cf3065a67d62c0a8da41f6e6a8604650b2b70a7",
+          "target": "사용량: 40"
+        },
+        {
+          "start": 973,
+          "end": 987,
+          "source_sha256": "4417c9845f3d41eac6b5568f24cbf42bae9f78f827ddecf8634eefed044ea428",
+          "target": "잔여량: 238"
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    },
+    {
+      "candidate_index": 48,
+      "module": "TR_Mainland",
+      "record_tag": "BOOK",
+      "record_index": 23349,
+      "record_id": "TR_i3-542_Tattered_Journal",
+      "field": "TEXT",
+      "source_raw_sha256": "741348154a37fb7e81ea3a332b1c8360312ae8d7d8a2938041b540ea8412dcf0",
+      "book_patches": [
+        {
+          "start": 71,
+          "end": 117,
+          "source_sha256": "5a4c1e83e454b2d781cd095f9fb71e3ae4cd6feb3f16bdcfb3f06295ce509d0e",
+          "target": "내 일지를 소개로 시작하겠다."
+        },
+        {
+          "start": 133,
+          "end": 872,
+          "source_sha256": "eea31c702323eb1c3172756e949b747c1d3782629a67d3acf61e1c8127fed07c",
+          "target": "나는 데벤트 다라발드, 동방의 알 기사단(이전 명칭은 쓰러진 용 기사단)의 대기사이다. 나는 하이락의 영지인 드윈넨의 한 작은 농장에서 태어났다. 드래곤링들에게 가족이 몰살당할 때까지는 평민으로 살았다. 그 조그만 사건 이후로, 나는 앞으로 만나게 될 모든 용 일족의 얼굴에 침을 뱉겠노라고 맹세했다. 그리고 분명히, 그들을 처치한 후에 실제로 그렇게 했다. 곧, 나는 드윈넨의 영지 소재지인 드윈넨 마을로 이주했다. 거기서 용들과 그 밖에 그 쓰레기 같은 족속들을 바라보는 시선이 나와 비슷한 다른 사람들을 몇 명 만났다. 그래서 우리는 기사단을 창설했다. 다만 우리 쪽에서는 그 일에 대해 약간의 은밀함을 유지하는 편을 선호했는데, 경험이 턱없이 부족한 자가 우리에게 가입하는 것을 원치 않았기 때문이다."
+        },
+        {
+          "start": 888,
+          "end": 1094,
+          "source_sha256": "8af76f381c4cf990d9065944910943df43fe3717f67491347ad3ff2221589acc",
+          "target": "우리 기사단의 대부분의 단원은 선술집에서 소문을 듣거나, 더 많은 용과 드래곤링을 찾아내려 하거나, 혹은 기사단으로 끌어들일 노련한 모험가들을 찾아다니며 시간을 보냈다."
+        },
+        {
+          "start": 1110,
+          "end": 1553,
+          "source_sha256": "b77fff4953c98dd4a0ffd89a826354644eb595aab495d97a143730cd8c574dad",
+          "target": "어느 날 극동에서 온 다크 엘프 상인 하나가 동네 선술집에 들어왔다. 정확히는 우리가 회관으로 쓰던 곳이었다. 그는 동쪽에 거대한 용들이 살고, 그곳 둥지마다 알과 수호자들이 가득하다고 했다. 용이 부화할 때 죽이거나 차라리 알을 파괴하는 편이 낫겠다는 말도 넌지시 꺼냈다. 물론 처음에는 그를 믿지 않았지만, 그는 증거로 용의 알을 하나 가지고 있었다."
+        },
+        {
+          "start": 1569,
+          "end": 1673,
+          "source_sha256": "2e4939ff70f63f23d064edb2432b3cfb87aebe76431487e56892cd24e80c0460",
+          "target": "우리는 기사단 전원을 소집하여 상인이 말했던 장소인 모로윈드로의 여정을 준비했다."
+        },
+        {
+          "start": 1689,
+          "end": 2386,
+          "source_sha256": "07fb0f7cea627954d154ee8d6c39288d8c4d20cdfa01418800543baeb2b79b7c",
+          "target": "우리는 현지인들을 별로 믿지 않았기에 도착하자마자 동굴 하나를 새 본부로 차지했다. 지금도 그 동굴을 작전 기지로 쓰고 있다. 동굴은 이미 소탕되어 있었지만, 그 일을 해낸 오크는 쥐에게 물려 죽어 있었다. 그는 흔한 오크 갑옷보다 훨씬 튼튼해 보이는 정교한 오크 갑옷을 걸치고, 데이드릭 다이카타나를 무기로 지녔으며, 물약도 잔뜩 가지고 있었다. 물론 형편도 그다지 나쁘지는 않았으니, 우리가 식량을 사 오는 인근 마을 몇 곳과 관계를 유지하는 데도 도움이 되었다. 내가 화살 한 발로 죽인 쥐에게 당할 만큼 어수룩한 자는 아닌 듯했고, 충분히 노련해 보였다."
+        },
+        {
+          "start": 2402,
+          "end": 2641,
+          "source_sha256": "68b546518ff3338adfd469b9663b357fd1adcd2b52c1f079a0153947a9b1971f",
+          "target": "우리 중 다수가 건설 경험이 있었기에 정착하는 것은 그리 어렵지 않았다. 물론 본격적인 활동에 나서기 전에 우리는 몇 달 동안 휴식을 취했다. 우리는 정복의 성공을 매우 확신했다."
+        },
+        {
+          "start": 2657,
+          "end": 3149,
+          "source_sha256": "e3e1adcc5778f26d8adbcc1c95da6c007132febecf1269513503308af6b3db56",
+          "target": "휴식을 마친 우리는 다섯 명씩 세 조를 보내 용의 소굴들을 파괴하게 했다. 세 조 가운데 두 조는 다크 엘프 전사들과 농민들의 저항을 받았다고 했다. 그들이 우리 군세의 상대가 될 수는 없었지만, 다크 엘프와 용의 동맹은 여전히 걱정스러웠다. 둥지를 지키는 곤충 같은 것들도 있었다. 얼마 뒤 나는 이곳 동방에서 용의 알을 쫓고 있다는 사실을 드러내도록 기사단 이름을 바꾸기로 했다."
+        },
+        {
+          "start": 3165,
+          "end": 3414,
+          "source_sha256": "3d3608ce26f9429fb62149477635231fba7303dd8589c1394fc0152432431768",
+          "target": "우리는 지나간 세월 동안 많은 성공적인 습격을 거두었고, 앞선 내용만으로도 독자가 우리 기사단의 역사를 파악하기에 충분하다고 느낀다. 따라서 이제 나는 이를 일지로 쓰기 시작해도 되겠다는 생각이 든다..."
+        },
+        {
+          "start": 3454,
+          "end": 3505,
+          "source_sha256": "89979c6fa3e8a941d74e1cdc03608cd0975e9709e1cb382ce3031cf59120a825",
+          "target": "제3시대 321년 둘째 씨앗 23일."
+        },
+        {
+          "start": 3521,
+          "end": 3820,
+          "source_sha256": "72e4fbadf3e1b0f5d5af4ad1e692da0cf6ef99cd74ab8a553f3aa25859f2d7b1",
+          "target": "오늘, 내 일지의 서론 작성을 마쳤다. 우리 세 조는 성공을 거두어 우리에게 많은 알을 가져다주었다. 우리는 이 방식을 쓰면 알들이 부화하는 대신 썩을 것임을 알기에 그것들을 건초더미 속에 이리저리 내던져 두었다. 내가 직접 쓰고 말하긴 참으로 기발한 방법이다."
+        },
+        {
+          "start": 3868,
+          "end": 3919,
+          "source_sha256": "ad9f8108dad108646264dc8d16724e6e552c7d163dc8960792cdd1a0634dd85a",
+          "target": "제3시대 321년 둘째 씨앗 25일."
+        },
+        {
+          "start": 3935,
+          "end": 4087,
+          "source_sha256": "64c80531455be0fbb500762f8e789238667953980c28482d1ccefd2d1d778f79",
+          "target": "우리 기사 중 한 명이 용의 알을 먹었다. 당연하게도, 그는 필멸의 존재에게 어울리지 않는 그런 행동을 저지른 대가로 처형당했다. 우리 조들은 여전히 성공을 거두고 있다."
+        },
+        {
+          "start": 4135,
+          "end": 4182,
+          "source_sha256": "4e56685e58c5433f66d33680a125baecc05da171da197132b3ab3ad56733379c",
+          "target": "제3시대 321년 한해의 중턱 1일."
+        },
+        {
+          "start": 4198,
+          "end": 4479,
+          "source_sha256": "449c61a62f6f7fe7cc847e50e13f98f7c8feb87fa7409c541a582b6747f161e2",
+          "target": "한 조가 몰살당했다. 적어도, 그들은 돌아오지 않았다. 나는 걱정스럽다. 이것은 곧 커다란 용들이 사방으로 날뛰게 될 가능성이 있음을 의미할지도 모른다. 나머지 조들은 여전히 큰 성공을 거두었다. 하지만 나는 당분간 작업을 이어갈 새로운 5인조를 선발했다."
+        },
+        {
+          "start": 4527,
+          "end": 4574,
+          "source_sha256": "dc57285ecdf820afa34ed752a46800fefa295a69af3418e7b78a6b2d6dc7f09c",
+          "target": "제3시대 321년 한해의 중턱 3일."
+        },
+        {
+          "start": 4590,
+          "end": 4680,
+          "source_sha256": "a4654e4fe59655ddf9b67f39cb13e7b10c9deeed4d4cb0e7c493289c46d261eb",
+          "target": "우리 조들 가운데 아무도 돌아오지 않았다. 우리가 사는 동굴도 이제 끝장나려는 것 같--"
+        },
+        {
+          "start": 4712,
+          "end": 4818,
+          "source_sha256": "f8933fa8a3d2a278ffab24de33a7698bfaf7369ee253f9807ea49f179f924866",
+          "target": "[글쓴이가 무너져 내리는 바위를 피해 몸을 날리려 했던 듯, 일지는 그 말에서 끝난다.]"
+        }
+      ],
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
+    }
+  ]
+}

@@ -42,7 +42,17 @@ def check_plugin(before, after, patches):
                 continue
             assert patch, ('Unreviewed field changed', index, key)
             assert sha(ov) == patch['source_raw_sha256'], ('Source drift', key)
-            if ot == b'FACT':
+            if patch.get('book_patches'):
+                assert (ot, field) == (b'BOOK', b'TEXT')
+                chunks, cursor = [], 0
+                for span in sorted(patch['book_patches'], key=lambda r: r['start']):
+                    a, b = span['start'], span['end']
+                    assert cursor <= a < b <= len(ov)
+                    assert sha(ov[a:b]) == span['source_sha256']
+                    chunks.extend([ov[cursor:a], span['target'].encode('utf-8')])
+                    cursor = b
+                assert nv == b''.join([*chunks, ov[cursor:]]), 'Unreviewed book byte changed'
+            elif ot == b'FACT':
                 assert len(ov) == len(nv) == 32
                 assert nv == (patch['target'].encode('utf-8') + b'\0').ljust(32, b'\0')
             else:
@@ -75,14 +85,14 @@ def verify(baseline, candidate, manifest=MANIFEST):
                     else:
                         assert before == after, ('Unrelated ZIP entry changed', path.name, name)
                     continue
-                rows = [r for r in review['rows'] if r.get('target') and r['module'] == module]
+                rows = [r for r in review['rows'] if (r.get('target') or r.get('book_patches')) and r['module'] == module]
                 report, seen = check_plugin(before, after, rows)
                 applied.update((module, *k) for k in seen)
                 changed_plugins[name] = report
         reports[path.name] = {'zip_entries_checked': entries, 'plugins': changed_plugins,
                               'baseline_sha256': sha(path.read_bytes()),
                               'candidate_sha256': sha((candidate / path.name).read_bytes())}
-    expected = {(r['module'], *row_key(r)) for r in review['rows'] if r.get('target')}
+    expected = {(r['module'], *row_key(r)) for r in review['rows'] if r.get('target') or r.get('book_patches')}
     assert expected == applied, ('Review coverage mismatch', expected - applied, applied - expected)
     result = {'reviewed_fields': len(expected), 'archives': reports,
               'scope': 'Full physical record and ZIP payload comparison. Does not replace semantic or gameplay review.'}

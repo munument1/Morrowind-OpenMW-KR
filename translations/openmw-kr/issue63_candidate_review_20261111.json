@@ -5,10 +5,10 @@
     "PRESERVE_EDITOR_SOUND_MARKER": 39,
     "PRESERVE_DEVELOPER_BOOK_MARKER": 552,
     "PRESERVE_CIPHER_OR_RITUAL": 6,
-    "PENDING_SOURCE_REVIEW": 854,
+    "SOURCE_REVIEWED_TRANSLATION": 98,
     "PRESERVE_DAEDRIC_GLYPHS": 76,
+    "PENDING_SOURCE_REVIEW": 848,
     "PRESERVE_IMAGE_ONLY_BOOK": 58,
-    "SOURCE_REVIEWED_TRANSLATION": 92,
     "PRESERVE_DEVELOPER_JOURNAL": 3,
     "PRESERVE_DEVELOPER_DIALOGUE_HEADER": 2309,
     "PRESERVE_IN_WORLD_SPEECH": 31,
@@ -351,8 +351,8 @@
       "record_id": "TR_M1_Q66_GHT_Ra1_Report",
       "field": "TEXT",
       "source_raw_sha256": "7a56d068d43ba47a831921a3a26b239e183743dd80e8b2c49d9a556c992d8320",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
     },
     {
       "candidate_index": 31,
@@ -459,8 +459,8 @@
       "record_id": "TR_bk_obituary_i2-428-Tri",
       "field": "TEXT",
       "source_raw_sha256": "741ce3f5f523c74b1532699421b07164e4896b61c33ab8c9c7c2893ff7820974",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
     },
     {
       "candidate_index": 40,
@@ -519,8 +519,8 @@
       "record_id": "TR_i2-427_bklament",
       "field": "TEXT",
       "source_raw_sha256": "8b8c9938ca26828688c53ad596c0af67e5a6f6d036a8912c3b2fa2d0bff2e3af",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
     },
     {
       "candidate_index": 46,
@@ -529,8 +529,8 @@
       "record_id": "TR_i2_238_bk_scrollledger",
       "field": "TEXT",
       "source_raw_sha256": "35985b6d6224286e0aedc4488f5117293975a1e5ff0aba6b7a30d9543eac8cd0",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
     },
     {
       "candidate_index": 47,
@@ -539,8 +539,8 @@
       "record_id": "TR_i3-30-urnlog",
       "field": "TEXT",
       "source_raw_sha256": "aea86fd8c98e27fb6bdb00575cf888fe1f1d2d245cd4fce03b3f008fe6a18ea2",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
     },
     {
       "candidate_index": 48,
@@ -549,8 +549,8 @@
       "record_id": "TR_i3-542_Tattered_Journal",
       "field": "TEXT",
       "source_raw_sha256": "741348154a37fb7e81ea3a332b1c8360312ae8d7d8a2938041b540ea8412dcf0",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Compare all visible original prose and review/correct reused drafts. Preserve all markup, image references, Daedric glyph runs, original line breaks and non-prose bytes. Use current game month and item labels."
     },
     {
       "candidate_index": 49,

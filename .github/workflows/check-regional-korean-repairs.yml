@@ -27,7 +27,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
       - name: Verify data preservation and failure guards
         working-directory: packaging/korean/tooling
-        run: python -m unittest test_shared_default_topics test_reviewed_issue42_links test_core_topic_aliases test_shared_core_topics test_regional_core_aliases test_rebirth_sidecar_names test_reviewed_regional_display -v
+        run: python -m unittest test_shared_default_topics test_reviewed_issue42_links test_core_topic_aliases test_shared_core_topics test_regional_core_aliases test_rebirth_sidecar_names test_reviewed_regional_display test_reviewed_book_text -v
       - name: Compile actual Windows keyword parser and translation loader
         shell: cmd
         run: |
@@ -76,4 +76,7 @@ jobs:
     uses: ./.github/workflows/windows.yml
     with:
       image: '2022'
+      source_repository: OpenMW/openmw
+      source_ref: openmw-0.51.0
+      korean_overlay: true
       store_runtime_executable: true

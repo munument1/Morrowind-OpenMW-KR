@@ -1,0 +1,96 @@
+{
+  "reviewed_fields": 6,
+  "archives": {
+    "Cyr_Main-kr0.3.zip": {
+      "zip_entries_checked": 8,
+      "plugins": {
+        "Data Files/Cyr_Main.ESM": {
+          "records_checked": 22939,
+          "changed_fields": {},
+          "logical_fields": 0,
+          "physical_fields": 0,
+          "other_fields_changed": 0,
+          "headers_or_order_changed": 0
+        }
+      },
+      "baseline_sha256": "be7e589ad0d6257b1ce3920f32c38af51f6a6e62f736d354f0ad60738399af02",
+      "candidate_sha256": "be7e589ad0d6257b1ce3920f32c38af51f6a6e62f736d354f0ad60738399af02"
+    },
+    "Rebirth7.2-Cyr_Sky_Compatibility-kr0.3.zip": {
+      "zip_entries_checked": 12,
+      "plugins": {
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm": {
+          "records_checked": 22940,
+          "changed_fields": {},
+          "logical_fields": 0,
+          "physical_fields": 0,
+          "other_fields_changed": 0,
+          "headers_or_order_changed": 0
+        },
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm": {
+          "records_checked": 12443,
+          "changed_fields": {},
+          "logical_fields": 0,
+          "physical_fields": 0,
+          "other_fields_changed": 0,
+          "headers_or_order_changed": 0
+        }
+      },
+      "baseline_sha256": "c0124485bf281d8ca853c44d128416c250f617d8c382fa540848d8c017ef7936",
+      "candidate_sha256": "6c3bbfce99bbeede10069066e69cc8db9f87d1c13ee84b459d3503fcae0fa4ff"
+    },
+    "Sky_Main-kr0.2.zip": {
+      "zip_entries_checked": 7,
+      "plugins": {
+        "Data Files/Sky_Main.ESM": {
+          "records_checked": 12443,
+          "changed_fields": {},
+          "logical_fields": 0,
+          "physical_fields": 0,
+          "other_fields_changed": 0,
+          "headers_or_order_changed": 0
+        }
+      },
+      "baseline_sha256": "928c8372dcd5e8db393eb2e2c6b11e3143054a1aa23baed7a79681f489c44fb8",
+      "candidate_sha256": "928c8372dcd5e8db393eb2e2c6b11e3143054a1aa23baed7a79681f489c44fb8"
+    },
+    "Tamriel_Data-kr0.3.zip": {
+      "zip_entries_checked": 8,
+      "plugins": {
+        "Data Files/Tamriel_Data.esm": {
+          "records_checked": 60209,
+          "changed_fields": {},
+          "logical_fields": 0,
+          "physical_fields": 0,
+          "other_fields_changed": 0,
+          "headers_or_order_changed": 0
+        }
+      },
+      "baseline_sha256": "8ac7b46a6376b6719d6599228e50f38a0b12689995c1f8327cfe6322c18ac938",
+      "candidate_sha256": "8ac7b46a6376b6719d6599228e50f38a0b12689995c1f8327cfe6322c18ac938"
+    },
+    "TR_Mainland-kr0.3.zip": {
+      "zip_entries_checked": 11,
+      "plugins": {
+        "Data Files/TR_Mainland.esm": {
+          "records_checked": 131116,
+          "changed_fields": {
+            "BOOK.TEXT": 6
+          },
+          "logical_fields": 6,
+          "physical_fields": 6,
+          "other_fields_changed": 0,
+          "headers_or_order_changed": 0
+        }
+      },
+      "baseline_sha256": "684ecb7311018636728d8d238ac43e5fe3c5cb8d2a27a5f1a3f22c0bb5e4aefa",
+      "candidate_sha256": "f4542cfd42d0cf43d8cf65e34a4f9766e0040dcbf415d75e05d4f35858fd5816"
+    }
+  },
+  "scope": "Full physical record and ZIP payload comparison. Does not replace semantic or gameplay review.",
+  "native_INFO_and_topic_payloads_unchanged": true,
+  "other_record_payloads_unchanged": true,
+  "sidecar_payloads_unchanged": true,
+  "native_reference_report_sha256": "6d68e1dfe79d732be55c0441edeed9bd5860d76fd3e207e17902680023e7ed99",
+  "explanation": "Only the six reviewed BOOK.TEXT fields differ from the 24-mode native-verified candidate. All INFO/DIAL records, other subrecords and sidecar payloads are byte-identical; their native results therefore remain applicable."
+}

@@ -5,9 +5,9 @@
     "PRESERVE_EDITOR_SOUND_MARKER": 39,
     "PRESERVE_DEVELOPER_BOOK_MARKER": 552,
     "PRESERVE_CIPHER_OR_RITUAL": 6,
-    "SOURCE_REVIEWED_TRANSLATION": 98,
+    "SOURCE_REVIEWED_TRANSLATION": 280,
     "PRESERVE_DAEDRIC_GLYPHS": 76,
-    "PENDING_SOURCE_REVIEW": 848,
+    "PENDING_SOURCE_REVIEW": 666,
     "PRESERVE_IMAGE_ONLY_BOOK": 58,
     "PRESERVE_DEVELOPER_JOURNAL": 3,
     "PRESERVE_DEVELOPER_DIALOGUE_HEADER": 2309,
@@ -611,8 +611,8 @@
       "record_id": "TR_m1_FW_College_EnrollmentLog",
       "field": "TEXT",
       "source_raw_sha256": "7a046fb548b3be215eb647d117256cb6e0e7cfa4788ca065605e786272953d01",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
     },
     {
       "candidate_index": 54,
@@ -621,8 +621,8 @@
       "record_id": "TR_m1_FW_College_LibChimar",
       "field": "TEXT",
       "source_raw_sha256": "419696a022bdb80e0c6366958cf31b162a10d312e273ef85dffa3ee8e3ff491a",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
     },
     {
       "candidate_index": 55,
@@ -631,8 +631,8 @@
       "record_id": "TR_m1_FW_College_LibNecrBooks",
       "field": "TEXT",
       "source_raw_sha256": "9181d5b251516a075e979bb471b1a077a1b241d9c9af2e96163546b94e06d4d3",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
     },
     {
       "candidate_index": 56,
@@ -641,8 +641,8 @@
       "record_id": "TR_m1_FW_College_MusAnchor",
       "field": "TEXT",
       "source_raw_sha256": "6f17cc08bc8d867adbfcf909e82f4c20e6e3973a29eee1fa5667306960ce652a",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Manually compare every original prose node, quantities, dates and proper names. Preserve original markup, glyphs, image references and line breaks; the malformed source BR> marker in the enrollment log remains outside translated spans."
     },
     {
       "candidate_index": 57,
@@ -8519,8 +8519,8 @@
       "record_id": "20199104642528727880",
       "field": "NAME",
       "source_raw_sha256": "6c29cc1472798529f90d979a6b1d6f0bd2a0fbfc44ffeeb861ea45234234597c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 720,
@@ -8529,8 +8529,8 @@
       "record_id": "92233503052931224",
       "field": "NAME",
       "source_raw_sha256": "6169ee0f6cb751040013cc132a341307ed2143aa9df7b54981400c584061eac2",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 721,
@@ -8539,8 +8539,8 @@
       "record_id": "2341925429740824875",
       "field": "NAME",
       "source_raw_sha256": "f98cdbd333aa3e164d56faa0c2731a5a8a71ef5e717d404243fdd381abbed1b9",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 722,
@@ -8549,8 +8549,8 @@
       "record_id": "191984792685325791",
       "field": "NAME",
       "source_raw_sha256": "ab7c888d6fde6c9731e30f0bc1534f1f3697a12cbca2fce3ac6f258272e104f3",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 723,
@@ -8559,8 +8559,8 @@
       "record_id": "123961891391604465",
       "field": "NAME",
       "source_raw_sha256": "de6d7ebaf6107b52202eced0d64255dd5a6ad086b8073f13e2207d17ec8c9255",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 724,
@@ -8569,8 +8569,8 @@
       "record_id": "96816988166029414",
       "field": "NAME",
       "source_raw_sha256": "7c58279e466e1e4878b0f64acd7db72a2d1917bf27c1fcda46947f30b2955962",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 725,
@@ -8579,8 +8579,8 @@
       "record_id": "17183169053200024593",
       "field": "NAME",
       "source_raw_sha256": "d609f59330ba867fb313a5a90d616aeacb3c6b940cdf7054b710e5b49e4daf17",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 726,
@@ -8589,8 +8589,8 @@
       "record_id": "27352270881519113966",
       "field": "NAME",
       "source_raw_sha256": "03b5f0140c94f14914b39edabeeceeee803aa64215dd5dd02236239e99396463",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 727,
@@ -8599,8 +8599,8 @@
       "record_id": "656726135114432741",
       "field": "NAME",
       "source_raw_sha256": "df75febf966e06f4fd0231b8c8586119a4c53c5ef53bc6bbe36a575dae27baf5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 728,
@@ -8609,8 +8609,8 @@
       "record_id": "28648269382482218901",
       "field": "NAME",
       "source_raw_sha256": "9c171aaae264b743df63ac104819af2943f30e6118ce3263848519105de745d1",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 729,
@@ -8619,8 +8619,8 @@
       "record_id": "5804240362172729271",
       "field": "NAME",
       "source_raw_sha256": "bb824fdb94b20395ddd33f6a505642f4d419324e6e3b6c40b90f1d4a18ac5715",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 730,
@@ -8629,8 +8629,8 @@
       "record_id": "2980425839807314734",
       "field": "NAME",
       "source_raw_sha256": "7969952577a3172ed92164c03caec8f156b4a072400268f5110285e0da863bd7",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 731,
@@ -8639,8 +8639,8 @@
       "record_id": "6253210611065421900",
       "field": "NAME",
       "source_raw_sha256": "25c1dd8a0936c7c90f5b027595ab4da31c7183c9734307a4cfe38759ba5de474",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 732,
@@ -8649,8 +8649,8 @@
       "record_id": "13111252472948525085",
       "field": "NAME",
       "source_raw_sha256": "1133fc3b53018278b93d38322cf18a7934e9e43f4cf94d0474361a2a79fd6fea",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 733,
@@ -8659,8 +8659,8 @@
       "record_id": "1751211062797115970",
       "field": "NAME",
       "source_raw_sha256": "1cdb1d7a448fdf591d512842512c8d2fdc95e3587ed97579ac0e40dd0936c8cf",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 734,
@@ -8669,8 +8669,8 @@
       "record_id": "22001288891753122753",
       "field": "NAME",
       "source_raw_sha256": "c0cc4ec14bc71874b91ae90411b95732d0ac80cc0210e7e43b7ad5ff97b61ddf",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 735,
@@ -8679,8 +8679,8 @@
       "record_id": "4747268922933423178",
       "field": "NAME",
       "source_raw_sha256": "5c6f18722b3e5edbe9b014fc5ed3d5ba62218828794cfeac7ca5b4dd4df484ad",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 736,
@@ -8689,8 +8689,8 @@
       "record_id": "2570732152072515236",
       "field": "NAME",
       "source_raw_sha256": "e240b1658f1b51bfa801666a8f276b95ecceb94b9c8e2bf9dc114f799910c6d8",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 737,
@@ -8699,8 +8699,8 @@
       "record_id": "2714519237305309140",
       "field": "NAME",
       "source_raw_sha256": "3d7c64b0f0515ce0a6779a4a9f279178a58ac9ee2195a4f329a9077c5173e9f8",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 738,
@@ -8709,8 +8709,8 @@
       "record_id": "22769172121697416252",
       "field": "NAME",
       "source_raw_sha256": "00a857e81423e6ff78913f1cabe20f5b4f28680c5ff2889b9742092c2e901305",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 739,
@@ -8719,8 +8719,8 @@
       "record_id": "2989987031650431431",
       "field": "NAME",
       "source_raw_sha256": "c029d8df2fcd32d3bdd947fd2f6b585d3bb022a921c9c495572a98a200868caf",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 740,
@@ -8729,8 +8729,8 @@
       "record_id": "75873779180272034",
       "field": "NAME",
       "source_raw_sha256": "4984c192a038789401a29584ea826cbd1e40b7ca3998a7b5ca715f59c0d97a42",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 741,
@@ -8739,8 +8739,8 @@
       "record_id": "249909854108526016",
       "field": "NAME",
       "source_raw_sha256": "df89ea3ec42f33961f4d931338ce5ed6dc36d54f267593ded2e4f7961d31a886",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 742,
@@ -8749,8 +8749,8 @@
       "record_id": "2960219926233352058",
       "field": "NAME",
       "source_raw_sha256": "41b3f17eabcaa3df46f1ffc6342fa234237b549fba32db89706596032a8a093b",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 743,
@@ -8759,8 +8759,8 @@
       "record_id": "10616231012319718832",
       "field": "NAME",
       "source_raw_sha256": "9eadf688514dbdd3386610a0666b0111bb9f6911a89a37e0dbe860cbd109071c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 744,
@@ -8769,8 +8769,8 @@
       "record_id": "7880172421653920869",
       "field": "NAME",
       "source_raw_sha256": "acd8aefe99f9283d83170558e1520b63057e0fde6927e95d5fb079c69abf332b",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 745,
@@ -8779,8 +8779,8 @@
       "record_id": "31685179722793913198",
       "field": "NAME",
       "source_raw_sha256": "97aa69c392e8e59669435d01605292ab545fc8ee4ab69f4e594121f5bee21b86",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 746,
@@ -8789,8 +8789,8 @@
       "record_id": "15015281312560718830",
       "field": "NAME",
       "source_raw_sha256": "11b3d8ecba8a8132154cae1d262e5fee05a34e3b39ce4ce180e0c0ff0b5b69aa",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 747,
@@ -8799,8 +8799,8 @@
       "record_id": "963214258250594176",
       "field": "NAME",
       "source_raw_sha256": "f47bd6203751fe6cb225d7074ed5ea8941592915e19ec502aa58604750ab5875",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 748,
@@ -8926,8 +8926,8 @@
       "record_id": "6250278242967629751",
       "field": "NAME",
       "source_raw_sha256": "a1a30d62a99669c6bc765ff700f0511d3b0563e0c766b5e7c80c3576453c46dc",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 758,
@@ -8936,8 +8936,8 @@
       "record_id": "19366793049899005",
       "field": "NAME",
       "source_raw_sha256": "44f22818e12a51ee6f16ed5821bf4222a067c0b47a493265f0882f6321ca9a6f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 759,
@@ -8946,8 +8946,8 @@
       "record_id": "4572108092228528919",
       "field": "NAME",
       "source_raw_sha256": "24958da492ec170f1f67befd6cdc19f487ddbcce32434bbeb8364905d3e5a015",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 760,
@@ -8956,8 +8956,8 @@
       "record_id": "188357471556730444",
       "field": "NAME",
       "source_raw_sha256": "33e9c6426325997a6afa57f70c56f84d1bd1ea760dd43b2529f6864a634e9452",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 761,
@@ -8966,8 +8966,8 @@
       "record_id": "20579155471141715770",
       "field": "NAME",
       "source_raw_sha256": "696ad96c0b958a61aac15cec11b855e084060a6d92aed0b60a7016715c82cece",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 762,
@@ -8976,8 +8976,8 @@
       "record_id": "111602942192104032",
       "field": "NAME",
       "source_raw_sha256": "8246377d49acaa52c5a31a06bf524485cd2888ddf14a0026d76bef005eeff279",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 763,
@@ -8986,8 +8986,8 @@
       "record_id": "1469978822080727357",
       "field": "NAME",
       "source_raw_sha256": "94a1b22c2d79c031560001c88ec7e3b8631459e9f098878529ded2a97b77f8b4",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 764,
@@ -8996,8 +8996,8 @@
       "record_id": "10889225092478627746",
       "field": "NAME",
       "source_raw_sha256": "523303a519ee94473a2c7037c257710e92eeb4e3e2b2671d94d63f785ed62a9e",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 765,
@@ -9006,8 +9006,8 @@
       "record_id": "2135610134742828209",
       "field": "NAME",
       "source_raw_sha256": "40e45e01962b4ccbb01ca17bd66b91e047b999fe28ea7a6630d009d20595b28f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 766,
@@ -9016,8 +9016,8 @@
       "record_id": "1766314380367810049",
       "field": "NAME",
       "source_raw_sha256": "3c7b7811d3275473bab963f69953b0e78431b695732a8da858bbf189e1e6f060",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 767,
@@ -9026,8 +9026,8 @@
       "record_id": "15256771527241933",
       "field": "NAME",
       "source_raw_sha256": "5f0e0b0ba91e43f27cd8210288ed3be6886d793cb07d5186614527e3e3e8eefb",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 768,
@@ -9088,8 +9088,8 @@
       "record_id": "280801438819394117",
       "field": "NAME",
       "source_raw_sha256": "7f4cbe26360c148492fbd7b108c53d5a3d31c02a9e1d73035ae3e1e2b39e0f9a",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 773,
@@ -9124,8 +9124,8 @@
       "record_id": "9811567165067577",
       "field": "NAME",
       "source_raw_sha256": "d606f01c8c064613da241a652a738207ebb3a12caedc37ff6c4f0e7ee188112e",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 776,
@@ -9134,8 +9134,8 @@
       "record_id": "18795567616231546",
       "field": "NAME",
       "source_raw_sha256": "03d5976e2a510dc38618e7c9fe53b49bca444d606eebaddb7301efc15333e0dd",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 777,
@@ -9144,8 +9144,8 @@
       "record_id": "1594219087264525188",
       "field": "NAME",
       "source_raw_sha256": "48384b303c0014c8d64e703968e276ddd3ccced4776a3aebd3c21715fc5bd522",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 778,
@@ -9206,8 +9206,8 @@
       "record_id": "256911651153430390",
       "field": "NAME",
       "source_raw_sha256": "d81164bdc73fb6d86544c0d491cc89c2edc5f21bd2d2331b5fa773d3c80cd825",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 783,
@@ -9216,8 +9216,8 @@
       "record_id": "273871613748541859",
       "field": "NAME",
       "source_raw_sha256": "ff9fcb9c8e237003986b39c1ce4dd598cda024ad8d61a7c68430a70b2ae89ecf",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 784,
@@ -9226,8 +9226,8 @@
       "record_id": "18037100882536414053",
       "field": "NAME",
       "source_raw_sha256": "95bcbb59e8bdd61ade3272fea424cdbc03bc93f273a61832596e4c3fdd61faa7",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 785,
@@ -9236,8 +9236,8 @@
       "record_id": "10642195761698929854",
       "field": "NAME",
       "source_raw_sha256": "06af2ef489028a7b29b2c02e9baae99f4acadc9921ab7770c65211675f1c4cc0",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 786,
@@ -9246,8 +9246,8 @@
       "record_id": "2899522491273531535",
       "field": "NAME",
       "source_raw_sha256": "684c673c09f27f0ebab6d233651e89a72007e14071eabe8ae1f6d78815ac1468",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 787,
@@ -9945,8 +9945,8 @@
       "record_id": "32308147441847231607",
       "field": "NAME",
       "source_raw_sha256": "a2445124523893c03842fb0a38365aa719f0f425fe2a6c6e8fc7995d86dd4896",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 841,
@@ -10007,8 +10007,8 @@
       "record_id": "2540328614399511982",
       "field": "NAME",
       "source_raw_sha256": "e070ff2f2f183871e85d6ad5bceadf23322c7e0831c8f94a8b6bdd2a467e9730",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 846,
@@ -10069,8 +10069,8 @@
       "record_id": "29543138551734730097",
       "field": "NAME",
       "source_raw_sha256": "b0fadf8d822d830739995fc970a2e79ba64aff29839a143f085fd6f5594018ff",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 851,
@@ -10092,8 +10092,8 @@
       "record_id": "20017240101851121045",
       "field": "NAME",
       "source_raw_sha256": "8b868ba7da51f25bed50750505cc967daac58cdafcda5f65acb74fcebda8d3f8",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 853,
@@ -10102,8 +10102,8 @@
       "record_id": "30213159661425722749",
       "field": "NAME",
       "source_raw_sha256": "aca6154a3780cb93cf64e544dbde78b4186ce5eb7c3eca2647160f2d2b0e5b00",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 854,
@@ -10294,8 +10294,8 @@
       "record_id": "222179648234820069",
       "field": "NAME",
       "source_raw_sha256": "1bc60cf4dbbef1c33f6b7bfc375da32eac4b4550ba690a81b5f5c3dfdf113cdc",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 869,
@@ -10668,8 +10668,8 @@
       "record_id": "310911173243892442",
       "field": "NAME",
       "source_raw_sha256": "c4ef162053b81fc254e8484a748de556ae4c67789348f8750211f1941d549643",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 898,
@@ -10964,8 +10964,8 @@
       "record_id": "204263115556261800",
       "field": "NAME",
       "source_raw_sha256": "7a55a0b067dfa5fb2507ba4e19d7582908c7c4b2213f07eb7543af4a7fe4ab29",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 921,
@@ -10987,8 +10987,8 @@
       "record_id": "198551137521877659",
       "field": "NAME",
       "source_raw_sha256": "7980051051eb728e9ddea9b690d60ea0206603ac13992745e891797e974fb816",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 923,
@@ -11114,8 +11114,8 @@
       "record_id": "86208491295791009",
       "field": "NAME",
       "source_raw_sha256": "86faf0103ffb84351ed3dff65093adf8457d105f0544116c1ca500e17404678f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 933,
@@ -11124,8 +11124,8 @@
       "record_id": "26803103581501516705",
       "field": "NAME",
       "source_raw_sha256": "86faf0103ffb84351ed3dff65093adf8457d105f0544116c1ca500e17404678f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 934,
@@ -11134,8 +11134,8 @@
       "record_id": "12542299471597820663",
       "field": "NAME",
       "source_raw_sha256": "74bc7f14710b0935711dbaccd265658b9026f951a1863ce497e29b5a4c3e1c6f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 935,
@@ -11144,8 +11144,8 @@
       "record_id": "242751074239958485",
       "field": "NAME",
       "source_raw_sha256": "c1fadbf66439d4bc1c34fa1386d9201eed7044b46153db82b58342cd7dc148e2",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 936,
@@ -11154,8 +11154,8 @@
       "record_id": "12967219092236326651",
       "field": "NAME",
       "source_raw_sha256": "644c7124655d0f9358a6349bdb78a2f63f47124c078548f22140e9c984f31070",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 937,
@@ -11164,8 +11164,8 @@
       "record_id": "1990218085599220373",
       "field": "NAME",
       "source_raw_sha256": "eb3ad6b53319e6db1fa99db6b67daa5ebce5274f451d92c6feeabf73a5b08029",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 938,
@@ -11174,8 +11174,8 @@
       "record_id": "116919533138172961",
       "field": "NAME",
       "source_raw_sha256": "f7754ce8abb73d524f0d5e1e474ea5a081b72e5397ce1dd994947df46f431f50",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 939,
@@ -11184,8 +11184,8 @@
       "record_id": "32047247682533830512",
       "field": "NAME",
       "source_raw_sha256": "a87bb369af98f4ce26f19f49e7a226ee3e899f9e24a3e9a4d9b06f120c617741",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 940,
@@ -11194,8 +11194,8 @@
       "record_id": "2339025044151865697",
       "field": "NAME",
       "source_raw_sha256": "ab4799abf08dc3c809265eb485e396c49f822efad0e3acbdb4903848b40432d3",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 941,
@@ -11204,8 +11204,8 @@
       "record_id": "15358311551833517192",
       "field": "NAME",
       "source_raw_sha256": "ab95be536adbc4448811f1cefa8046a4340c3124548b508be7c13f6db03f1a38",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 942,
@@ -11214,8 +11214,8 @@
       "record_id": "186781735065473118",
       "field": "NAME",
       "source_raw_sha256": "66bd533095a414c2b9b14b4cd3296b719a4f4701c65a1db9e761bd03fb36b0a1",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 943,
@@ -11224,8 +11224,8 @@
       "record_id": "19304238892833310683",
       "field": "NAME",
       "source_raw_sha256": "41b042ca4a24c867e7222e2606f50102a88a5118865011092a0f5708d7bae3bc",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 944,
@@ -11234,8 +11234,8 @@
       "record_id": "12301167091708014880",
       "field": "NAME",
       "source_raw_sha256": "ce80b196e32b236585fd8850e2f8023350f7b8326bf01d65b8b718de0dc14d4d",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 945,
@@ -11244,8 +11244,8 @@
       "record_id": "162328572493513252",
       "field": "NAME",
       "source_raw_sha256": "babae881be2d79adb14766b3488102b43c87aca46740a7ee8becec1cf88bf082",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 946,
@@ -11254,8 +11254,8 @@
       "record_id": "2178419811764419481",
       "field": "NAME",
       "source_raw_sha256": "d48627a14a537f4c8b59df8fe73019c81aafad129554fff2f3ceecb07ff37738",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 947,
@@ -11277,8 +11277,8 @@
       "record_id": "21457213871736019983",
       "field": "NAME",
       "source_raw_sha256": "2af66db44296cd27bc34f4d795b8d261c3317c3b4a1985587c5d5d1717e04cf2",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 949,
@@ -11287,8 +11287,8 @@
       "record_id": "62678480410643412",
       "field": "NAME",
       "source_raw_sha256": "bfc78db51df693182ef97fc7aad352a2fa291bea92adc46d7bf9c014ac5768d1",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 950,
@@ -11297,8 +11297,8 @@
       "record_id": "2183522644218385363",
       "field": "NAME",
       "source_raw_sha256": "23dda6a31500d76f8b98e465559ca1651d8fc7572f31489484736290f350268f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 951,
@@ -11307,8 +11307,8 @@
       "record_id": "2428920091478319538",
       "field": "NAME",
       "source_raw_sha256": "7b0cf2abae24091181f1e77a12db3c0df7116de1fef259ce0b8b11dbdbfdf89c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 952,
@@ -11317,8 +11317,8 @@
       "record_id": "3101016322104613966",
       "field": "NAME",
       "source_raw_sha256": "c4813d010b79f0b93af3949be61e18cc26fd495331705917d38c60e3a23c0030",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 953,
@@ -11327,8 +11327,8 @@
       "record_id": "516611932322599446",
       "field": "NAME",
       "source_raw_sha256": "393fc491add447872127b322184b1a7ffe3d56dc435788dad24a275fc9976788",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 954,
@@ -11347,8 +11347,8 @@
       "record_id": "224982356421907716",
       "field": "NAME",
       "source_raw_sha256": "887481e5dd89a2d97c3dde85ec52bf07f8d2e216d601a0a5d7a397983155f9f1",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 956,
@@ -11357,8 +11357,8 @@
       "record_id": "181723593186002345",
       "field": "NAME",
       "source_raw_sha256": "3de751ba1e6b5b5a0072c6d87b592c847f79183a240bd8a82fce4b45cbcf0004",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 957,
@@ -11367,8 +11367,8 @@
       "record_id": "11817430592665608",
       "field": "NAME",
       "source_raw_sha256": "01e8a80437790f1d09f3632e6a98eab43626f358a2a61540a0b49e67f9108cf0",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 958,
@@ -11377,8 +11377,8 @@
       "record_id": "147717337108631870",
       "field": "NAME",
       "source_raw_sha256": "a25f7b7626dbe72d5fa01c0e2a161f2a625e0e64e6553bafd42d88c8737e672c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 959,
@@ -11387,8 +11387,8 @@
       "record_id": "31925159241730318440",
       "field": "NAME",
       "source_raw_sha256": "9feda40a5da2a8cb87364991b36515b06e960921f28c42447ceddfccbde91c75",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 960,
@@ -11397,8 +11397,8 @@
       "record_id": "678072951513110463",
       "field": "NAME",
       "source_raw_sha256": "01e8a80437790f1d09f3632e6a98eab43626f358a2a61540a0b49e67f9108cf0",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 961,
@@ -11407,8 +11407,8 @@
       "record_id": "23383318201090225320",
       "field": "NAME",
       "source_raw_sha256": "f6110eeab3676ad326e41ec1f3553801376cb8ee3d91ec2172096807f98447fc",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 962,
@@ -11417,8 +11417,8 @@
       "record_id": "133536007160479126",
       "field": "NAME",
       "source_raw_sha256": "215268ddeeec5be2095a62c819698b5ee3aa487d2e45833411ffd278af06e2da",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 963,
@@ -11427,8 +11427,8 @@
       "record_id": "1262161912381920859",
       "field": "NAME",
       "source_raw_sha256": "19d62bcde94b91f3fa7f80d1344e433c7f9540198f71d621ae712dfec66ad24c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 964,
@@ -11437,8 +11437,8 @@
       "record_id": "2011628238283629175",
       "field": "NAME",
       "source_raw_sha256": "19d62bcde94b91f3fa7f80d1344e433c7f9540198f71d621ae712dfec66ad24c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 965,
@@ -11447,8 +11447,8 @@
       "record_id": "71425882218427490",
       "field": "NAME",
       "source_raw_sha256": "19d62bcde94b91f3fa7f80d1344e433c7f9540198f71d621ae712dfec66ad24c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 966,
@@ -11457,8 +11457,8 @@
       "record_id": "4659142442494532392",
       "field": "NAME",
       "source_raw_sha256": "19d62bcde94b91f3fa7f80d1344e433c7f9540198f71d621ae712dfec66ad24c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 967,
@@ -11467,8 +11467,8 @@
       "record_id": "167762890728942989",
       "field": "NAME",
       "source_raw_sha256": "19d62bcde94b91f3fa7f80d1344e433c7f9540198f71d621ae712dfec66ad24c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 968,
@@ -11477,8 +11477,8 @@
       "record_id": "27500331417506152",
       "field": "NAME",
       "source_raw_sha256": "19d62bcde94b91f3fa7f80d1344e433c7f9540198f71d621ae712dfec66ad24c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 969,
@@ -11487,8 +11487,8 @@
       "record_id": "2926731192115977019",
       "field": "NAME",
       "source_raw_sha256": "0ae160f452cc9a6a0798a8e3ad4fac59e9e000811a9f9003e754fe3bac3a0328",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 970,
@@ -11497,8 +11497,8 @@
       "record_id": "7429310132165212396",
       "field": "NAME",
       "source_raw_sha256": "8c33ae1c165bb8cd651645c1d5f1d6361648711606fb96bcc8ea550d3e1abff1",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 971,
@@ -11507,8 +11507,8 @@
       "record_id": "17153113242053322752",
       "field": "NAME",
       "source_raw_sha256": "c4f74473af76c4cdb94e853716c258ce1770d3ecaf16573c492bad25a1fe1843",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 972,
@@ -11517,8 +11517,8 @@
       "record_id": "24699369212367414",
       "field": "NAME",
       "source_raw_sha256": "79fcbf8e719857fc9a8f5cb27121c843c1d366b01ff7f37fc233a21cb9627d11",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 973,
@@ -11527,8 +11527,8 @@
       "record_id": "205693470185411749",
       "field": "NAME",
       "source_raw_sha256": "e3982000f62bf6aaef529a7bba711f95cbdb62456091fbc223c436d35a29fc1a",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 974,
@@ -11537,8 +11537,8 @@
       "record_id": "16112315513170321262",
       "field": "NAME",
       "source_raw_sha256": "64f87bfa3634c990758b39badcd9939b0be50ee2369831840ff4eea30ada4143",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 975,
@@ -11547,8 +11547,8 @@
       "record_id": "2638424918198826108",
       "field": "NAME",
       "source_raw_sha256": "34a70d538a85165f28f8a74770d10aba46a65c76d3e9810dffbca1e4e2319881",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 976,
@@ -11557,8 +11557,8 @@
       "record_id": "230661182144763229",
       "field": "NAME",
       "source_raw_sha256": "173d2f494c07838384eb08032c81f30c36ae599c183feb07d80c8b08da4a2c06",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 977,
@@ -11567,8 +11567,8 @@
       "record_id": "322202394121996748",
       "field": "NAME",
       "source_raw_sha256": "173d2f494c07838384eb08032c81f30c36ae599c183feb07d80c8b08da4a2c06",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 978,
@@ -11577,8 +11577,8 @@
       "record_id": "2355812150197762365",
       "field": "NAME",
       "source_raw_sha256": "173d2f494c07838384eb08032c81f30c36ae599c183feb07d80c8b08da4a2c06",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 979,
@@ -11587,8 +11587,8 @@
       "record_id": "19647169219684311",
       "field": "NAME",
       "source_raw_sha256": "85137f43b03aaf0a43845474b071de2e48c2391e47f66c879fb7483a18bde204",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 980,
@@ -11597,8 +11597,8 @@
       "record_id": "8601225141337114971",
       "field": "NAME",
       "source_raw_sha256": "e78106da3dfe4bdb75dc5f28a6d47428d0dbff1f33e16fe55a06a2738a29aa5f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 981,
@@ -11607,8 +11607,8 @@
       "record_id": "1035110526293097212",
       "field": "NAME",
       "source_raw_sha256": "d645d5ad3e5270e817c574a22c42faa3390edfee970c3ef868f5b4a33e5ead39",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 982,
@@ -11617,8 +11617,8 @@
       "record_id": "278656606276218640",
       "field": "NAME",
       "source_raw_sha256": "eea95f6de9c35d18467f582fa3a7530cb0edd384df1940e5647685ed5f5cf997",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 983,
@@ -11627,8 +11627,8 @@
       "record_id": "297951779631632455",
       "field": "NAME",
       "source_raw_sha256": "5524f2bc133c34315b8f4c8baa1fc30f46b5285329b9b101c814d352097bf67c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 984,
@@ -11637,8 +11637,8 @@
       "record_id": "5584168652348821412",
       "field": "NAME",
       "source_raw_sha256": "887ebc0ab83674107197451c2210a50953e7b7294e7e3056786f27f6995e3cc7",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 985,
@@ -11647,8 +11647,8 @@
       "record_id": "20069269352168616894",
       "field": "NAME",
       "source_raw_sha256": "eea95f6de9c35d18467f582fa3a7530cb0edd384df1940e5647685ed5f5cf997",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 986,
@@ -11657,8 +11657,8 @@
       "record_id": "326142172045327175",
       "field": "NAME",
       "source_raw_sha256": "6ee0e4b56b1eb789cf4c47d2eedb24c055cf084bb3041f1ccb07ebd46b3263f5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 987,
@@ -11667,8 +11667,8 @@
       "record_id": "1687425894287161834",
       "field": "NAME",
       "source_raw_sha256": "0980de794b12d7e5c92dd73516ccbb04e25bca8b8699ed94d88a8c96a8b466a3",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 988,
@@ -11677,8 +11677,8 @@
       "record_id": "1512410199845328001",
       "field": "NAME",
       "source_raw_sha256": "84d550ac77cd6c60774ab6235a5a9625e1fbcc60a1fb24b9a08c3e27f35eb0be",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 989,
@@ -11687,8 +11687,8 @@
       "record_id": "7554149712832221991",
       "field": "NAME",
       "source_raw_sha256": "4ad9f6c14db2e193fb6bc06e836efd442b652a30113e4722911bd8764297e05d",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 990,
@@ -11697,8 +11697,8 @@
       "record_id": "759027947611523487",
       "field": "NAME",
       "source_raw_sha256": "f014b0be0609cf0fb376d8da3f5925626bfd227ecf8e5f9ebdfe740311635cf6",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 991,
@@ -11707,8 +11707,8 @@
       "record_id": "1926323383139523654",
       "field": "NAME",
       "source_raw_sha256": "3714a4f23a0da53dd6249c45d05f59af6171a8030ddbd9025fb49ec2de1c3689",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 992,
@@ -11717,8 +11717,8 @@
       "record_id": "196159472318330919",
       "field": "NAME",
       "source_raw_sha256": "0eee5ed8ec157b9c68c0c3707c17ae0e1b0a19973084df7e96299de6623da312",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 993,
@@ -11727,8 +11727,8 @@
       "record_id": "6914161151547625377",
       "field": "NAME",
       "source_raw_sha256": "bc39b1e51d74a810408d4ef448cada14e396759a7f2271042e8124e6e95a114d",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 994,
@@ -11737,8 +11737,8 @@
       "record_id": "686148351916523023",
       "field": "NAME",
       "source_raw_sha256": "d0b5838bf968b7b0a533889d8c549e5816e7507056466a805919b5770aa509a0",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 995,
@@ -11747,8 +11747,8 @@
       "record_id": "237951776229519451",
       "field": "NAME",
       "source_raw_sha256": "647e534aa4d9ac44fc20539423dd13bd5cef8e3b067a9606bffa577263154faa",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 996,
@@ -11757,8 +11757,8 @@
       "record_id": "2386732731911417077",
       "field": "NAME",
       "source_raw_sha256": "5b19df5f1c2581115aee96b556ff69bfe803628dce8b083746f398f3c39f3547",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 997,
@@ -11767,8 +11767,8 @@
       "record_id": "3250337831141615003",
       "field": "NAME",
       "source_raw_sha256": "1592503a14bb2fc86270044eaea2aa204a437dd80f5b8c90bf5fc64fffd46a6b",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 998,
@@ -11777,8 +11777,8 @@
       "record_id": "17824250541493030428",
       "field": "NAME",
       "source_raw_sha256": "400988bfaa8bc20ba7cc8b02712677d72e093de212756935f2cfa343b5eb72e8",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 999,
@@ -11787,8 +11787,8 @@
       "record_id": "125762745724627706",
       "field": "NAME",
       "source_raw_sha256": "f7dcd9911c7f73db31382065def5e7ed988261a13ec9ac08f95a92e21c18e386",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1000,
@@ -11797,8 +11797,8 @@
       "record_id": "9868122512164723419",
       "field": "NAME",
       "source_raw_sha256": "e49ca0b97c5635c3a1b3f84debf8b0202e4a727f6c5d756822c7b105aa8d9323",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1001,
@@ -11807,8 +11807,8 @@
       "record_id": "992311210863617357",
       "field": "NAME",
       "source_raw_sha256": "ca46b47e224b26af3ae7b94b40053ddaeac7952d8523c05fb9a435a6e3479e55",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1002,
@@ -11817,8 +11817,8 @@
       "record_id": "14702196492105525614",
       "field": "NAME",
       "source_raw_sha256": "ca46b47e224b26af3ae7b94b40053ddaeac7952d8523c05fb9a435a6e3479e55",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1003,
@@ -11827,8 +11827,8 @@
       "record_id": "1287316053300278199",
       "field": "NAME",
       "source_raw_sha256": "4acd7748a7a426afbdc8ef8e777cbcf2caa78f7ea01f27bd2aab30b451a1c9fc",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1004,
@@ -11837,8 +11837,8 @@
       "record_id": "2964996621227226856",
       "field": "NAME",
       "source_raw_sha256": "9187bf9d2869428a03ce17964a3c0458e5b96d6d4860eb019b28c713c3f4174c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1005,
@@ -11847,8 +11847,8 @@
       "record_id": "3084927153769018888",
       "field": "NAME",
       "source_raw_sha256": "570ca1f02b0df4bf706fd8f32ea4a7a21da67c2a001b8ef51d776074d841dd78",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1006,
@@ -11857,8 +11857,8 @@
       "record_id": "2384811553276688010",
       "field": "NAME",
       "source_raw_sha256": "c057dbd3dc70bbee2c47440bcd89876eec81e79427f9610e6b2b824093352e44",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1007,
@@ -11867,8 +11867,8 @@
       "record_id": "7050186613124931809",
       "field": "NAME",
       "source_raw_sha256": "3ca4b9b7b964531be04e51e3bde1ee12ad773af9ba80eb1845e0ebc0354a82cc",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1008,
@@ -11877,8 +11877,8 @@
       "record_id": "507511863127726498",
       "field": "NAME",
       "source_raw_sha256": "6fff58c817e4de23eaa15d0b0a38f9046738d8ff59dc1323b0b2500715e1b2ac",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1009,
@@ -11887,8 +11887,8 @@
       "record_id": "87812919079476026",
       "field": "NAME",
       "source_raw_sha256": "de84546bcdc34ff78f7fd6c5de32ae8e9a3d9274012cbb3184110b41a940c35f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1010,
@@ -11897,8 +11897,8 @@
       "record_id": "595032367138136488",
       "field": "NAME",
       "source_raw_sha256": "b1a2b5d662b0a098c3c7e14cadaf50eab045b0a959643d772aee5c9a201133c5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1011,
@@ -11907,8 +11907,8 @@
       "record_id": "223257958205929060",
       "field": "NAME",
       "source_raw_sha256": "8725c89e38f71cf9fb48b18e2de2b64133941301c049c6ac0569988017881db5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1012,
@@ -11917,8 +11917,8 @@
       "record_id": "31870165562514715242",
       "field": "NAME",
       "source_raw_sha256": "e6c908b6423e19f59885614b9954f67c01a317f31dfb002f4ad55198f9802e7a",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1013,
@@ -11927,8 +11927,8 @@
       "record_id": "834922557266814691",
       "field": "NAME",
       "source_raw_sha256": "df150e30d4ba74364c8fc5af77b688c17b83164eef3c59f65da6ae361cc5dfa4",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1014,
@@ -11937,8 +11937,8 @@
       "record_id": "2574425712277982484",
       "field": "NAME",
       "source_raw_sha256": "a7f21b70f14495b0155ce18dd2456b364c983f8f12d16eac06c74501b8086839",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1015,
@@ -11947,8 +11947,8 @@
       "record_id": "69043123212313502",
       "field": "NAME",
       "source_raw_sha256": "c3b752e137fe86fc6ba707094e21d24cb3171e2d05ebfa34b38653fd81682ddf",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1016,
@@ -11957,8 +11957,8 @@
       "record_id": "74930191515412425",
       "field": "NAME",
       "source_raw_sha256": "947490f99b273f5318bf67dc4c0d7a6a26eb893cd19c500e5e0b07941e2249ad",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1017,
@@ -11967,8 +11967,8 @@
       "record_id": "32434200312003414322",
       "field": "NAME",
       "source_raw_sha256": "bc00c8640d7c19eb0a7cd5d3601bdf6e07ea53e754fc71c3b3cc0333e18da399",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1018,
@@ -11977,8 +11977,8 @@
       "record_id": "55428932702217867",
       "field": "NAME",
       "source_raw_sha256": "8f19f0470da6697b0319fd1cb3fae067c56ca723823399edd461325bf23ed6d8",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1019,
@@ -11987,8 +11987,8 @@
       "record_id": "566932411760516663",
       "field": "NAME",
       "source_raw_sha256": "4f0b600b2eec08a0f62124856a02a3f5be15a40f5bed835661dab16b76e62169",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1020,
@@ -11997,8 +11997,8 @@
       "record_id": "2637299312530018388",
       "field": "NAME",
       "source_raw_sha256": "1c0728bc88e50ab0ecd05fa807e2c39d1aa67f95aebfebc26b10ae1d09adb806",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1021,
@@ -12007,8 +12007,8 @@
       "record_id": "5346114861851220301",
       "field": "NAME",
       "source_raw_sha256": "dcb6a3fface7ab4c0a69ea969da4f8790b709f6059991355a149504edf4ad161",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1022,
@@ -12017,8 +12017,8 @@
       "record_id": "1012017961297706102",
       "field": "NAME",
       "source_raw_sha256": "ea5d59ebc11fb216c05dca66dbd37ad34be1546b8cf64c468a795655e24aa977",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1023,
@@ -12027,8 +12027,8 @@
       "record_id": "21295250832863731146",
       "field": "NAME",
       "source_raw_sha256": "0d670fbcdbdd6f9e87dd947aa349f3bce5508a32505299278aeb5670216a215f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1024,
@@ -12037,8 +12037,8 @@
       "record_id": "286351782322508936",
       "field": "NAME",
       "source_raw_sha256": "7872ea5649a5bf040ee07810dad406922c5a1cc9a327e0fb1f16b657c6694b9c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1025,
@@ -12060,8 +12060,8 @@
       "record_id": "290035842164582122",
       "field": "NAME",
       "source_raw_sha256": "c4ebbbca1c50be2dd5f9144f4c5c5e8563be6075be895b9f7e41fa7d4f29c2ea",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1027,
@@ -12070,8 +12070,8 @@
       "record_id": "23695121122032425490",
       "field": "NAME",
       "source_raw_sha256": "4ed37fab79aaf42f6c7bd175d5d3733584cf7fa92a0c0fca6a0f0b1d12bde5ce",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1028,
@@ -12080,8 +12080,8 @@
       "record_id": "32322178151524818",
       "field": "NAME",
       "source_raw_sha256": "0c504e9a82714eb9e31a81c6c8e524e043c715a7a9c4db8c624492fb80f870ed",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1029,
@@ -12090,8 +12090,8 @@
       "record_id": "2032232500557512936",
       "field": "NAME",
       "source_raw_sha256": "c42e7f13042380eb7da4a481e580ecff76feacf892d4256c6f258e28d870e724",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1030,
@@ -12100,8 +12100,8 @@
       "record_id": "25126278061567327284",
       "field": "NAME",
       "source_raw_sha256": "c999d1ee3bb8a7143f57084a794e1e77929ada2ca9e8e012c1129794407c6235",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1031,
@@ -12110,8 +12110,8 @@
       "record_id": "25905226561181011596",
       "field": "NAME",
       "source_raw_sha256": "c999d1ee3bb8a7143f57084a794e1e77929ada2ca9e8e012c1129794407c6235",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1032,
@@ -12120,8 +12120,8 @@
       "record_id": "3090662241300014484",
       "field": "NAME",
       "source_raw_sha256": "22bf4acad73b4080b0bc3552cd315376f35ea0e38ea7ec87adcd8ff20e3d7edb",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1033,
@@ -12130,8 +12130,8 @@
       "record_id": "1829916790734319514",
       "field": "NAME",
       "source_raw_sha256": "18458a1995769b99764cc316ce81cb5fbc2778cbd38d67b1a74fd7bd71f48d2c",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1034,
@@ -12140,8 +12140,8 @@
       "record_id": "27652664337323102",
       "field": "NAME",
       "source_raw_sha256": "1fed58b09b56ba094e9dc02066947c2ea489ee6b3fced83c36b3e1395d920fc9",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1035,
@@ -12150,8 +12150,8 @@
       "record_id": "127753733125822448",
       "field": "NAME",
       "source_raw_sha256": "c4f15e0cf127c99078e4a8f01bdcc076181fddd0d17e738e19b8f06ae496d116",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1036,
@@ -12160,8 +12160,8 @@
       "record_id": "20033269411603014054",
       "field": "NAME",
       "source_raw_sha256": "c4f15e0cf127c99078e4a8f01bdcc076181fddd0d17e738e19b8f06ae496d116",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1037,
@@ -12170,8 +12170,8 @@
       "record_id": "2248233561725127885",
       "field": "NAME",
       "source_raw_sha256": "05f65c54d5e970c5d73dac6475f017e6734d20aa7c89d5f9929a4150037de989",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1038,
@@ -12180,8 +12180,8 @@
       "record_id": "30122200630212639",
       "field": "NAME",
       "source_raw_sha256": "05f65c54d5e970c5d73dac6475f017e6734d20aa7c89d5f9929a4150037de989",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1039,
@@ -12190,8 +12190,8 @@
       "record_id": "20426129592070118277",
       "field": "NAME",
       "source_raw_sha256": "f18acb2dc9ac5105a170778103afd0dbc849753590e83153b9f0032e0e17f6ef",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1040,
@@ -12200,8 +12200,8 @@
       "record_id": "68932852048471531",
       "field": "NAME",
       "source_raw_sha256": "7e2a98b61644b611918247eedbf140b3553080543ceb2e51c17365e5681956c5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1041,
@@ -12210,8 +12210,8 @@
       "record_id": "23013299551671823173",
       "field": "NAME",
       "source_raw_sha256": "fc15e384800216c326e4328d661090903bc408e5a348c9cbd411035ee9aba83b",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1042,
@@ -12220,8 +12220,8 @@
       "record_id": "2100427629190208978",
       "field": "NAME",
       "source_raw_sha256": "d8b37c050f662ef2d80e34c1b5cdbd7efc9e861957098a7e2ec5aad115099bb6",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1043,
@@ -12230,8 +12230,8 @@
       "record_id": "933478511044120941",
       "field": "NAME",
       "source_raw_sha256": "3cb2016855231785c30350ac1dbd4c294340a9a676257f1e21034d84deffd7de",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1044,
@@ -12240,8 +12240,8 @@
       "record_id": "783925489199799220",
       "field": "NAME",
       "source_raw_sha256": "46b8b2d0cb843c945c326a61ca06ef50a2e753f1e19d062d007ebb9d6d864ea5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1045,
@@ -12250,8 +12250,8 @@
       "record_id": "6238193082622331796",
       "field": "NAME",
       "source_raw_sha256": "9ee7c9b0c3ab7e0ceb50eaa3ce1dd47107a1b47e51538bd3c3fe6b4f54500393",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1046,
@@ -12260,8 +12260,8 @@
       "record_id": "248717232367913378",
       "field": "NAME",
       "source_raw_sha256": "fc7e168eb11ab06e315113c3f64a7f1d6fdd32cf8dc29acc758babbf2fdb489f",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1047,
@@ -12270,8 +12270,8 @@
       "record_id": "172932774829118798",
       "field": "NAME",
       "source_raw_sha256": "af4ad479f9d9b415269bf7715052ac9df10b25577cdae021489a89d4233cdbad",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1048,
@@ -12280,8 +12280,8 @@
       "record_id": "15442052411223457",
       "field": "NAME",
       "source_raw_sha256": "b84cadb833b00b9895bca2e05bdb3a04e9a25fdf03af75db4fe3ac36a0661f15",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1049,
@@ -12290,8 +12290,8 @@
       "record_id": "32477222552350216178",
       "field": "NAME",
       "source_raw_sha256": "749b7e15a3984e05b09d4afccecf0ac86a96daacd5ed1724526f8828fe93e400",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1050,
@@ -12300,8 +12300,8 @@
       "record_id": "991272622066621207",
       "field": "NAME",
       "source_raw_sha256": "a91494aefe2b26f1f22c97478b53c6e8cb46b04e8aa18579ca1fea2a7532ab0d",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1051,
@@ -12310,8 +12310,8 @@
       "record_id": "200072541126044325",
       "field": "NAME",
       "source_raw_sha256": "fd2b43e00d61658dede8c136595ac6371e933f1fca304c9feccccb81bb97a7d5",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1052,
@@ -12320,8 +12320,8 @@
       "record_id": "28711240821138029651",
       "field": "NAME",
       "source_raw_sha256": "8428b7cdee718ed7a3d7351128d06de4efc35a4b8be64029977453f30d26035b",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1053,
@@ -12330,8 +12330,8 @@
       "record_id": "12908317212641510228",
       "field": "NAME",
       "source_raw_sha256": "aa2c26769dcff086767e530c5289362b463216391b17fb7f797bed97f2175e6d",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1054,
@@ -12340,8 +12340,8 @@
       "record_id": "6274128221088520774",
       "field": "NAME",
       "source_raw_sha256": "1b3878780acaa3f5fa29f0eac1bf34b7fa98864afb7a7e01e9e17e7fe4f6e8e7",
-      "verdict": "PENDING_SOURCE_REVIEW",
-      "reason": "Player-facing prose or context requiring individual source comparison; not yet approved for the build."
+      "verdict": "SOURCE_REVIEWED_TRANSLATION",
+      "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
     {
       "candidate_index": 1055,

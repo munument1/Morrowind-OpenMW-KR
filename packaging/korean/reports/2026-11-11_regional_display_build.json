@@ -1,7 +1,7 @@
 {
   "display": {
-    "manifest_sha256": "a143f774ec8b8b15df6c1454d9ae3f64d85030595337a84520f89922134dc8a5",
-    "reviewed_fields": 965,
+    "manifest_sha256": "62830264720105aff6e750931da46f7ba52e2b1e31f095e7ae62b816687c35a3",
+    "reviewed_fields": 1147,
     "archives": {
       "Cyr_Main-kr0.3.zip": {
         "sha256": "e3beef51b758a8730c376d783425ecd69f7c7c7982b039d2d68f711d29b99351",
@@ -26,24 +26,24 @@
         }
       },
       "TR_Mainland-kr0.3.zip": {
-        "sha256": "bad10c46e9ac1ff38d60052a3532b3257a16536111fbb164a38030358f5ea49a",
+        "sha256": "4291778f04c4dd4ad2dd0467a1fa8fb0aa0ed8209a5d67c464826f0b32cd6f24",
         "changes": {
           "Data Files/TR_Mainland.esm": {
             "before_sha256": "253a7904743375af1fd6429f7760ead6a5a9ad3ad0c2ed8709337f35af3b2a9f",
-            "after_sha256": "5fb754afaeba61f31e3f65c87515e64751d122a8ae4220d7b6e2a20f2c556068",
-            "physical_fields_changed": 114
+            "after_sha256": "10b5f1c493fc0515a1b3ff7068607ab50085113ad8fa8fe631cbb86b67c645e9",
+            "physical_fields_changed": 325
           },
           "Data Files/TR_Mainland.top": {
             "before_sha256": "8ff3d2377ae5313b98b11f314fc2cb03e552a5fedacc56887934716fc6972554",
-            "after_sha256": "c1a60ed728088d5674caf59c09f91a400546782302489abac3a3af5db749f9e9",
-            "new_explicit_aliases": 77
+            "after_sha256": "355906e0c200fecdf0d2f4fb6d327637adfce47233f162776e3e8acd7aceb618",
+            "new_explicit_aliases": 147
           }
         }
       }
     }
   },
   "display_physical": {
-    "reviewed_fields": 965,
+    "reviewed_fields": 1147,
     "archives": {
       "Cyr_Main-kr0.3.zip": {
         "zip_entries_checked": 8,
@@ -129,18 +129,18 @@
               "MISC.FNAM": 8,
               "CLOT.FNAM": 1,
               "ACTI.FNAM": 2,
-              "BOOK.TEXT": 6,
+              "BOOK.TEXT": 10,
               "BOOK.FNAM": 1,
-              "INFO.NAME": 91
+              "INFO.NAME": 298
             },
-            "logical_fields": 114,
-            "physical_fields": 114,
+            "logical_fields": 296,
+            "physical_fields": 325,
             "other_fields_changed": 0,
             "headers_or_order_changed": 0
           }
         },
         "baseline_sha256": "c2cab5704d5b82b129730532eb15bfe1f9c02468e8ffac6011e983df1d9d7bec",
-        "candidate_sha256": "bad10c46e9ac1ff38d60052a3532b3257a16536111fbb164a38030358f5ea49a"
+        "candidate_sha256": "4291778f04c4dd4ad2dd0467a1fa8fb0aa0ed8209a5d67c464826f0b32cd6f24"
       }
     },
     "scope": "Full physical record and ZIP payload comparison. Does not replace semantic or gameplay review."
@@ -2765,8 +2765,8 @@
         }
       },
       "TR_Mainland-kr0.3.zip": {
-        "source_sha256": "bad10c46e9ac1ff38d60052a3532b3257a16536111fbb164a38030358f5ea49a",
-        "candidate_sha256": "6450c8bef14affe8d2d22dfe35d700f9b5df50a7e5b66a933b39057dfc669e85",
+        "source_sha256": "4291778f04c4dd4ad2dd0467a1fa8fb0aa0ed8209a5d67c464826f0b32cd6f24",
+        "candidate_sha256": "f4e8c818691a90659cdfdb1159cb277c8a927021ef560431fcfd7da34919bec4",
         "changes": {
           "Data Files/TR_Mainland.esm": [
             {
@@ -2858,7 +2858,7 @@
               "korean_topic": "시로딜 시의 소요",
               "copied_infos": 15,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "e97c066bf5524c3ccb5cf89c15ec3a97f1a8ab8934cf47b72bb62b01dde92538"
+              "copied_info_sha256": "b33856253a22e28f129458ebe63db76390284d951ee50f82b6468e26f93fd09d"
             },
             {
               "source_topic": "join the Fighters Guild",
@@ -2886,7 +2886,7 @@
               "korean_topic": "부패의 증거",
               "copied_infos": 22,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "c90ba66c1f6a059444b3dea29a55f9b258c52399dd66c8bf3fef0d2e84bbc4b5"
+              "copied_info_sha256": "8b0402ae4c24a6ff304fbba7f9b96b2aed8e09d06515de23c2d970036e9b9bde"
             },
             {
               "source_topic": "geography of Morrowind",
@@ -2977,7 +2977,7 @@
               "korean_topic": "바덴펠 지구",
               "copied_infos": 1,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "d8d082024e7eb4126e01900c558c533ce323b3d923f3e1ccb9301361734ea29f"
+              "copied_info_sha256": "20ec1cd55d9b1126261970024b585621ea0484563e451175329a21b5bd1952c9"
             },
             {
               "source_topic": "join the Mages Guild",
@@ -2998,7 +2998,7 @@
               "korean_topic": "다고스 우르의 종복들",
               "copied_infos": 1,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "85fc1acb9fddf962ddbdd581ce3c4f0acdc91a157f365f8688137571bef08a91"
+              "copied_info_sha256": "dcc8c7990d4ea0a9c42d0f02daaca845fce848e2652b8562d9d08ac078d77d72"
             },
             {
               "source_topic": "Odaishah Yasalmibaal",
@@ -3082,7 +3082,7 @@
               "korean_topic": "동제국 회사",
               "copied_infos": 35,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "fc1e0167735cf1ccef402585623e50eb2048fa6563738cbaacc3521f1b52e81e"
+              "copied_info_sha256": "174dcbcbcc75092e79faa560e3b1bcb9870765cbd897dfdda3b7652e79ed0102"
             },
             {
               "source_topic": "fighter disciplines",
@@ -3131,7 +3131,7 @@
               "korean_topic": "제국 교단 계급",
               "copied_infos": 3,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "a9550b129c8afbd09ebaf62e86ead6db320de5d9ab85ab347407f77a05901c98"
+              "copied_info_sha256": "8c83e0c7fc725793b2aebf2477c99f203337f90128e7a09fbd06334ef51211f5"
             },
             {
               "source_topic": "join House Telvanni",
@@ -3453,7 +3453,7 @@
               "korean_topic": "제6가문 기지",
               "copied_infos": 1,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "e895e537573563b542f52331555bc5a2645e66c3fe0cdc0a0fd0a27109ea3e1e"
+              "copied_info_sha256": "8acd603353a3f0f888ea22c97af68137fdaa2cd4f053ddc3020b4b6cb212d064"
             },
             {
               "source_topic": "Inanius egg mine",
@@ -3572,7 +3572,7 @@
               "korean_topic": "보두니우스 누크시우스",
               "copied_infos": 56,
               "protected_existing_infos": 0,
-              "copied_info_sha256": "bdd4774dbc288b3e10df8febbdbd1df4739fea098dcdd2ee773cd2685f16ffed"
+              "copied_info_sha256": "933fecf026415adbf688694188f1cea66614b67dcd771e061806b15d3b5c4be1"
             },
             {
               "source_topic": "Argonian Mission",
@@ -7782,8 +7782,8 @@
         }
       },
       "Rebirth7.2-Cyr_Sky_Compatibility-kr0.3.zip": {
-        "source_sha256": "0055250c7b95ffbf14fd3b8304f92bc22691e6152e95e3750f30ee204e713494",
-        "candidate_sha256": "6c3bbfce99bbeede10069066e69cc8db9f87d1c13ee84b459d3503fcae0fa4ff",
+        "source_sha256": "a84b6eeea02764e1b1c3017616218441ed6f4affe2249c5360392d2353353dff",
+        "candidate_sha256": "d9b734e24fce02f4ab398e9c1af32aed846d65c2f195fea10be1bde59e2d6d8e",
         "changes": {
           "Compability Patches/Project Cyrodiil [For Rebirth].top": [
             {
@@ -12359,8 +12359,8 @@
         }
       },
       "TR_Mainland-kr0.3.zip": {
-        "source_sha256": "6450c8bef14affe8d2d22dfe35d700f9b5df50a7e5b66a933b39057dfc669e85",
-        "candidate_sha256": "f4542cfd42d0cf43d8cf65e34a4f9766e0040dcbf415d75e05d4f35858fd5816",
+        "source_sha256": "f4e8c818691a90659cdfdb1159cb277c8a927021ef560431fcfd7da34919bec4",
+        "candidate_sha256": "e3e4746ef75cd7305dea72723f357333e37344e36fbe4d349474d4e7f625b7f8",
         "changes": {
           "Data Files/TR_Mainland.jrn": [
             {

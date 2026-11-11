@@ -128,18 +128,20 @@ def verify(source, candidate, masters, runner, pfp=None):
         'tr': ([td, tr], []), 'cyr': ([td, cyr], []), 'sky': ([td, sky], []),
         'all-regions': ([td, tr, cyr, sky], []), 'rebirth-main': ([], main),
         'rebirth-alternate': ([], alternate),
-        'all-rebirth-main': ([td, tr, cyr, sky, compat], main),
-        'all-rebirth-alternate': ([td, tr, cyr, sky, compat], alternate),
-        'all-pfp-rebirth': ([td, tr, cyr, sky, compat], purists + main),
+        'all-rebirth-main': ([td, tr, compat], main),
+        'all-rebirth-alternate': ([td, tr, compat], alternate),
+        'all-pfp-rebirth': ([td, tr, compat], purists + main),
     }
     english = {value: key for key, value in TOPICS.items()}
     reports = []
     for label, (selected, extras) in configurations.items():
+        assert not (compat in selected and (cyr in selected or sky in selected)), 'Rebirth regional replacements must run without the normal regional ESMs'
         prefix = [mod for mod in extras if mod in purists]
         suffix = [mod for mod in extras if mod not in purists]
-        old_state = merge(official + core + prefix + [mod for name in selected for mod in before[name]] + suffix)
-        new_state = merge(official + core + prefix + [mod for name in selected for mod in after[name]] + suffix)
-        if old_state[0].keys() != new_state[0].keys() or old_state[2] != new_state[2]:
+        old_plugins = official + core + prefix + [mod for name in selected for mod in before[name]] + suffix
+        new_plugins = official + core + prefix + [mod for name in selected for mod in after[name]] + suffix
+        old_state, new_state = merge(old_plugins), merge(new_plugins)
+        if old_state[0] != new_state[0] or old_state[2] != new_state[2]:
             raise ValueError('Existing topic IDs or sidecar resolution changed')
         old_results, new_results = native(runner, old_state), native(runner, new_state)
         old_rows, new_rows = old_state[1], new_state[1]
@@ -161,6 +163,7 @@ def verify(source, candidate, masters, runner, pfp=None):
         if not old_rows.keys() <= new_rows.keys():
             raise ValueError('Saved-topic response removed')
         report = {'label': label, 'before_infos': len(old_rows), 'after_infos': len(new_rows),
+                  'plugins': [mod['name'] for mod in new_plugins],
                   'copied_responses_checked': copies, 'restored_regional_overrides': overrides,
                   'native_link_losses': 0, 'sidecar_changes': 0, 'original_topic_ids_removed': 0}
         reports.append(report)

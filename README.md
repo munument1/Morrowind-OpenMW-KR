@@ -1,4 +1,18 @@
-> 최신 Windows 통합판: [KR12.9](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.9). 변경된 지역 데이터는 kr0.3, Sky kr0.2 및 Rebirth 본체 7.2-kr1.2는 기존 버전 유지.
+> 현재 공개된 Windows 통합판: [KR12.9](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr12.9). KR13 및 지역 모드 번역 ESM/ESP 업데이트는 검증·배포 준비 중입니다.
+
+# KR13 배포 준비·검증 현황 (미공개, 2026-11-11)
+
+- **본편 KR13:** OpenMW 0.51.0에 한국어 대화 주제 식별자 처리 패치 0017, 일치하는 리소스 버전, 한국어 코어 ESP/TOP과 설치기를 통합했습니다. 기존 게임 설치와 세이브는 백업 후 업데이트하세요.
+- **지역 모드:** 영어 표시 후보 4,187건을 전수 분류했고, 원문 SHA로 검토한 1,033개 표시 필드와 FACT 계급명 778개를 포함해 총 **1,811개 표시 필드**를 수정했습니다. 4,187건 모두 번역했다는 뜻은 아닙니다.
+- **토픽·호환성:** 12개 로드 구성 × 2개 discovery/display 네이티브 모드 = 24/24 PASS, 미검토 토픽 링크 손실 0건. 기본 NPC 자연 획득 → 지역 NPC 대화, 기존 영어 저장 기록, PFP 5.0.7 및 Rebirth 7.2 구성은 격리 OpenMW GUI로 확인했습니다. 모든 퀘스트·NPC의 완전한 플레이 테스트를 뜻하지는 않습니다.
+- **배포 방식:** 기존 방식대로 각 지역 모드의 영문 ESM/ESP를 먼저 백업한 뒤, 동일 버전의 한국어 번역 ESM/ESP를 해당 위치에 **덮어씁니다**. 별도 오버라이드 ESP나 BSDIFF40 적용기는 필수 설치 방식이 아닙니다. 지역 모드 원본 아트 파일은 제작자의 공식 배포본에서 별도로 설치해야 합니다.
+- **알려진 제한:** Tamriel_Data의 신문 개발용 템플릿 72건은 영어 자리표시자로 남아 있습니다. 분석한 기본 로드 구성에서 자연 생성 경로를 확인하지 못했으나, 강제 생성 또는 별도 모드가 사용하면 영어로 나타날 수 있습니다.
+
+[KR13 검증 범위와 로그](packaging/korean/KR13-QA-20261111.md) · [지역 미번역 이슈 #63](https://github.com/munument1/Morrowind-OpenMW-KR/issues/63) · [신규 NPC 토픽 이슈 #66](https://github.com/munument1/Morrowind-OpenMW-KR/issues/66)
+
+---
+
+
 
 # OpenMW 한국어판
 

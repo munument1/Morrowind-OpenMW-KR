@@ -1,0 +1,1055 @@
+{
+  "aliases": {
+    "TR_Mainland": {
+      "제게 무슨 이익이 있는지": "what's in it for me",
+      "일시불": "lump sum",
+      "보드룸 전투 성소": "shrine to the battle of bodrum",
+      "80년 전쟁": "four score war",
+      "고급 유리 접시": "fine glass plate",
+      "에드워드 왕": "king edward",
+      "숙성 고야": "vintage goya",
+      "얼마 전 들어온 크와마 알": "shipment of kwama eggs",
+      "여섯 행정 지구": "six administrative districts",
+      "모운홀드 지구": "mournhold district",
+      "지구*": "narsis district",
+      "텔바니스 지구": "telvannis district",
+      "벨로시스 지구": "velothis district",
+      "데샨 지구": "deshaan district",
+      "성 벨로스 구역": "st. veloth quarter",
+      "브레부르 고지": "brevur heights",
+      "시장 구역": "market quarter",
+      "수변": "waterfront",
+      "아말렉시아의 분노 성소": "shrine of almalexia's fury",
+      "몸값 5천 드레이크": "five-thousand-drake ransom",
+      "제국 위원회*": "imperial commission",
+      "붉은 산": "붉은 산",
+      "츠아이시": "tsaesci",
+      "카지노 빚": "casino debt",
+      "전투도끼": "도끼",
+      "벨론 흘라루": "belron hlaalu",
+      "수상한 전언": "suspicious message",
+      "값을 매길 수 없는 세이다 닌호의 잔해 조각": "priceless wreckage",
+      "코로나티 호수": "lake coronati",
+      "그곳의 진주": "local pearls",
+      "아르문 애쉬랜드": "armun ashlands",
+      "지하묘지의 문제": "trouble in the catacombs",
+      "테렐딘 흘라루": "tereldyn hlaalu",
+      "하수도 파손을 수리": "repair the sewer breach",
+      "계량 회관": "measurehall",
+      "지하묘지": "the catacombs",
+      "흘라알루 평의회 회사": "hlaalu council company",
+      "차니스에게 상여금을 전해": "bonus for chanis",
+      "여덟 뼈 성전": "eight-bones temple",
+      "메사 거래소": "mesa exchange",
+      "의회 구역": "council quarter",
+      "가문에서 보내온 편지": "letter from the family",
+      "인구조사 및 세무국": "census and excise",
+      "웨이레스트의 부": "the wealth of wayrest",
+      "유령 형상": "ghostly figure",
+      "복수": "revenge",
+      "다라테스의 유해": "darathes' remains",
+      "유령*": "ghostly figure",
+      "불법 징크블레이드": "illegal jinkblades",
+      "빚을 받아 내는 일": "debt for belron hlaalu",
+      "델라지아 씨": "mister delagia",
+      "바알바인": "baalvayn",
+      "부날": "vunal",
+      "위어 관문 집광 렌즈": "weir gate focus lens",
+      "문제": "problem with the statue",
+      "에보니 광산*": "ebony mine",
+      "흉포한 쥐": "vicious rats",
+      "제6가문 부적": "sixth house amulet",
+      "성전사의 축복": "crusader's blessing",
+      "3일": "three days",
+      "흘라알루 가문": "흘라알루 가문",
+      "성 벨로스의 의식": "ritual of st. veloth",
+      "아티레스 흘라루": "athires hlaalu",
+      "나르시스 지하묘지": "narsis catacombs",
+      "흘라알루 제6가문": "sixth hlaalu family",
+      "거짓에 관하여": "on falsity",
+      "파이팅 찬스": "fighting chance",
+      "지하묘지는": "the catacombs",
+      "용병": "mercenary",
+      "계량 회관을 털": "rob the measurehall",
+      "제니타르의 기적이 선사한 보물": "treasure of zenithar",
+      "흘라알루*": "흘라알루 가문"
+    }
+  },
+  "review": [
+    {
+      "candidate_index": 1339,
+      "target_topic": "외지인",
+      "phrase": "외지인",
+      "linked_text": "외지인",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 687,
+      "target_topic": "what's in it for me",
+      "phrase": "제게 무슨 이익이 있는지",
+      "linked_text": "제게 무슨 이익이 있는지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 687,
+      "target_topic": "lump sum",
+      "phrase": "일시불",
+      "linked_text": "일시불",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 687,
+      "target_topic": "용건",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Commercial business is not a new-business request."
+    },
+    {
+      "candidate_index": 688,
+      "target_topic": "shrine to the battle of bodrum",
+      "phrase": "보드룸 전투 성소",
+      "linked_text": "보드룸 전투 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 688,
+      "target_topic": "four score war",
+      "phrase": "80년 전쟁",
+      "linked_text": "80년 전쟁",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 688,
+      "target_topic": "시로딜",
+      "phrase": "시로딜",
+      "linked_text": "시로딜",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 692,
+      "target_topic": "fine glass plate",
+      "phrase": "고급 유리 접시",
+      "linked_text": "고급 유리 접시",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 692,
+      "target_topic": "king edward",
+      "phrase": "에드워드 왕",
+      "linked_text": "에드워드 왕",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 692,
+      "target_topic": "vintage goya",
+      "phrase": "숙성 고야",
+      "linked_text": "숙성 고야",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 693,
+      "target_topic": "fine glass plate",
+      "phrase": "고급 유리 접시",
+      "linked_text": "고급 유리 접시",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 693,
+      "target_topic": "king edward",
+      "phrase": "에드워드 왕",
+      "linked_text": "에드워드 왕",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 693,
+      "target_topic": "vintage goya",
+      "phrase": "숙성 고야",
+      "linked_text": "숙성 고야",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 694,
+      "target_topic": "shipment of kwama eggs",
+      "phrase": "얼마 전 들어온 크와마 알",
+      "linked_text": "얼마 전 들어온 크와마 알",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 694,
+      "target_topic": "fine glass plate",
+      "phrase": "고급 유리 접시",
+      "linked_text": "고급 유리 접시",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 694,
+      "target_topic": "king edward",
+      "phrase": "에드워드 왕",
+      "linked_text": "에드워드 왕",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 694,
+      "target_topic": "vintage goya",
+      "phrase": "숙성 고야",
+      "linked_text": "숙성 고야",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "mournhold district",
+      "phrase": "모운홀드 지구",
+      "linked_text": "모운홀드 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "narsis district",
+      "phrase": "나르시스 지구",
+      "linked_text": "지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "telvannis district",
+      "phrase": "텔바니스 지구",
+      "linked_text": "텔바니스 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "velothis district",
+      "phrase": "벨로시스 지구",
+      "linked_text": "벨로시스 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "deshaan district",
+      "phrase": "데샨 지구",
+      "linked_text": "데샨 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 697,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 699,
+      "target_topic": "st. veloth quarter",
+      "phrase": "성 벨로스 구역",
+      "linked_text": "성 벨로스 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 699,
+      "target_topic": "brevur heights",
+      "phrase": "브레부르 고지",
+      "linked_text": "브레부르 고지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 700,
+      "target_topic": "market quarter",
+      "phrase": "시장 구역",
+      "linked_text": "시장 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 700,
+      "target_topic": "waterfront",
+      "phrase": "수변",
+      "linked_text": "수변",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 689,
+      "target_topic": "shrine to the battle of bodrum",
+      "phrase": "보드룸 전투 성소",
+      "linked_text": "보드룸 전투 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 689,
+      "target_topic": "four score war",
+      "phrase": "80년 전쟁",
+      "linked_text": "80년 전쟁",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 689,
+      "target_topic": "시로딜",
+      "phrase": "시로딜",
+      "linked_text": "시로딜",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 690,
+      "target_topic": "shrine to the battle of bodrum",
+      "phrase": "보드룸 전투 성소",
+      "linked_text": "보드룸 전투 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 690,
+      "target_topic": "four score war",
+      "phrase": "80년 전쟁",
+      "linked_text": "80년 전쟁",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 690,
+      "target_topic": "시로딜",
+      "phrase": "시로딜",
+      "linked_text": "시로딜",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 691,
+      "target_topic": "shrine to the battle of bodrum",
+      "phrase": "보드룸 전투 성소",
+      "linked_text": "보드룸 전투 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 691,
+      "target_topic": "four score war",
+      "phrase": "80년 전쟁",
+      "linked_text": "80년 전쟁",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 691,
+      "target_topic": "시로딜",
+      "phrase": "시로딜",
+      "linked_text": "시로딜",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "six administrative districts",
+      "phrase": "여섯 행정 지구",
+      "linked_text": "여섯 행정 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "mournhold district",
+      "phrase": "모운홀드 지구",
+      "linked_text": "모운홀드 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "narsis district",
+      "phrase": "나르시스 지구",
+      "linked_text": "지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "telvannis district",
+      "phrase": "텔바니스 지구",
+      "linked_text": "텔바니스 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "velothis district",
+      "phrase": "벨로시스 지구",
+      "linked_text": "벨로시스 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "deshaan district",
+      "phrase": "데샨 지구",
+      "linked_text": "데샨 지구",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 698,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 703,
+      "target_topic": "용건",
+      "phrase": "업무",
+      "linked_text": "업무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 703,
+      "target_topic": "제국",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire."
+    },
+    {
+      "candidate_index": 705,
+      "target_topic": "shrine of almalexia's fury",
+      "phrase": "아말렉시아의 분노 성소",
+      "linked_text": "아말렉시아의 분노 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 707,
+      "target_topic": "shrine of almalexia's fury",
+      "phrase": "아말렉시아의 분노 성소",
+      "linked_text": "아말렉시아의 분노 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 711,
+      "target_topic": "five-thousand-drake ransom",
+      "phrase": "몸값 5천 드레이크",
+      "linked_text": "몸값 5천 드레이크",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 716,
+      "target_topic": "imperial commission",
+      "phrase": "제국 위원회",
+      "linked_text": "제국 위원회",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 716,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 718,
+      "target_topic": "붉은 산",
+      "phrase": "붉은 산",
+      "linked_text": "붉은 산",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 718,
+      "target_topic": "clans",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Nord and Orc clans in ancient history are not the separate regional clan conversation."
+    },
+    {
+      "candidate_index": 704,
+      "target_topic": "용건",
+      "phrase": "업무",
+      "linked_text": "업무",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 704,
+      "target_topic": "제국",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire."
+    },
+    {
+      "candidate_index": 706,
+      "target_topic": "shrine of almalexia's fury",
+      "phrase": "아말렉시아의 분노 성소",
+      "linked_text": "아말렉시아의 분노 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 708,
+      "target_topic": "shrine of almalexia's fury",
+      "phrase": "아말렉시아의 분노 성소",
+      "linked_text": "아말렉시아의 분노 성소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 629,
+      "target_topic": "tsaesci",
+      "phrase": "츠아이시",
+      "linked_text": "츠아이시",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 630,
+      "target_topic": "casino debt",
+      "phrase": "카지노 빚",
+      "linked_text": "카지노 빚",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 631,
+      "target_topic": "도끼",
+      "phrase": "전투도끼",
+      "linked_text": "전투도끼",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 635,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 635,
+      "target_topic": "suspicious message",
+      "phrase": "수상한 전언",
+      "linked_text": "수상한 전언",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 635,
+      "target_topic": "외국인 구역",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "These entries concern Narsis, not the core Vivec Foreign Quarter topic."
+    },
+    {
+      "candidate_index": 636,
+      "target_topic": "priceless wreckage",
+      "phrase": "값을 매길 수 없는 세이다 닌호의 잔해 조각",
+      "linked_text": "값을 매길 수 없는 세이다 닌호의 잔해 조각",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 636,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 636,
+      "target_topic": "세이다 닌",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This is a ship named after Seyda Neen, not the settlement itself."
+    },
+    {
+      "candidate_index": 637,
+      "target_topic": "lake coronati",
+      "phrase": "코로나티 호수",
+      "linked_text": "코로나티 호수",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 637,
+      "target_topic": "local pearls",
+      "phrase": "그곳의 진주",
+      "linked_text": "그곳의 진주",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 638,
+      "target_topic": "armun ashlands",
+      "phrase": "아르문 애쉬랜드",
+      "linked_text": "아르문 애쉬랜드",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 639,
+      "target_topic": "trouble in the catacombs",
+      "phrase": "지하묘지의 문제",
+      "linked_text": "지하묘지의 문제",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 639,
+      "target_topic": "tereldyn hlaalu",
+      "phrase": "테렐딘 흘라루",
+      "linked_text": "테렐딘 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 640,
+      "target_topic": "repair the sewer breach",
+      "phrase": "하수도 파손을 수리",
+      "linked_text": "하수도 파손을 수리",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 640,
+      "target_topic": "tereldyn hlaalu",
+      "phrase": "테렐딘 흘라루",
+      "linked_text": "테렐딘 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 640,
+      "target_topic": "measurehall",
+      "phrase": "계량 회관",
+      "linked_text": "계량 회관",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 640,
+      "target_topic": "the catacombs",
+      "phrase": "지하묘지",
+      "linked_text": "지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 641,
+      "target_topic": "hlaalu council company",
+      "phrase": "흘라알루 평의회 회사",
+      "linked_text": "흘라알루 평의회 회사",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 641,
+      "target_topic": "bonus for chanis",
+      "phrase": "차니스에게 상여금을 전해",
+      "linked_text": "차니스에게 상여금을 전해",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 641,
+      "target_topic": "eight-bones temple",
+      "phrase": "여덟 뼈 성전",
+      "linked_text": "여덟 뼈 성전",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 641,
+      "target_topic": "mesa exchange",
+      "phrase": "메사 거래소",
+      "linked_text": "메사 거래소",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 641,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 642,
+      "target_topic": "letter from the family",
+      "phrase": "가문에서 보내온 편지",
+      "linked_text": "가문에서 보내온 편지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 642,
+      "target_topic": "census and excise",
+      "phrase": "인구조사 및 세무국",
+      "linked_text": "인구조사 및 세무국",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 643,
+      "target_topic": "the wealth of wayrest",
+      "phrase": "웨이레스트의 부",
+      "linked_text": "웨이레스트의 부",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 643,
+      "target_topic": "ghostly figure",
+      "phrase": "유령 형상",
+      "linked_text": "유령 형상",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 643,
+      "target_topic": "revenge",
+      "phrase": "복수",
+      "linked_text": "복수",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 644,
+      "target_topic": "darathes' remains",
+      "phrase": "다라테스의 유해",
+      "linked_text": "다라테스의 유해",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 644,
+      "target_topic": "eight-bones temple",
+      "phrase": "여덟 뼈 성전",
+      "linked_text": "여덟 뼈 성전",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 644,
+      "target_topic": "ghostly figure",
+      "phrase": "유령",
+      "linked_text": "유령",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 644,
+      "target_topic": "신전",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Prefer the exact Eight-Bones Temple destination over a generic Temple prefix."
+    },
+    {
+      "candidate_index": 646,
+      "target_topic": "the wealth of wayrest",
+      "phrase": "웨이레스트의 부",
+      "linked_text": "웨이레스트의 부",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 646,
+      "target_topic": "ghostly figure",
+      "phrase": "유령",
+      "linked_text": "유령",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 646,
+      "target_topic": "소식",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Generic news about the ghost is not the separate news conversation."
+    },
+    {
+      "candidate_index": 647,
+      "target_topic": "armun ashlands",
+      "phrase": "아르문 애쉬랜드",
+      "linked_text": "아르문 애쉬랜드",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 648,
+      "target_topic": "illegal jinkblades",
+      "phrase": "불법 징크블레이드",
+      "linked_text": "불법 징크블레이드",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 649,
+      "target_topic": "아레나",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "This is Narsis Arena, not the core Vivec Arena district."
+    },
+    {
+      "candidate_index": 651,
+      "target_topic": "fine glass plate",
+      "phrase": "고급 유리 접시",
+      "linked_text": "고급 유리 접시",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 651,
+      "target_topic": "king edward",
+      "phrase": "에드워드 왕",
+      "linked_text": "에드워드 왕",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 651,
+      "target_topic": "vintage goya",
+      "phrase": "숙성 고야",
+      "linked_text": "숙성 고야",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 651,
+      "target_topic": "행방불명",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Missing warehouse objects are not the separate missing-person topic."
+    },
+    {
+      "candidate_index": 652,
+      "target_topic": "illegal jinkblades",
+      "phrase": "불법 징크블레이드",
+      "linked_text": "불법 징크블레이드",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 653,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 654,
+      "target_topic": "debt for belron hlaalu",
+      "phrase": "빚을 받아 내는 일",
+      "linked_text": "빚을 받아 내는 일",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 654,
+      "target_topic": "council quarter",
+      "phrase": "의회 구역",
+      "linked_text": "의회 구역",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 654,
+      "target_topic": "waterfront",
+      "phrase": "수변",
+      "linked_text": "수변",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 654,
+      "target_topic": "leaving",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Leaving the Council Quarter is a direction, not a departure conversation."
+    },
+    {
+      "candidate_index": 654,
+      "target_topic": "임페리얼",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Imperial describes an institution or official here, not the Imperial race dialogue."
+    },
+    {
+      "candidate_index": 655,
+      "target_topic": "belron hlaalu",
+      "phrase": "벨론 흘라루",
+      "linked_text": "벨론 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 657,
+      "target_topic": "mister delagia",
+      "phrase": "델라지아 씨",
+      "linked_text": "델라지아 씨",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 658,
+      "target_topic": "baalvayn",
+      "phrase": "바알바인",
+      "linked_text": "바알바인",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 658,
+      "target_topic": "vunal",
+      "phrase": "부날",
+      "linked_text": "부날",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 660,
+      "target_topic": "weir gate focus lens",
+      "phrase": "위어 관문 집광 렌즈",
+      "linked_text": "위어 관문 집광 렌즈",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 661,
+      "target_topic": "problem with the statue",
+      "phrase": "문제",
+      "linked_text": "문제",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 662,
+      "target_topic": "ebony mine",
+      "phrase": "에보니 광산",
+      "linked_text": "에보니 광산",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 662,
+      "target_topic": "mine",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Prefer the exact ebony mine topic over the shorter generic mine prefix."
+    },
+    {
+      "candidate_index": 666,
+      "target_topic": "vicious rats",
+      "phrase": "흉포한 쥐",
+      "linked_text": "흉포한 쥐",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 667,
+      "target_topic": "sixth house amulet",
+      "phrase": "제6가문 부적",
+      "linked_text": "제6가문 부적",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 668,
+      "target_topic": "crusader's blessing",
+      "phrase": "성전사의 축복",
+      "linked_text": "성전사의 축복",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 668,
+      "target_topic": "질병",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "The text specifies blight disease; retain the more specific blight link."
+    },
+    {
+      "candidate_index": 669,
+      "target_topic": "sixth house amulet",
+      "phrase": "제6가문 부적",
+      "linked_text": "제6가문 부적",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 670,
+      "target_topic": "레도란 가문",
+      "phrase": "레도란 가문",
+      "linked_text": "레도란 가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 670,
+      "target_topic": "three days",
+      "phrase": "3일",
+      "linked_text": "3일",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 671,
+      "target_topic": "흘라알루 가문",
+      "phrase": "흘라알루 가문",
+      "linked_text": "흘라알루 가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 671,
+      "target_topic": "three days",
+      "phrase": "3일",
+      "linked_text": "3일",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 672,
+      "target_topic": "레도란 가문",
+      "phrase": "레도란 가문",
+      "linked_text": "레도란 가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 672,
+      "target_topic": "three days",
+      "phrase": "3일",
+      "linked_text": "3일",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 673,
+      "target_topic": "census and excise",
+      "phrase": "인구조사 및 세무국",
+      "linked_text": "인구조사 및 세무국",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 674,
+      "target_topic": "ritual of st. veloth",
+      "phrase": "성 벨로스의 의식",
+      "linked_text": "성 벨로스의 의식",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 674,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스 흘라루",
+      "linked_text": "아티레스 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "narsis catacombs",
+      "phrase": "나르시스 지하묘지",
+      "linked_text": "나르시스 지하묘지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "sixth hlaalu family",
+      "phrase": "흘라알루 제6가문",
+      "linked_text": "흘라알루 제6가문",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "on falsity",
+      "phrase": "거짓에 관하여",
+      "linked_text": "거짓에 관하여",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "fighting chance",
+      "phrase": "파이팅 찬스",
+      "linked_text": "파이팅 찬스",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "the catacombs",
+      "phrase": "지하묘지는",
+      "linked_text": "지하묘지는",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "mercenary",
+      "phrase": "용병",
+      "linked_text": "용병",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 675,
+      "target_topic": "외국인 구역",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "These entries concern Narsis, not the core Vivec Foreign Quarter topic."
+    },
+    {
+      "candidate_index": 676,
+      "target_topic": "brevur heights",
+      "phrase": "브레부르 고지",
+      "linked_text": "브레부르 고지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 677,
+      "target_topic": "brevur heights",
+      "phrase": "브레부르 고지",
+      "linked_text": "브레부르 고지",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 678,
+      "target_topic": "athires hlaalu",
+      "phrase": "아티레스 흘라루",
+      "linked_text": "아티레스 흘라루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 678,
+      "target_topic": "rob the measurehall",
+      "phrase": "계량 회관을 털",
+      "linked_text": "계량 회관을 털",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 680,
+      "target_topic": "일",
+      "verdict": "SEMANTIC_PREFIX_NOT_RESTORED",
+      "reason": "Work here means services performed for Thorleif, not asking for a new job."
+    },
+    {
+      "candidate_index": 682,
+      "target_topic": "treasure of zenithar",
+      "phrase": "제니타르의 기적이 선사한 보물",
+      "linked_text": "제니타르의 기적이 선사한 보물",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
+    {
+      "candidate_index": 682,
+      "target_topic": "흘라알루 가문",
+      "phrase": "흘라알루",
+      "linked_text": "흘라알루",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    }
+  ]
+}

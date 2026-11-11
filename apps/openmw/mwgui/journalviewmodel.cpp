@@ -64,6 +64,20 @@ namespace MWGui
                 for (const auto& [_, topic] : journal->getTopics())
                 {
                     const std::string topicId = Misc::StringUtils::lowerCase(topic.getName());
+                    if (translationStorage.canonicalTopicId(topicId) == topicId)
+                    {
+                        mKeywordSearch.seed(translationStorage.topicKeyword(topic.getName()), topicId);
+                        mKeywordSearch.seed(topic.getName(), topicId);
+                        for (std::string_view alias : translationStorage.topicKeywordAliases(topicId))
+                            mKeywordSearch.seed(alias, topicId);
+                        for (std::string_view alias : translationStorage.journalKeywords(topic.getName()))
+                            mKeywordSearch.seed(alias, topicId);
+                    }
+                }
+
+                for (const auto& [_, topic] : journal->getTopics())
+                {
+                    const std::string topicId = Misc::StringUtils::lowerCase(topic.getName());
                     mTopics[topicId] = &topic;
                     mKeywordSearch.seed(translationStorage.topicKeyword(topic.getName()), topicId);
                     // .mrk can replace the keyword with a dialogue-specific phrase.

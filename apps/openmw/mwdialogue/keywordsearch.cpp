@@ -348,6 +348,10 @@ namespace MWDialogue
             }
         }
 
+        if (overlaps)
+            for (Match& match : matches)
+                if (!match.mExplicit)
+                    match.mTopicId = Misc::StringUtils::lowerCase(storage.canonicalTopicId(match.mTopicId));
         return matches;
     }
 

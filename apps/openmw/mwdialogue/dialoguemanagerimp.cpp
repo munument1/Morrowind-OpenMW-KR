@@ -95,7 +95,12 @@ namespace MWDialogue
             mKeywordSearch.clear();
 
             for (const ESM::Dialogue& topic : dialogue)
+            {
                 mKeywordSearch.seed(mTranslationDataStorage.topicKeyword(topic.mStringId), topic.mStringId);
+                const std::string topicId = Misc::StringUtils::lowerCase(topic.mStringId);
+                for (std::string_view alias : mTranslationDataStorage.topicKeywordAliases(topicId))
+                    mKeywordSearch.seed(alias, topicId);
+            }
 
             mKeywordSearchInitialized = true;
         }

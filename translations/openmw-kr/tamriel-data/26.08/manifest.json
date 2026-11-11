@@ -13,13 +13,13 @@
   "sidecar_sha256": {
     "cel": "4a9547e8361b42008cd858e77ae8f15f953e2ead44a00a1f852a0fa7c8518171",
     "mrk": "fbc4989be2cfeb1072ddd35bdbb258ebf99a3940190feda231482a783a0116e7",
-    "top": "051ba7f10df6cd7f5e78de1838ef4c4e8f4761144a335b80d9f285c96f742afa",
+    "top": "99f18b02b2c9224717292ac8d527504e87a6691f146c91a4e01adfd14ae03ead",
     "jrn": "051ba7f10df6cd7f5e78de1838ef4c4e8f4761144a335b80d9f285c96f742afa"
   },
   "sidecar_counts": {
     "cel": 2,
     "mrk": 111,
-    "top": 111,
+    "top": 126,
     "jrn": 111
   },
   "hold_counts": {

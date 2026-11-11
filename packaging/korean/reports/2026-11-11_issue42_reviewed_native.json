@@ -1,0 +1,921 @@
+{
+  "configurations": [
+    {
+      "label": "core",
+      "INFO_checked": 25794,
+      "reviewed_INFO_loaded": 105,
+      "new_targets": 73,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp"
+      ]
+    },
+    {
+      "label": "core-pfp",
+      "INFO_checked": 29350,
+      "reviewed_INFO_loaded": 96,
+      "new_targets": 71,
+      "removed_incorrect_targets": [
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Patch for Purists.esm"
+      ]
+    },
+    {
+      "label": "tamriel-data",
+      "INFO_checked": 28243,
+      "reviewed_INFO_loaded": 105,
+      "new_targets": 73,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm"
+      ]
+    },
+    {
+      "label": "tr",
+      "INFO_checked": 109214,
+      "reviewed_INFO_loaded": 105,
+      "new_targets": 73,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp"
+      ]
+    },
+    {
+      "label": "cyr",
+      "INFO_checked": 43559,
+      "reviewed_INFO_loaded": 105,
+      "new_targets": 73,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/Cyr_Main.ESM"
+      ]
+    },
+    {
+      "label": "sky",
+      "INFO_checked": 35625,
+      "reviewed_INFO_loaded": 105,
+      "new_targets": 73,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/Sky_Main.ESM"
+      ]
+    },
+    {
+      "label": "all-regions",
+      "INFO_checked": 131912,
+      "reviewed_INFO_loaded": 105,
+      "new_targets": 73,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Data Files/Cyr_Main.ESM",
+        "Data Files/Sky_Main.ESM"
+      ]
+    },
+    {
+      "label": "rebirth-main",
+      "INFO_checked": 26484,
+      "reviewed_INFO_loaded": 98,
+      "new_targets": 62,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+        "Data Files/Morrowind Rebirth [Main].ESP"
+      ]
+    },
+    {
+      "label": "rebirth-alternate",
+      "INFO_checked": 26484,
+      "reviewed_INFO_loaded": 98,
+      "new_targets": 62,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Alternate Version/Morrowind Rebirth [Main].ESP",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP"
+      ]
+    },
+    {
+      "label": "all-rebirth-main",
+      "INFO_checked": 132601,
+      "reviewed_INFO_loaded": 98,
+      "new_targets": 62,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+        "Data Files/Morrowind Rebirth [Main].ESP"
+      ]
+    },
+    {
+      "label": "all-rebirth-alternate",
+      "INFO_checked": 132601,
+      "reviewed_INFO_loaded": 98,
+      "new_targets": 62,
+      "removed_incorrect_targets": [
+        {
+          "parent": "b5_sarethihort",
+          "info": "25385940354022416",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "375027359148504774",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "2271050082489216044",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_ramoranhort",
+          "info": "203258591770015139",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "43984739995524468",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_morvaynhort",
+          "info": "20243125421355232246",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "b5_llethrihort",
+          "info": "578523949181644950",
+          "incorrect_target": "조언"
+        },
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+        "Alternate Version/Morrowind Rebirth [Main].ESP",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP"
+      ]
+    },
+    {
+      "label": "all-pfp-rebirth",
+      "INFO_checked": 136137,
+      "reviewed_INFO_loaded": 89,
+      "new_targets": 60,
+      "removed_incorrect_targets": [
+        {
+          "parent": "a2_2_6thhouse",
+          "info": "284455288799622319",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "tt_balur",
+          "info": "9922187322699931682",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "bm_stones",
+          "info": "2537699911400731238",
+          "incorrect_target": "필요한 것"
+        },
+        {
+          "parent": "자격 요건",
+          "info": "1135122087283866064",
+          "incorrect_target": "부탁"
+        },
+        {
+          "parent": "제국",
+          "info": "16095258113072923543",
+          "incorrect_target": "임페리얼"
+        }
+      ],
+      "valid_links_lost": 0,
+      "display_changes": 0,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Patch for Purists.esm",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+        "Data Files/Morrowind Rebirth [Main].ESP"
+      ]
+    }
+  ],
+  "scope": "Actual native parser discovery and display; original masters and user saves read-only. Does not simulate quest conditions.",
+  "source_zip_sha256": "f13574941ca699af479a2facbf87c06e5b9ae2cd4696d800c4b89e7ec4f88223",
+  "candidate_esp_sha256": "9f94b1c96b10a491cec00d4931123ef1e0f52f52c6095da6b9b380eb9a617b1c",
+  "review_manifest_sha256": "b7236082a56edacc58bab61eaf019c80d3e42b4335f089f5111499a7c0e49c89",
+  "runner_sha256": "b4756a58dba44d8dceea4dab37fc16a25ca158f0ddc5ed12c8a65163b87d5f36",
+  "master_sha256": {
+    "Morrowind.esm": "5c3c8c2cbd20e25901b59b3ece33d36b7ef0e3d60ad8d11828bcc61a5ead1647",
+    "Tribunal.esm": "2ace511f23cc2a9ddd5f3aa59c7919789b9378cf4b17c8ae3375dd6b782f3f2b",
+    "Bloodmoon.esm": "bd27090d0e6ad4c1bf1abc83f1a2dac56fcc82cae7bfe8263c413fb301801357"
+  }
+}

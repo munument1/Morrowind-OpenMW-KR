@@ -47,10 +47,13 @@ TOP/MRK/JRN/CEL, 리소스와 다른 ZIP 항목을 변경하지 않는다.
 - 공개 ZIP 6개 및 Rebirth ZIP SHA 고정. 빌더의 전체 물리 레코드·ZIP 항목 대조 통과.
 - 보존·누락·중복·손상 입력 차단 단위 검사 6개 통과.
 - 본편/PFP/TD/TR/Cyr/Sky/Rebirth 기본·대체/지역 호환 등 **12개 구성**에서
-  실제 OpenMW KeywordSearch로 수정 후 **858,007회 INFO 검사**. 반복 구성 포함 수치다.
+  실제 OpenMW KeywordSearch로 수정 후 **858,004회 INFO 검사**. 반복 구성 포함 수치다.
   기존 토픽 ID 삭제, 기존 응답 삭제, 기존 링크 손실, 보조 파일 변경 모두 **0**.
   추가 응답은 해당 구성에서 실제로 로드된 영어 원본 응답과 몸체·조건·스크립트·검색 결과가
   같은지 대조했다. 본편 응답을 덮어쓴 사례도 0이다.
+- Rebirth용 지역 ESM은 일반 `Cyr_Main`/`Sky_Main` 대신 사용한다.
+  초기 검사에 이들을 함께 넣었던 오류를 바로잡고 12개 구성을 재실행했다.
+  각 JSON에 실제 플러그인 목록을 기록하고 동시 선택을 차단하는 검사도 추가했다.
 - 실제 OpenMW KR12.9에서 `TR_m3_Naren Llaram`을 테스트 셀에 놓고,
   본편 시작 대화가 부여하는 한국어 기본 주제 및 배경을 알고 있는 상태로 비교했다.
   원래 지역판은 기본 목록이 비어 있고, 후보는 `내 직업·배경·작은 비밀·작은 조언·최근 소문`이
@@ -84,6 +87,14 @@ TOP/MRK/JRN/CEL, 리소스와 다른 ZIP 항목을 변경하지 않는다.
 ![에본하트 가입](images/2026-11-11-ebonheart-joined.png)
 ![문모스 가입](images/2026-11-11-moonmoth-joined.png)
 
+TD/TR + Rebirth 메인 + Rebirth용 Cyrodiil/Skyrim 대체 ESM 조합에서도
+에이디스 전사길드와 루키아 제국 교단 가입을 별도 새 캐릭터로 완료했다.
+일반 Cyr_Main/Sky_Main ESM은 이 구성에서 활성화하지 않았다.
+통합 구성의 등급명 `Associate`/`Layman` 영문 표시는 기존 데이터의 미번역으로 남아 있다.
+
+![통합 구성의 전사길드 가입](images/2026-11-11-combined-fighters-joined.png)
+![통합 구성의 교단 가입](images/2026-11-11-combined-cult-joined.png)
+
 ## 재현과 적용 범위
 
 ```powershell
@@ -107,6 +118,8 @@ python packaging/korean/tooling/verify_shared_default_topics.py `
 일괄 부여하거나 NPC 조건을 완화하지 않는다. 지역 리소스가 없는 격리 테스트 환경에는
 메쉬 누락 표시가 있으므로 그래픽 정상 검증으로 해석하지 않는다.
 실게임은 대표 TR NPC 및 위 가입 경로를 확인했으며 모든 NPC·플랫폼 전수 플레이는 아니다.
+위 구성은 토픽·가입 경로 검사용이며 동시 플레이 권장 모드 목록이 아니다.
+Rebirth의 지역 대체판은 Cyrodiil/Skyrim용으로 TR와 Rebirth의 지형·모델 충돌을 해결하지 않는다.
 Windows와 같은 데이터 형식이지만 Android 실기 실행은 검증하지 않았다.
 
 **#42의 나머지 의미·토픽 검수와 #63의 미번역 후보 4,187건은 이번 수정으로 완료되지 않는다.**

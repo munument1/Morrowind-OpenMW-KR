@@ -1,11 +1,11 @@
 > **최신 Windows 통합판: [KR13](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr13)** — OpenMW 0.51.0 한국어판, 기본·지역 NPC 대화 주제 복원 및 번역 표시 필드 보강. 지역 모드 패치는 각 Nexus 페이지에서 숫자 버전으로 업데이트됩니다.
 
-## KR13 / 지역 모드 패치 kr0.4 (2026-11-11)
+## KR13 / 지역 모드 덮어쓰기 kr0.4.1 · Sky kr0.3.1 (2026-11-11)
 
 - 기존 영어 표시 후보 4,187건은 모두 분류했으며, 실제 소스 대조 표시 필드 1,033건 + FACT 계급명 778건 = **1,811개 표시 필드**를 변경했습니다. 4,187건 모두를 번역한 것은 아닙니다.
 - 기본 NPC에서 `AddTopic` 없이 습득한 주제의 지역 NPC 전달, 기존 영어 대화 기록, PFP 5.0.7, Rebirth 7.2와 12구성×2모드 네이티브 검증(24/24 PASS·미검토 링크 손실 0), 격리 OpenMW 0.51 GUI 재검증을 수행했습니다.
 - **Windows KR13 전체 ZIP**은 한국어 코어 ESP/TOP·엔진·일치하는 OpenMW 리소스·설치기·GPLv3 대응 소스를 포함합니다. 기존 KR12.9에서 업데이트할 때 전체 ZIP 설치기를 사용하고 개인 저장을 백업하세요.
-- **지역 모드 5개 ZIP**은 일반 ESP 덮어쓰기 방식이 아닌, 사용자가 공식 배포처에서 받은 원본 영문 ESM/ESP를 SHA-256으로 검증한 뒤 BSDIFF40으로 한국어 바이너리를 재구성하는 방식입니다. 원본 ESM/ESP/BSA는 패치 ZIP에 포함하지 않습니다. Python 3 표준 라이브러리 적용기 및 모드별 한국어 안내문이 동봉됩니다.
+- **지역 모드 5개 ZIP**은 번역된 전체 ESM/ESP와 대응 TOP/MRK/CEL/JRN을 포함합니다. 같은 버전의 원본 모드와 아트 파일을 먼저 설치하고, 기존 파일을 백업한 뒤 **동일한 파일명·위치에 덮어씁니다.** Python이나 델타 적용 단계는 없습니다. kr0.4.1(Sky kr0.3.1)은 포장 형식 수정이며 게임 데이터는 검증된 KR13과 동일합니다. TR 기준은 26.11.2입니다. [모드 배포 지침](docs/NEXUS_RELEASE.md#지역-모드-배포-형식)
 - 표준 Cyr/Sky와 Rebirth 전용 `[For Rebirth]` 대체 ESM을 동시에 활성화하지 마세요. 신문 개발용 템플릿 72건은 영문 자리표시자 상태이며 기본 구성에서 자연 접근 경로는 확인되지 않았습니다. 전 퀘스트·NPC·모드 조합의 플레이 검수 완료를 뜻하지는 않습니다.
 
 [**KR13 다운로드 · 무결성 파일**](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr13) · [검증 기록](packaging/korean/KR13-QA-20261111.md) · [지역 미번역 이슈 #63](https://github.com/munument1/Morrowind-OpenMW-KR/issues/63) · [신규 NPC 대화 이슈 #66](https://github.com/munument1/Morrowind-OpenMW-KR/issues/66)

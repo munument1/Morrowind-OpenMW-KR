@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Split the immutable KR13 regional BSDIFF40 bundle into five Nexus candidates.
+"""Historical delta diagnostic only; not the public mod distribution path.
+
+Public releases use package_kr13_mod_overwrites.py (see AGENTS.md).
+Split the immutable KR13 regional BSDIFF40 bundle into five diagnostic candidates.
 
 No full ESM, ESP, BSA, font or third-party resource is distributed. This tool
 copies seven source-pinned delta streams and EET sidecars without editing them.

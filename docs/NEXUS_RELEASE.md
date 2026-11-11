@@ -2,6 +2,38 @@
 
 대상: https://www.nexusmods.com/morrowind/mods/60496
 
+## 지역 모드 배포 형식
+
+사용자 확정 사항: **모드 번역은 전체 ESM/ESP를 같은 파일명으로 덮어쓰는 ZIP으로 배포한다.**
+본편 Windows 통합 ZIP·설치기는 별도로 유지한다. 기존 델타 도구는 내부 진단용으로만 보관한다.
+모드 정식 파일에 BSDIFF/xdelta, Python 적용기, 추가 번역 ESP 설치를 요구하지 않는다.
+
+원본 모드와 필요한 아트 파일을 먼저 설치하고 플러그인·사이드카를 백업한 다음, ZIP의 전체 번역
+ESM/ESP와 TOP/MRK/CEL/JRN을 원래 위치에 덮어쓴다. TR_Factions는 기존에 사용하는 경우에만
+선택한다. Rebirth 전용 Cyr/Sky와 일반 Cyr/Sky ESM을 동시에 켜지 않는다.
+
+KR13 포장 수정 파일은 다음 다섯 개다. 본편 KR13 ZIP의 SHA와 내용은 유지한다.
+
+| 파일 | Nexus 모드/기존 그룹 | Nexus 버전 |
+| --- | --- | --- |
+| TR_Mainland-kr0.4.1.zip | 60844 / 8296179 | 26.11.2-kr0.4.1 |
+| Tamriel_Data-kr0.4.1.zip | 60845 / 8296167 | 26.08-kr0.4.1 |
+| Cyr_Main-kr0.4.1.zip | 60846 / 8296161 | 26.09a-kr0.4.1 |
+| Sky_Main-kr0.3.1.zip | 60847 / 8296155 | 26.09a-kr0.3.1 |
+| Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip | 60805 / 8296377 (optional) | 7.2-kr0.4.1 |
+
+`package_kr13_mod_overwrites.py`는 검증된 KR13 전체 ZIP에서 7개 플러그인과 24개 사이드카를
+바이트 변경 없이 포장한다. `KR13-MOD-OVERWRITE-SOURCES.json`은 기존 델타가 만드는 결과와
+직접 대조한 파일별 SHA다. 빌더와 업로드 preflight는 실제 TES3 파일, 정확한 멤버 목록,
+파일 해시와 CRC를 검사하여 델타 전용 ZIP이 정식 파일로 올라가는 것을 막는다.
+
+`publish-kr13-nexus.yml`은 위 다섯 그룹만 갱신한다. 먼저 `dry_run=true`로 검사하고,
+성공 후 `dry_run=false`로 업로드한다. 업로드 후 Nexus API에서 버전·파일 ID·바이트 크기를
+대조하고 영수증을 저장한다. 직전 델타 전용 파일은 새 버전 등록 시 보관 처리한다.
+GitHub에서도 새 ZIP·SHA를 확인한 뒤 이전 델타 ZIP·SHA를 제거하여 잘못 설치하는 경로를 없앤다.
+
+다음 본편 섹션의 버전 규칙은 통합판에 대한 것이다.
+
 ## 버전 규칙
 
 태그 `openmw-0.51.0-kr4`에서 엔진 버전 `0.51.0`과 한글판 차수 `4`를 읽어

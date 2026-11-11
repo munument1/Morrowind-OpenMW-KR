@@ -11,6 +11,7 @@ on:
       - .github/workflows/verify-kr12-2-stable-engine.yml
       - .github/workflows/publish-kr12-2-windows.yml
       - .github/workflows/sync-kr12-2-nexus.yml
+      - .github/workflows/check-shared-default-topics.yml
       - packaging/korean/**
   pull_request:
     branches:
@@ -22,6 +23,7 @@ on:
       - .github/workflows/verify-kr12-2-stable-engine.yml
       - .github/workflows/publish-kr12-2-windows.yml
       - .github/workflows/sync-kr12-2-nexus.yml
+      - .github/workflows/check-shared-default-topics.yml
       - packaging/korean/**
 
 concurrency:

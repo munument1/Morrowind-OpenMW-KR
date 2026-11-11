@@ -1,0 +1,21 @@
+{
+  "baseline_save_created_with_original_regional_data": true,
+  "loaded_with_patched_data": true,
+  "re_saved_with_patched_data": true,
+  "original_save_sha256_unchanged": "63a7be4efa3c9a6fbd91d998fff90c910edd73c5ee2d2541354c86280fd69bd3",
+  "journal_records_before": 3,
+  "journal_records_after": 3,
+  "journal_record_bodies_byte_identical": true,
+  "preserved_english_topic": "Background",
+  "preserved_info_id": "11331653322466967",
+  "baseline_journal_sha256": [
+    "2572781652ae052fd1c0deb7aa74e78fff34832036a2d150560849ee4a2f8c29",
+    "1527079a236f4d82a723834dd6acfaca4d20b68da5c3c7635aedf824cd14185f",
+    "728356a22958b337883551c958cf94c2d8ca50b6c322964384328d6c2744f82f"
+  ],
+  "after_journal_sha256": [
+    "2572781652ae052fd1c0deb7aa74e78fff34832036a2d150560849ee4a2f8c29",
+    "1527079a236f4d82a723834dd6acfaca4d20b68da5c3c7635aedf824cd14185f",
+    "728356a22958b337883551c958cf94c2d8ca50b6c322964384328d6c2744f82f"
+  ]
+}

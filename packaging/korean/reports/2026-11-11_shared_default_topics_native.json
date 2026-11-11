@@ -1,0 +1,268 @@
+{
+  "configurations": [
+    {
+      "label": "core",
+      "before_infos": 25794,
+      "after_infos": 25794,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp"
+      ],
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "core-pfp",
+      "before_infos": 29350,
+      "after_infos": 29350,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Patch for Purists.esm"
+      ],
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "tamriel-data",
+      "before_infos": 28092,
+      "after_infos": 28243,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm"
+      ],
+      "copied_responses_checked": 151,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "tr",
+      "before_infos": 101225,
+      "after_infos": 109214,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp"
+      ],
+      "copied_responses_checked": 7989,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "cyr",
+      "before_infos": 41551,
+      "after_infos": 43559,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/Cyr_Main.ESM"
+      ],
+      "copied_responses_checked": 2008,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "sky",
+      "before_infos": 34855,
+      "after_infos": 35625,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/Sky_Main.ESM"
+      ],
+      "copied_responses_checked": 770,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-regions",
+      "before_infos": 121447,
+      "after_infos": 131912,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Data Files/Cyr_Main.ESM",
+        "Data Files/Sky_Main.ESM"
+      ],
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "rebirth-main",
+      "before_infos": 26484,
+      "after_infos": 26484,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+        "Data Files/Morrowind Rebirth [Main].ESP"
+      ],
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "rebirth-alternate",
+      "before_infos": 26484,
+      "after_infos": 26484,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Alternate Version/Morrowind Rebirth [Main].ESP",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP"
+      ],
+      "copied_responses_checked": 0,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-rebirth-main",
+      "before_infos": 122136,
+      "after_infos": 132601,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+        "Data Files/Morrowind Rebirth [Main].ESP"
+      ],
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-rebirth-alternate",
+      "before_infos": 122136,
+      "after_infos": 132601,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+        "Alternate Version/Morrowind Rebirth [Main].ESP",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP"
+      ],
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    },
+    {
+      "label": "all-pfp-rebirth",
+      "before_infos": 125672,
+      "after_infos": 136137,
+      "plugins": [
+        "Morrowind.esm",
+        "Tribunal.esm",
+        "Bloodmoon.esm",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp",
+        "Patch for Purists.esm",
+        "Data Files/Tamriel_Data.esm",
+        "Data Files/TR_Mainland.esm",
+        "Faction intergration/TR_Factions.esp",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP",
+        "Data Files/Morrowind Rebirth [Main].ESP"
+      ],
+      "copied_responses_checked": 10465,
+      "restored_regional_overrides": 0,
+      "native_link_losses": 0,
+      "sidecar_changes": 0,
+      "original_topic_ids_removed": 0
+    }
+  ],
+  "pfp_included": true,
+  "master_sha256": {
+    "Morrowind.esm": "5c3c8c2cbd20e25901b59b3ece33d36b7ef0e3d60ad8d11828bcc61a5ead1647",
+    "Tribunal.esm": "2ace511f23cc2a9ddd5f3aa59c7919789b9378cf4b17c8ae3375dd6b782f3f2b",
+    "Bloodmoon.esm": "bd27090d0e6ad4c1bf1abc83f1a2dac56fcc82cae7bfe8263c413fb301801357"
+  },
+  "scope": "Physical preservation and native keyword parsing; NPC eligibility and gameplay require the separate game test."
+}

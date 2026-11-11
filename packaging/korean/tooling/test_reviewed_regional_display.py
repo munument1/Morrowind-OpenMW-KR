@@ -2,6 +2,7 @@ import struct
 import unittest
 
 from repair_reviewed_regional_display import append_aliases, module_for, rewrite, row_key, sha
+from test_reviewed_book_text import patch as book_patch
 
 
 def field(tag, value):
@@ -65,6 +66,16 @@ class RegionalDisplayTests(unittest.TestCase):
         self.assertEqual(append_aliases(raw, {'새 별칭*': 'regional topic'}), raw + '새 별칭*\tregional topic\r\n'.encode())
         with self.assertRaisesRegex(ValueError, 'conflicts'):
             append_aliases(raw, {'기존': 'different topic'})
+
+    def test_book_spans_apply_without_republishing_original_glyph_payload(self):
+        text = b'<FONT FACE="Daedric">CODE</FONT> English prose.\0'
+        body = field(b'NAME', b'book\0') + field(b'FNAM', b'Existing title\0') + field(b'TEXT', text) + field(b'SCRI', b'quest_script\0')
+        patch = {'record_tag': 'BOOK', 'record_id': 'book', 'field': 'TEXT',
+                 'source_raw_sha256': sha(text), 'book_patches': [book_patch(text, b'English prose.', '한국어 본문.')]}
+        updated, counts = rewrite(record(b'BOOK', body), [patch])
+        self.assertEqual(sum(counts.values()), 1)
+        self.assertIn(field(b'TEXT', text.replace(b'English prose.', '한국어 본문.'.encode())), updated)
+        self.assertIn(field(b'SCRI', b'quest_script\0'), updated)
 
 
 if __name__ == '__main__':

@@ -10,6 +10,7 @@ from pathlib import Path
 
 from audit_cross_mod_topic_gaps import subs
 from repair_shared_default_topics import TOPICS, build as build_shared
+from repair_reviewed_book_text import rewrite as rewrite_book
 
 ROOT = Path(__file__).resolve().parents[3]
 MANIFEST = ROOT / 'translations/openmw-kr/issue63_reviewed_display_20261111.json'
@@ -60,6 +61,14 @@ def rewrite(raw, patches):
                     raise ValueError('Reviewed display source mismatch: ' + str(key))
                 if (tag, field) not in ((b'INFO', b'NAME'), (b'BOOK', b'TEXT'), (b'FACT', b'RNAM')) and field != b'FNAM':
                     raise ValueError('Patch is not a supported display field: ' + str(key))
+                if patch.get('book_patches'):
+                    if (tag, field) != (b'BOOK', b'TEXT'):
+                        raise ValueError('Book prose spans used outside BOOK.TEXT')
+                    value = rewrite_book(value, patch['book_patches'])
+                    applied[key] += 1
+                    changed = True
+                    rewritten.append(field + struct.pack('<I', len(value)) + value)
+                    continue
                 target = patch['target']
                 if not target or '\0' in target:
                     raise ValueError('Invalid display target')
@@ -119,7 +128,7 @@ def build(source, output, manifest=MANIFEST):
                     raw = src.read(info.filename)
                     module = module_for(info.filename) if Path(info.filename).suffix.lower() in ('.esm', '.esp') else None
                     if module:
-                        patches = [r for r in review['rows'] if r.get('target') and r['module'] == module]
+                        patches = [r for r in review['rows'] if (r.get('target') or r.get('book_patches')) and r['module'] == module]
                         updated, applied = rewrite(raw, patches)
                         seen.update((module, *key) for key in applied)
                         if updated != raw:
@@ -136,7 +145,7 @@ def build(source, output, manifest=MANIFEST):
             if not changes:
                 (output / path.name).write_bytes(path.read_bytes())
             reports[path.name] = {'sha256': sha((output / path.name).read_bytes()), 'changes': changes}
-    expected = {(r['module'], *row_key(r)) for r in review['rows'] if r.get('target')}
+    expected = {(r['module'], *row_key(r)) for r in review['rows'] if r.get('target') or r.get('book_patches')}
     if not expected <= seen.keys():
         raise ValueError('Reviewed source field not found: ' + str(expected - seen.keys()))
     report = {'manifest_sha256': sha(manifest.read_bytes()), 'reviewed_fields': len(expected), 'archives': reports}

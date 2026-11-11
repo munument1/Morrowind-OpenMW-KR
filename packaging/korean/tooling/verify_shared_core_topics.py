@@ -7,15 +7,7 @@ from repair_shared_default_topics import SOURCES
 from verify_shared_default_topics import archive, merge, native, parse
 
 
-def verify(baseline, candidate, release, core, masters, runner, mapping, pfp=None):
-    review = json.loads(mapping.read_text(encoding='utf-8'))
-    reverse = {}
-    for row in review['topics']:
-        reverse.setdefault(row['korean'].casefold(), []).append(row['english'].casefold())
-    official = [parse((masters / n).read_bytes(), n, 'cp1252') for n in ('Morrowind.esm', 'Tribunal.esm', 'Bloodmoon.esm')]
-    coremod = parse(core.read_bytes(), core.name, sidecars={e: core.with_suffix('.' + e).read_bytes() for e in ('top', 'mrk', 'jrn')})
-    before = {n: archive(baseline / n) for n in SOURCES}
-    after = {n: archive(candidate / n) for n in SOURCES}
+def loadouts(release, pfp=None):
     td, tr, cyr, sky, compat = SOURCES
     rebirth = archive(release / 'Morrowind_Rebirth7.2-kr1.2.zip')
     main = [m for m in rebirth if m['name'].startswith('Data Files/')]
@@ -31,6 +23,19 @@ def verify(baseline, candidate, release, core, masters, runner, mapping, pfp=Non
                'rebirth-alternate': ([], alternate), 'all-rebirth-main': ([td, tr, compat], main),
                'all-rebirth-alternate': ([td, tr, compat], alternate),
                'all-pfp-rebirth': ([td, tr, compat], purists + main)}
+    return configs, purists
+
+
+def verify(baseline, candidate, release, core, masters, runner, mapping, pfp=None):
+    review = json.loads(mapping.read_text(encoding='utf-8'))
+    reverse = {}
+    for row in review['topics']:
+        reverse.setdefault(row['korean'].casefold(), []).append(row['english'].casefold())
+    official = [parse((masters / n).read_bytes(), n, 'cp1252') for n in ('Morrowind.esm', 'Tribunal.esm', 'Bloodmoon.esm')]
+    coremod = parse(core.read_bytes(), core.name, sidecars={e: core.with_suffix('.' + e).read_bytes() for e in ('top', 'mrk', 'jrn')})
+    before = {n: archive(baseline / n) for n in SOURCES}
+    after = {n: archive(candidate / n) for n in SOURCES}
+    configs, purists = loadouts(release, pfp)
     reports = []
     for label, (selected, extras) in configs.items():
         prefix = [m for m in extras if m in purists]

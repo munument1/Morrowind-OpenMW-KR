@@ -1,10 +1,13 @@
 {
   "aliases": {
     "TR_Mainland": {
+      "아카비르": "akavir",
+      "외지인": "외지인",
       "제게 무슨 이익이 있는지": "what's in it for me",
       "일시불": "lump sum",
       "보드룸 전투 성소": "shrine to the battle of bodrum",
       "80년 전쟁": "four score war",
+      "시로딜*": "시로딜",
       "고급 유리 접시": "fine glass plate",
       "에드워드 왕": "king edward",
       "숙성 고야": "vintage goya",
@@ -19,6 +22,7 @@
       "브레부르 고지": "brevur heights",
       "시장 구역": "market quarter",
       "수변": "waterfront",
+      "업무": "용건",
       "아말렉시아의 분노 성소": "shrine of almalexia's fury",
       "몸값 5천 드레이크": "five-thousand-drake ransom",
       "제국 위원회*": "imperial commission",
@@ -60,6 +64,7 @@
       "흉포한 쥐": "vicious rats",
       "제6가문 부적": "sixth house amulet",
       "성전사의 축복": "crusader's blessing",
+      "레도란 가문": "레도란 가문",
       "3일": "three days",
       "흘라알루 가문": "흘라알루 가문",
       "성 벨로스의 의식": "ritual of st. veloth",
@@ -76,6 +81,13 @@
     }
   },
   "review": [
+    {
+      "candidate_index": 954,
+      "target_topic": "akavir",
+      "phrase": "아카비르",
+      "linked_text": "아카비르",
+      "verdict": "RESTORE_REVIEWED_LINK"
+    },
     {
       "candidate_index": 1339,
       "target_topic": "외지인",

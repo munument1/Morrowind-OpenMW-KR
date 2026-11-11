@@ -283,7 +283,7 @@
       "parent": "Reign of the Septims",
       "field": "NAME",
       "source_raw_sha256": "8c12f1788e95f9357beee28bede6f4aac86d908c788647cfa9776534c713c335",
-      "target": "왕조의 시조는 티버 셉팀,\r\n미천한 자리에서 일어나 나아가\r\n탐리엘 백성들이 왕관을 씌웠네.\r\n탈로스 만세! 북방의 용 이스미어여!\r\n\r\n라아팀 가문의 위대한 카타리아,\r\n루비빛 눈을 지닌 잿빛 여제.\r\n아르고니아의 눈먼 화살이 심장을 꿰뚫어,\r\n이제 올드 에본하트 아래 잠들어 있네.\r\n\r\n머나먼 아카비르의 이국 해안으로\r\n젊고 용감한 우리엘 5세가 항해했네.\r\n뱀들의 칼날에 기습을 당하고,\r\n흉흉한 이오니스의 들판에 쓰러졌네.",
+      "target": "왕조의 시조는 티버 셉팀,\r\n미천한 자리에서 일어나 나아가\r\n탐리엘 백성들이 왕관을 씌웠네.\r\n탈로스 만세! 북방의 용 이스미어여!\r\n\r\n라아팀 가문의 위대한 카타리아,\r\n루비빛 눈을 지닌 잿빛 여제.\r\n아르고니아의 눈먼 화살이 심장을 꿰뚫어,\r\n이제 올드 에본하트 아래 잠들어 있네.\r\n\r\n머나먼 @아카비르#의 이국 해안으로\r\n젊고 용감한 우리엘 5세가 항해했네.\r\n뱀들의 칼날에 기습을 당하고,\r\n흉흉한 이오니스의 들판에 쓰러졌네.",
       "verdict": "SOURCE_REVIEWED_TRANSLATION",
       "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },
@@ -296,7 +296,7 @@
       "parent": "no family name",
       "field": "NAME",
       "source_raw_sha256": "b589c29d1168fb9fec9879a8c29dc32db1872b77657a13abf32099f47dc70898",
-      "target": "내가 제대로 들은 게 맞나? 길라스가 그 멍청이 파브린을 위해 선조 소환 의식을 하겠다고? 못 믿겠군! 뭐... 네가 끼어 있다니 믿어야 할지도 모르겠네. 파브린은 결국 거만하고 무례한 @외지인#이니까. 너희 둘은 꼭 같은 둥지의 클리프 레이서로군.\r\n골분과 엑토플라즘을... 공짜로 달라고? 셰오고라스에게 정신이라도 홀렸나? 만 셉팀을 준다고 해도 너와 거래하지 않겠어. 네가 속한 길드에나 가서 물어봐. 거긴 도둑도 반겨 주는 모양이니.",
+      "target": "내가 제대로 들은 게 맞나? 길라스가 그 멍청이 파브린을 위해 선조 소환 의식을 하겠다고? 못 믿겠군! 뭐... 네가 끼어 있다니 믿어야 할지도 모르겠네. 파브린은 결국 거만하고 무례한 @외지인#이니까. 너희 둘은 꼭 같은 둥지의 클리프 레이서로군.\r\n뼛가루와 엑토플라즘을... 공짜로 달라고? 셰오고라스에게 정신이라도 홀렸나? 만 셉팀을 준다고 해도 너와 거래하지 않겠어. 네가 속한 길드에나 가서 물어봐. 거긴 도둑도 반겨 주는 모양이니.",
       "verdict": "SOURCE_REVIEWED_TRANSLATION",
       "reason": "Review the complete English response against the Korean text; retain quest facts, variables, line breaks, actor conditions and scripts. Use current in-game names for actionable NPCs and places."
     },

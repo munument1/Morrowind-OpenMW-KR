@@ -1,0 +1,821 @@
+{
+  "scope": "Pinned exceptions for reviewed translated INFOs only; every unlisted lost destination must fail verification. No original source prose included.",
+  "rows": [
+    {
+      "candidate_index": 630,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_BeneathStVelothsGaze",
+      "record_id": "8299242863326192",
+      "source_raw_sha256": "f116f08b434a8dcaa778a58684425dc04d765de35794adabd5b43695305b6fb4",
+      "allowed_removed": {
+        "debt": {
+          "reason": "Casino debt is the exact quest topic; retain that more specific journal destination.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 631,
+      "module": "TR_Mainland",
+      "parent": "TR_m4_FA_FortAncylisHistory",
+      "record_id": "7957110852781426207",
+      "source_raw_sha256": "6a5454ccbd9fb236bfaf47d340ec511978f55918239a80b238d1401ee04b971e",
+      "allowed_removed": {
+        "shor": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 632,
+      "module": "TR_Mainland",
+      "parent": "TR_m4_And_MissingMerchant2",
+      "record_id": "28418178151013724499",
+      "source_raw_sha256": "9b1ba0f73e62119a95031c7142d737d58a76e3c122cad74de9553553cfc84fe3",
+      "allowed_removed": {
+        "shor": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 635,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_SeventhFamily_1",
+      "record_id": "23794277432894218333",
+      "source_raw_sha256": "aa5987ac6fc04de415f1685e5ec9b1cd9dc267e5679699e6f2ef1134a706a57e",
+      "allowed_removed": {
+        "외국인 구역": {
+          "reason": "These entries concern Narsis, not the core Vivec Foreign Quarter topic.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "임무": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 636,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_SeventhFamily_2",
+      "record_id": "2811026372252556539",
+      "source_raw_sha256": "87c5aff9b4f4023e015199f7edff37bb5c7402fe6ae6365c322db824ce40e917",
+      "allowed_removed": {
+        "세이다 닌": {
+          "reason": "This is a ship named after Seyda Neen, not the settlement itself.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        }
+      }
+    },
+    {
+      "candidate_index": 638,
+      "module": "TR_Mainland",
+      "parent": "TR_m4_Arv_VampireFather",
+      "record_id": "28850144031609820266",
+      "source_raw_sha256": "0e4732acc0ec38865ecab0c2e4a03c9c1cb9c2024031a7d51744fdcbf3cd5fc0",
+      "allowed_removed": {
+        "애쉬랜드": {
+          "reason": "The mainland Armun Ashlands is not the Vvardenfell Ashlands region.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 639,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_FirstFamily_1",
+      "record_id": "3208152732597816507",
+      "source_raw_sha256": "d3dcb2e0c21f9923fbf0850c0fc4760acc88aea04893440677e38b7083904a82",
+      "allowed_removed": {
+        "the catacombs": {
+          "reason": "Retain the precise trouble-in-the-catacombs quest topic in the journal.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 640,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_FirstFamily_2",
+      "record_id": "1973427292350122553",
+      "source_raw_sha256": "06126730e09cb704a3bf25c07f44b6634d366bad4a3fd743f27232f653531cf4",
+      "allowed_removed": {
+        "대화": {
+          "reason": "Ordinary speaking to a bureaucrat is not Zabamund's ritual challenge conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 641,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_SixthFamily_1",
+      "record_id": "26745218761757217592",
+      "source_raw_sha256": "5d576e3884e838b3d39805a37b93480fc4b8a33f5fe4399e41c08ec08d46bbbf",
+      "allowed_removed": {
+        "임무": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "council": {
+          "reason": "References to the Hlaalu Council Company and Council Quarter are not a separate council conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        },
+        "신전": {
+          "reason": "Retain the exact Eight-Bones Temple location instead of its generic Temple prefix.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 642,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_SixthFamily_2",
+      "record_id": "450134062413827109",
+      "source_raw_sha256": "f0b920c7d6ffcdd2465f0c0ab4925c93e2490b0b394814223552d3c522dbc919",
+      "allowed_removed": {
+        "census": {
+          "reason": "Census and Excise Office is not the separate census conversation; retain the exact office link.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        },
+        "레트테": {
+          "reason": "The original matched the NPC name Lette only as a prefix of letter, not a reference to that person.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 643,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_StageFright_G",
+      "record_id": "139326064164742457",
+      "source_raw_sha256": "2a780454440ecb48eaf8122e191aed086c91814b226a356fb5064e833b5297dd",
+      "allowed_removed": {
+        "wayrest": {
+          "reason": "This is the title The Wealth of Wayrest; retain the play link rather than its city-name prefix.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 644,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_StageFright_M",
+      "record_id": "516937051462721932",
+      "source_raw_sha256": "43175f30600439e27ce57ca8c2338a12f30f0d0580e6a0a9f4800c8a1e903712",
+      "allowed_removed": {
+        "신전": {
+          "reason": "Prefer the exact Eight-Bones Temple destination over a generic Temple prefix.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        }
+      }
+    },
+    {
+      "candidate_index": 646,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_StageFright",
+      "record_id": "2018432072234330816",
+      "source_raw_sha256": "079830d94401ac07a22eba8e83cf2a195dd317214865541814dcb32aa67dcfbd",
+      "allowed_removed": {
+        "소식": {
+          "reason": "Generic news about the ghost is not the separate news conversation.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "wayrest": {
+          "reason": "This is the title The Wealth of Wayrest; retain the play link rather than its city-name prefix.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 647,
+      "module": "TR_Mainland",
+      "parent": "TR_m4_Bal0_Troubles",
+      "record_id": "14125243042849522104",
+      "source_raw_sha256": "06b3b8b3fe60529b2798f23ec4326f2c56a157bb001c02bedb162881dba76b3a",
+      "allowed_removed": {
+        "애쉬랜드": {
+          "reason": "The mainland Armun Ashlands is not the Vvardenfell Ashlands region.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 649,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_Arena_09a",
+      "record_id": "32712136092500911477",
+      "source_raw_sha256": "ad046d3ba5f55b5d14f35629ab3b48388d7cd26bdb4f0ae681e604e878c47fec",
+      "allowed_removed": {
+        "아레나": {
+          "reason": "This is Narsis Arena, not the core Vivec Arena district.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "raga": {
+          "reason": "The original matched Raga only inside the personal name Ragamul, not the Raga people.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 651,
+      "module": "TR_Mainland",
+      "parent": "TR_m4_And_Packrat",
+      "record_id": "105810339319536189",
+      "source_raw_sha256": "ad46479e510a7e0ebf756a859410d511ceadf06c2d7114c0bede8f6175dc106d",
+      "allowed_removed": {
+        "행방불명": {
+          "reason": "Missing warehouse objects are not the separate missing-person topic.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "goya": {
+          "reason": "Retain the exact Vintage Goya quest item rather than its shorter beverage prefix.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 653,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_EEC_Narsis7",
+      "record_id": "14143463629320777",
+      "source_raw_sha256": "4f0babbcb737ec70d9786d1d30f699ca5cb8b0067d8440068d7eb64c36bce0ef",
+      "allowed_removed": {
+        "쥐": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 654,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_Alvynu_1",
+      "record_id": "1496726621385427545",
+      "source_raw_sha256": "574dc39833abb79ddbb41c0c1b13c596b834b2e05372daa9e3a7d98ee88d4151",
+      "allowed_removed": {
+        "leaving": {
+          "reason": "Leaving the Council Quarter is a direction, not a departure conversation.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "임페리얼": {
+          "reason": "Imperial describes an institution or official here, not the Imperial race dialogue.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "collect on a debt": {
+          "reason": "Retain the specific debt-for-Belron-Hlaalu quest destination.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        },
+        "debt": {
+          "reason": "Retain the specific debt-for-Belron-Hlaalu quest destination.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        },
+        "council": {
+          "reason": "Council Quarter is a district, not the separate council conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 655,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_HH_Alvynu_1",
+      "record_id": "102602673318072615",
+      "source_raw_sha256": "031600def271db792114a824b943d9001b417a74bf88552c2e3f5ce2cb00653d",
+      "allowed_removed": {
+        "대화": {
+          "reason": "Speaking to Belron is not Zabamund's ritual challenge conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 662,
+      "module": "TR_Mainland",
+      "parent": "TR_m3_EEC_ebony",
+      "record_id": "14296267311070017846",
+      "source_raw_sha256": "62c479a7e77d848194be6dad3cec5f02a60a20a9caa17ce09cf119f600568517",
+      "allowed_removed": {
+        "mine": {
+          "reason": "Prefer the exact ebony mine topic over the shorter generic mine prefix.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "에보니": {
+          "reason": "Retain the precise ebony-mine journal destination instead of its commodity prefix.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        },
+        "제국": {
+          "reason": "East Empire Company is a company name, not a separate Empire reference.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 666,
+      "module": "TR_Mainland",
+      "parent": "TR_m3_Aim_Rats",
+      "record_id": "2601624608319585357",
+      "source_raw_sha256": "032ad68baf91ca9258ccdefbdf31e7629c19829634f7e856983c779c0a999146",
+      "allowed_removed": {
+        "쥐": {
+          "reason": "Retain the precise vicious-rats quest destination instead of the shorter creature prefix.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 668,
+      "module": "TR_Mainland",
+      "parent": "TR_m3_Ord_War4",
+      "record_id": "13953181961443227288",
+      "source_raw_sha256": "906420183158dae0dedf2b64a8f99d761751a58056a981fea157e05347608ad1",
+      "allowed_removed": {
+        "질병": {
+          "reason": "The text specifies blight disease; retain the more specific blight link.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        }
+      }
+    },
+    {
+      "candidate_index": 669,
+      "module": "TR_Mainland",
+      "parent": "TR_m3_Ord_War4",
+      "record_id": "901244971889210288",
+      "source_raw_sha256": "64be3eb00ef405cca783dd58baae6ea36d87740b50763b37509d7306ecf1f021",
+      "allowed_removed": {
+        "선물": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "보고서": {
+          "reason": "This is a War Ordinator report, not Carnius Magius' Bloodmoon messenger report.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 673,
+      "module": "TR_Mainland",
+      "parent": "TR_m3_IL_Jury",
+      "record_id": "3275215118466421608",
+      "source_raw_sha256": "9483eb4940fd874afc81fc4fed5e02692992daa5149af6cd4bcfbee6def9814b",
+      "allowed_removed": {
+        "census": {
+          "reason": "Census and Excise Office is not the separate census conversation; retain the exact office link.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 675,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_FG_7",
+      "record_id": "86397737271866080",
+      "source_raw_sha256": "88c0340f4fbc7f2bd1a60f84add8f559a34ec4e0b66ca220fd0dfc63586d8be5",
+      "allowed_removed": {
+        "외국인 구역": {
+          "reason": "These entries concern Narsis, not the core Vivec Foreign Quarter topic.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "경비병": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "구아": {
+          "reason": "The original matched guar only as a prefix of guarded, not the guar creature.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 678,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_TG_9",
+      "record_id": "12638205641944217896",
+      "source_raw_sha256": "0c8b52a9bbf2c37002b97104b6390fe3e6b5bb29ac1fe320bc9897b87ee0b277",
+      "allowed_removed": {
+        "measurehall": {
+          "reason": "Retain the specific rob-the-Measurehall quest destination in the journal.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 680,
+      "module": "TR_Mainland",
+      "parent": "TR_m7_Ns_TG_9",
+      "record_id": "2304625074749926736",
+      "source_raw_sha256": "d00007977ba67fbe3a252df7faee86e2eb4dcf3128554d4d169d3264e572a486",
+      "allowed_removed": {
+        "일": {
+          "reason": "Work here means services performed for Thorleif, not asking for a new job.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        }
+      }
+    },
+    {
+      "candidate_index": 683,
+      "module": "TR_Mainland",
+      "parent": "horn lily bulbs and timsa-come-by",
+      "record_id": "6197289032642418082",
+      "source_raw_sha256": "c515bb9267aa8d7e5b9907ecdbfce1cf4bd1928cd77445a93363e751118f8b1c",
+      "allowed_removed": {
+        "good": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 684,
+      "module": "TR_Mainland",
+      "parent": "open the doors in the King's Tomb",
+      "record_id": "1743618792325158270",
+      "source_raw_sha256": "8fa3564d2ea53a9430595693ec7126bfb6eed835cc01f982cb1a72d1c8578267",
+      "allowed_removed": {
+        "경비병": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "구아": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 686,
+      "module": "TR_Mainland",
+      "parent": "supplies for the Temple kitchen",
+      "record_id": "2467815665549528176",
+      "source_raw_sha256": "ada40b45409eee5b1277106f62ba627d2e62d63ed08b7b90ca8e4c41061e6669",
+      "allowed_removed": {
+        "쥐": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 687,
+      "module": "TR_Mainland",
+      "parent": "supplies for the Temple kitchen",
+      "record_id": "2193385372448415912",
+      "source_raw_sha256": "8c30578f5c0c9c511eb46f1065e0b52589f1dd7fc88c8f367e054d8015cf0bb1",
+      "allowed_removed": {
+        "용건": {
+          "reason": "Commercial business is not a new-business request.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "good": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "필요한 것": {
+          "reason": "Need is an ordinary verb here, not Sul-Matuul's prophecy conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 692,
+      "module": "TR_Mainland",
+      "parent": "missing items at the warehouse",
+      "record_id": "9293758349859497",
+      "source_raw_sha256": "349c29f55bcc35259099bea40864d7f43b9cd095e62a849e2184d46f5d1f47a7",
+      "allowed_removed": {
+        "goya": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "필요한 것": {
+          "reason": "Need is an ordinary verb here, not Sul-Matuul's prophecy conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 693,
+      "module": "TR_Mainland",
+      "parent": "missing items at the warehouse",
+      "record_id": "22436301742793118584",
+      "source_raw_sha256": "758dfac0e2b2a3a67dce9194128c67ee1b03c01013ade0d36574b84af60847e9",
+      "allowed_removed": {
+        "goya": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 694,
+      "module": "TR_Mainland",
+      "parent": "missing items at the warehouse",
+      "record_id": "3512199629947149",
+      "source_raw_sha256": "9d9e7a2ac7ef7c1a2f45fc552f83e3c5cb009275aa5dddf165e0909705706856",
+      "allowed_removed": {
+        "goya": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "크와마": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "크와마 알": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 696,
+      "module": "TR_Mainland",
+      "parent": "Treaty of the Four Score War",
+      "record_id": "322205563000422987",
+      "source_raw_sha256": "78a72e28527497c289917c3dd42eeb6c388b77c581fde8f65b7c29c17b966f22",
+      "allowed_removed": {
+        "four score war": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "reman": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "waters march": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 697,
+      "module": "TR_Mainland",
+      "parent": "six administrative districts",
+      "record_id": "17666163841212716709",
+      "source_raw_sha256": "b46392631677d0a5c130ff5bcb71526ba35113f9209f873a3400814b29d2b372",
+      "allowed_removed": {
+        "임페리얼": {
+          "reason": "Imperial describes an institution or official here, not the Imperial race dialogue.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        }
+      }
+    },
+    {
+      "candidate_index": 698,
+      "module": "TR_Mainland",
+      "parent": "six administrative districts",
+      "record_id": "12512211711524916430",
+      "source_raw_sha256": "b46392631677d0a5c130ff5bcb71526ba35113f9209f873a3400814b29d2b372",
+      "allowed_removed": {
+        "임페리얼": {
+          "reason": "Imperial describes an institution or official here, not the Imperial race dialogue.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        }
+      }
+    },
+    {
+      "candidate_index": 700,
+      "module": "TR_Mainland",
+      "parent": "Grand Hlaalu Ancestral Tomb",
+      "record_id": "9288232463222429831",
+      "source_raw_sha256": "0709befc5c5642bdbade8fe6a705f5eccf895dcda059ac0eb493836f550216fa",
+      "allowed_removed": {
+        "구아": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "경비병": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 701,
+      "module": "TR_Mainland",
+      "parent": "archaeologists went missing",
+      "record_id": "1940235712575716436",
+      "source_raw_sha256": "709fcd74522b150f22a7bf5768c2f472df705062723ccfbceaefc1ca2b228b03",
+      "allowed_removed": {
+        "도움": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "trap": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 702,
+      "module": "TR_Mainland",
+      "parent": "archaeologists went missing",
+      "record_id": "115473058988516767",
+      "source_raw_sha256": "401194b5f0acb1887a601a952b94ed15d968da6e3338e5777c2dc3d56d26527d",
+      "allowed_removed": {
+        "영장": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 703,
+      "module": "TR_Mainland",
+      "parent": "eliminate the major threats",
+      "record_id": "2473176452619017352",
+      "source_raw_sha256": "6e2bb39ecb928271aa64b40b969aa4e93899365b424ff17d64a3e66ac66255bc",
+      "allowed_removed": {
+        "제국": {
+          "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "shor": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "상의": {
+          "reason": "Discussing the next assignment is not Kurapli's personal counsel conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 704,
+      "module": "TR_Mainland",
+      "parent": "eliminate the major threats",
+      "record_id": "2979824388421625143",
+      "source_raw_sha256": "c111f13f496b1ac4b9fda343b6e2dadf84c692d7079dcb1eb33a4535119b6ff2",
+      "allowed_removed": {
+        "제국": {
+          "reason": "Empire is embedded in East Empire Company, not a separate reference to the Empire.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "shor": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "상의": {
+          "reason": "Discussing the next assignment is not Kurapli's personal counsel conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 705,
+      "module": "TR_Mainland",
+      "parent": "Shrine of Almalexia's Fury",
+      "record_id": "2355029732137516170",
+      "source_raw_sha256": "8bee699468318d25f64b7f96bffa25a33ef76d676162b2ce677108be0b80abb8",
+      "allowed_removed": {
+        "kamal": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 706,
+      "module": "TR_Mainland",
+      "parent": "Shrine of Almalexia's Fury",
+      "record_id": "1307117244272094545",
+      "source_raw_sha256": "8bee699468318d25f64b7f96bffa25a33ef76d676162b2ce677108be0b80abb8",
+      "allowed_removed": {
+        "kamal": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 707,
+      "module": "TR_Mainland",
+      "parent": "Shrine of Almalexia's Fury",
+      "record_id": "19979212562532820610",
+      "source_raw_sha256": "9679cfad825dad219845278648802ae2a3227ea168f1696297f50d49de085a6c",
+      "allowed_removed": {
+        "kamal": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 708,
+      "module": "TR_Mainland",
+      "parent": "Shrine of Almalexia's Fury",
+      "record_id": "12971264511305728981",
+      "source_raw_sha256": "9679cfad825dad219845278648802ae2a3227ea168f1696297f50d49de085a6c",
+      "allowed_removed": {
+        "kamal": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 711,
+      "module": "TR_Mainland",
+      "parent": "five-thousand-drake ransom",
+      "record_id": "119031218518017395",
+      "source_raw_sha256": "34fe7ee4a4184a527aecf8b6d56c74f8e5f8eb82331bd93f5839fbed9d851497",
+      "allowed_removed": {
+        "바쁨": {
+          "reason": "Merxia describes being busy; this is not Marena Gilnith's personal conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 714,
+      "module": "TR_Mainland",
+      "parent": "massacre at the Dusky Alit",
+      "record_id": "8100886959816263",
+      "source_raw_sha256": "d4ff5a4c1d8564570fcc509aac8f3eb547879a565ef88872003842d0b996ee0c",
+      "allowed_removed": {
+        "쥐": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 716,
+      "module": "TR_Mainland",
+      "parent": "massacre at the Dusky Alit",
+      "record_id": "238796749379411033",
+      "source_raw_sha256": "c5aee6c22a314923c14e79a35c72b117f94228c3c56c101dd1e54cc3d9665252",
+      "allowed_removed": {
+        "임페리얼": {
+          "reason": "Imperial describes an institution or official here, not the Imperial race dialogue.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "대화": {
+          "reason": "An ordinary reference to talking is not Zabamund's ritual challenge conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    },
+    {
+      "candidate_index": 718,
+      "module": "TR_Mainland",
+      "parent": "War of the First Council",
+      "record_id": "62678480410643391",
+      "source_raw_sha256": "0f123a6ff2936b2a8aa7d78dffbc7aeaae8df32537999aa163d025819a6d3fce",
+      "allowed_removed": {
+        "clans": {
+          "reason": "Nord and Orc clans in ancient history are not the separate regional clan conversation.",
+          "verdict": "DIFFERENT_SUBJECT_OR_MORE_SPECIFIC_LINK"
+        },
+        "council": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 954,
+      "module": "TR_Mainland",
+      "parent": "Reign of the Septims",
+      "record_id": "229839729462255",
+      "source_raw_sha256": "8c12f1788e95f9357beee28bede6f4aac86d908c788647cfa9776534c713c335",
+      "allowed_removed": {
+        "crown": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "shor": {
+          "reason": "Original parser matched only an English word prefix or inflection belonging to a different word/subject. Do not invent its counterpart in Korean.",
+          "verdict": "SOURCE_WORD_PREFIX"
+        },
+        "house raathim": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        },
+        "티버 셉팀": {
+          "reason": "No response for this topic is compatible with the original speaker actor/race/class/faction/cell filters in the integrated records. SCVR progression is not treated as proof of reachability.",
+          "verdict": "NO_COMPATIBLE_SPEAKER_REPLY"
+        }
+      }
+    },
+    {
+      "candidate_index": 1909,
+      "module": "TR_Mainland",
+      "parent": "talk to them",
+      "record_id": "1671099751380014780",
+      "source_raw_sha256": "fe8c8efa9cd491e13ffbd20be6cc746c78586ae6b86ad3abde5198bdb003d806",
+      "allowed_removed": {
+        "필요한 것": {
+          "reason": "Need is an ordinary verb here, not Sul-Matuul's prophecy conversation.",
+          "verdict": "REVIEWED_SPECIFIC_SUBJECT_OR_SOURCE_PREFIX"
+        }
+      }
+    }
+  ]
+}

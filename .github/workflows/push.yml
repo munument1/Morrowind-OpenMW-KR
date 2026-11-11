@@ -12,6 +12,8 @@ on:
       - .github/workflows/publish-kr12-2-windows.yml
       - .github/workflows/sync-kr12-2-nexus.yml
       - .github/workflows/check-shared-default-topics.yml
+      - .github/workflows/check-reviewed-issue42-links.yml
+      - translations/openmw-kr/issue42_*_20261111.json
       - packaging/korean/**
   pull_request:
     branches:
@@ -24,6 +26,8 @@ on:
       - .github/workflows/publish-kr12-2-windows.yml
       - .github/workflows/sync-kr12-2-nexus.yml
       - .github/workflows/check-shared-default-topics.yml
+      - .github/workflows/check-reviewed-issue42-links.yml
+      - translations/openmw-kr/issue42_*_20261111.json
       - packaging/korean/**
 
 concurrency:

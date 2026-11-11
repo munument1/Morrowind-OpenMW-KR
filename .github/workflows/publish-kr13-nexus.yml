@@ -112,7 +112,7 @@ jobs:
           - {mod_id: 60844, canonical: '429496790444', group: '8296179', zip: 'TR_Mainland-kr0.4.1.zip', version: '26.11.2-kr0.4.1', category: main, primary: true, update_main: true, name: 'Tamriel Rebuilt 26.11.2 Korean overwrite kr0.4.1'}
           - {mod_id: 60845, canonical: '429496790445', group: '8296167', zip: 'Tamriel_Data-kr0.4.1.zip', version: '26.08-kr0.4.1', category: main, primary: true, update_main: true, name: 'Tamriel Data 26.08 Korean overwrite kr0.4.1'}
           - {mod_id: 60846, canonical: '429496790446', group: '8296161', zip: 'Cyr_Main-kr0.4.1.zip', version: '26.09a-kr0.4.1', category: main, primary: true, update_main: true, name: 'Project Cyrodiil 26.09a Korean overwrite kr0.4.1'}
-          - {mod_id: 60847, canonical: '429496790447', group: '8296155', zip: 'Sky_Main-kr0.3.1.zip', version: '26.09a-kr0.3.1', category: main, primary: true, update_main: true, name: 'Skyrim Home of the Nords 26.09a Korean overwrite kr0.3.1'}
+          - {mod_id: 60847, canonical: '429496790447', group: '8296155', zip: 'Sky_Main-kr0.3.1.zip', version: '26.09a-kr0.3.1', category: main, primary: true, update_main: true, name: 'Skyrim Home of the Nords kr0.3.1 (ESM)'}
           - {mod_id: 60805, canonical: '429496790405', group: '8296377', zip: 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip', version: '7.2-kr0.4.1', category: optional, primary: false, update_main: false, name: 'Rebirth 7.2 Cyr-Sky Korean overwrite kr0.4.1'}
     env:
       GH_TOKEN: ${{ github.token }}

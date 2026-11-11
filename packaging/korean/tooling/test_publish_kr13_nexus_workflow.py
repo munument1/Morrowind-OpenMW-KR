@@ -114,6 +114,10 @@ class NexusKR13WorkflowTests(unittest.TestCase):
         self.assertNotIn('release:\n', self.source)
         self.assertNotIn("'8257539'", str(self.upload['strategy']['matrix']['include']))
 
+    def test_conservative_nexus_display_name_budget(self):
+        for row in self.upload['strategy']['matrix']['include']:
+            self.assertLessEqual(len(row['name']), 48, row['name'])
+
 
 if __name__ == '__main__':
     unittest.main()

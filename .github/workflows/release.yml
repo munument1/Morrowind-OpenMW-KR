@@ -4,6 +4,9 @@ on:
   push:
       tags:
         - openmw-**
+        # KR13 uses its own verified Windows/Korean release packaging.
+        # Do not run the upstream generic Windows/Mac release on this tag.
+        - '!openmw-0.51.0-kr13'
 
 jobs:
   Windows:

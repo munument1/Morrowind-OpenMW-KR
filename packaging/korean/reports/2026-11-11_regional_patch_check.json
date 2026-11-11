@@ -1,0 +1,75 @@
+{
+  "source_commit": "f4bec41444214a7903bebd178389ca22ca13f646",
+  "patches": [
+    {
+      "patch": "0001-cjk-topic-discovery.patch",
+      "lf_sha256": "aa816e8d974829093a3337d237a1794fc275b2c9a296d5155aa6d8560244bb2c"
+    },
+    {
+      "patch": "0002-utf8-bom-sidecars.patch",
+      "lf_sha256": "a7fcc5a85fe78e07b7e31078b01b6937f817030cbdccdf5d4769d7f98f903ee8"
+    },
+    {
+      "patch": "0003-mixed-utf8-esm-reader.patch",
+      "lf_sha256": "61a9e375b153057afbe94b280ddae6ea6b3cd8dd4252b452ea4507300e73d4e2"
+    },
+    {
+      "patch": "0004-legacy-korean-journal-recovery.patch",
+      "lf_sha256": "579b413c1efb1ff56df61649f4a53a71424f5e6a9badbedc3d35dd7647e6000b"
+    },
+    {
+      "patch": "0005-video-subtitles.patch",
+      "lf_sha256": "2e4b482cca98f14bca019c967f7be4af8322913eeeb35a6369c6e3750957ab0c"
+    },
+    {
+      "patch": "0006-journal-topic-keywords.patch",
+      "lf_sha256": "dec44f6773eb76c8fdb07c350b374dd92525de6a99a3c72f47c8ad653ea2d080"
+    },
+    {
+      "patch": "0007-korean-journal-index.patch",
+      "lf_sha256": "a9026e846cacfd2f8b1dafabd1f3c1fc746357778f5fdbf342119dc25d2fa47c"
+    },
+    {
+      "patch": "0008-korean-implicit-topic-boundaries.patch",
+      "lf_sha256": "4b6d6cfe8ad65011f016a317a3def826f5a8a4227029cf4dc5fdaf2e9ab09f95"
+    },
+    {
+      "patch": "0009-korean-honorific-particle.patch",
+      "lf_sha256": "a9678cffb10523c30c5d43f50e9a8e8ba12756000117c91a662cf99aa55f440f"
+    },
+    {
+      "patch": "0010-legacy-korean-topic-recovery.patch",
+      "lf_sha256": "b2e5765f101e4955fe1c14cc7af4ba8e36d83583329b7b46a67e6c6c23745cb6"
+    },
+    {
+      "patch": "0011-korean-topic-discovery-and-work-links.patch",
+      "lf_sha256": "ca18b90675e95252ac0c38197855f134b752b6d3204a27bc9175a45c672e7de0"
+    },
+    {
+      "patch": "0012-voice-synchronized-subtitles.patch",
+      "lf_sha256": "959e201847583eafebe1224fefa29575dede3c37b78914dee023313ce735e01b"
+    },
+    {
+      "patch": "0013-korean-spell-duration-order.patch",
+      "lf_sha256": "a33a7dd45c8971ed52143964107374daff582ffb2588d80a4bbfd392a5485904"
+    },
+    {
+      "patch": "0014-korean-quotative-topic-boundaries.patch",
+      "lf_sha256": "d9772252a2b7a9d0925ccf70cd677d0ad491aa141b364149501cce92da12c040"
+    },
+    {
+      "patch": "0015-korean-contextual-noun-topic-endings.patch",
+      "lf_sha256": "3d255dacf716480aaad327caf7094b82ad82821d1b87784a5c3e536b0102b0e1"
+    },
+    {
+      "patch": "0016-korean-predicative-topic-boundaries.patch",
+      "lf_sha256": "d966b13623aaacce66027d21a7ec27d6eb6aae6c8f9313aa31fab6583cda22ad"
+    },
+    {
+      "patch": "0017-regional-core-topic-aliases.patch",
+      "lf_sha256": "8554cd7d2eca1a0c5b36f76cca012f07d982a36342eabc89a5eecdd2eabed22e"
+    }
+  ],
+  "private_index_only": true,
+  "source_worktree_unchanged": true
+}

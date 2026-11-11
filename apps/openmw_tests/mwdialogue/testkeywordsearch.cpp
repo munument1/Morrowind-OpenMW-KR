@@ -12,6 +12,27 @@ protected:
     void TearDown() override {}
 };
 
+TEST_F(KeywordSearchTest, regional_source_id_uses_canonical_topic_only_for_discovery)
+{
+    Translation::Storage storage;
+    storage.addPhraseForm("talos", "탈로스");
+    storage.addPhraseForm("탈로스", "다른 주제");
+    storage.addPhraseForm("english topic", "another english topic");
+    MWDialogue::KeywordSearch search;
+    search.seed("Talos", "Talos");
+    search.seed("탈로스", "탈로스");
+    const std::string text = "Talos 탈로스";
+    const auto discovery = search.parseHyperText(text, storage, true);
+    ASSERT_EQ(discovery.size(), 2);
+    EXPECT_EQ(discovery[0].mTopicId, "탈로스");
+    EXPECT_EQ(discovery[1].mTopicId, "탈로스");
+    const auto display = search.parseHyperText(text, storage);
+    ASSERT_EQ(display.size(), 2);
+    EXPECT_EQ(display[0].mTopicId, "Talos");
+    EXPECT_EQ(display[1].mTopicId, "탈로스");
+    EXPECT_EQ(storage.canonicalTopicId("english topic"), "english topic");
+}
+
 TEST_F(KeywordSearchTest, keyword_test_conflict_resolution)
 {
     // test to make sure the longest keyword in a chain of conflicting keywords gets chosen

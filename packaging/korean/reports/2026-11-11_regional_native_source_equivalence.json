@@ -1,0 +1,22 @@
+[
+  {
+    "file": "apps/openmw/mwdialogue/keywordsearch.cpp",
+    "exact_051_source_match": true,
+    "sha256": "fdd9b6c42a46c514d09baf1d228ead5f7c0a79a17f13aa322f44032b07effc35"
+  },
+  {
+    "file": "apps/openmw/mwdialogue/keywordsearch.hpp",
+    "exact_051_source_match": true,
+    "sha256": "cc54d27266bd7a90e91c8560b838438d00da75d0100e047146856c8c34f580be"
+  },
+  {
+    "file": "components/translation/translation.cpp",
+    "exact_051_source_match": true,
+    "sha256": "16126a60f7a15d27db61f3d7c789c2695a81d32bb8923d727c650af6aeed9664"
+  },
+  {
+    "file": "components/translation/translation.hpp",
+    "exact_051_source_match": true,
+    "sha256": "8fbe1dc91ef4b0bacab83e4e3d8c5e6bc5c7f3b6a61e29ce125c92e1d641b49e"
+  }
+]

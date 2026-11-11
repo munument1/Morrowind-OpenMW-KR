@@ -22,6 +22,11 @@ namespace Translation
         // The phrase that will act as the hyperlink for the given topic ID
         std::string_view topicKeyword(std::string_view phrase) const;
 
+        // Regional English IDs may share a canonical Korean core topic.
+        std::vector<std::string_view> topicKeywordAliases(std::string_view topicId) const;
+
+        std::string_view canonicalTopicId(std::string_view topicId) const;
+
         // Explicit, reviewed aliases for journal text, including text stored in older saves.
         std::vector<std::string_view> journalKeywords(std::string_view topicId) const;
 

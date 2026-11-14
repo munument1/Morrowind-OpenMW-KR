@@ -29,9 +29,9 @@ namespace Gui
                 MyGUI::Align::Top | MyGUI::Align::Left | MyGUI::Align::Stretch, getName() + "_ScrollView");
     }
 
-    void MWList::addItem(std::string_view name, int verticalPadding)
+    void MWList::addItem(std::string_view name, int verticalPadding, std::string_view caption)
     {
-        mItems.emplace_back(name, verticalPadding);
+        mItems.emplace_back(name, verticalPadding, caption);
     }
 
     void MWList::addSeparator()
@@ -67,7 +67,7 @@ namespace Gui
                 MyGUI::Button* button = mScrollView->createWidget<MyGUI::Button>(mListItemSkin,
                     MyGUI::IntCoord(0, mItemHeight, mScrollView->getSize().width - scrollBarWidth - 2, 24),
                     MyGUI::Align::Left | MyGUI::Align::Top, getName() + "_item_" + item.mName);
-                button->setCaption(item.mName);
+                button->setCaption(item.mCaption);
                 button->getSubWidgetText()->setWordWrap(true);
                 button->getSubWidgetText()->setTextAlign(MyGUI::Align::Left);
                 button->eventMouseWheel += MyGUI::newDelegate(this, &MWList::onMouseWheelMoved);
@@ -159,8 +159,9 @@ namespace Gui
 
     void MWList::onItemSelected(MyGUI::Widget* sender)
     {
-        std::string name = sender->castType<MyGUI::Button>()->getCaption();
         int id = *sender->getUserData<int>();
+        // The callback may rebuild the list; keep its original ID alive.
+        const std::string name = getItemNameAt(static_cast<size_t>(id));
         eventItemSelected(name, id);
         eventWidgetSelected(sender);
     }

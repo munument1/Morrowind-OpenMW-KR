@@ -641,7 +641,9 @@ namespace MWGui
         for (const auto& keyword : mKeywords)
         {
             std::string topicId = Misc::StringUtils::lowerCase(keyword);
-            mTopicsList->addItem(keyword, sVerticalPadding);
+            // Keep the original dialogue ID for selection and saved games.
+            // Use optional display-only aliases, then fall back to regional MRK.
+            mTopicsList->addItem(keyword, sVerticalPadding, translationStorage.topicDisplayName(keyword));
 
             auto t = std::make_unique<Topic>(keyword);
             mKeywordSearch.seed(translationStorage.topicKeyword(keyword), topicId);

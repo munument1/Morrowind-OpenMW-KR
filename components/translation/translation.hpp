@@ -22,6 +22,9 @@ namespace Translation
         // The phrase that will act as the hyperlink for the given topic ID
         std::string_view topicKeyword(std::string_view phrase) const;
 
+        // Optional display-only title; does not affect dialogue IDs or keyword matching.
+        std::string_view topicDisplayName(std::string_view topicId) const;
+
         // Regional English IDs may share a canonical Korean core topic.
         std::vector<std::string_view> topicKeywordAliases(std::string_view topicId) const;
 
@@ -44,7 +47,7 @@ namespace Translation
         void loadDataFromStream(ContainerType& container, std::istream& stream);
 
         ToUTF8::Utf8Encoder* mEncoder;
-        ContainerType mCellNamesTranslations, mKeywords, mPhraseForms, mJournalKeywords;
+        ContainerType mCellNamesTranslations, mKeywords, mPhraseForms, mJournalKeywords, mTopicDisplayNames;
     };
 }
 

@@ -66,6 +66,9 @@ jobs:
           # Restore the prior UI source before checking patches beneath it.
           git apply --reverse --check korean/patches/0018-korean-dialogue-topic-captions.patch
           git apply --reverse korean/patches/0018-korean-dialogue-topic-captions.patch
+          # 0017 extends the translation header edited by older patches.
+          git apply --reverse --check korean/patches/0017-regional-core-topic-aliases.patch
+          git apply --reverse korean/patches/0017-regional-core-topic-aliases.patch
           # New regression fix must be removed before checking older patches.
           git apply --reverse --check korean/patches/0016-korean-predicative-topic-boundaries.patch
           git apply --reverse korean/patches/0016-korean-predicative-topic-boundaries.patch
@@ -105,6 +108,7 @@ jobs:
           git apply korean/patches/0014-korean-quotative-topic-boundaries.patch
           git apply korean/patches/0015-korean-contextual-noun-topic-endings.patch
           git apply korean/patches/0016-korean-predicative-topic-boundaries.patch
+          git apply korean/patches/0017-regional-core-topic-aliases.patch
           git apply korean/patches/0018-korean-dialogue-topic-captions.patch
           test -s korean/patches/0005-video-subtitles.patch
 

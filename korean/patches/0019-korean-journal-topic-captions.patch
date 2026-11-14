@@ -1,0 +1,57 @@
+diff --git a/apps/openmw/mwgui/journalviewmodel.cpp b/apps/openmw/mwgui/journalviewmodel.cpp
+index 3c99a25..95f1f0a 100644
+--- a/apps/openmw/mwgui/journalviewmodel.cpp
++++ b/apps/openmw/mwgui/journalviewmodel.cpp
+@@ -290,17 +290,22 @@ namespace MWGui
+         void visitTopicName(
+             const MWDialogue::Topic& topic, std::function<void(std::string_view)> visitor) const override
+         {
+-            visitor(topic.getName());
++            const auto& translationStorage
++                = MWBase::Environment::get().getWindowManager()->getTranslationDataStorage();
++            visitor(translationStorage.topicDisplayName(topic.getName()));
+         }
+ 
+         void visitTopicNamesStartingWith(
+             Utf8Stream::UnicodeChar character, std::function<void(std::string_view)> visitor) const override
+         {
+             MWBase::Journal* journal = MWBase::Environment::get().getJournal();
++            const auto& translationStorage
++                = MWBase::Environment::get().getWindowManager()->getTranslationDataStorage();
+ 
+             for (const auto& [_, topic] : journal->getTopics())
+             {
+-                Utf8Stream stream(topic.getName());
++                // Group by the caption the player sees, not the stable DIAL ID.
++                Utf8Stream stream(translationStorage.topicDisplayName(topic.getName()));
+                 Utf8Stream::UnicodeChar first = Utf8Stream::toLowerUtf8(stream.peek());
+ 
+                 if (!journalIndexMatches(first, character))
+diff --git a/apps/openmw/mwgui/journalwindow.cpp b/apps/openmw/mwgui/journalwindow.cpp
+index 2055ff3..0ee5d99 100644
+--- a/apps/openmw/mwgui/journalwindow.cpp
++++ b/apps/openmw/mwgui/journalwindow.cpp
+@@ -11,6 +11,7 @@
+ #include <MyGUI_TextBox.h>
+ 
+ #include <components/misc/strings/algorithm.hpp>
++#include <components/translation/translation.hpp>
+ #include <components/widgets/imagebutton.hpp>
+ #include <components/widgets/list.hpp>
+ 
+@@ -534,9 +535,12 @@ namespace
+             Gui::MWList* list = getWidget<Gui::MWList>(TopicsList);
+             list->clear();
+ 
+-            AddNamesToList add(list);
+-
+-            mModel->visitTopicNamesStartingWith(index, add);
++            const auto& translationStorage
++                = MWBase::Environment::get().getWindowManager()->getTranslationDataStorage();
++            mModel->visitTopicNamesStartingWith(index, [list, &translationStorage](std::string_view topicId) {
++                // Clicks still use the original ID; only the caption is localized.
++                list->addItem(topicId, 0, translationStorage.topicDisplayName(topicId));
++            });
+ 
+             list->adjustSize();
+ 

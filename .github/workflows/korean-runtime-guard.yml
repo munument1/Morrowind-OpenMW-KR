@@ -12,6 +12,7 @@ on:
       - apps/openmw/mwgui/videowidget.cpp
       - apps/openmw/mwgui/widgets.cpp
       - apps/openmw/mwgui/dialogue.cpp
+      - apps/openmw/mwgui/journalwindow.cpp
       - apps/openmw/mwgui/windowmanagerimp.cpp
       - apps/openmw/mwgui/videowidget.hpp
       - components/esm3/esmreader.cpp
@@ -35,6 +36,7 @@ on:
       - apps/openmw/mwgui/videowidget.cpp
       - apps/openmw/mwgui/widgets.cpp
       - apps/openmw/mwgui/dialogue.cpp
+      - apps/openmw/mwgui/journalwindow.cpp
       - apps/openmw/mwgui/windowmanagerimp.cpp
       - apps/openmw/mwgui/videowidget.hpp
       - components/esm3/esmreader.cpp
@@ -63,6 +65,8 @@ jobs:
         run: |
           set -euo pipefail
           git config core.autocrlf false
+          git apply --reverse --check korean/patches/0019-korean-journal-topic-captions.patch
+          git apply --reverse korean/patches/0019-korean-journal-topic-captions.patch
           # Restore the prior UI source before checking patches beneath it.
           git apply --reverse --check korean/patches/0018-korean-dialogue-topic-captions.patch
           git apply --reverse korean/patches/0018-korean-dialogue-topic-captions.patch
@@ -110,6 +114,7 @@ jobs:
           git apply korean/patches/0016-korean-predicative-topic-boundaries.patch
           git apply korean/patches/0017-regional-core-topic-aliases.patch
           git apply korean/patches/0018-korean-dialogue-topic-captions.patch
+          git apply korean/patches/0019-korean-journal-topic-captions.patch
           test -s korean/patches/0005-video-subtitles.patch
 
       - name: Verify Korean runtime invariants
@@ -132,6 +137,9 @@ jobs:
           grep -F 'loadData(mJournalKeywords, esmNameNoExtension, "jrn", dataFileCollections);' components/translation/translation.cpp
           grep -F 'loadData(mTopicDisplayNames, esmNameNoExtension, "dsp", dataFileCollections);' components/translation/translation.cpp
           grep -F 'translationStorage.topicDisplayName(keyword)' apps/openmw/mwgui/dialogue.cpp
+          grep -F 'visitor(translationStorage.topicDisplayName(topic.getName()));' apps/openmw/mwgui/journalviewmodel.cpp
+          grep -F 'Utf8Stream stream(translationStorage.topicDisplayName(topic.getName()));' apps/openmw/mwgui/journalviewmodel.cpp
+          grep -F 'list->addItem(topicId, 0, translationStorage.topicDisplayName(topicId));' apps/openmw/mwgui/journalwindow.cpp
           grep -F 'const std::string name = getItemNameAt(static_cast<size_t>(id));' components/widgets/list.cpp
           grep -F 'const std::string subtitle = MWDialogue::visibleKoreanTopicText(message);' apps/openmw/mwgui/windowmanagerimp.cpp
           grep -F 'durationMarker == "동안" || durationMarker == "지속:"' apps/openmw/mwgui/widgets.cpp

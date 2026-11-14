@@ -290,17 +290,22 @@ namespace MWGui
         void visitTopicName(
             const MWDialogue::Topic& topic, std::function<void(std::string_view)> visitor) const override
         {
-            visitor(topic.getName());
+            const auto& translationStorage
+                = MWBase::Environment::get().getWindowManager()->getTranslationDataStorage();
+            visitor(translationStorage.topicDisplayName(topic.getName()));
         }
 
         void visitTopicNamesStartingWith(
             Utf8Stream::UnicodeChar character, std::function<void(std::string_view)> visitor) const override
         {
             MWBase::Journal* journal = MWBase::Environment::get().getJournal();
+            const auto& translationStorage
+                = MWBase::Environment::get().getWindowManager()->getTranslationDataStorage();
 
             for (const auto& [_, topic] : journal->getTopics())
             {
-                Utf8Stream stream(topic.getName());
+                // Group by the caption the player sees, not the stable DIAL ID.
+                Utf8Stream stream(translationStorage.topicDisplayName(topic.getName()));
                 Utf8Stream::UnicodeChar first = Utf8Stream::toLowerUtf8(stream.peek());
 
                 if (!journalIndexMatches(first, character))

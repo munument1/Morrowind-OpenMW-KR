@@ -2,6 +2,7 @@
 #include <components/files/collections.hpp>
 #include <components/toutf8/toutf8.hpp>
 #include <components/translation/translation.hpp>
+#include <apps/openmw/mwgui/journalindex.hpp>
 
 #include <filesystem>
 #include <fstream>
@@ -48,4 +49,18 @@ int main(int argc, char** argv)
     require(storage.topicDisplayName("local area") == "주변 지역", "Second DSP mapping missing");
     require(storage.canonicalTopicId("retribution") == "retribution", "DSP changed canonical topic ID");
     require(storage.topicDisplayName("unknown topic") == "unknown topic", "Unknown topic fallback missing");
+
+    // Journal headings and the Korean topic index must use the *display* caption
+    // while preserving the original ID for click and savegame lookup.
+    Utf8Stream koreanTitle(storage.topicDisplayName("Necrom"));
+    require(MWGui::journalIndexMatches(koreanTitle.peek(), 0x3134),
+        "Translated Necrom should appear under Korean initial NIEUN");
+    require(!MWGui::journalIndexMatches(koreanTitle.peek(), '*'),
+        "Translated Necrom must not be grouped under English A-Z");
+    Utf8Stream dspTitle(storage.topicDisplayName("retribution"));
+    require(MWGui::journalIndexMatches(dspTitle.peek(), 0x3147),
+        "DSP-only retribution should appear under Korean initial IEUNG");
+    Utf8Stream englishTitle(storage.topicDisplayName("unknown topic"));
+    require(MWGui::journalIndexMatches(englishTitle.peek(), '*'),
+        "Untranslated topic should remain selectable in the Latin index");
 }

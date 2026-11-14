@@ -1,0 +1,158 @@
+diff --git a/apps/openmw/mwgui/dialogue.cpp b/apps/openmw/mwgui/dialogue.cpp
+index 4ed0c20..41fc68b 100644
+--- a/apps/openmw/mwgui/dialogue.cpp
++++ b/apps/openmw/mwgui/dialogue.cpp
+@@ -641,7 +641,9 @@ namespace MWGui
+         for (const auto& keyword : mKeywords)
+         {
+             std::string topicId = Misc::StringUtils::lowerCase(keyword);
+-            mTopicsList->addItem(keyword, sVerticalPadding);
++            // Keep the original dialogue ID for selection and saved games.
++            // Use optional display-only aliases, then fall back to regional MRK.
++            mTopicsList->addItem(keyword, sVerticalPadding, translationStorage.topicDisplayName(keyword));
+ 
+             auto t = std::make_unique<Topic>(keyword);
+             mKeywordSearch.seed(translationStorage.topicKeyword(keyword), topicId);
+diff --git a/apps/openmw/mwgui/windowmanagerimp.cpp b/apps/openmw/mwgui/windowmanagerimp.cpp
+index 68a8aaf..9ec5d9c 100644
+--- a/apps/openmw/mwgui/windowmanagerimp.cpp
++++ b/apps/openmw/mwgui/windowmanagerimp.cpp
+@@ -63,6 +63,8 @@
+ #include "../mwbase/statemanager.hpp"
+ #include "../mwbase/world.hpp"
+ 
++#include "../mwdialogue/koreantopictags.hpp"
++
+ #include "../mwrender/vismask.hpp"
+ 
+ #include "../mwworld/cellstore.hpp"
+@@ -839,10 +841,13 @@ namespace MWGui
+     {
+         if (message.empty())
+             return;
++        // Spoken subtitles bypass the dialogue hyperlink renderer. Remove
++        // EET topic markers and their 0x7F padding only for this display path.
++        const std::string subtitle = MWDialogue::visibleKoreanTopicText(message);
+         if (getMode() == GM_Dialogue || speechId == 0)
+-            messageBox(message);
++            messageBox(subtitle);
+         else
+-            mMessageBoxManager->createMessageBox(message, false, speaker, speechId);
++            mMessageBoxManager->createMessageBox(subtitle, false, speaker, speechId);
+     }
+ 
+     void WindowManager::scheduleMessageBox(std::string message, enum MWGui::ShowInDialogueMode showInDialogueMode)
+diff --git a/components/translation/translation.cpp b/components/translation/translation.cpp
+index 4385124..2c2ec38 100644
+--- a/components/translation/translation.cpp
++++ b/components/translation/translation.cpp
+@@ -21,6 +21,7 @@ namespace Translation
+         loadData(mPhraseForms, esmNameNoExtension, "top", dataFileCollections);
+         loadData(mKeywords, esmNameNoExtension, "mrk", dataFileCollections);
+         loadData(mJournalKeywords, esmNameNoExtension, "jrn", dataFileCollections);
++        loadData(mTopicDisplayNames, esmNameNoExtension, "dsp", dataFileCollections);
+     }
+ 
+     void Storage::loadData(ContainerType& container, std::string_view fileNameNoExtension, std::string_view extension,
+@@ -110,6 +111,15 @@ namespace Translation
+         return entry->second;
+     }
+ 
++    std::string_view Storage::topicDisplayName(std::string_view topicId) const
++    {
++        const auto entry = mTopicDisplayNames.find(topicId);
++        if (entry != mTopicDisplayNames.end())
++            return entry->second;
++
++        return topicKeyword(topicId);
++    }
++
+     std::vector<std::string_view> Storage::topicKeywordAliases(std::string_view topicId) const
+     {
+         std::vector<std::string_view> result;
+diff --git a/components/translation/translation.hpp b/components/translation/translation.hpp
+index 2783249..bba7b16 100644
+--- a/components/translation/translation.hpp
++++ b/components/translation/translation.hpp
+@@ -22,6 +22,9 @@ namespace Translation
+         // The phrase that will act as the hyperlink for the given topic ID
+         std::string_view topicKeyword(std::string_view phrase) const;
+ 
++        // Optional display-only title; does not affect dialogue IDs or keyword matching.
++        std::string_view topicDisplayName(std::string_view topicId) const;
++
+         // Regional English IDs may share a canonical Korean core topic.
+         std::vector<std::string_view> topicKeywordAliases(std::string_view topicId) const;
+ 
+@@ -44,7 +47,7 @@ namespace Translation
+         void loadDataFromStream(ContainerType& container, std::istream& stream);
+ 
+         ToUTF8::Utf8Encoder* mEncoder;
+-        ContainerType mCellNamesTranslations, mKeywords, mPhraseForms, mJournalKeywords;
++        ContainerType mCellNamesTranslations, mKeywords, mPhraseForms, mJournalKeywords, mTopicDisplayNames;
+     };
+ }
+ 
+diff --git a/components/widgets/list.cpp b/components/widgets/list.cpp
+index 288d246..48037d0 100644
+--- a/components/widgets/list.cpp
++++ b/components/widgets/list.cpp
+@@ -29,9 +29,9 @@ namespace Gui
+                 MyGUI::Align::Top | MyGUI::Align::Left | MyGUI::Align::Stretch, getName() + "_ScrollView");
+     }
+ 
+-    void MWList::addItem(std::string_view name, int verticalPadding)
++    void MWList::addItem(std::string_view name, int verticalPadding, std::string_view caption)
+     {
+-        mItems.emplace_back(name, verticalPadding);
++        mItems.emplace_back(name, verticalPadding, caption);
+     }
+ 
+     void MWList::addSeparator()
+@@ -67,7 +67,7 @@ namespace Gui
+                 MyGUI::Button* button = mScrollView->createWidget<MyGUI::Button>(mListItemSkin,
+                     MyGUI::IntCoord(0, mItemHeight, mScrollView->getSize().width - scrollBarWidth - 2, 24),
+                     MyGUI::Align::Left | MyGUI::Align::Top, getName() + "_item_" + item.mName);
+-                button->setCaption(item.mName);
++                button->setCaption(item.mCaption);
+                 button->getSubWidgetText()->setWordWrap(true);
+                 button->getSubWidgetText()->setTextAlign(MyGUI::Align::Left);
+                 button->eventMouseWheel += MyGUI::newDelegate(this, &MWList::onMouseWheelMoved);
+@@ -159,8 +159,9 @@ namespace Gui
+ 
+     void MWList::onItemSelected(MyGUI::Widget* sender)
+     {
+-        std::string name = sender->castType<MyGUI::Button>()->getCaption();
+         int id = *sender->getUserData<int>();
++        // The callback may rebuild the list; keep its original ID alive.
++        const std::string name = getItemNameAt(static_cast<size_t>(id));
+         eventItemSelected(name, id);
+         eventWidgetSelected(sender);
+     }
+diff --git a/components/widgets/list.hpp b/components/widgets/list.hpp
+index 4dc9bba..2e68e35 100644
+--- a/components/widgets/list.hpp
++++ b/components/widgets/list.hpp
+@@ -36,7 +36,7 @@ namespace Gui
+         void adjustSize();
+ 
+         void sort();
+-        void addItem(std::string_view name, int verticalPadding = 0);
++        void addItem(std::string_view name, int verticalPadding = 0, std::string_view caption = {});
+         void addSeparator(); ///< add a seperator between the current and the next item.
+         void removeItem(const std::string& name);
+         size_t getItemCount();
+@@ -68,10 +68,12 @@ namespace Gui
+         struct ListItemData
+         {
+             std::string mName;
++            std::string mCaption;
+             int mVPadding;
+ 
+-            ListItemData(std::string_view name, int verticalPadding)
++            ListItemData(std::string_view name, int verticalPadding, std::string_view caption)
+                 : mName(name)
++                , mCaption(caption.empty() ? name : caption)
+                 , mVPadding(verticalPadding)
+             {
+             }

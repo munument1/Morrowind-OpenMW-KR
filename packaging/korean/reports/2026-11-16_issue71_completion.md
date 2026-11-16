@@ -41,3 +41,7 @@
 ## Android 범위 정정
 
 사용자의 제외 지시는 Nexus 업로드만 제외한다는 뜻이다. 기존 Android KR14 서명 후보에 최종 0018/0019 엔진 수정이 포함된 것을 확인했고, 이번 VampireMolag/playScript 자막 11개를 별도 Android KR14 데이터 후보로 보완했다. [Android 소스·검증 기록](https://github.com/munument1/Morrowind-OpenMW-Android-KR/blob/fix/issue71-android-data/docs/ISSUE71-ANDROID-DATA-QA.md)을 따른다. Android 실기기 검증과 정식 공개 배포는 완료했다고 주장하지 않는다. 이번 추가 작업도 Nexus에는 올리지 않는다.
+
+## 초기 2,030개 표시명 후보 대조
+
+초기 감사의 TR 1,968·TD 1·Sky 25·Cyr 36개를 최종 배포 ZIP의 DSP와 대조했다. 한국어 표시명 2,029개를 추가했고 TR의 의도된 횡설수설 `geewp eee` 1개를 원문 유지했다. 별도 canonical 한국어 별칭 526개도 표시명 대응을 추가했다. 배포 DSP는 검토 소스와 바이트가 같다. 이는 AI 언어/데이터 검토 및 표시명 연결 완료이며, 2,030개 모두의 NPC 접근·퀘스트 진행을 실플레이 전수 검증했다는 뜻은 아니다.

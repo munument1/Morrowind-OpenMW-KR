@@ -1,0 +1,74 @@
+name: Analyze Master Index compatibility
+
+on:
+  push:
+    branches:
+      - fix/master-index-compat
+    paths:
+      - .github/workflows/analyze-master-index-compat.yml
+      - tools/analyze_master_index_compat.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    env:
+      KR_TAG: openmw-0.51.0-kr3
+      KR_ASSET: Morrowind-Korean-OpenMW-0.51.0-KR3-Full.zip
+      MOD_DIR: payload/mods/Morrowind_Korean_ReTranslation
+    steps:
+      - name: Checkout analysis branch
+        uses: actions/checkout@v6
+        with:
+          ref: fix/master-index-compat
+          fetch-depth: 0
+
+      - name: Download current Korean release and official Master Index plugin
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          rm -rf work
+          mkdir -p work/kr work/masterindex work/masterindex-unpacked
+
+          gh release download "$KR_TAG"             --repo "$GITHUB_REPOSITORY"             --pattern "$KR_ASSET"             --dir work/kr             --clobber
+          unzip -q "work/kr/$KR_ASSET" -d work/kr/unpacked
+
+          if ! curl --fail --retry 3 -L             -o work/masterindex/masterindex.zip             https://cdn.bethsoft.com/elderscrolls/morrowind/other/masterindex.zip; then
+            curl --fail --retry 3 -L               -o work/masterindex/masterindex.zip               https://download.zenimax.com/elderscrolls/morrowind/other/masterindex.zip
+          fi
+          unzip -q work/masterindex/masterindex.zip -d work/masterindex-unpacked
+
+          find work/masterindex-unpacked -type f -maxdepth 5 -print
+          find work/kr/unpacked -type f -path '*Morrowind_Korean_ReTranslation*' -maxdepth 8 -print
+
+      - name: Analyze record coverage and sidecars
+        shell: bash
+        run: |
+          set -euo pipefail
+          master_index="$(find work/masterindex-unpacked -type f -iname 'master_index.esp' -print -quit)"
+          translation="work/kr/unpacked/$MOD_DIR/Morrowind_Korean_ReTranslation.esp"
+          mrk="work/kr/unpacked/$MOD_DIR/Morrowind_Korean_ReTranslation.mrk"
+          top="work/kr/unpacked/$MOD_DIR/Morrowind_Korean_ReTranslation.top"
+
+          test -n "$master_index"
+          test -f "$master_index"
+          test -f "$translation"
+          test -f "$mrk"
+          test -f "$top"
+
+          rm -rf analysis/master-index-compat
+          python3 tools/analyze_master_index_compat.py             --master-index "$master_index"             --translation "$translation"             --mrk "$mrk"             --top "$top"             --out analysis/master-index-compat
+
+          cat analysis/master-index-compat/master_index_compat_summary.txt
+
+      - name: Upload analysis results
+        uses: actions/upload-artifact@v6
+        with:
+          name: master-index-compat-analysis-${{ github.sha }}
+          path: analysis/master-index-compat/
+          if-no-files-found: error

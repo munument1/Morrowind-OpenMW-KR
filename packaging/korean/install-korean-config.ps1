@@ -14,6 +14,7 @@ $contentBeginMarker = "# BEGIN OPENMW KOREAN MANAGED CONTENT"
 $contentEndMarker = "# END OPENMW KOREAN MANAGED CONTENT"
 $modFolderName = "Morrowind_Korean_ReTranslation"
 $pluginFileName = "Morrowind_Korean_ReTranslation.esp"
+$compatPluginFileName = "Morrowind_Korean_MasterIndex_Compat.esp"
 $legacyModFolderNames = @(
     "Morrowind_Korean_ReTranslation_v01"
 )
@@ -93,7 +94,7 @@ function Test-ManagedContentLine([string]$Line) {
         return $false
     }
     $contentName = $Matches[1].Trim().Trim('"')
-    return ($contentName -ieq $pluginFileName -or $retiredPluginFileNames -icontains $contentName)
+    return ($contentName -ieq $pluginFileName -or $contentName -ieq $compatPluginFileName -or $retiredPluginFileNames -icontains $contentName)
 }
 
 $i = 0
@@ -268,6 +269,35 @@ if ($manageMod) {
             }
         }
     }
+
+    # Bethesda's optional Master Index plugin adds/extends dialogue chains that
+    # the base Korean ESP can otherwise win by load order. If the official
+    # plugin is active, load our narrow dialogue overlay after both files.
+    $masterIndexContentIndex = -1
+    $koreanContentIndex = -1
+    for ($i = 0; $i -lt $outputLines.Count; $i++) {
+        if ($outputLines[$i] -match '^\s*content\s*=\s*master_index\.esp\s*$') {
+            $masterIndexContentIndex = $i
+        }
+        if ($outputLines[$i] -match ('^\s*content\s*=\s*' + [regex]::Escape($pluginFileName) + '\s*$')) {
+            $koreanContentIndex = $i
+        }
+    }
+
+    if ($masterIndexContentIndex -ge 0) {
+        $compatPluginPath = Join-Path $modDataPath $compatPluginFileName
+        if (-not (Test-Path -LiteralPath $compatPluginPath -PathType Leaf)) {
+            throw "Master Index compatibility ESP not found: $compatPluginPath"
+        }
+
+        $compatContentBlock = @(
+            $contentBeginMarker,
+            "content=$compatPluginFileName",
+            $contentEndMarker
+        )
+        $compatInsertAfter = [Math]::Max($masterIndexContentIndex, $koreanContentIndex)
+        Insert-LinesAt -List $outputLines -Index ($compatInsertAfter + 1) -Lines $compatContentBlock
+    }
 }
 
 $fallbackBlock = New-Object 'System.Collections.Generic.List[string]'
@@ -305,6 +335,9 @@ Write-Host "Managed fallback keys: $($managedKeys.Count)"
 if ($manageMod) {
     Write-Host "Korean data : $dataLine"
     Write-Host "Korean plugin: content=$pluginFileName"
+    if ($masterIndexContentIndex -ge 0) {
+        Write-Host "Master Index compat: content=$compatPluginFileName"
+    }
 }
 if ($encodingIndex -ge 0) {
     Write-Host "Managed fallback block inserted immediately before the final encoding= line."

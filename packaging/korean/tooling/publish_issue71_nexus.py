@@ -14,6 +14,8 @@ TARGETS = {(60496, '8110335'), (60844, '8296179'), (60845, '8296167'),
            (60846, '8296161'), (60847, '8296155'), (60805, '8296377'),
            (60805, '8257641'), (60826, '8280147')}
 ANDROID_GROUP = '8257539'
+READY_SCAN_STATUSES = {'VERIFIED', 'INTERNALLY_VERIFIED', 'MANUALLY_VERIFIED'}
+PENDING_SCAN_STATUSES = {'NOT_SCANNED', 'QUEUED', 'WAITING_REPORT'}
 
 
 def get(path):
@@ -44,7 +46,31 @@ def target(row):
     return matches
 
 
-def readback(row):
+def scan_status(row, file_id):
+    # The public GraphQL scan enum distinguishes an uploaded file from an approved file.
+    query = '''query ReleaseScan($mod: ID!, $game: ID!) {
+      modFiles(modId: $mod, gameId: $game) {
+        fileId modId modUid version sizeInBytes scannedV2
+      }
+    }'''
+    request = urllib.request.Request('https://api.nexusmods.com/v2/graphql',
+        data=json.dumps({'query': query, 'variables': {'mod': str(row['mod_id']), 'game': '100'}}).encode(),
+        headers={'Content-Type': 'application/json', 'User-Agent': 'OpenMW-KR-Release-Scan-Status'})
+    with urllib.request.urlopen(request, timeout=45) as response:
+        data = json.load(response)
+    if data.get('errors'):
+        raise ValueError('Nexus scan status query failed')
+    files = [f for f in data.get('data', {}).get('modFiles', []) if str(f.get('fileId')) == str(file_id)]
+    if len(files) != 1:
+        raise ValueError('Scan status missing or ambiguous')
+    file = files[0]
+    if (str(file.get('modId')) != str(row['mod_id']) or str(file.get('modUid')) != row['uid']
+            or file.get('version') != row['version'] or int(file.get('sizeInBytes', -1)) != row['bytes']):
+        raise ValueError('Scan record identity/size mismatch')
+    return file.get('scannedV2', 'UNKNOWN')
+
+
+def readback(row, require_ready=True):
     versions = get(f"/v3/mod-files/{row['group']}/versions")['data']['versions']
     match = [r for r in versions if str(r.get('version', '')).casefold() == row['version'].casefold()
              and str(r.get('category', '')).lower() != 'removed']
@@ -54,8 +80,12 @@ def readback(row):
     files = [r for r in public if str(r.get('version', '')).casefold() == row['version'].casefold()]
     if len(files) != 1 or int(files[0]['size_in_bytes']) != row['bytes']:
         raise ValueError('Nexus version/size readback mismatch')
+    status = scan_status(row, files[0]['file_id'])
+    if require_ready and status not in READY_SCAN_STATUSES:
+        raise ValueError('Nexus file is not approved for download: ' + str(status))
     return {**row, 'file_version_id': str(match[0]['id']), 'server_file_id': files[0]['file_id'],
             'server_file_name': files[0]['file_name'], 'server_size_bytes': files[0]['size_in_bytes'],
+            'security_scan_status': status, 'download_ready': status in READY_SCAN_STATUSES,
             'nexus_url': f"https://www.nexusmods.com/morrowind/mods/{row['mod_id']}?tab=files"}
 
 
@@ -85,9 +115,17 @@ def run(mode, folder, asset=None, armed=False):
         after = get(f'/v3/mod-files/{ANDROID_GROUP}/versions')['data']['versions']
         if before != after:
             raise ValueError('Android group versions changed during publication')
-        rows = [readback(r) for r in json.loads((folder / 'NEXUS-ISSUE71-PREFLIGHT.json').read_text(encoding='utf-8'))]
-        write(folder / 'NEXUS-ISSUE71-FINAL.json', {'android_group_unchanged': True, 'files': rows})
-        print('PASS: all eight uploaded versions, sizes and groups; Android versions unchanged')
+        stored = json.loads((folder / 'NEXUS-ISSUE71-PREFLIGHT.json').read_text(encoding='utf-8'))
+        identity = lambda r: (r['mod_id'], r['group'], r['version'], r['asset'])
+        if len(stored) != len(pins) or {identity(r) for r in stored} != {identity(r) for r in pins}:
+            raise ValueError('Final readback must cover all eight approved packages')
+        rows = [readback(r, require_ready=False) for r in stored]
+        ready = all(row['download_ready'] for row in rows)
+        write(folder / 'NEXUS-ISSUE71-FINAL.json', {'android_group_unchanged': True,
+              'all_files_download_ready': ready, 'files': rows})
+        if not ready:
+            raise ValueError('Uploaded files are awaiting security approval; see final JSON')
+        print('PASS: all eight versions, sizes, groups and security approvals; Android versions unchanged')
         return
     expected = next(r for r in pins if r['asset'] == asset)
     row = check_archive(folder / asset, expected)
@@ -107,14 +145,20 @@ def run(mode, folder, asset=None, armed=False):
     if mode == 'readback':
         for attempt in range(12):
             try:
-                record = readback(row)
-                write(folder / ('NEXUS-' + str(row['mod_id']) + '-PUBLICATION.json'), record)
-                print('PASS', row['mod_id'], row['group'], row['version'], row['bytes'])
-                return
+                record = readback(row, require_ready=False)
             except ValueError:
                 if attempt == 11:
                     raise
                 time.sleep(5)
+                continue
+            write(folder / ('NEXUS-' + str(row['mod_id']) + '-PUBLICATION.json'), record)
+            if record['download_ready']:
+                print('PASS', row['mod_id'], row['group'], row['version'], row['bytes'], record['security_scan_status'])
+                return
+            status = record['security_scan_status']
+            if status not in PENDING_SCAN_STATUSES or attempt == 11:
+                raise ValueError('Nexus file is not approved for download: ' + str(status))
+            time.sleep(5)
 
 
 if __name__ == '__main__':

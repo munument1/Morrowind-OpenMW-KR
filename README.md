@@ -1,3 +1,5 @@
+> **Windows KR13.2: Nexus 안전 검사 격리 상태(2026-11-16).** 업로드와 버전·크기는 확인했지만 다운로드 승인은 완료되지 않았습니다. [격리 확인·검토 절차](packaging/korean/reports/2026-11-16_nexus_kr132_quarantine.md). 다른 7개 지역/PFP/Rebirth ZIP은 `VERIFIED`입니다.
+>
 > **최신 Windows 통합판: [KR13.2 (Nexus)](https://www.nexusmods.com/morrowind/mods/60496?tab=files)** — OpenMW 0.51.0, 이슈 #71 토픽 목록·응답 제목·일지·음성 자막 및 번역 데이터 보완.
 
 ## 이슈 #71 후속 배포 (2026-11-16)

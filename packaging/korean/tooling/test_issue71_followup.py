@@ -1,6 +1,9 @@
 import copy
 import struct
 import unittest
+import tempfile
+import io
+from pathlib import Path
 from unittest.mock import patch
 
 import build_issue71_followup as fix
@@ -16,6 +19,74 @@ def record(tag, body):
 
 
 class FollowupTests(unittest.TestCase):
+    def test_public_scan_record_must_match_exact_file_identity(self):
+        row = {'mod_id': 60496, 'uid': '429496790096', 'version': '0.51.0-KR13.2', 'bytes': 14298825}
+        file = {'fileId': 20, 'modId': row['mod_id'], 'modUid': row['uid'],
+                'version': row['version'], 'sizeInBytes': row['bytes'], 'scannedV2': 'QUARANTINED'}
+        for entry in (file, {**file, 'modUid': 'wrong'}, {**file, 'sizeInBytes': 1}, {**file, 'fileId': 21}):
+            payload = nexus.json.dumps({'data': {'modFiles': [entry]}}).encode()
+            with patch.object(nexus.urllib.request, 'urlopen') as request:
+                request.return_value.__enter__.return_value = io.BytesIO(payload)
+                if entry == file:
+                    self.assertEqual(nexus.scan_status(row, 20), 'QUARANTINED')
+                else:
+                    with self.assertRaises(ValueError):
+                        nexus.scan_status(row, 20)
+
+    def test_final_receipt_records_quarantine_and_rejects_missing_packages(self):
+        pins = nexus.json.loads(nexus.PINS.read_text(encoding='utf-8'))['files']
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'NEXUS-ANDROID-UNCHANGED-BEFORE.json').write_text('[]')
+            nexus.write(root / 'NEXUS-ISSUE71-PREFLIGHT.json', pins)
+            def status(row, require_ready):
+                self.assertFalse(require_ready)
+                return {**row, 'download_ready': row['mod_id'] != 60496,
+                        'security_scan_status': 'QUARANTINED' if row['mod_id'] == 60496 else 'VERIFIED'}
+            with patch.object(nexus, 'get', return_value={'data': {'versions': []}}), \
+                 patch.object(nexus, 'readback', side_effect=status):
+                with self.assertRaisesRegex(ValueError, 'awaiting security approval'):
+                    nexus.run('final', root)
+                receipt = nexus.json.loads((root / 'NEXUS-ISSUE71-FINAL.json').read_text(encoding='utf-8'))
+                self.assertFalse(receipt['all_files_download_ready'])
+                self.assertEqual(len(receipt['files']), 8)
+                nexus.write(root / 'NEXUS-ISSUE71-PREFLIGHT.json', pins[1:])
+                with self.assertRaisesRegex(ValueError, 'all eight'):
+                    nexus.run('final', root)
+
+    def test_matching_uploaded_metadata_is_not_enough_for_download_approval(self):
+        row = {'mod_id': 60496, 'uid': '429496790096', 'group': '8110335',
+               'version': '0.51.0-KR13.2', 'bytes': 14298825}
+        def responses():
+            return [{'data': {'versions': [{'id': 10, 'version': row['version'], 'category': 'main'}]}},
+                    {'files': [{'file_id': 20, 'version': row['version'], 'size_in_bytes': row['bytes'], 'file_name': 'core.zip'}]}]
+        for status in ('QUARANTINED', 'QUEUED', 'UNKNOWN', 'REPORT_ERROR'):
+            with patch.object(nexus, 'get', side_effect=responses()), patch.object(nexus, 'scan_status', return_value=status):
+                with self.assertRaisesRegex(ValueError, 'not approved for download'):
+                    nexus.readback(row)
+            with patch.object(nexus, 'get', side_effect=responses()), patch.object(nexus, 'scan_status', return_value=status):
+                report = nexus.readback(row, require_ready=False)
+                self.assertFalse(report['download_ready'])
+                self.assertEqual(report['security_scan_status'], status)
+        for status in ('VERIFIED', 'INTERNALLY_VERIFIED', 'MANUALLY_VERIFIED'):
+            with patch.object(nexus, 'get', side_effect=responses()), patch.object(nexus, 'scan_status', return_value=status):
+                self.assertTrue(nexus.readback(row)['download_ready'])
+
+    def test_quarantined_readback_records_state_and_does_not_retry_or_reupload(self):
+        pins = nexus.json.loads(nexus.PINS.read_text(encoding='utf-8'))['files']
+        row = next(r for r in pins if r['mod_id'] == 60496)
+        blocked = {**row, 'security_scan_status': 'QUARANTINED', 'download_ready': False}
+        with tempfile.TemporaryDirectory() as folder:
+            with patch.object(nexus, 'check_archive', return_value=row), \
+                 patch.object(nexus, 'readback', return_value=blocked) as readback, \
+                 patch.object(nexus.time, 'sleep') as sleep:
+                with self.assertRaisesRegex(ValueError, 'QUARANTINED'):
+                    nexus.run('readback', Path(folder), row['asset'])
+                readback.assert_called_once()
+                sleep.assert_not_called()
+            saved = nexus.json.loads((Path(folder) / 'NEXUS-60496-PUBLICATION.json').read_text(encoding='utf-8'))
+            self.assertFalse(saved['download_ready'])
+
     def test_android_and_wrong_uids_rejected_before_network(self):
         for row in ({'mod_id': 60496, 'uid': '429496790096', 'group': '8257539'},
                     {'mod_id': 60496, 'uid': '60496', 'group': '8110335'}):

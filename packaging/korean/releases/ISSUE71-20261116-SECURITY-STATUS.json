@@ -1,0 +1,123 @@
+{
+  "checked_date_kst": "2026-11-16",
+  "windows_download_approved": false,
+  "windows_nexus_security_status": "QUARANTINED",
+  "other_seven_status": "VERIFIED",
+  "virus_total": {
+    "url": "https://www.virustotal.com/gui/file/805fd9dc6ffdb61639378893690d6c8eeda2b48e6b0f331c23828f3e21929115",
+    "positive_detections": 0,
+    "vendors_counted": 66,
+    "last_analysis_kst": "2026-11-16 13:47:52 KST",
+    "source": "Existing public VirusTotal report, read only; no upload or rescan"
+  },
+  "specific_internal_trigger": "Not disclosed in public file warning; moderator review required",
+  "archive": {
+    "archive_sha256": "805fd9dc6ffdb61639378893690d6c8eeda2b48e6b0f331c23828f3e21929115",
+    "bytes": 14298825,
+    "members": 67,
+    "crc": "PASS",
+    "password_protected": false,
+    "nested_archives": [],
+    "engine_sha256": "67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78"
+  },
+  "files": [
+    {
+      "fileId": 1000074196,
+      "modId": 60496,
+      "modUid": "429496790096",
+      "version": "0.51.0-KR13.2",
+      "scanned": -1,
+      "scannedV2": "QUARANTINED",
+      "sizeInBytes": "14298825",
+      "name": "Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip",
+      "asset": "Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip",
+      "archive_sha256": "805fd9dc6ffdb61639378893690d6c8eeda2b48e6b0f331c23828f3e21929115"
+    },
+    {
+      "fileId": 1000074197,
+      "modId": 60844,
+      "modUid": "429496790444",
+      "version": "26.11.2-kr0.5",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "94088159",
+      "name": "TR_Mainland-kr0.5.zip",
+      "asset": "TR_Mainland-kr0.5.zip",
+      "archive_sha256": "53636d7dc60c7a68cf5583028d69f0c1d755f070378ce21e3d28786715096501"
+    },
+    {
+      "fileId": 1000074198,
+      "modId": 60845,
+      "modUid": "429496790445",
+      "version": "26.08-kr0.5",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "3632925",
+      "name": "Tamriel_Data-kr0.5.zip",
+      "asset": "Tamriel_Data-kr0.5.zip",
+      "archive_sha256": "dae52baa892dfa1e4c3ebc8ae9fa1d7fb5ebb9edbdf00b74f7aaff2afd002437"
+    },
+    {
+      "fileId": 1000074199,
+      "modId": 60846,
+      "modUid": "429496790446",
+      "version": "26.09a-kr0.5",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "16831420",
+      "name": "Cyr_Main-kr0.5.zip",
+      "asset": "Cyr_Main-kr0.5.zip",
+      "archive_sha256": "233bd3a76fa480b298a6c0de85c53ea8e298b8446e06899f9e9ede00b8dd2599"
+    },
+    {
+      "fileId": 1000074200,
+      "modId": 60847,
+      "modUid": "429496790447",
+      "version": "26.09a-kr0.4",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "10053850",
+      "name": "Sky_Main-kr0.4.zip",
+      "asset": "Sky_Main-kr0.4.zip",
+      "archive_sha256": "3373ecbdc088d8b6f52174b3c8bd77942bf925538e28bb68e11b0b7595572a3a"
+    },
+    {
+      "fileId": 1000074201,
+      "modId": 60805,
+      "modUid": "429496790405",
+      "version": "7.2-kr0.5",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "26651103",
+      "name": "Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip",
+      "asset": "Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip",
+      "archive_sha256": "317af8aa4c8a54232492bb3bd8f2f335a7ebca1665998b0f8bc07bd14c273107"
+    },
+    {
+      "fileId": 1000074202,
+      "modId": 60805,
+      "modUid": "429496790405",
+      "version": "7.2-kr1.3",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "53144248",
+      "name": "Morrowind_Rebirth7.2-kr1.3.zip",
+      "asset": "Morrowind_Rebirth7.2-kr1.3.zip",
+      "archive_sha256": "29084f0a711944bd25d20842d9c3f2d413fce790b49208f39eeb494342ba6ef5"
+    },
+    {
+      "fileId": 1000074203,
+      "modId": 60826,
+      "modUid": "429496790426",
+      "version": "5.0.7-kr1.3",
+      "scanned": 3,
+      "scannedV2": "VERIFIED",
+      "sizeInBytes": "1774146",
+      "name": "PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip",
+      "asset": "PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip",
+      "archive_sha256": "22fc754fc3b6aa77394fefad10b96201ce9c92511dff65191b2a8c81db310f4d"
+    }
+  ],
+  "support_request_sent": false,
+  "quarantined_file_deleted_or_reuploaded": false
+}

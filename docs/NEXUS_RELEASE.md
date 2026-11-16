@@ -1,5 +1,7 @@
 # Korean OpenMW 넥서스 자동 배포
 
+**2026-11-16 보완:** KR13.2 본편이 업로드 후 Nexus 안전 검사에서 격리된 것을 확인했다. 업로드·버전·크기 일치는 다운로드 승인과 다르다. 현재 [격리 상태와 검토 절차](../packaging/korean/reports/2026-11-16_nexus_kr132_quarantine.md)를 따른다. readback은 정확한 파일의 GraphQL `scannedV2` 승인 상태도 확인하며 격리·미확인 상태에서는 완료 처리하지 않는다.
+
 대상: https://www.nexusmods.com/morrowind/mods/60496
 
 ## 이슈 #71 후속 배포 — 2026-11-16

@@ -1,209 +1,44 @@
-name: Issue 71 Windows and regional Nexus publication
-
+name: Retry Windows KR13.2.1 ZIP metadata compatibility
 on:
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'Build and verify all eight packages and Nexus targets without uploading'
-        type: boolean
-        required: true
-        default: true
-
 permissions:
   contents: read
-  actions: read
 concurrency:
   group: nexus-publish
   cancel-in-progress: false
-
 env:
   GH_TOKEN: ${{ github.token }}
   NEXUS_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
-
 jobs:
-  preflight:
+  windows-repack:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Test display-only rewrite and publication exclusions
-        run: python3 -m unittest discover -s packaging/korean/tooling -p test_issue71_followup.py
-      - name: Download immutable already-published baselines
-        shell: bash
+      - name: Fetch original verified release and repack without changing payloads
         run: |
-          set -euo pipefail
-          mkdir -p baselines native stage
-          gh release download openmw-0.51.0-kr13 --repo "$GITHUB_REPOSITORY" --dir baselines \
-            --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR13-Full.zip' \
-            --pattern 'TR_Mainland-kr0.4.1.zip' --pattern 'Tamriel_Data-kr0.4.1.zip' \
-            --pattern 'Cyr_Main-kr0.4.1.zip' --pattern 'Sky_Main-kr0.3.1.zip' \
-            --pattern 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip'
-      - name: Download SHA-pinned owned PFP and Rebirth baselines
-        run: python3 packaging/korean/tooling/fetch_issue71_baselines.py --output baselines
-      - name: Verify exact successful 0019 Windows CI artifact and extract engine pair
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import json,subprocess
-          repo='munument1/Morrowind-OpenMW-KR'
-          run=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/actions/runs/43784502555']))
-          assert run['conclusion']=='success' and run['head_sha']=='ec69b1133c284cae65a1446174d869fafcd3251e'
-          artifact=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/actions/artifacts/14191432811']))
-          assert not artifact['expired'] and artifact['digest']=='sha256:7ead22d521351a674319a104196d8a138598bb414c53010939e99097806753f2'
-          PY
-          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/14191432811/zip" > native.zip
-          echo '7ead22d521351a674319a104196d8a138598bb414c53010939e99097806753f2  native.zip' | sha256sum -c -
-          unzip -q native.zip -d native
-          python3 - <<'PY'
-          from pathlib import Path
-          import subprocess,hashlib
-          installers=list(Path('native').rglob('OpenMW-0.51.0-Windows-x64.exe'))
-          assert len(installers)==1
-          subprocess.run(['7z','x',str(installers[0]),'-oengine','-y','openmw.exe','resources/version'],check=True,stdout=subprocess.DEVNULL)
-          assert hashlib.sha256(Path('engine/openmw.exe').read_bytes()).hexdigest()=='67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78'
-          assert hashlib.sha256(Path('engine/resources/version').read_bytes()).hexdigest()=='eec778cae898eb16f909bc8653258649f69e06a21d6af5091f4404fabf220f88'
-          PY
-      - name: Rebuild Windows installer ZIP and seven full-plugin overwrite ZIPs
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 packaging/korean/tooling/build_issue71_followup.py --source baselines --output dist
-          python3 packaging/korean/tooling/package_kr131_from_kr13.py \
-            --baseline baselines/Morrowind-Korean-OpenMW-0.51.0-KR13-Full.zip \
-            --engine engine/openmw.exe --resources-version engine/resources/version \
-            --engine-sha256 67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78 \
-            --ci-run-id 43784502555 --ci-head ec69b1133c284cae65a1446174d869fafcd3251e \
-            --output stage/Morrowind-Korean-OpenMW-0.51.0-KR13.1-Full.zip > stage/windows-stage.json
-          python3 packaging/korean/tooling/package_issue71_windows.py \
-            --source stage/Morrowind-Korean-OpenMW-0.51.0-KR13.1-Full.zip --output dist
-      - name: Verify all payload pins, display coverage and live Nexus ownership
-        shell: bash
-        env:
-          DRY_RUN: ${{ inputs.dry_run }}
-        run: |
-          set -euo pipefail
-          if [[ "$DRY_RUN" == 'false' ]]; then
-            python3 packaging/korean/tooling/publish_issue71_nexus.py preflight --armed
-          else
-            python3 packaging/korean/tooling/publish_issue71_nexus.py preflight
-          fi
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60496
-          path: dist/Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60844
-          path: dist/TR_Mainland-kr0.5.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60845
-          path: dist/Tamriel_Data-kr0.5.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60846
-          path: dist/Cyr_Main-kr0.5.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60847
-          path: dist/Sky_Main-kr0.4.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60805
-          path: dist/Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60805-main
-          path: dist/Morrowind_Rebirth7.2-kr1.3.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        with:
-          name: issue71-60826
-          path: dist/PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip
-          compression-level: 0
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: issue71-preflight
-          path: dist/*.json
-
-  upload-owned:
-    needs: preflight
-    if: ${{ inputs.dry_run == false }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      max-parallel: 2
-      matrix:
-        include:
-          - {key: 60496, mod: 60496, asset: 'Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip'}
-          - {key: 60844, mod: 60844, asset: 'TR_Mainland-kr0.5.zip'}
-          - {key: 60845, mod: 60845, asset: 'Tamriel_Data-kr0.5.zip'}
-          - {key: 60846, mod: 60846, asset: 'Cyr_Main-kr0.5.zip'}
-          - {key: 60847, mod: 60847, asset: 'Sky_Main-kr0.4.zip'}
-          - {key: 60805, mod: 60805, asset: 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip'}
-          - {key: '60805-main', mod: 60805, asset: 'Morrowind_Rebirth7.2-kr1.3.zip'}
-          - {key: 60826, mod: 60826, asset: 'PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip'}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/download-artifact@v4
-        with:
-          name: issue71-${{ matrix.key }}
-          path: dist
-      - id: gate
-        name: Revalidate exact payload, owner, approved group and version before upload
-        run: python3 packaging/korean/tooling/publish_issue71_nexus.py gate --asset '${{ matrix.asset }}'
-      - name: Upload to the API-verified existing file group
-        if: steps.gate.outputs.upload == 'true'
+          gh release download openmw-0.51.0-kr13.2 --repo "$GITHUB_REPOSITORY" --pattern 'Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip' --dir original
+          python3 packaging/korean/tooling/repack_kr1321_nexus.py build original/Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip
+      - name: Upload Windows ZIP compatibility repack to its verified existing group
         uses: Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23
         with:
           api_key: ${{ secrets.NEXUSMODS_API_KEY }}
-          file_id: ${{ steps.gate.outputs.group }}
-          filename: dist/${{ matrix.asset }}
-          version: ${{ steps.gate.outputs.version }}
-          display_name: '${{ matrix.asset }}'
-          description: '이슈 #71 후속 수정: 토픽 표시명, 인물명, 선택지와 스크립트 자막·알림 보완. 원본 ID·조건·분기를 보존합니다. 지역 ZIP은 같은 버전 원본 모드와 아트를 설치한 뒤 전체 ESM/ESP 및 사이드카를 덮어쓰십시오. Windows 통합 ZIP은 설치기를 포함합니다. 일반 Cyr/Sky와 Rebirth 전용본은 함께 쓰지 마십시오. 세부 검증·잠정 표기는 동봉 안내와 저장소 보고서를 참고하십시오. https://github.com/munument1/Morrowind-OpenMW-KR'
-          category: ${{ steps.gate.outputs.category }}
-          archive_existing_version: true
-          primary_mod_manager_download: ${{ steps.gate.outputs.primary }}
-          update_mod_version: ${{ steps.gate.outputs.primary }}
+          file_id: '8110335'
+          filename: retry-dist/Morrowind-Korean-OpenMW-0.51.0-KR13.2.1-Full.zip
+          version: '0.51.0-KR13.2.1'
+          display_name: 'OpenMW Windows KR13.2.1 (ZIP repack)'
+          description: 'Windows ZIP metadata compatibility repack of KR13.2. All 67 extracted files including executable, installer, translations, licenses and source patches are byte-identical. No nested archives. Existing quarantined KR13.2 is preserved for moderator review. Scan approval is checked separately; this does not assert the original quarantine was a false positive.'
+          category: main
+          archive_existing_version: false
+          primary_mod_manager_download: true
+          update_mod_version: true
           allow_mod_manager_download: true
-      - name: Read back uploaded version, size and exact file group
-        run: python3 packaging/korean/tooling/publish_issue71_nexus.py readback --asset '${{ matrix.asset }}'
+      - name: Verify exact uploaded version, group, size and security approval
+        run: python3 packaging/korean/tooling/repack_kr1321_nexus.py readback
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: issue71-nexus-${{ matrix.key }}
-          path: dist/NEXUS-*-PUBLICATION.json
-
-  final-readback:
-    needs: [preflight, upload-owned]
-    if: ${{ inputs.dry_run == false }}
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/download-artifact@v4
-        with:
-          name: issue71-preflight
-          path: dist
-      - name: Verify eight final versions and unchanged Android group
-        run: python3 packaging/korean/tooling/publish_issue71_nexus.py final
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: issue71-nexus-final
-          path: dist/NEXUS-ISSUE71-FINAL.json
+          name: KR13.2.1-Windows-ZIP-retry-evidence
+          path: retry-dist/*

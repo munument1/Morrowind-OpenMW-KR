@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Issue 71 and follow-up display-only repairs; Android excluded",
+  "scope": "Issue 71 follow-up: Windows core, regional modules, Rebirth main/compatibility and PFP; Android excluded",
   "language_review": "AI_REVIEWED_WITH_EXISTING_TERMINOLOGY",
   "human_reviewed": false,
   "baseline_archives": {
@@ -8,7 +8,9 @@
     "TR_Mainland-kr0.4.1.zip": "7612380db44ef99ff69042fa349ca8c0338bffe4784bae2f9f6fb79f04810a7c",
     "Sky_Main-kr0.3.1.zip": "123783e70b3ba8f4e00799256515cf54de424014e96fd61946f0aa06bae6f531",
     "Cyr_Main-kr0.4.1.zip": "1fcf68632f6d4eeee98d9f09e1f04ad6b987f16d73204cc8257e1517c1d698a1",
-    "Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip": "2d7acc38ac4df133a4d15f0251e38e41b195b88f9a6ebd641d25aa46a67e06c1"
+    "Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip": "2d7acc38ac4df133a4d15f0251e38e41b195b88f9a6ebd641d25aa46a67e06c1",
+    "Morrowind_Rebirth7.2-kr1.2.zip": "6190df64064a40e69772f2c65917128ff3a8de9317ae72dd740ac611919fdd62",
+    "PFP_5.0.7-kr1.2_OpenMW-KR12.6.zip": "fa8d7b168e3e1e745b64502e51423f4a9273b7fdc03a72ca7b6f07b5241159c1"
   },
   "npc_names": {
     "Tamriel_Data": [],
@@ -2285,7 +2287,24 @@
     "More than a fortnight ago. That's why it's only me in the castle, serjo. All the other servants and slaves who tend to his lordship travel with him. Is there something wrong?": "보름도 더 되었습니다. 그래서 성에 저만 있는 겁니다, 세르조. 주인님을 모시는 다른 하인과 노예들은 모두 동행했습니다. 무슨 문제가 있습니까?",
     "No, serjo. I know no one by that name.": "아닙니다, 세르조. 그런 이름은 모릅니다.",
     "B'vek, that's strange. I suppose it's possible that my master knew this man, but being an Ashlander and my master being of the House of Telvanni, well, if you'll pardon me for being flippant, serjo, I don't think they would be friends.": "베크, 이상하군요. 주인님이 그자를 아셨을 수도 있겠지요. 하지만 그자는 애쉬랜더이고 주인님은 텔바니 가문 분이시니, 무례를 용서하신다면 세르조, 두 분이 친구였을 것 같지는 않습니다.",
-    "Please, serjo, go wherever you want. We have nothing to hide. We're loyal Imperial subjects.": "세르조, 원하시는 곳을 어디든 살펴보십시오. 숨길 것은 없습니다. 저희는 충직한 제국 신민입니다."
+    "Please, serjo, go wherever you want. We have nothing to hide. We're loyal Imperial subjects.": "세르조, 원하시는 곳을 어디든 살펴보십시오. 숨길 것은 없습니다. 저희는 충직한 제국 신민입니다.",
+    "Hrelvesuu! I have come for you! Show yourself!": "흘렐베수! 널 찾아왔다! 모습을 드러내라!",
+    "No good deed goes unpunished, Outlander.": "선행에는 벌이 따르는 법이지, 외지인이여.",
+    "You have come here for a reason, though you may not know what it is. Sheogorath and I have made a wager. He contends that solitude causes madness, while I maintain it allows for solace and meditation. To test this, I sent one of my priestesses to live alone on an island north of Dagon Fel. If she can live there for a hundred years, continuing her life of prayer, my theory will be proven. If not, Sheogorath wins our wager.": "너는 이유가 있어 이곳에 왔다. 아직 그 이유를 모를 수도 있겠지. 셰오고라스와 나는 내기를 했다. 그는 고독이 광기를 낳는다고 주장하지만, 나는 고독이 위안과 명상의 기회를 준다고 믿는다. 이를 시험하려고 사제 한 명을 다곤 펠 북쪽의 섬에서 홀로 살게 했다. 그녀가 백 년 동안 기도를 이어 가며 그곳에서 살아간다면 내 주장이 옳다는 것이 증명된다. 그렇지 못하면 셰오고라스가 내기에서 이긴다.",
+    "The time has almost passed, and she remains steadfast. But, Sheogorath has tried to sway the decision in his favor. Travel there, rid the island of his minions, and bring back proof of his meddling. Do not disturb the wise woman, though, as that would void our wager. Serve me, and I will reward you well.": "이제 기한이 거의 다 되었고, 그녀는 흔들림 없이 버티고 있다. 하지만 셰오고라스가 결과를 자기에게 유리하게 바꾸려 하고 있지. 그 섬으로 가서 그의 수하들을 몰아내고 그가 내기에 개입했다는 증거를 가져와라. 단, 그 현명한 여인을 방해해서는 안 된다. 그러면 내기 자체가 무효가 된다. 나를 위해 일하면 후하게 보상하겠다.",
+    "Well done, mortal. You have preserved the integrity of my wager with Sheogorath. Now it will end as fated, and not due to the meddling of the Daedra Prince. Take this, and use it wisely.": "잘했다, 필멸자여. 네 덕분에 셰오고라스와의 내기가 공정하게 지켜졌다. 이제 결말은 데이드라 군주의 간섭이 아닌 운명에 따라 정해질 것이다. 이것을 받아 현명하게 사용하여라.",
+    "You have caused me to lose my wager, mortal. Now, it matters not that Sheogorath meddled in the outcome of our wager. You have failed, but it seems that is your fate.": "필멸자여, 너 때문에 내가 내기에서 졌다. 이제 셰오고라스가 결과에 개입했다는 사실도 아무 의미가 없다. 너는 실패했다. 어쩌면 그 또한 네 운명이겠지.",
+    "What do you want with me, mortal? My shrine is in ruins, my priests have forgotten me. Will you rebuild my shrine, mortal? Restore it in all its glory? Accomplish this, and I will reward you. You will be the bearer of Goldbrand, my sword of legend. There is one who can help you do this for me. Listen...": "필멸자여, 내게 무엇을 원하는가? 내 성소는 폐허가 되었고 사제들은 나를 잊었다. 네가 내 성소를 다시 세우겠느냐? 예전의 영광을 되찾아 주겠느냐? 이 일을 해내면 보상하겠다. 내 전설적인 검 골드브랜드를 네게 주지. 이 일을 도와줄 자가 하나 있다. 잘 들어라...",
+    "Rough hands to smooth stone, Carving rock instead of bone, In Caldera an artist waits, His masterpiece to create. Find the one who may shape the rock. Go.": "거친 손으로 돌을 매끄럽게, 뼈 대신 바위를 새기네. 칼데라에서 예술가가 기다리니, 걸작을 만들 차례라네. 돌에 형태를 새길 자를 찾아라. 이제 가라.",
+    "You have summoned me, orc? Have you come to restore the honor of your people? I have in my possession the Helm of Oreyn Bearclaw, the dark elven 'hero.' His deeds are numerous, but he was a false hero. They were performed by Kharag gro-Khar, his orcish friend. It is time this legend of this hero was put to rest. Find the last of his bloodline, kill him, and I will grant you the Helm. Look for him in the city where the Man-God lives. ": "오크여, 나를 불렀느냐? 동족의 명예를 되찾으러 왔느냐? 내게는 다크 엘프의 '영웅' 오레인 베어클로의 투구가 있다. 그는 수많은 업적을 남겼다고 하지만 거짓 영웅이다. 그 모든 업적은 그의 오크 친구 카라그 그로-카르가 세운 것이지. 이제 거짓 영웅의 전설에 종지부를 찍어야 한다. 그 혈통의 마지막 후손을 찾아 죽여라. 그러면 투구를 주겠다. 인간 신이 사는 도시에서 그자를 찾아라.",
+    "You have summoned me? Hmmph. You are all the same. But, perhaps you can be of use to me. I have in my possession the Helm of Oreyn Bearclaw, the dark elven 'hero.' His deeds are numerous, but he was a false hero. All were performed by Kharag gro-Khar, his orcish friend. It is time this legend was put to rest. Find the last of his bloodline, kill him, and I will grant you the Helm. Look for the him in the city where the Man-God lives.": "나를 불렀느냐? 흥, 너희는 모두 똑같군. 하지만 내게 쓸모가 있을지도 모르지. 내게는 다크 엘프의 '영웅' 오레인 베어클로의 투구가 있다. 그는 많은 업적을 남겼다지만 거짓 영웅이다. 그 모든 업적은 그의 오크 친구 카라그 그로-카르가 세운 것이지. 이제 그 거짓 전설에 종지부를 찍어야 한다. 그 혈통의 마지막 후손을 찾아 죽여라. 그러면 투구를 주겠다. 인간 신이 사는 도시에서 그자를 찾아라.",
+    "You have killed the false hero, and ensured there will be no more to follow. You have helped bring back honor to the Orcish people, and for that I am glad. Here, take the Helm of Oreyn Bearclaw. Wear it proudly, and let it serve as a reminder of what really happened.": "네가 거짓 영웅을 죽여 그의 혈통을 끊었구나. 오크 종족의 명예를 되찾는 데 힘을 보태 주어 기쁘다. 자, 오레인 베어클로의 투구를 받아라. 당당히 쓰고 다니며 진실이 무엇이었는지 모두에게 일깨워라.",
+    "Why do you summon me now? I have no time for your pleadings, weakling. I have other matters that need my attention. Menta Na!!! He will pay for his insolence. Listen well--those in my service will do my bidding, or they will suffer eternal torment. You will serve me, mortal.": "지금 어찌하여 나를 부르느냐? 나약한 놈아, 네 애원을 들어 줄 시간 따위는 없다. 내게는 더 중요한 일이 있다. 멘타 나! 그놈의 오만함에는 반드시 대가를 치르게 하겠다! 잘 들어라. 나를 섬기는 자들은 내 명령에 복종해야 한다. 그러지 않으면 영원한 고통을 맛보리라. 필멸자여, 너도 나를 섬겨야 한다.",
+    "Menta Na has grown careless and lazy. He sits in his wretched cave while life on the surface goes on unmolested. He was spawned a creature of terror! His role is to sow fear and discord among men and mer, yet he is content to stay locked in his cave and mock my will!": "멘타 나는 게으르고 태만해졌다. 지상에서는 아무도 해를 입지 않고 살아가는데, 그놈은 비루한 동굴에 처박혀 있지. 공포를 불러일으키도록 태어난 괴물이다! 인간과 엘프 사이에 두려움과 불화를 퍼뜨리는 것이 놈의 사명인데, 동굴에 틀어박혀 내 뜻을 조롱하고 있단 말이다!",
+    "Kill him, mortal. Set his soul flying to the Outer Realms so that I might show him eternal torture for his disobedience. Take this key. You will find him in the caves of Kora-Dur, east of Kogoruhn. Kill this lazy fool for me, mortal. Do this, and you will have my favor.": "필멸자여, 그놈을 죽여라. 영혼을 외부 영역으로 보내라. 내 명령을 거역한 대가로 영원한 고문을 가하겠다. 이 열쇠를 받아라. 코고룬 동쪽 코라-두르의 동굴에 놈이 있다. 그 게으른 멍청이를 죽여라. 해낸다면 내 총애를 얻게 될 것이다.",
+    "Ah, you have freed the soul of Menta Na! Torment will be his. Endless agony is all he will know until the end of time. You have performed well, mortal. Perhaps you will be my servant again one day. Take this and use it well. Bring strife and discord with you wherever you may travel. Now... go!": "아, 멘타 나의 영혼을 풀어 주었구나! 이제 놈에게는 끝없는 고통만이 있을 것이다. 세상이 끝날 때까지 영원한 고문을 맛보리라. 필멸자여, 잘했다. 언젠가 다시 나를 섬길 수도 있겠군. 이것을 받아 잘 사용해라. 어디를 가든 분쟁과 불화를 불러일으켜라. 이제 가라.",
+    "I ordered her not to associate with these animals. I told her what the penalty would be for her disobedience! Yet she continues to defy me! Willful beast! I cannot have this. Find her, mortal. Kill her and the atronach, so I may deal with them in the Outer Realms. When this is done, return to me, and I will rid you of your unlife. Take care, mortal, for she is powerful. She is still a daughter of Molag Bal.": "나는 저런 짐승과 어울리지 말라고 명령했다. 불복종의 대가도 분명히 알려 주었지! 그런데도 계속 나를 거역하는구나! 제멋대로인 짐승 같으니! 그냥 둘 수 없다. 필멸자여, 그녀를 찾아 아트로나크와 함께 죽여라. 외부 세계에서 둘을 직접 다루겠다. 일이 끝나면 내게 돌아와라. 그러면 네 불사의 굴레를 벗겨 주마. 조심해라, 필멸자여. 그녀는 강하다. 그래도 몰라그 발의 딸이니까.",
+    "I see you have done as I asked, little vampire. It was not easy for me to obtain the cure, but I was able to pry it from Vaernima after some... discussion. You have earned it. Now I have eternity to punish my daughter for her defiance. Your curse is lifted. Yet...I wonder, will you miss the taste of blood on your lips? When you sleep, will you taste the salt and copper flowing over your tongue? Go, mortal. Bask in your precious sunlight.": "시키는 대로 했구나, 작은 뱀파이어야. 치료제를 구하기는 쉽지 않았지만, 약간의... 논의 끝에 베르미나에게서 빼앗아 올 수 있었다. 너는 자격을 얻었다. 이제 나는 딸의 불복종을 영원토록 벌할 수 있겠군. 네 저주는 풀렸다. 하지만... 입술에 묻은 피 맛이 그립지 않을까? 잠들면 혀 위로 흐르던 짜고 쇠 비린 맛이 떠오르지 않겠느냐? 가라, 필멸자여. 그토록 소중한 햇살을 만끽해라."
   },
   "preserved_strings": {
     "geewp eee": "말을 제대로 하지 못하는 인물의 발음이 퀘스트 단서이므로 원문 보존",
@@ -2300,5 +2319,6 @@
     "Na degagu gizzal. Dagea amaru ugu kab duga bat ur. Numun namlu-ulu alam ede nambi batar. Ditil la inim puru umma-ka su giganugal. Inim duga an denila-ka su bat nuzu. Nam-lugal bibalbi bur ene sag kusud.": "Original fictional-language ritual or password; not English prose.",
     "Devahr oas ku'or demidar yaglag arcgah.": "Original fictional-language ritual or password; not English prose."
   },
-  "policy": "Replace quoted display operands only; preserve all script control flow, numeric choices, IDs and conditions."
+  "policy": "Replace quoted display operands only; preserve all script control flow, numeric choices, IDs and conditions.",
+  "owned_baseline_readback_run": 43804141767
 }

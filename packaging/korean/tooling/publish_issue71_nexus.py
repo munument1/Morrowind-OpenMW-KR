@@ -11,7 +11,8 @@ from verify_issue71_followup import PINS, check_archive, verify
 
 QA = ROOT / 'packaging/korean/releases/ISSUE71-20261116-QA.json'
 TARGETS = {(60496, '8110335'), (60844, '8296179'), (60845, '8296167'),
-           (60846, '8296161'), (60847, '8296155'), (60805, '8296377')}
+           (60846, '8296161'), (60847, '8296155'), (60805, '8296377'),
+           (60805, '8257641'), (60826, '8280147')}
 ANDROID_GROUP = '8257539'
 
 
@@ -64,8 +65,8 @@ def write(path, data):
 
 def run(mode, folder, asset=None, armed=False):
     pins = json.loads(PINS.read_text(encoding='utf-8'))['files']
-    if {(r['mod_id'], r['group']) for r in pins} != TARGETS or len(pins) != 6:
-        raise ValueError('Expected Windows plus five regional targets')
+    if {(r['mod_id'], r['group']) for r in pins} != TARGETS or len(pins) != 8:
+        raise ValueError('Expected eight approved non-Android targets')
     if mode == 'preflight':
         if armed and not json.loads(QA.read_text(encoding='utf-8'))['ready_for_publication']:
             raise ValueError('Runtime/QA release gate incomplete')
@@ -77,7 +78,7 @@ def run(mode, folder, asset=None, armed=False):
         before = get(f'/v3/mod-files/{ANDROID_GROUP}/versions')['data']['versions']
         write(folder / 'NEXUS-ANDROID-UNCHANGED-BEFORE.json', before)
         write(folder / 'NEXUS-ISSUE71-PREFLIGHT.json', verified)
-        print('PASS: six owned Windows/regional groups; Android snapshot read only')
+        print('PASS: eight owned groups; Android snapshot read only')
         return
     if mode == 'final':
         before = json.loads((folder / 'NEXUS-ANDROID-UNCHANGED-BEFORE.json').read_text(encoding='utf-8'))
@@ -86,7 +87,7 @@ def run(mode, folder, asset=None, armed=False):
             raise ValueError('Android group versions changed during publication')
         rows = [readback(r) for r in json.loads((folder / 'NEXUS-ISSUE71-PREFLIGHT.json').read_text(encoding='utf-8'))]
         write(folder / 'NEXUS-ISSUE71-FINAL.json', {'android_group_unchanged': True, 'files': rows})
-        print('PASS: all six uploaded versions, sizes and groups; Android versions unchanged')
+        print('PASS: all eight uploaded versions, sizes and groups; Android versions unchanged')
         return
     expected = next(r for r in pins if r['asset'] == asset)
     row = check_archive(folder / asset, expected)
@@ -99,8 +100,8 @@ def run(mode, folder, asset=None, armed=False):
         with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
             out.write('upload=' + str(not existing).lower() + '\n')
             out.write('group=' + row['group'] + '\nversion=' + row['version'] + '\n')
-            out.write('category=' + ('optional' if row['mod_id'] == 60805 else 'main') + '\n')
-            out.write('primary=' + str(row['mod_id'] != 60805).lower() + '\n')
+            out.write('category=' + ('optional' if row['group'] == '8296377' else 'main') + '\n')
+            out.write('primary=' + str(row['group'] != '8296377').lower() + '\n')
         print('READY' if not existing else 'ALREADY_VERIFIED', asset, row['group'], row['version'])
         return
     if mode == 'readback':

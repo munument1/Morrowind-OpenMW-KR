@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Build and verify all six packages and Nexus targets without uploading'
+        description: 'Build and verify all eight packages and Nexus targets without uploading'
         type: boolean
         required: true
         default: true
@@ -40,6 +40,8 @@ jobs:
             --pattern 'TR_Mainland-kr0.4.1.zip' --pattern 'Tamriel_Data-kr0.4.1.zip' \
             --pattern 'Cyr_Main-kr0.4.1.zip' --pattern 'Sky_Main-kr0.3.1.zip' \
             --pattern 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip'
+      - name: Download SHA-pinned owned PFP and Rebirth baselines
+        run: python3 packaging/korean/tooling/fetch_issue71_baselines.py --output baselines
       - name: Verify exact successful 0019 Windows CI artifact and extract engine pair
         shell: bash
         run: |
@@ -64,7 +66,7 @@ jobs:
           assert hashlib.sha256(Path('engine/openmw.exe').read_bytes()).hexdigest()=='67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78'
           assert hashlib.sha256(Path('engine/resources/version').read_bytes()).hexdigest()=='eec778cae898eb16f909bc8653258649f69e06a21d6af5091f4404fabf220f88'
           PY
-      - name: Rebuild Windows installer ZIP and five full-plugin overwrite ZIPs
+      - name: Rebuild Windows installer ZIP and seven full-plugin overwrite ZIPs
         shell: bash
         run: |
           set -euo pipefail
@@ -119,6 +121,16 @@ jobs:
           path: dist/Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip
           compression-level: 0
       - uses: actions/upload-artifact@v4
+        with:
+          name: issue71-60805-main
+          path: dist/Morrowind_Rebirth7.2-kr1.3.zip
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: issue71-60826
+          path: dist/PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: issue71-preflight
@@ -134,19 +146,21 @@ jobs:
       max-parallel: 2
       matrix:
         include:
-          - {mod: 60496, asset: 'Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip'}
-          - {mod: 60844, asset: 'TR_Mainland-kr0.5.zip'}
-          - {mod: 60845, asset: 'Tamriel_Data-kr0.5.zip'}
-          - {mod: 60846, asset: 'Cyr_Main-kr0.5.zip'}
-          - {mod: 60847, asset: 'Sky_Main-kr0.4.zip'}
-          - {mod: 60805, asset: 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip'}
+          - {key: 60496, mod: 60496, asset: 'Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip'}
+          - {key: 60844, mod: 60844, asset: 'TR_Mainland-kr0.5.zip'}
+          - {key: 60845, mod: 60845, asset: 'Tamriel_Data-kr0.5.zip'}
+          - {key: 60846, mod: 60846, asset: 'Cyr_Main-kr0.5.zip'}
+          - {key: 60847, mod: 60847, asset: 'Sky_Main-kr0.4.zip'}
+          - {key: 60805, mod: 60805, asset: 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip'}
+          - {key: '60805-main', mod: 60805, asset: 'Morrowind_Rebirth7.2-kr1.3.zip'}
+          - {key: 60826, mod: 60826, asset: 'PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip'}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - uses: actions/download-artifact@v4
         with:
-          name: issue71-${{ matrix.mod }}
+          name: issue71-${{ matrix.key }}
           path: dist
       - id: gate
         name: Revalidate exact payload, owner, approved group and version before upload
@@ -171,7 +185,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: issue71-nexus-${{ matrix.mod }}
+          name: issue71-nexus-${{ matrix.key }}
           path: dist/NEXUS-*-PUBLICATION.json
 
   final-readback:
@@ -186,7 +200,7 @@ jobs:
         with:
           name: issue71-preflight
           path: dist
-      - name: Verify six final versions and unchanged Android group
+      - name: Verify eight final versions and unchanged Android group
         run: python3 packaging/korean/tooling/publish_issue71_nexus.py final
       - uses: actions/upload-artifact@v4
         if: always()

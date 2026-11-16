@@ -23,6 +23,8 @@ SPECS = (
     ('Cyr_Main-kr0.4.1.zip', 'Cyr_Main-kr0.5.zip', 60846, '8296161', '26.09a-kr0.5'),
     ('Sky_Main-kr0.3.1.zip', 'Sky_Main-kr0.4.zip', 60847, '8296155', '26.09a-kr0.4'),
     ('Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip', 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip', 60805, '8296377', '7.2-kr0.5'),
+    ('Morrowind_Rebirth7.2-kr1.2.zip', 'Morrowind_Rebirth7.2-kr1.3.zip', 60805, '8257641', '7.2-kr1.3'),
+    ('PFP_5.0.7-kr1.2_OpenMW-KR12.6.zip', 'PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip', 60826, '8280147', '5.0.7-kr1.3'),
 )
 
 
@@ -32,8 +34,11 @@ def sha(raw):
 
 def module_for(member):
     stem = Path(member).stem.casefold()
+    if stem.startswith('morrowind rebirth'):
+        return 'Rebirth'
     return {'tr_mainland': 'TR_Mainland', 'tr_factions': 'TR_Mainland', 'tamriel_data': 'Tamriel_Data',
             'cyr_main': 'Cyr_Main', 'sky_main': 'Sky_Main',
+            'patch for purists': 'PFP',
             'project cyrodiil [for rebirth]': 'Cyr_Main',
             'skyrim home of the nords [for rebirth]': 'Sky_Main'}.get(stem)
 
@@ -197,9 +202,13 @@ def build(source, output, review_dir=REVIEW):
         with ZipFile(source / old) as z:
             if z.testzip() is not None:
                 raise ValueError('Baseline CRC failure')
-            original_meta = json.loads(z.read('INSTALL-MANIFEST.json'))
+            original_meta = json.loads(z.read('INSTALL-MANIFEST.json')) if 'INSTALL-MANIFEST.json' in z.namelist() else {'source_archive': old}
             for name in z.namelist():
                 suffix = Path(name).suffix.lower()
+                if old.startswith(('Morrowind_Rebirth', 'PFP_')) and suffix in ('.txt', '.md', '.pdf'):
+                    notice = 'SOURCE-NOTICES/' + name if Path(name).name.lower().startswith('readme') else name
+                    files[notice] = z.read(name)
+                    continue
                 if suffix not in ('.esm', '.esp', '.top', '.mrk', '.cel', '.jrn'):
                     continue
                 raw = z.read(name)
@@ -213,7 +222,7 @@ def build(source, output, review_dir=REVIEW):
                     changes[name] = {'before': sha(raw), 'after': sha(updated), 'records_verified': records, **detail}
                     found.update((module, value) for value in seen)
                     # TR_Factions shares the required TR_Mainland display sidecar.
-                    if Path(name).stem.casefold() != 'tr_factions':
+                    if Path(name).stem.casefold() != 'tr_factions' and (review_dir / (module + '.dsp')).exists():
                         files[str(Path(name).with_suffix('.dsp')).replace('\\', '/')] = (review_dir / (module + '.dsp')).read_bytes()
                 else:
                     files[name] = raw
@@ -226,12 +235,12 @@ def build(source, output, review_dir=REVIEW):
         hashes = {name: sha(data) for name, data in files.items()}
         files['INSTALL-MANIFEST.json'] = (json.dumps({**original_meta, 'format': 'overwrite-existing-esm-esp',
             'version': version, 'files': hashes, 'issue71_followup': True, 'human_reviewed': False}, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
-        files['README_KO.md'] = f'''# OpenMW-KR 지역 모드 한국어 {version}
+        optional = 'TR_Factions.esp는 팩션 통합 모드를 사용하는 경우에만 교체합니다.\n' if mod == 60844 else ''
+        files['README_KO.md'] = f'''# OpenMW-KR 모드 한국어 {version}
 
 같은 원본 버전의 모드와 필요한 메쉬·텍스처·BSA를 먼저 설치하십시오.
 기존 플러그인과 사이드카를 백업한 뒤, 이 ZIP의 전체 ESM/ESP와 CEL/TOP/MRK/JRN/DSP를 같은 위치에 덮어씁니다.
-TR_Factions.esp는 팩션 통합 모드를 사용하는 경우에만 교체합니다.
-일반 Cyr/Sky와 Rebirth 전용 [For Rebirth] ESM은 함께 활성화하지 마십시오.
+{optional}일반 Cyr/Sky와 Rebirth 전용 [For Rebirth] ESM은 함께 활성화하지 마십시오.
 
 이슈 #71: 토픽 목록·응답 제목·일지 주제 표시, 인물명 잔재, 선택지와 스크립트 알림을 보강했습니다.
 DSP는 표시 전용입니다. 원본 DIAL/NPC/아이템 ID, 퀘스트 조건, 선택 번호와 저장 데이터 형식을 보존합니다.
@@ -240,7 +249,8 @@ Windows 본편 KR13.1 이상이 필요합니다. 기존 로드 순서와 원본 
 코드·회귀 검증과 실제 실행 범위는 아래 저장소의 배포 보고서를 참고하십시오.
 
 Bethesda Softworks/Bethesda Game Studios, Tamriel Rebuilt Team, Tamriel Data/Cross-Project Coordination,
-Project Tamriel 각 팀, Morrowind Rebirth와 호환 파일 제작자의 크레딧과 이용 조건을 보존합니다.
+Project Tamriel 각 팀, Morrowind Rebirth의 Trancemaster_1988와 기여자, Patch for Purists의 Half11와 기여자,
+각 호환 파일 제작자의 크레딧과 이용 조건을 보존합니다. SOURCE-NOTICES가 있으면 기존 배포본의 고지도 참고하십시오.
 원본 모드의 아트와 정품 Bethesda 마스터를 포함하지 않습니다. Android 패키지는 이번 갱신 대상이 아닙니다.
 https://github.com/munument1/Morrowind-OpenMW-KR
 '''.encode('utf-8')

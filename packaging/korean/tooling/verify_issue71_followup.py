@@ -76,9 +76,13 @@ def verify(folder):
                 modules[stem] = (sidecars, topics)
     coverage = {}
     core = 'morrowind_korean_retranslation'
-    for label, active in {'regular': [core, 'tamriel_data', 'tr_mainland', 'tr_factions', 'sky_main', 'cyr_main'],
+    rebirth = [stem for stem in modules if stem.startswith('morrowind rebirth')]
+    for label, active in {'core_pfp': [core, 'patch for purists'],
+                          'regular_pfp': [core, 'patch for purists', 'tamriel_data', 'tr_mainland', 'tr_factions', 'sky_main', 'cyr_main'],
+                          'rebirth_main': [core, *rebirth],
+                          'regular': [core, 'tamriel_data', 'tr_mainland', 'tr_factions', 'sky_main', 'cyr_main'],
                           'rebirth_compatibility': [core, 'tamriel_data', 'tr_mainland', 'tr_factions',
-                              'skyrim home of the nords [for rebirth]', 'project cyrodiil [for rebirth]']}.items():
+                              *rebirth, 'skyrim home of the nords [for rebirth]', 'project cyrodiil [for rebirth]']}.items():
         maps, topics = {'.dsp': {}, '.mrk': {}}, {}
         for stem in active:
             sidecars, local = modules[stem]

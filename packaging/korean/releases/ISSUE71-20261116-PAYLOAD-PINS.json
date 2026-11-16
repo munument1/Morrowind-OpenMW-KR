@@ -11,8 +11,6 @@
       "mod_id": 60496,
       "uid": "429496790096",
       "group": "8110335",
-      "sha256": "8863480f5206f9f9be23a5cdb614dd8e122fd6552b28409c95e018b1a74cd3c7",
-      "bytes": 14542006,
       "engine_sha256": "67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78",
       "payload": {
         "payload/mods/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -97,8 +95,6 @@
       "uid": "429496790444",
       "group": "8296179",
       "version": "26.11.2-kr0.5",
-      "sha256": "f7743fe2ac1a51a108417d471fe58758496862898a8bd209b35a9332ba067e9c",
-      "bytes": 97667317,
       "payload": {
         "Data Files/TR_Mainland.cel": "22a0e6c18d31a70c7c53b665c0597b22359e77355be0c1bbb62311c42874005a",
         "Data Files/TR_Mainland.esm": "ceb80d772aa7967a578c6ca9512b117833dbf12d9b8a5740c27da89345a5e4e9",
@@ -128,8 +124,6 @@
       "uid": "429496790445",
       "group": "8296167",
       "version": "26.08-kr0.5",
-      "sha256": "07eb69e421bbedeed36ad68f71d1a55b98591be66ba29a74272bd4e2622268e8",
-      "bytes": 3601341,
       "payload": {
         "Data Files/Tamriel_Data.cel": "4a9547e8361b42008cd858e77ae8f15f953e2ead44a00a1f852a0fa7c8518171",
         "Data Files/Tamriel_Data.esm": "222f682cb2809420f8feb3e60dc2fb6a9ea16c12f3991cb5861b10d17a086b77",
@@ -155,8 +149,6 @@
       "uid": "429496790446",
       "group": "8296161",
       "version": "26.09a-kr0.5",
-      "sha256": "92deb25b293c68c6d03220cc3653dc4a1ecf2adcf72b13392f34b5e836d622e5",
-      "bytes": 17712668,
       "payload": {
         "Data Files/Cyr_Main.ESM": "e288d1b4b62cdb04f649b4086f6d1e659d0d6b750189b1abdb21b8a9cfa715e0",
         "Data Files/Cyr_Main.dsp": "e99c13da89aad9cb5cc71d6022e4ce26763661ffc22020afcfae7f49c17992f0",
@@ -182,8 +174,6 @@
       "uid": "429496790447",
       "group": "8296155",
       "version": "26.09a-kr0.4",
-      "sha256": "9dddd920baa05239ebbce2cf24205f1f0944c48e9e5a2a9c7dddf59d74fc4167",
-      "bytes": 10498078,
       "payload": {
         "Data Files/Sky_Main.ESM": "878559858d5f39b91472be9c74145fb0919819df45d251de34608a8eac9b6573",
         "Data Files/Sky_Main.dsp": "84d96dd18cbae23b7130d8d11990f09aff6760e01250ce38ed1ec4af0990b205",
@@ -210,8 +200,6 @@
       "uid": "429496790405",
       "group": "8296377",
       "version": "7.2-kr0.5",
-      "sha256": "a9ab85ee67056efa4688477d7ba977cfbd2afb86848787f648fd31e8c9e46166",
-      "bytes": 27994612,
       "payload": {
         "Compability Patches/Project Cyrodiil [For Rebirth].cel": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa",
         "Compability Patches/Project Cyrodiil [For Rebirth].esm": "b09e4f6f2df7e851e3f3099519972de7da72195c3e5a7f3e887b7cc508c05353",
@@ -245,6 +233,103 @@
           "INFO.BNAM": 640
         }
       }
+    },
+    {
+      "asset": "Morrowind_Rebirth7.2-kr1.3.zip",
+      "mod_id": 60805,
+      "uid": "429496790405",
+      "group": "8257641",
+      "version": "7.2-kr1.3",
+      "payload": {
+        "Alternate Version/Morrowind Rebirth [Main].ESP": "e3e81589e0d464bc0123592a2d3f50ec5ea5bbb1accbf73ae023f209ec04fe7e",
+        "Alternate Version/Morrowind Rebirth [Main].top": "5afcff81b338768f1cada506fa92cd923f49316353e82e34efe1c9f16512d7cf",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP": "6da2f092840bab54e20fd477796bd5b43bcbcef406c1281dae4ad21c881c8e41",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP": "6fc0e45e3cc8450ce9487d22b770fb5bae7230d8db4fc00b0e880493dad0e982",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP": "2c6d0e41ac5a2e7cb5114473842281e6d855e173b45121dda9ceb7e057f141e3",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].top": "207188bc4c769dabeff87e2c97b8a9cab00f818655f4812f62d05ee8e0272fb9",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp": "61c58c3a927f9e2ea35def12bf9f9ff5766621e4bbb809e187061cb99f3d59c9",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP": "26536561e155549312c6b6853790b79e18e8c42309e42fee5310ec27b555d94f",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP": "5d573cf5544418d7ad0dc9585b61b3c3f2f2621af22900dde6b3c42bc16d9016",
+        "Data Files/Morrowind Rebirth [Main].ESP": "56b585af39fb7e106538c789d7e6d9a6ac4b8ec2c5efdc72a518a9d69b062ea6",
+        "Data Files/Morrowind Rebirth [Main].top": "5afcff81b338768f1cada506fa92cd923f49316353e82e34efe1c9f16512d7cf",
+        "Data Files/Morrowind Rebirth [Main].cel": "c2c2c924e7dee44f4ac47be8cbcd9dec1b330977a2e960e8174ec7f4977dbc30",
+        "Alternate Version/Morrowind Rebirth [Main].cel": "c2c2c924e7dee44f4ac47be8cbcd9dec1b330977a2e960e8174ec7f4977dbc30",
+        "SOURCE-NOTICES/README_KOREAN.txt": "12bb9722d7ac57e5416bf336bf7f0253bf03f53774b0c39868846b64a98c8242",
+        "Documents/CHANGELOG_7.2-kr1.0.txt": "9db3e51dcf86af1e083fdc0caddd38eb66c0953add146602350dd177266120ab",
+        "KR1.1-CHANGES.txt": "33e0b217790b9c482fa4d587d851b30cbdc40986c43c5b021094b36e6be89ca8",
+        "KR1.2-CHANGES.txt": "f08bcb8e6c3429417dcd30e9f98c0ff49eb6814a19168eca7fb4779378ffcf9a"
+      },
+      "changes": {
+        "Alternate Version/Morrowind Rebirth [Main].ESP": {
+          "before": "dce0bbefaf02890aa0ce2c0faa6216911b6b9633c4deea2409d912894b48f246",
+          "after": "e3e81589e0d464bc0123592a2d3f50ec5ea5bbb1accbf73ae023f209ec04fe7e",
+          "records_verified": 20615,
+          "SCPT.SCTX": 2,
+          "display_operands": 2
+        },
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP": {
+          "before": "6da2f092840bab54e20fd477796bd5b43bcbcef406c1281dae4ad21c881c8e41",
+          "after": "6da2f092840bab54e20fd477796bd5b43bcbcef406c1281dae4ad21c881c8e41",
+          "records_verified": 32
+        },
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP": {
+          "before": "6fc0e45e3cc8450ce9487d22b770fb5bae7230d8db4fc00b0e880493dad0e982",
+          "after": "6fc0e45e3cc8450ce9487d22b770fb5bae7230d8db4fc00b0e880493dad0e982",
+          "records_verified": 76
+        },
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP": {
+          "before": "2c6d0e41ac5a2e7cb5114473842281e6d855e173b45121dda9ceb7e057f141e3",
+          "after": "2c6d0e41ac5a2e7cb5114473842281e6d855e173b45121dda9ceb7e057f141e3",
+          "records_verified": 326
+        },
+        "Data Files/Morrowind Rebirth - Races [Addon].esp": {
+          "before": "61c58c3a927f9e2ea35def12bf9f9ff5766621e4bbb809e187061cb99f3d59c9",
+          "after": "61c58c3a927f9e2ea35def12bf9f9ff5766621e4bbb809e187061cb99f3d59c9",
+          "records_verified": 42
+        },
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP": {
+          "before": "26536561e155549312c6b6853790b79e18e8c42309e42fee5310ec27b555d94f",
+          "after": "26536561e155549312c6b6853790b79e18e8c42309e42fee5310ec27b555d94f",
+          "records_verified": 20
+        },
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP": {
+          "before": "5d573cf5544418d7ad0dc9585b61b3c3f2f2621af22900dde6b3c42bc16d9016",
+          "after": "5d573cf5544418d7ad0dc9585b61b3c3f2f2621af22900dde6b3c42bc16d9016",
+          "records_verified": 41
+        },
+        "Data Files/Morrowind Rebirth [Main].ESP": {
+          "before": "138130376b03a246ab89682171e3ae368893d26a0e1c1da803bb6d26168dc1db",
+          "after": "56b585af39fb7e106538c789d7e6d9a6ac4b8ec2c5efdc72a518a9d69b062ea6",
+          "records_verified": 20615,
+          "SCPT.SCTX": 2,
+          "display_operands": 2
+        }
+      }
+    },
+    {
+      "asset": "PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip",
+      "mod_id": 60826,
+      "uid": "429496790426",
+      "group": "8280147",
+      "version": "5.0.7-kr1.3",
+      "payload": {
+        "Patch for Purists.esm": "4b31e8baf4a043676bec103987c249777eedee753b176eb375b439ca5364a7ec",
+        "Patch for Purists.dsp": "577c49eee2a94feb56c451af9a5161f1a47caf0eaaea55db8615c61a2083d6e3",
+        "Patch for Purists.mrk": "13903518ac9309738451c43d4745b7ac29fc2d0cfd8bfac77ca5ab3432537a56",
+        "Patch for Purists.top": "b82563421d3ba3b65c1291efcf3a062731f624b81edacedc7d45dcf301b8b765",
+        "KR1.1-CHANGES.txt": "5a347bf0cc4a2923af9af08986130d21a302fb814775dcbff1fba82bcc071ae6",
+        "KR1.2-CHANGES.txt": "b1004bd9ff65c8dc3eeda0860af7d944642da839a350add767d4c4a5c6578e49"
+      },
+      "changes": {
+        "Patch for Purists.esm": {
+          "before": "87875cb0d5a5259b623e2dda56d056a2813ce03c51194836134c3d5b39236889",
+          "after": "4b31e8baf4a043676bec103987c249777eedee753b176eb375b439ca5364a7ec",
+          "records_verified": 10202,
+          "SCPT.SCTX": 8,
+          "display_operands": 26
+        }
+      }
     }
-  ]
+  ],
+  "archive_verification": "Exact uncompressed member SHA256; actual CI archive SHA256 and byte size are recorded during preflight/readback because zlib output differs across platforms."
 }

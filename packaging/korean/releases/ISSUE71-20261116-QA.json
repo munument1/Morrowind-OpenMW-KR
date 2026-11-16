@@ -1,12 +1,184 @@
 {
-  "ready_for_publication": false,
-  "scope": "Windows KR13.2, TR/TD/Cyr kr0.5, Sky kr0.4, Rebirth Cyr/Sky compatibility kr0.5; Android excluded",
+  "ready_for_publication": true,
+  "scope": "Windows KR13.2, TR/TD/Cyr kr0.5, Sky kr0.4, Rebirth compatibility kr0.5, Rebirth main 7.2-kr1.3, PFP 5.0.7-kr1.3; Android excluded",
   "engine_sha256": "67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78",
   "rewrite_tests": 7,
-  "regular_topic_ids_checked": 6294,
-  "rebirth_compatibility_topic_ids_checked": 6294,
+  "topic_coverage": {
+    "core_pfp": {
+      "normal_topics": 3004,
+      "untranslated_captions": []
+    },
+    "regular_pfp": {
+      "normal_topics": 6972,
+      "untranslated_captions": []
+    },
+    "rebirth_main": {
+      "normal_topics": 2100,
+      "untranslated_captions": []
+    },
+    "regular": {
+      "normal_topics": 6294,
+      "untranslated_captions": []
+    },
+    "rebirth_compatibility": {
+      "normal_topics": 6334,
+      "untranslated_captions": []
+    }
+  },
   "unreviewed_script_literals_remaining": 0,
-  "untranslated_topic_captions_remaining_excluding_reviewed_language": 0,
   "human_reviewed": false,
-  "pending": ["final compiler comparison", "final packaged-data GUI replay"]
+  "pending": [],
+  "runtime_compiler_comparisons": {
+    "compiler-comparison.json": {
+      "regular_final": {
+        "counts": [
+          [
+            "6862",
+            "6863",
+            "scripts"
+          ],
+          [
+            "56748",
+            "56748",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 915
+      },
+      "compat_baseline": {
+        "counts": [
+          [
+            "6862",
+            "6863",
+            "scripts"
+          ],
+          [
+            "56748",
+            "56748",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 915
+      },
+      "compat_final": {
+        "counts": [
+          [
+            "6862",
+            "6863",
+            "scripts"
+          ],
+          [
+            "56748",
+            "56748",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 915
+      },
+      "regular_baseline": {
+        "counts": [
+          [
+            "6862",
+            "6863",
+            "scripts"
+          ],
+          [
+            "56748",
+            "56748",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 915
+      }
+    },
+    "compiler-owned-comparison.json": {
+      "pfp_baseline": {
+        "counts": [
+          [
+            "6885",
+            "6886",
+            "scripts"
+          ],
+          [
+            "59618",
+            "59620",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 1005
+      },
+      "pfp_final": {
+        "counts": [
+          [
+            "6885",
+            "6886",
+            "scripts"
+          ],
+          [
+            "59618",
+            "59620",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 1005
+      },
+      "rebirth_baseline": {
+        "counts": [
+          [
+            "7018",
+            "7019",
+            "scripts"
+          ],
+          [
+            "56897",
+            "56897",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 922
+      },
+      "rebirth_final": {
+        "counts": [
+          [
+            "7018",
+            "7019",
+            "scripts"
+          ],
+          [
+            "56897",
+            "56897",
+            "dialogue scripts"
+          ]
+        ],
+        "error_count": 922
+      }
+    }
+  },
+  "compiler_error_identities_unchanged": true,
+  "gui_passes": [
+    "TR topic list/response heading",
+    "TD bank 123 gold MessageBox",
+    "Cyr Choice and original decline branch",
+    "TR NPC name",
+    "core VampireMolag Say",
+    "Rebirth compatibility original topic click",
+    "old isolated save journal Korean initial/index/topic/response",
+    "PFP overriding VampireMolag Say"
+  ],
+  "limitations": [
+    "No full quest playthrough or regional art rendering audit",
+    "Pre-existing source compilation errors remain unchanged",
+    "New proper-name transliterations are provisional AI review"
+  ],
+  "evidence_sha256": {
+    "Core-Say-Korean.jpg": "e1b2b2a56ca43f123bc548bcc1a07011d34dea7190bbc46f3d5946bb5fd8fe2a",
+    "Cyr-choices-Korean.jpg": "ef293bf7bf6e6720f2bda8352335f9e217352608de806ac15ae2ad6f33f56d98",
+    "Cyr-original-choice-branch.jpg": "de736bd998e54d31cba8549a92663a4cd0a9a5e83390e2de3391c335a5bc1167",
+    "Old-save-journal-Korean.jpg": "53a1722d96d01a72ab835b371aa86b2efcbb44d92eae2d74ec8cc92dc7cb0726",
+    "PFP-Say-Korean.jpg": "7258f1f81e48a0b45be4fd85a3be6ce4a011befa9c3fe68f2dfda4bdb4b32f66",
+    "Rebirth-Conall-Korean.jpg": "32b9bc527683e562a009fe06ef195c004a7292c8d1df363d62afa9fef90e3959",
+    "TD-bank-Korean.jpg": "2b03de2b797f14cd5e04fcacb9f376ece98ccfab33494e39242c5bbb973ae8df",
+    "TR-name-Korean.jpg": "a2ff95568671ae3283ea10b5841d5e1fbc7dae7248239cf5b385e08900177eba",
+    "TR-topic-Korean.jpg": "e0b6df107305bc1e073e361ba72c61151db4270b89781522ab74da7f4e71fdaf"
+  }
 }

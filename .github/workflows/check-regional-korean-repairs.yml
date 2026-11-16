@@ -28,6 +28,11 @@ jobs:
       - name: Verify data preservation and failure guards
         working-directory: packaging/korean/tooling
         run: python -m unittest test_shared_default_topics test_reviewed_issue42_links test_core_topic_aliases test_shared_core_topics test_regional_core_aliases test_rebirth_sidecar_names test_reviewed_regional_display test_reviewed_book_text -v
+      - name: Verify issue 71 script boundaries and eight-package Nexus exclusions
+        run: |
+          python -m pip install PyYAML==6.0.3
+          python -m unittest discover -s packaging/korean/tooling -p test_issue71_followup.py -v
+          python packaging/korean/tooling/test_publish_kr13_nexus_workflow.py -v
       - name: Compile actual Windows keyword parser and translation loader
         shell: cmd
         run: |

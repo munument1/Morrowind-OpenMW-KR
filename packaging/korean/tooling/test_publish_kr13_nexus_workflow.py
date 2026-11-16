@@ -1,122 +1,104 @@
-"""Static, local-only safety tests for the KR13 manual Nexus workflow.
-
-Run with: python -B packaging/korean/tooling/test_publish_kr13_nexus_workflow.py -v
-No network, GitHub or Nexus credentials are required.
-"""
-from __future__ import annotations
-
+"""Offline checks for the eight-package manual Nexus publication workflow."""
 from pathlib import Path
+import json
 import re
 import unittest
-from package_kr13_mod_overwrites import SPECS
+from unittest.mock import patch
+import os
+import tempfile
+
+import publish_issue71_nexus as nexus
 
 try:
     import yaml
 except ImportError:
     yaml = None
 
-
-PATH = Path(__file__).resolve().parents[3] / '.github/workflows/publish-kr13-nexus.yml'
+ROOT = Path(__file__).resolve().parents[3]
 ACTION = 'Nexus-Mods/upload-action@c96019556046053aa26044b44396cd38929daf23'
 
 
-def inline_python(text: str) -> str:
-    found = re.findall(r"(?ms)^python3 - <<'PY'\n(.*?)^PY$", text)
-    if len(found) != 1:
-        raise AssertionError(f'Expected exactly one embedded Python program, got {len(found)}')
-    compile(found[0], '<workflow inline Python>', 'exec')
-    return found[0]
-
-
-@unittest.skipIf(yaml is None, 'PyYAML not installed for optional static validation')
+@unittest.skipIf(yaml is None, 'PyYAML required for workflow validation')
 class NexusKR13WorkflowTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.source = PATH.read_text(encoding='utf-8')
+        cls.source = (ROOT / '.github/workflows/publish-kr13-nexus.yml').read_text(encoding='utf-8')
         cls.yml = yaml.safe_load(cls.source)
         cls.events = cls.yml.get('on', cls.yml.get(True))
         cls.preflight = cls.yml['jobs']['preflight']
         cls.upload = cls.yml['jobs']['upload-owned']
+        cls.pins = json.loads(nexus.PINS.read_text(encoding='utf-8'))['files']
 
-    def test_manual_only_and_safe_defaults(self):
+    def test_manual_only_and_read_only_permissions(self):
         self.assertEqual(set(self.events), {'workflow_dispatch'})
-        inputs = self.events['workflow_dispatch']['inputs']
-        self.assertIs(inputs['dry_run']['default'], True)
-        self.assertIs(inputs['publish_changelog']['default'], False)
-        self.assertEqual(self.yml['permissions'], {'contents': 'read'})
-        self.assertEqual(self.yml['concurrency']['group'], 'nexus-publish')
-        self.assertIs(self.yml['concurrency']['cancel-in-progress'], False)
+        self.assertIs(self.events['workflow_dispatch']['inputs']['dry_run']['default'], True)
+        self.assertEqual(self.yml['permissions'], {'contents': 'read', 'actions': 'read'})
+        self.assertEqual(self.yml['concurrency'], {'group': 'nexus-publish', 'cancel-in-progress': False})
         self.assertEqual(self.upload['if'], '${{ inputs.dry_run == false }}')
         self.assertEqual(self.upload['needs'], 'preflight')
 
-    def test_exact_five_owned_groups_excluding_core_and_android(self):
+    def test_exact_eight_groups_exclude_android(self):
+        expected = {(60496, '8110335'), (60844, '8296179'), (60845, '8296167'),
+                    (60846, '8296161'), (60847, '8296155'), (60805, '8296377'),
+                    (60805, '8257641'), (60826, '8280147')}
+        self.assertEqual(nexus.TARGETS, expected)
+        self.assertEqual({(r['mod_id'], r['group']) for r in self.pins}, expected)
+        self.assertEqual(len(self.pins), 8)
+        self.assertNotIn(nexus.ANDROID_GROUP, {r['group'] for r in self.pins})
+        self.assertTrue(all(r['uid'] == str((100 << 32) + r['mod_id']) for r in self.pins))
+
+    def test_matrix_and_artifact_names_cover_exact_approved_assets(self):
         matrix = self.upload['strategy']['matrix']['include']
-        observed = [(x['mod_id'], x['canonical'], x['group'], x['zip'], x['version'])
-                    for x in matrix]
-        expected = [
-            (60844, '429496790444', '8296179', 'TR_Mainland-kr0.4.1.zip', '26.11.2-kr0.4.1'),
-            (60845, '429496790445', '8296167', 'Tamriel_Data-kr0.4.1.zip', '26.08-kr0.4.1'),
-            (60846, '429496790446', '8296161', 'Cyr_Main-kr0.4.1.zip', '26.09a-kr0.4.1'),
-            (60847, '429496790447', '8296155', 'Sky_Main-kr0.3.1.zip', '26.09a-kr0.3.1'),
-            (60805, '429496790405', '8296377', 'Rebirth7.2-Cyr_Sky_Compatibility-kr0.4.1.zip', '7.2-kr0.4.1'),
-        ]
-        self.assertEqual(observed, expected)
+        self.assertEqual({(r['mod'], r['asset']) for r in matrix},
+                         {(r['mod_id'], r['asset']) for r in self.pins})
+        self.assertEqual(len(matrix), 8)
+        self.assertEqual(len({str(r['key']) for r in matrix}), 8)
+        artifacts = {r['with']['name']: r['with']['path'] for r in self.preflight['steps']
+                     if r.get('uses', '').startswith('actions/upload-artifact')}
+        for row in matrix:
+            self.assertEqual(artifacts['issue71-' + str(row['key'])], 'dist/' + row['asset'])
         self.assertEqual(self.upload['strategy']['max-parallel'], 2)
-        self.assertEqual(len(matrix), 5)
-        self.assertNotIn(60496, {x['mod_id'] for x in matrix})
-        self.assertEqual(matrix[-1]['category'], 'optional')
-        self.assertIs(matrix[-1]['primary'], False)
-        self.assertIs(matrix[-1]['update_main'], False)
 
-    def test_preflight_specs_match_upload_matrix(self):
-        program = inline_python(next(s['run'] for s in self.preflight['steps'] if 'run' in s))
-        self.assertIn('from package_kr13_mod_overwrites import SPECS,verify_folder,PLAN', program)
-        specs = [(name, mod, str((100 << 32) + mod), group, version)
-                 for _, name, mod, group, version, _ in SPECS]
-        matrix = self.upload['strategy']['matrix']['include']
-        self.assertEqual(len(specs), len(matrix))
-        for item, row in zip(specs, matrix):
-            self.assertEqual(item, (row['zip'], row['mod_id'], row['canonical'], row['group'], row['version']))
+    def test_verified_gate_is_the_only_upload_target_source(self):
+        step = next(s for s in self.upload['steps'] if s.get('uses', '').startswith('Nexus-Mods/'))
+        self.assertEqual(step['uses'], ACTION)
+        self.assertEqual(step['if'], "steps.gate.outputs.upload == 'true'")
+        for key, output in (('file_id', 'group'), ('version', 'version'), ('category', 'category'),
+                            ('primary_mod_manager_download', 'primary'), ('update_mod_version', 'primary')):
+            self.assertEqual(step['with'][key], '${{ steps.gate.outputs.' + output + ' }}')
+        gate = next(s for s in self.upload['steps'] if s.get('id') == 'gate')
+        self.assertIn('publish_issue71_nexus.py gate', gate['run'])
+        self.assertTrue(any('publish_issue71_nexus.py readback' in s.get('run', '') for s in self.upload['steps']))
 
-    def test_inline_python_and_pinned_upload_action(self):
-        for job in (self.preflight, self.upload):
-            for step in job['steps']:
-                if "python3 - <<'PY'" in step.get('run', ''):
-                    inline_python(step['run'])
-        matches = [x for x in self.upload['steps']
-                   if x.get('uses', '').startswith('Nexus-Mods/')]
-        self.assertEqual(len(matches), 1)
-        self.assertEqual(matches[0]['uses'], ACTION)
-        self.assertEqual(matches[0]['if'], "steps.nexus.outputs.upload == 'true'")
-        self.assertEqual(matches[0]['with']['file_id'], '${{ matrix.group }}')
+    def test_rebirth_main_and_optional_flags_are_independent(self):
+        for group, category, primary in (('8257641', 'main', 'true'), ('8296377', 'optional', 'false')):
+            row = next(r for r in self.pins if r['group'] == group)
+            with tempfile.TemporaryDirectory() as folder:
+                out = Path(folder) / 'outputs'
+                with patch.object(nexus, 'check_archive', return_value=row), \
+                     patch.object(nexus, 'target', return_value=[]), \
+                     patch.dict(os.environ, {'GITHUB_OUTPUT': str(out)}):
+                    nexus.run('gate', Path(folder), row['asset'])
+                values = dict(line.split('=', 1) for line in out.read_text().splitlines())
+                self.assertEqual(values['group'], group)
+                self.assertEqual(values['category'], category)
+                self.assertEqual(values['primary'], primary)
 
-    def test_full_plugin_preflight_and_owner_checks(self):
-        program = inline_python(next(s['run'] for s in self.preflight['steps'] if 'run' in s))
-        for phrase in (
-            'verify_folder(ROOT)', "'.sha256'", 'asset_shas=',
-            'GitHub digest mismatch', 'asset_sizes=',
-            '/v1/users/validate.json', '/v3/games/morrowind/mods/',
-            '/v3/mod-files/', 'member_id', 'is_active',
-        ):
-            self.assertIn(phrase, program)
-        self.assertIn('fromJSON(needs.preflight.outputs.asset_shas)[matrix.zip]', self.source)
-        self.assertIn('sha256sum --check --status', self.source)
-        self.assertIn('unzip -tq', self.source)
-        self.assertIn('NEXUS_KR13_READBACK_PASS', self.source)
-        self.assertIn("actual[0]['size_in_bytes']", self.source)
+    def test_final_readback_requires_uploads_and_checks_android(self):
+        final = self.yml['jobs']['final-readback']
+        self.assertEqual(set(final['needs']), {'preflight', 'upload-owned'})
+        self.assertEqual(final['if'], '${{ inputs.dry_run == false }}')
+        self.assertTrue(any('publish_issue71_nexus.py final' in s.get('run', '') for s in final['steps']))
+        self.assertIn('publish_issue71_nexus.py preflight --armed', self.source)
 
-    def test_no_automatic_publish_and_opt_in_changelog(self):
-        changelog = next(x for x in self.upload['steps']
-                         if x.get('name') == 'Optionally create a missing Nexus version changelog')
-        self.assertEqual(changelog['if'], '${{ inputs.publish_changelog == true }}')
-        self.assertNotIn('push:\n', self.source)
-        self.assertNotIn('schedule:\n', self.source)
-        self.assertNotIn('release:\n', self.source)
-        self.assertNotIn("'8257539'", str(self.upload['strategy']['matrix']['include']))
-
-    def test_conservative_nexus_display_name_budget(self):
-        for row in self.upload['strategy']['matrix']['include']:
-            self.assertLessEqual(len(row['name']), 48, row['name'])
+    def test_all_embedded_python_compiles(self):
+        programs = []
+        for job in self.yml['jobs'].values():
+            for step in job.get('steps', []):
+                programs += re.findall(r"(?ms)^python3 - <<'PY'\n(.*?)^PY$", step.get('run', ''))
+        self.assertEqual(len(programs), 2)
+        for program in programs:
+            compile(program, '<workflow Python>', 'exec')
 
 
 if __name__ == '__main__':

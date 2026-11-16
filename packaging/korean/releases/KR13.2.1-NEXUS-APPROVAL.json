@@ -1,0 +1,19 @@
+{
+  "asset": "Morrowind-Korean-OpenMW-0.51.0-KR13.2.1-Full.zip",
+  "version": "0.51.0-KR13.2.1",
+  "mod_id": 60496,
+  "uid": "429496790096",
+  "group": "8110335",
+  "bytes": 14298825,
+  "sha256": "ab07512ae7c78075f0c2fae473f7dedb83b1e8ee6ef05a108fc25f45616182c5",
+  "payload_unchanged": true,
+  "members": 67,
+  "zip_creator_system": 0,
+  "file_version_id": "430496803811",
+  "server_file_id": 1000074211,
+  "server_file_name": "OpenMW Windows KR13.2.1 (ZIP repack) 60496 0.51.0-KR13.2.1 2026-11-16T09-49Z qJiKJcAU.zip",
+  "server_size_bytes": 14298825,
+  "security_scan_status": "VERIFIED",
+  "download_ready": true,
+  "nexus_url": "https://www.nexusmods.com/morrowind/mods/60496?tab=files"
+}

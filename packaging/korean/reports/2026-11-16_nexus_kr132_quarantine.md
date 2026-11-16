@@ -16,3 +16,7 @@
 ## 재발 방지
 
 배포 readback은 앞으로 정확한 파일의 `scannedV2`까지 검사한다. `VERIFIED`, `INTERNALLY_VERIFIED`, `MANUALLY_VERIFIED`만 승인으로 판단하고, 대기·격리·미확인 상태를 완료로 기록하지 않는다. 격리는 상태를 기록하고 즉시 실패시키며 재업로드하지 않는다. 최종 영수증은 8개 파일을 모두 확인하고 `all_files_download_ready`를 명시한다. 격리 1개가 있어도 전체 성공이 되지 않는 회귀 검사를 추가했다.
+
+## 후속 결과: KR13.2.1 승인
+
+사용자의 재업로드 요청에 따라 이전 정상 배포본과 ZIP 구조를 비교했다. 기존 KR13은 creator system 0(DOS), KR13.2는 3(Unix)이었다. 내부 파일 67개를 바이트 그대로 유지하고 DOS ZIP 메타데이터로 재포장해 Windows 그룹 8110335에 KR13.2.1을 업로드했다. [실행 43843215069](https://github.com/munument1/Morrowind-OpenMW-KR/actions/runs/43843215069)이 성공했고 file ID 1000074211의 `scannedV2=VERIFIED`, 버전·크기·그룹을 재확인했다. 새 ZIP SHA256은 `ab07512ae7c78075f0c2fae473f7dedb83b1e8ee6ef05a108fc25f45616182c5`다. 기존 격리 파일은 삭제하지 않았다. 메타데이터 차이 또는 재검사 영향은 가능성이며 원인으로 확정하지 않는다. [승인 영수증](../releases/KR13.2.1-NEXUS-APPROVAL.json)을 보관한다.

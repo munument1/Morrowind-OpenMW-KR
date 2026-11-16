@@ -16,5 +16,9 @@ int main()
         return 5;
     if (visibleKoreanTopicText("@광산\x7f#을 찾았다.") != "광산을 찾았다.")
         return 6;
+    // The Hello dialogue is shown as a plain HUD subtitle, with no hyperlink parser.
+    const std::string ambient = std::string("@제국") + std::string(110, '\x7f') + "# 길드에서 왔소.";
+    if (visibleKoreanTopicText(ambient) != "제국 길드에서 왔소.")
+        return 7;
     std::cout << "PASS: markup-only historical view repair, unchanged wording, player-name protection and legacy name tags\n";
 }

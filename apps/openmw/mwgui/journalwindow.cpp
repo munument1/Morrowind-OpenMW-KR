@@ -11,6 +11,7 @@
 #include <MyGUI_TextBox.h>
 
 #include <components/misc/strings/algorithm.hpp>
+#include <components/translation/translation.hpp>
 #include <components/widgets/imagebutton.hpp>
 #include <components/widgets/list.hpp>
 
@@ -534,9 +535,12 @@ namespace
             Gui::MWList* list = getWidget<Gui::MWList>(TopicsList);
             list->clear();
 
-            AddNamesToList add(list);
-
-            mModel->visitTopicNamesStartingWith(index, add);
+            const auto& translationStorage
+                = MWBase::Environment::get().getWindowManager()->getTranslationDataStorage();
+            mModel->visitTopicNamesStartingWith(index, [list, &translationStorage](std::string_view topicId) {
+                // Clicks still use the original ID; only the caption is localized.
+                list->addItem(topicId, 0, translationStorage.topicDisplayName(topicId));
+            });
 
             list->adjustSize();
 

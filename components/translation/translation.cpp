@@ -21,6 +21,7 @@ namespace Translation
         loadData(mPhraseForms, esmNameNoExtension, "top", dataFileCollections);
         loadData(mKeywords, esmNameNoExtension, "mrk", dataFileCollections);
         loadData(mJournalKeywords, esmNameNoExtension, "jrn", dataFileCollections);
+        loadData(mTopicDisplayNames, esmNameNoExtension, "dsp", dataFileCollections);
     }
 
     void Storage::loadData(ContainerType& container, std::string_view fileNameNoExtension, std::string_view extension,
@@ -108,6 +109,15 @@ namespace Translation
             return phrase;
 
         return entry->second;
+    }
+
+    std::string_view Storage::topicDisplayName(std::string_view topicId) const
+    {
+        const auto entry = mTopicDisplayNames.find(topicId);
+        if (entry != mTopicDisplayNames.end())
+            return entry->second;
+
+        return topicKeyword(topicId);
     }
 
     std::vector<std::string_view> Storage::topicKeywordAliases(std::string_view topicId) const

@@ -63,6 +63,8 @@
 #include "../mwbase/statemanager.hpp"
 #include "../mwbase/world.hpp"
 
+#include "../mwdialogue/koreantopictags.hpp"
+
 #include "../mwrender/vismask.hpp"
 
 #include "../mwworld/cellstore.hpp"
@@ -839,10 +841,13 @@ namespace MWGui
     {
         if (message.empty())
             return;
+        // Spoken subtitles bypass the dialogue hyperlink renderer. Remove
+        // EET topic markers and their 0x7F padding only for this display path.
+        const std::string subtitle = MWDialogue::visibleKoreanTopicText(message);
         if (getMode() == GM_Dialogue || speechId == 0)
-            messageBox(message);
+            messageBox(subtitle);
         else
-            mMessageBoxManager->createMessageBox(message, false, speaker, speechId);
+            mMessageBoxManager->createMessageBox(subtitle, false, speaker, speechId);
     }
 
     void WindowManager::scheduleMessageBox(std::string message, enum MWGui::ShowInDialogueMode showInDialogueMode)

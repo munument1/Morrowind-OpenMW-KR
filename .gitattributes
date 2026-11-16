@@ -1,0 +1,3 @@
+# Patch files contain significant leading context markers and may contain
+# intentional trailing whitespace inside nested diff text.
+korean/patches/*.patch -whitespace

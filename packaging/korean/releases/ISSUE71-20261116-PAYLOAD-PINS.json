@@ -1,0 +1,335 @@
+{
+  "schema": 1,
+  "android_excluded": true,
+  "format": "overwrite-existing-esm-esp",
+  "language_review": "AI_REVIEWED_WITH_EXISTING_TERMINOLOGY",
+  "human_reviewed": false,
+  "files": [
+    {
+      "asset": "Morrowind-Korean-OpenMW-0.51.0-KR13.2-Full.zip",
+      "version": "0.51.0-KR13.2",
+      "mod_id": 60496,
+      "uid": "429496790096",
+      "group": "8110335",
+      "engine_sha256": "67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78",
+      "payload": {
+        "payload/mods/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "payload/resources/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "payload/resources/version": "eec778cae898eb16f909bc8653258649f69e06a21d6af5091f4404fabf220f88",
+        "payload/openmw.exe": "67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.cel": "b339fe17c4a238db3dccbf84304a01e6dcef1acf2355d394c158a28575e59569",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.esp": "571683041b5b43f3a7d5c370f01dd6d8976de12c634c32c9ec00692a3d9ec682",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.jrn": "c032c33f25f0704765a3b70bd474af2c14b8dad61dccf362ab6082c716123a59",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.mrk": "6a987060b90812631726d456c641d0067f67e8caee01fde41288c083aa143f93",
+        "payload/mods/Morrowind_Korean_ReTranslation/Morrowind_Korean_ReTranslation.top": "928ace2d7245edd01f8085737e76d4fc6e9d1343b1477e7c5ed9eebf78cc6f0b",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/Calendar/ko.yaml": "947b4d9d6f5018ebd995a70fc3a479f38f710a43eca529498c87fb2c9304ca9d",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/Interface/ko.yaml": "ac513c0b16d625067a39ff4ab6c0d5a4d2b242cdc8981f1b0fba44b8e2260437",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/OMWCamera/ko.yaml": "a547cd1685e90a365aca16f37f4416e3804a68e8ee88b6f36385f0c97d63c11c",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/OMWCombat/ko.yaml": "aa934d285bf210f291a2a91b1013ddf90f5230b7c34312a3f59e75ba5f2ff943",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/OMWControls/ko.yaml": "5386143bf94455a1c55992ebe4ac05b8edeb1e26bfb5f0f8e2bb6556ccb79076",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/OMWEngine/ko.yaml": "34411dc8cfdb265962ec6dffc9cb741660a57c14f8d19898c70161fc8a95e5eb",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/OMWMusic/ko.yaml": "e0f2f4ecb0ab11f0c9510b8c377be52064ec8bfb7fd2de6741993088acf93338",
+        "payload/mods/Morrowind_Korean_ReTranslation/l10n/OMWShaders/ko.yaml": "aeb3bdc6ec851704aaed560128fa057be9c4a4b41d930ef19c4951fe32af5ff2",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_bearhunt1.srt": "82130d289e41bfd8442192ec18d84bf6e0d5f32bb5ebd23407b9697aa7d110ae",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_bearhunt2.srt": "565b7443f9bbb4fcf27c36415de07b984ef9580b91a672e69ef77d11a674e46a",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_ceremony1.srt": "d47b0165f15ae27b6d5aa1edfa8b778acc19c42bcfe3be10f3e20e9b041a2efb",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_ceremony2.srt": "2d5474d0db3bcd279b8d4c26fccb0bff280f5c5e8a1892f970cfe1a75b7a2576",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_endgame.srt": "56da1682947be56b6c84ad25edafd8f938362d28d60583d355ce15bb4cae3238",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_frostgiant1.srt": "acb1a364310d281f1bf7b45a5ace762c336e15a0c247a2051899959b2211f26a",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/bm_frostgiant2.srt": "af9247ec1375b568f95ff2778c6a2ddb8aece32215e7bd5bf7526a05b7e8397a",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/mw_cavern.srt": "76ec26071d0652d913c2d11b6d9753ab0d23806148dc54454032a585194746d2",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/mw_end.srt": "1fd6881c8dd6a0938e6c3bc7e920c5b8aef628288f742f47c3a270a39d5f00dd",
+        "payload/mods/Morrowind_Korean_ReTranslation/video/mw_intro.srt": "43af324f5bfe6480550833068be2452ee51afe48942a1f53d69b5feb74efe357",
+        "payload/resources/vfs/": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "payload/resources/vfs/fonts/DejaVuLGCSansMono.omwfont": "ce3df35c64f0ae96c3739cb216a99fe53c027ba4c354258a1c764ee37e310761",
+        "payload/resources/vfs/fonts/Galmuri11-OFL-1.1.md": "9a9e5a342c430c3fcf01a408b680f4405d5bf4ac659c931be35f8a1b27ea69c9",
+        "payload/resources/vfs/fonts/Galmuri11.ttf": "e24256f42e43713d2ea086a1e1669d78b968f5b3cc547e5c157f0606ffa5def1",
+        "payload/resources/vfs/fonts/MysticCards.omwfont": "ba50c99a45cf41e6b6fd044ffb3a9f7bffee91d020189be9a454356802276dc4",
+        "install-korean-config.ps1": "509b4ffa3a0b891bea3919ea95a1c42d0afbe5f5c61b35bc5151353eb1c8b723",
+        "Install-Korean.bat": "fc5ffcbb5d3af3a6c18ef4f69ec39ccaf79ff86dcb116a04af2f1ff9f458e661",
+        "install-korean.ps1": "55bbafe14d76f9b9c10ae02a6752bd022fc81180c7dab4443af9a10d994e4e25",
+        "korean-fallbacks.cfg": "60d666fd2c565516b6160096950bdba365706f1749de77654a845f6465e8e4b8",
+        "README-KOREAN.txt": "7ad6410cee795dcbd8931d5eeb339132d7d060704bb1527aa76843a714a59912",
+        "payload/mods/Morrowind_Korean_ReTranslation/Siege at Firemoth.cel": "1233ce651f9c494999d1a29e06d7cf75070475f28f9d82be7bc536aae0dc6b48",
+        "KR12.5-CHANGES.txt": "7f9e1be01019706cb7b799d757f755b7ff3dbcd24628ada44f918dac2ac309aa",
+        "KR12.6-CHANGES.txt": "2fd49f929dd956173758ee06f100ec722ba82ac03cea29ec51f42d064399bb92",
+        "KR12.8-CHANGES.txt": "152a776aa312170100392fa9344c1c771a3f5505961cbb082c8604c2133c6c01",
+        "LICENSE-GPL-3.0.txt": "e1fd6953502833cdbf730a8b69f7791b91b829611983da4ec364926ece926ea6",
+        "CORRESPONDING-SOURCE.txt": "6d4366330ace6b291d8bf03afb4650d85ec0257bff108000661cc24fb7693bc4",
+        "SOURCE-PROVENANCE.json": "1c9666855584b13f02de9a40323bc651303bf1fa4ae9c1bc2368d74abea0cf6f",
+        "THIRD-PARTY-NOTICES.txt": "821bda33376c1c2b8f9c8f9a86c5c41a37c622d5203934616676ebe40cfe20bb",
+        "source/build/windows.yml": "e865c84b7fa8e98d31e0acf487f2ff88a48f42fe429cfc46288663989751b3ee",
+        "source/patches/0001-cjk-topic-discovery.patch": "aa816e8d974829093a3337d237a1794fc275b2c9a296d5155aa6d8560244bb2c",
+        "source/patches/0002-utf8-bom-sidecars.patch": "a7fcc5a85fe78e07b7e31078b01b6937f817030cbdccdf5d4769d7f98f903ee8",
+        "source/patches/0003-mixed-utf8-esm-reader.patch": "61a9e375b153057afbe94b280ddae6ea6b3cd8dd4252b452ea4507300e73d4e2",
+        "source/patches/0004-legacy-korean-journal-recovery.patch": "579b413c1efb1ff56df61649f4a53a71424f5e6a9badbedc3d35dd7647e6000b",
+        "source/patches/0005-video-subtitles.patch": "2e4b482cca98f14bca019c967f7be4af8322913eeeb35a6369c6e3750957ab0c",
+        "source/patches/0006-journal-topic-keywords.patch": "dec44f6773eb76c8fdb07c350b374dd92525de6a99a3c72f47c8ad653ea2d080",
+        "source/patches/0007-korean-journal-index.patch": "a9026e846cacfd2f8b1dafabd1f3c1fc746357778f5fdbf342119dc25d2fa47c",
+        "source/patches/0008-korean-implicit-topic-boundaries.patch": "4b6d6cfe8ad65011f016a317a3def826f5a8a4227029cf4dc5fdaf2e9ab09f95",
+        "source/patches/0009-korean-honorific-particle.patch": "a9678cffb10523c30c5d43f50e9a8e8ba12756000117c91a662cf99aa55f440f",
+        "source/patches/0010-legacy-korean-topic-recovery.patch": "b2e5765f101e4955fe1c14cc7af4ba8e36d83583329b7b46a67e6c6c23745cb6",
+        "source/patches/0011-korean-topic-discovery-and-work-links.patch": "ca18b90675e95252ac0c38197855f134b752b6d3204a27bc9175a45c672e7de0",
+        "source/patches/0012-voice-synchronized-subtitles.patch": "959e201847583eafebe1224fefa29575dede3c37b78914dee023313ce735e01b",
+        "source/patches/0013-korean-spell-duration-order.patch": "a33a7dd45c8971ed52143964107374daff582ffb2588d80a4bbfd392a5485904",
+        "source/patches/0014-korean-quotative-topic-boundaries.patch": "d9772252a2b7a9d0925ccf70cd677d0ad491aa141b364149501cce92da12c040",
+        "source/patches/0015-korean-contextual-noun-topic-endings.patch": "3d255dacf716480aaad327caf7094b82ad82821d1b87784a5c3e536b0102b0e1",
+        "source/patches/0016-korean-predicative-topic-boundaries.patch": "d966b13623aaacce66027d21a7ec27d6eb6aae6c8f9313aa31fab6583cda22ad",
+        "source/patches/0017-regional-core-topic-aliases.patch": "8554cd7d2eca1a0c5b36f76cca012f07d982a36342eabc89a5eecdd2eabed22e",
+        "source/patches/0018-korean-dialogue-topic-captions.patch": "1fc481e0daf4fae23e3b8bbd0b900dc524975c0e29d3b3e3cb5d2c49964ed5aa",
+        "source/patches/0019-korean-journal-topic-captions.patch": "4201b2da16ce3cbb200068a2f9a1129008afa99abe3436f403f4948449697821",
+        "KR13.2-RELEASE-NOTES-KO.txt": "7ad6410cee795dcbd8931d5eeb339132d7d060704bb1527aa76843a714a59912"
+      },
+      "changes": {
+        "SCPT.SCTX": 2,
+        "display_operands": 11
+      },
+      "source_esp_sha256": "9f94b1c96b10a491cec00d4931123ef1e0f52f52c6095da6b9b380eb9a617b1c",
+      "translated_esp_sha256": "571683041b5b43f3a7d5c370f01dd6d8976de12c634c32c9ec00692a3d9ec682",
+      "record_logic_verified": 48146
+    },
+    {
+      "asset": "TR_Mainland-kr0.5.zip",
+      "mod_id": 60844,
+      "uid": "429496790444",
+      "group": "8296179",
+      "version": "26.11.2-kr0.5",
+      "payload": {
+        "Data Files/TR_Mainland.cel": "22a0e6c18d31a70c7c53b665c0597b22359e77355be0c1bbb62311c42874005a",
+        "Data Files/TR_Mainland.esm": "ceb80d772aa7967a578c6ca9512b117833dbf12d9b8a5740c27da89345a5e4e9",
+        "Data Files/TR_Mainland.dsp": "10d96a52445e7affbc785e4cfe727fc8f3ac9623cdae957da93e983797c406e5",
+        "Data Files/TR_Mainland.jrn": "362d699893f5a9ac7439476f812ae1dc9968fc0d8ea3f41e0bd5511404266482",
+        "Data Files/TR_Mainland.mrk": "632329a94f678f78c4a51dde1f42db49cd056a62d5046bbd3f4b541f8783dd2c",
+        "Data Files/TR_Mainland.top": "3df7c38b814922fe1a23e342edf1e999fe0d30e22be9741258a3fa06027a4b3f",
+        "Faction intergration/TR_Factions.esp": "5ff67415cb12023f64e9c4f6e33388c7894b07647f67a8dd288590a3449a9bbd"
+      },
+      "changes": {
+        "Data Files/TR_Mainland.esm": {
+          "before": "da66d9a324ea0565f16b9f2397212869f7dbdb2c17b6513e224ef514bd6b8790",
+          "after": "ceb80d772aa7967a578c6ca9512b117833dbf12d9b8a5740c27da89345a5e4e9",
+          "records_verified": 131116,
+          "NPC_.FNAM": 5
+        },
+        "Faction intergration/TR_Factions.esp": {
+          "before": "5ff67415cb12023f64e9c4f6e33388c7894b07647f67a8dd288590a3449a9bbd",
+          "after": "5ff67415cb12023f64e9c4f6e33388c7894b07647f67a8dd288590a3449a9bbd",
+          "records_verified": 355
+        }
+      }
+    },
+    {
+      "asset": "Tamriel_Data-kr0.5.zip",
+      "mod_id": 60845,
+      "uid": "429496790445",
+      "group": "8296167",
+      "version": "26.08-kr0.5",
+      "payload": {
+        "Data Files/Tamriel_Data.cel": "4a9547e8361b42008cd858e77ae8f15f953e2ead44a00a1f852a0fa7c8518171",
+        "Data Files/Tamriel_Data.esm": "222f682cb2809420f8feb3e60dc2fb6a9ea16c12f3991cb5861b10d17a086b77",
+        "Data Files/Tamriel_Data.dsp": "c4b509486d54afc6a48e9a48d21423272d4c5b9142b4223f582e623f1693175e",
+        "Data Files/Tamriel_Data.jrn": "d2e1396ba1cf3fd2fb7595a9d795657a16269f6856a05fb6d09c7e96031f728c",
+        "Data Files/Tamriel_Data.mrk": "fbc4989be2cfeb1072ddd35bdbb258ebf99a3940190feda231482a783a0116e7",
+        "Data Files/Tamriel_Data.top": "f3e1462373294980d08d8ac29018b190b79c87ab2b6bf36c3f1139443920c20b"
+      },
+      "changes": {
+        "Data Files/Tamriel_Data.esm": {
+          "before": "f2ae77f6ceb55040733b1400e79dddaf119de16d209226a2d72c5b9c7f491760",
+          "after": "222f682cb2809420f8feb3e60dc2fb6a9ea16c12f3991cb5861b10d17a086b77",
+          "records_verified": 60209,
+          "SCPT.SCTX": 210,
+          "display_operands": 2104,
+          "INFO.BNAM": 249
+        }
+      }
+    },
+    {
+      "asset": "Cyr_Main-kr0.5.zip",
+      "mod_id": 60846,
+      "uid": "429496790446",
+      "group": "8296161",
+      "version": "26.09a-kr0.5",
+      "payload": {
+        "Data Files/Cyr_Main.ESM": "e288d1b4b62cdb04f649b4086f6d1e659d0d6b750189b1abdb21b8a9cfa715e0",
+        "Data Files/Cyr_Main.dsp": "e99c13da89aad9cb5cc71d6022e4ce26763661ffc22020afcfae7f49c17992f0",
+        "Data Files/Cyr_Main.cel": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa",
+        "Data Files/Cyr_Main.jrn": "879b194d0cba7a7f7ceac4579e5bc43239567de1d1ccd300db201b533cbc9b26",
+        "Data Files/Cyr_Main.mrk": "63603ec4862cd1773a09b26a059a01ccc3bf9ed01d08cba3da49396d4d604bad",
+        "Data Files/Cyr_Main.top": "cd527d06512585d2db8f3a1d52b42a1a653688ea85c30e75ac578582863b9b8b"
+      },
+      "changes": {
+        "Data Files/Cyr_Main.ESM": {
+          "before": "fe4df393e40a1cf9e635b1cdde773c5843eb14283ba0fe9f172f5cac219685e5",
+          "after": "e288d1b4b62cdb04f649b4086f6d1e659d0d6b750189b1abdb21b8a9cfa715e0",
+          "records_verified": 22939,
+          "SCPT.SCTX": 57,
+          "display_operands": 2519,
+          "INFO.BNAM": 1093
+        }
+      }
+    },
+    {
+      "asset": "Sky_Main-kr0.4.zip",
+      "mod_id": 60847,
+      "uid": "429496790447",
+      "group": "8296155",
+      "version": "26.09a-kr0.4",
+      "payload": {
+        "Data Files/Sky_Main.ESM": "878559858d5f39b91472be9c74145fb0919819df45d251de34608a8eac9b6573",
+        "Data Files/Sky_Main.dsp": "84d96dd18cbae23b7130d8d11990f09aff6760e01250ce38ed1ec4af0990b205",
+        "Data Files/Sky_Main.cel": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da",
+        "Data Files/Sky_Main.jrn": "56cab98c14f8b43011ce3515ad8d4381915da1819b9cd45e5dae5cde7e2c8d61",
+        "Data Files/Sky_Main.mrk": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42",
+        "Data Files/Sky_Main.top": "6f8a662a9e71844bb14e231080ac1fa6c03476a6f22725bae3410889e7f72e0e"
+      },
+      "changes": {
+        "Data Files/Sky_Main.ESM": {
+          "before": "b34450efa727840d56cbae9cefccb262427ec7151e8f18819e4a6b35db27784b",
+          "after": "878559858d5f39b91472be9c74145fb0919819df45d251de34608a8eac9b6573",
+          "records_verified": 12443,
+          "SCPT.SCTX": 58,
+          "display_operands": 1500,
+          "NPC_.FNAM": 1,
+          "INFO.BNAM": 640
+        }
+      }
+    },
+    {
+      "asset": "Rebirth7.2-Cyr_Sky_Compatibility-kr0.5.zip",
+      "mod_id": 60805,
+      "uid": "429496790405",
+      "group": "8296377",
+      "version": "7.2-kr0.5",
+      "payload": {
+        "Compability Patches/Project Cyrodiil [For Rebirth].cel": "092530de568229ff109ea7e5807fccaaf01c1626f5bc0ce8217f9a7bcbe496aa",
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm": "b09e4f6f2df7e851e3f3099519972de7da72195c3e5a7f3e887b7cc508c05353",
+        "Compability Patches/Project Cyrodiil [For Rebirth].dsp": "e99c13da89aad9cb5cc71d6022e4ce26763661ffc22020afcfae7f49c17992f0",
+        "Compability Patches/Project Cyrodiil [For Rebirth].jrn": "879b194d0cba7a7f7ceac4579e5bc43239567de1d1ccd300db201b533cbc9b26",
+        "Compability Patches/Project Cyrodiil [For Rebirth].mrk": "63603ec4862cd1773a09b26a059a01ccc3bf9ed01d08cba3da49396d4d604bad",
+        "Compability Patches/Project Cyrodiil [For Rebirth].top": "cd527d06512585d2db8f3a1d52b42a1a653688ea85c30e75ac578582863b9b8b",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].cel": "831e9b04007204166471c29585d6e982f5e7f7dc431bfc9cbc76356c882988da",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm": "0e4fe18b48795da1daf76a0515f5b152b5274617685e7646945a35af25e52faa",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].dsp": "84d96dd18cbae23b7130d8d11990f09aff6760e01250ce38ed1ec4af0990b205",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].jrn": "56cab98c14f8b43011ce3515ad8d4381915da1819b9cd45e5dae5cde7e2c8d61",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].mrk": "aa538af5b8a362b1985fa8c2ec141bb8126a081e6e750450a83370369f003a42",
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].top": "6f8a662a9e71844bb14e231080ac1fa6c03476a6f22725bae3410889e7f72e0e"
+      },
+      "changes": {
+        "Compability Patches/Project Cyrodiil [For Rebirth].esm": {
+          "before": "490e9e6d6bca994c7dc396d289c8c255a6af7b9c3f387c4b7de0ccb4b42882cf",
+          "after": "b09e4f6f2df7e851e3f3099519972de7da72195c3e5a7f3e887b7cc508c05353",
+          "records_verified": 22940,
+          "SCPT.SCTX": 57,
+          "display_operands": 2521,
+          "INFO.BNAM": 1095
+        },
+        "Compability Patches/Skyrim Home of the Nords [For Rebirth].esm": {
+          "before": "0c079705725ab8c370bb34bc6669b19769bc7269865d261973aa1fd3f2b8cd8d",
+          "after": "0e4fe18b48795da1daf76a0515f5b152b5274617685e7646945a35af25e52faa",
+          "records_verified": 12443,
+          "SCPT.SCTX": 58,
+          "display_operands": 1500,
+          "NPC_.FNAM": 1,
+          "INFO.BNAM": 640
+        }
+      }
+    },
+    {
+      "asset": "Morrowind_Rebirth7.2-kr1.3.zip",
+      "mod_id": 60805,
+      "uid": "429496790405",
+      "group": "8257641",
+      "version": "7.2-kr1.3",
+      "payload": {
+        "Alternate Version/Morrowind Rebirth [Main].ESP": "e3e81589e0d464bc0123592a2d3f50ec5ea5bbb1accbf73ae023f209ec04fe7e",
+        "Alternate Version/Morrowind Rebirth [Main].top": "5afcff81b338768f1cada506fa92cd923f49316353e82e34efe1c9f16512d7cf",
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP": "6da2f092840bab54e20fd477796bd5b43bcbcef406c1281dae4ad21c881c8e41",
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP": "6fc0e45e3cc8450ce9487d22b770fb5bae7230d8db4fc00b0e880493dad0e982",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP": "2c6d0e41ac5a2e7cb5114473842281e6d855e173b45121dda9ceb7e057f141e3",
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].top": "207188bc4c769dabeff87e2c97b8a9cab00f818655f4812f62d05ee8e0272fb9",
+        "Data Files/Morrowind Rebirth - Races [Addon].esp": "61c58c3a927f9e2ea35def12bf9f9ff5766621e4bbb809e187061cb99f3d59c9",
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP": "26536561e155549312c6b6853790b79e18e8c42309e42fee5310ec27b555d94f",
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP": "5d573cf5544418d7ad0dc9585b61b3c3f2f2621af22900dde6b3c42bc16d9016",
+        "Data Files/Morrowind Rebirth [Main].ESP": "56b585af39fb7e106538c789d7e6d9a6ac4b8ec2c5efdc72a518a9d69b062ea6",
+        "Data Files/Morrowind Rebirth [Main].top": "5afcff81b338768f1cada506fa92cd923f49316353e82e34efe1c9f16512d7cf",
+        "Data Files/Morrowind Rebirth [Main].cel": "c2c2c924e7dee44f4ac47be8cbcd9dec1b330977a2e960e8174ec7f4977dbc30",
+        "Alternate Version/Morrowind Rebirth [Main].cel": "c2c2c924e7dee44f4ac47be8cbcd9dec1b330977a2e960e8174ec7f4977dbc30",
+        "SOURCE-NOTICES/README_KOREAN.txt": "12bb9722d7ac57e5416bf336bf7f0253bf03f53774b0c39868846b64a98c8242",
+        "Documents/CHANGELOG_7.2-kr1.0.txt": "9db3e51dcf86af1e083fdc0caddd38eb66c0953add146602350dd177266120ab",
+        "KR1.1-CHANGES.txt": "33e0b217790b9c482fa4d587d851b30cbdc40986c43c5b021094b36e6be89ca8",
+        "KR1.2-CHANGES.txt": "f08bcb8e6c3429417dcd30e9f98c0ff49eb6814a19168eca7fb4779378ffcf9a"
+      },
+      "changes": {
+        "Alternate Version/Morrowind Rebirth [Main].ESP": {
+          "before": "dce0bbefaf02890aa0ce2c0faa6216911b6b9633c4deea2409d912894b48f246",
+          "after": "e3e81589e0d464bc0123592a2d3f50ec5ea5bbb1accbf73ae023f209ec04fe7e",
+          "records_verified": 20615,
+          "SCPT.SCTX": 2,
+          "display_operands": 2
+        },
+        "Data Files/Morrowind Rebirth - Birthsigns [Addon].ESP": {
+          "before": "6da2f092840bab54e20fd477796bd5b43bcbcef406c1281dae4ad21c881c8e41",
+          "after": "6da2f092840bab54e20fd477796bd5b43bcbcef406c1281dae4ad21c881c8e41",
+          "records_verified": 32
+        },
+        "Data Files/Morrowind Rebirth - Game Settings [Addon].ESP": {
+          "before": "6fc0e45e3cc8450ce9487d22b770fb5bae7230d8db4fc00b0e880493dad0e982",
+          "after": "6fc0e45e3cc8450ce9487d22b770fb5bae7230d8db4fc00b0e880493dad0e982",
+          "records_verified": 76
+        },
+        "Data Files/Morrowind Rebirth - Mercenaries [Addon].ESP": {
+          "before": "2c6d0e41ac5a2e7cb5114473842281e6d855e173b45121dda9ceb7e057f141e3",
+          "after": "2c6d0e41ac5a2e7cb5114473842281e6d855e173b45121dda9ceb7e057f141e3",
+          "records_verified": 326
+        },
+        "Data Files/Morrowind Rebirth - Races [Addon].esp": {
+          "before": "61c58c3a927f9e2ea35def12bf9f9ff5766621e4bbb809e187061cb99f3d59c9",
+          "after": "61c58c3a927f9e2ea35def12bf9f9ff5766621e4bbb809e187061cb99f3d59c9",
+          "records_verified": 42
+        },
+        "Data Files/Morrowind Rebirth - Skills [Addon].ESP": {
+          "before": "26536561e155549312c6b6853790b79e18e8c42309e42fee5310ec27b555d94f",
+          "after": "26536561e155549312c6b6853790b79e18e8c42309e42fee5310ec27b555d94f",
+          "records_verified": 20
+        },
+        "Data Files/Morrowind Rebirth - Tools [Addon].ESP": {
+          "before": "5d573cf5544418d7ad0dc9585b61b3c3f2f2621af22900dde6b3c42bc16d9016",
+          "after": "5d573cf5544418d7ad0dc9585b61b3c3f2f2621af22900dde6b3c42bc16d9016",
+          "records_verified": 41
+        },
+        "Data Files/Morrowind Rebirth [Main].ESP": {
+          "before": "138130376b03a246ab89682171e3ae368893d26a0e1c1da803bb6d26168dc1db",
+          "after": "56b585af39fb7e106538c789d7e6d9a6ac4b8ec2c5efdc72a518a9d69b062ea6",
+          "records_verified": 20615,
+          "SCPT.SCTX": 2,
+          "display_operands": 2
+        }
+      }
+    },
+    {
+      "asset": "PFP_5.0.7-kr1.3_OpenMW-KR13.2.zip",
+      "mod_id": 60826,
+      "uid": "429496790426",
+      "group": "8280147",
+      "version": "5.0.7-kr1.3",
+      "payload": {
+        "Patch for Purists.esm": "4b31e8baf4a043676bec103987c249777eedee753b176eb375b439ca5364a7ec",
+        "Patch for Purists.dsp": "577c49eee2a94feb56c451af9a5161f1a47caf0eaaea55db8615c61a2083d6e3",
+        "Patch for Purists.mrk": "13903518ac9309738451c43d4745b7ac29fc2d0cfd8bfac77ca5ab3432537a56",
+        "Patch for Purists.top": "b82563421d3ba3b65c1291efcf3a062731f624b81edacedc7d45dcf301b8b765",
+        "KR1.1-CHANGES.txt": "5a347bf0cc4a2923af9af08986130d21a302fb814775dcbff1fba82bcc071ae6",
+        "KR1.2-CHANGES.txt": "b1004bd9ff65c8dc3eeda0860af7d944642da839a350add767d4c4a5c6578e49"
+      },
+      "changes": {
+        "Patch for Purists.esm": {
+          "before": "87875cb0d5a5259b623e2dda56d056a2813ce03c51194836134c3d5b39236889",
+          "after": "4b31e8baf4a043676bec103987c249777eedee753b176eb375b439ca5364a7ec",
+          "records_verified": 10202,
+          "SCPT.SCTX": 8,
+          "display_operands": 26
+        }
+      }
+    }
+  ],
+  "archive_verification": "Exact uncompressed member SHA256; actual CI archive SHA256 and byte size are recorded during preflight/readback because zlib output differs across platforms."
+}

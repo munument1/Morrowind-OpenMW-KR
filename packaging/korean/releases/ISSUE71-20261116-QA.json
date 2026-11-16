@@ -1,0 +1,12 @@
+{
+  "ready_for_publication": false,
+  "scope": "Windows KR13.2, TR/TD/Cyr kr0.5, Sky kr0.4, Rebirth Cyr/Sky compatibility kr0.5; Android excluded",
+  "engine_sha256": "67ff422ae07dca20ca43e23254b2888e0e7f2d0ff536abaa964bf83264032b78",
+  "rewrite_tests": 7,
+  "regular_topic_ids_checked": 6294,
+  "rebirth_compatibility_topic_ids_checked": 6294,
+  "unreviewed_script_literals_remaining": 0,
+  "untranslated_topic_captions_remaining_excluding_reviewed_language": 0,
+  "human_reviewed": false,
+  "pending": ["final compiler comparison", "final packaged-data GUI replay"]
+}

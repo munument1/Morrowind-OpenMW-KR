@@ -1,6 +1,6 @@
 # 이슈 #71 추가 조사와 배포 검증
 
-이번 배포는 Windows KR13.2, TR/TD/Cyr kr0.5, Sky kr0.4, Rebirth 전용 Cyr/Sky kr0.5, Rebirth 본체 7.2-kr1.3, PFP 5.0.7-kr1.3의 8개 ZIP이다. Android는 제외한다. 초기 실행 보고서의 KR13.1 및 소규모 TR 후보를 대체한다.
+이번 배포는 Windows KR13.2, TR/TD/Cyr kr0.5, Sky kr0.4, Rebirth 전용 Cyr/Sky kr0.5, Rebirth 본체 7.2-kr1.3, PFP 5.0.7-kr1.3의 8개 ZIP이다. Android는 이 Nexus 배포에서 제외한다. Android 수정·검증은 별도 범위에 포함한다. 초기 실행 보고서의 KR13.1 및 소규모 TR 후보를 대체한다.
 
 ## 추가로 수정한 내용
 
@@ -37,3 +37,7 @@
 ## 배포 결과
 
 [배포 실행 43806022873](https://github.com/munument1/Morrowind-OpenMW-KR/actions/runs/43806022873)이 성공했다. 8개 기존 그룹의 버전·크기·대상을 API로 재확인했고 Android 그룹의 전후 버전 목록이 동일했다. [최종 영수증](../releases/ISSUE71-20261116-NEXUS-RECEIPT.json)에 실제 업로드 ZIP SHA256, 공개 파일 ID와 크기를 기록했다. 실제 설치 및 사용자 설정·저장은 변경하지 않았다.
+
+## Android 범위 정정
+
+사용자의 제외 지시는 Nexus 업로드만 제외한다는 뜻이다. 기존 Android KR14 서명 후보에 최종 0018/0019 엔진 수정이 포함된 것을 확인했고, 이번 VampireMolag/playScript 자막 11개를 별도 Android KR14 데이터 후보로 보완했다. [Android 소스·검증 기록](https://github.com/munument1/Morrowind-OpenMW-Android-KR/blob/fix/issue71-android-data/docs/ISSUE71-ANDROID-DATA-QA.md)을 따른다. Android 실기기 검증과 정식 공개 배포는 완료했다고 주장하지 않는다. 이번 추가 작업도 Nexus에는 올리지 않는다.

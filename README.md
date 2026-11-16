@@ -1,4 +1,14 @@
-> **최신 Windows 통합판: [KR13](https://github.com/munument1/Morrowind-OpenMW-KR/releases/tag/openmw-0.51.0-kr13)** — OpenMW 0.51.0 한국어판, 기본·지역 NPC 대화 주제 복원 및 번역 표시 필드 보강. 지역 모드 패치는 각 Nexus 페이지에서 숫자 버전으로 업데이트됩니다.
+> **최신 Windows 통합판: [KR13.2 (Nexus)](https://www.nexusmods.com/morrowind/mods/60496?tab=files)** — OpenMW 0.51.0, 이슈 #71 토픽 목록·응답 제목·일지·음성 자막 및 번역 데이터 보완.
+
+## 이슈 #71 후속 배포 (2026-11-16)
+
+- Windows KR13.2, TR/TD/Cyr kr0.5, Sky kr0.4, Rebirth 전용 Cyr/Sky kr0.5, Rebirth 본체 7.2-kr1.3, PFP 5.0.7-kr1.3을 제공합니다. Android는 이번 갱신 대상에서 제외했습니다.
+- 내부 ID와 퀘스트 조건·분기를 유지하면서 토픽 표시명, 인물명, 선택지·알림·음성 자막을 보완했습니다. PFP가 본편 자막을 영문으로 덮어쓰던 경우도 수정했습니다.
+- 모드 ZIP은 같은 원본 버전과 아트를 먼저 설치한 뒤 전체 ESM/ESP와 사이드카를 덮어쓰십시오. 기존 로드 순서를 유지하고 일반 Cyr/Sky와 Rebirth 전용본을 동시에 활성화하지 마십시오. Windows는 전체 ZIP의 설치기를 사용합니다.
+- [Windows](https://www.nexusmods.com/morrowind/mods/60496?tab=files) · [TR](https://www.nexusmods.com/morrowind/mods/60844?tab=files) · [TD](https://www.nexusmods.com/morrowind/mods/60845?tab=files) · [Cyr](https://www.nexusmods.com/morrowind/mods/60846?tab=files) · [Sky](https://www.nexusmods.com/morrowind/mods/60847?tab=files) · [Rebirth 본체/호환](https://www.nexusmods.com/morrowind/mods/60805?tab=files) · [PFP](https://www.nexusmods.com/morrowind/mods/60826?tab=files)
+- [수정·실행 검증과 한계](packaging/korean/reports/2026-11-16_issue71_completion.md). 원본 컴파일 오류는 수정 전후 동일하며, 전체 퀘스트 완주와 사람에 의한 전수 검수를 뜻하지 않습니다.
+
+아래는 이전 배포 기록입니다.
 
 ## KR13 / 지역 모드 덮어쓰기 kr0.4.1 · Sky kr0.3.1 (2026-11-11)
 

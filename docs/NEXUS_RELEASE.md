@@ -2,6 +2,14 @@
 
 대상: https://www.nexusmods.com/morrowind/mods/60496
 
+## 이슈 #71 후속 배포 — 2026-11-16
+
+`publish-kr13-nexus.yml`은 현재 Windows, 지역 모드 5개, Rebirth 본체와 PFP의 **8개 기존 파일 그룹**을 갱신한다. Android 그룹 `8257539`는 업로드 대상에서 제외하고 전후 스냅샷만 읽는다. 정확한 버전·UID·그룹·멤버 SHA256은 `packaging/korean/releases/ISSUE71-20261116-PAYLOAD-PINS.json`을 따른다.
+
+고정 원본 ZIP과 검증된 0019 Windows 엔진에서 재생성하고, 회귀 검사·전체 payload SHA256·표시 문자열 검사·소유자/UID/활성 그룹 확인을 통과해야 업로드한다. `dry_run=true` 검증 성공 후 `dry_run=false`로 실행한다. QA 준비 상태도 별도 확인하며 이미 같은 버전이 있으면 크기와 그룹을 검증하고 중복 업로드를 건너뛴다. Rebirth 본체는 main 그룹 `8257641`, 전용 호환본은 optional 그룹 `8296377`로 구분한다.
+
+압축 라이브러리 차이 때문에 플랫폼 간 ZIP 바이트 자체는 달라질 수 있다. 압축 해제 멤버는 승인한 SHA256과 정확히 같아야 하며, 실제 업로드 ZIP의 SHA256/크기는 CI preflight와 최종 API 영수증에 기록한다. 모드 바이너리는 새 GitHub Releases에 올리지 않는다. 아래 KR13 포장 설명과 일반 태그 배포 절차는 이전 배포 기록이다.
+
 ## 지역 모드 배포 형식
 
 사용자 확정 사항: **모드 번역은 전체 ESM/ESP를 같은 파일명으로 덮어쓰는 ZIP으로 배포한다.**

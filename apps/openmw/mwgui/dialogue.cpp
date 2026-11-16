@@ -222,7 +222,7 @@ namespace MWGui
         if (!mTitle.empty())
         {
             BookTypesetter::Style* title = typesetter->createStyle({}, colors.header, false);
-            typesetter->write(title, mTitle);
+            typesetter->write(title, translationStorage.topicDisplayName(mTitle));
             typesetter->sectionBreak();
         }
 

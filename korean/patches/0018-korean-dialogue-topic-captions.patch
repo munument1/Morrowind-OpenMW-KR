@@ -1,7 +1,16 @@
 diff --git a/apps/openmw/mwgui/dialogue.cpp b/apps/openmw/mwgui/dialogue.cpp
-index 4ed0c20..41fc68b 100644
+index 4ed0c20..8716806 100644
 --- a/apps/openmw/mwgui/dialogue.cpp
 +++ b/apps/openmw/mwgui/dialogue.cpp
+@@ -222,7 +222,7 @@ namespace MWGui
+         if (!mTitle.empty())
+         {
+             BookTypesetter::Style* title = typesetter->createStyle({}, colors.header, false);
+-            typesetter->write(title, mTitle);
++            typesetter->write(title, translationStorage.topicDisplayName(mTitle));
+             typesetter->sectionBreak();
+         }
+ 
 @@ -641,7 +641,9 @@ namespace MWGui
          for (const auto& keyword : mKeywords)
          {
